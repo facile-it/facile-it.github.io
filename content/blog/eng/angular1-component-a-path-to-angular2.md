@@ -2,7 +2,7 @@
 authors: ["simone-lazzaroni"]
 comments: true
 date: "2017-01-24"
-draft: true
+draft: false
 menu: ""
 share: true
 categories: [Angular, Javascript, WebComponent, UI]

@@ -1,8 +1,8 @@
 ---
 authors: ["simone-lazzaroni"]
 comments: true
-date: "2017-01-25"
-draft: true
+date: "2017-02-01"
+draft: false
 menu: ""
 share: true
 categories: [English, Angular, Javascript, WebComponent, UI]

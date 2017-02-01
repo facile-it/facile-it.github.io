@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>simone-lazzaroni on Facile.it Engineering</title>
+    <link>http://engineering.facile.it/authors/simone-lazzaroni/</link>
+    <description>Recent content in simone-lazzaroni on Facile.it Engineering</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://engineering.facile.it/authors/simone-lazzaroni/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Angular Components: from AngularJS to &#34;just Angular&#34;</title>
+      <link>http://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</guid>
+      <description>
+
+&lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;http://engineering.facile.it/images/web-components-a-path-to-angular-2/angular.png&#34;&gt; &lt;/p&gt;
+
+&lt;p&gt;With version 1.5 and newer, Angular (formerly known as AngularJS, but apparently now &lt;a href=&#34;http://angularjs.blogspot.it/2016/12/ok-let-me-explain-its-going-to-be.html#Its_just_Angular_39&#34;&gt;&lt;em&gt;it&amp;rsquo;s just Angular&lt;/em&gt;&lt;/a&gt;) introduced their own interpretation of &lt;a href=&#34;https://www.webcomponents.org/&#34;&gt;Web Components&lt;/a&gt;, back-porting &lt;em&gt;Components&lt;/em&gt; from Angular 2.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;em&gt;Components&lt;/em&gt; with Angular today not only means writing code much more easily upgradeable to future framework versions (especially using ES6), but it also allows you to modularize and reuse code more easily, in line with the modern frontend programming style that will be more and more modular.&lt;/p&gt;
+
+&lt;p&gt;But, as with anything new, there are open questions:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;When should you use it?&lt;/li&gt;
+&lt;li&gt;Why should you use it?&lt;/li&gt;
+&lt;li&gt;What’s the difference between &lt;code&gt;.component()&lt;/code&gt; and &lt;code&gt;.directive()&lt;/code&gt; APIs?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;According to the official documentation, a &lt;em&gt;Component&lt;/em&gt; is like a &lt;em&gt;Directive&lt;/em&gt;&amp;hellip; but easier to use!&lt;/p&gt;
+
+&lt;h2 id=&#34;directive-vs-component&#34;&gt;Directive vs Component&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Directive:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;was the main API to access the DOM in Angular 1.x;&lt;/li&gt;
+&lt;li&gt;isolates parts of the DOM to create reusable building blocks;&lt;/li&gt;
+&lt;li&gt;can be both a &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Element&#34;&gt;DOM element&lt;/a&gt; &lt;strong&gt;and/or&lt;/strong&gt; a &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Attr&#34;&gt;DOM attribute&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;uses link and compile functions to operate on the DOM and the  model.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Component:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;is an higher level abstraction of &lt;em&gt;directives&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;can only be a DOM element (and aggregate others)&lt;/li&gt;
+&lt;li&gt;has an isolated scope by default&lt;/li&gt;
+&lt;li&gt;automatically uses &lt;code&gt;controllerAs&lt;/code&gt; syntax&lt;/li&gt;
+&lt;li&gt;uses controllers instead of link functions&lt;/li&gt;
+&lt;li&gt;has &lt;code&gt;bindToController&lt;/code&gt; option on by default&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;coding-comparison&#34;&gt;Coding comparison&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;
+app.directive(&#39;list&#39;, function() {
+  return {
+    scope: {
+      items: &#39;=&#39;
+    },
+    restrict: “E”,
+    templateUrl: &#39;list.html&#39;,
+    controller: function ListCtrl() {},
+    controllerAs: &#39;$ctrl&#39;,
+    bindToController: true
+  }
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;It’s a simple component directive, with an isolated scope, binding, and a controller.&lt;/p&gt;
+
+&lt;p&gt;Here’s how you’ll write it with &lt;code&gt;.component()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;
+app.component(&#39;list&#39;, {
+  bindings: {
+    items: &#39;=&#39;
+  },
+  templateUrl: &#39;list.html&#39;,
+  controller: function ListCtrl() {}
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see not much has changed, but things are a little simpler:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;bindToController&lt;/code&gt; is the default and with the &lt;code&gt;bindings&lt;/code&gt; property the scope is always isolated; &lt;code&gt;controllerAs&lt;/code&gt; is on and defaults set to &lt;code&gt;$ctrl&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Components so don’t manipulate the DOM or data that are outside their scope, but they receive inputs and produce outputs through the interaction with the view.
+Another nice point is that we don’t need to write a &lt;strong&gt;dumb&lt;/strong&gt; function that always returns the same object, we just define that object right here.&lt;/p&gt;
+
+&lt;h2 id=&#34;comparison-between-directive-definition-and-component-definition&#34;&gt;Comparison between Directive definition and Component definition&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;property&lt;/th&gt;
+&lt;th&gt;Directive&lt;/th&gt;
+&lt;th&gt;Component&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;bindings&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;td&gt;Yes (binds to controller)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;bindToController&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes (default: &lt;code&gt;false&lt;/code&gt;)&lt;/td&gt;
+&lt;td&gt;No (use bindings instead)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;compile()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;controller&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes (defaults to &lt;code&gt;function() {}&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;controllerAs&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes (default: &lt;code&gt;false&lt;/code&gt;)&lt;/td&gt;
+&lt;td&gt;Yes (default &lt;code&gt;$ctrl&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;link()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;multiElement&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;priority&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;require&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;scope&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes (default: &lt;code&gt;false&lt;/code&gt;)&lt;/td&gt;
+&lt;td&gt;No (scope is always isolate)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;template&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes, injectable&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;templateNamespace&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;templateUrl&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;Yes, injectable&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;terminal&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;transclude&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;Yes (default: &lt;code&gt;false&lt;/code&gt;)&lt;/td&gt;
+&lt;td&gt;Yes (default: &lt;code&gt;false&lt;/code&gt;)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;new-other-goodies&#34;&gt;New other goodies:&lt;/h2&gt;
+
+&lt;h4 id=&#34;one-way-data-bindings&#34;&gt;One way data bindings&lt;/h4&gt;
+
+&lt;p&gt;Previously, we could pass objects to child directives/components with the &lt;code&gt;=&lt;/code&gt; binding:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;
+app.component(&#39;bar&#39;, {
+  templateUrl: &#39;bar.html&#39;,
+  bindings: {
+    foo: &#39;=&#39;
+  },
+  controller: function() {}
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This would have created a &lt;strong&gt;two-way data binding&lt;/strong&gt; with the component’s parent. Whenever the parent would assign a new value to &lt;code&gt;foo&lt;/code&gt;, or change the existing one, this would be propagated to the child too, and vice-versa; this is how two-way data binding operates by design.&lt;/p&gt;
+
+&lt;p&gt;While helpful, this isn’t a very common scenario in my experience, because it has its drawbacks: mostly, in complex applications it may become more difficult to reason about, and it can have heavy performance implications.&lt;/p&gt;
+
+&lt;p&gt;That’s why Angular has introduced one-way data bindings: these create just a single &lt;em&gt;watcher&lt;/em&gt;, watching for changes on the parent and propagating them to the child. As a result we gain performance (by cutting in half the amount of watchers created) and things become less &amp;ldquo;error friendly&amp;rdquo;.&lt;/p&gt;
+
+&lt;p&gt;The syntax is similar to the code below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;
+app.component(&#39;bar&#39;, {
+  templateUrl: &#39;bar.html&#39;,
+  bindings: {
+    foo: &#39;&amp;lt;&#39;
+  },
+  controller: function() {}
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Yeah, we just changed &lt;code&gt;=&lt;/code&gt; to &lt;code&gt;&amp;lt;&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Other data binding parameters are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;@&lt;/code&gt;: interpolation bindings (input parameter), also used in the directives for values ​​coming from the DOM as strings;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;&lt;/code&gt;: expression bindings, often used to pass a function to a component to provide a callback event (to generate an output) to the caller.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&#34;lifecycle-hook-oninit-onchanges-ondestroy-and-postlink&#34;&gt;Lifecycle hook: &lt;code&gt;$onInit&lt;/code&gt;, &lt;code&gt;$onChanges&lt;/code&gt;, &lt;code&gt;$onDestroy&lt;/code&gt; and &lt;code&gt;$postLink&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;Lifecycle hooks provides us with an easy way of invoking operation based on the lifecycle of our components. The usage of these hooks lets us provide our users with relevant information or action at the appropriate time.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$onInit()&lt;/code&gt; is executed when all controllers on the element have been constructed and after their bindings are initialized.
+This hook is meant to be used for any kind of initialization work for the controller.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;
+app.component(&#39;MyCtrlComp&#39;, {
+  templateUrl: &#39;user.html&#39;,
+  controller: function() {
+    this.$onInit = function() {
+        this.username = &#39;John.Doe&#39;;
+        console.log(&#39;User component initialized&#39;);
+    };
+  }
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This is a very simple example, but imagine we’d need to do some HTTP requests during initialization of this component or controller: now we have a better place for these kind of things.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$onDestroy()&lt;/code&gt; is called when its containing scope is destroyed. We can use this hook to release external resources, watches and event handlers.
+In a scenario where you have attached non-native Angular event listeners or logic, we can use this hook to clean it up when the component is destroyed.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$onChanges()&lt;/code&gt; is a particular type of “watch” called  when changes occur in one way bindings on the input component interface.
+It gets called with an object that holds the changes of all one-way bindings with the current Value and the previous Value.
+With &lt;code&gt;$onChanges&lt;/code&gt; we can react to this changes and update the child component data effectively.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Suppose that we make the name property of our myUserCmp configurable from the outside using a one-way binding:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;
+mod.component(&#39;myUserCmp&#39;, {
+  template: &#39;&amp;lt;h1&amp;gt;{{$ctrl.user}}&amp;lt;/h1&amp;gt;&#39;,
+  bindings: {
+    name: &#39;&amp;lt;&#39;
+  },
+  controller: MyCtrlComp
+});
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;in the markup we can now bind an expression to the component’s user property like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;
+&amp;lt;my-cmp user=&amp;quot;JohnDoe&amp;quot;&amp;gt;&amp;lt;/my-cmp&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now we want to prepend the user with “Hi” when the user is JohnDoe and otherwise put “Hello”. We can do that using the &lt;code&gt;$onChanges()&lt;/code&gt; lifecycle hook.
+It gets called with an object that holds the changes of all one-way bindings along with the currentValue and the previousValue.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;
+function MyCtrlComp() {
+  this.$onChanges = function (changesObj) {
+    if (changesObj.user) {
+      var prfx;
+      (changesObj.user.currentValue === &#39;JohnDoe&#39;) ?
+        prfx = &#39;Hi &#39; : prfx = &#39;Hello &#39;;
+      this.user = prfx + this.user;
+    }
+  };
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$postLink()&lt;/code&gt; is called after the controller&amp;rsquo;s element and its children have been linked. When the component elements have been compiled and are ready to go, this hook will be fired;&lt;br /&gt;
+It can help us to implement some functionality that depends on the component elements to be fully compiled.
+It’s important to note that this is not a complete replacement for DOM manipulation, this functionality should be handled by decorator directives.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Adopting &lt;em&gt;Components&lt;/em&gt; allows you to write code that is more easily portable to future Angular versions and introduces a modular architecture of the DOM that is more maintainable compared to the usual guidelines.&lt;/p&gt;
+
+&lt;p&gt;In a &lt;em&gt;Component&lt;/em&gt; based architecture, an application becomes a tree structure of elements, with well-defined inputs and outputs, a clear data-flow, and predictable behaviours.&lt;/p&gt;
+
+&lt;p&gt;In this structure, the root elements are usually called &amp;ldquo;smart components&amp;rdquo; because these are the ones who manage the data, while those closest to the leaves are called &amp;ldquo;dumb components&amp;rdquo; instead, because they are more UI focused and are highly reusable.&lt;/p&gt;
+
+&lt;p&gt;In conclusion, &lt;code&gt;.component()&lt;/code&gt; is a great addition to Angular. It’s a real upgrade for code quality and helps you prepare for the future.&lt;/p&gt;
+
+&lt;p&gt;So, upgrade to 1.5 and start using &lt;code&gt;.component()&lt;/code&gt;: you have unlocked a new skill!&lt;/p&gt;
+
+&lt;p&gt;For more details refer to understanding components &lt;a href=&#34;https://docs.angularjs.org/guide/component&#34;&gt;docs&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

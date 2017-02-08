@@ -7,7 +7,7 @@ image: "images/kotlin-intro/logo_Kotlin.svg"
 menu: ""
 share: true
 categories: [English, Java, Kotlin, JVM, Android, DSL]
-title: "Use Kotlin Type-safe builders to create a form DSL"
+title: "Using Kotlin type-safe builders to create a DSL for Forms"
 
 languageCode: "en-En"
 type: "post"

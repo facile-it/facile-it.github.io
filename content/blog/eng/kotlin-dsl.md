@@ -154,7 +154,7 @@ Note that we are referring to the string inside the closure of the extension fun
 ```
 val transformWith: String.() -> List<String> = { this.split("/") }
 
-transformWith("some/path/to") // -> [some, path, to]
+"some/path/to".transformWith() // -> [some, path, to]
 ```
 
 To better understand function literals with receiver you should think of them as follow: *lambda is to normal function as function literal with receiver is to extension function*.

@@ -19,7 +19,7 @@
 
 &lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;https://engineering.facile.it/images/web-components-a-path-to-angular-2/angular.png&#34;&gt; &lt;/p&gt;
 
-&lt;p&gt;With version 1.5 and newer, Angular (formerly known as AngularJS, but apparently now &lt;a href=&#34;http://angularjs.blogspot.it/2016/12/ok-let-me-explain-its-going-to-be.html#Its_just_Angular_39&#34;&gt;&lt;em&gt;it&amp;rsquo;s just Angular&lt;/em&gt;&lt;/a&gt;) introduced their own interpretation of &lt;a href=&#34;https://www.webcomponents.org/&#34;&gt;Web Components&lt;/a&gt;, back-porting &lt;em&gt;Components&lt;/em&gt; from Angular 2.&lt;/p&gt;
+&lt;p&gt;With version 1.5 and newer, AngularJS (which for clarity we&amp;rsquo;ll call &lt;a href=&#34;http://angularjs.blogspot.it/2016/12/ok-let-me-explain-its-going-to-be.html#Its_just_Angular_39&#34;&gt;&lt;em&gt;just Angular&lt;/em&gt;&lt;/a&gt; from now on, even though the naming convention was &lt;a href=&#34;http://angularjs.blogspot.it/2017/01/branding-guidelines-for-angular-and.html&#34;&gt;recently updated&lt;/a&gt;) introduced their own interpretation of &lt;a href=&#34;https://www.webcomponents.org/&#34;&gt;Web Components&lt;/a&gt;, back-porting &lt;em&gt;Components&lt;/em&gt; from Angular 2.&lt;/p&gt;
 
 &lt;p&gt;Using &lt;em&gt;Components&lt;/em&gt; with Angular today not only means writing code much more easily upgradeable to future framework versions (especially using ES6), but it also allows you to modularize and reuse code more easily, in line with the modern frontend programming style that will be more and more modular.&lt;/p&gt;
 

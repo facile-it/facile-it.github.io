@@ -14,8 +14,7 @@ twitterImage: '/images/web-components-a-path-to-angular-2/angular.png'
 ---
 <p align="center"> <img src="/images/web-components-a-path-to-angular-2/angular.png"> </p>
 
-
-With version 1.5 and newer, Angular (formerly known as AngularJS, but apparently now [*it's just Angular*][its-just-angular]) introduced their own interpretation of [Web Components][web-components], back-porting *Components* from Angular 2.
+With version 1.5 and newer, AngularJS (which for clarity we'll call [*just Angular*][its-just-angular] from now on, even though the naming convention was [recently updated][latest-angular-branding-guidelines]) introduced their own interpretation of [Web Components][web-components], back-porting *Components* from Angular 2.
 
 Using *Components* with Angular today not only means writing code much more easily upgradeable to future framework versions (especially using ES6), but it also allows you to modularize and reuse code more easily, in line with the modern frontend programming style that will be more and more modular.
 
@@ -242,3 +241,4 @@ For more details refer to understanding components [docs](https://docs.angularjs
 [MDN DOM Element Docs]: https://developer.mozilla.org/en-US/docs/Web/API/Element
 [MDN DOM Attribute Docs]: https://developer.mozilla.org/en-US/docs/Web/API/Attr
 [its-just-angular]: http://angularjs.blogspot.it/2016/12/ok-let-me-explain-its-going-to-be.html#Its_just_Angular_39
+[latest-angular-branding-guidelines]: http://angularjs.blogspot.it/2017/01/branding-guidelines-for-angular-and.html

@@ -155,7 +155,7 @@ fun String.transformWith(function: (String) -&amp;gt; List&amp;lt;String&amp;gt;
 
 &lt;pre&gt;&lt;code&gt;val transformWith: String.() -&amp;gt; List&amp;lt;String&amp;gt; = { this.split(&amp;quot;/&amp;quot;) }
 
-transformWith(&amp;quot;some/path/to&amp;quot;) // -&amp;gt; [some, path, to]
+&amp;quot;some/path/to&amp;quot;.transformWith() // -&amp;gt; [some, path, to]
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;To better understand function literals with receiver you should think of them as follow: &lt;em&gt;lambda is to normal function as function literal with receiver is to extension function&lt;/em&gt;.&lt;/p&gt;

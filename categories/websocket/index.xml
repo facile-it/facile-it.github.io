@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Websocket on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/websocket/</link>
+    <link>https://engineering.facile.it/categories/websocket/</link>
     <description>Recent content in Websocket on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Sep 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/websocket/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/websocket/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>WAMP, Web Application Messaging Protocol.. e PHP!</title>
-      <link>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
+      <link>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
+      <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
       <description>
 
 &lt;p&gt;Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno &lt;strong&gt;scambio dati&lt;/strong&gt; in &lt;strong&gt;due direzioni&lt;/strong&gt;, &lt;strong&gt;efficiente&lt;/strong&gt; e a &lt;strong&gt;bassa latenza&lt;/strong&gt;, ha determinato l’ascesa negli ultimi anni di &lt;strong&gt;soluzioni basate su &lt;a href=&#34;https://www.websocket.org/&#34; target=&#34;_blank&#34;&gt;WebSocket&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;

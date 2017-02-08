@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PHP on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/php/</link>
+    <link>https://engineering.facile.it/categories/php/</link>
     <description>Recent content in PHP on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Jun 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/php/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How PHP 7 &amp; TDD helped me sleep better</title>
-      <link>http://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
+      <link>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
       <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
+      <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
       <description>
 
 &lt;h1 id=&#34;the-enemies-of-programming&#34;&gt;The enemies of programming&lt;/h1&gt;
@@ -22,7 +22,7 @@
 &lt;p&gt;As many of you will agree with me, &lt;strong&gt;sleep deprivation&lt;/strong&gt; is the enemy of programming.&lt;br /&gt;
 Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;/strong&gt;.
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;a href=&#34;http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/&#34;&gt;&lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/interruption.png&#34; alt=&#34;Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)&#34; /&gt;&lt;/a&gt;
+    &lt;a href=&#34;http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/&#34;&gt;&lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/interruption.png&#34; alt=&#34;Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)&#34; /&gt;&lt;/a&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.&lt;/p&gt;
@@ -33,7 +33,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;Almost half a year ago &lt;strong&gt;I became a dad&lt;/strong&gt;. It has been great, and you also get some unexpected perks! For example, my colleagues got me this gift for my son:
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg&#34; alt=&#34;A blue elePHPant!&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg&#34; alt=&#34;A blue elePHPant!&#34; /&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;So, we can say that his future is pretty clear&amp;hellip; But don&amp;rsquo;t say this to my wife!&lt;/p&gt;
@@ -56,7 +56,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;The first choice that I am pretty satisfied about is &lt;strong&gt;automatic testing&lt;/strong&gt;: I already knew the advantages of doing tests and Test Driven Development, but in the previous project that practice was not introduced from the start, so not all the codebase was covered, and we couldn&amp;rsquo;t (or wouldn&amp;rsquo;t?) do TDD 100% of the time.&lt;/p&gt;
 
-&lt;p&gt;In this case instead &lt;strong&gt;I wanted to write nearly everything with TDD&lt;/strong&gt;, and keep a &lt;strong&gt;very high threshold for the minimum coverage&lt;/strong&gt; achieved through automatic testing. Right now I&amp;rsquo;m sitting on a ~92% test coverage, and I feel proud about it. This wasn&amp;rsquo;t a mere &amp;ldquo;let&amp;rsquo;s hit 100%!&amp;rdquo; mindless goal (&lt;a href=&#34;http://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/&#34;&gt;since it&amp;rsquo;s pointless&lt;/a&gt;), but it fueled &lt;strong&gt;a positive feedback cycle&lt;/strong&gt; instead: the more I used TDD in writing new classes, the more the coverage rose and stayed high; at the same time, I found myself inspecting the coverage reports to find missing spots, and that allowed me to discover many edge-cases that I didn&amp;rsquo;t test and should have been.&lt;/p&gt;
+&lt;p&gt;In this case instead &lt;strong&gt;I wanted to write nearly everything with TDD&lt;/strong&gt;, and keep a &lt;strong&gt;very high threshold for the minimum coverage&lt;/strong&gt; achieved through automatic testing. Right now I&amp;rsquo;m sitting on a ~92% test coverage, and I feel proud about it. This wasn&amp;rsquo;t a mere &amp;ldquo;let&amp;rsquo;s hit 100%!&amp;rdquo; mindless goal (&lt;a href=&#34;https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/&#34;&gt;since it&amp;rsquo;s pointless&lt;/a&gt;), but it fueled &lt;strong&gt;a positive feedback cycle&lt;/strong&gt; instead: the more I used TDD in writing new classes, the more the coverage rose and stayed high; at the same time, I found myself inspecting the coverage reports to find missing spots, and that allowed me to discover many edge-cases that I didn&amp;rsquo;t test and should have been.&lt;/p&gt;
 
 &lt;p&gt;Of course, I still left some parts without coverage or specific tests, since it was pointless to test them (e.g. Doctrine entities), while I covered some parts multiple times, since they were &lt;strong&gt;critical paths&lt;/strong&gt; inside my application.&lt;/p&gt;
 
@@ -70,7 +70,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;The second good choice was &lt;strong&gt;PHP 7&lt;/strong&gt;: among the reasons behind it as the language version of choice for this project were the &lt;a href=&#34;http://php.net/manual/en/migration70.new-features.php&#34;&gt;two main new features&lt;/a&gt; introduced: &lt;strong&gt;scalar types&lt;/strong&gt; and &lt;strong&gt;return type declarations&lt;/strong&gt;.
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg&#34; alt=&#34;Return types, return types everywhere!&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg&#34; alt=&#34;Return types, return types everywhere!&#34; /&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;Before Facile.it, I worked as C++ developer, and oh boy! did I miss scalars and return types!&lt;/p&gt;
@@ -99,15 +99,15 @@ $this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
     
     <item>
       <title>Facile.it devs @ PhpDay 2016</title>
-      <link>http://engineering.facile.it/blog/eng/php-day-2016/</link>
+      <link>https://engineering.facile.it/blog/eng/php-day-2016/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/php-day-2016/</guid>
+      <guid>https://engineering.facile.it/blog/eng/php-day-2016/</guid>
       <description>
 
 &lt;p&gt;Almost like a nice tradition, we went to the &lt;strong&gt;&lt;a href=&#34;http://2016.phpday.it/&#34;&gt;PHP Day conference&lt;/a&gt;&lt;/strong&gt; this year as well; this time too it was held in Verona, on &lt;strong&gt;May 13th and 14th&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;http://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;
+&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;
 
 &lt;p&gt;In this way, we hope to give a brief glimpse of what we experienced to fellow developers that hadn&amp;rsquo;t the opportunity to attend, and to tempt some of you to join conferences like this one or those in the PHP community at large, for your personal and professional growth.&lt;/p&gt;
 
@@ -205,10 +205,10 @@ $this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
     
     <item>
       <title>Puli: Universal Packages for PHP</title>
-      <link>http://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</link>
+      <link>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</link>
       <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</guid>
+      <guid>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</guid>
       <description>
 
 &lt;h2 id=&#34;composer-e-l-ecosistema-php&#34;&gt;Composer e l&amp;rsquo;ecosistema PHP&lt;/h2&gt;
@@ -450,10 +450,10 @@ Per approfondire, la documentazione ufficiale è molto chiara e completa ed è d
     
     <item>
       <title>Paraunit: test paralleli, Doctrine e le fixture</title>
-      <link>http://engineering.facile.it/blog/ita/paraunit/</link>
+      <link>https://engineering.facile.it/blog/ita/paraunit/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/paraunit/</guid>
+      <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;Questo articolo è la sintesi di un talk presentato al &lt;a href=&#34;http://2015.symfonyday.it/&#34;&gt;SymfonyDay 2015&lt;/a&gt;; potete trovare le slide &lt;a href=&#34;http://jean85.github.io/slides/2015-10-paraunit-symfonyday/index.html&#34;&gt;qui&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
@@ -563,7 +563,7 @@ Per realizzarla nella sua totalità, abbiamo sviluppato un test-case per PHPUnit
 
 &lt;p&gt;Per darvi un&amp;rsquo;idea di quanto possa essere veloce Paraunit rispetto alla normale esecuzione con PHPUnit, ho misurato il tempo di esecuzione della nostra test suite funzionale, che è sufficientemente ampia (261 classi, 1568 metodi):&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/paraunit/grafico.png&#34; alt=&#34;Grafico&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/paraunit/grafico.png&#34; alt=&#34;Grafico&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Come potete vedere, Paraunit esegue l&amp;rsquo;intera test suite in soli &lt;strong&gt;6 minuti e 6 secondi&lt;/strong&gt;, mentre PHPUnit ci metterebbe &lt;strong&gt;oltre 40 minuti!&lt;/strong&gt;&lt;/p&gt;
 
@@ -595,10 +595,10 @@ Tra gli sviluppi futuri spero di poter realizzare:&lt;/p&gt;
     
     <item>
       <title>WAMP, Web Application Messaging Protocol.. e PHP!</title>
-      <link>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
+      <link>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
+      <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
       <description>
 
 &lt;p&gt;Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno &lt;strong&gt;scambio dati&lt;/strong&gt; in &lt;strong&gt;due direzioni&lt;/strong&gt;, &lt;strong&gt;efficiente&lt;/strong&gt; e a &lt;strong&gt;bassa latenza&lt;/strong&gt;, ha determinato l’ascesa negli ultimi anni di &lt;strong&gt;soluzioni basate su &lt;a href=&#34;https://www.websocket.org/&#34; target=&#34;_blank&#34;&gt;WebSocket&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -860,10 +860,10 @@ la libreria &lt;a href=&#34;http://autobahn.ws/js/&#34; target=&#34;_blank&#34;&
     
     <item>
       <title>Php Summer Camp 2015</title>
-      <link>http://engineering.facile.it/blog/ita/php-summer-camp-2015/</link>
+      <link>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</link>
       <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-summer-camp-2015/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</guid>
       <description>
 
 &lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;
@@ -1078,10 +1078,10 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
     
     <item>
       <title>PHP 7 Overview</title>
-      <link>http://engineering.facile.it/blog/ita/php-7-overview/</link>
+      <link>https://engineering.facile.it/blog/ita/php-7-overview/</link>
       <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-7-overview/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-7-overview/</guid>
       <description>
 
 &lt;p&gt;Il linguaggio che ha contribuito alla nascita e alla crescita di più del 80% dei siti web oggi online, tra i quali alcuni dei più famosi al mondo, è prossimo a una svolta.&lt;/p&gt;
@@ -1360,10 +1360,10 @@ Tutte le classi non presenti nella lista saranno convertite nell&amp;rsquo;ogget
     
     <item>
       <title>Facile.it devs @ PHP Day 2015</title>
-      <link>http://engineering.facile.it/blog/ita/php-day-2015/</link>
+      <link>https://engineering.facile.it/blog/ita/php-day-2015/</link>
       <pubDate>Tue, 19 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-day-2015/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-day-2015/</guid>
       <description>
 
 &lt;p&gt;Anche quest&amp;rsquo;anno si è svolto il &lt;strong&gt;&lt;a href=&#34;http://2015.phpday.it/&#34;&gt;PHP Day&lt;/a&gt; a Verona, il 15 e 16 maggio&lt;/strong&gt;. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.&lt;/p&gt;
@@ -1529,10 +1529,10 @@ Tutte le classi non presenti nella lista saranno convertite nell&amp;rsquo;ogget
     
     <item>
       <title>Il principio OPEN/CLOSE le sue origini e i casi d&#39;uso</title>
-      <link>http://engineering.facile.it/blog/ita/principio-open-close-le-sue-origini-e-i-casi-d-uso/</link>
+      <link>https://engineering.facile.it/blog/ita/principio-open-close-le-sue-origini-e-i-casi-d-uso/</link>
       <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/principio-open-close-le-sue-origini-e-i-casi-d-uso/</guid>
+      <guid>https://engineering.facile.it/blog/ita/principio-open-close-le-sue-origini-e-i-casi-d-uso/</guid>
       <description>
 
 &lt;h2 id=&#34;definizione&#34;&gt;Definizione:&lt;/h2&gt;
@@ -1692,10 +1692,10 @@ class Gestore
     
     <item>
       <title>Gestione di ACL su insiemi di records</title>
-      <link>http://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</link>
+      <link>https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</guid>
+      <guid>https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</guid>
       <description>&lt;p&gt;Le &lt;strong&gt;ACL&lt;/strong&gt; (&lt;em&gt;Access Control List&lt;/em&gt;) sono un strumento molto potente per poter definire l&amp;rsquo;accesso a risorse con una granularità molto fine. Nel quotidiano abbiamo già modo di utilizzarle per definire i permessi per accedere a file su Unix o quali pacchetti far passare attraverso un firewall o ancora l&amp;rsquo;accesso a database.&lt;/p&gt;
 
 &lt;p&gt;In &lt;strong&gt;Symfony&lt;/strong&gt; le &lt;em&gt;ACL&lt;/em&gt; sono disponibili &lt;em&gt;out-of-the-box&lt;/em&gt; nel caso di installazione completa e permettono la definizione delle regole di accesso a risorse tramite &lt;strong&gt;ruoli&lt;/strong&gt; e &lt;strong&gt;maschere&lt;/strong&gt;. Mentre i &lt;strong&gt;ruoli&lt;/strong&gt; rappresentano dei sottoinsiemi degli utenti di una data applicazione (&lt;em&gt;amministratori&lt;/em&gt;, &lt;em&gt;backoffice&lt;/em&gt;, &lt;em&gt;business analyst&lt;/em&gt;) e possono essere visti come delle etichette da assegnare ad un utente, le &lt;strong&gt;maschere&lt;/strong&gt; sono la rappresentazione numerica delle azioni che possono essere effettuate dagli utenti aventi determinati ruoli. Per tornare all&amp;rsquo;esempio del filesystem Unix, i ruoli possono essere &lt;em&gt;Owner&lt;/em&gt;, &lt;em&gt;Group&lt;/em&gt; o &lt;em&gt;Others&lt;/em&gt; mentre le maschere sono ad esempio 7 (lettura, scrittura e esecuzione) indicato per ciascun ruolo.&lt;/p&gt;
@@ -1761,10 +1761,10 @@ class User
     
     <item>
       <title>PHP coding standard: PSR-7  HTTP message interfaces</title>
-      <link>http://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</link>
+      <link>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</guid>
       <description>
 
 &lt;p&gt;Le specifiche PSR-7 descrivono una &lt;a href=&#34;https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md&#34;&gt;proposta di standardizzazione&lt;/a&gt; delle &lt;strong&gt;interfacce per i messaggi HTTP&lt;/strong&gt;.&lt;/p&gt;
@@ -2011,10 +2011,10 @@ class AcmeLifeCycle
     
     <item>
       <title>MySQL has gone away? Come back!</title>
-      <link>http://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</link>
+      <link>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</link>
       <pubDate>Mon, 09 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</guid>
+      <guid>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</guid>
       <description>
 
 &lt;p&gt;A ben più di uno sviluppatore sarà capitato di incappare nel comune errore &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.5/en/gone-away.html&#34;&gt;&lt;em&gt;MySQL server has gone away!&lt;/em&gt;&lt;/a&gt;, magari seguito da un eccezione lanciata da una delle &lt;a href=&#34;http://php.net/manual/en/book.pdo.php&#34;&gt;&lt;strong&gt;classi PDO&lt;/strong&gt;&lt;/a&gt;, come ad esempio &lt;em&gt;PDOStatement::execute(): Error reading result set&amp;rsquo;s header&lt;/em&gt;.&lt;/p&gt;
@@ -2088,10 +2088,10 @@ while ($retry) {
     
     <item>
       <title>L&#39;operatore ternario è associativo a sinistra!</title>
-      <link>http://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</link>
+      <link>https://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</guid>
+      <guid>https://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</guid>
       <description>&lt;p&gt;Gli &lt;a href=&#34;http://it.wikipedia.org/wiki/Operatore_ternario&#34;&gt;&lt;em&gt;operatori ternari&lt;/em&gt;&lt;/a&gt; sono diffusi in molti linguaggi di programmazione e permettono di esprimire con una &lt;strong&gt;sintassi breve&lt;/strong&gt; logiche condizionali. Per utilizzarli propriamente in PHP è però necessario conoscerne il comportamento.&lt;/p&gt;
 
 &lt;p&gt;Vediamo un esempio&lt;/p&gt;
@@ -2125,10 +2125,10 @@ while ($retry) {
     
     <item>
       <title>ZVALs refcount AKA come vengono memorizzate le nostre variabili</title>
-      <link>http://engineering.facile.it/blog/ita/zvals-refcount/</link>
+      <link>https://engineering.facile.it/blog/ita/zvals-refcount/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/zvals-refcount/</guid>
+      <guid>https://engineering.facile.it/blog/ita/zvals-refcount/</guid>
       <description>&lt;p&gt;Assegnare valori alle variabili è sicuramente l&amp;rsquo;operazione più comune all&amp;rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&amp;rsquo;interprete? Vediamolo assieme!&lt;/p&gt;
 
 &lt;p&gt;L&amp;rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla &lt;a href=&#34;https://github.com/php/php-src/blob/ae15e636e2b213bf748fa0b94ca95ac96d6eae3a/Zend/zend.h#L334-L340&#34;&gt;linea 334 di &lt;code&gt;zend.h&lt;/code&gt;&lt;/a&gt;, la riporto qui di seguito per commentarne le proprietà.&lt;/p&gt;
@@ -2174,10 +2174,10 @@ impostato a 1.&lt;/p&gt;&lt;/li&gt;
     
     <item>
       <title>var_dump() aggiunge proprietà pubbliche a DateTime</title>
-      <link>http://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</link>
+      <link>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</guid>
+      <guid>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</guid>
       <description>&lt;p&gt;PHP, fin dalla versione 5.2.0, introduce gli oggetti &lt;code&gt;\DateTime&lt;/code&gt; per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali.&lt;/p&gt;
 
 &lt;p&gt;Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate &lt;code&gt;var_dump&lt;/code&gt;, &lt;code&gt;print_r&lt;/code&gt;, &lt;code&gt;var_export&lt;/code&gt; o &lt;code&gt;debug_zval_dump&lt;/code&gt; su un istanza di &lt;code&gt;\DateTime&lt;/code&gt;.&lt;/p&gt;

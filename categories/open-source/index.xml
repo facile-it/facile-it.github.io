@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Open Source on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/open-source/</link>
+    <link>https://engineering.facile.it/categories/open-source/</link>
     <description>Recent content in Open Source on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Dec 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/open-source/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/open-source/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Puli: Universal Packages for PHP</title>
-      <link>http://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</link>
+      <link>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</link>
       <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</guid>
+      <guid>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</guid>
       <description>
 
 &lt;h2 id=&#34;composer-e-l-ecosistema-php&#34;&gt;Composer e l&amp;rsquo;ecosistema PHP&lt;/h2&gt;
@@ -256,10 +256,10 @@ Per approfondire, la documentazione ufficiale è molto chiara e completa ed è d
     
     <item>
       <title>Paraunit: test paralleli, Doctrine e le fixture</title>
-      <link>http://engineering.facile.it/blog/ita/paraunit/</link>
+      <link>https://engineering.facile.it/blog/ita/paraunit/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/paraunit/</guid>
+      <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;Questo articolo è la sintesi di un talk presentato al &lt;a href=&#34;http://2015.symfonyday.it/&#34;&gt;SymfonyDay 2015&lt;/a&gt;; potete trovare le slide &lt;a href=&#34;http://jean85.github.io/slides/2015-10-paraunit-symfonyday/index.html&#34;&gt;qui&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
@@ -369,7 +369,7 @@ Per realizzarla nella sua totalità, abbiamo sviluppato un test-case per PHPUnit
 
 &lt;p&gt;Per darvi un&amp;rsquo;idea di quanto possa essere veloce Paraunit rispetto alla normale esecuzione con PHPUnit, ho misurato il tempo di esecuzione della nostra test suite funzionale, che è sufficientemente ampia (261 classi, 1568 metodi):&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/paraunit/grafico.png&#34; alt=&#34;Grafico&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/paraunit/grafico.png&#34; alt=&#34;Grafico&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Come potete vedere, Paraunit esegue l&amp;rsquo;intera test suite in soli &lt;strong&gt;6 minuti e 6 secondi&lt;/strong&gt;, mentre PHPUnit ci metterebbe &lt;strong&gt;oltre 40 minuti!&lt;/strong&gt;&lt;/p&gt;
 
@@ -401,10 +401,10 @@ Tra gli sviluppi futuri spero di poter realizzare:&lt;/p&gt;
     
     <item>
       <title>WAMP, Web Application Messaging Protocol.. e PHP!</title>
-      <link>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
+      <link>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
+      <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
       <description>
 
 &lt;p&gt;Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno &lt;strong&gt;scambio dati&lt;/strong&gt; in &lt;strong&gt;due direzioni&lt;/strong&gt;, &lt;strong&gt;efficiente&lt;/strong&gt; e a &lt;strong&gt;bassa latenza&lt;/strong&gt;, ha determinato l’ascesa negli ultimi anni di &lt;strong&gt;soluzioni basate su &lt;a href=&#34;https://www.websocket.org/&#34; target=&#34;_blank&#34;&gt;WebSocket&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -666,10 +666,10 @@ la libreria &lt;a href=&#34;http://autobahn.ws/js/&#34; target=&#34;_blank&#34;&
     
     <item>
       <title>PHP coding standard: PSR-7  HTTP message interfaces</title>
-      <link>http://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</link>
+      <link>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</guid>
       <description>
 
 &lt;p&gt;Le specifiche PSR-7 descrivono una &lt;a href=&#34;https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md&#34;&gt;proposta di standardizzazione&lt;/a&gt; delle &lt;strong&gt;interfacce per i messaggi HTTP&lt;/strong&gt;.&lt;/p&gt;
@@ -916,10 +916,10 @@ class AcmeLifeCycle
     
     <item>
       <title>MySQL has gone away? Come back!</title>
-      <link>http://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</link>
+      <link>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</link>
       <pubDate>Mon, 09 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</guid>
+      <guid>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</guid>
       <description>
 
 &lt;p&gt;A ben più di uno sviluppatore sarà capitato di incappare nel comune errore &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.5/en/gone-away.html&#34;&gt;&lt;em&gt;MySQL server has gone away!&lt;/em&gt;&lt;/a&gt;, magari seguito da un eccezione lanciata da una delle &lt;a href=&#34;http://php.net/manual/en/book.pdo.php&#34;&gt;&lt;strong&gt;classi PDO&lt;/strong&gt;&lt;/a&gt;, come ad esempio &lt;em&gt;PDOStatement::execute(): Error reading result set&amp;rsquo;s header&lt;/em&gt;.&lt;/p&gt;

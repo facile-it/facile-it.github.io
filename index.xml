@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Facile.it Engineering</title>
-    <link>http://engineering.facile.it/</link>
+    <link>https://engineering.facile.it/</link>
     <description>Recent content on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Angular Components: from AngularJS to &#34;just Angular&#34;</title>
-      <link>http://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</link>
+      <link>https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</guid>
+      <guid>https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</guid>
       <description>
 
-&lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;http://engineering.facile.it/images/web-components-a-path-to-angular-2/angular.png&#34;&gt; &lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;https://engineering.facile.it/images/web-components-a-path-to-angular-2/angular.png&#34;&gt; &lt;/p&gt;
 
 &lt;p&gt;With version 1.5 and newer, Angular (formerly known as AngularJS, but apparently now &lt;a href=&#34;http://angularjs.blogspot.it/2016/12/ok-let-me-explain-its-going-to-be.html#Its_just_Angular_39&#34;&gt;&lt;em&gt;it&amp;rsquo;s just Angular&lt;/em&gt;&lt;/a&gt;) introduced their own interpretation of &lt;a href=&#34;https://www.webcomponents.org/&#34;&gt;Web Components&lt;/a&gt;, back-porting &lt;em&gt;Components&lt;/em&gt; from Angular 2.&lt;/p&gt;
 
@@ -337,10 +337,10 @@ It’s important to note that this is not a complete replacement for DOM manipul
     
     <item>
       <title>Please mutate responsibly: 3 ways to improve your mutable objects</title>
-      <link>http://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/</link>
+      <link>https://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/</link>
       <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/</guid>
+      <guid>https://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/</guid>
       <description>
 
 &lt;p&gt;Maintaining &lt;strong&gt;state&lt;/strong&gt; is the main cause of complexity and headaches in software development: without a careful consideration of state, our projects will inevitably become impossible to understand. In fact, various development techniques and programming styles are mainly there to handle state in a responsible way: for example, &lt;a href=&#34;https://en.wikipedia.org/wiki/Monad_(functional_programming)&#34;&gt;&lt;strong&gt;monads&lt;/strong&gt;&lt;/a&gt;, as used in functional programming, are often employed for this very task. A good general way of managing state is trying to make it &lt;strong&gt;immutable&lt;/strong&gt;, either through the use &lt;a href=&#34;https://en.wikipedia.org/wiki/Value_type&#34;&gt;value types&lt;/a&gt;, that is, types which instances are passed around with &lt;a href=&#34;https://en.wikipedia.org/wiki/Object_copying#Deep_copy&#34;&gt;deep copy&lt;/a&gt; semantics, or simple &lt;em&gt;immutable objects&lt;/em&gt;, which have reference semantics but because they&amp;rsquo;re immutable their state is fixed.&lt;/p&gt;
@@ -396,10 +396,10 @@ It’s important to note that this is not a complete replacement for DOM manipul
     
     <item>
       <title>Codemotion Milan 2016 in review</title>
-      <link>http://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</link>
+      <link>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</link>
       <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</guid>
+      <guid>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;«Learn or die»&lt;/em&gt;. These are the words with which &lt;a href=&#34;http://milan2016.codemotionworld.com/&#34;&gt;&lt;strong&gt;Codemotion Milan 2016&lt;/strong&gt;&lt;/a&gt; started on the 25th of November. Most of our development team attended this tech conference like the &lt;a href=&#34;http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/&#34;&gt;previous year&lt;/a&gt;. Moreover &lt;a href=&#34;http://www.facile.it&#34;&gt;Facile.it&lt;/a&gt; was present at the event as a sponsor with his stand looking for new talent.&lt;/p&gt;
@@ -408,7 +408,7 @@ It’s important to note that this is not a complete replacement for DOM manipul
 
 &lt;p&gt;This post would be a short recap of some talks in chronological order. The choice of the talks is based on the personal taste of the various members of the editorial staff of Facile.it Engineering blog. Enjoy!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/codemotion-2016-in-review/codemotion_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/codemotion-2016-in-review/codemotion_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;day-1&#34;&gt;Day 1&lt;/h1&gt;
 
@@ -504,17 +504,17 @@ It’s important to note that this is not a complete replacement for DOM manipul
     
     <item>
       <title>Looking back at Symfony Day Rome 2016</title>
-      <link>http://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</link>
+      <link>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</link>
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</guid>
+      <guid>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</guid>
       <description>
 
 &lt;p&gt;Every year the &lt;a href=&#34;http://www.grusp.org/&#34;&gt;GrUSP&lt;/a&gt;, in cooperation with one of the italian PHP user groups, organizes the italian &lt;strong&gt;&lt;a href=&#34;http://symfony.com/&#34;&gt;Symfony&lt;/a&gt;&lt;/strong&gt; conference. This year the &lt;a href=&#34;http://2016.symfonyday.it/&#34;&gt;event&lt;/a&gt; was organized in the Capital on 28th October with the help of &lt;a href=&#34;http://roma.grusp.org/&#34;&gt;PHP User Group Roma&lt;/a&gt;, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.&lt;/p&gt;
 
 &lt;p&gt;This post would be a short recap of all the talks.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/faciledev_symfonyday_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/faciledev_symfonyday_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;schedule&#34;&gt;Schedule&lt;/h1&gt;
 
@@ -554,7 +554,7 @@ It’s important to note that this is not a complete replacement for DOM manipul
 
 &lt;p&gt;&lt;em&gt;View slides &lt;a href=&#34;http://www.slideshare.net/SamueleLilli/symfony-day-2016&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/symfonyday_collage.jpg&#34; alt=&#34;Symfony Day 2016&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/symfonyday_collage.jpg&#34; alt=&#34;Symfony Day 2016&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;php7-and-rich-domain-model&#34;&gt;PHP7 and Rich Domain Model&lt;/h2&gt;
 
@@ -596,15 +596,15 @@ It’s important to note that this is not a complete replacement for DOM manipul
     
     <item>
       <title>MessagePack: an alternative to JSON?</title>
-      <link>http://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</link>
+      <link>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</link>
       <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
+      <guid>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
       <description>
 
 &lt;p&gt;When we talk about data interchange in web applications, &lt;strong&gt;&lt;a href=&#34;http://www.json.org/&#34;&gt;JSON&lt;/a&gt;&lt;/strong&gt; is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist &lt;a href=&#34;https://www.w3.org/XML/&#34;&gt;XML&lt;/a&gt; (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like &lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;Google’s &lt;strong&gt;Protocol Buffers&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://avro.apache.org/&#34;&gt;Apache &lt;strong&gt;Avro&lt;/strong&gt;&lt;/a&gt; or &lt;strong&gt;&lt;a href=&#34;http://msgpack.org/&#34;&gt;MessagePack&lt;/a&gt;&lt;/strong&gt;. In being thorough, we should also mention &lt;a href=&#34;http://www.gzip.org/&#34;&gt;gzip&lt;/a&gt; JSON compression (sometimes called &amp;ldquo;&lt;em&gt;JSONC&lt;/em&gt;&amp;rdquo;), and &lt;a href=&#34;http://bsonspec.org/&#34;&gt;BSON&lt;/a&gt;, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we&amp;rsquo;ll discuss MessagePack in depth.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/message-pack-an-alternative-to-json/msgpack.png&#34; alt=&#34;MessagePack&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/message-pack-an-alternative-to-json/msgpack.png&#34; alt=&#34;MessagePack&#34; /&gt;
 &lt;em&gt;JSON Vs MessagePack (source: &lt;a href=&#34;http://msgpack.org/&#34;&gt;msgpack.org&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;what-is-messagepack&#34;&gt;What is MessagePack?&lt;/h1&gt;
@@ -735,13 +735,13 @@ benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
     
     <item>
       <title>A new hope for the JVM: Kotlin</title>
-      <link>http://engineering.facile.it/blog/eng/kotlin-intro/</link>
+      <link>https://engineering.facile.it/blog/eng/kotlin-intro/</link>
       <pubDate>Mon, 17 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/kotlin-intro/</guid>
+      <guid>https://engineering.facile.it/blog/eng/kotlin-intro/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/kotlin-intro/logo_Kotlin.svg&#34; alt=&#34;Kotlin&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/kotlin-intro/logo_Kotlin.svg&#34; alt=&#34;Kotlin&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;premise&#34;&gt;Premise&lt;/h2&gt;
 
@@ -754,7 +754,7 @@ Google is addressing the problem with its new compiler &lt;a href=&#34;https://s
 
 &lt;h2 id=&#34;a-new-hope&#34;&gt;A new hope&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/kotlin-intro/kotlin_helloworld.png&#34; alt=&#34;Kotlin Hello World!&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/kotlin-intro/kotlin_helloworld.png&#34; alt=&#34;Kotlin Hello World!&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Back in 2011 the JetBrains team (the guys behind IntelliJ and so Android Studio) unveiled &lt;a href=&#34;https://kotlinlang.org/&#34;&gt;Kotlin&lt;/a&gt;, a new programming language that targets the JVM (and can also be compiled to JavaScript).
 Kotlin is a statically-typed language that combines Object Oriented and functional features enforcing no particular philosophy of programming, and it introduces a whole new set of concepts and tools that helps making the code &lt;strong&gt;safer, cleaner and much more readable&lt;/strong&gt;.
@@ -808,10 +808,10 @@ So why not do it with a language that allows us to continue working on projects 
     
     <item>
       <title>Disclaimer</title>
-      <link>http://engineering.facile.it/ita/disclaimer/</link>
+      <link>https://engineering.facile.it/ita/disclaimer/</link>
       <pubDate>Wed, 21 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/ita/disclaimer/</guid>
+      <guid>https://engineering.facile.it/ita/disclaimer/</guid>
       <description>&lt;p&gt;Questo blog non rappresenta una testata giornalistica e viene aggiornato senza alcuna periodicità. Non può pertanto considerarsi un prodotto editoriale ai sensi della Legge n. 62 del 07/03/2001.&lt;/p&gt;
 
 &lt;p&gt;Facile.it S.p.A. non ha e non si assume alcuna responsabilità per l&amp;rsquo;attualità, la correttezza, la completezza o la qualità delle informazioni messe a disposizione, ivi compresi i contenuti dei siti collegati e/o citati.&lt;/p&gt;
@@ -822,10 +822,10 @@ So why not do it with a language that allows us to continue working on projects 
     
     <item>
       <title>Event-driven serverless applications</title>
-      <link>http://engineering.facile.it/blog/eng/event-driven-serverless-applications/</link>
+      <link>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</link>
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
+      <guid>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
       <description>
 
 &lt;p&gt;If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 &lt;strong&gt;Amazon Web Services&lt;/strong&gt; (AWS) announced a new service called &amp;ldquo;&lt;strong&gt;&lt;a href=&#34;https://aws.amazon.com/lambda/&#34;&gt;Lambda&lt;/a&gt;&lt;/strong&gt;&amp;rdquo;, that allows us to focus on business logic and not on infrastructure.&lt;/p&gt;
@@ -834,7 +834,7 @@ So why not do it with a language that allows us to continue working on projects 
 
 &lt;p&gt;As reported on their website: « &lt;em&gt;AWS Lambda is a serverless compute service that runs your code highly-available in the cloud in response to events and it automatically performs all the administration of the compute resources for you&lt;/em&gt; ». In the previous sentence is condensed all the power of Lambda, that we can summarize with the following key concepts: &lt;strong&gt;&lt;a href=&#34;#serverless-architecture&#34;&gt;serverless architecture&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;#high-availability&#34;&gt;high-availability&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;#event-driven&#34;&gt;event-driven&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href=&#34;#zero-administration&#34;&gt;zero administration&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/event-driven-serverless-applications/aws-lambda-key-concepts.png&#34; alt=&#34;AWS Lambda key concepts&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/event-driven-serverless-applications/aws-lambda-key-concepts.png&#34; alt=&#34;AWS Lambda key concepts&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;serverless-architecture&#34;&gt;Serverless architecture&lt;/h2&gt;
 
@@ -890,7 +890,7 @@ More about event-driven programming &lt;a href=&#34;https://en.wikipedia.org/wik
 &lt;li&gt;&lt;code&gt;DryRun&lt;/code&gt;: it&amp;rsquo;s used to verify the access to a function without running it.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/event-driven-serverless-applications/synchronous-vs-asynchronous-behaviour.png&#34; alt=&#34;Synchronous vs asynchronous behaviour&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/event-driven-serverless-applications/synchronous-vs-asynchronous-behaviour.png&#34; alt=&#34;Synchronous vs asynchronous behaviour&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;lambda-alternatives&#34;&gt;Lambda alternatives&lt;/h1&gt;
 
@@ -906,10 +906,10 @@ More about event-driven programming &lt;a href=&#34;https://en.wikipedia.org/wik
     
     <item>
       <title>How PHP 7 &amp; TDD helped me sleep better</title>
-      <link>http://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
+      <link>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
       <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
+      <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
       <description>
 
 &lt;h1 id=&#34;the-enemies-of-programming&#34;&gt;The enemies of programming&lt;/h1&gt;
@@ -917,7 +917,7 @@ More about event-driven programming &lt;a href=&#34;https://en.wikipedia.org/wik
 &lt;p&gt;As many of you will agree with me, &lt;strong&gt;sleep deprivation&lt;/strong&gt; is the enemy of programming.&lt;br /&gt;
 Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;/strong&gt;.
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;a href=&#34;http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/&#34;&gt;&lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/interruption.png&#34; alt=&#34;Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)&#34; /&gt;&lt;/a&gt;
+    &lt;a href=&#34;http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/&#34;&gt;&lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/interruption.png&#34; alt=&#34;Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)&#34; /&gt;&lt;/a&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.&lt;/p&gt;
@@ -928,7 +928,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;Almost half a year ago &lt;strong&gt;I became a dad&lt;/strong&gt;. It has been great, and you also get some unexpected perks! For example, my colleagues got me this gift for my son:
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg&#34; alt=&#34;A blue elePHPant!&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg&#34; alt=&#34;A blue elePHPant!&#34; /&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;So, we can say that his future is pretty clear&amp;hellip; But don&amp;rsquo;t say this to my wife!&lt;/p&gt;
@@ -951,7 +951,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;The first choice that I am pretty satisfied about is &lt;strong&gt;automatic testing&lt;/strong&gt;: I already knew the advantages of doing tests and Test Driven Development, but in the previous project that practice was not introduced from the start, so not all the codebase was covered, and we couldn&amp;rsquo;t (or wouldn&amp;rsquo;t?) do TDD 100% of the time.&lt;/p&gt;
 
-&lt;p&gt;In this case instead &lt;strong&gt;I wanted to write nearly everything with TDD&lt;/strong&gt;, and keep a &lt;strong&gt;very high threshold for the minimum coverage&lt;/strong&gt; achieved through automatic testing. Right now I&amp;rsquo;m sitting on a ~92% test coverage, and I feel proud about it. This wasn&amp;rsquo;t a mere &amp;ldquo;let&amp;rsquo;s hit 100%!&amp;rdquo; mindless goal (&lt;a href=&#34;http://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/&#34;&gt;since it&amp;rsquo;s pointless&lt;/a&gt;), but it fueled &lt;strong&gt;a positive feedback cycle&lt;/strong&gt; instead: the more I used TDD in writing new classes, the more the coverage rose and stayed high; at the same time, I found myself inspecting the coverage reports to find missing spots, and that allowed me to discover many edge-cases that I didn&amp;rsquo;t test and should have been.&lt;/p&gt;
+&lt;p&gt;In this case instead &lt;strong&gt;I wanted to write nearly everything with TDD&lt;/strong&gt;, and keep a &lt;strong&gt;very high threshold for the minimum coverage&lt;/strong&gt; achieved through automatic testing. Right now I&amp;rsquo;m sitting on a ~92% test coverage, and I feel proud about it. This wasn&amp;rsquo;t a mere &amp;ldquo;let&amp;rsquo;s hit 100%!&amp;rdquo; mindless goal (&lt;a href=&#34;https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/&#34;&gt;since it&amp;rsquo;s pointless&lt;/a&gt;), but it fueled &lt;strong&gt;a positive feedback cycle&lt;/strong&gt; instead: the more I used TDD in writing new classes, the more the coverage rose and stayed high; at the same time, I found myself inspecting the coverage reports to find missing spots, and that allowed me to discover many edge-cases that I didn&amp;rsquo;t test and should have been.&lt;/p&gt;
 
 &lt;p&gt;Of course, I still left some parts without coverage or specific tests, since it was pointless to test them (e.g. Doctrine entities), while I covered some parts multiple times, since they were &lt;strong&gt;critical paths&lt;/strong&gt; inside my application.&lt;/p&gt;
 
@@ -965,7 +965,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;The second good choice was &lt;strong&gt;PHP 7&lt;/strong&gt;: among the reasons behind it as the language version of choice for this project were the &lt;a href=&#34;http://php.net/manual/en/migration70.new-features.php&#34;&gt;two main new features&lt;/a&gt; introduced: &lt;strong&gt;scalar types&lt;/strong&gt; and &lt;strong&gt;return type declarations&lt;/strong&gt;.
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg&#34; alt=&#34;Return types, return types everywhere!&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg&#34; alt=&#34;Return types, return types everywhere!&#34; /&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;Before Facile.it, I worked as C++ developer, and oh boy! did I miss scalars and return types!&lt;/p&gt;
@@ -994,15 +994,15 @@ $this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
     
     <item>
       <title>Facile.it devs @ PhpDay 2016</title>
-      <link>http://engineering.facile.it/blog/eng/php-day-2016/</link>
+      <link>https://engineering.facile.it/blog/eng/php-day-2016/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/php-day-2016/</guid>
+      <guid>https://engineering.facile.it/blog/eng/php-day-2016/</guid>
       <description>
 
 &lt;p&gt;Almost like a nice tradition, we went to the &lt;strong&gt;&lt;a href=&#34;http://2016.phpday.it/&#34;&gt;PHP Day conference&lt;/a&gt;&lt;/strong&gt; this year as well; this time too it was held in Verona, on &lt;strong&gt;May 13th and 14th&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;http://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;
+&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;
 
 &lt;p&gt;In this way, we hope to give a brief glimpse of what we experienced to fellow developers that hadn&amp;rsquo;t the opportunity to attend, and to tempt some of you to join conferences like this one or those in the PHP community at large, for your personal and professional growth.&lt;/p&gt;
 
@@ -1100,10 +1100,10 @@ $this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
     
     <item>
       <title>Faster Web with HTTP/2</title>
-      <link>http://engineering.facile.it/blog/eng/faster-web-with-http-2/</link>
+      <link>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</link>
       <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/faster-web-with-http-2/</guid>
+      <guid>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</guid>
       <description>
 
 &lt;p&gt;HTTP is the protocol that powers the Web. It was originally designed in 1996 for transferring and manipulating simple text-based documents (mainly hypertext resources).
@@ -1181,10 +1181,10 @@ RFC 7540 considers the case of HTTP/2 being used on cleartext connections as wel
     
     <item>
       <title>Blog restyling: switching to Hugo and GitHub Pages</title>
-      <link>http://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</link>
+      <link>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</link>
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</guid>
+      <guid>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</guid>
       <description>
 
 &lt;p&gt;As you may have noticed, we went through a bit of a restyling in the last few days, and our blog changed a lot in terms of appearance and structure.
@@ -1250,13 +1250,13 @@ We are very happy with those changes, but the reason behind this transition is n
     
     <item>
       <title>Droidcon It 2016</title>
-      <link>http://engineering.facile.it/blog/eng/droidcon-it-2016/</link>
+      <link>https://engineering.facile.it/blog/eng/droidcon-it-2016/</link>
       <pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/droidcon-it-2016/</guid>
+      <guid>https://engineering.facile.it/blog/eng/droidcon-it-2016/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/droidconit-recap/logo_droidcon_it.png&#34; alt=&#34;Droidcon It&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/droidconit-recap/logo_droidcon_it.png&#34; alt=&#34;Droidcon It&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The third edition of &lt;a href=&#34;http://it.droidcon.com/2016/&#34;&gt;Droidcon IT&lt;/a&gt; was, as expected, a great conference, full of interesting talks and people coming from all over the world. We saw a lot of GDEs (&lt;a href=&#34;https://developers.google.com/experts/all/technology/android&#34;&gt;Google Developer Expert&lt;/a&gt;) and also some Developer Advocates from Google, although it was not organized directly by the company. Back in March the Android team surprisingly released the brand new &lt;strong&gt;N Developer Preview&lt;/strong&gt; earlier than expected, so this year we were already able to talk about the new features in Android N and analyze them. Furthermore, there was talk of &lt;strong&gt;Kotlin&lt;/strong&gt;, &lt;strong&gt;RxJava&lt;/strong&gt; and a lot of other useful and interesting topics.&lt;/p&gt;
 
@@ -1280,7 +1280,7 @@ Wojtek went through all the new improvements of the platform, both from user&amp
 
 &lt;p&gt;The most interesting and encouraging aspect coming out from the keynote and the N Preview release itself, is the fact that Google is, finally, trying to fix the Android updates issue.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/droidconit-recap/n-preview-updates.png&#34; alt=&#34;N Preview Updates&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/droidconit-recap/n-preview-updates.png&#34; alt=&#34;N Preview Updates&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Not only the release of the new OS preview six months before its public release — instead of three — is really useful for third party developers to update apps to support new APIs, but hopefully it will also help phone manufactures to keep their custom Android implementations more aligned with the stock version release cycle. This will result in a better user experience and, more importantly to us, a better developer experience, making it closer to the iOS world where developers are not required to support five years old OS versions.&lt;/p&gt;
 
@@ -1377,13 +1377,13 @@ They explained also how they use a &lt;strong&gt;C++ library&lt;/strong&gt; comm
     
     <item>
       <title>Json Web Token</title>
-      <link>http://engineering.facile.it/blog/eng/json-web-tokens/</link>
+      <link>https://engineering.facile.it/blog/eng/json-web-tokens/</link>
       <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/json-web-tokens/</guid>
+      <guid>https://engineering.facile.it/blog/eng/json-web-tokens/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/json-web-tokens/logo.svg&#34; alt=&#34;JWT&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/json-web-tokens/logo.svg&#34; alt=&#34;JWT&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability.
 I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy.
@@ -1475,10 +1475,10 @@ As an example, if on authentication I want to be sure that the token is issued b
     
     <item>
       <title>Careers</title>
-      <link>http://engineering.facile.it/ita/careers/</link>
+      <link>https://engineering.facile.it/ita/careers/</link>
       <pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/ita/careers/</guid>
+      <guid>https://engineering.facile.it/ita/careers/</guid>
       <description>
 
 &lt;h3 id=&#34;web-developer&#34;&gt;Web Developer&lt;/h3&gt;

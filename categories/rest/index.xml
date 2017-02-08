@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>REST on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/rest/</link>
+    <link>https://engineering.facile.it/categories/rest/</link>
     <description>Recent content in REST on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Jan 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/rest/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/rest/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>GraphQL: an introduction</title>
-      <link>http://engineering.facile.it/blog/eng/graphql-an-introduction/</link>
+      <link>https://engineering.facile.it/blog/eng/graphql-an-introduction/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/graphql-an-introduction/</guid>
+      <guid>https://engineering.facile.it/blog/eng/graphql-an-introduction/</guid>
       <description>
 
 &lt;h2 id=&#34;the-lesson-we-learned-with-rest&#34;&gt;The lesson we learned with REST&lt;/h2&gt;
@@ -401,10 +401,10 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
     
     <item>
       <title>Introduzione al tracciamento di eventi lato server</title>
-      <link>http://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</link>
+      <link>https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</link>
       <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</guid>
+      <guid>https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</guid>
       <description>
 
 &lt;p&gt;L’adozione di strategie &lt;em&gt;DevOps&lt;/em&gt; ha portato negli ultimi anni ad incrementare le aree coperte da &lt;strong&gt;tool di monitoring&lt;/strong&gt; in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei &lt;strong&gt;server&lt;/strong&gt; o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le &lt;strong&gt;applicazioni&lt;/strong&gt; stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc. ecc.).&lt;/p&gt;

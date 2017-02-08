@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/python/</link>
+    <link>https://engineering.facile.it/categories/python/</link>
     <description>Recent content in Python on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Sep 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>WAMP, Web Application Messaging Protocol.. e PHP!</title>
-      <link>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
+      <link>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
+      <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
       <description>
 
 &lt;p&gt;Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno &lt;strong&gt;scambio dati&lt;/strong&gt; in &lt;strong&gt;due direzioni&lt;/strong&gt;, &lt;strong&gt;efficiente&lt;/strong&gt; e a &lt;strong&gt;bassa latenza&lt;/strong&gt;, ha determinato l’ascesa negli ultimi anni di &lt;strong&gt;soluzioni basate su &lt;a href=&#34;https://www.websocket.org/&#34; target=&#34;_blank&#34;&gt;WebSocket&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -276,10 +276,10 @@ la libreria &lt;a href=&#34;http://autobahn.ws/js/&#34; target=&#34;_blank&#34;&
     
     <item>
       <title>Intelligenza artificiale: algoritmo A*</title>
-      <link>http://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</link>
+      <link>https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</link>
       <pubDate>Tue, 12 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</guid>
+      <guid>https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</guid>
       <description>
 
 &lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;
@@ -310,14 +310,14 @@ Con un&amp;rsquo;&lt;a href=&#34;http://www.okpedia.it/euristica_ammissibile&#34
 Un&amp;rsquo;euristica è ammissibile quando l&amp;rsquo;errore di stima non è mai in eccesso. Un esempio è la distanza in linea d&amp;rsquo;aria tra due punti su una mappa.
 In termini matematici una funzione euristica h è ammissibile se:
 &lt;div style=&#34;text-align: center; margin: 0 0 2em 0;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif&#34; alt=&#34;&#34; /&gt;
     &lt;!-- \forall x \in V : h(s, x) \leq g(s, x) --&gt;
 &lt;/div&gt;
 Dove V è l&amp;rsquo;insieme dei nodi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.&lt;/p&gt;
 
 &lt;p&gt;La funzione euristica si dice monotòna o consistente se:
 &lt;div style=&#34;text-align: center; margin: 0 0 2em 0;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif&#34; alt=&#34;&#34; /&gt;
     &lt;!-- \forall (x, y) \in E : h(s, x) \leq g(x, y) + h(s, y) --&gt;
 &lt;/div&gt;
 Dove E è l&amp;rsquo;insieme degli archi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.&lt;/p&gt;
@@ -340,13 +340,13 @@ Esso tuttavia non è &lt;em&gt;&lt;a href=&#34;https://it.wikipedia.org/wiki/Alg
 &lt;p&gt;Nel corso dell&amp;rsquo;esecuzione, ad ogni nodo vengono associati più valori: &lt;em&gt;gScore, hScore, fScore.&lt;/em&gt;
 In termini matematici, dato il nodo corrente n, il nodo di partenza p e il nodo soluzione s, si deifiniscono i valori:
 &lt;div style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/g-score.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/g-score.gif&#34; alt=&#34;&#34; /&gt;
 &lt;/div&gt;
 &lt;div style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/h-score.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/h-score.gif&#34; alt=&#34;&#34; /&gt;
 &lt;/div&gt;
 &lt;div style=&#34;text-align: center; margin: 0 0 2em 0;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/f-score.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/f-score.gif&#34; alt=&#34;&#34; /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
 &lt;p&gt;La &lt;strong&gt;funzione g&lt;/strong&gt; calcola il &lt;strong&gt;costo effettivo&lt;/strong&gt; del percorso che separa i nodi p (partenza) e n (attuale).
@@ -398,7 +398,7 @@ end function
 
 &lt;p&gt;La funzione euristica utilizzata è la &lt;a href=&#34;http://it.wikipedia.org/wiki/Geometria_del_taxi&#34;&gt;Distanza di Manhattan&lt;/a&gt;, definita nel modo seguente:
 &lt;div style=&#34;text-align: center; margin: 0 0 2em 0;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/distanza-di-manhattan.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/distanza-di-manhattan.gif&#34; alt=&#34;&#34; /&gt;
     &lt;!-- man(p, p&#39;) = \sum_{i=1}^{15} |x_i - x&#39;_i| + |y_i - y&#39;_i| --&gt;
 &lt;/div&gt;
 Essa calcola, per ogni casella, la quantità minima di spostamenti necessari per arrivare dalla posizione p alla posizione p&amp;rsquo;.

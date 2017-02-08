@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ita on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/ita/</link>
+    <link>https://engineering.facile.it/ita/</link>
     <description>Recent content in Ita on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Sep 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/ita/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/ita/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Disclaimer</title>
-      <link>http://engineering.facile.it/ita/disclaimer/</link>
+      <link>https://engineering.facile.it/ita/disclaimer/</link>
       <pubDate>Wed, 21 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/ita/disclaimer/</guid>
+      <guid>https://engineering.facile.it/ita/disclaimer/</guid>
       <description>&lt;p&gt;Questo blog non rappresenta una testata giornalistica e viene aggiornato senza alcuna periodicità. Non può pertanto considerarsi un prodotto editoriale ai sensi della Legge n. 62 del 07/03/2001.&lt;/p&gt;
 
 &lt;p&gt;Facile.it S.p.A. non ha e non si assume alcuna responsabilità per l&amp;rsquo;attualità, la correttezza, la completezza o la qualità delle informazioni messe a disposizione, ivi compresi i contenuti dei siti collegati e/o citati.&lt;/p&gt;
@@ -25,10 +25,10 @@
     
     <item>
       <title>Careers</title>
-      <link>http://engineering.facile.it/ita/careers/</link>
+      <link>https://engineering.facile.it/ita/careers/</link>
       <pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/ita/careers/</guid>
+      <guid>https://engineering.facile.it/ita/careers/</guid>
       <description>
 
 &lt;h3 id=&#34;web-developer&#34;&gt;Web Developer&lt;/h3&gt;
@@ -105,11 +105,11 @@
     
     <item>
       <title>Chi siamo</title>
-      <link>http://engineering.facile.it/ita/chi-siamo/</link>
+      <link>https://engineering.facile.it/ita/chi-siamo/</link>
       <pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/ita/chi-siamo/</guid>
-      <description>&lt;p&gt;This page is also available in &lt;a href=&#34;http://engineering.facile.it/eng/who-we-are&#34;&gt;english&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://engineering.facile.it/ita/chi-siamo/</guid>
+      <description>&lt;p&gt;This page is also available in &lt;a href=&#34;https://engineering.facile.it/eng/who-we-are&#34;&gt;english&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Facile.it ha un nutrito e appassionato gruppo di sviluppatori. I progetti del gruppo Facile.it si basano su PHP fin dal 2008, più il tempo passa più nuove tecnologie entrano a far parte del Know How aziendale.
 Questo Blog permette ai nostri sviluppatori di condividere consigli ed esperienze dirette con le tecnologie che usano quotidianamente.&lt;/p&gt;

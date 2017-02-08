@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Italiano on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/italiano/</link>
+    <link>https://engineering.facile.it/categories/italiano/</link>
     <description>Recent content in Italiano on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Dec 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/italiano/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/italiano/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Puli: Universal Packages for PHP</title>
-      <link>http://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</link>
+      <link>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</link>
       <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</guid>
+      <guid>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</guid>
       <description>
 
 &lt;h2 id=&#34;composer-e-l-ecosistema-php&#34;&gt;Composer e l&amp;rsquo;ecosistema PHP&lt;/h2&gt;
@@ -256,10 +256,10 @@ Per approfondire, la documentazione ufficiale è molto chiara e completa ed è d
     
     <item>
       <title>Codice riusabile: un primer</title>
-      <link>http://engineering.facile.it/blog/ita/codice-riusabile-un-primer/</link>
+      <link>https://engineering.facile.it/blog/ita/codice-riusabile-un-primer/</link>
       <pubDate>Wed, 09 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/codice-riusabile-un-primer/</guid>
+      <guid>https://engineering.facile.it/blog/ita/codice-riusabile-un-primer/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;http://engineering.facile.it/optionals-in-objective-c-ita/&#34;&gt;L&amp;rsquo;ultima volta&lt;/a&gt; abbiamo visto una possibile implementazione del tipo &lt;a href=&#34;https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330&#34;&gt;Optional&lt;/a&gt; in Objective-C; l&amp;rsquo;obiettivo primario dell&amp;rsquo;articolo era quello di importare in Objective-C uno strumento frequentemente utilizzato in Swift, ma usare una classe come &lt;code&gt;Optional&lt;/code&gt; può essere considerato un&amp;rsquo;applicazione di un concetto molto più generale: il &lt;strong&gt;riutilizzo del codice&lt;/strong&gt;. In effetti, &lt;code&gt;Optional&lt;/code&gt; non è legato a un particolare dominio, e può essere riutilizzato più e più volte in molti progetti: questo è esattamente ciò che accade in Swift. Ma a pensarci bene, questo è ciò che accade per una grande varietà di &lt;em&gt;classi&lt;/em&gt; in Objective-C (e di &lt;em&gt;tipi&lt;/em&gt; in Swift): ad esempio, &lt;code&gt;NSArray&lt;/code&gt; e &lt;code&gt;Array&lt;/code&gt; sono entrambi costrutti che espongono una specifica interfaccia, possiedono una certa implementazione, e vengono riutilizzati continuamente in metodi e funzioni. &lt;code&gt;NSArray&lt;/code&gt; e &lt;code&gt;Array&lt;/code&gt; non sono legati a un particolare dominio, e possiedono due importanti caratteristiche:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -444,10 +444,10 @@ sender.signal.send(20)
     
     <item>
       <title>Facile.it devs @ Codemotion Milan 2015</title>
-      <link>http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</link>
+      <link>https://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</link>
       <pubDate>Thu, 26 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</guid>
+      <guid>https://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</guid>
       <description>
 
 &lt;p&gt;L&amp;rsquo;appuntamento con il &lt;a href=&#34;http://milan2015.codemotionworld.com&#34;&gt;Codemotion&lt;/a&gt; di quest&amp;rsquo;anno a Milano è stato particolarmente &lt;strong&gt;ricco&lt;/strong&gt;: tante tracce, moltissimi contenuti suddivisi tra talk tecnici, workshop e keynote, e alcuni ospiti illustri, tra cui il celebre &lt;a href=&#34;https://twitter.com/rasmus&#34;&gt;Rasmus Lerdorf&lt;/a&gt;, creatore del linguaggio &lt;strong&gt;PHP&lt;/strong&gt;. Come già fatto per il &lt;a href=&#34;http://engineering.facile.it/php-day-2015/&#34;&gt;PHP Day 2015&lt;/a&gt;, proponiamo le nostre impressioni sulla conferenza, citando i talk che ci hanno colpito maggiormente: la scelta dei talk è basata sul gusto personale dei vari membri della redazione di Facile.it Engineering, e le considerazioni esposte non vanno lette come recensioni, ma come riflessioni di vario genere sulle tematiche trattate, volte a stimolare nei lettori l&amp;rsquo;interesse a &lt;strong&gt;partecipare&lt;/strong&gt; a conferenze come il Codemotion.&lt;/p&gt;
@@ -702,7 +702,7 @@ WASM non sostituirà JavaScript in quanto quest&amp;rsquo;ultimo, tramite compil
 &lt;li&gt;day 2 - 14:10 - 14:50 - Languages track&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Da questo talk di &lt;strong&gt;Rasmus Lerdorf&lt;/strong&gt; (creatore del linguaggio PHP) ci si sarebbe potuto aspettare una semplice lista delle nuove feature di PHP 7 (di cui abbiamo già parlato in &lt;a href=&#34;http://engineering.facile.it/php-7-overview&#34;&gt;questo post&lt;/a&gt;, in realtà però il relatore si è spinto molto più in là mostrando alcuni &lt;strong&gt;benchmark di comparazione delle performance&lt;/strong&gt; tra PHP 7, PHP 5 e HHVM 3.10, nei quali PHP 7 stracciava PHP 5 e teneva egregiamente il passo con HHVM 3.10, per poi dare una semplice ma approfondita overview rispetto ad alcune parti del lavoro fatto per ottenere quello che oggi è PHP 7 in termini di &lt;strong&gt;performance e feature&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Da questo talk di &lt;strong&gt;Rasmus Lerdorf&lt;/strong&gt; (creatore del linguaggio PHP) ci si sarebbe potuto aspettare una semplice lista delle nuove feature di PHP 7 (di cui abbiamo già parlato in &lt;a href=&#34;https://engineering.facile.it/php-7-overview&#34;&gt;questo post&lt;/a&gt;, in realtà però il relatore si è spinto molto più in là mostrando alcuni &lt;strong&gt;benchmark di comparazione delle performance&lt;/strong&gt; tra PHP 7, PHP 5 e HHVM 3.10, nei quali PHP 7 stracciava PHP 5 e teneva egregiamente il passo con HHVM 3.10, per poi dare una semplice ma approfondita overview rispetto ad alcune parti del lavoro fatto per ottenere quello che oggi è PHP 7 in termini di &lt;strong&gt;performance e feature&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Rasmus ha parlato del lungo lavoro di micro ottimizzazioni e di &lt;strong&gt;refactoring&lt;/strong&gt; sulla codebase, soprattutto per quanto riguarda l&amp;rsquo;utilizzo della memoria da parte di HashTable e Zval che ora, nella maggior parte dei casi, è stato più che dimezzato.&lt;/p&gt;
 
@@ -714,10 +714,10 @@ WASM non sostituirà JavaScript in quanto quest&amp;rsquo;ultimo, tramite compil
     
     <item>
       <title>#FacileHack 2015</title>
-      <link>http://engineering.facile.it/blog/ita/facilehack-2015/</link>
+      <link>https://engineering.facile.it/blog/ita/facilehack-2015/</link>
       <pubDate>Wed, 25 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/facilehack-2015/</guid>
+      <guid>https://engineering.facile.it/blog/ita/facilehack-2015/</guid>
       <description>&lt;p&gt;Sono stati due giorni ricchi di emozioni quelli trascorsi con i partecipanti di #FacileHack, il primo hackathon organizzato da Facile.it.
 Abbiamo visto impegno nella competizione, talenti diversi e complementari tra loro, passione per la tecnologia, serietà e molto caffè&amp;hellip; momenti che vogliamo rivivere insieme a voi con questo video.&lt;/p&gt;
 
@@ -731,10 +731,10 @@ Abbiamo visto impegno nella competizione, talenti diversi e complementari tra lo
     
     <item>
       <title>Optionals in Objective-C</title>
-      <link>http://engineering.facile.it/blog/ita/optionals-in-objective-c/</link>
+      <link>https://engineering.facile.it/blog/ita/optionals-in-objective-c/</link>
       <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/optionals-in-objective-c/</guid>
+      <guid>https://engineering.facile.it/blog/ita/optionals-in-objective-c/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Objective-C vivrà ancora per molto&lt;/strong&gt;. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&amp;rsquo;:&lt;/p&gt;
@@ -1250,10 +1250,10 @@ NS_ASSUME_NONNULL_END
     
     <item>
       <title>Da sviluppo a produzione con Docker e AWS Elastic Beanstalk</title>
-      <link>http://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</link>
+      <link>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
+      <guid>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
       <description>
 
 &lt;h2 id=&#34;in-locale-funzionava&#34;&gt;In locale funzionava&lt;/h2&gt;
@@ -1276,7 +1276,7 @@ NS_ASSUME_NONNULL_END
 &lt;p&gt;It works on my machine &lt;em&gt;(in locale funzionava)&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Potreste pensare che avrei potuto ottenere gli stessi risultati usando Vagrant o una classica macchina virtuale, ma questa soluzione non mi avrebbe dato i benefici di avere un layer di astrazione aggiuntivo senza dovermi preoccupare dell&amp;rsquo;overhead. Infatti posso avere molti più container che girano su una singola macchina di quelli che avrei avuto con la semplice virtualizzazione.&lt;/p&gt;
 
@@ -1352,7 +1352,7 @@ grunt dev
 
 &lt;p&gt;È ora di collegarci all&amp;rsquo;ip del nostro container nginx!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Yay! Il nostro ambiente di sviluppo è in esecuzione!&lt;/p&gt;
 
@@ -1431,16 +1431,16 @@ REDIS_PORT
 
 &lt;p&gt;Ora potete risparmiare un sacco di tempo automatizzando il vostro workflow con docker ed ottenere un ambiente di sviluppo funzionante, auto-contenuto e condivisibile, pur mantenendolo molto simile alla vostra stabile ed efficiente infrastruttura in esecuzione nell&amp;rsquo;ambiente di produzione, sulle cui risorse avete pieno controllo.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Paraunit: test paralleli, Doctrine e le fixture</title>
-      <link>http://engineering.facile.it/blog/ita/paraunit/</link>
+      <link>https://engineering.facile.it/blog/ita/paraunit/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/paraunit/</guid>
+      <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;Questo articolo è la sintesi di un talk presentato al &lt;a href=&#34;http://2015.symfonyday.it/&#34;&gt;SymfonyDay 2015&lt;/a&gt;; potete trovare le slide &lt;a href=&#34;http://jean85.github.io/slides/2015-10-paraunit-symfonyday/index.html&#34;&gt;qui&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
@@ -1550,7 +1550,7 @@ Per realizzarla nella sua totalità, abbiamo sviluppato un test-case per PHPUnit
 
 &lt;p&gt;Per darvi un&amp;rsquo;idea di quanto possa essere veloce Paraunit rispetto alla normale esecuzione con PHPUnit, ho misurato il tempo di esecuzione della nostra test suite funzionale, che è sufficientemente ampia (261 classi, 1568 metodi):&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/paraunit/grafico.png&#34; alt=&#34;Grafico&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/paraunit/grafico.png&#34; alt=&#34;Grafico&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Come potete vedere, Paraunit esegue l&amp;rsquo;intera test suite in soli &lt;strong&gt;6 minuti e 6 secondi&lt;/strong&gt;, mentre PHPUnit ci metterebbe &lt;strong&gt;oltre 40 minuti!&lt;/strong&gt;&lt;/p&gt;
 
@@ -1582,10 +1582,10 @@ Tra gli sviluppi futuri spero di poter realizzare:&lt;/p&gt;
     
     <item>
       <title>Protezione di dati sensibili usando la crittografia</title>
-      <link>http://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</link>
+      <link>https://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</link>
       <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</guid>
+      <guid>https://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</guid>
       <description>
 
 &lt;p&gt;La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&amp;rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.&lt;/p&gt;
@@ -1617,7 +1617,7 @@ Una qualsiasi falla, sia hardware che software, per quanto limitata nel tempo po
 &lt;p&gt;Questa tipologia di algoritmi si basa sull&amp;rsquo;uso di chiavi di cifratura dette &lt;strong&gt;simmetriche&lt;/strong&gt; che permettono di cifrare e decifrare dati &lt;strong&gt;utilizzando la medesima chiave crittografica&lt;/strong&gt;.
 Un esempio è &lt;a href=&#34;https://en.wikipedia.org/wiki/Advanced_Encryption_Standard&#34;&gt;AES&lt;/a&gt; (Advanced Encryption Standard), evoluzione dell&amp;rsquo;algoritmo &lt;a href=&#34;https://en.wikipedia.org/wiki/Rijndael_key_schedule&#34;&gt;Rijndael&lt;/a&gt; le cui caratteristiche si possono riassumere in un buon livello di sicurezza ed un&amp;rsquo;ottima velocità, sia che venga implementato via hardware che software.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/aes.png&#34; alt=&#34;AES&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/aes.png&#34; alt=&#34;AES&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;algoritmi-asimmetrici&#34;&gt;Algoritmi Asimmetrici&lt;/h3&gt;
 
@@ -1626,7 +1626,7 @@ Il nome deriva dal metodo con il quale le due chiavi devono essere utilizzate. L
 La particolarità che caratterizza queste chiavi è l&amp;rsquo;impossibilità di ricavare, ad esempio, la chiave privata essendo in possesso della chiave pubblica. A meno di particolari exploit dell&amp;rsquo;algoritmo, l&amp;rsquo;unico metodo per ottenere tale chiave è il &lt;strong&gt;brute force&lt;/strong&gt; sui dati stessi.
 In questo caso l&amp;rsquo;esempio per eccellenza è &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_(cryptosystem)&#34;&gt;RSA&lt;/a&gt;, uno standard di fatto nella sicurezza riguardante la trasmissione di dati: è infatti largamente utilizzato per cifrare le comunicazioni che avvengono tra client e server.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/rsa.png&#34; alt=&#34;RSA&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/rsa.png&#34; alt=&#34;RSA&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;la-soluzione-combinando-rsa-e-aes&#34;&gt;La soluzione combinando RSA e AES&lt;/h2&gt;
 
@@ -1660,7 +1660,7 @@ La masterkey scelta sarà importantissima in quanto andrà richiesta ogni qual v
 
 &lt;p&gt;Abbiamo ottenuto un sistema simile a quello visualizzato di seguito:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/system.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/system.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;condividere&#34;&gt;Condividere!&lt;/h3&gt;
 
@@ -1685,10 +1685,10 @@ Inoltre una chiave - che è scelta dell&amp;rsquo;utente - troppo semplice sareb
     
     <item>
       <title>WAMP, Web Application Messaging Protocol.. e PHP!</title>
-      <link>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
+      <link>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
+      <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
       <description>
 
 &lt;p&gt;Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno &lt;strong&gt;scambio dati&lt;/strong&gt; in &lt;strong&gt;due direzioni&lt;/strong&gt;, &lt;strong&gt;efficiente&lt;/strong&gt; e a &lt;strong&gt;bassa latenza&lt;/strong&gt;, ha determinato l’ascesa negli ultimi anni di &lt;strong&gt;soluzioni basate su &lt;a href=&#34;https://www.websocket.org/&#34; target=&#34;_blank&#34;&gt;WebSocket&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -1950,10 +1950,10 @@ la libreria &lt;a href=&#34;http://autobahn.ws/js/&#34; target=&#34;_blank&#34;&
     
     <item>
       <title>No Country For If Else</title>
-      <link>http://engineering.facile.it/blog/ita/no-country-for-if-else/</link>
+      <link>https://engineering.facile.it/blog/ita/no-country-for-if-else/</link>
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/no-country-for-if-else/</guid>
+      <guid>https://engineering.facile.it/blog/ita/no-country-for-if-else/</guid>
       <description>
 
 &lt;p&gt;C&amp;rsquo;è un &lt;strong&gt;ospite indesiderato&lt;/strong&gt; che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del &lt;strong&gt;codice già esistente&lt;/strong&gt;, e dobbiamo tener conto della sua complessità man mano che la &lt;em&gt;code base&lt;/em&gt; aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:&lt;/p&gt;
@@ -2307,10 +2307,10 @@ func &amp;lt;*&amp;gt; &amp;lt;A,B&amp;gt; (left: A -&amp;gt; B, right: A) -&amp
     
     <item>
       <title>Php Summer Camp 2015</title>
-      <link>http://engineering.facile.it/blog/ita/php-summer-camp-2015/</link>
+      <link>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</link>
       <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-summer-camp-2015/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</guid>
       <description>
 
 &lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;
@@ -2525,10 +2525,10 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
     
     <item>
       <title>Si fa presto a dire Docker (e OS X)</title>
-      <link>http://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</link>
+      <link>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</link>
       <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</guid>
+      <guid>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</guid>
       <description>
 
 &lt;p&gt;Di guide per l&amp;rsquo;installazione di Docker su OS X è pieno il web, ma &lt;strong&gt;le soluzioni sono molte&lt;/strong&gt; e spesso scegliere non è facile.
@@ -2604,10 +2604,10 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
     
     <item>
       <title>MiniIAD Vimercate 2015: reportage</title>
-      <link>http://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</link>
+      <link>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</link>
       <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</guid>
+      <guid>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</guid>
       <description>
 
 &lt;p&gt;Lo scorso 23 Maggio 2015, si è tenuto a Vimercate, presso la sede di Alcatel-Lucent all&amp;rsquo;Energy Park, il &lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/&#34;&gt;Mini Italian Agile Day&lt;/a&gt;.&lt;/p&gt;
@@ -2624,7 +2624,7 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
 
 &lt;p&gt;Il keynote è di &lt;a href=&#34;https://twitter.com/ixhd&#34;&gt;Cliff Hazell&lt;/a&gt;, un ragazzo che fa l&amp;rsquo;agile coach in Spotify. Ha illustrato una &lt;strong&gt;tecnica di visualizzazione&lt;/strong&gt; della conoscenza e dei processi su una grande parete con dei post-it. Un qualcosa che mi ha ricordato l&amp;rsquo;&lt;a href=&#34;http://ziobrando.blogspot.it/2013/11/introducing-event-storming.html&#34;&gt;event storming&lt;/a&gt; che ho visto raccontare da &lt;a href=&#34;http://www.avanscoperta.it/it/author/a-brandolini/&#34;&gt;Alberto Brandolini&lt;/a&gt; a BetterSoftware, tuttavia mi è parso ci siano alcune differenze. In entrambi i metodi il risultato finale è &lt;strong&gt;una parete piena di post-it che spiegano il modello&lt;/strong&gt; da sviluppare. Nell&amp;rsquo;event storming, la creazione partecipata della parete è l&amp;rsquo;evoluzione degli stati del modello sono il punto focale. Non ho mai avuto il piacere di usare event storming, ma tutte le presentazioni che ho visto delineano il modo in cui la parete &amp;ldquo;si riempie&amp;rdquo;, mentre ho poche informazioni su come questa poi si traduca in software. Piuttosto, mi pare di aver colto che Cliff ponga molta enfasi su come man mano la conoscenza che stiamo visualizzando si evolva e man mano si traduca in componenti software. Mi intriga l&amp;rsquo;ipotesi di combinare le due cose!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/miniiad-vimercate-2015-reportage/visualization.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/miniiad-vimercate-2015-reportage/visualization.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;agile-e-il-business-delle-aziende&#34;&gt;Agile e il business delle aziende&lt;/h2&gt;
 
@@ -2642,7 +2642,7 @@ Tutto questo mi ha colpito moltissimo perché anche nella nostra realtà (non ce
 
 &lt;p&gt;Mi ha colpito in particolare il format della retrospettiva con i cerchi concentrici che Marco suggerisce di usare per le iterazioni o per i periodi in cui le cose non vanno particolarmente bene, per ragionare sui problemi: ogni cerchio è un attore; il cerchio di cosa posso controllare io per fare meglio, di cosa può controllare il team per fare meglio e cosa invece è fuori dal nostro controllo ma sta facendo andare male le cose.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/miniiad-vimercate-2015-reportage/retrospettiva-cerchi.jpg&#34; alt=&#34;Retrospettiva con cerchi&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/miniiad-vimercate-2015-reportage/retrospettiva-cerchi.jpg&#34; alt=&#34;Retrospettiva con cerchi&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;conclusioni&#34;&gt;Conclusioni&lt;/h2&gt;
 
@@ -2654,10 +2654,10 @@ Tutto questo mi ha colpito moltissimo perché anche nella nostra realtà (non ce
     
     <item>
       <title>Programmazione Funzionale: perché preoccuparsi?</title>
-      <link>http://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</link>
+      <link>https://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</link>
       <pubDate>Mon, 13 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</guid>
+      <guid>https://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</guid>
       <description>
 
 &lt;p&gt;Nel suo discorso di accettazione del &lt;a href=&#34;http://amturing.acm.org/award_winners/dijkstra_1053701.cfm&#34;&gt;Premio Turing 1972&lt;/a&gt;, dal titolo &amp;ldquo;&lt;a href=&#34;https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html&#34;&gt;The humble programmer&lt;/a&gt;&amp;rdquo;, &lt;strong&gt;Edsger Wybe Dijkstra&lt;/strong&gt;, uno dei più celebri &lt;em&gt;computing scientists&lt;/em&gt; del 20° secolo (morto nel 2002), affrontò le cause della nota &lt;a href=&#34;https://it.wikipedia.org/wiki/Software_crisis&#34;&gt;Software Crisis&lt;/a&gt;, cioè la crisi che colpì l&amp;rsquo;industria del software nella seconda metà degli anni sessanta: la potenza e la capacità di elaborazione dei computer stavano &lt;strong&gt;crescendo esponenzialmente&lt;/strong&gt;, molto più rapidamente dell&amp;rsquo;abilità dei programmatori di &lt;strong&gt;gestire la complessità&lt;/strong&gt; e scrivere software funzionante. Nello stesso discorso, Dijkstra propose anche delle possibili strade da intraprendere che a suo avviso avrebbero portato aziende e università a migliorare la qualità del loro software. Riporto qui una frase che a mio parere riassume abbastanza bene l&amp;rsquo;intero discorso:&lt;/p&gt;
@@ -2757,10 +2757,10 @@ Tutto questo mi ha colpito moltissimo perché anche nella nostra realtà (non ce
     
     <item>
       <title>PHP 7 Overview</title>
-      <link>http://engineering.facile.it/blog/ita/php-7-overview/</link>
+      <link>https://engineering.facile.it/blog/ita/php-7-overview/</link>
       <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-7-overview/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-7-overview/</guid>
       <description>
 
 &lt;p&gt;Il linguaggio che ha contribuito alla nascita e alla crescita di più del 80% dei siti web oggi online, tra i quali alcuni dei più famosi al mondo, è prossimo a una svolta.&lt;/p&gt;

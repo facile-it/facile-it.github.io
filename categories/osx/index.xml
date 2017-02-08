@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OSX on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/osx/</link>
+    <link>https://engineering.facile.it/categories/osx/</link>
     <description>Recent content in OSX on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 22 Jul 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/osx/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/osx/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Si fa presto a dire Docker (e OS X)</title>
-      <link>http://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</link>
+      <link>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</link>
       <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</guid>
+      <guid>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</guid>
       <description>
 
 &lt;p&gt;Di guide per l&amp;rsquo;installazione di Docker su OS X è pieno il web, ma &lt;strong&gt;le soluzioni sono molte&lt;/strong&gt; e spesso scegliere non è facile.

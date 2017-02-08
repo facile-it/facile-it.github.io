@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rjindael on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/rjindael/</link>
+    <link>https://engineering.facile.it/categories/rjindael/</link>
     <description>Recent content in Rjindael on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Oct 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/rjindael/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/rjindael/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Protection of sensitive data using encryption</title>
-      <link>http://engineering.facile.it/blog/eng/protection-of-sensitive-data-using-encryption/</link>
+      <link>https://engineering.facile.it/blog/eng/protection-of-sensitive-data-using-encryption/</link>
       <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/protection-of-sensitive-data-using-encryption/</guid>
+      <guid>https://engineering.facile.it/blog/eng/protection-of-sensitive-data-using-encryption/</guid>
       <description>
 
 &lt;p&gt;Data protection is one of the major and recurrent problems in recent years: whether it is private information of users, or the company for which we work, the problem is always the same.&lt;/p&gt;
@@ -46,7 +46,7 @@ Any flaw, both hardware and software, however limited in time could expose our w
 &lt;p&gt;This type of algorithm is based on the use of encryption keys said symmetrical that allow  &lt;strong&gt;to encrypt and decrypt data using the same cryptographic key&lt;/strong&gt;.
 An example is &lt;a href=&#34;https://en.wikipedia.org/wiki/Advanced_Encryption_Standard&#34;&gt;AES&lt;/a&gt; (Advanced Encryption Standard) algorithm, evolution of &lt;a href=&#34;https://en.wikipedia.org/wiki/Rijndael_key_schedule&#34;&gt;Rijndael&lt;/a&gt; the whose characteristics can be summarized in a good level of safety and excellent speed, whether it is implemented in hardware or software.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/aes.png&#34; alt=&#34;AES&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/aes.png&#34; alt=&#34;AES&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;asymmetric-algorithms&#34;&gt;Asymmetric Algorithms&lt;/h3&gt;
 
@@ -55,7 +55,7 @@ The name derives from the method by which the two keys are to be used. The publi
 The feature that characterizes these keys is the impossibility of obtaining, for example, the private key being in possession of the public key. Unless a particular algorithm exploits, the only method to obtain this key is the brute force **on that data.
 In this case the example for excellence is &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_(cryptosystem)&#34;&gt;RSA&lt;/a&gt;, a de facto standard in the security on data transmission: it is in fact widely used to encrypt the communications that take place between the client and server.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/rsa.png&#34; alt=&#34;RSA&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/rsa.png&#34; alt=&#34;RSA&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;the-solution-combining-rsa-and-aes&#34;&gt;The solution combining RSA and AES&lt;/h2&gt;
 
@@ -89,7 +89,7 @@ Masterkey chosen will be very important as it will be required each time we have
 
 &lt;p&gt;We got a similar system to the one shown below:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/system.png&#34; alt=&#34;System&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/system.png&#34; alt=&#34;System&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;share&#34;&gt;Share!&lt;/h3&gt;
 
@@ -114,10 +114,10 @@ Also a key - which is user&amp;rsquo;s choice - too simple would be easy to circ
     
     <item>
       <title>Protezione di dati sensibili usando la crittografia</title>
-      <link>http://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</link>
+      <link>https://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</link>
       <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</guid>
+      <guid>https://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</guid>
       <description>
 
 &lt;p&gt;La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&amp;rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.&lt;/p&gt;
@@ -149,7 +149,7 @@ Una qualsiasi falla, sia hardware che software, per quanto limitata nel tempo po
 &lt;p&gt;Questa tipologia di algoritmi si basa sull&amp;rsquo;uso di chiavi di cifratura dette &lt;strong&gt;simmetriche&lt;/strong&gt; che permettono di cifrare e decifrare dati &lt;strong&gt;utilizzando la medesima chiave crittografica&lt;/strong&gt;.
 Un esempio è &lt;a href=&#34;https://en.wikipedia.org/wiki/Advanced_Encryption_Standard&#34;&gt;AES&lt;/a&gt; (Advanced Encryption Standard), evoluzione dell&amp;rsquo;algoritmo &lt;a href=&#34;https://en.wikipedia.org/wiki/Rijndael_key_schedule&#34;&gt;Rijndael&lt;/a&gt; le cui caratteristiche si possono riassumere in un buon livello di sicurezza ed un&amp;rsquo;ottima velocità, sia che venga implementato via hardware che software.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/aes.png&#34; alt=&#34;AES&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/aes.png&#34; alt=&#34;AES&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;algoritmi-asimmetrici&#34;&gt;Algoritmi Asimmetrici&lt;/h3&gt;
 
@@ -158,7 +158,7 @@ Il nome deriva dal metodo con il quale le due chiavi devono essere utilizzate. L
 La particolarità che caratterizza queste chiavi è l&amp;rsquo;impossibilità di ricavare, ad esempio, la chiave privata essendo in possesso della chiave pubblica. A meno di particolari exploit dell&amp;rsquo;algoritmo, l&amp;rsquo;unico metodo per ottenere tale chiave è il &lt;strong&gt;brute force&lt;/strong&gt; sui dati stessi.
 In questo caso l&amp;rsquo;esempio per eccellenza è &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_(cryptosystem)&#34;&gt;RSA&lt;/a&gt;, uno standard di fatto nella sicurezza riguardante la trasmissione di dati: è infatti largamente utilizzato per cifrare le comunicazioni che avvengono tra client e server.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/rsa.png&#34; alt=&#34;RSA&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/rsa.png&#34; alt=&#34;RSA&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;la-soluzione-combinando-rsa-e-aes&#34;&gt;La soluzione combinando RSA e AES&lt;/h2&gt;
 
@@ -192,7 +192,7 @@ La masterkey scelta sarà importantissima in quanto andrà richiesta ogni qual v
 
 &lt;p&gt;Abbiamo ottenuto un sistema simile a quello visualizzato di seguito:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/system.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/system.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;condividere&#34;&gt;Condividere!&lt;/h3&gt;
 

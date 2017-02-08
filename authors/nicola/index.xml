@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>nicola on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/authors/nicola/</link>
+    <link>https://engineering.facile.it/authors/nicola/</link>
     <description>Recent content in nicola on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Jul 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/authors/nicola/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/authors/nicola/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MiniIAD Vimercate 2015: reportage</title>
-      <link>http://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</link>
+      <link>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</link>
       <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</guid>
+      <guid>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</guid>
       <description>
 
 &lt;p&gt;Lo scorso 23 Maggio 2015, si è tenuto a Vimercate, presso la sede di Alcatel-Lucent all&amp;rsquo;Energy Park, il &lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/&#34;&gt;Mini Italian Agile Day&lt;/a&gt;.&lt;/p&gt;
@@ -31,7 +31,7 @@
 
 &lt;p&gt;Il keynote è di &lt;a href=&#34;https://twitter.com/ixhd&#34;&gt;Cliff Hazell&lt;/a&gt;, un ragazzo che fa l&amp;rsquo;agile coach in Spotify. Ha illustrato una &lt;strong&gt;tecnica di visualizzazione&lt;/strong&gt; della conoscenza e dei processi su una grande parete con dei post-it. Un qualcosa che mi ha ricordato l&amp;rsquo;&lt;a href=&#34;http://ziobrando.blogspot.it/2013/11/introducing-event-storming.html&#34;&gt;event storming&lt;/a&gt; che ho visto raccontare da &lt;a href=&#34;http://www.avanscoperta.it/it/author/a-brandolini/&#34;&gt;Alberto Brandolini&lt;/a&gt; a BetterSoftware, tuttavia mi è parso ci siano alcune differenze. In entrambi i metodi il risultato finale è &lt;strong&gt;una parete piena di post-it che spiegano il modello&lt;/strong&gt; da sviluppare. Nell&amp;rsquo;event storming, la creazione partecipata della parete è l&amp;rsquo;evoluzione degli stati del modello sono il punto focale. Non ho mai avuto il piacere di usare event storming, ma tutte le presentazioni che ho visto delineano il modo in cui la parete &amp;ldquo;si riempie&amp;rdquo;, mentre ho poche informazioni su come questa poi si traduca in software. Piuttosto, mi pare di aver colto che Cliff ponga molta enfasi su come man mano la conoscenza che stiamo visualizzando si evolva e man mano si traduca in componenti software. Mi intriga l&amp;rsquo;ipotesi di combinare le due cose!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/miniiad-vimercate-2015-reportage/visualization.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/miniiad-vimercate-2015-reportage/visualization.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;agile-e-il-business-delle-aziende&#34;&gt;Agile e il business delle aziende&lt;/h2&gt;
 
@@ -49,7 +49,7 @@ Tutto questo mi ha colpito moltissimo perché anche nella nostra realtà (non ce
 
 &lt;p&gt;Mi ha colpito in particolare il format della retrospettiva con i cerchi concentrici che Marco suggerisce di usare per le iterazioni o per i periodi in cui le cose non vanno particolarmente bene, per ragionare sui problemi: ogni cerchio è un attore; il cerchio di cosa posso controllare io per fare meglio, di cosa può controllare il team per fare meglio e cosa invece è fuori dal nostro controllo ma sta facendo andare male le cose.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/miniiad-vimercate-2015-reportage/retrospettiva-cerchi.jpg&#34; alt=&#34;Retrospettiva con cerchi&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/miniiad-vimercate-2015-reportage/retrospettiva-cerchi.jpg&#34; alt=&#34;Retrospettiva con cerchi&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;conclusioni&#34;&gt;Conclusioni&lt;/h2&gt;
 
@@ -61,10 +61,10 @@ Tutto questo mi ha colpito moltissimo perché anche nella nostra realtà (non ce
     
     <item>
       <title>Un flusso di lavoro agile</title>
-      <link>http://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</link>
+      <link>https://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</link>
       <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</guid>
+      <guid>https://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</guid>
       <description>
 
 &lt;p&gt;Parlare di &lt;strong&gt;metodologie di lavoro&lt;/strong&gt; in azienda è una cosa piuttosto complessa, soprattutto perché non è possibile generalizzare un modo di lavoro che sia universalmente valido. Sento sempre più persone dire &amp;ldquo;con &lt;a href=&#34;http://it.wikipedia.org/wiki/Scrum_%28informatica%29&#34;&gt;SCRUM&lt;/a&gt; avrai risultati assicurati&amp;rdquo;. Lo trovo piuttosto riduttivo.&lt;/p&gt;

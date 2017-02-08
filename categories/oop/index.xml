@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OOP on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/oop/</link>
+    <link>https://engineering.facile.it/categories/oop/</link>
     <description>Recent content in OOP on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 12 Dec 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/oop/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/oop/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Please mutate responsibly: 3 ways to improve your mutable objects</title>
-      <link>http://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/</link>
+      <link>https://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/</link>
       <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/</guid>
+      <guid>https://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/</guid>
       <description>
 
 &lt;p&gt;Maintaining &lt;strong&gt;state&lt;/strong&gt; is the main cause of complexity and headaches in software development: without a careful consideration of state, our projects will inevitably become impossible to understand. In fact, various development techniques and programming styles are mainly there to handle state in a responsible way: for example, &lt;a href=&#34;https://en.wikipedia.org/wiki/Monad_(functional_programming)&#34;&gt;&lt;strong&gt;monads&lt;/strong&gt;&lt;/a&gt;, as used in functional programming, are often employed for this very task. A good general way of managing state is trying to make it &lt;strong&gt;immutable&lt;/strong&gt;, either through the use &lt;a href=&#34;https://en.wikipedia.org/wiki/Value_type&#34;&gt;value types&lt;/a&gt;, that is, types which instances are passed around with &lt;a href=&#34;https://en.wikipedia.org/wiki/Object_copying#Deep_copy&#34;&gt;deep copy&lt;/a&gt; semantics, or simple &lt;em&gt;immutable objects&lt;/em&gt;, which have reference semantics but because they&amp;rsquo;re immutable their state is fixed.&lt;/p&gt;
@@ -70,10 +70,10 @@
     
     <item>
       <title>No Country For If Else</title>
-      <link>http://engineering.facile.it/blog/eng/no-country-for-if-else/</link>
+      <link>https://engineering.facile.it/blog/eng/no-country-for-if-else/</link>
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/no-country-for-if-else/</guid>
+      <guid>https://engineering.facile.it/blog/eng/no-country-for-if-else/</guid>
       <description>
 
 &lt;p&gt;There is an &lt;strong&gt;unwanted guest&lt;/strong&gt; with us as we write code and build software projects: it&amp;rsquo;s the code that&amp;rsquo;s &lt;strong&gt;already written&lt;/strong&gt;, and we must take into account its complexity as the code base increases in size. High complexity of the existing code can make the following activities particularly difficult:&lt;/p&gt;
@@ -427,10 +427,10 @@ func &amp;lt;*&amp;gt; &amp;lt;A, B&amp;gt; (left: A -&amp;gt; B, right: A) -&am
     
     <item>
       <title>No Country For If Else</title>
-      <link>http://engineering.facile.it/blog/ita/no-country-for-if-else/</link>
+      <link>https://engineering.facile.it/blog/ita/no-country-for-if-else/</link>
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/no-country-for-if-else/</guid>
+      <guid>https://engineering.facile.it/blog/ita/no-country-for-if-else/</guid>
       <description>
 
 &lt;p&gt;C&amp;rsquo;è un &lt;strong&gt;ospite indesiderato&lt;/strong&gt; che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del &lt;strong&gt;codice già esistente&lt;/strong&gt;, e dobbiamo tener conto della sua complessità man mano che la &lt;em&gt;code base&lt;/em&gt; aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:&lt;/p&gt;

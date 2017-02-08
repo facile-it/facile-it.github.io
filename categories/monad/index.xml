@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Monad on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/monad/</link>
+    <link>https://engineering.facile.it/categories/monad/</link>
     <description>Recent content in Monad on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Nov 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/monad/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/monad/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Optionals in Objective-C</title>
-      <link>http://engineering.facile.it/blog/eng/optionals-in-objective-c/</link>
+      <link>https://engineering.facile.it/blog/eng/optionals-in-objective-c/</link>
       <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/optionals-in-objective-c/</guid>
+      <guid>https://engineering.facile.it/blog/eng/optionals-in-objective-c/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Objective-C is not going anywhere&lt;/strong&gt;. While Swift is most certainly the new hotness for iOS and OS X programming, there are some concrete reasons to stick with Objective-C for a while:&lt;/p&gt;
@@ -530,10 +530,10 @@ NS_ASSUME_NONNULL_END
     
     <item>
       <title>Optionals in Objective-C</title>
-      <link>http://engineering.facile.it/blog/ita/optionals-in-objective-c/</link>
+      <link>https://engineering.facile.it/blog/ita/optionals-in-objective-c/</link>
       <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/optionals-in-objective-c/</guid>
+      <guid>https://engineering.facile.it/blog/ita/optionals-in-objective-c/</guid>
       <description>
 
 &lt;p&gt;&lt;strong&gt;Objective-C vivrà ancora per molto&lt;/strong&gt;. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&amp;rsquo;:&lt;/p&gt;

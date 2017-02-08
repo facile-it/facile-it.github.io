@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Signal on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/signal/</link>
+    <link>https://engineering.facile.it/categories/signal/</link>
     <description>Recent content in Signal on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Mar 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/signal/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/signal/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Decoupling view controllers with Signals</title>
-      <link>http://engineering.facile.it/blog/eng/decoupling-view-controllers-with.signals/</link>
+      <link>https://engineering.facile.it/blog/eng/decoupling-view-controllers-with.signals/</link>
       <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/decoupling-view-controllers-with.signals/</guid>
+      <guid>https://engineering.facile.it/blog/eng/decoupling-view-controllers-with.signals/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://engineering.facile.it/code-reuse-a-primer/&#34;&gt;Last time&lt;/a&gt; we looked at the &lt;strong&gt;Signal&lt;/strong&gt; class, that is, a simple, reusable way of encapsulating the &lt;a href=&#34;https://en.wikipedia.org/wiki/Observer_pattern&#34;&gt;observer pattern&lt;/a&gt;. There are many use cases for a signal, and I&amp;rsquo;m going to show one possible application, spawned from a real-world problem. View controllers&amp;rsquo; composition and decoupling is &lt;strong&gt;hard&lt;/strong&gt;: we often need an input from a view controller, that has to send its input back to its creator, while handling the back navigation somehow. We often find ourselves in a situation in which several different responsibilities are all expressed in a single view controller, with the effect of creating a gigantic class, full of entangled imperative statements, hard-to-understand sequencing and general complexity. We&amp;rsquo;ll use the &lt;code&gt;Signal&lt;/code&gt; class to assign the various responsibilities to different classes, and write cleaner, more declarative code. The core of this architectural pattern lies in inverting the way in which objects communicate, view controller or other: instead of asking objects to do things, we&amp;rsquo;re going to &lt;strong&gt;observe&lt;/strong&gt; what objects are doing, and &lt;strong&gt;react&lt;/strong&gt; accordingly. &lt;em&gt;Observe&lt;/em&gt; and &lt;em&gt;React&lt;/em&gt; are the cornerstones of the programming paradigm known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Functional_reactive_programming&#34;&gt;functional reactive programming(FRP)&lt;/a&gt;; the present article is not going to talk about FRP as a whole, nor to present shared FRP techniques; the point is to discuss an architectural pattern for decoupling view controllers from responsibilities not strictly related to user interaction, by leveraging some basic FRP tools.&lt;/p&gt;

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>jean on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/authors/jean/</link>
+    <link>https://engineering.facile.it/authors/jean/</link>
     <description>Recent content in jean on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Jun 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/authors/jean/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/authors/jean/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How PHP 7 &amp; TDD helped me sleep better</title>
-      <link>http://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
+      <link>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
       <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
+      <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
       <description>
 
 &lt;h1 id=&#34;the-enemies-of-programming&#34;&gt;The enemies of programming&lt;/h1&gt;
@@ -22,7 +22,7 @@
 &lt;p&gt;As many of you will agree with me, &lt;strong&gt;sleep deprivation&lt;/strong&gt; is the enemy of programming.&lt;br /&gt;
 Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;/strong&gt;.
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;a href=&#34;http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/&#34;&gt;&lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/interruption.png&#34; alt=&#34;Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)&#34; /&gt;&lt;/a&gt;
+    &lt;a href=&#34;http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/&#34;&gt;&lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/interruption.png&#34; alt=&#34;Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)&#34; /&gt;&lt;/a&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.&lt;/p&gt;
@@ -33,7 +33,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;Almost half a year ago &lt;strong&gt;I became a dad&lt;/strong&gt;. It has been great, and you also get some unexpected perks! For example, my colleagues got me this gift for my son:
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg&#34; alt=&#34;A blue elePHPant!&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg&#34; alt=&#34;A blue elePHPant!&#34; /&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;So, we can say that his future is pretty clear&amp;hellip; But don&amp;rsquo;t say this to my wife!&lt;/p&gt;
@@ -56,7 +56,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;The first choice that I am pretty satisfied about is &lt;strong&gt;automatic testing&lt;/strong&gt;: I already knew the advantages of doing tests and Test Driven Development, but in the previous project that practice was not introduced from the start, so not all the codebase was covered, and we couldn&amp;rsquo;t (or wouldn&amp;rsquo;t?) do TDD 100% of the time.&lt;/p&gt;
 
-&lt;p&gt;In this case instead &lt;strong&gt;I wanted to write nearly everything with TDD&lt;/strong&gt;, and keep a &lt;strong&gt;very high threshold for the minimum coverage&lt;/strong&gt; achieved through automatic testing. Right now I&amp;rsquo;m sitting on a ~92% test coverage, and I feel proud about it. This wasn&amp;rsquo;t a mere &amp;ldquo;let&amp;rsquo;s hit 100%!&amp;rdquo; mindless goal (&lt;a href=&#34;http://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/&#34;&gt;since it&amp;rsquo;s pointless&lt;/a&gt;), but it fueled &lt;strong&gt;a positive feedback cycle&lt;/strong&gt; instead: the more I used TDD in writing new classes, the more the coverage rose and stayed high; at the same time, I found myself inspecting the coverage reports to find missing spots, and that allowed me to discover many edge-cases that I didn&amp;rsquo;t test and should have been.&lt;/p&gt;
+&lt;p&gt;In this case instead &lt;strong&gt;I wanted to write nearly everything with TDD&lt;/strong&gt;, and keep a &lt;strong&gt;very high threshold for the minimum coverage&lt;/strong&gt; achieved through automatic testing. Right now I&amp;rsquo;m sitting on a ~92% test coverage, and I feel proud about it. This wasn&amp;rsquo;t a mere &amp;ldquo;let&amp;rsquo;s hit 100%!&amp;rdquo; mindless goal (&lt;a href=&#34;https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/&#34;&gt;since it&amp;rsquo;s pointless&lt;/a&gt;), but it fueled &lt;strong&gt;a positive feedback cycle&lt;/strong&gt; instead: the more I used TDD in writing new classes, the more the coverage rose and stayed high; at the same time, I found myself inspecting the coverage reports to find missing spots, and that allowed me to discover many edge-cases that I didn&amp;rsquo;t test and should have been.&lt;/p&gt;
 
 &lt;p&gt;Of course, I still left some parts without coverage or specific tests, since it was pointless to test them (e.g. Doctrine entities), while I covered some parts multiple times, since they were &lt;strong&gt;critical paths&lt;/strong&gt; inside my application.&lt;/p&gt;
 
@@ -70,7 +70,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;The second good choice was &lt;strong&gt;PHP 7&lt;/strong&gt;: among the reasons behind it as the language version of choice for this project were the &lt;a href=&#34;http://php.net/manual/en/migration70.new-features.php&#34;&gt;two main new features&lt;/a&gt; introduced: &lt;strong&gt;scalar types&lt;/strong&gt; and &lt;strong&gt;return type declarations&lt;/strong&gt;.
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg&#34; alt=&#34;Return types, return types everywhere!&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg&#34; alt=&#34;Return types, return types everywhere!&#34; /&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;Before Facile.it, I worked as C++ developer, and oh boy! did I miss scalars and return types!&lt;/p&gt;
@@ -99,15 +99,15 @@ $this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
     
     <item>
       <title>Facile.it devs @ PhpDay 2016</title>
-      <link>http://engineering.facile.it/blog/eng/php-day-2016/</link>
+      <link>https://engineering.facile.it/blog/eng/php-day-2016/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/php-day-2016/</guid>
+      <guid>https://engineering.facile.it/blog/eng/php-day-2016/</guid>
       <description>
 
 &lt;p&gt;Almost like a nice tradition, we went to the &lt;strong&gt;&lt;a href=&#34;http://2016.phpday.it/&#34;&gt;PHP Day conference&lt;/a&gt;&lt;/strong&gt; this year as well; this time too it was held in Verona, on &lt;strong&gt;May 13th and 14th&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;http://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;
+&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;
 
 &lt;p&gt;In this way, we hope to give a brief glimpse of what we experienced to fellow developers that hadn&amp;rsquo;t the opportunity to attend, and to tempt some of you to join conferences like this one or those in the PHP community at large, for your personal and professional growth.&lt;/p&gt;
 
@@ -205,10 +205,10 @@ $this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
     
     <item>
       <title>Blog restyling: switching to Hugo and GitHub Pages</title>
-      <link>http://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</link>
+      <link>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</link>
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</guid>
+      <guid>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</guid>
       <description>
 
 &lt;p&gt;As you may have noticed, we went through a bit of a restyling in the last few days, and our blog changed a lot in terms of appearance and structure.
@@ -274,10 +274,10 @@ We are very happy with those changes, but the reason behind this transition is n
     
     <item>
       <title>Paraunit: test paralleli, Doctrine e le fixture</title>
-      <link>http://engineering.facile.it/blog/ita/paraunit/</link>
+      <link>https://engineering.facile.it/blog/ita/paraunit/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/paraunit/</guid>
+      <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;Questo articolo è la sintesi di un talk presentato al &lt;a href=&#34;http://2015.symfonyday.it/&#34;&gt;SymfonyDay 2015&lt;/a&gt;; potete trovare le slide &lt;a href=&#34;http://jean85.github.io/slides/2015-10-paraunit-symfonyday/index.html&#34;&gt;qui&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
@@ -387,7 +387,7 @@ Per realizzarla nella sua totalità, abbiamo sviluppato un test-case per PHPUnit
 
 &lt;p&gt;Per darvi un&amp;rsquo;idea di quanto possa essere veloce Paraunit rispetto alla normale esecuzione con PHPUnit, ho misurato il tempo di esecuzione della nostra test suite funzionale, che è sufficientemente ampia (261 classi, 1568 metodi):&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/paraunit/grafico.png&#34; alt=&#34;Grafico&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/paraunit/grafico.png&#34; alt=&#34;Grafico&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Come potete vedere, Paraunit esegue l&amp;rsquo;intera test suite in soli &lt;strong&gt;6 minuti e 6 secondi&lt;/strong&gt;, mentre PHPUnit ci metterebbe &lt;strong&gt;oltre 40 minuti!&lt;/strong&gt;&lt;/p&gt;
 
@@ -419,10 +419,10 @@ Tra gli sviluppi futuri spero di poter realizzare:&lt;/p&gt;
     
     <item>
       <title>Facile.it devs @ PHP Day 2015</title>
-      <link>http://engineering.facile.it/blog/ita/php-day-2015/</link>
+      <link>https://engineering.facile.it/blog/ita/php-day-2015/</link>
       <pubDate>Tue, 19 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-day-2015/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-day-2015/</guid>
       <description>
 
 &lt;p&gt;Anche quest&amp;rsquo;anno si è svolto il &lt;strong&gt;&lt;a href=&#34;http://2015.phpday.it/&#34;&gt;PHP Day&lt;/a&gt; a Verona, il 15 e 16 maggio&lt;/strong&gt;. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.&lt;/p&gt;

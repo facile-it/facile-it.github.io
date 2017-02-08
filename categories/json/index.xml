@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JSON on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/json/</link>
+    <link>https://engineering.facile.it/categories/json/</link>
     <description>Recent content in JSON on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Oct 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/json/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/json/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MessagePack: an alternative to JSON?</title>
-      <link>http://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</link>
+      <link>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</link>
       <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
+      <guid>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
       <description>
 
 &lt;p&gt;When we talk about data interchange in web applications, &lt;strong&gt;&lt;a href=&#34;http://www.json.org/&#34;&gt;JSON&lt;/a&gt;&lt;/strong&gt; is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist &lt;a href=&#34;https://www.w3.org/XML/&#34;&gt;XML&lt;/a&gt; (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like &lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;Google’s &lt;strong&gt;Protocol Buffers&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://avro.apache.org/&#34;&gt;Apache &lt;strong&gt;Avro&lt;/strong&gt;&lt;/a&gt; or &lt;strong&gt;&lt;a href=&#34;http://msgpack.org/&#34;&gt;MessagePack&lt;/a&gt;&lt;/strong&gt;. In being thorough, we should also mention &lt;a href=&#34;http://www.gzip.org/&#34;&gt;gzip&lt;/a&gt; JSON compression (sometimes called &amp;ldquo;&lt;em&gt;JSONC&lt;/em&gt;&amp;rdquo;), and &lt;a href=&#34;http://bsonspec.org/&#34;&gt;BSON&lt;/a&gt;, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we&amp;rsquo;ll discuss MessagePack in depth.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/message-pack-an-alternative-to-json/msgpack.png&#34; alt=&#34;MessagePack&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/message-pack-an-alternative-to-json/msgpack.png&#34; alt=&#34;MessagePack&#34; /&gt;
 &lt;em&gt;JSON Vs MessagePack (source: &lt;a href=&#34;http://msgpack.org/&#34;&gt;msgpack.org&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;what-is-messagepack&#34;&gt;What is MessagePack?&lt;/h1&gt;

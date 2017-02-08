@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>HTTP on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/http/</link>
+    <link>https://engineering.facile.it/categories/http/</link>
     <description>Recent content in HTTP on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 May 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/http/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/http/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Faster Web with HTTP/2</title>
-      <link>http://engineering.facile.it/blog/eng/faster-web-with-http-2/</link>
+      <link>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</link>
       <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/faster-web-with-http-2/</guid>
+      <guid>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</guid>
       <description>
 
 &lt;p&gt;HTTP is the protocol that powers the Web. It was originally designed in 1996 for transferring and manipulating simple text-based documents (mainly hypertext resources).
@@ -92,10 +92,10 @@ RFC 7540 considers the case of HTTP/2 being used on cleartext connections as wel
     
     <item>
       <title>GraphQL: an introduction</title>
-      <link>http://engineering.facile.it/blog/eng/graphql-an-introduction/</link>
+      <link>https://engineering.facile.it/blog/eng/graphql-an-introduction/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/graphql-an-introduction/</guid>
+      <guid>https://engineering.facile.it/blog/eng/graphql-an-introduction/</guid>
       <description>
 
 &lt;h2 id=&#34;the-lesson-we-learned-with-rest&#34;&gt;The lesson we learned with REST&lt;/h2&gt;

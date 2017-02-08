@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>matteo on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/authors/matteo/</link>
+    <link>https://engineering.facile.it/authors/matteo/</link>
     <description>Recent content in matteo on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 21 Apr 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/authors/matteo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/authors/matteo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Introduzione al tracciamento di eventi lato server</title>
-      <link>http://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</link>
+      <link>https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</link>
       <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</guid>
+      <guid>https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</guid>
       <description>
 
 &lt;p&gt;L’adozione di strategie &lt;em&gt;DevOps&lt;/em&gt; ha portato negli ultimi anni ad incrementare le aree coperte da &lt;strong&gt;tool di monitoring&lt;/strong&gt; in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei &lt;strong&gt;server&lt;/strong&gt; o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le &lt;strong&gt;applicazioni&lt;/strong&gt; stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc. ecc.).&lt;/p&gt;
@@ -52,10 +52,10 @@
     
     <item>
       <title>Gestione di ACL su insiemi di records</title>
-      <link>http://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</link>
+      <link>https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</guid>
+      <guid>https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</guid>
       <description>&lt;p&gt;Le &lt;strong&gt;ACL&lt;/strong&gt; (&lt;em&gt;Access Control List&lt;/em&gt;) sono un strumento molto potente per poter definire l&amp;rsquo;accesso a risorse con una granularità molto fine. Nel quotidiano abbiamo già modo di utilizzarle per definire i permessi per accedere a file su Unix o quali pacchetti far passare attraverso un firewall o ancora l&amp;rsquo;accesso a database.&lt;/p&gt;
 
 &lt;p&gt;In &lt;strong&gt;Symfony&lt;/strong&gt; le &lt;em&gt;ACL&lt;/em&gt; sono disponibili &lt;em&gt;out-of-the-box&lt;/em&gt; nel caso di installazione completa e permettono la definizione delle regole di accesso a risorse tramite &lt;strong&gt;ruoli&lt;/strong&gt; e &lt;strong&gt;maschere&lt;/strong&gt;. Mentre i &lt;strong&gt;ruoli&lt;/strong&gt; rappresentano dei sottoinsiemi degli utenti di una data applicazione (&lt;em&gt;amministratori&lt;/em&gt;, &lt;em&gt;backoffice&lt;/em&gt;, &lt;em&gt;business analyst&lt;/em&gt;) e possono essere visti come delle etichette da assegnare ad un utente, le &lt;strong&gt;maschere&lt;/strong&gt; sono la rappresentazione numerica delle azioni che possono essere effettuate dagli utenti aventi determinati ruoli. Per tornare all&amp;rsquo;esempio del filesystem Unix, i ruoli possono essere &lt;em&gt;Owner&lt;/em&gt;, &lt;em&gt;Group&lt;/em&gt; o &lt;em&gt;Others&lt;/em&gt; mentre le maschere sono ad esempio 7 (lettura, scrittura e esecuzione) indicato per ciascun ruolo.&lt;/p&gt;

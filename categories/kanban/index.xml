@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kanban on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/kanban/</link>
+    <link>https://engineering.facile.it/categories/kanban/</link>
     <description>Recent content in Kanban on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 30 Apr 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/kanban/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/kanban/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Un flusso di lavoro agile</title>
-      <link>http://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</link>
+      <link>https://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</link>
       <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</guid>
+      <guid>https://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</guid>
       <description>
 
 &lt;p&gt;Parlare di &lt;strong&gt;metodologie di lavoro&lt;/strong&gt; in azienda è una cosa piuttosto complessa, soprattutto perché non è possibile generalizzare un modo di lavoro che sia universalmente valido. Sento sempre più persone dire &amp;ldquo;con &lt;a href=&#34;http://it.wikipedia.org/wiki/Scrum_%28informatica%29&#34;&gt;SCRUM&lt;/a&gt; avrai risultati assicurati&amp;rdquo;. Lo trovo piuttosto riduttivo.&lt;/p&gt;

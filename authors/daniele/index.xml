@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>daniele on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/authors/daniele/</link>
+    <link>https://engineering.facile.it/authors/daniele/</link>
     <description>Recent content in daniele on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Nov 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/authors/daniele/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/authors/daniele/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>#FacileHack 2015</title>
-      <link>http://engineering.facile.it/blog/ita/facilehack-2015/</link>
+      <link>https://engineering.facile.it/blog/ita/facilehack-2015/</link>
       <pubDate>Wed, 25 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/facilehack-2015/</guid>
+      <guid>https://engineering.facile.it/blog/ita/facilehack-2015/</guid>
       <description>&lt;p&gt;Sono stati due giorni ricchi di emozioni quelli trascorsi con i partecipanti di #FacileHack, il primo hackathon organizzato da Facile.it.
 Abbiamo visto impegno nella competizione, talenti diversi e complementari tra loro, passione per la tecnologia, serietà e molto caffè&amp;hellip; momenti che vogliamo rivivere insieme a voi con questo video.&lt;/p&gt;
 
@@ -28,10 +28,10 @@ Abbiamo visto impegno nella competizione, talenti diversi e complementari tra lo
     
     <item>
       <title>Da sviluppo a produzione con Docker e AWS Elastic Beanstalk</title>
-      <link>http://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</link>
+      <link>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
+      <guid>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
       <description>
 
 &lt;h2 id=&#34;in-locale-funzionava&#34;&gt;In locale funzionava&lt;/h2&gt;
@@ -54,7 +54,7 @@ Abbiamo visto impegno nella competizione, talenti diversi e complementari tra lo
 &lt;p&gt;It works on my machine &lt;em&gt;(in locale funzionava)&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Potreste pensare che avrei potuto ottenere gli stessi risultati usando Vagrant o una classica macchina virtuale, ma questa soluzione non mi avrebbe dato i benefici di avere un layer di astrazione aggiuntivo senza dovermi preoccupare dell&amp;rsquo;overhead. Infatti posso avere molti più container che girano su una singola macchina di quelli che avrei avuto con la semplice virtualizzazione.&lt;/p&gt;
 
@@ -130,7 +130,7 @@ grunt dev
 
 &lt;p&gt;È ora di collegarci all&amp;rsquo;ip del nostro container nginx!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Yay! Il nostro ambiente di sviluppo è in esecuzione!&lt;/p&gt;
 
@@ -209,16 +209,16 @@ REDIS_PORT
 
 &lt;p&gt;Ora potete risparmiare un sacco di tempo automatizzando il vostro workflow con docker ed ottenere un ambiente di sviluppo funzionante, auto-contenuto e condivisibile, pur mantenendolo molto simile alla vostra stabile ed efficiente infrastruttura in esecuzione nell&amp;rsquo;ambiente di produzione, sulle cui risorse avete pieno controllo.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Si fa presto a dire Docker (e OS X)</title>
-      <link>http://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</link>
+      <link>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</link>
       <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</guid>
+      <guid>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</guid>
       <description>
 
 &lt;p&gt;Di guide per l&amp;rsquo;installazione di Docker su OS X è pieno il web, ma &lt;strong&gt;le soluzioni sono molte&lt;/strong&gt; e spesso scegliere non è facile.

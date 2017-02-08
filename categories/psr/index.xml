@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PSR on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/psr/</link>
+    <link>https://engineering.facile.it/categories/psr/</link>
     <description>Recent content in PSR on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Mar 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/psr/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/psr/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>PHP coding standard: PSR-7  HTTP message interfaces</title>
-      <link>http://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</link>
+      <link>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</guid>
       <description>
 
 &lt;p&gt;Le specifiche PSR-7 descrivono una &lt;a href=&#34;https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md&#34;&gt;proposta di standardizzazione&lt;/a&gt; delle &lt;strong&gt;interfacce per i messaggi HTTP&lt;/strong&gt;.&lt;/p&gt;

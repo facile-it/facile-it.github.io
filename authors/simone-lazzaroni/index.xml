@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>simone-lazzaroni on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/authors/simone-lazzaroni/</link>
+    <link>https://engineering.facile.it/authors/simone-lazzaroni/</link>
     <description>Recent content in simone-lazzaroni on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/authors/simone-lazzaroni/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/authors/simone-lazzaroni/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Angular Components: from AngularJS to &#34;just Angular&#34;</title>
-      <link>http://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</link>
+      <link>https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</guid>
+      <guid>https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</guid>
       <description>
 
-&lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;http://engineering.facile.it/images/web-components-a-path-to-angular-2/angular.png&#34;&gt; &lt;/p&gt;
+&lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;https://engineering.facile.it/images/web-components-a-path-to-angular-2/angular.png&#34;&gt; &lt;/p&gt;
 
 &lt;p&gt;With version 1.5 and newer, Angular (formerly known as AngularJS, but apparently now &lt;a href=&#34;http://angularjs.blogspot.it/2016/12/ok-let-me-explain-its-going-to-be.html#Its_just_Angular_39&#34;&gt;&lt;em&gt;it&amp;rsquo;s just Angular&lt;/em&gt;&lt;/a&gt;) introduced their own interpretation of &lt;a href=&#34;https://www.webcomponents.org/&#34;&gt;Web Components&lt;/a&gt;, back-porting &lt;em&gt;Components&lt;/em&gt; from Angular 2.&lt;/p&gt;
 

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Semantic versioning on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/semantic-versioning/</link>
+    <link>https://engineering.facile.it/categories/semantic-versioning/</link>
     <description>Recent content in Semantic versioning on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 16 Jun 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/semantic-versioning/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/semantic-versioning/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>GIT flow e versionamento semantico</title>
-      <link>http://engineering.facile.it/blog/ita/git-flow-semantic-versioning/</link>
+      <link>https://engineering.facile.it/blog/ita/git-flow-semantic-versioning/</link>
       <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/git-flow-semantic-versioning/</guid>
+      <guid>https://engineering.facile.it/blog/ita/git-flow-semantic-versioning/</guid>
       <description>
 
 &lt;p&gt;GIT flow è un &lt;strong&gt;flusso di sviluppo&lt;/strong&gt;, ideato da &lt;a href=&#34;http://nvie.com/about/&#34;&gt;Vincent Driessen&lt;/a&gt;, che descrive un modello di diramazione, (&lt;a href=&#34;http://git-scm.com/docs/git-branch&#34;&gt;branching&lt;/a&gt;), ben preciso costruito intorno al concetto di release software.&lt;/p&gt;
@@ -42,7 +42,7 @@
 &lt;p&gt;Un branch di funzionalità, ovvero un &lt;strong&gt;&amp;ldquo;feature branch&amp;rdquo;&lt;/strong&gt;, aggiunge una nuova funzionalità (&lt;a href=&#34;https://en.wikipedia.org/wiki/Software_feature&#34;&gt;feature&lt;/a&gt;) al software.
 Nel modello proposto dal GIT flow, questi branch &lt;strong&gt;devono sempre essere derivati dal branch &amp;ldquo;develop&amp;rdquo;&lt;/strong&gt; e rappresentano una &lt;strong&gt;feature&lt;/strong&gt;, ovvero una nuova funzionalità che si intende aggiungere al software.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/git-flow-semantic-versioning/feature.png&#34; alt=&#34;Git Flow - Feature branch&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/git-flow-semantic-versioning/feature.png&#34; alt=&#34;Git Flow - Feature branch&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Questo branch conterrà tutti i pezzi di storia, le commit, relative alla funzionalità implementata.&lt;/p&gt;
 
@@ -65,7 +65,7 @@ Di norma un singolo sviluppatore si concentra sul rilascio di una feature per vo
 
 &lt;p&gt;A questo punto dello sviluppo non possono essere più aggiunte feature e le uniche aggiunte possibili possono essere quelle di bug fixing e documentazione.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/git-flow-semantic-versioning/release-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/git-flow-semantic-versioning/release-1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Il team si concentrerà sull&amp;rsquo;obiettivo di riportare su master la prossima release
 quindi non verranno creati altri branch di funzionalità in quanto in questa fase l&amp;rsquo;obiettivo principale è quello di rilasciare.&lt;/p&gt;
@@ -85,7 +85,7 @@ quindi non verranno creati altri branch di funzionalità in quanto in questa fas
 &lt;p&gt;Una migliore organizzazione dei rilasci non scongiura sicuramente l’occorrenza di problemi da risolvere con estrema urgenza.
 In questo caso, e solo in questo caso, è possibile derivare (avviare un fork) direttamente da master un branch di manutenzione, contenente la fix necessaria a risolvere il problema insorto.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/git-flow-semantic-versioning/hotfix-2.png&#34; alt=&#34;Mantainance branch&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/git-flow-semantic-versioning/hotfix-2.png&#34; alt=&#34;Mantainance branch&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;È buona norma inoltre distinguere questi branch con un nome significativo e consistente, ad esempio possono tutti iniziare con il prefisso “hotfix-”.&lt;/p&gt;
 
@@ -97,7 +97,7 @@ In questo caso, e solo in questo caso, è possibile derivare (avviare un fork) d
 
 &lt;p&gt;Il versionamento semantico (semantic versioning) è un semplice schema di denominazione dei rilasci che ruota attorno a tre numeri: major, minor e patch.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/git-flow-semantic-versioning/alltogheter.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/git-flow-semantic-versioning/alltogheter.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Il formato prevede la concatenazione di questi tre numeri attraverso la notazione punto.
 Ad es: 1.1.2, indica major version: 1, minor version: 1 e patch: 2.&lt;/p&gt;

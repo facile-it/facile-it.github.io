@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Test coverage on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/test-coverage/</link>
+    <link>https://engineering.facile.it/categories/test-coverage/</link>
     <description>Recent content in Test coverage on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Mar 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/test-coverage/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/test-coverage/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Software testing: Coverage vs Efficacia</title>
-      <link>http://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</link>
+      <link>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
+      <guid>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
       <description>
 
 &lt;p&gt;Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.&lt;/p&gt;
@@ -42,7 +42,7 @@ La massima efficacia è realizzabile solo applicando testing esaustivo ma, sicco
 
 &lt;p&gt;La formula per il calcolo del coverage è la seguente:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Notare il termine generico &lt;em&gt;obiettivo&lt;/em&gt;: diverse tipologie di coverage hanno obiettivi differenti.
 Qui di seguito è presente un elenco esemplificativo e non esaustivo delle diverse tipologie di coverage:&lt;/p&gt;
@@ -138,12 +138,12 @@ Le asserzioni sono parte fondamentale del testing; date loro la giusta importanz
 Tuttavia test suite efficaci hanno necessariamente bisogno di coverage rate alti.
 In temini logici possiamo quindi affermare che:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--1-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--1-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Coverage rate bassi sono un campanello d&amp;rsquo;allarme che ci consente di stabilire la scarca efficacia dei test.
 Possiamo infatti affermare che:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--2-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--2-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

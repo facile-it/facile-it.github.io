@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>engineering on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/authors/engineering/</link>
+    <link>https://engineering.facile.it/authors/engineering/</link>
     <description>Recent content in engineering on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 02 Dec 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/authors/engineering/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/authors/engineering/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Codemotion Milan 2016 in review</title>
-      <link>http://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</link>
+      <link>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</link>
       <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</guid>
+      <guid>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;«Learn or die»&lt;/em&gt;. These are the words with which &lt;a href=&#34;http://milan2016.codemotionworld.com/&#34;&gt;&lt;strong&gt;Codemotion Milan 2016&lt;/strong&gt;&lt;/a&gt; started on the 25th of November. Most of our development team attended this tech conference like the &lt;a href=&#34;http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/&#34;&gt;previous year&lt;/a&gt;. Moreover &lt;a href=&#34;http://www.facile.it&#34;&gt;Facile.it&lt;/a&gt; was present at the event as a sponsor with his stand looking for new talent.&lt;/p&gt;
@@ -23,7 +23,7 @@
 
 &lt;p&gt;This post would be a short recap of some talks in chronological order. The choice of the talks is based on the personal taste of the various members of the editorial staff of Facile.it Engineering blog. Enjoy!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/codemotion-2016-in-review/codemotion_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/codemotion-2016-in-review/codemotion_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;day-1&#34;&gt;Day 1&lt;/h1&gt;
 

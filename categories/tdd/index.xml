@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TDD on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/tdd/</link>
+    <link>https://engineering.facile.it/categories/tdd/</link>
     <description>Recent content in TDD on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Jun 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/tdd/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/tdd/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>How PHP 7 &amp; TDD helped me sleep better</title>
-      <link>http://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
+      <link>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
       <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
+      <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
       <description>
 
 &lt;h1 id=&#34;the-enemies-of-programming&#34;&gt;The enemies of programming&lt;/h1&gt;
@@ -22,7 +22,7 @@
 &lt;p&gt;As many of you will agree with me, &lt;strong&gt;sleep deprivation&lt;/strong&gt; is the enemy of programming.&lt;br /&gt;
 Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;/strong&gt;.
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;a href=&#34;http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/&#34;&gt;&lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/interruption.png&#34; alt=&#34;Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)&#34; /&gt;&lt;/a&gt;
+    &lt;a href=&#34;http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/&#34;&gt;&lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/interruption.png&#34; alt=&#34;Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)&#34; /&gt;&lt;/a&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.&lt;/p&gt;
@@ -33,7 +33,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;Almost half a year ago &lt;strong&gt;I became a dad&lt;/strong&gt;. It has been great, and you also get some unexpected perks! For example, my colleagues got me this gift for my son:
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg&#34; alt=&#34;A blue elePHPant!&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg&#34; alt=&#34;A blue elePHPant!&#34; /&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;So, we can say that his future is pretty clear&amp;hellip; But don&amp;rsquo;t say this to my wife!&lt;/p&gt;
@@ -56,7 +56,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;The first choice that I am pretty satisfied about is &lt;strong&gt;automatic testing&lt;/strong&gt;: I already knew the advantages of doing tests and Test Driven Development, but in the previous project that practice was not introduced from the start, so not all the codebase was covered, and we couldn&amp;rsquo;t (or wouldn&amp;rsquo;t?) do TDD 100% of the time.&lt;/p&gt;
 
-&lt;p&gt;In this case instead &lt;strong&gt;I wanted to write nearly everything with TDD&lt;/strong&gt;, and keep a &lt;strong&gt;very high threshold for the minimum coverage&lt;/strong&gt; achieved through automatic testing. Right now I&amp;rsquo;m sitting on a ~92% test coverage, and I feel proud about it. This wasn&amp;rsquo;t a mere &amp;ldquo;let&amp;rsquo;s hit 100%!&amp;rdquo; mindless goal (&lt;a href=&#34;http://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/&#34;&gt;since it&amp;rsquo;s pointless&lt;/a&gt;), but it fueled &lt;strong&gt;a positive feedback cycle&lt;/strong&gt; instead: the more I used TDD in writing new classes, the more the coverage rose and stayed high; at the same time, I found myself inspecting the coverage reports to find missing spots, and that allowed me to discover many edge-cases that I didn&amp;rsquo;t test and should have been.&lt;/p&gt;
+&lt;p&gt;In this case instead &lt;strong&gt;I wanted to write nearly everything with TDD&lt;/strong&gt;, and keep a &lt;strong&gt;very high threshold for the minimum coverage&lt;/strong&gt; achieved through automatic testing. Right now I&amp;rsquo;m sitting on a ~92% test coverage, and I feel proud about it. This wasn&amp;rsquo;t a mere &amp;ldquo;let&amp;rsquo;s hit 100%!&amp;rdquo; mindless goal (&lt;a href=&#34;https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/&#34;&gt;since it&amp;rsquo;s pointless&lt;/a&gt;), but it fueled &lt;strong&gt;a positive feedback cycle&lt;/strong&gt; instead: the more I used TDD in writing new classes, the more the coverage rose and stayed high; at the same time, I found myself inspecting the coverage reports to find missing spots, and that allowed me to discover many edge-cases that I didn&amp;rsquo;t test and should have been.&lt;/p&gt;
 
 &lt;p&gt;Of course, I still left some parts without coverage or specific tests, since it was pointless to test them (e.g. Doctrine entities), while I covered some parts multiple times, since they were &lt;strong&gt;critical paths&lt;/strong&gt; inside my application.&lt;/p&gt;
 
@@ -70,7 +70,7 @@ Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;
 
 &lt;p&gt;The second good choice was &lt;strong&gt;PHP 7&lt;/strong&gt;: among the reasons behind it as the language version of choice for this project were the &lt;a href=&#34;http://php.net/manual/en/migration70.new-features.php&#34;&gt;two main new features&lt;/a&gt; introduced: &lt;strong&gt;scalar types&lt;/strong&gt; and &lt;strong&gt;return type declarations&lt;/strong&gt;.
 &lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg&#34; alt=&#34;Return types, return types everywhere!&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg&#34; alt=&#34;Return types, return types everywhere!&#34; /&gt;
 &lt;/p&gt;&lt;/p&gt;
 
 &lt;p&gt;Before Facile.it, I worked as C++ developer, and oh boy! did I miss scalars and return types!&lt;/p&gt;
@@ -99,10 +99,10 @@ $this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
     
     <item>
       <title>Software testing: Coverage vs Efficacia</title>
-      <link>http://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</link>
+      <link>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
+      <guid>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
       <description>
 
 &lt;p&gt;Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.&lt;/p&gt;
@@ -130,7 +130,7 @@ La massima efficacia è realizzabile solo applicando testing esaustivo ma, sicco
 
 &lt;p&gt;La formula per il calcolo del coverage è la seguente:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Notare il termine generico &lt;em&gt;obiettivo&lt;/em&gt;: diverse tipologie di coverage hanno obiettivi differenti.
 Qui di seguito è presente un elenco esemplificativo e non esaustivo delle diverse tipologie di coverage:&lt;/p&gt;
@@ -226,12 +226,12 @@ Le asserzioni sono parte fondamentale del testing; date loro la giusta importanz
 Tuttavia test suite efficaci hanno necessariamente bisogno di coverage rate alti.
 In temini logici possiamo quindi affermare che:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--1-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--1-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Coverage rate bassi sono un campanello d&amp;rsquo;allarme che ci consente di stabilire la scarca efficacia dei test.
 Possiamo infatti affermare che:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--2-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--2-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

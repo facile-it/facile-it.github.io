@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Conferences on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/conferences/</link>
+    <link>https://engineering.facile.it/categories/conferences/</link>
     <description>Recent content in Conferences on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 02 Dec 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/conferences/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/conferences/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Codemotion Milan 2016 in review</title>
-      <link>http://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</link>
+      <link>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</link>
       <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</guid>
+      <guid>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;«Learn or die»&lt;/em&gt;. These are the words with which &lt;a href=&#34;http://milan2016.codemotionworld.com/&#34;&gt;&lt;strong&gt;Codemotion Milan 2016&lt;/strong&gt;&lt;/a&gt; started on the 25th of November. Most of our development team attended this tech conference like the &lt;a href=&#34;http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/&#34;&gt;previous year&lt;/a&gt;. Moreover &lt;a href=&#34;http://www.facile.it&#34;&gt;Facile.it&lt;/a&gt; was present at the event as a sponsor with his stand looking for new talent.&lt;/p&gt;
@@ -23,7 +23,7 @@
 
 &lt;p&gt;This post would be a short recap of some talks in chronological order. The choice of the talks is based on the personal taste of the various members of the editorial staff of Facile.it Engineering blog. Enjoy!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/codemotion-2016-in-review/codemotion_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/codemotion-2016-in-review/codemotion_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;day-1&#34;&gt;Day 1&lt;/h1&gt;
 
@@ -119,17 +119,17 @@
     
     <item>
       <title>Looking back at Symfony Day Rome 2016</title>
-      <link>http://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</link>
+      <link>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</link>
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</guid>
+      <guid>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</guid>
       <description>
 
 &lt;p&gt;Every year the &lt;a href=&#34;http://www.grusp.org/&#34;&gt;GrUSP&lt;/a&gt;, in cooperation with one of the italian PHP user groups, organizes the italian &lt;strong&gt;&lt;a href=&#34;http://symfony.com/&#34;&gt;Symfony&lt;/a&gt;&lt;/strong&gt; conference. This year the &lt;a href=&#34;http://2016.symfonyday.it/&#34;&gt;event&lt;/a&gt; was organized in the Capital on 28th October with the help of &lt;a href=&#34;http://roma.grusp.org/&#34;&gt;PHP User Group Roma&lt;/a&gt;, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.&lt;/p&gt;
 
 &lt;p&gt;This post would be a short recap of all the talks.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/faciledev_symfonyday_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/faciledev_symfonyday_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;schedule&#34;&gt;Schedule&lt;/h1&gt;
 
@@ -169,7 +169,7 @@
 
 &lt;p&gt;&lt;em&gt;View slides &lt;a href=&#34;http://www.slideshare.net/SamueleLilli/symfony-day-2016&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/symfonyday_collage.jpg&#34; alt=&#34;Symfony Day 2016&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/symfonyday_collage.jpg&#34; alt=&#34;Symfony Day 2016&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;php7-and-rich-domain-model&#34;&gt;PHP7 and Rich Domain Model&lt;/h2&gt;
 
@@ -211,15 +211,15 @@
     
     <item>
       <title>Facile.it devs @ PhpDay 2016</title>
-      <link>http://engineering.facile.it/blog/eng/php-day-2016/</link>
+      <link>https://engineering.facile.it/blog/eng/php-day-2016/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/php-day-2016/</guid>
+      <guid>https://engineering.facile.it/blog/eng/php-day-2016/</guid>
       <description>
 
 &lt;p&gt;Almost like a nice tradition, we went to the &lt;strong&gt;&lt;a href=&#34;http://2016.phpday.it/&#34;&gt;PHP Day conference&lt;/a&gt;&lt;/strong&gt; this year as well; this time too it was held in Verona, on &lt;strong&gt;May 13th and 14th&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;http://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;
+&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;
 
 &lt;p&gt;In this way, we hope to give a brief glimpse of what we experienced to fellow developers that hadn&amp;rsquo;t the opportunity to attend, and to tempt some of you to join conferences like this one or those in the PHP community at large, for your personal and professional growth.&lt;/p&gt;
 
@@ -317,13 +317,13 @@
     
     <item>
       <title>Droidcon It 2016</title>
-      <link>http://engineering.facile.it/blog/eng/droidcon-it-2016/</link>
+      <link>https://engineering.facile.it/blog/eng/droidcon-it-2016/</link>
       <pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/droidcon-it-2016/</guid>
+      <guid>https://engineering.facile.it/blog/eng/droidcon-it-2016/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/droidconit-recap/logo_droidcon_it.png&#34; alt=&#34;Droidcon It&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/droidconit-recap/logo_droidcon_it.png&#34; alt=&#34;Droidcon It&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The third edition of &lt;a href=&#34;http://it.droidcon.com/2016/&#34;&gt;Droidcon IT&lt;/a&gt; was, as expected, a great conference, full of interesting talks and people coming from all over the world. We saw a lot of GDEs (&lt;a href=&#34;https://developers.google.com/experts/all/technology/android&#34;&gt;Google Developer Expert&lt;/a&gt;) and also some Developer Advocates from Google, although it was not organized directly by the company. Back in March the Android team surprisingly released the brand new &lt;strong&gt;N Developer Preview&lt;/strong&gt; earlier than expected, so this year we were already able to talk about the new features in Android N and analyze them. Furthermore, there was talk of &lt;strong&gt;Kotlin&lt;/strong&gt;, &lt;strong&gt;RxJava&lt;/strong&gt; and a lot of other useful and interesting topics.&lt;/p&gt;
 
@@ -347,7 +347,7 @@ Wojtek went through all the new improvements of the platform, both from user&amp
 
 &lt;p&gt;The most interesting and encouraging aspect coming out from the keynote and the N Preview release itself, is the fact that Google is, finally, trying to fix the Android updates issue.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/droidconit-recap/n-preview-updates.png&#34; alt=&#34;N Preview Updates&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/droidconit-recap/n-preview-updates.png&#34; alt=&#34;N Preview Updates&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Not only the release of the new OS preview six months before its public release — instead of three — is really useful for third party developers to update apps to support new APIs, but hopefully it will also help phone manufactures to keep their custom Android implementations more aligned with the stock version release cycle. This will result in a better user experience and, more importantly to us, a better developer experience, making it closer to the iOS world where developers are not required to support five years old OS versions.&lt;/p&gt;
 
@@ -444,10 +444,10 @@ They explained also how they use a &lt;strong&gt;C++ library&lt;/strong&gt; comm
     
     <item>
       <title>Facile.it devs @ Codemotion Milan 2015</title>
-      <link>http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</link>
+      <link>https://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</link>
       <pubDate>Thu, 26 Nov 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</guid>
+      <guid>https://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</guid>
       <description>
 
 &lt;p&gt;L&amp;rsquo;appuntamento con il &lt;a href=&#34;http://milan2015.codemotionworld.com&#34;&gt;Codemotion&lt;/a&gt; di quest&amp;rsquo;anno a Milano è stato particolarmente &lt;strong&gt;ricco&lt;/strong&gt;: tante tracce, moltissimi contenuti suddivisi tra talk tecnici, workshop e keynote, e alcuni ospiti illustri, tra cui il celebre &lt;a href=&#34;https://twitter.com/rasmus&#34;&gt;Rasmus Lerdorf&lt;/a&gt;, creatore del linguaggio &lt;strong&gt;PHP&lt;/strong&gt;. Come già fatto per il &lt;a href=&#34;http://engineering.facile.it/php-day-2015/&#34;&gt;PHP Day 2015&lt;/a&gt;, proponiamo le nostre impressioni sulla conferenza, citando i talk che ci hanno colpito maggiormente: la scelta dei talk è basata sul gusto personale dei vari membri della redazione di Facile.it Engineering, e le considerazioni esposte non vanno lette come recensioni, ma come riflessioni di vario genere sulle tematiche trattate, volte a stimolare nei lettori l&amp;rsquo;interesse a &lt;strong&gt;partecipare&lt;/strong&gt; a conferenze come il Codemotion.&lt;/p&gt;
@@ -702,7 +702,7 @@ WASM non sostituirà JavaScript in quanto quest&amp;rsquo;ultimo, tramite compil
 &lt;li&gt;day 2 - 14:10 - 14:50 - Languages track&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Da questo talk di &lt;strong&gt;Rasmus Lerdorf&lt;/strong&gt; (creatore del linguaggio PHP) ci si sarebbe potuto aspettare una semplice lista delle nuove feature di PHP 7 (di cui abbiamo già parlato in &lt;a href=&#34;http://engineering.facile.it/php-7-overview&#34;&gt;questo post&lt;/a&gt;, in realtà però il relatore si è spinto molto più in là mostrando alcuni &lt;strong&gt;benchmark di comparazione delle performance&lt;/strong&gt; tra PHP 7, PHP 5 e HHVM 3.10, nei quali PHP 7 stracciava PHP 5 e teneva egregiamente il passo con HHVM 3.10, per poi dare una semplice ma approfondita overview rispetto ad alcune parti del lavoro fatto per ottenere quello che oggi è PHP 7 in termini di &lt;strong&gt;performance e feature&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Da questo talk di &lt;strong&gt;Rasmus Lerdorf&lt;/strong&gt; (creatore del linguaggio PHP) ci si sarebbe potuto aspettare una semplice lista delle nuove feature di PHP 7 (di cui abbiamo già parlato in &lt;a href=&#34;https://engineering.facile.it/php-7-overview&#34;&gt;questo post&lt;/a&gt;, in realtà però il relatore si è spinto molto più in là mostrando alcuni &lt;strong&gt;benchmark di comparazione delle performance&lt;/strong&gt; tra PHP 7, PHP 5 e HHVM 3.10, nei quali PHP 7 stracciava PHP 5 e teneva egregiamente il passo con HHVM 3.10, per poi dare una semplice ma approfondita overview rispetto ad alcune parti del lavoro fatto per ottenere quello che oggi è PHP 7 in termini di &lt;strong&gt;performance e feature&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;Rasmus ha parlato del lungo lavoro di micro ottimizzazioni e di &lt;strong&gt;refactoring&lt;/strong&gt; sulla codebase, soprattutto per quanto riguarda l&amp;rsquo;utilizzo della memoria da parte di HashTable e Zval che ora, nella maggior parte dei casi, è stato più che dimezzato.&lt;/p&gt;
 
@@ -714,10 +714,10 @@ WASM non sostituirà JavaScript in quanto quest&amp;rsquo;ultimo, tramite compil
     
     <item>
       <title>Paraunit: test paralleli, Doctrine e le fixture</title>
-      <link>http://engineering.facile.it/blog/ita/paraunit/</link>
+      <link>https://engineering.facile.it/blog/ita/paraunit/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/paraunit/</guid>
+      <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
       <description>
 
 &lt;p&gt;&lt;em&gt;Questo articolo è la sintesi di un talk presentato al &lt;a href=&#34;http://2015.symfonyday.it/&#34;&gt;SymfonyDay 2015&lt;/a&gt;; potete trovare le slide &lt;a href=&#34;http://jean85.github.io/slides/2015-10-paraunit-symfonyday/index.html&#34;&gt;qui&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
@@ -827,7 +827,7 @@ Per realizzarla nella sua totalità, abbiamo sviluppato un test-case per PHPUnit
 
 &lt;p&gt;Per darvi un&amp;rsquo;idea di quanto possa essere veloce Paraunit rispetto alla normale esecuzione con PHPUnit, ho misurato il tempo di esecuzione della nostra test suite funzionale, che è sufficientemente ampia (261 classi, 1568 metodi):&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/paraunit/grafico.png&#34; alt=&#34;Grafico&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/paraunit/grafico.png&#34; alt=&#34;Grafico&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Come potete vedere, Paraunit esegue l&amp;rsquo;intera test suite in soli &lt;strong&gt;6 minuti e 6 secondi&lt;/strong&gt;, mentre PHPUnit ci metterebbe &lt;strong&gt;oltre 40 minuti!&lt;/strong&gt;&lt;/p&gt;
 
@@ -859,10 +859,10 @@ Tra gli sviluppi futuri spero di poter realizzare:&lt;/p&gt;
     
     <item>
       <title>Php Summer Camp 2015</title>
-      <link>http://engineering.facile.it/blog/ita/php-summer-camp-2015/</link>
+      <link>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</link>
       <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-summer-camp-2015/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</guid>
       <description>
 
 &lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;
@@ -1077,10 +1077,10 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
     
     <item>
       <title>MiniIAD Vimercate 2015: reportage</title>
-      <link>http://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</link>
+      <link>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</link>
       <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</guid>
+      <guid>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</guid>
       <description>
 
 &lt;p&gt;Lo scorso 23 Maggio 2015, si è tenuto a Vimercate, presso la sede di Alcatel-Lucent all&amp;rsquo;Energy Park, il &lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/&#34;&gt;Mini Italian Agile Day&lt;/a&gt;.&lt;/p&gt;
@@ -1097,7 +1097,7 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
 
 &lt;p&gt;Il keynote è di &lt;a href=&#34;https://twitter.com/ixhd&#34;&gt;Cliff Hazell&lt;/a&gt;, un ragazzo che fa l&amp;rsquo;agile coach in Spotify. Ha illustrato una &lt;strong&gt;tecnica di visualizzazione&lt;/strong&gt; della conoscenza e dei processi su una grande parete con dei post-it. Un qualcosa che mi ha ricordato l&amp;rsquo;&lt;a href=&#34;http://ziobrando.blogspot.it/2013/11/introducing-event-storming.html&#34;&gt;event storming&lt;/a&gt; che ho visto raccontare da &lt;a href=&#34;http://www.avanscoperta.it/it/author/a-brandolini/&#34;&gt;Alberto Brandolini&lt;/a&gt; a BetterSoftware, tuttavia mi è parso ci siano alcune differenze. In entrambi i metodi il risultato finale è &lt;strong&gt;una parete piena di post-it che spiegano il modello&lt;/strong&gt; da sviluppare. Nell&amp;rsquo;event storming, la creazione partecipata della parete è l&amp;rsquo;evoluzione degli stati del modello sono il punto focale. Non ho mai avuto il piacere di usare event storming, ma tutte le presentazioni che ho visto delineano il modo in cui la parete &amp;ldquo;si riempie&amp;rdquo;, mentre ho poche informazioni su come questa poi si traduca in software. Piuttosto, mi pare di aver colto che Cliff ponga molta enfasi su come man mano la conoscenza che stiamo visualizzando si evolva e man mano si traduca in componenti software. Mi intriga l&amp;rsquo;ipotesi di combinare le due cose!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/miniiad-vimercate-2015-reportage/visualization.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/miniiad-vimercate-2015-reportage/visualization.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;agile-e-il-business-delle-aziende&#34;&gt;Agile e il business delle aziende&lt;/h2&gt;
 
@@ -1115,7 +1115,7 @@ Tutto questo mi ha colpito moltissimo perché anche nella nostra realtà (non ce
 
 &lt;p&gt;Mi ha colpito in particolare il format della retrospettiva con i cerchi concentrici che Marco suggerisce di usare per le iterazioni o per i periodi in cui le cose non vanno particolarmente bene, per ragionare sui problemi: ogni cerchio è un attore; il cerchio di cosa posso controllare io per fare meglio, di cosa può controllare il team per fare meglio e cosa invece è fuori dal nostro controllo ma sta facendo andare male le cose.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/miniiad-vimercate-2015-reportage/retrospettiva-cerchi.jpg&#34; alt=&#34;Retrospettiva con cerchi&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/miniiad-vimercate-2015-reportage/retrospettiva-cerchi.jpg&#34; alt=&#34;Retrospettiva con cerchi&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;conclusioni&#34;&gt;Conclusioni&lt;/h2&gt;
 
@@ -1127,10 +1127,10 @@ Tutto questo mi ha colpito moltissimo perché anche nella nostra realtà (non ce
     
     <item>
       <title>Facile.it devs @ PHP Day 2015</title>
-      <link>http://engineering.facile.it/blog/ita/php-day-2015/</link>
+      <link>https://engineering.facile.it/blog/ita/php-day-2015/</link>
       <pubDate>Tue, 19 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-day-2015/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-day-2015/</guid>
       <description>
 
 &lt;p&gt;Anche quest&amp;rsquo;anno si è svolto il &lt;strong&gt;&lt;a href=&#34;http://2015.phpday.it/&#34;&gt;PHP Day&lt;/a&gt; a Verona, il 15 e 16 maggio&lt;/strong&gt;. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.&lt;/p&gt;

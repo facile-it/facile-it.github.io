@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Fuse on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/fuse/</link>
+    <link>https://engineering.facile.it/categories/fuse/</link>
     <description>Recent content in Fuse on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 11 Jan 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/fuse/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/fuse/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Write a filesystem with FUSE</title>
-      <link>http://engineering.facile.it/blog/eng/write-filesystem-fuse/</link>
+      <link>https://engineering.facile.it/blog/eng/write-filesystem-fuse/</link>
       <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/write-filesystem-fuse/</guid>
+      <guid>https://engineering.facile.it/blog/eng/write-filesystem-fuse/</guid>
       <description>
 
 &lt;p&gt;During the past year I experimented a lot with file systems in Userspace using FUSE, I wrote this post to share my thoughts about what I did and to give you a starting point to do something by yourself.&lt;/p&gt;
@@ -57,7 +57,7 @@ If you are using a device to read this post you are probably using at least one 
 &lt;/ul&gt;
 
 &lt;p&gt;Here&amp;rsquo;s a flow-chart diagram showing how FUSE works, source: &lt;a href=&#34;https://commons.wikimedia.org/wiki/File:FUSE_structure.svg&#34;&gt;Wikimedia Commons&lt;/a&gt;
-&lt;img src=&#34;http://engineering.facile.it/images/write-filesystem-fuse/FUSE_structure.svg&#34; alt=&#34;A flow-chart diagram showing how FUSE works&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://engineering.facile.it/images/write-filesystem-fuse/FUSE_structure.svg&#34; alt=&#34;A flow-chart diagram showing how FUSE works&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;getting-started-with-fuse&#34;&gt;Getting started with FUSE&lt;/h1&gt;
 

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sergio on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/authors/sergio/</link>
+    <link>https://engineering.facile.it/authors/sergio/</link>
     <description>Recent content in sergio on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 31 May 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/authors/sergio/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/authors/sergio/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Facile.it devs @ PhpDay 2016</title>
-      <link>http://engineering.facile.it/blog/eng/php-day-2016/</link>
+      <link>https://engineering.facile.it/blog/eng/php-day-2016/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/php-day-2016/</guid>
+      <guid>https://engineering.facile.it/blog/eng/php-day-2016/</guid>
       <description>
 
 &lt;p&gt;Almost like a nice tradition, we went to the &lt;strong&gt;&lt;a href=&#34;http://2016.phpday.it/&#34;&gt;PHP Day conference&lt;/a&gt;&lt;/strong&gt; this year as well; this time too it was held in Verona, on &lt;strong&gt;May 13th and 14th&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;http://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;
+&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;
 
 &lt;p&gt;In this way, we hope to give a brief glimpse of what we experienced to fellow developers that hadn&amp;rsquo;t the opportunity to attend, and to tempt some of you to join conferences like this one or those in the PHP community at large, for your personal and professional growth.&lt;/p&gt;
 
@@ -117,10 +117,10 @@
     
     <item>
       <title>Faster Web with HTTP/2</title>
-      <link>http://engineering.facile.it/blog/eng/faster-web-with-http-2/</link>
+      <link>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</link>
       <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/faster-web-with-http-2/</guid>
+      <guid>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</guid>
       <description>
 
 &lt;p&gt;HTTP is the protocol that powers the Web. It was originally designed in 1996 for transferring and manipulating simple text-based documents (mainly hypertext resources).
@@ -198,10 +198,10 @@ RFC 7540 considers the case of HTTP/2 being used on cleartext connections as wel
     
     <item>
       <title>Puli: Universal Packages for PHP</title>
-      <link>http://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</link>
+      <link>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</link>
       <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</guid>
+      <guid>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</guid>
       <description>
 
 &lt;h2 id=&#34;composer-e-l-ecosistema-php&#34;&gt;Composer e l&amp;rsquo;ecosistema PHP&lt;/h2&gt;
@@ -443,10 +443,10 @@ Per approfondire, la documentazione ufficiale è molto chiara e completa ed è d
     
     <item>
       <title>Php Summer Camp 2015</title>
-      <link>http://engineering.facile.it/blog/ita/php-summer-camp-2015/</link>
+      <link>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</link>
       <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-summer-camp-2015/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</guid>
       <description>
 
 &lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;
@@ -661,10 +661,10 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
     
     <item>
       <title>Intelligenza artificiale: algoritmo A*</title>
-      <link>http://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</link>
+      <link>https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</link>
       <pubDate>Tue, 12 May 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</guid>
+      <guid>https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</guid>
       <description>
 
 &lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;
@@ -695,14 +695,14 @@ Con un&amp;rsquo;&lt;a href=&#34;http://www.okpedia.it/euristica_ammissibile&#34
 Un&amp;rsquo;euristica è ammissibile quando l&amp;rsquo;errore di stima non è mai in eccesso. Un esempio è la distanza in linea d&amp;rsquo;aria tra due punti su una mappa.
 In termini matematici una funzione euristica h è ammissibile se:
 &lt;div style=&#34;text-align: center; margin: 0 0 2em 0;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif&#34; alt=&#34;&#34; /&gt;
     &lt;!-- \forall x \in V : h(s, x) \leq g(s, x) --&gt;
 &lt;/div&gt;
 Dove V è l&amp;rsquo;insieme dei nodi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.&lt;/p&gt;
 
 &lt;p&gt;La funzione euristica si dice monotòna o consistente se:
 &lt;div style=&#34;text-align: center; margin: 0 0 2em 0;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif&#34; alt=&#34;&#34; /&gt;
     &lt;!-- \forall (x, y) \in E : h(s, x) \leq g(x, y) + h(s, y) --&gt;
 &lt;/div&gt;
 Dove E è l&amp;rsquo;insieme degli archi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.&lt;/p&gt;
@@ -725,13 +725,13 @@ Esso tuttavia non è &lt;em&gt;&lt;a href=&#34;https://it.wikipedia.org/wiki/Alg
 &lt;p&gt;Nel corso dell&amp;rsquo;esecuzione, ad ogni nodo vengono associati più valori: &lt;em&gt;gScore, hScore, fScore.&lt;/em&gt;
 In termini matematici, dato il nodo corrente n, il nodo di partenza p e il nodo soluzione s, si deifiniscono i valori:
 &lt;div style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/g-score.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/g-score.gif&#34; alt=&#34;&#34; /&gt;
 &lt;/div&gt;
 &lt;div style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/h-score.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/h-score.gif&#34; alt=&#34;&#34; /&gt;
 &lt;/div&gt;
 &lt;div style=&#34;text-align: center; margin: 0 0 2em 0;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/f-score.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/f-score.gif&#34; alt=&#34;&#34; /&gt;
 &lt;/div&gt;&lt;/p&gt;
 
 &lt;p&gt;La &lt;strong&gt;funzione g&lt;/strong&gt; calcola il &lt;strong&gt;costo effettivo&lt;/strong&gt; del percorso che separa i nodi p (partenza) e n (attuale).
@@ -783,7 +783,7 @@ end function
 
 &lt;p&gt;La funzione euristica utilizzata è la &lt;a href=&#34;http://it.wikipedia.org/wiki/Geometria_del_taxi&#34;&gt;Distanza di Manhattan&lt;/a&gt;, definita nel modo seguente:
 &lt;div style=&#34;text-align: center; margin: 0 0 2em 0;&#34;&gt;
-    &lt;img src=&#34;http://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/distanza-di-manhattan.gif&#34; alt=&#34;&#34; /&gt;
+    &lt;img src=&#34;https://engineering.facile.it/images/intelligenza-artificiale-algoritmo-a-star/distanza-di-manhattan.gif&#34; alt=&#34;&#34; /&gt;
     &lt;!-- man(p, p&#39;) = \sum_{i=1}^{15} |x_i - x&#39;_i| + |y_i - y&#39;_i| --&gt;
 &lt;/div&gt;
 Essa calcola, per ogni casella, la quantità minima di spostamenti necessari per arrivare dalla posizione p alla posizione p&amp;rsquo;.
@@ -812,10 +812,10 @@ Ciò non consente l&amp;rsquo;analisi di problemi troppo complessi come i giochi
     
     <item>
       <title>Software testing: Coverage vs Efficacia</title>
-      <link>http://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</link>
+      <link>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
+      <guid>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
       <description>
 
 &lt;p&gt;Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.&lt;/p&gt;
@@ -843,7 +843,7 @@ La massima efficacia è realizzabile solo applicando testing esaustivo ma, sicco
 
 &lt;p&gt;La formula per il calcolo del coverage è la seguente:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Notare il termine generico &lt;em&gt;obiettivo&lt;/em&gt;: diverse tipologie di coverage hanno obiettivi differenti.
 Qui di seguito è presente un elenco esemplificativo e non esaustivo delle diverse tipologie di coverage:&lt;/p&gt;
@@ -939,12 +939,12 @@ Le asserzioni sono parte fondamentale del testing; date loro la giusta importanz
 Tuttavia test suite efficaci hanno necessariamente bisogno di coverage rate alti.
 In temini logici possiamo quindi affermare che:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--1-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--1-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Coverage rate bassi sono un campanello d&amp;rsquo;allarme che ci consente di stabilire la scarca efficacia dei test.
 Possiamo infatti affermare che:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--2-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--2-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

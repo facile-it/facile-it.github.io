@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JWT on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/jwt/</link>
+    <link>https://engineering.facile.it/categories/jwt/</link>
     <description>Recent content in JWT on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/jwt/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/jwt/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Json Web Token</title>
-      <link>http://engineering.facile.it/blog/eng/json-web-tokens/</link>
+      <link>https://engineering.facile.it/blog/eng/json-web-tokens/</link>
       <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/json-web-tokens/</guid>
+      <guid>https://engineering.facile.it/blog/eng/json-web-tokens/</guid>
       <description>
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/json-web-tokens/logo.svg&#34; alt=&#34;JWT&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/json-web-tokens/logo.svg&#34; alt=&#34;JWT&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability.
 I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy.

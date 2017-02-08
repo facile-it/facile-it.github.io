@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/aws/</link>
+    <link>https://engineering.facile.it/categories/aws/</link>
     <description>Recent content in AWS on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 20 Sep 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/aws/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/aws/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Event-driven serverless applications</title>
-      <link>http://engineering.facile.it/blog/eng/event-driven-serverless-applications/</link>
+      <link>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</link>
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
+      <guid>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
       <description>
 
 &lt;p&gt;If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 &lt;strong&gt;Amazon Web Services&lt;/strong&gt; (AWS) announced a new service called &amp;ldquo;&lt;strong&gt;&lt;a href=&#34;https://aws.amazon.com/lambda/&#34;&gt;Lambda&lt;/a&gt;&lt;/strong&gt;&amp;rdquo;, that allows us to focus on business logic and not on infrastructure.&lt;/p&gt;
@@ -23,7 +23,7 @@
 
 &lt;p&gt;As reported on their website: « &lt;em&gt;AWS Lambda is a serverless compute service that runs your code highly-available in the cloud in response to events and it automatically performs all the administration of the compute resources for you&lt;/em&gt; ». In the previous sentence is condensed all the power of Lambda, that we can summarize with the following key concepts: &lt;strong&gt;&lt;a href=&#34;#serverless-architecture&#34;&gt;serverless architecture&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;#high-availability&#34;&gt;high-availability&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;#event-driven&#34;&gt;event-driven&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href=&#34;#zero-administration&#34;&gt;zero administration&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/event-driven-serverless-applications/aws-lambda-key-concepts.png&#34; alt=&#34;AWS Lambda key concepts&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/event-driven-serverless-applications/aws-lambda-key-concepts.png&#34; alt=&#34;AWS Lambda key concepts&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;serverless-architecture&#34;&gt;Serverless architecture&lt;/h2&gt;
 
@@ -79,7 +79,7 @@ More about event-driven programming &lt;a href=&#34;https://en.wikipedia.org/wik
 &lt;li&gt;&lt;code&gt;DryRun&lt;/code&gt;: it&amp;rsquo;s used to verify the access to a function without running it.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/event-driven-serverless-applications/synchronous-vs-asynchronous-behaviour.png&#34; alt=&#34;Synchronous vs asynchronous behaviour&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/event-driven-serverless-applications/synchronous-vs-asynchronous-behaviour.png&#34; alt=&#34;Synchronous vs asynchronous behaviour&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;lambda-alternatives&#34;&gt;Lambda alternatives&lt;/h1&gt;
 
@@ -95,10 +95,10 @@ More about event-driven programming &lt;a href=&#34;https://en.wikipedia.org/wik
     
     <item>
       <title>Da sviluppo a produzione con Docker e AWS Elastic Beanstalk</title>
-      <link>http://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</link>
+      <link>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
+      <guid>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
       <description>
 
 &lt;h2 id=&#34;in-locale-funzionava&#34;&gt;In locale funzionava&lt;/h2&gt;
@@ -121,7 +121,7 @@ More about event-driven programming &lt;a href=&#34;https://en.wikipedia.org/wik
 &lt;p&gt;It works on my machine &lt;em&gt;(in locale funzionava)&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Potreste pensare che avrei potuto ottenere gli stessi risultati usando Vagrant o una classica macchina virtuale, ma questa soluzione non mi avrebbe dato i benefici di avere un layer di astrazione aggiuntivo senza dovermi preoccupare dell&amp;rsquo;overhead. Infatti posso avere molti più container che girano su una singola macchina di quelli che avrei avuto con la semplice virtualizzazione.&lt;/p&gt;
 
@@ -197,7 +197,7 @@ grunt dev
 
 &lt;p&gt;È ora di collegarci all&amp;rsquo;ip del nostro container nginx!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Yay! Il nostro ambiente di sviluppo è in esecuzione!&lt;/p&gt;
 
@@ -276,16 +276,16 @@ REDIS_PORT
 
 &lt;p&gt;Ora potete risparmiare un sacco di tempo automatizzando il vostro workflow con docker ed ottenere un ambiente di sviluppo funzionante, auto-contenuto e condivisibile, pur mantenendolo molto simile alla vostra stabile ed efficiente infrastruttura in esecuzione nell&amp;rsquo;ambiente di produzione, sulle cui risorse avete pieno controllo.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>From development to production with Docker and AWS Elastic Beanstalk</title>
-      <link>http://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</link>
+      <link>https://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</guid>
+      <guid>https://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</guid>
       <description>
 
 &lt;h1 id=&#34;it-works-on-my-machine&#34;&gt;It works on my machine&lt;/h1&gt;
@@ -308,7 +308,7 @@ REDIS_PORT
 &lt;p&gt;It works on my machine.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You might think that I could obtain the same results using Vagrant or plain virtual machines but that solution wouldn&amp;rsquo;t give me the benefit of having an extra layer of abstraction without having to worry about the overhead. In fact I can have more and more containers running on a single machine than I can have with virtualization.&lt;/p&gt;
 
@@ -384,7 +384,7 @@ grunt dev
 
 &lt;p&gt;It&amp;rsquo;s time to point your browser to the nginx container ip address!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Yay! Our development environment is up and running!&lt;/p&gt;
 
@@ -463,7 +463,7 @@ REDIS_PORT
 
 &lt;p&gt;You can now save a lot of time automating your workflow using docker while having a fully working, self-contained and shareable development environment very close to your running, stable and efficient production infrastructure over which you have full control of the resources.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     

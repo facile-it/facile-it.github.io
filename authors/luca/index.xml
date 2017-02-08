@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>luca on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/authors/luca/</link>
+    <link>https://engineering.facile.it/authors/luca/</link>
     <description>Recent content in luca on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Sep 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/authors/luca/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/authors/luca/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>WAMP, Web Application Messaging Protocol.. e PHP!</title>
-      <link>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
+      <link>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
+      <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
       <description>
 
 &lt;p&gt;Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno &lt;strong&gt;scambio dati&lt;/strong&gt; in &lt;strong&gt;due direzioni&lt;/strong&gt;, &lt;strong&gt;efficiente&lt;/strong&gt; e a &lt;strong&gt;bassa latenza&lt;/strong&gt;, ha determinato l’ascesa negli ultimi anni di &lt;strong&gt;soluzioni basate su &lt;a href=&#34;https://www.websocket.org/&#34; target=&#34;_blank&#34;&gt;WebSocket&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
@@ -276,10 +276,10 @@ la libreria &lt;a href=&#34;http://autobahn.ws/js/&#34; target=&#34;_blank&#34;&
     
     <item>
       <title>Continuous Integration con Docker e Drone</title>
-      <link>http://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</link>
+      <link>https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</link>
       <pubDate>Fri, 12 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</guid>
+      <guid>https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</guid>
       <description>
 
 &lt;p&gt;La &lt;strong&gt;continuous integration&lt;/strong&gt; è una pratica che consiste nel &lt;strong&gt;frequente allineamento&lt;/strong&gt;, su di una base comune definita &lt;em&gt;mainline&lt;/em&gt;, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto.&lt;/p&gt;
@@ -342,7 +342,7 @@ in questo modo è possibile scrivere &lt;strong&gt;plugin in qualsiasi linguaggi
 
 &lt;p&gt;Per ultimo, ma comunque non di poco conto, il &lt;strong&gt;monitor stato build&lt;/strong&gt; viene rilasciato in un progetto separato: &lt;a href=&#34;https://github.com/drone/drone-wall&#34;&gt;Drone Wall&lt;/a&gt; è semplicemente fantastico!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/continuos-integration-docker-drone/drone-wall.jpg&#34; alt=&#34;Drone wall screenshot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/continuos-integration-docker-drone/drone-wall.jpg&#34; alt=&#34;Drone wall screenshot&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Quella che segue, è una guida per &lt;strong&gt;l&amp;rsquo;installazione di Drone&lt;/strong&gt; (a sua volta in un container!), molto simile a quella  utilizzata in Facile.it.&lt;/p&gt;
 
@@ -419,10 +419,10 @@ Per chi non conoscesse Compose, basti sapere che è un &lt;strong&gt;tool per de
     
     <item>
       <title>MySQL has gone away? Come back!</title>
-      <link>http://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</link>
+      <link>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</link>
       <pubDate>Mon, 09 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</guid>
+      <guid>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</guid>
       <description>
 
 &lt;p&gt;A ben più di uno sviluppatore sarà capitato di incappare nel comune errore &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.5/en/gone-away.html&#34;&gt;&lt;em&gt;MySQL server has gone away!&lt;/em&gt;&lt;/a&gt;, magari seguito da un eccezione lanciata da una delle &lt;a href=&#34;http://php.net/manual/en/book.pdo.php&#34;&gt;&lt;strong&gt;classi PDO&lt;/strong&gt;&lt;/a&gt;, come ad esempio &lt;em&gt;PDOStatement::execute(): Error reading result set&amp;rsquo;s header&lt;/em&gt;.&lt;/p&gt;

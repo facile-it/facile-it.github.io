@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PHP internals on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/php-internals/</link>
+    <link>https://engineering.facile.it/categories/php-internals/</link>
     <description>Recent content in PHP internals on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Mar 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/php-internals/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/php-internals/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ZVALs refcount AKA come vengono memorizzate le nostre variabili</title>
-      <link>http://engineering.facile.it/blog/ita/zvals-refcount/</link>
+      <link>https://engineering.facile.it/blog/ita/zvals-refcount/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/zvals-refcount/</guid>
+      <guid>https://engineering.facile.it/blog/ita/zvals-refcount/</guid>
       <description>&lt;p&gt;Assegnare valori alle variabili è sicuramente l&amp;rsquo;operazione più comune all&amp;rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&amp;rsquo;interprete? Vediamolo assieme!&lt;/p&gt;
 
 &lt;p&gt;L&amp;rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla &lt;a href=&#34;https://github.com/php/php-src/blob/ae15e636e2b213bf748fa0b94ca95ac96d6eae3a/Zend/zend.h#L334-L340&#34;&gt;linea 334 di &lt;code&gt;zend.h&lt;/code&gt;&lt;/a&gt;, la riporto qui di seguito per commentarne le proprietà.&lt;/p&gt;
@@ -60,10 +60,10 @@ impostato a 1.&lt;/p&gt;&lt;/li&gt;
     
     <item>
       <title>var_dump() aggiunge proprietà pubbliche a DateTime</title>
-      <link>http://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</link>
+      <link>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</guid>
+      <guid>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</guid>
       <description>&lt;p&gt;PHP, fin dalla versione 5.2.0, introduce gli oggetti &lt;code&gt;\DateTime&lt;/code&gt; per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali.&lt;/p&gt;
 
 &lt;p&gt;Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate &lt;code&gt;var_dump&lt;/code&gt;, &lt;code&gt;print_r&lt;/code&gt;, &lt;code&gt;var_export&lt;/code&gt; o &lt;code&gt;debug_zval_dump&lt;/code&gt; su un istanza di &lt;code&gt;\DateTime&lt;/code&gt;.&lt;/p&gt;

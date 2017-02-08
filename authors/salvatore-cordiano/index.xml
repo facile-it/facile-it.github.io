@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>salvatore-cordiano on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/authors/salvatore-cordiano/</link>
+    <link>https://engineering.facile.it/authors/salvatore-cordiano/</link>
     <description>Recent content in salvatore-cordiano on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 07 Nov 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/authors/salvatore-cordiano/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/authors/salvatore-cordiano/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Looking back at Symfony Day Rome 2016</title>
-      <link>http://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</link>
+      <link>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</link>
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</guid>
+      <guid>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</guid>
       <description>
 
 &lt;p&gt;Every year the &lt;a href=&#34;http://www.grusp.org/&#34;&gt;GrUSP&lt;/a&gt;, in cooperation with one of the italian PHP user groups, organizes the italian &lt;strong&gt;&lt;a href=&#34;http://symfony.com/&#34;&gt;Symfony&lt;/a&gt;&lt;/strong&gt; conference. This year the &lt;a href=&#34;http://2016.symfonyday.it/&#34;&gt;event&lt;/a&gt; was organized in the Capital on 28th October with the help of &lt;a href=&#34;http://roma.grusp.org/&#34;&gt;PHP User Group Roma&lt;/a&gt;, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.&lt;/p&gt;
 
 &lt;p&gt;This post would be a short recap of all the talks.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/faciledev_symfonyday_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/faciledev_symfonyday_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;schedule&#34;&gt;Schedule&lt;/h1&gt;
 
@@ -61,7 +61,7 @@
 
 &lt;p&gt;&lt;em&gt;View slides &lt;a href=&#34;http://www.slideshare.net/SamueleLilli/symfony-day-2016&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/symfonyday_collage.jpg&#34; alt=&#34;Symfony Day 2016&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/symfonyday_collage.jpg&#34; alt=&#34;Symfony Day 2016&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;php7-and-rich-domain-model&#34;&gt;PHP7 and Rich Domain Model&lt;/h2&gt;
 
@@ -103,15 +103,15 @@
     
     <item>
       <title>MessagePack: an alternative to JSON?</title>
-      <link>http://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</link>
+      <link>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</link>
       <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
+      <guid>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
       <description>
 
 &lt;p&gt;When we talk about data interchange in web applications, &lt;strong&gt;&lt;a href=&#34;http://www.json.org/&#34;&gt;JSON&lt;/a&gt;&lt;/strong&gt; is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist &lt;a href=&#34;https://www.w3.org/XML/&#34;&gt;XML&lt;/a&gt; (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like &lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;Google’s &lt;strong&gt;Protocol Buffers&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://avro.apache.org/&#34;&gt;Apache &lt;strong&gt;Avro&lt;/strong&gt;&lt;/a&gt; or &lt;strong&gt;&lt;a href=&#34;http://msgpack.org/&#34;&gt;MessagePack&lt;/a&gt;&lt;/strong&gt;. In being thorough, we should also mention &lt;a href=&#34;http://www.gzip.org/&#34;&gt;gzip&lt;/a&gt; JSON compression (sometimes called &amp;ldquo;&lt;em&gt;JSONC&lt;/em&gt;&amp;rdquo;), and &lt;a href=&#34;http://bsonspec.org/&#34;&gt;BSON&lt;/a&gt;, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we&amp;rsquo;ll discuss MessagePack in depth.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/message-pack-an-alternative-to-json/msgpack.png&#34; alt=&#34;MessagePack&#34; /&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/message-pack-an-alternative-to-json/msgpack.png&#34; alt=&#34;MessagePack&#34; /&gt;
 &lt;em&gt;JSON Vs MessagePack (source: &lt;a href=&#34;http://msgpack.org/&#34;&gt;msgpack.org&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;what-is-messagepack&#34;&gt;What is MessagePack?&lt;/h1&gt;
@@ -242,10 +242,10 @@ benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
     
     <item>
       <title>Event-driven serverless applications</title>
-      <link>http://engineering.facile.it/blog/eng/event-driven-serverless-applications/</link>
+      <link>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</link>
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
+      <guid>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
       <description>
 
 &lt;p&gt;If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 &lt;strong&gt;Amazon Web Services&lt;/strong&gt; (AWS) announced a new service called &amp;ldquo;&lt;strong&gt;&lt;a href=&#34;https://aws.amazon.com/lambda/&#34;&gt;Lambda&lt;/a&gt;&lt;/strong&gt;&amp;rdquo;, that allows us to focus on business logic and not on infrastructure.&lt;/p&gt;
@@ -254,7 +254,7 @@ benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
 
 &lt;p&gt;As reported on their website: « &lt;em&gt;AWS Lambda is a serverless compute service that runs your code highly-available in the cloud in response to events and it automatically performs all the administration of the compute resources for you&lt;/em&gt; ». In the previous sentence is condensed all the power of Lambda, that we can summarize with the following key concepts: &lt;strong&gt;&lt;a href=&#34;#serverless-architecture&#34;&gt;serverless architecture&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;#high-availability&#34;&gt;high-availability&lt;/a&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;a href=&#34;#event-driven&#34;&gt;event-driven&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href=&#34;#zero-administration&#34;&gt;zero administration&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/event-driven-serverless-applications/aws-lambda-key-concepts.png&#34; alt=&#34;AWS Lambda key concepts&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/event-driven-serverless-applications/aws-lambda-key-concepts.png&#34; alt=&#34;AWS Lambda key concepts&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;serverless-architecture&#34;&gt;Serverless architecture&lt;/h2&gt;
 
@@ -310,7 +310,7 @@ More about event-driven programming &lt;a href=&#34;https://en.wikipedia.org/wik
 &lt;li&gt;&lt;code&gt;DryRun&lt;/code&gt;: it&amp;rsquo;s used to verify the access to a function without running it.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/event-driven-serverless-applications/synchronous-vs-asynchronous-behaviour.png&#34; alt=&#34;Synchronous vs asynchronous behaviour&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/event-driven-serverless-applications/synchronous-vs-asynchronous-behaviour.png&#34; alt=&#34;Synchronous vs asynchronous behaviour&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;lambda-alternatives&#34;&gt;Lambda alternatives&lt;/h1&gt;
 

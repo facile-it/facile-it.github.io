@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>lorenzo on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/authors/lorenzo/</link>
+    <link>https://engineering.facile.it/authors/lorenzo/</link>
     <description>Recent content in lorenzo on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 11 Jan 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/authors/lorenzo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/authors/lorenzo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Write a filesystem with FUSE</title>
-      <link>http://engineering.facile.it/blog/eng/write-filesystem-fuse/</link>
+      <link>https://engineering.facile.it/blog/eng/write-filesystem-fuse/</link>
       <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/write-filesystem-fuse/</guid>
+      <guid>https://engineering.facile.it/blog/eng/write-filesystem-fuse/</guid>
       <description>
 
 &lt;p&gt;During the past year I experimented a lot with file systems in Userspace using FUSE, I wrote this post to share my thoughts about what I did and to give you a starting point to do something by yourself.&lt;/p&gt;
@@ -57,7 +57,7 @@ If you are using a device to read this post you are probably using at least one 
 &lt;/ul&gt;
 
 &lt;p&gt;Here&amp;rsquo;s a flow-chart diagram showing how FUSE works, source: &lt;a href=&#34;https://commons.wikimedia.org/wiki/File:FUSE_structure.svg&#34;&gt;Wikimedia Commons&lt;/a&gt;
-&lt;img src=&#34;http://engineering.facile.it/images/write-filesystem-fuse/FUSE_structure.svg&#34; alt=&#34;A flow-chart diagram showing how FUSE works&#34; /&gt;&lt;/p&gt;
+&lt;img src=&#34;https://engineering.facile.it/images/write-filesystem-fuse/FUSE_structure.svg&#34; alt=&#34;A flow-chart diagram showing how FUSE works&#34; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&#34;getting-started-with-fuse&#34;&gt;Getting started with FUSE&lt;/h1&gt;
 
@@ -333,10 +333,10 @@ fuse-example on /tmp/example type fuse.fuse-example (rw,nosuid,nodev,relatime,us
     
     <item>
       <title>Da sviluppo a produzione con Docker e AWS Elastic Beanstalk</title>
-      <link>http://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</link>
+      <link>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
+      <guid>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
       <description>
 
 &lt;h2 id=&#34;in-locale-funzionava&#34;&gt;In locale funzionava&lt;/h2&gt;
@@ -359,7 +359,7 @@ fuse-example on /tmp/example type fuse.fuse-example (rw,nosuid,nodev,relatime,us
 &lt;p&gt;It works on my machine &lt;em&gt;(in locale funzionava)&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Potreste pensare che avrei potuto ottenere gli stessi risultati usando Vagrant o una classica macchina virtuale, ma questa soluzione non mi avrebbe dato i benefici di avere un layer di astrazione aggiuntivo senza dovermi preoccupare dell&amp;rsquo;overhead. Infatti posso avere molti più container che girano su una singola macchina di quelli che avrei avuto con la semplice virtualizzazione.&lt;/p&gt;
 
@@ -435,7 +435,7 @@ grunt dev
 
 &lt;p&gt;È ora di collegarci all&amp;rsquo;ip del nostro container nginx!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Yay! Il nostro ambiente di sviluppo è in esecuzione!&lt;/p&gt;
 
@@ -514,16 +514,16 @@ REDIS_PORT
 
 &lt;p&gt;Ora potete risparmiare un sacco di tempo automatizzando il vostro workflow con docker ed ottenere un ambiente di sviluppo funzionante, auto-contenuto e condivisibile, pur mantenendolo molto simile alla vostra stabile ed efficiente infrastruttura in esecuzione nell&amp;rsquo;ambiente di produzione, sulle cui risorse avete pieno controllo.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>From development to production with Docker and AWS Elastic Beanstalk</title>
-      <link>http://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</link>
+      <link>https://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</guid>
+      <guid>https://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</guid>
       <description>
 
 &lt;h1 id=&#34;it-works-on-my-machine&#34;&gt;It works on my machine&lt;/h1&gt;
@@ -546,7 +546,7 @@ REDIS_PORT
 &lt;p&gt;It works on my machine.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;You might think that I could obtain the same results using Vagrant or plain virtual machines but that solution wouldn&amp;rsquo;t give me the benefit of having an extra layer of abstraction without having to worry about the overhead. In fact I can have more and more containers running on a single machine than I can have with virtualization.&lt;/p&gt;
 
@@ -622,7 +622,7 @@ grunt dev
 
 &lt;p&gt;It&amp;rsquo;s time to point your browser to the nginx container ip address!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Yay! Our development environment is up and running!&lt;/p&gt;
 
@@ -701,16 +701,16 @@ REDIS_PORT
 
 &lt;p&gt;You can now save a lot of time automating your workflow using docker while having a fully working, self-contained and shareable development environment very close to your running, stable and efficient production infrastructure over which you have full control of the resources.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>PHP 7 Overview</title>
-      <link>http://engineering.facile.it/blog/ita/php-7-overview/</link>
+      <link>https://engineering.facile.it/blog/ita/php-7-overview/</link>
       <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/php-7-overview/</guid>
+      <guid>https://engineering.facile.it/blog/ita/php-7-overview/</guid>
       <description>
 
 &lt;p&gt;Il linguaggio che ha contribuito alla nascita e alla crescita di più del 80% dei siti web oggi online, tra i quali alcuni dei più famosi al mondo, è prossimo a una svolta.&lt;/p&gt;
@@ -989,10 +989,10 @@ Tutte le classi non presenti nella lista saranno convertite nell&amp;rsquo;ogget
     
     <item>
       <title>Continuous Integration con Docker e Drone</title>
-      <link>http://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</link>
+      <link>https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</link>
       <pubDate>Fri, 12 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</guid>
+      <guid>https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</guid>
       <description>
 
 &lt;p&gt;La &lt;strong&gt;continuous integration&lt;/strong&gt; è una pratica che consiste nel &lt;strong&gt;frequente allineamento&lt;/strong&gt;, su di una base comune definita &lt;em&gt;mainline&lt;/em&gt;, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto.&lt;/p&gt;
@@ -1055,7 +1055,7 @@ in questo modo è possibile scrivere &lt;strong&gt;plugin in qualsiasi linguaggi
 
 &lt;p&gt;Per ultimo, ma comunque non di poco conto, il &lt;strong&gt;monitor stato build&lt;/strong&gt; viene rilasciato in un progetto separato: &lt;a href=&#34;https://github.com/drone/drone-wall&#34;&gt;Drone Wall&lt;/a&gt; è semplicemente fantastico!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/continuos-integration-docker-drone/drone-wall.jpg&#34; alt=&#34;Drone wall screenshot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/continuos-integration-docker-drone/drone-wall.jpg&#34; alt=&#34;Drone wall screenshot&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Quella che segue, è una guida per &lt;strong&gt;l&amp;rsquo;installazione di Drone&lt;/strong&gt; (a sua volta in un container!), molto simile a quella  utilizzata in Facile.it.&lt;/p&gt;
 
@@ -1132,10 +1132,10 @@ Per chi non conoscesse Compose, basti sapere che è un &lt;strong&gt;tool per de
     
     <item>
       <title>L&#39;operatore ternario è associativo a sinistra!</title>
-      <link>http://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</link>
+      <link>https://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</guid>
+      <guid>https://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</guid>
       <description>&lt;p&gt;Gli &lt;a href=&#34;http://it.wikipedia.org/wiki/Operatore_ternario&#34;&gt;&lt;em&gt;operatori ternari&lt;/em&gt;&lt;/a&gt; sono diffusi in molti linguaggi di programmazione e permettono di esprimire con una &lt;strong&gt;sintassi breve&lt;/strong&gt; logiche condizionali. Per utilizzarli propriamente in PHP è però necessario conoscerne il comportamento.&lt;/p&gt;
 
 &lt;p&gt;Vediamo un esempio&lt;/p&gt;
@@ -1169,10 +1169,10 @@ Per chi non conoscesse Compose, basti sapere che è un &lt;strong&gt;tool per de
     
     <item>
       <title>ZVALs refcount AKA come vengono memorizzate le nostre variabili</title>
-      <link>http://engineering.facile.it/blog/ita/zvals-refcount/</link>
+      <link>https://engineering.facile.it/blog/ita/zvals-refcount/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/zvals-refcount/</guid>
+      <guid>https://engineering.facile.it/blog/ita/zvals-refcount/</guid>
       <description>&lt;p&gt;Assegnare valori alle variabili è sicuramente l&amp;rsquo;operazione più comune all&amp;rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&amp;rsquo;interprete? Vediamolo assieme!&lt;/p&gt;
 
 &lt;p&gt;L&amp;rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla &lt;a href=&#34;https://github.com/php/php-src/blob/ae15e636e2b213bf748fa0b94ca95ac96d6eae3a/Zend/zend.h#L334-L340&#34;&gt;linea 334 di &lt;code&gt;zend.h&lt;/code&gt;&lt;/a&gt;, la riporto qui di seguito per commentarne le proprietà.&lt;/p&gt;
@@ -1218,10 +1218,10 @@ impostato a 1.&lt;/p&gt;&lt;/li&gt;
     
     <item>
       <title>var_dump() aggiunge proprietà pubbliche a DateTime</title>
-      <link>http://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</link>
+      <link>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</guid>
+      <guid>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</guid>
       <description>&lt;p&gt;PHP, fin dalla versione 5.2.0, introduce gli oggetti &lt;code&gt;\DateTime&lt;/code&gt; per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali.&lt;/p&gt;
 
 &lt;p&gt;Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate &lt;code&gt;var_dump&lt;/code&gt;, &lt;code&gt;print_r&lt;/code&gt;, &lt;code&gt;var_export&lt;/code&gt; o &lt;code&gt;debug_zval_dump&lt;/code&gt; su un istanza di &lt;code&gt;\DateTime&lt;/code&gt;.&lt;/p&gt;

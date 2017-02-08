@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xcode on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/xcode/</link>
+    <link>https://engineering.facile.it/categories/xcode/</link>
     <description>Recent content in Xcode on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 05 Jun 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/xcode/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/xcode/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Swift testing avanzato: stubbing e test asincroni</title>
-      <link>http://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/</link>
+      <link>https://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/</link>
       <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/</guid>
+      <guid>https://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://engineering.facile.it/xcode-testing-in-pratica/&#34;&gt;In un precedente articolo&lt;/a&gt; abbiamo visto le impostazioni di base in Xcode per la scrittura dei &lt;strong&gt;test unitari&lt;/strong&gt;: abbiamo evidenziato inoltre &lt;strong&gt;l&amp;rsquo;importanza e l&amp;rsquo;utilità intrinseca dei test&lt;/strong&gt;, attraverso un semplice esempio riguardante un caso d&amp;rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&amp;rsquo; più avanzate:&lt;/p&gt;
@@ -101,7 +101,7 @@ extension LocationCoordinator: CLLocationManagerDelegate {
 
 &lt;p&gt;Come si può vedere, la classe è configurata per richiedere l&amp;rsquo;autorizzazione a leggere la posizione GPS del dispositivo quando l&amp;rsquo;app è in uso, ma non sarà necessario fornire questa autorizzazione per i test: creeremo infatti uno &lt;em&gt;stub&lt;/em&gt; che genererà posizioni arbitrarie, senza usare i sensori di sistema. Si ricorda inoltre che usando iOS SDK &amp;gt;= 8.0, per usare i servizi di localizzazione sarà necessario inserire nel file Info.plist una chiave che descrive il motivo per il quale l&amp;rsquo;app chiede l&amp;rsquo;autorizzazione ad accedere a tali servizi:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/swift-testing-avanzato-stubbing-e-test-asincroni/locationUsageDescription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/swift-testing-avanzato-stubbing-e-test-asincroni/locationUsageDescription.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Sebbene l&amp;rsquo;aggiunta della chiave &lt;code&gt;NSLocationWhenIsUseUsageDescription&lt;/code&gt; non sia necessaria per eseguire i test, senza questa chiave l&amp;rsquo;app non potrà funzionare in iOS8 nel caso in cui provassimo ad avviarla normalmente.&lt;/p&gt;
 
@@ -173,17 +173,17 @@ forceDelayedErrorLocationUnknown
     
     <item>
       <title>Xcode Testing in pratica</title>
-      <link>http://engineering.facile.it/blog/ita/xcode-testing-in-pratica/</link>
+      <link>https://engineering.facile.it/blog/ita/xcode-testing-in-pratica/</link>
       <pubDate>Thu, 09 Apr 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/xcode-testing-in-pratica/</guid>
+      <guid>https://engineering.facile.it/blog/ita/xcode-testing-in-pratica/</guid>
       <description>
 
 &lt;p&gt;Tra i molti strumenti utili presenti in Xcode, il testing framework &lt;strong&gt;XCTest&lt;/strong&gt; è certamente uno dei più rilevanti, non solo per l&amp;rsquo;importanza intrinseca dello Unit Testing in generale, ma soprattutto per la facilità con la quale è possibile scrivere ed eseguire test direttamente dall&amp;rsquo;IDE &lt;em&gt;out-of-the-box&lt;/em&gt;, &lt;strong&gt;senza la necessità di installare componenti di terze parti&lt;/strong&gt; o impostare una particolare configurazione per i progetti.&lt;/p&gt;
 
 &lt;p&gt;In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a creare un target per il binario principale crea automaticamente anche un &lt;strong&gt;target di test&lt;/strong&gt;, cioè un bundle aggiuntivo che può essere caricato nel bundle principale per poter fisicamente eseguire i test una volta avviata l&amp;rsquo;app. Nell&amp;rsquo;immagine seguente è possibile vedere come, in un progetto appena creato, sia già presente il test bundle, in questo caso chiamato &lt;em&gt;AwesomeAppTests.xctest&lt;/em&gt;:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/xcode-testing-in-pratica/image_1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/xcode-testing-in-pratica/image_1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Come mostrato nell&amp;rsquo;immagine, Xcode ha anche creato automaticamente il file &lt;em&gt;AwesomeAppTests.swift&lt;/em&gt;, all&amp;rsquo;interno del quale potremo iniziare a scrivere i nostri test.&lt;/p&gt;
 
@@ -224,15 +224,15 @@ public class AwesomeItem {
 
 &lt;p&gt;Xcode ha identificato la funzione &lt;code&gt;testSumOfInts&lt;/code&gt; come &lt;strong&gt;una funzione di test&lt;/strong&gt; perché il suo nome inizia con &amp;ldquo;test&amp;rdquo;, e ha posizionato un pulsante di avvio test proprio di fianco alla sua dichiarazione:&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/xcode-testing-in-pratica/image_2.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/xcode-testing-in-pratica/image_2.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Per far eseguire a Xcode questo test, e solo questo, sarà sufficiente cliccare su quel pulsante. In alternativa sarà possibile selezione &amp;ldquo;Test&amp;rdquo; dal menu &amp;ldquo;Product&amp;rdquo; per far eseguire a Xcode tutti i test che l&amp;rsquo;IDE ha riconosciuto. Xcode offre anche un &lt;strong&gt;Test Navigator&lt;/strong&gt;, che mostra il nome di tutti i test implementati, raggruppati per &lt;em&gt;Test Case&lt;/em&gt;: spostando il puntatore del mouse su un test apparirà un pulsante a forma di freccia che permetterà di avviare singolarmente i test, oppure tutti i test relativi a un particolare &lt;em&gt;Test Case&lt;/em&gt;, o anche tutti i test scritti.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/xcode-testing-in-pratica/image_3.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/xcode-testing-in-pratica/image_3.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Per poter eseguire i test, Xcode deve effettivamente avviare l&amp;rsquo;app: selezioniamo uno dei simulatori disponibili in modo che a ogni avvio di test Xcode apra automaticamente il simulatore scelto.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&#34;http://engineering.facile.it/images/xcode-testing-in-pratica/image_4.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/xcode-testing-in-pratica/image_4.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;xctestcase-e-xctassert&#34;&gt;XCTestCase e XCTAssert&lt;/h2&gt;
 

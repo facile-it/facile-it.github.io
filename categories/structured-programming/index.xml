@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Structured programming on Facile.it Engineering</title>
-    <link>http://engineering.facile.it/categories/structured-programming/</link>
+    <link>https://engineering.facile.it/categories/structured-programming/</link>
     <description>Recent content in Structured programming on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Sep 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://engineering.facile.it/categories/structured-programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://engineering.facile.it/categories/structured-programming/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>No Country For If Else</title>
-      <link>http://engineering.facile.it/blog/eng/no-country-for-if-else/</link>
+      <link>https://engineering.facile.it/blog/eng/no-country-for-if-else/</link>
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/eng/no-country-for-if-else/</guid>
+      <guid>https://engineering.facile.it/blog/eng/no-country-for-if-else/</guid>
       <description>
 
 &lt;p&gt;There is an &lt;strong&gt;unwanted guest&lt;/strong&gt; with us as we write code and build software projects: it&amp;rsquo;s the code that&amp;rsquo;s &lt;strong&gt;already written&lt;/strong&gt;, and we must take into account its complexity as the code base increases in size. High complexity of the existing code can make the following activities particularly difficult:&lt;/p&gt;
@@ -368,10 +368,10 @@ func &amp;lt;*&amp;gt; &amp;lt;A, B&amp;gt; (left: A -&amp;gt; B, right: A) -&am
     
     <item>
       <title>No Country For If Else</title>
-      <link>http://engineering.facile.it/blog/ita/no-country-for-if-else/</link>
+      <link>https://engineering.facile.it/blog/ita/no-country-for-if-else/</link>
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://engineering.facile.it/blog/ita/no-country-for-if-else/</guid>
+      <guid>https://engineering.facile.it/blog/ita/no-country-for-if-else/</guid>
       <description>
 
 &lt;p&gt;C&amp;rsquo;è un &lt;strong&gt;ospite indesiderato&lt;/strong&gt; che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del &lt;strong&gt;codice già esistente&lt;/strong&gt;, e dobbiamo tener conto della sua complessità man mano che la &lt;em&gt;code base&lt;/em&gt; aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:&lt;/p&gt;

@@ -9,10 +9,10 @@ type: "post"
 languageCode: "it-IT"
 twitterImage: '/images/facilehack-2017-ci-siamo-quasi/share.png'
 ---
-Meno di 5 giorni alla seconda edizione di [**#FacileHack**](http://hackathon.facile.it/2017.html), la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana.
+Mancano meno di 5 giorni alla seconda edizione di [**#FacileHack**](http://hackathon.facile.it/2017.html), la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana.
 
 Attesa grande partecipazione all'evento anche da fuori Italia, le registrazioni sono state chiuse per sold-out all'inizio di questo mese. 
-In meno di 24 ore gli *hackers* partecipanti dovranno confrontarsi, mettendo a dura prova le proprie capacità fisiche per presentare un'idea o un prototipo in grado di ottenere il punteggio massimo della giuria di qualità.
+In meno di 24 ore gli *hackers* partecipanti dovranno confrontarsi, mettendo a dura prova le proprie capacità fisiche per presentare un'idea o un prototipo in grado di ottenere il punteggio massimo della [giuria](http://hackathon.facile.it/2017.html#giuria) di qualità.
    
 Saranno **Cristina Bianchini** (Vodafone Italia), **Fabio Lalli** (IQUII), **Deborah Raccagni** (Università Bocconi), **Moreno Soppelsa** (Giornalista) e il nostro **Mauro Giacobbe** (Facile.it), i componenti della giuria che avrà l'arduo compito di valutare il lavoro dei partecipanti all'hackathon sulla base di quattro criteri: attinenza alla sfida proposta, fattibilità tecnica, UI/UX e creatività.
 

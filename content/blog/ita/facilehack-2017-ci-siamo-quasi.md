@@ -1,6 +1,6 @@
 ---
 authors: ["salvatore-cordiano"]
-date: "2017-03-20"
+date: "2017-03-21"
 draft: false
 share: true
 categories: [Italian, FacileHack, Hackathon]
@@ -9,6 +9,8 @@ type: "post"
 languageCode: "it-IT"
 twitterImage: '/images/facilehack-2017-ci-siamo-quasi/share.png'
 ---
+![FacileHack](/images/facilehack-2017-ci-siamo-quasi/share.png)
+
 Mancano meno di 5 giorni alla seconda edizione di [**#FacileHack**](http://hackathon.facile.it/2017.html), la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana.
 
 Attesa grande partecipazione all'evento anche da fuori Italia, le registrazioni sono state chiuse per sold-out all'inizio di questo mese.

@@ -11,7 +11,7 @@ twitterImage: '/images/facilehack-2017-ci-siamo-quasi/share.png'
 ---
 ![FacileHack](/images/facilehack-2017-ci-siamo-quasi/share.png)
 
-Mancano meno di 5 giorni alla seconda edizione di [**#FacileHack**](http://hackathon.facile.it/2017.html), la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana.
+Mancano meno di 4 giorni alla seconda edizione di [**#FacileHack**](http://hackathon.facile.it/2017.html), la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana.
 
 Attesa grande partecipazione all'evento anche da fuori Italia, le registrazioni sono state chiuse per sold-out all'inizio di questo mese.
 

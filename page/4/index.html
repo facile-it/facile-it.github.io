@@ -32,7 +32,7 @@
 <meta property="og:url" content="https://engineering.facile.it/" />
 
 
-<meta property="og:updated_time" content="2016-01-18T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2016-03-15T00:00:00&#43;00:00"/>
 
 
 
@@ -219,15 +219,15 @@ ga('send', 'pageview');
 
                 
                     <li>
+                        <a href="https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/"><p>#FacileHack 2017 ci siamo quasi</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://engineering.facile.it/blog/eng/kotlin-dsl/"><p>Using Kotlin type-safe builders to create a DSL for Forms</p></a>
                     </li>
                 
                     <li>
                         <a href="https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/"><p>Angular Components: from AngularJS to &#34;just Angular&#34;</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/"><p>Please mutate responsibly: 3 ways to improve your mutable objects</p></a>
                     </li>
                 
             </ul>
@@ -240,6 +240,135 @@ ga('send', 'pageview');
     
     <div id="main">
         
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://engineering.facile.it/blog/eng/decoupling-view-controllers-with.signals/">Decoupling view controllers with Signals</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published" datetime='2016-03-15'>
+            15 March 2016
+        </time>
+
+        
+            <a href="/authors/elviro" class="author">
+            
+                <span class="name">Elviro Rocca</span>
+                <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" />
+            
+            </a>
+        
+
+        
+            <p>12 minute read</p>
+        
+    </div>
+</header>
+
+    
+
+    <p>Last time we looked at the Signal class, that is, a simple, reusable way of encapsulating the observer pattern. There are many use cases for a signal, and I&rsquo;m going to show one possible application, spawned from a real-world problem. View controllers&rsquo; composition and decoupling is hard: we often need an input from a view controller, that has to send its input back to its creator, while handling the back navigation somehow.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://engineering.facile.it/blog/eng/decoupling-view-controllers-with.signals/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+
+    
+        
+            <li>
+                
+                    <i class="fa fa-folder-open-o">&nbsp;</i>
+                
+        
+
+                
+                    Categories
+                
+            </li>
+    
+
+    
+        <li><a href="/categories/english">English</a></li>
+    
+        <li><a href="/categories/swift">Swift</a></li>
+    
+        <li><a href="/categories/functional-programming">Functional programming</a></li>
+    
+        <li><a href="/categories/signal">Signal</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fdecoupling-view-controllers-with.signals%2f&text=Decoupling%20view%20controllers%20with%20Signals&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fdecoupling-view-controllers-with.signals%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fdecoupling-view-controllers-with.signals%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fdecoupling-view-controllers-with.signals%2f&title=Decoupling%20view%20controllers%20with%20Signals" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fdecoupling-view-controllers-with.signals%2f&title=Decoupling%20view%20controllers%20with%20Signals" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fdecoupling-view-controllers-with.signals%2f&title=Decoupling%20view%20controllers%20with%20Signals" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fdecoupling-view-controllers-with.signals%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
         
             <article class="post">
     <header>
@@ -764,140 +893,6 @@ ga('send', 'pageview');
 </section>
 
         
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://engineering.facile.it/blog/ita/codice-riusabile-un-primer/">Codice riusabile: un primer</a></h2>
-        
-        
-        
-        
-            <p class="translated-article">
-                This article is also available
-                <a href="/blog/eng/code-reuse-a-primer">in english</a>
-            </p>
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published" datetime='2015-12-09'>
-            9 December 2015
-        </time>
-
-        
-            <a href="/authors/elviro" class="author">
-            
-                <span class="name">Elviro Rocca</span>
-                <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" />
-            
-            </a>
-        
-
-        
-            <p>9 minute read</p>
-        
-    </div>
-</header>
-
-    
-
-    <p>L&rsquo;ultima volta abbiamo visto una possibile implementazione del tipo Optional in Objective-C; l&rsquo;obiettivo primario dell&rsquo;articolo era quello di importare in Objective-C uno strumento frequentemente utilizzato in Swift, ma usare una classe come Optional può essere considerato un&rsquo;applicazione di un concetto molto più generale: il riutilizzo del codice. In effetti, Optional non è legato a un particolare dominio, e può essere riutilizzato più e più volte in molti progetti: questo è esattamente ciò che accade in Swift.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://engineering.facile.it/blog/ita/codice-riusabile-un-primer/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-
-    
-        
-            <li>
-                
-                    <i class="fa fa-folder-open-o">&nbsp;</i>
-                
-        
-
-                
-                    Categories
-                
-            </li>
-    
-
-    
-        <li><a href="/categories/italiano">Italiano</a></li>
-    
-        <li><a href="/categories/swift">Swift</a></li>
-    
-        <li><a href="/categories/functional-programming">Functional programming</a></li>
-    
-        <li><a href="/categories/code-reuse">Code reuse</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcodice-riusabile-un-primer%2f&text=Codice%20riusabile%3a%20un%20primer&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-</a></li>
-
-
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcodice-riusabile-un-primer%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-</a></li>
-
-
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcodice-riusabile-un-primer%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-</a></li>
-
-
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcodice-riusabile-un-primer%2f&title=Codice%20riusabile%3a%20un%20primer" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-</a></li>
-
-
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcodice-riusabile-un-primer%2f&title=Codice%20riusabile%3a%20un%20primer" target="_blank" class="share-btn linkedin">
-    <i class="fa fa-linkedin"></i>
-    <p>LinkedIn</p>
-</a></li>
-
-
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcodice-riusabile-un-primer%2f&title=Codice%20riusabile%3a%20un%20primer" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-</a></li>
-
-
-<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcodice-riusabile-un-primer%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-</a></li>
-
-        </ul>
-    </section>
-</section>
-
-        
 		
         
 <ul class="actions pagination">
@@ -1023,6 +1018,27 @@ ga('send', 'pageview');
                             <header>
                                     
                                         
+                                            <img src="https://www.gravatar.com/avatar/84febdc35f5438ae1d2500482e2228fa" alt="Salvatore Cordiano avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
+                                    <h3><a href="https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/">#FacileHack 2017 ci siamo quasi</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2017-03-21'>
+                                        21 March 2017
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
                                             <img src="https://www.gravatar.com/avatar/6f023540d4107d16eca48cd7fcdbed9b?d=404&amp;s=250" alt="Giacomo Bresciani avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
                                         
                                     
@@ -1055,27 +1071,6 @@ ga('send', 'pageview');
                                     
                                     <time class="published" datetime='2017-02-01'>
                                         1 February 2017
-                                    </time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                    
-                                        
-                                            <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
-                                        
-                                    
-
-                                    <h3><a href="https://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/">Please mutate responsibly: 3 ways to improve your mutable objects</a></h3>
-
-                                    
-                                        
-                                    
-                                    <time class="published" datetime='2016-12-12'>
-                                        12 December 2016
                                     </time>
                             </header>
                         </article>
@@ -1184,6 +1179,10 @@ ga('send', 'pageview');
                             </header>
                         </article>
                     </li>
+                    
+                
+                    
+                
                     
                 
                     

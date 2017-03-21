@@ -6,8 +6,30 @@
     <description>Recent content on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 21 Mar 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>#FacileHack 2017 ci siamo quasi</title>
+      <link>https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/</link>
+      <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/facilehack-2017-ci-siamo-quasi/share.png&#34; alt=&#34;FacileHack&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mancano meno di 4 giorni alla seconda edizione di &lt;a href=&#34;http://hackathon.facile.it/2017.html&#34;&gt;&lt;strong&gt;#FacileHack&lt;/strong&gt;&lt;/a&gt;, la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana.&lt;/p&gt;
+
+&lt;p&gt;Attesa grande partecipazione all&amp;rsquo;evento anche da fuori Italia, le registrazioni sono state chiuse per sold-out all&amp;rsquo;inizio di questo mese.&lt;/p&gt;
+
+&lt;p&gt;In meno di 24 ore gli &lt;em&gt;hackers&lt;/em&gt; partecipanti dovranno confrontarsi, mettendo a dura prova le proprie capacità fisiche e creative, per presentare un&amp;rsquo;idea o un prototipo in grado di ottenere il punteggio massimo della &lt;a href=&#34;http://hackathon.facile.it/2017.html#giuria&#34;&gt;giuria&lt;/a&gt; di qualità.&lt;/p&gt;
+
+&lt;p&gt;Saranno &lt;strong&gt;Cristina Bianchini&lt;/strong&gt; (Vodafone Italia), &lt;strong&gt;Fabio Lalli&lt;/strong&gt; (IQUII), &lt;strong&gt;Deborah Raccagni&lt;/strong&gt; (Università Bocconi), &lt;strong&gt;Moreno Soppelsa&lt;/strong&gt; (Giornalista) e il nostro &lt;strong&gt;Mauro Giacobbe&lt;/strong&gt; (Facile.it), i componenti della giuria che avrà l&amp;rsquo;arduo compito di valutare il lavoro dei partecipanti all&amp;rsquo;hackathon sulla base di quattro criteri: attinenza alla sfida proposta, fattibilità tecnica, UI/UX e creatività.&lt;/p&gt;
+
+&lt;p&gt;Il team proclamato vincitore di #FacileHack 2017 riceverà in premio un voucher del valore di 500 euro, per ogni componente della squadra, da spendere in formazione professionale attraverso i corsi di alto livello messi a disposizione dai partner &lt;a href=&#34;https://www.enter.it/it/ecosystem/education/&#34;&gt;LOG.ED&lt;/a&gt;, &lt;a href=&#34;http://www.ninjacademy.it/&#34;&gt;Ninja Academy&lt;/a&gt; e &lt;a href=&#34;https://www.fluentify.com/&#34;&gt;Fluentify&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Non ci rimane che augurare buon #FacileHack da tutti noi!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Using Kotlin type-safe builders to create a DSL for Forms</title>
@@ -1580,104 +1602,6 @@ They explained also how they use a &lt;strong&gt;C++ library&lt;/strong&gt; comm
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Json Web Token</title>
-      <link>https://engineering.facile.it/blog/eng/json-web-tokens/</link>
-      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/eng/json-web-tokens/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/json-web-tokens/logo.svg&#34; alt=&#34;JWT&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability.
-I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy.
-Imagine for example a web application where a user can login and obtain a &amp;ldquo;pass&amp;rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted.
-Thanks to JWT&amp;rsquo;s self verification capabilities, I could discard every request where the token is invalid (a fake token not signed by my application) or expired.
-Beyond this specific use case, JWT can be also useful to securely transmit data to other applications.&lt;/p&gt;
-
-&lt;p&gt;Now let me introduce the standard: JSON Web Token (JWT) is an open standard &lt;a href=&#34;https://tools.ietf.org/html/rfc7519&#34;&gt;RFC 7519&lt;/a&gt; that defines a compact, self-contained and secure way for transmitting information between two parties.&lt;/p&gt;
-
-&lt;p&gt;Using javascript object notation to represent the data means two things:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;saving lots of bytes when the token goes over the network, &lt;strong&gt;because of it&amp;rsquo;s size&lt;/strong&gt; it can be sent over an URL or inside an HTTP Header&lt;/li&gt;
-&lt;li&gt;it can be &lt;strong&gt;easily parsed by a browser&lt;/strong&gt; and consumed by a client application&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This is more clear when comparing JSON to other standards like &lt;a href=&#34;https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language&#34;&gt;SAML&lt;/a&gt; that uses a very verbose XML structure.&lt;/p&gt;
-
-&lt;p&gt;A JWT token can be trusted because it is digitally signed using a secret (usually with &lt;a href=&#34;https://en.wikipedia.org/wiki/Hash-based_message_authentication_code&#34;&gt;HMAC&lt;/a&gt; algorithm) or a keypair with &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA&#34;&gt;RSA&lt;/a&gt;.
-Its payload contains all the required data to verify itself and, for example, transport the user data to avoid querying the database more than once.&lt;/p&gt;
-
-&lt;h2 id=&#34;how-the-token-presents-itself&#34;&gt;How the token presents itself&lt;/h2&gt;
-
-&lt;p&gt;A token is represented as three base64 encoded strings joined by two points:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;headers&#34;&gt;Headers&lt;/h3&gt;
-
-&lt;p&gt;The first part of the string contains the headers, &lt;code&gt;&amp;quot;alg&amp;quot;&lt;/code&gt; is the algorithm used to secure the token and &lt;code&gt;&amp;quot;typ&amp;quot;&lt;/code&gt; is the type; in this case as we can see that I used an HMAC SHA256 to sign the JWT token:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
-  &amp;quot;alg&amp;quot;: &amp;quot;HS256&amp;quot;,
-  &amp;quot;typ&amp;quot;: &amp;quot;JWT&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;payload&#34;&gt;Payload&lt;/h3&gt;
-
-&lt;p&gt;The second part is the payload: it&amp;rsquo;s the data sent with the token. It contains metadata and information like expiration, audience or subject, and whatever you need.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
-  &amp;quot;sub&amp;quot;: &amp;quot;1234567890&amp;quot;,
-  &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;,
-  &amp;quot;admin&amp;quot;: true
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;All data is organized in &lt;strong&gt;claims&lt;/strong&gt;, statements about an entity (typically, the user). There are three types of claims: reserved, public, and private claims.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Reserved claims&lt;/strong&gt;: a set of predefined claims, conceived to provide a set of useful information. Some of them are: &lt;code&gt;iss&lt;/code&gt; (issuer), &lt;code&gt;exp&lt;/code&gt; (expiration time), &lt;code&gt;sub&lt;/code&gt; (subject), &lt;code&gt;aud&lt;/code&gt; (audience), among others.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Public claims&lt;/strong&gt;: defined at will but, in order to avoid collisions, they should be defined in the &lt;a href=&#34;http://www.iana.org/assignments/jwt/jwt.xhtml&#34;&gt;IANA JSON Web Token Registry&lt;/a&gt; or be described as a URI that contains a collision resistant namespace.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Private claims&lt;/strong&gt;: custom claims created to share information between parties that agree with using them.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;sign&#34;&gt;Sign&lt;/h3&gt;
-
-&lt;p&gt;The third part of the string is the sign, obtained from hashing headers and payload with a secret using the algorithm described in headers.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;HMACSHA256(
-  base64UrlEncode(header) + &amp;quot;.&amp;quot; +
-  base64UrlEncode(payload),
-  secret
-)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As said before the more interesting feature of JWT is in it&amp;rsquo;s flexibility. It can be created with the claims you need, carry your data and validated on other claims (standard or not).
-As an example, if on authentication I want to be sure that the token is issued by my application and that it is not older than 1 hour I can generate a token with a payload like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
-  &amp;quot;iss&amp;quot;: &amp;quot;1234567890&amp;quot;, // my application code
-  &amp;quot;exp&amp;quot;: &amp;quot;1459868400&amp;quot;, // 2016-04-04 15:00:00 Expiration time
-  &amp;quot;uid&amp;quot;: 159, // the user id
-  &amp;quot;name&amp;quot;: &amp;quot;Alessandro Galli&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Once my application receives a request with this token, an authenticator component will check the two claims (&lt;code&gt;iss&lt;/code&gt;, &lt;code&gt;exp&lt;/code&gt;) to be sure of the assertions made before, and then validate the sign. Furthermore, with the additional claims it can login the user without querying the database and complete the request.&lt;/p&gt;
-
-&lt;p&gt;This approach results in a stateless authentication removing all problems related to session storage, CORS+cookies requests and CSRF protection, among others.&lt;/p&gt;
-
-&lt;p&gt;As a solid standard, JWT has been adopted by a large number of users and it has libraries for almost every programming language: PHP, Java, Go, Python, Javascript, Ruby, Elixir, Scala, .NET. You can find a full list of available and trusted libraries on &lt;a href=&#34;https://jwt.io/#libraries-io&#34;&gt;JWT.io&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;In the next weeks, I will write a post and release my personal authentication example, using PHP with the Symfony framework.&lt;/p&gt;
 </description>
     </item>
     

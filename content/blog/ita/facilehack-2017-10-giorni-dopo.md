@@ -8,6 +8,9 @@ title: "#FacileHack 2017, 10 giorni dopo"
 type: "post"
 languageCode: "it-IT"
 twitterImage: '/images/facilehack-2017-10-giorni-dopo/facile-engineering-team.jpg'
+
+eng: "facilehack-2017-10-days-later"
+
 ---
 Dieci giorni fa è terminato [**#FacileHack 2017**](http://hackathon.facile.it/2017.html), la seconda edizione dell'hackathon organizzato da Facile.it. Tenere un evento di questo genere ci ha permesso di vedere all'opera e di confrontarci con tanti team molto eterogenei, composti da programmatori, designer e specialisti del marketing.
 

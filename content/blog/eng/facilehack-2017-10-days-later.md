@@ -32,7 +32,7 @@ The team that won the competition was **Orange Smile**, proposing Facilino, a vi
 <img src="/images/facilehack-2017-10-giorni-dopo/orange-smile.jpg" title="I vincitori di #FacileHack 2017: team Orange Smile"/>
 </div>
 
-The winners were awarded a voucher of € 500, for each team member, to be spent on high-level professional training courses make provided by our partners [LOG.ED] (https: //www.enter .com / en / ecosystem / education /), [Ninja Academy] (http://www.ninjacademy.it/) and [Fluentify] (https://www.fluentify.com/). **The cocus on training** seemed like an important decision for us and in line with the spirit of our engineering division!
+The winners were awarded a voucher of € 500, for each team member, to be spent on high-level professional training courses make provided by our partners [LOG.ED] (https: //www.enter .com / en / ecosystem / education /), [Ninja Academy] (http://www.ninjacademy.it/) and [Fluentify] (https://www.fluentify.com/). **The focus on training** seemed like an important decision for us and in line with the spirit of our engineering division!
 
 See you to the next edition!
 

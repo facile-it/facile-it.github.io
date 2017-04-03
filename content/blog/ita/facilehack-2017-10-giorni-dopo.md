@@ -14,6 +14,8 @@ eng: "facilehack-2017-10-days-later"
 ---
 Dieci giorni fa è terminato [**#FacileHack 2017**](http://hackathon.facile.it/2017.html), la seconda edizione dell'hackathon organizzato da Facile.it. Tenere un evento di questo genere ci ha permesso di vedere all'opera e di confrontarci con tanti team molto eterogenei, composti da programmatori, designer e specialisti del marketing.
 
+Il tema dell'hackathon di quest'anno è stata la **connettività**: Facile.it propone la comparazione dei servizi di connessione ad internet, e ha deciso di porre questo al centro della competizione. I diversi team si sono quindi affrontati su questo tema, per trovare modi per migliorare il business di Facile.it e l'esperienza utente degli utilizzatori del servizio.
+
 # Miglioramento continuo
 L'esperienza accumulata dalla prima edizione ci ha permesso di realizzare con facilità questo evento: così come ci piace applicarci nel nostro lavoro di tutti i giorni, abbiamo voluto ricercare un miglioramento continuo e progressivo anche nell'organizzare un hackathon, e questo si è rivelato un approccio vincente.
   
@@ -31,8 +33,6 @@ Il team che ha vinto la competizione è stato **Orange Smile**, con la proposta 
 </div>
 
 I vincitori si sono aggiudicati come premio un voucher del valore di 500 euro, per ogni componente della squadra, da spendere in formazione professionale attraverso i corsi di alto livello messi a disposizione dai partner [LOG.ED](https://www.enter.it/it/ecosystem/education/), [Ninja Academy](http://www.ninjacademy.it/) e [Fluentify](https://www.fluentify.com/). **Puntare sulla formazione** ci è sembrata una scelta importante e in linea con lo spirito della nostra divisione engineering!
-
-
 
 E alla fine non possiamo che salutarvi e aspettarvi per la prossima edizione!
 

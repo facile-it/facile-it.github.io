@@ -14,6 +14,8 @@ ita: "facilehack-2017-10-giorni-dopo"
 ---
 Ten days ago [**#FacileHack 2017**](http://hackathon.facile.it/2017.html) came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers.
 
+The hackathon's theme for this year was **connectivity**: Facile.it offers the comparation between internet access services, and we have decided to put this at the center of the competition. The teams have then faced each other on this theme, searching new ways to improve Facile.it's business and the user experience of the clients of the service.
+
 # Continuous improvement
 The experience we gained from the first edition allowed us to easily organize this event, and as we like to apply ourselves in our everyday work, we wanted to aim for a continuous and progressive improvement in organizing this hackathon, and this proved to be a winning approach.
   

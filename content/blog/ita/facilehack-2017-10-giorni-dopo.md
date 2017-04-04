@@ -32,7 +32,7 @@ Il team che ha vinto la competizione è stato **Orange Smile**, con la proposta 
 <img src="/images/facilehack-2017-10-giorni-dopo/orange-smile.jpg" title="I vincitori di #FacileHack 2017: team Orange Smile"/>
 </div>
 
-I vincitori si sono aggiudicati come premio un voucher del valore di 500 euro, per ogni componente della squadra, da spendere in formazione professionale attraverso i corsi di alto livello messi a disposizione dai partner [LOG.ED](https://www.enter.it/it/ecosystem/education/), [Ninja Academy](http://www.ninjacademy.it/) e [Fluentify](https://www.fluentify.com/). **Puntare sulla formazione** ci è sembrata una scelta importante e in linea con lo spirito della nostra divisione engineering!
+I vincitori si sono aggiudicati come premio un voucher del valore di 500 euro, per ogni componente della squadra, da spendere in formazione professionale attraverso i corsi di alto livello messi a disposizione dai partner [LOG.ED](https://www.enter.it/it/ecosystem/education/), [Ninja Academy](http://www.ninjacademy.it/) e [Fluentify](https://www.fluentify.com/). **Puntare sulla formazione** ci è sembrata una scelta importante e in linea con lo spirito della nostra divisione engineering.
 
 E alla fine non possiamo che salutarvi e aspettarvi per la prossima edizione!
 

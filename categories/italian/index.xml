@@ -6,8 +6,48 @@
     <description>Recent content in Italian on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 21 Mar 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Apr 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/categories/italian/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>#FacileHack 2017, 10 giorni dopo</title>
+      <link>https://engineering.facile.it/blog/ita/facilehack-2017-10-giorni-dopo/</link>
+      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/ita/facilehack-2017-10-giorni-dopo/</guid>
+      <description>
+
+&lt;p&gt;Dieci giorni fa è terminato &lt;a href=&#34;http://hackathon.facile.it/2017.html&#34;&gt;&lt;strong&gt;#FacileHack 2017&lt;/strong&gt;&lt;/a&gt;, la seconda edizione dell&amp;rsquo;hackathon organizzato da Facile.it. Tenere un evento di questo genere ci ha permesso di vedere all&amp;rsquo;opera e di confrontarci con tanti team molto eterogenei, composti da programmatori, designer e specialisti del marketing.&lt;/p&gt;
+
+&lt;p&gt;Il tema dell&amp;rsquo;hackathon di quest&amp;rsquo;anno è stata la &lt;strong&gt;connettività&lt;/strong&gt;: il nostro portale propone la comparazione dei servizi di connessione ad internet, e ha deciso di porre questo al centro della competizione. I diversi team si sono quindi affrontati su questo tema, per trovare modi per migliorare il business di Facile.it e l&amp;rsquo;esperienza utente degli utilizzatori del servizio.&lt;/p&gt;
+
+&lt;h1 id=&#34;miglioramento-continuo&#34;&gt;Miglioramento continuo&lt;/h1&gt;
+
+&lt;p&gt;L&amp;rsquo;esperienza accumulata dalla prima edizione ci ha permesso di realizzare con facilità questo evento: così come ci piace applicarci nel nostro lavoro di tutti i giorni, abbiamo voluto ricercare un miglioramento continuo e progressivo anche nell&amp;rsquo;organizzare un hackathon, e questo si è rivelato un approccio vincente.&lt;/p&gt;
+
+&lt;div style=&#34;text-align: center&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/X-OdVcH7CMs&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Uno dei punti che più ci ha convinto di questa edizione è stata la &lt;a href=&#34;http://hackathon.facile.it/2017.html#giuria&#34;&gt;giuria esterna&lt;/a&gt; composta da professionisti molto esperti di diversi settori. Nonostante i pochi minuti (soltanto sette) a disposizione dei vari team per presentare la propria idea, è stata molto brava ad analizzare le varie soluzioni ed a proporre le giuste domande per sviscerare i punti critici di ogni approccio presentato.&lt;/p&gt;
+
+&lt;h1 id=&#34;il-team-vincente&#34;&gt;Il team vincente&lt;/h1&gt;
+
+&lt;p&gt;Il team che ha vinto la competizione è stato &lt;strong&gt;Orange Smile&lt;/strong&gt;, con la proposta dell&amp;rsquo;assistente virtuale Facilino: la vittoria del team è stata decretata soprattutto dalla completezza della soluzione proposta, che andava dall&amp;rsquo;individuazione dei problemi, alla proposta di una soluzione, fino all&amp;rsquo;applicazione e al lancio sul mercato della stessa.&lt;/p&gt;
+
+&lt;div style=&#34;text-align: center&#34;&gt;
+&lt;img src=&#34;https://engineering.facile.it/images/facilehack-2017-10-giorni-dopo/orange-smile.jpg&#34; title=&#34;I vincitori di #FacileHack 2017: team Orange Smile&#34;/&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I vincitori si sono aggiudicati come premio un voucher del valore di 500 euro, per ogni componente della squadra, da spendere in formazione professionale attraverso i corsi di alto livello messi a disposizione dai partner &lt;a href=&#34;https://www.enter.it/it/ecosystem/education/&#34;&gt;LOG.ED&lt;/a&gt;, &lt;a href=&#34;http://www.ninjacademy.it/&#34;&gt;Ninja Academy&lt;/a&gt; e &lt;a href=&#34;https://www.fluentify.com/&#34;&gt;Fluentify&lt;/a&gt;. &lt;strong&gt;Puntare sulla formazione&lt;/strong&gt; ci è sembrata una scelta importante e in linea con lo spirito della nostra divisione engineering.&lt;/p&gt;
+
+&lt;p&gt;E alla fine non possiamo che salutarvi e aspettarvi per la prossima edizione!&lt;/p&gt;
+
+&lt;div style=&#34;text-align: center; margin-bottom: 2em&#34;&gt;
+&lt;img src=&#34;https://engineering.facile.it/images/facilehack-2017-10-giorni-dopo/facile-engineering-team.jpg&#34; title=&#34;FacileHack engineering team&#34;/&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>#FacileHack 2017 ci siamo quasi</title>

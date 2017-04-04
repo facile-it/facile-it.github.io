@@ -1,7 +1,7 @@
 ---
 authors: ["jean"]
 date: "2017-04-04"
-draft: true
+draft: false
 share: true
 categories: [English, FacileHack, Hackathon]
 title: "#FacileHack 2017, 10 days later"

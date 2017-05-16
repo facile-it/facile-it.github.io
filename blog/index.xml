@@ -6,8 +6,98 @@
     <description>Recent content in Blogs on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Facile.it devs @ phpDay 2017</title>
+      <link>https://engineering.facile.it/blog/eng/php-day-2017/</link>
+      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/php-day-2017/</guid>
+      <description>
+
+&lt;p&gt;Like clockwork, on May we head up to Verona to attend the &lt;strong&gt;&lt;a href=&#34;https://2017.phpday.it/&#34;&gt;phpDay conference&lt;/a&gt;&lt;/strong&gt;; this time it was on &lt;strong&gt;May 12th and 13th&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We met a lot of new people and known fellow PHP developers, and like &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;previous&lt;/a&gt; &lt;a href=&#34;https://engineering.facile.it/blog/eng/php-day-2016/&#34;&gt;years&lt;/a&gt;, we wanted to write down a light summary; like the previous ones, this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.&lt;/p&gt;
+
+&lt;p&gt;We hope to give a brief glimpse of what we experienced to fellow developers that hadn&amp;rsquo;t the opportunity to attend, and to tempt some of you to join conferences like this one or those in the PHP community at large, for your personal and professional growth. Like last year, we will later edit this article embedding the videos of the talks, when they will got released.&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;it&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Are you wondering how the first day of the &lt;a href=&#34;https://twitter.com/hashtag/phpDay?src=hash&#34;&gt;#phpDay&lt;/a&gt; went? That was amazing! &lt;a href=&#34;https://t.co/6630Zguq1Q&#34;&gt;pic.twitter.com/6630Zguq1Q&lt;/a&gt;&lt;/p&gt;&amp;mdash; phpDay by GrUSP (@phpday) &lt;a href=&#34;https://twitter.com/phpday/status/863314622656458753&#34;&gt;13 maggio 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;The talks are in chronological order, and we linked the slides when available. Enjoy your reading!&lt;/p&gt;
+
+&lt;h1 id=&#34;technical-talks&#34;&gt;Technical Talks&lt;/h1&gt;
+
+&lt;h2 id=&#34;climbing-the-abstract-syntax-tree&#34;&gt;Climbing the Abstract Syntax Tree&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;James Titcumb (&lt;a href=&#34;https://twitter.com/asgrim&#34;&gt;@asgrim&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 1 - 11:00 – 12:00 - track 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This talk started a bit complicated, since it tackles a very complex matter: the Abstract Syntax Tree that has been added to PHP since version 7, and it the implications of its use; following up a bit, it included some very easy, low level example of how the language works with the AST, and the fact that the example were in PHP itself helped a lot in increasing the understanding of the matter.&lt;/p&gt;
+
+&lt;h2 id=&#34;managing-dependencies-is-more-than-running-composer-update&#34;&gt;Managing dependencies is more than running &amp;ldquo;composer update&amp;rdquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Nils Adermann (&lt;a href=&#34;https://twitter.com/naderman&#34;&gt;@naderman&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 1 - 15:30 – 16:30 - track 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nils is one of the co-authors of Composer, but this talk was about &amp;ldquo;dependencies&amp;rdquo; in general, not just about the literal, software ones: every software project has a lot of dependecies apart from the libs that we install in the vendor folder, and he explained how we should approach them, and how we should mitigate the risks that they can add to our work.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-science-of-code-reviews&#34;&gt;The Science of Code Reviews&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rick Kuipers (&lt;a href=&#34;https://twitter.com/rskuipers&#34;&gt;@rskuipers&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 12:00 – 13:00 - track 2 (&lt;a href=&#34;https://speakerdeck.com/rskuipers/the-science-of-code-reviews&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Code reviews and pair programming are two very valuable tools that we can leverage in our work as developers. This talk was really interesting, and it started from reasons behind why do them, up to suggestions and tips on how to improve them if you already do in your team.&lt;/p&gt;
+
+&lt;h2 id=&#34;extremely-defensive-php&#34;&gt;Extremely defensive PHP&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Marco Pivetta (&lt;a href=&#34;https://twitter.com/ocramius&#34;&gt;@ocramius&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 15:30 – 16:30 - track 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Marco gave this talk already a lot of times on some conferences and some user groups, but it&amp;rsquo;s great! He suggests how to write code in a &amp;ldquo;defensive&amp;rdquo; way, to avoid that others are able to do mistakes with it and create problems down the line.&lt;/p&gt;
+
+&lt;h1 id=&#34;keynotes&#34;&gt;Keynotes&lt;/h1&gt;
+
+&lt;h2 id=&#34;code-manifesto&#34;&gt;Code Manifesto&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Graham Daniels (&lt;a href=&#34;https://twitter.com/greydnls&#34;&gt;@greydnls&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 1 - 09:45 – 10:45&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The first keynote wasn&amp;rsquo;t strictly technical, but it was still more than interesting: Graham guided us through how much inequality and hidden problems minorities (and especially women) have to face everyday in our line of work; Graham is also the author behind the &lt;a href=&#34;https://github.com/greydnls/code-manifesto&#34;&gt;Code Manifesto&lt;/a&gt;, a basic list of principles to be followed on OSS and workplaces to actively fight this issues and encourage diversity.&lt;/p&gt;
+
+&lt;h2 id=&#34;noestimates-the-10-new-principles-for-software-projects-predicting-without-estimating&#34;&gt;NoEstimates: The 10 new principles for Software Projects - predicting without estimating&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Vasco Duarte (&lt;a href=&#34;https://twitter.com/duarte_vasco&#34;&gt;@duarte_vasco&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 09:45 – 10:45&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vasco is the famous author of the #NoEstimate strategy, and his keynote was aimed at explaining the wrong things the foundation of the issues of our industry, where estimates are always wrong and are often used to &amp;ldquo;bet&amp;rdquo; the future of our companies.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-open-source-for-fun-and-profit&#34;&gt;Using Open Source for Fun and Profit&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gary Hockin (&lt;a href=&#34;https://twitter.com/geeh&#34;&gt;@geeh&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 17:30 – 18:30&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In his keynote, Gary told us his story of how, from a simple developer, he became a Zend contributor first, and the JetBrains Developer Advocate now; the basic lessons that we can take from his experience is that open source contributions (no matter how small) are good for your career, and that when you give to the community, the community will give back to you very soon.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/phpday-2017/facile-engineering-team-phpday-2017.jpeg&#34; alt=&#34;The Facile.it engineering team at PHPDay 2017&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>#FacileHack 2017, 10 days later</title>
@@ -1472,75 +1562,6 @@ RFC 7540 considers the case of HTTP/2 being used on cleartext connections as wel
 &lt;p&gt;The website &lt;a href=&#34;http://www.http2demo.io/&#34;&gt;Http2demo.io&lt;/a&gt; compares performance metrics between HTTP/1.1 and HTTP/2.&lt;/p&gt;
 
 &lt;p&gt;If you want to learn more about HTTP/2, you can read the official specifications (&lt;strong&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc7540&#34;&gt;RFC 7540&lt;/a&gt;&lt;/strong&gt;) or download the book &lt;strong&gt;&lt;a href=&#34;https://daniel.haxx.se/http2/&#34;&gt;Http2 explained&lt;/a&gt;&lt;/strong&gt; which also examines the reasons behind HTTP/2.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Blog restyling: switching to Hugo and GitHub Pages</title>
-      <link>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</link>
-      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</guid>
-      <description>
-
-&lt;p&gt;As you may have noticed, we went through a bit of a restyling in the last few days, and our blog changed a lot in terms of appearance and structure.
-We are very happy with those changes, but the reason behind this transition is not just a simple template change.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-we-were-searching-for&#34;&gt;What we were searching for&lt;/h2&gt;
-
-&lt;p&gt;Before, we were using an hosted CMS to run the blog, &lt;a href=&#34;https://ghost.org/&#34;&gt;Ghost&lt;/a&gt;. We were happy with the results, it wasn&amp;rsquo;t our concern to administrate the server or bother about other hosting stuff.&lt;/p&gt;
-
-&lt;p&gt;But, as many other developers, we were &lt;strong&gt;hitching for something&lt;/strong&gt; more aligned with our inclinations: we wanted a tool that was closer to our daily jobs and our skills. We were also having &lt;strong&gt;problems during the revision phase&lt;/strong&gt; of the articles, since multiple persons couldn&amp;rsquo;t review and edit an article at the same time, fearing the risk of overwriting each other&amp;rsquo;s work.&lt;/p&gt;
-
-&lt;p&gt;We then came down with a list of requirements for our blog; we wanted:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;easy review of articles&lt;/strong&gt;: parallels reviews are a must&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;an easy workflow&lt;/strong&gt;: no major overhead, since the blog contributions are voluntary amongs us; we want to dedicate all the time to writing the articles, not wrestling with technical difficulties&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;no security flaws&lt;/strong&gt;: this point disqualified Wordpress and other famous CMS solutions; we wouldn&amp;rsquo;t like to spend time staying ahead of possible security risks, or have to worry over the hosting and installation problems that a widespread used CMS has&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;easy image hosting&lt;/strong&gt; and embedding&lt;/li&gt;
-&lt;li&gt;easy management and modifications of the &lt;strong&gt;template&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;easy integrations of previously used &lt;a href=&#34;https://disqus.com/&#34;&gt;Disqus comments&lt;/a&gt; and Google Analytics&lt;/li&gt;
-&lt;li&gt;preferably &lt;strong&gt;markdown content format&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;support for &lt;strong&gt;multilanguage articles&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;git-and-the-github-pages&#34;&gt;Git and the GitHub pages&lt;/h2&gt;
-
-&lt;p&gt;The first solution that came to us was obviously &lt;strong&gt;Git&lt;/strong&gt;, the everyday tool for a team of developers working on the same piece of code (or text, in this case). We obviously then thought of the &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub pages&lt;/a&gt; as an hosting solution: that is ideal, since we already have a &lt;a href=&#34;https://github.com/facile-it&#34;&gt;Github organization&lt;/a&gt; in place, so an organization homepage/site would perfectly fit the bill for our blog.&lt;/p&gt;
-
-&lt;h2 id=&#34;hugo&#34;&gt;Hugo&lt;/h2&gt;
-
-&lt;p&gt;Once we set our eyes to that hosting solution, we started to search for a solution for building our blog. The proposed solution was &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;: it&amp;rsquo;s a static site generator, developed in Go, which fitted almost all of our requisites; also:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;it generates the static HMTL site live, with a &lt;strong&gt;&lt;a href=&#34;https://gohugo.io/extras/livereload/&#34;&gt;live reload&lt;/a&gt; functionality&lt;/strong&gt;: while you edit your markdown article, the site refresh itself on each save of the file(s), so you can see a live preview of what you&amp;rsquo;re writing&lt;/li&gt;
-&lt;li&gt;there are many templates ready to be used, and we &lt;a href=&#34;http://themes.gohugo.io/future-imperfect/&#34;&gt;chose one&lt;/a&gt; to be modified to our needs&lt;/li&gt;
-&lt;li&gt;the templates are built with the Go Templating engine, and with some easy manual edits we obtained all the requested features: multi-author support, link between translated articles, recent articles and top categories in the sidebar&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;deploying&#34;&gt;Deploying&lt;/h2&gt;
-
-&lt;p&gt;The last step needed to smooth out our workflow was to find a &lt;strong&gt;deploy strategy&lt;/strong&gt;. Github pages need to have the site content published onto the master branch, and we obviously wanted to separate the source code of the site from that.&lt;/p&gt;
-
-&lt;p&gt;We needed an easy way to reproduce this steps, ideally with a script commited to the repo, ready for everyone to use:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;generate&lt;/strong&gt; the static site with Hugo&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;avoid mixing (and committing)&lt;/strong&gt; the static copy with the source files&lt;/li&gt;
-&lt;li&gt;commit the files to the master branch&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Hugo normally generates the static copy in the &lt;code&gt;./public&lt;/code&gt; directory; to achieve this we used &lt;a href=&#34;https://github.com/X1011/git-directory-deploy&#34;&gt;a script that I found on GitHub itself&lt;/a&gt; that solved this exact problem. We started an empty &lt;code&gt;source&lt;/code&gt; branch, &lt;strong&gt;detached&lt;/strong&gt; from master:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git checkout -b source --orphan
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We started our Hugo site inside it, and we put the &lt;code&gt;./public&lt;/code&gt; in the &lt;code&gt;.gitIgnore&lt;/code&gt;, so each static generation would not be committed. We then prepared the deploy script that, after generating the static site, uses a Git subtree approach to commit its content to the master branch, with a commit message of &lt;code&gt;publish: &amp;lt;last commit message from source&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;et-voilà-here-we-are&#34;&gt;Et voilà, here we are!&lt;/h2&gt;
-
-&lt;p&gt;So, we hope that you will enjoy our new blog at least as much as we enjoyed building it ! Happy reading!&lt;/p&gt;
 </description>
     </item>
     

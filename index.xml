@@ -6,8 +6,98 @@
     <description>Recent content on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Facile.it devs @ phpDay 2017</title>
+      <link>https://engineering.facile.it/blog/eng/php-day-2017/</link>
+      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/php-day-2017/</guid>
+      <description>
+
+&lt;p&gt;Like clockwork, on May we head up to Verona to attend the &lt;strong&gt;&lt;a href=&#34;https://2017.phpday.it/&#34;&gt;phpDay conference&lt;/a&gt;&lt;/strong&gt;; this time it was on &lt;strong&gt;May 12th and 13th&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We met a lot of new people and known fellow PHP developers, and like &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;previous&lt;/a&gt; &lt;a href=&#34;https://engineering.facile.it/blog/eng/php-day-2016/&#34;&gt;years&lt;/a&gt;, we wanted to write down a light summary; like the previous ones, this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.&lt;/p&gt;
+
+&lt;p&gt;We hope to give a brief glimpse of what we experienced to fellow developers that hadn&amp;rsquo;t the opportunity to attend, and to tempt some of you to join conferences like this one or those in the PHP community at large, for your personal and professional growth. Like last year, we will later edit this article embedding the videos of the talks, when they will got released.&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;it&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Are you wondering how the first day of the &lt;a href=&#34;https://twitter.com/hashtag/phpDay?src=hash&#34;&gt;#phpDay&lt;/a&gt; went? That was amazing! &lt;a href=&#34;https://t.co/6630Zguq1Q&#34;&gt;pic.twitter.com/6630Zguq1Q&lt;/a&gt;&lt;/p&gt;&amp;mdash; phpDay by GrUSP (@phpday) &lt;a href=&#34;https://twitter.com/phpday/status/863314622656458753&#34;&gt;13 maggio 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;The talks are in chronological order, and we linked the slides when available. Enjoy your reading!&lt;/p&gt;
+
+&lt;h1 id=&#34;technical-talks&#34;&gt;Technical Talks&lt;/h1&gt;
+
+&lt;h2 id=&#34;climbing-the-abstract-syntax-tree&#34;&gt;Climbing the Abstract Syntax Tree&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;James Titcumb (&lt;a href=&#34;https://twitter.com/asgrim&#34;&gt;@asgrim&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 1 - 11:00 – 12:00 - track 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This talk started a bit complicated, since it tackles a very complex matter: the Abstract Syntax Tree that has been added to PHP since version 7, and it the implications of its use; following up a bit, it included some very easy, low level example of how the language works with the AST, and the fact that the example were in PHP itself helped a lot in increasing the understanding of the matter.&lt;/p&gt;
+
+&lt;h2 id=&#34;managing-dependencies-is-more-than-running-composer-update&#34;&gt;Managing dependencies is more than running &amp;ldquo;composer update&amp;rdquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Nils Adermann (&lt;a href=&#34;https://twitter.com/naderman&#34;&gt;@naderman&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 1 - 15:30 – 16:30 - track 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nils is one of the co-authors of Composer, but this talk was about &amp;ldquo;dependencies&amp;rdquo; in general, not just about the literal, software ones: every software project has a lot of dependecies apart from the libs that we install in the vendor folder, and he explained how we should approach them, and how we should mitigate the risks that they can add to our work.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-science-of-code-reviews&#34;&gt;The Science of Code Reviews&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rick Kuipers (&lt;a href=&#34;https://twitter.com/rskuipers&#34;&gt;@rskuipers&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 12:00 – 13:00 - track 2 (&lt;a href=&#34;https://speakerdeck.com/rskuipers/the-science-of-code-reviews&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Code reviews and pair programming are two very valuable tools that we can leverage in our work as developers. This talk was really interesting, and it started from reasons behind why do them, up to suggestions and tips on how to improve them if you already do in your team.&lt;/p&gt;
+
+&lt;h2 id=&#34;extremely-defensive-php&#34;&gt;Extremely defensive PHP&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Marco Pivetta (&lt;a href=&#34;https://twitter.com/ocramius&#34;&gt;@ocramius&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 15:30 – 16:30 - track 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Marco gave this talk already a lot of times on some conferences and some user groups, but it&amp;rsquo;s great! He suggests how to write code in a &amp;ldquo;defensive&amp;rdquo; way, to avoid that others are able to do mistakes with it and create problems down the line.&lt;/p&gt;
+
+&lt;h1 id=&#34;keynotes&#34;&gt;Keynotes&lt;/h1&gt;
+
+&lt;h2 id=&#34;code-manifesto&#34;&gt;Code Manifesto&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Graham Daniels (&lt;a href=&#34;https://twitter.com/greydnls&#34;&gt;@greydnls&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 1 - 09:45 – 10:45&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The first keynote wasn&amp;rsquo;t strictly technical, but it was still more than interesting: Graham guided us through how much inequality and hidden problems minorities (and especially women) have to face everyday in our line of work; Graham is also the author behind the &lt;a href=&#34;https://github.com/greydnls/code-manifesto&#34;&gt;Code Manifesto&lt;/a&gt;, a basic list of principles to be followed on OSS and workplaces to actively fight this issues and encourage diversity.&lt;/p&gt;
+
+&lt;h2 id=&#34;noestimates-the-10-new-principles-for-software-projects-predicting-without-estimating&#34;&gt;NoEstimates: The 10 new principles for Software Projects - predicting without estimating&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Vasco Duarte (&lt;a href=&#34;https://twitter.com/duarte_vasco&#34;&gt;@duarte_vasco&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 09:45 – 10:45&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vasco is the famous author of the #NoEstimate strategy, and his keynote was aimed at explaining the wrong things the foundation of the issues of our industry, where estimates are always wrong and are often used to &amp;ldquo;bet&amp;rdquo; the future of our companies.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-open-source-for-fun-and-profit&#34;&gt;Using Open Source for Fun and Profit&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gary Hockin (&lt;a href=&#34;https://twitter.com/geeh&#34;&gt;@geeh&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 17:30 – 18:30&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In his keynote, Gary told us his story of how, from a simple developer, he became a Zend contributor first, and the JetBrains Developer Advocate now; the basic lessons that we can take from his experience is that open source contributions (no matter how small) are good for your career, and that when you give to the community, the community will give back to you very soon.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/phpday-2017/facile-engineering-team-phpday-2017.jpeg&#34; alt=&#34;The Facile.it engineering team at PHPDay 2017&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>#FacileHack 2017, 10 days later</title>
@@ -1405,87 +1495,6 @@ $this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
 
 &lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;it&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Badoo put PHP 7 in production on Friday&amp;hellip; &lt;br&gt;/cc &lt;a href=&#34;https://twitter.com/agilegigi&#34;&gt;@agilegigi&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/poiluned%C3%ACcepensiamo?src=hash&#34;&gt;#poilunedìcepensiamo&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/phpday?src=hash&#34;&gt;#phpday&lt;/a&gt; &lt;a href=&#34;https://t.co/OEj3Emxxee&#34;&gt;pic.twitter.com/OEj3Emxxee&lt;/a&gt;&lt;/p&gt;&amp;mdash; Alessandro Lai (@AlessandroLai) &lt;a href=&#34;https://twitter.com/AlessandroLai/status/731403882321063936&#34;&gt;14 maggio 2016&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Faster Web with HTTP/2</title>
-      <link>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</link>
-      <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</guid>
-      <description>
-
-&lt;p&gt;HTTP is the protocol that powers the Web. It was originally designed in 1996 for transferring and manipulating simple text-based documents (mainly hypertext resources).
-Nowadays it&amp;rsquo;s been adopted for many different purposes. It&amp;rsquo;s used for: multimedia content transfer, rich real-time session-based web applications, API messages dispatch, Internet of Things and much more.
-For this reason, the HTTP specifications are continuously updated, by adding new features and improving performance.&lt;/p&gt;
-
-&lt;p&gt;In May 2015, the latest version 2.0 was standardized with &lt;em&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc7540&#34;&gt;RFC 7540&lt;/a&gt;&lt;/em&gt;.
-This introduced major differences on how the low-level protocol works.
-From the application perspective, very little has changed: requests, responses, resources, headers and HTTP methods are still there.
-New features have been added such as the possibility to &lt;strong&gt;push resources to the client&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;The main reason that led to HTTP/2 is &lt;strong&gt;improving performance&lt;/strong&gt;.
-Previous versions of HTTP had critical problems that were not addressable without changing the low-level communication mechanisms.&lt;/p&gt;
-
-&lt;h2 id=&#34;http-1-1-issues&#34;&gt;HTTP/1.1 issues&lt;/h2&gt;
-
-&lt;p&gt;HTTP/2 deals with many of the performance issues of HTTP/1.1:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;HTTP/1.1 doesn&amp;rsquo;t support headers compression even though it would be particularly effective against text-based data;&lt;/li&gt;
-&lt;li&gt;HTTP/1.1 &lt;a href=&#34;https://en.wikipedia.org/wiki/HTTP_pipelining&#34;&gt;request pipelining&lt;/a&gt; is not so efficient due to &lt;a href=&#34;https://en.wikipedia.org/wiki/Head-of-line_blocking&#34;&gt;head-of-line blocking&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;Modern web applications have complex resources that are linked to each other. HTTP/1.1 servers have no way to send all the related resources at once in order to avoid additional round-trips;&lt;/li&gt;
-&lt;li&gt;HTTP/1.1 connections are designed to have short lifespans. Unfortunately, web resources change over time and additional connections are required to fetch the updated data.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;People have adopted several tricks to mitigate these problems:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Session data is usually persisted on the server to minimize the amount of headers sent at every request;&lt;/li&gt;
-&lt;li&gt;To reduce latency and to achieve request multiplexing, browsers open several TCP connections during page load. This is not recommended: it consumes many more resources (both client-side and server-side) and &lt;a href=&#34;https://en.wikipedia.org/wiki/TCP_congestion_control&#34;&gt;TCP congestion avoidance&lt;/a&gt; techniques are no longer effective;&lt;/li&gt;
-&lt;li&gt;Recent web applications prefer leaving connections open to reduce connection setup latency for subsequent requests;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;what-s-changed&#34;&gt;What&amp;rsquo;s changed&lt;/h2&gt;
-
-&lt;p&gt;HTTP/2 is &lt;strong&gt;no longer text-based&lt;/strong&gt;; this means debugging could be somewhat difficult without using special tools.&lt;/p&gt;
-
-&lt;p&gt;Server and client communicate by sending small binary messages named &lt;strong&gt;Frames&lt;/strong&gt;.
-There are different types of frames. The most important ones are &lt;code&gt;DATA&lt;/code&gt;, &lt;code&gt;HEADERS&lt;/code&gt;, &lt;code&gt;SETTINGS&lt;/code&gt; and &lt;code&gt;PUSH_PROMISE&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;HTTP/2 uses the concept of &lt;strong&gt;streams&lt;/strong&gt;. Each stream is identified by an ID and it&amp;rsquo;s allocated for every request/response lifecycle.
-Several streams can be active at the same time on the same connection: this provides &lt;strong&gt;real request pipelining and multiplexing&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Each frame contains the ID of the stream they refer to. Thus, frames of different streams can be interleaved without interfering.&lt;/p&gt;
-
-&lt;p&gt;Servers, by sending the &lt;code&gt;PUSH_PROMISE&lt;/code&gt; frame, can allocate new streams without waiting for an explicit request from the client. By the virtue of this, &lt;strong&gt;the server can push resources to the client&lt;/strong&gt; and reduce the number of round-trip messages needed.&lt;/p&gt;
-
-&lt;p&gt;Http headers (both requests&amp;rsquo; and responses&amp;rsquo; ones) are always compressed and they are sent using one or more &lt;code&gt;HEADERS&lt;/code&gt; frames.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;a href=&#34;https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html#sec6.1&#34;&gt;Response Status-Line&lt;/a&gt;&lt;/em&gt; and &lt;em&gt;&lt;a href=&#34;https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html#sec5.1&#34;&gt;request Request-Line&lt;/a&gt;&lt;/em&gt; have been moved. They are now stored in the header section via special headers (pseudo-headers): &lt;code&gt;:method&lt;/code&gt;, &lt;code&gt;:path&lt;/code&gt;, &lt;code&gt;:status&lt;/code&gt;, etc..&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Response Status-Line Reason-Phrase&lt;/em&gt; has been completely removed: there is no equivalent in HTTP/2.&lt;/p&gt;
-
-&lt;p&gt;Servers and clients may use &lt;code&gt;PING&lt;/code&gt; frames to check the underlying connection&amp;rsquo;s state and to keep the connection alive even for a long period of time.&lt;/p&gt;
-
-&lt;h2 id=&#34;support-by-servers-and-user-agents&#34;&gt;Support by servers and user agents&lt;/h2&gt;
-
-&lt;p&gt;HTTP/2 is actually a fork of &lt;a href=&#34;http://dev.chromium.org/spdy/spdy-whitepaper&#34;&gt;SPDY&lt;/a&gt;, a protocol developed by Google.
-A lot of different servers and clients already supported the SPDY protocol, so the transition from SPDY to HTTP/2 was pretty straightforward.&lt;/p&gt;
-
-&lt;p&gt;HTTP/2 was officially released in May 2015; since then &lt;strong&gt;all major web servers have added support for HTTP/2&lt;/strong&gt; such as Apache HTTP, Apache Tomcat, Nginx, IIS and Jetty.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;All major browsers now support HTTP/2&lt;/strong&gt;, e.g. Firefox, Chrome, IE and Edge.&lt;/p&gt;
-
-&lt;p&gt;A the moment, they only allow HTTP/2 over TLS via &lt;a href=&#34;https://tools.ietf.org/html/rfc7301&#34;&gt;ALPN&lt;/a&gt; or &lt;a href=&#34;https://tools.ietf.org/html/draft-agl-tls-nextprotoneg-04&#34;&gt;NPN&lt;/a&gt; as Protocol Negotiation mechanisms.
-RFC 7540 considers the case of HTTP/2 being used on cleartext connections as well, but actually this is not extensively used.&lt;/p&gt;
-
-&lt;h2 id=&#34;additional-resources&#34;&gt;Additional resources&lt;/h2&gt;
-
-&lt;p&gt;The website &lt;a href=&#34;http://www.http2demo.io/&#34;&gt;Http2demo.io&lt;/a&gt; compares performance metrics between HTTP/1.1 and HTTP/2.&lt;/p&gt;
-
-&lt;p&gt;If you want to learn more about HTTP/2, you can read the official specifications (&lt;strong&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc7540&#34;&gt;RFC 7540&lt;/a&gt;&lt;/strong&gt;) or download the book &lt;strong&gt;&lt;a href=&#34;https://daniel.haxx.se/http2/&#34;&gt;Http2 explained&lt;/a&gt;&lt;/strong&gt; which also examines the reasons behind HTTP/2.&lt;/p&gt;
 </description>
     </item>
     

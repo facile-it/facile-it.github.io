@@ -6,8 +6,98 @@
     <description>Recent content in English on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Apr 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/categories/english/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Facile.it devs @ phpDay 2017</title>
+      <link>https://engineering.facile.it/blog/eng/php-day-2017/</link>
+      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/php-day-2017/</guid>
+      <description>
+
+&lt;p&gt;Like clockwork, on May we head up to Verona to attend the &lt;strong&gt;&lt;a href=&#34;https://2017.phpday.it/&#34;&gt;phpDay conference&lt;/a&gt;&lt;/strong&gt;; this time it was on &lt;strong&gt;May 12th and 13th&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;We met a lot of new people and known fellow PHP developers, and like &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;previous&lt;/a&gt; &lt;a href=&#34;https://engineering.facile.it/blog/eng/php-day-2016/&#34;&gt;years&lt;/a&gt;, we wanted to write down a light summary; like the previous ones, this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.&lt;/p&gt;
+
+&lt;p&gt;We hope to give a brief glimpse of what we experienced to fellow developers that hadn&amp;rsquo;t the opportunity to attend, and to tempt some of you to join conferences like this one or those in the PHP community at large, for your personal and professional growth. Like last year, we will later edit this article embedding the videos of the talks, when they will got released.&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;it&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Are you wondering how the first day of the &lt;a href=&#34;https://twitter.com/hashtag/phpDay?src=hash&#34;&gt;#phpDay&lt;/a&gt; went? That was amazing! &lt;a href=&#34;https://t.co/6630Zguq1Q&#34;&gt;pic.twitter.com/6630Zguq1Q&lt;/a&gt;&lt;/p&gt;&amp;mdash; phpDay by GrUSP (@phpday) &lt;a href=&#34;https://twitter.com/phpday/status/863314622656458753&#34;&gt;13 maggio 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;The talks are in chronological order, and we linked the slides when available. Enjoy your reading!&lt;/p&gt;
+
+&lt;h1 id=&#34;technical-talks&#34;&gt;Technical Talks&lt;/h1&gt;
+
+&lt;h2 id=&#34;climbing-the-abstract-syntax-tree&#34;&gt;Climbing the Abstract Syntax Tree&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;James Titcumb (&lt;a href=&#34;https://twitter.com/asgrim&#34;&gt;@asgrim&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 1 - 11:00 – 12:00 - track 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;This talk started a bit complicated, since it tackles a very complex matter: the Abstract Syntax Tree that has been added to PHP since version 7, and it the implications of its use; following up a bit, it included some very easy, low level example of how the language works with the AST, and the fact that the example were in PHP itself helped a lot in increasing the understanding of the matter.&lt;/p&gt;
+
+&lt;h2 id=&#34;managing-dependencies-is-more-than-running-composer-update&#34;&gt;Managing dependencies is more than running &amp;ldquo;composer update&amp;rdquo;&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Nils Adermann (&lt;a href=&#34;https://twitter.com/naderman&#34;&gt;@naderman&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 1 - 15:30 – 16:30 - track 2&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Nils is one of the co-authors of Composer, but this talk was about &amp;ldquo;dependencies&amp;rdquo; in general, not just about the literal, software ones: every software project has a lot of dependecies apart from the libs that we install in the vendor folder, and he explained how we should approach them, and how we should mitigate the risks that they can add to our work.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-science-of-code-reviews&#34;&gt;The Science of Code Reviews&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rick Kuipers (&lt;a href=&#34;https://twitter.com/rskuipers&#34;&gt;@rskuipers&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 12:00 – 13:00 - track 2 (&lt;a href=&#34;https://speakerdeck.com/rskuipers/the-science-of-code-reviews&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Code reviews and pair programming are two very valuable tools that we can leverage in our work as developers. This talk was really interesting, and it started from reasons behind why do them, up to suggestions and tips on how to improve them if you already do in your team.&lt;/p&gt;
+
+&lt;h2 id=&#34;extremely-defensive-php&#34;&gt;Extremely defensive PHP&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Marco Pivetta (&lt;a href=&#34;https://twitter.com/ocramius&#34;&gt;@ocramius&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 15:30 – 16:30 - track 1&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Marco gave this talk already a lot of times on some conferences and some user groups, but it&amp;rsquo;s great! He suggests how to write code in a &amp;ldquo;defensive&amp;rdquo; way, to avoid that others are able to do mistakes with it and create problems down the line.&lt;/p&gt;
+
+&lt;h1 id=&#34;keynotes&#34;&gt;Keynotes&lt;/h1&gt;
+
+&lt;h2 id=&#34;code-manifesto&#34;&gt;Code Manifesto&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Graham Daniels (&lt;a href=&#34;https://twitter.com/greydnls&#34;&gt;@greydnls&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 1 - 09:45 – 10:45&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The first keynote wasn&amp;rsquo;t strictly technical, but it was still more than interesting: Graham guided us through how much inequality and hidden problems minorities (and especially women) have to face everyday in our line of work; Graham is also the author behind the &lt;a href=&#34;https://github.com/greydnls/code-manifesto&#34;&gt;Code Manifesto&lt;/a&gt;, a basic list of principles to be followed on OSS and workplaces to actively fight this issues and encourage diversity.&lt;/p&gt;
+
+&lt;h2 id=&#34;noestimates-the-10-new-principles-for-software-projects-predicting-without-estimating&#34;&gt;NoEstimates: The 10 new principles for Software Projects - predicting without estimating&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Vasco Duarte (&lt;a href=&#34;https://twitter.com/duarte_vasco&#34;&gt;@duarte_vasco&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 09:45 – 10:45&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vasco is the famous author of the #NoEstimate strategy, and his keynote was aimed at explaining the wrong things the foundation of the issues of our industry, where estimates are always wrong and are often used to &amp;ldquo;bet&amp;rdquo; the future of our companies.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-open-source-for-fun-and-profit&#34;&gt;Using Open Source for Fun and Profit&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gary Hockin (&lt;a href=&#34;https://twitter.com/geeh&#34;&gt;@geeh&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Day 2 - 17:30 – 18:30&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In his keynote, Gary told us his story of how, from a simple developer, he became a Zend contributor first, and the JetBrains Developer Advocate now; the basic lessons that we can take from his experience is that open source contributions (no matter how small) are good for your career, and that when you give to the community, the community will give back to you very soon.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/phpday-2017/facile-engineering-team-phpday-2017.jpeg&#34; alt=&#34;The Facile.it engineering team at PHPDay 2017&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>#FacileHack 2017, 10 days later</title>
@@ -1606,104 +1696,6 @@ They explained also how they use a &lt;strong&gt;C++ library&lt;/strong&gt; comm
  &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Json Web Token</title>
-      <link>https://engineering.facile.it/blog/eng/json-web-tokens/</link>
-      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/eng/json-web-tokens/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/json-web-tokens/logo.svg&#34; alt=&#34;JWT&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability.
-I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy.
-Imagine for example a web application where a user can login and obtain a &amp;ldquo;pass&amp;rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted.
-Thanks to JWT&amp;rsquo;s self verification capabilities, I could discard every request where the token is invalid (a fake token not signed by my application) or expired.
-Beyond this specific use case, JWT can be also useful to securely transmit data to other applications.&lt;/p&gt;
-
-&lt;p&gt;Now let me introduce the standard: JSON Web Token (JWT) is an open standard &lt;a href=&#34;https://tools.ietf.org/html/rfc7519&#34;&gt;RFC 7519&lt;/a&gt; that defines a compact, self-contained and secure way for transmitting information between two parties.&lt;/p&gt;
-
-&lt;p&gt;Using javascript object notation to represent the data means two things:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;saving lots of bytes when the token goes over the network, &lt;strong&gt;because of it&amp;rsquo;s size&lt;/strong&gt; it can be sent over an URL or inside an HTTP Header&lt;/li&gt;
-&lt;li&gt;it can be &lt;strong&gt;easily parsed by a browser&lt;/strong&gt; and consumed by a client application&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This is more clear when comparing JSON to other standards like &lt;a href=&#34;https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language&#34;&gt;SAML&lt;/a&gt; that uses a very verbose XML structure.&lt;/p&gt;
-
-&lt;p&gt;A JWT token can be trusted because it is digitally signed using a secret (usually with &lt;a href=&#34;https://en.wikipedia.org/wiki/Hash-based_message_authentication_code&#34;&gt;HMAC&lt;/a&gt; algorithm) or a keypair with &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA&#34;&gt;RSA&lt;/a&gt;.
-Its payload contains all the required data to verify itself and, for example, transport the user data to avoid querying the database more than once.&lt;/p&gt;
-
-&lt;h2 id=&#34;how-the-token-presents-itself&#34;&gt;How the token presents itself&lt;/h2&gt;
-
-&lt;p&gt;A token is represented as three base64 encoded strings joined by two points:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;headers&#34;&gt;Headers&lt;/h3&gt;
-
-&lt;p&gt;The first part of the string contains the headers, &lt;code&gt;&amp;quot;alg&amp;quot;&lt;/code&gt; is the algorithm used to secure the token and &lt;code&gt;&amp;quot;typ&amp;quot;&lt;/code&gt; is the type; in this case as we can see that I used an HMAC SHA256 to sign the JWT token:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
-  &amp;quot;alg&amp;quot;: &amp;quot;HS256&amp;quot;,
-  &amp;quot;typ&amp;quot;: &amp;quot;JWT&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;payload&#34;&gt;Payload&lt;/h3&gt;
-
-&lt;p&gt;The second part is the payload: it&amp;rsquo;s the data sent with the token. It contains metadata and information like expiration, audience or subject, and whatever you need.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
-  &amp;quot;sub&amp;quot;: &amp;quot;1234567890&amp;quot;,
-  &amp;quot;name&amp;quot;: &amp;quot;John Doe&amp;quot;,
-  &amp;quot;admin&amp;quot;: true
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;All data is organized in &lt;strong&gt;claims&lt;/strong&gt;, statements about an entity (typically, the user). There are three types of claims: reserved, public, and private claims.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Reserved claims&lt;/strong&gt;: a set of predefined claims, conceived to provide a set of useful information. Some of them are: &lt;code&gt;iss&lt;/code&gt; (issuer), &lt;code&gt;exp&lt;/code&gt; (expiration time), &lt;code&gt;sub&lt;/code&gt; (subject), &lt;code&gt;aud&lt;/code&gt; (audience), among others.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Public claims&lt;/strong&gt;: defined at will but, in order to avoid collisions, they should be defined in the &lt;a href=&#34;http://www.iana.org/assignments/jwt/jwt.xhtml&#34;&gt;IANA JSON Web Token Registry&lt;/a&gt; or be described as a URI that contains a collision resistant namespace.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Private claims&lt;/strong&gt;: custom claims created to share information between parties that agree with using them.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;sign&#34;&gt;Sign&lt;/h3&gt;
-
-&lt;p&gt;The third part of the string is the sign, obtained from hashing headers and payload with a secret using the algorithm described in headers.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;HMACSHA256(
-  base64UrlEncode(header) + &amp;quot;.&amp;quot; +
-  base64UrlEncode(payload),
-  secret
-)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;As said before the more interesting feature of JWT is in it&amp;rsquo;s flexibility. It can be created with the claims you need, carry your data and validated on other claims (standard or not).
-As an example, if on authentication I want to be sure that the token is issued by my application and that it is not older than 1 hour I can generate a token with a payload like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;{
-  &amp;quot;iss&amp;quot;: &amp;quot;1234567890&amp;quot;, // my application code
-  &amp;quot;exp&amp;quot;: &amp;quot;1459868400&amp;quot;, // 2016-04-04 15:00:00 Expiration time
-  &amp;quot;uid&amp;quot;: 159, // the user id
-  &amp;quot;name&amp;quot;: &amp;quot;Alessandro Galli&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Once my application receives a request with this token, an authenticator component will check the two claims (&lt;code&gt;iss&lt;/code&gt;, &lt;code&gt;exp&lt;/code&gt;) to be sure of the assertions made before, and then validate the sign. Furthermore, with the additional claims it can login the user without querying the database and complete the request.&lt;/p&gt;
-
-&lt;p&gt;This approach results in a stateless authentication removing all problems related to session storage, CORS+cookies requests and CSRF protection, among others.&lt;/p&gt;
-
-&lt;p&gt;As a solid standard, JWT has been adopted by a large number of users and it has libraries for almost every programming language: PHP, Java, Go, Python, Javascript, Ruby, Elixir, Scala, .NET. You can find a full list of available and trusted libraries on &lt;a href=&#34;https://jwt.io/#libraries-io&#34;&gt;JWT.io&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;In the next weeks, I will write a post and release my personal authentication example, using PHP with the Symfony framework.&lt;/p&gt;
 </description>
     </item>
     

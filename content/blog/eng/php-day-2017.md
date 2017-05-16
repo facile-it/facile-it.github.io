@@ -2,7 +2,7 @@
 authors: ["jean"]
 comments: true
 date: "2017-05-16"
-draft: true
+draft: false
 share: true
 categories: [English, PHP, Conferences]
 title: "Facile.it devs @ phpDay 2017"

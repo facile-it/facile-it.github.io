@@ -6,10 +6,11 @@ draft: true
 share: true
 categories: [English, PHP, Conferences]
 title: "Facile.it devs @ phpDay 2017"
+twitterImage: "/images/phpday-2017/phpday-logo.png"
 
 languageCode: "en-EN"
 type: "post"
-toc: true
+toc: false
 
 ---
 Like clockwork, on May we head up to Verona to attend the **[phpDay conference](https://2017.phpday.it/)**; this time it was on **May 12th and 13th**. 
@@ -38,9 +39,9 @@ Nils is one of the co-authors of Composer, but this talk was about "dependencies
 
 ## The Science of Code Reviews
  * Rick Kuipers ([@rskuipers](https://twitter.com/rskuipers))
- * Day 2 - 12:00 – 13:00 - track 2
+ * Day 2 - 12:00 – 13:00 - track 2 ([slides](https://speakerdeck.com/rskuipers/the-science-of-code-reviews))
 
-Code reviews and pair programming are to very valuable tools that we can leverage in our work as developers. This talk was really interesting, and it started from reasons behind why do them, up to suggestions and tips on how to improve them if you already do in your team.
+Code reviews and pair programming are two very valuable tools that we can leverage in our work as developers. This talk was really interesting, and it started from reasons behind why do them, up to suggestions and tips on how to improve them if you already do in your team.
 
 ## Extremely defensive PHP
  * Marco Pivetta ([@ocramius](https://twitter.com/ocramius))
@@ -59,15 +60,12 @@ The first keynote wasn't strictly technical, but it was still more than interest
  * Vasco Duarte ([@duarte_vasco](https://twitter.com/duarte_vasco))
  * Day 2 - 09:45 – 10:45
 
-Vasco is the famous author of the #NoEstimate strategy, and in his keynote was aimed at explaining the wrong things a the foundation of the issues of our industry, where estimates are always wrong and are often used to "bet" the future of our companies.
+Vasco is the famous author of the #NoEstimate strategy, and his keynote was aimed at explaining the wrong things the foundation of the issues of our industry, where estimates are always wrong and are often used to "bet" the future of our companies.
 
 ## Using Open Source for Fun and Profit
  * Gary Hockin ([@geeh](https://twitter.com/geeh))
  * Day 2 - 17:30 – 18:30
 
-In his keynote, Gary told us his history of how, from a simple developer, he became a Zend contributor first, and the JetBrains Developer Advocate now; the basic lessons that we can take from his experience is that open source contributions (no matter how small) are good for your career, and that when you give to the community, the community will give back to you very soon.  
+In his keynote, Gary told us his story of how, from a simple developer, he became a Zend contributor first, and the JetBrains Developer Advocate now; the basic lessons that we can take from his experience is that open source contributions (no matter how small) are good for your career, and that when you give to the community, the community will give back to you very soon.  
 
-Also, Ocramius is always watching you:
-
-<blockquote class="twitter-tweet" data-lang="it"><p lang="en" dir="ltr">&quot;open source is free code reviews, free learning&quot; <a href="https://twitter.com/hashtag/phpday?src=hash">#phpday</a> <a href="https://twitter.com/GeeH">@GeeH</a> <a href="https://t.co/mgcMz6E9Zj">pic.twitter.com/mgcMz6E9Zj</a></p>&mdash; Developerissimo (@Ocramius) <a href="https://twitter.com/Ocramius/status/863424305719377920">13 maggio 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+![The Facile.it engineering team at PHPDay 2017](/images/phpday-2017/facile-engineering-team-phpday-2017.jpeg)

@@ -5,14 +5,14 @@ date: "2017-05-16"
 draft: true
 share: true
 categories: [English, PHP, Conferences]
-title: "Facile.it devs @ PhpDay 2017"
+title: "Facile.it devs @ phpDay 2017"
 
 languageCode: "en-EN"
 type: "post"
 toc: true
 
 ---
-Like clockwork, on May we head up to Verona to attend the **[PHP Day conference](https://2017.phpday.it/)**; this time it was on **May 12th and 13th**. 
+Like clockwork, on May we head up to Verona to attend the **[phpDay conference](https://2017.phpday.it/)**; this time it was on **May 12th and 13th**. 
 
 We met a lot of new people and known fellow PHP developers, and like [previous]({{< ref "php-day-2015.md" >}}) [years]({{< ref "php-day-2016.md" >}}), we wanted to write down a light summary; like the previous ones, this won't be a full "review" of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.
 

@@ -4,7 +4,7 @@ comments: true
 date: "2017-05-25"
 draft: true
 share: true
-categories: [English, PHP, OOP]
+categories: [English, PHP, OOP, Software testing]
 title: "Why tipehints and interfaces are not visual debt"
 twitterImage: "/images/phpday-2017/phpday-logo.png"
 

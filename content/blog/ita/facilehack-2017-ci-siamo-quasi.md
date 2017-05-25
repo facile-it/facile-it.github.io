@@ -3,7 +3,7 @@ authors: ["salvatore-cordiano"]
 date: "2017-03-21"
 draft: false
 share: true
-categories: [Italian, FacileHack, Hackathon]
+categories: [Italiano, FacileHack, Hackathon]
 title: "#FacileHack 2017 ci siamo quasi"
 type: "post"
 languageCode: "it-IT"

@@ -27,9 +27,11 @@ I can agree with the bottom line of the video:
 
 > Am I necessarily getting a benefit \[...\] ?  Question everything
 
-Every choice in our line of work is always a **trade-off** between benefits and cons, and every new introduction in a projects should be evaluated and agreed upon between team members. But my personal preference leans a lot towards the opposite side in this specific matter: as I stated in a [previous blog post here]({{< ref "how-php-7-tdd-helped-me-sleep-better.md" >}}), I love the new addition that PHP 7 brought to us with scalar and return type hints, and I use them as often as I can, because I discovered that **they bring a lot of benefits** to the code that I write. 
+Every choice in our line of work is always a **trade-off** between benefits and cons, and every new introduction in a projects should be evaluated and agreed upon between team members. But my personal preference leans a lot towards the opposite side in this specific matter: as I stated in a [previous blog post here]({{< ref "how-php-7-tdd-helped-me-sleep-better.md" >}}), I love the new additions that PHP 7 brought to us like scalar and return type hints, and I use them as often as I can, because I discovered that **they bring a lot of benefits** to the code that I write. 
 
-Probably this was influenced by the fact that previously I worked with C++, where type are a lot more intrusive compared with PHP 5; but over time and with usage, I learned the great benefits that we can achieve with this addition to our PHP 7 codebases, and I would like to explain myself and the reasons behind my arguments, recounting them.
+Probably this was influenced by the fact that previously I worked with C++, where types are a lot more intrusive compared with PHP 5; but over time and with usage, I learned the great benefits that we can achieve with this addition to our PHP 7 codebases. In general, I think that type hints, and other language features that create a more "rigid" code, are **helpful during the evolution of a codebase**, and so they are really needed in long-running projects, where the maintainability of code is crucial. It may be less true in a "release and forget" type of project, but I think that it would still be like betting againt oneself.
+
+In this blog post I would like to explain myself and the reasons behind my arguments, recounting them.
  
 ## Scalar type hints as safeguards
 
@@ -85,7 +87,7 @@ That is not the same of having a pure interface, but we will still be able to de
 
 When we write unit test, we use the real instance of the class which is under test, and everything else should be mocked. That means that we will use some test mocking library (i.e. I prefer [Prophecy](https://github.com/phpspec/prophecy), which is included in PHPUnit) to mimick the behavior of nearby objects.
 
-How type hints would help us in this case? If we would have to mock the `EventInterface` (or the concrete class, it's unimportant here), having the return type hints for example would help us in writing good mocks, and not wrong ones. 
+How type hints would help us in this case? If we would have to mock the `EventInterface` (or the concrete class, it's unimportant here), having the return type hints for example would help us in **writing good mocks**, and not wrong ones. 
 
 But how? Nearly every mocking library creates a mock extending at runtime the original class, since the mock needs to pass every check and type hint as if it was the original class; this means that it can't change the method signature, hence preserving the original return type hint.
 
@@ -165,10 +167,10 @@ class Building
 }
 ```
 
-Why we had a type hint in the `putOutFire()` method? Surely because we want to rely on some method that a `Fireman` instance would give to us in the method body (i.e. the `wearProtectiveGear()` and `shootWaterAtFlames()`); if we remove the type hint, we would have no guarantees that those methods exists on the argument, and we would have to either use a `method_exists()` call twice (oh, the horror!) or expose our `Building` class to a possible fatal error.  
+Why we have a type hint in the `putOutFire()` method? Surely because we want to rely on some method that a `Fireman` instance would give to us in the method body (i.e. the `wearProtectiveGear()` and `shootWaterAtFlames()`); if we remove the type hint, we would have no guarantees that those methods exists on the argument, and we would have to either use a `method_exists()` call twice (oh, the horror!) or expose our `Building` class to a possible fatal error.  
 
 
-To take the example further, we can make the `StrongAndAblePerson` able to put out a fire if we **extract the needed methods in an interface**, defining a contract of what our `putOutFire()` needs to know and use:
+To take the example further, we can make the `StrongAndAblePerson` capable of put out a fire if we **extract the needed methods in an interface**, defining a contract of what our `putOutFire()` needs to know and use:
 
 ```php
 interface TrainedFireFighter
@@ -214,7 +216,7 @@ This is the perfect example to show that adding those type hints on already work
 
 ### Strict types enforcing
 
-In the last part of this PR, I added the `declare(strict_types=1)` directive everywhere in my code. This directive changes the behavior of type hints: with it, passed values are no longer silently casted (if possible) to the type-hinted, required type, but instead they **trigger an immediate error if the type doesn't match**; for example, passing a `"10"` string into a `int` or `float` type hint will no longer trigger an automatic conversion to `10` or `10.0`, but trigger an error.
+In the last part of this PR, I also added the `declare(strict_types=1)` directive everywhere in my code. This directive changes the behavior of type hints: with it, passed values are no longer silently casted (if possible) to the type-hinted, required type, but instead they **trigger an immediate error if the type doesn't match**; for example, passing a `"10"` string into a `int` or `float` type hint will no longer trigger an automatic conversion to `10` or `10.0`, but trigger an error.
 
 I would admit that this is a matter of personal preference, and I would not suggest to use this everywhere, especially if there isn't a very thorough test coverage; it may lead to unneeded failures in very unsuspecting places, and it may cause friction when intergrating code with external libraries that take advantage of the implicit type casting that PHP has always done. 
 

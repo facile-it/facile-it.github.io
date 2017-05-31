@@ -5,7 +5,7 @@ date: "2017-05-31"
 draft: false
 share: true
 categories: [English, PHP, OOP, Software testing]
-title: "Why tipehints and interfaces are not visual debt"
+title: "Why type hints and interfaces are not visual debt"
 
 languageCode: "en-EN"
 type: "post"

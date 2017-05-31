@@ -6,7 +6,6 @@ draft: false
 share: true
 categories: [English, PHP, OOP, Software testing]
 title: "Why tipehints and interfaces are not visual debt"
-twitterImage: "/images/phpday-2017/phpday-logo.png"
 
 languageCode: "en-EN"
 type: "post"
@@ -17,7 +16,7 @@ A few days ago I stumbled on a strange tweet that was highlighting a controversy
 <blockquote class="twitter-tweet" data-lang="it"><p lang="en" dir="ltr">Scalar type hints &amp; return types vs no scalar type hints &amp; return types is <a href="https://twitter.com/hashtag/PHP?src=hash">#PHP</a>&#39;s new spaces vs tabs</p>&mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) <a href="https://twitter.com/WyriHaximus/status/865524687257862144">19 maggio 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-After asking references about this, someone alluded to this very short video: [**"PHP Bits: Visual Debt"**](https://laracasts.com/series/php-bits/episodes/1) (it's only 3 minutes). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.
+After asking references about this, someone alluded to this very short video: [**"PHP Bits: Visual Debt"**](https://laracasts.com/series/php-bits/episodes/1) (it's only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.
 
 The core of the controversy was the fact that the author of the video classified as ***visual debt*** a lot of stuff in his PHP example, like interfaces, scalar type hints and the final keyword.
 

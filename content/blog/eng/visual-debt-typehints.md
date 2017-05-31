@@ -198,7 +198,7 @@ Apart from the funny joke (*"I'm not your daddy!"*), I find the final keyword **
 
 On the other hand, this keyword becomes useful when we are talking about **open sourced code**: using it is a clear statement that reduces the surface of the API that the library is exposing to end users, in the same way `private` is limiting access to properties.
  
-Straightforwardly, the maintainer of the code is saying that this class is not extensible, because it may change internally without notice; this concept is also well explained by Marco Pivetta in his signature "Extremely defensive PHP" talk (which we cited also in our previous blog post, [see related slide here](https://ocramius.github.io/extremely-defensive-php/#/90)) and [in his blog post about it](http://ocramius.github.io/blog/when-to-declare-classes-final/).
+Straightforwardly, the maintainer of the code is saying that this class is not extensible, because it may change internally without notice; this concept is also well explained by Marco Pivetta in his signature "Extremely defensive PHP" talk (which we cited also in our [previous blog post]({{< ref "php-day-2017.md" >}}), [see related slide here](https://ocramius.github.io/extremely-defensive-php/#/90)) and [in his blog post about it](http://ocramius.github.io/blog/when-to-declare-classes-final/).
 
 ## A practical example
 

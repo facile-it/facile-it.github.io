@@ -4,7 +4,7 @@
     <head>
         
             
-                <title>#FacileHack 2017, 10 days later</title>
+                <title>Why tipehints and interfaces are not visual debt</title>
             
         
 
@@ -25,12 +25,12 @@
     
         <meta name="twitter:card" content="summary"/>
         
-            <meta name="twitter:image:src" content="https://engineering.facile.it/images/facilehack-2017-10-giorni-dopo/facile-engineering-team.jpg"/>
+            <meta name="twitter:image:src" content="https://engineering.facile.it/images/social/twitter-card-logo.png"/>
         
     
     
-    <meta name="twitter:title" content="#FacileHack 2017, 10 days later"/>
-    <meta name="twitter:description" content="Ten days ago #FacileHack 2017 came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers. The hackathon&rsquo;s theme for this year was connectivity: our site offers the comparation between internet access services, and we have decided to put this at the center of the competition."/>
+    <meta name="twitter:title" content="Why tipehints and interfaces are not visual debt"/>
+    <meta name="twitter:description" content="A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints. Scalar type hints &amp; return types vs no scalar type hints &amp; return types is #PHP&#39;s new spaces vs tabs &mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017 After asking references about this, someone alluded to this very short video: &ldquo;PHP Bits: Visual Debt&rdquo; (it&rsquo;s only 3 minutes, please watch it before continue reading)."/>
     
         
             <meta name="twitter:creator" content="@AlessandroLai"/>
@@ -41,13 +41,13 @@
 <meta name="twitter:site" content="@FacileIt_Engr"/>
 
 
-        <meta property="og:title" content="#FacileHack 2017, 10 days later" />
-<meta property="og:description" content="Ten days ago #FacileHack 2017 came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers. The hackathon&rsquo;s theme for this year was connectivity: our site offers the comparation between internet access services, and we have decided to put this at the center of the competition." />
+        <meta property="og:title" content="Why tipehints and interfaces are not visual debt" />
+<meta property="og:description" content="A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints. Scalar type hints &amp; return types vs no scalar type hints &amp; return types is #PHP&#39;s new spaces vs tabs &mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017 After asking references about this, someone alluded to this very short video: &ldquo;PHP Bits: Visual Debt&rdquo; (it&rsquo;s only 3 minutes, please watch it before continue reading)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/visual-debt-typehints/" />
 
 
-<meta property="og:updated_time" content="2017-04-04T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-05-31T00:00:00&#43;00:00"/>
 
 
 
@@ -63,12 +63,12 @@
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         
-<meta itemprop="name" content="#FacileHack 2017, 10 days later">
-<meta itemprop="description" content="Ten days ago #FacileHack 2017 came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers. The hackathon&rsquo;s theme for this year was connectivity: our site offers the comparation between internet access services, and we have decided to put this at the center of the competition.">
+<meta itemprop="name" content="Why tipehints and interfaces are not visual debt">
+<meta itemprop="description" content="A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints. Scalar type hints &amp; return types vs no scalar type hints &amp; return types is #PHP&#39;s new spaces vs tabs &mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017 After asking references about this, someone alluded to this very short video: &ldquo;PHP Bits: Visual Debt&rdquo; (it&rsquo;s only 3 minutes, please watch it before continue reading).">
 
 
-<meta itemprop="dateModified" content="2017-04-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="316">
+<meta itemprop="dateModified" content="2017-05-31T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2221">
 
 
 
@@ -269,43 +269,43 @@ ga('send', 'pageview');
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&text=%23FacileHack%202017%2c%2010%20days%20later&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f&text=Why%20tipehints%20and%20interfaces%20are%20not%20visual%20debt&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&title=%23FacileHack%202017%2c%2010%20days%20later" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f&title=Why%20tipehints%20and%20interfaces%20are%20not%20visual%20debt" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&title=%23FacileHack%202017%2c%2010%20days%20later" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f&title=Why%20tipehints%20and%20interfaces%20are%20not%20visual%20debt" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&title=%23FacileHack%202017%2c%2010%20days%20later" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f&title=Why%20tipehints%20and%20interfaces%20are%20not%20visual%20debt" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -322,15 +322,10 @@ ga('send', 'pageview');
     <header>
     <div class="title">
         
-            <h1><a href="https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/">#FacileHack 2017, 10 days later</a></h1>
+            <h1><a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/">Why tipehints and interfaces are not visual debt</a></h1>
             
         
         
-        
-            <p class="translated-article">
-                Questo articolo è disponibile anche
-                <a href="/blog/ita/facilehack-2017-10-giorni-dopo">in italiano</a>
-            </p>
         
         
     </div>
@@ -339,8 +334,8 @@ ga('send', 'pageview');
             
         
 
-        <time class="published" datetime='2017-04-04'>
-            4 April 2017
+        <time class="published" datetime='2017-05-31'>
+            31 May 2017
         </time>
 
         
@@ -353,7 +348,7 @@ ga('send', 'pageview');
         
 
         
-            <p>2 minute read</p>
+            <p>11 minute read</p>
         
     </div>
 </header>
@@ -366,35 +361,225 @@ ga('send', 'pageview');
 
     
 
-<p>Ten days ago <a href="http://hackathon.facile.it/2017.html"><strong>#FacileHack 2017</strong></a> came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers.</p>
+<p>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.</p>
 
-<p>The hackathon&rsquo;s theme for this year was <strong>connectivity</strong>: our site offers the comparation between internet access services, and we have decided to put this at the center of the competition. The teams have then faced each other on this theme, searching new ways to improve Facile.it&rsquo;s business and the customers&rsquo; user experience.</p>
+<p><blockquote class="twitter-tweet" data-lang="it"><p lang="en" dir="ltr">Scalar type hints &amp; return types vs no scalar type hints &amp; return types is <a href="https://twitter.com/hashtag/PHP?src=hash">#PHP</a>&#39;s new spaces vs tabs</p>&mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) <a href="https://twitter.com/WyriHaximus/status/865524687257862144">19 maggio 2017</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
 
-<h1 id="continuous-improvement">Continuous improvement</h1>
+<p>After asking references about this, someone alluded to this very short video: <a href="https://laracasts.com/series/php-bits/episodes/1"><strong>&ldquo;PHP Bits: Visual Debt&rdquo;</strong></a> (it&rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.</p>
 
-<p>The experience we gained from the first edition allowed us to easily organize this event, and as we like to apply ourselves in our everyday work, we wanted to aim for a continuous and progressive improvement in organizing this hackathon, and this proved to be a winning approach.
-  
-<div style="text-align: center">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/X-OdVcH7CMs" frameborder="0" allowfullscreen></iframe>
-</div></p>
+<p>The core of the controversy was the fact that the author of the video classified as <strong><em>visual debt</em></strong> a lot of stuff in his PHP example, like interfaces, scalar type hints and the final keyword.</p>
 
-<p>One of the improving point of this edition was the <a href="http://hackathon.facile.it/2017.html#giuria">external jury</a> composed by very experienced professionals of different expertise. Despite the very few minutes available (only seven) to the various teams to present their ideas, the jurors were very good at analyzing the various proposals and to offer the right questions to dissect the critical points of each proposed approach.</p>
+<h2 id="my-opinion-on-the-matter">My opinion on the matter</h2>
 
-<h1 id="the-winning-team">The winning team</h1>
+<p>I can agree with the bottom line of the video:</p>
 
-<p>The team that won the competition was <strong>Orange Smile</strong>, proposing Facilino, a virtual assistant: the team&rsquo;s merit was especially in the overall completeness of the proposed solution, which started from identifying the problems and proposing a solution up to its application and its launch to the market.</p>
+<blockquote>
+<p>Am I necessarily getting a benefit [&hellip;] ?  Question everything</p>
+</blockquote>
 
-<div style="text-align: center">
-<img src="/images/facilehack-2017-10-giorni-dopo/orange-smile.jpg" title="I vincitori di #FacileHack 2017: team Orange Smile"/>
-</div>
+<p>Every choice in our line of work is always a <strong>trade-off</strong> between benefits and cons, and every new introduction in a projects should be evaluated and agreed upon between team members. But my personal preference leans a lot towards the opposite side in this specific matter: as I stated in a <a href="https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/">previous blog post here</a>, I love the new additions that PHP 7 brought to us like scalar and return type hints, and I use them as often as I can, because I discovered that <strong>they bring a lot of benefits</strong> to the code that I write.</p>
 
-<p>The winners were awarded a € 500 voucher, for each team member, to be spent on high-level professional training courses made available by our partners <a href="https: //www.enter .com / en / ecosystem / education /">LOG.ED</a>, <a href="http://www.ninjacademy.it/">Ninja Academy</a> and <a href="https://www.fluentify.com/">Fluentify</a>. <strong>The focus on training</strong> seemed like an important decision for us and in line with the spirit of our engineering division.</p>
+<p>Probably this was influenced by the fact that previously I worked with C++, where types are a lot more intrusive compared with PHP 5; but over time and with usage, I learned the great benefits that we can achieve with this addition to our PHP 7 codebases. In general, I think that type hints, and other language features that create a more &ldquo;rigid&rdquo; code, are <strong>helpful during the evolution of a codebase</strong>, and so they are really needed in long-running projects, where the maintainability of code is crucial. It may be less true in a &ldquo;release and forget&rdquo; type of project, but I think that it would still be like betting againt oneself.</p>
 
-<p>See you to the next edition!</p>
+<p>In this blog post I would like to explain myself and the reasons behind my arguments, recounting them.</p>
 
-<div style="text-align: center; margin-bottom: 2em">
-<img src="/images/facilehack-2017-10-giorni-dopo/facile-engineering-team.jpg" title="FacileHack engineering team"/>
-</div>
+<h2 id="scalar-type-hints-as-safeguards">Scalar type hints as safeguards</h2>
+
+<p>In the video, the example had all along this class:</p>
+
+<pre><code class="language-php">class Event implements EventInterface
+{
+    protected $events = [];
+    
+    public function listen(string $name, callable $handler): void
+    {
+        $this-&gt;events[$name][] = $handler;
+    }
+
+    public function fire(string $name): bool
+    {
+        if (! array_key_exists($name, $this-&gt;events)) {
+            return false;
+        }
+        
+        foreach($this-&gt;events[$name] as $event) {
+            $event();
+        }
+
+        return true;
+    }
+}
+</code></pre>
+
+<p>The author suggests to remove all type hints, since the code should still work and you could get rid of a lot of additional, not needed complications. I disagree completely with this.</p>
+
+<p><strong>Type hints are safeguards</strong> here, because they let you reduce to the bare minimum all the checks that you should do here before accepting the input arguments:</p>
+
+<ul>
+<li>because it&rsquo;s used as a key for an array, <code>$name</code> can only be a string (or an int, but it would not make sense)</li>
+<li>the <code>events</code> property can only accept callables, because its elements are invoked inside the foreach of the <code>fire()</code> method</li>
+<li>because we don&rsquo;t need to insert additional <code>if</code>s in our methods, we <strong>reduce the number of possible paths of execution</strong>, hence reducing the number of cases that we need to check in our tests.</li>
+</ul>
+
+<h2 id="type-hints-and-interfaces-as-contracts">Type hints and interfaces as contracts</h2>
+
+<p>In the video, it was suggested to also get rid of the interface:</p>
+
+<pre><code class="language-php">interface EventInterface
+{
+    public function listen(string $name, callable $handler): void;
+
+    public function fire(string $name): bool;
+}
+</code></pre>
+
+<p>I agree that <strong>an interface should be written only if needed</strong>, like if you want to write multiple concrete implementation of it with different inheritance hierarchy. But this doesn&rsquo;t mean that we will not have any interface at all: we still have the concrete implementation.</p>
+
+<p>That is not the same of having a pure interface, but we will still be able to determine a <strong>contract</strong>, a list of method signatures that tells us what that object will accept as valid method calls. This kind of contracts are a must in object oriented programming, because they dictate how your object will interconnect, communicate and cooperate, and they are especially useful in combination with stricter type hints and <strong>unit testing</strong>.</p>
+
+<p>When we write unit test, we use the real instance of the class which is under test, and everything else should be mocked. That means that we will use some test mocking library (i.e. I prefer <a href="https://github.com/phpspec/prophecy">Prophecy</a>, which is included in PHPUnit) to mimick the behavior of nearby objects.</p>
+
+<p>How type hints would help us in this case? If we would have to mock the <code>EventInterface</code> (or the concrete class, it&rsquo;s unimportant here), having the return type hints for example would help us in <strong>writing good mocks</strong>, and not wrong ones.</p>
+
+<p>But how? Nearly every mocking library creates a mock extending at runtime the original class, since the mock needs to pass every check and type hint as if it was the original class; this means that it can&rsquo;t change the method signature, hence preserving the original return type hint.</p>
+
+<p>This will translate in errors and test failures if we would write a mock that doesn&rsquo;t return the proper type, like in this example:</p>
+
+<pre><code class="language-php">class Person
+{
+    public function shout(): bool
+    {
+        $event = new Event();
+        if ($event-&gt;fire('shout')) {
+            // someone was listening!
+            return true;
+        }
+        // ...
+    }
+}
+
+class PersonTest extends PHPUnit\Framework\TestCase
+{
+    public function testShout()
+    {
+        $event = $this-&gt;prophesize(EventInterface::class);
+        $event-&gt;fire('shout')
+            -&gt;shouldBeCalled();
+        // ...
+        
+        $person = new Person();
+        $person-&gt;shout();
+    }
+}
+</code></pre>
+
+<pre><code class="language-sh">$ phpunit
+# ...
+1) PersonTest::testShout
+TypeError: Return value of Double\EventInterface\P2118::fire() must be a string, null returned
+</code></pre>
+
+<p>This mock, once used, <strong>will make the test fail</strong>. Why? Because the <code>fire()</code> method can only return a boolean, and by default (if not instructed differently) Prophecy&rsquo;s mocks will return <code>null</code>. Without the <code>: bool</code> return type hint, the mock would return <code>null</code> but the test would not fail, and the class under test would silently cast or interpret the return value as <code>false</code>, possibly causing an unintended behavior or a false positive.</p>
+
+<p>This means that having complete type hints in your interfaces and method signatures only <strong>makes your code more cohesive and your unit test more robust</strong>; this kind of enforcing helps a lot also with refactoring, since changing a method&rsquo;s signature would cause failures in all the related tests that include a mock of that interface, as it could become inconsistent and unreliable after this change.</p>
+
+<h2 id="use-interfaces-as-behavior-checks">Use interfaces as behavior checks</h2>
+
+<p>One of the counter example that popped up during the discussion on Twitter was this one:</p>
+
+<pre><code class="language-php">class Fireman
+{
+    // ...
+}
+
+class Building
+{
+    public function putOutFire(Fireman $fireman);
+}
+
+$building-&gt;putOutFire(new StrongAndAblePerson()); // type error!
+</code></pre>
+
+<p>This was cited to show how sometimes type hints can be a hindrance more that something helpful in your code: why a strong, capable person shouldn&rsquo;t be able to put out a fire? Who&rsquo;s the <code>Building</code> class to decide that? Are we maybe violating the Single Responsibility Principle?</p>
+
+<p>I think that this is misguided for a simple reason: it was <strong>wrong to check against a concrete implementation</strong> instead of an interface; and that&rsquo;s not evident because, in my opinion, the example was <strong>cut too short</strong>.</p>
+
+<p>Let&rsquo;s speculate on the content of the <code>putOutFire()</code> method:</p>
+
+<pre><code class="language-php">class Building
+{
+    public function putOutFire(Fireman $fireman)
+    {
+        $fireman-&gt;wearProtectiveGear();
+        $fireman-&gt;shootWaterAtFlames();
+    }
+}
+</code></pre>
+
+<p>Why we have a type hint in the <code>putOutFire()</code> method? Surely because we want to rely on some method that a <code>Fireman</code> instance would give to us in the method body (i.e. the <code>wearProtectiveGear()</code> and <code>shootWaterAtFlames()</code>); if we remove the type hint, we would have no guarantees that those methods exists on the argument, and we would have to either use a <code>method_exists()</code> call twice (oh, the horror!) or expose our <code>Building</code> class to a possible fatal error.</p>
+
+<p>To take the example further, we can make the <code>StrongAndAblePerson</code> capable of put out a fire if we <strong>extract the needed methods in an interface</strong>, defining a contract of what our <code>putOutFire()</code> needs to know and use:</p>
+
+<pre><code class="language-php">interface TrainedFireFighter
+{
+    public function wearProtectiveGear(): void;
+    public function shootWaterAtFlames(): void;
+}
+
+class StrongAndAblePerson implements TrainedFireFighter { ... }
+class Fireman implements TrainedFireFighter { ... }
+</code></pre>
+
+<p>&hellip; now we can have the <code>putOutFire()</code> method with a broader type hint, that would accept both a <code>Fireman</code> and any other class that implements the <code>TrainedFireFighter</code> interface:</p>
+
+<pre><code class="language-php">class Building
+{
+    public function putOutFire(TrainedFireFighter $firefighter)
+}
+</code></pre>
+
+<h2 id="the-final-keyword">The final keyword</h2>
+
+<p>The only point of the video which I find relatable is the remark on the <code>final</code> keyword.</p>
+
+<p>Apart from the funny joke (<em>&ldquo;I&rsquo;m not your daddy!&rdquo;</em>), I find the final keyword <strong>not very usable in closed projects</strong>, since its only usefulness is to impede the extension of some object. When the persons that could work on a codebase are well known and they can be coordinated, I think it&rsquo;s better to leave that liberty to the coders, and just have an agreement on what can and cannot be done with that class.</p>
+
+<p>On the other hand, this keyword becomes useful when we are talking about <strong>open sourced code</strong>: using it is a clear statement that reduces the surface of the API that the library is exposing to end users, in the same way <code>private</code> is limiting access to properties.</p>
+
+<p>Straightforwardly, the maintainer of the code is saying that this class is not extensible, because it may change internally without notice; this concept is also well explained by Marco Pivetta in his signature &ldquo;Extremely defensive PHP&rdquo; talk (which we cited also in our <a href="https://engineering.facile.it/blog/eng/php-day-2017/">previous blog post</a>, <a href="https://ocramius.github.io/extremely-defensive-php/#/90">see related slide here</a>) and <a href="http://ocramius.github.io/blog/when-to-declare-classes-final/">in his blog post about it</a>.</p>
+
+<h2 id="a-practical-example">A practical example</h2>
+
+<p>I would like to conclude this blog post with a practical example. I maintain <a href="https://github.com/facile-it/paraunit/">facile-it/paraunit</a>, a parallelization tool that works on top of PHPUnit. In the past few days I was working on supporting PHPUnit v6, and that lead to bumping the minimum PHP supported version of the package to 7.0: <a href="https://github.com/facile-it/paraunit/pull/93">https://github.com/facile-it/paraunit/pull/93</a>.</p>
+
+<p>Since previously the minimum supported version was PHP 5.3, I took the opportunity to go over the whole codebase and clean it up, using all the new language features that I could now take for granted: <code>::class</code> shortcuts, array short syntax, but more importantly the aforementioned <strong>scalar and return type hints</strong>.</p>
+
+<p>This is the perfect example to show that adding those type hints on already working code made a <strong>non-trivial difference</strong> even if I wasn&rsquo;t changing the objects&rsquo; behavior, and it forced me to fix some of this stuff:</p>
+
+<ul>
+<li>it forced me <a href="https://github.com/facile-it/paraunit/pull/93/files#diff-049f05e192bb0dcb9cf59ad2bbd43ceaR79">to define more explicitly a default behavior</a>, since a <code>null</code> was no longer accepted in place of a string</li>
+<li>this also lead me to <a href="https://github.com/facile-it/paraunit/pull/93/commits/6aa9286256ed47c7b4500b990e030588b18b7770">write an additional test</a> for an uncovered, very common case</li>
+<li>it made me realize that I had <a href="https://github.com/facile-it/paraunit/pull/93/files#diff-f3225dfaa1d4e63e21a7e51880c63bbbR40">a regex silently failing</a> returning a bad result, and I had to take better care of it, leading to a simpler and more robust approach</li>
+<li>this lead to <a href="https://github.com/facile-it/paraunit/pull/93/commits/b5463b122e87f14dbaf6fa2ff78ba53f14ae737a#diff-59b76fc4702a8549daa568e542d71498R42">additional tests too</a></li>
+<li>it made me discover a <a href="https://github.com/facile-it/paraunit/pull/93/commits/61c786c6faa0020465abd8243ee1415883193a94#diff-4fd831bf7fb1767a7a49e0954a98fb05R98">specific behavior of the SPL file iterator classes</a></li>
+</ul>
+
+<h3 id="strict-types-enforcing">Strict types enforcing</h3>
+
+<p>In the last part of this PR, I also added the <code>declare(strict_types=1)</code> directive everywhere in my code. This directive changes the behavior of type hints: with it, passed values are no longer silently casted (if possible) to the type-hinted, required type, but instead they <strong>trigger an immediate error if the type doesn&rsquo;t match</strong>; for example, passing a <code>&quot;10&quot;</code> string into a <code>int</code> or <code>float</code> type hint will no longer trigger an automatic conversion to <code>10</code> or <code>10.0</code>, but trigger an error.</p>
+
+<p>I would admit that this is a matter of personal preference, and I would not suggest to use this everywhere, especially if there isn&rsquo;t a very thorough test coverage; it may lead to unneeded failures in very unsuspecting places, and it may cause friction when intergrating code with external libraries that take advantage of the implicit type casting that PHP has always done.</p>
+
+<p>But even in this little use case, <a href="https://travis-ci.org/facile-it/paraunit/jobs/236293288">it lead to discover a small issue</a> with an outdated test code, were I was <strong>passing an empty string instead of a boolean</strong>: that happened because I refactored a constructor some time ago, and I forgot to update the tests, and I missed it since the <strong>tests were not failing</strong>. The error was even well highlighted by my IDE now, but before it was casted silently to a bool, and it matched the expected behavior by sheer luck!</p>
+
+<p><img src="/images/visual-debt-typehints/phpstorm-error-highlight.png" alt="The error highlighted in PHPStorm" /></p>
+
+<h2 id="conclusions">Conclusions</h2>
+
+<p>Type hints and other new PHP language construct help writing more cohesive, rigid code, that may lead to some &ldquo;pain&rdquo; while writing code and (mostly) tests; but this effort is just <strong>paying in advance</strong>: a lot of bugs get discovered earlier, and refactoring and changing code become easier, since pieces of code that doesn&rsquo;t match anymore are more visible.</p>
+
+<p>In the example PR, the amount of changed code that is not method signatures is trivial, but I drastically reduced the amount of possible deviations that my code could take if a wrong value is passed through it, and I fixed and tested a few additional cases that I was forgetting about. Also, the usage of the <code>declare(strict_types=1)</code> enforces even further this approach, raising the confidence that I have in the codebase.</p>
 
 
     <section id="social-share">
@@ -402,43 +587,43 @@ ga('send', 'pageview');
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&text=%23FacileHack%202017%2c%2010%20days%20later&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f&text=Why%20tipehints%20and%20interfaces%20are%20not%20visual%20debt&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&title=%23FacileHack%202017%2c%2010%20days%20later" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f&title=Why%20tipehints%20and%20interfaces%20are%20not%20visual%20debt" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&title=%23FacileHack%202017%2c%2010%20days%20later" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f&title=Why%20tipehints%20and%20interfaces%20are%20not%20visual%20debt" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&title=%23FacileHack%202017%2c%2010%20days%20later" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f&title=Why%20tipehints%20and%20interfaces%20are%20not%20visual%20debt" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fvisual-debt-typehints%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -466,9 +651,11 @@ ga('send', 'pageview');
     
         <li><a href="/categories/english">English</a></li>
     
-        <li><a href="/categories/facilehack">FacileHack</a></li>
+        <li><a href="/categories/php">PHP</a></li>
     
-        <li><a href="/categories/hackathon">Hackathon</a></li>
+        <li><a href="/categories/oop">OOP</a></li>
+    
+        <li><a href="/categories/software-testing">Software testing</a></li>
     
 </ul>
 
@@ -476,13 +663,10 @@ ga('send', 'pageview');
 </article>
 <ul class="actions pagination">
     
-        <li><a href="https://engineering.facile.it/blog/ita/facilehack-2017-10-giorni-dopo/"
-                class="button big previous">#FacileHack 2017, 10 giorni dopo</a></li>
+        <li><a href="https://engineering.facile.it/blog/eng/php-day-2017/"
+                class="button big previous">Facile.it devs @ phpDay 2017</a></li>
     
 
-    
-        <li><a href="https://engineering.facile.it/blog/eng/php-day-2017/"
-                class="button big next">Facile.it devs @ phpDay 2017</a></li>
     
 </ul>
 
@@ -495,9 +679,9 @@ ga('send', 'pageview');
 <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
-        this.page.url = "https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/";
-        this.page.identifier = "https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/";
-        this.page.title = "#FacileHack 2017, 10 days later";
+        this.page.url = "https://engineering.facile.it/blog/eng/visual-debt-typehints/";
+        this.page.identifier = "https://engineering.facile.it/blog/eng/visual-debt-typehints/";
+        this.page.title = "Why tipehints and interfaces are not visual debt";
     };
 
     (function () {

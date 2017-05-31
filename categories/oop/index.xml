@@ -6,8 +6,238 @@
     <description>Recent content in OOP on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 31 May 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/categories/oop/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Why tipehints and interfaces are not visual debt</title>
+      <link>https://engineering.facile.it/blog/eng/visual-debt-typehints/</link>
+      <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/visual-debt-typehints/</guid>
+      <description>
+
+&lt;p&gt;A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.&lt;/p&gt;
+
+&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;it&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is &lt;a href=&#34;https://twitter.com/hashtag/PHP?src=hash&#34;&gt;#PHP&lt;/a&gt;&amp;#39;s new spaces vs tabs&lt;/p&gt;&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) &lt;a href=&#34;https://twitter.com/WyriHaximus/status/865524687257862144&#34;&gt;19 maggio 2017&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;After asking references about this, someone alluded to this very short video: &lt;a href=&#34;https://laracasts.com/series/php-bits/episodes/1&#34;&gt;&lt;strong&gt;&amp;ldquo;PHP Bits: Visual Debt&amp;rdquo;&lt;/strong&gt;&lt;/a&gt; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.&lt;/p&gt;
+
+&lt;p&gt;The core of the controversy was the fact that the author of the video classified as &lt;strong&gt;&lt;em&gt;visual debt&lt;/em&gt;&lt;/strong&gt; a lot of stuff in his PHP example, like interfaces, scalar type hints and the final keyword.&lt;/p&gt;
+
+&lt;h2 id=&#34;my-opinion-on-the-matter&#34;&gt;My opinion on the matter&lt;/h2&gt;
+
+&lt;p&gt;I can agree with the bottom line of the video:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Am I necessarily getting a benefit [&amp;hellip;] ?  Question everything&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Every choice in our line of work is always a &lt;strong&gt;trade-off&lt;/strong&gt; between benefits and cons, and every new introduction in a projects should be evaluated and agreed upon between team members. But my personal preference leans a lot towards the opposite side in this specific matter: as I stated in a &lt;a href=&#34;https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/&#34;&gt;previous blog post here&lt;/a&gt;, I love the new additions that PHP 7 brought to us like scalar and return type hints, and I use them as often as I can, because I discovered that &lt;strong&gt;they bring a lot of benefits&lt;/strong&gt; to the code that I write.&lt;/p&gt;
+
+&lt;p&gt;Probably this was influenced by the fact that previously I worked with C++, where types are a lot more intrusive compared with PHP 5; but over time and with usage, I learned the great benefits that we can achieve with this addition to our PHP 7 codebases. In general, I think that type hints, and other language features that create a more &amp;ldquo;rigid&amp;rdquo; code, are &lt;strong&gt;helpful during the evolution of a codebase&lt;/strong&gt;, and so they are really needed in long-running projects, where the maintainability of code is crucial. It may be less true in a &amp;ldquo;release and forget&amp;rdquo; type of project, but I think that it would still be like betting againt oneself.&lt;/p&gt;
+
+&lt;p&gt;In this blog post I would like to explain myself and the reasons behind my arguments, recounting them.&lt;/p&gt;
+
+&lt;h2 id=&#34;scalar-type-hints-as-safeguards&#34;&gt;Scalar type hints as safeguards&lt;/h2&gt;
+
+&lt;p&gt;In the video, the example had all along this class:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;class Event implements EventInterface
+{
+    protected $events = [];
+    
+    public function listen(string $name, callable $handler): void
+    {
+        $this-&amp;gt;events[$name][] = $handler;
+    }
+
+    public function fire(string $name): bool
+    {
+        if (! array_key_exists($name, $this-&amp;gt;events)) {
+            return false;
+        }
+        
+        foreach($this-&amp;gt;events[$name] as $event) {
+            $event();
+        }
+
+        return true;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The author suggests to remove all type hints, since the code should still work and you could get rid of a lot of additional, not needed complications. I disagree completely with this.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Type hints are safeguards&lt;/strong&gt; here, because they let you reduce to the bare minimum all the checks that you should do here before accepting the input arguments:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;because it&amp;rsquo;s used as a key for an array, &lt;code&gt;$name&lt;/code&gt; can only be a string (or an int, but it would not make sense)&lt;/li&gt;
+&lt;li&gt;the &lt;code&gt;events&lt;/code&gt; property can only accept callables, because its elements are invoked inside the foreach of the &lt;code&gt;fire()&lt;/code&gt; method&lt;/li&gt;
+&lt;li&gt;because we don&amp;rsquo;t need to insert additional &lt;code&gt;if&lt;/code&gt;s in our methods, we &lt;strong&gt;reduce the number of possible paths of execution&lt;/strong&gt;, hence reducing the number of cases that we need to check in our tests.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;type-hints-and-interfaces-as-contracts&#34;&gt;Type hints and interfaces as contracts&lt;/h2&gt;
+
+&lt;p&gt;In the video, it was suggested to also get rid of the interface:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;interface EventInterface
+{
+    public function listen(string $name, callable $handler): void;
+
+    public function fire(string $name): bool;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I agree that &lt;strong&gt;an interface should be written only if needed&lt;/strong&gt;, like if you want to write multiple concrete implementation of it with different inheritance hierarchy. But this doesn&amp;rsquo;t mean that we will not have any interface at all: we still have the concrete implementation.&lt;/p&gt;
+
+&lt;p&gt;That is not the same of having a pure interface, but we will still be able to determine a &lt;strong&gt;contract&lt;/strong&gt;, a list of method signatures that tells us what that object will accept as valid method calls. This kind of contracts are a must in object oriented programming, because they dictate how your object will interconnect, communicate and cooperate, and they are especially useful in combination with stricter type hints and &lt;strong&gt;unit testing&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;When we write unit test, we use the real instance of the class which is under test, and everything else should be mocked. That means that we will use some test mocking library (i.e. I prefer &lt;a href=&#34;https://github.com/phpspec/prophecy&#34;&gt;Prophecy&lt;/a&gt;, which is included in PHPUnit) to mimick the behavior of nearby objects.&lt;/p&gt;
+
+&lt;p&gt;How type hints would help us in this case? If we would have to mock the &lt;code&gt;EventInterface&lt;/code&gt; (or the concrete class, it&amp;rsquo;s unimportant here), having the return type hints for example would help us in &lt;strong&gt;writing good mocks&lt;/strong&gt;, and not wrong ones.&lt;/p&gt;
+
+&lt;p&gt;But how? Nearly every mocking library creates a mock extending at runtime the original class, since the mock needs to pass every check and type hint as if it was the original class; this means that it can&amp;rsquo;t change the method signature, hence preserving the original return type hint.&lt;/p&gt;
+
+&lt;p&gt;This will translate in errors and test failures if we would write a mock that doesn&amp;rsquo;t return the proper type, like in this example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;class Person
+{
+    public function shout(): bool
+    {
+        $event = new Event();
+        if ($event-&amp;gt;fire(&#39;shout&#39;)) {
+            // someone was listening!
+            return true;
+        }
+        // ...
+    }
+}
+
+class PersonTest extends PHPUnit\Framework\TestCase
+{
+    public function testShout()
+    {
+        $event = $this-&amp;gt;prophesize(EventInterface::class);
+        $event-&amp;gt;fire(&#39;shout&#39;)
+            -&amp;gt;shouldBeCalled();
+        // ...
+        
+        $person = new Person();
+        $person-&amp;gt;shout();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;$ phpunit
+# ...
+1) PersonTest::testShout
+TypeError: Return value of Double\EventInterface\P2118::fire() must be a string, null returned
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This mock, once used, &lt;strong&gt;will make the test fail&lt;/strong&gt;. Why? Because the &lt;code&gt;fire()&lt;/code&gt; method can only return a boolean, and by default (if not instructed differently) Prophecy&amp;rsquo;s mocks will return &lt;code&gt;null&lt;/code&gt;. Without the &lt;code&gt;: bool&lt;/code&gt; return type hint, the mock would return &lt;code&gt;null&lt;/code&gt; but the test would not fail, and the class under test would silently cast or interpret the return value as &lt;code&gt;false&lt;/code&gt;, possibly causing an unintended behavior or a false positive.&lt;/p&gt;
+
+&lt;p&gt;This means that having complete type hints in your interfaces and method signatures only &lt;strong&gt;makes your code more cohesive and your unit test more robust&lt;/strong&gt;; this kind of enforcing helps a lot also with refactoring, since changing a method&amp;rsquo;s signature would cause failures in all the related tests that include a mock of that interface, as it could become inconsistent and unreliable after this change.&lt;/p&gt;
+
+&lt;h2 id=&#34;use-interfaces-as-behavior-checks&#34;&gt;Use interfaces as behavior checks&lt;/h2&gt;
+
+&lt;p&gt;One of the counter example that popped up during the discussion on Twitter was this one:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;class Fireman
+{
+    // ...
+}
+
+class Building
+{
+    public function putOutFire(Fireman $fireman);
+}
+
+$building-&amp;gt;putOutFire(new StrongAndAblePerson()); // type error!
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This was cited to show how sometimes type hints can be a hindrance more that something helpful in your code: why a strong, capable person shouldn&amp;rsquo;t be able to put out a fire? Who&amp;rsquo;s the &lt;code&gt;Building&lt;/code&gt; class to decide that? Are we maybe violating the Single Responsibility Principle?&lt;/p&gt;
+
+&lt;p&gt;I think that this is misguided for a simple reason: it was &lt;strong&gt;wrong to check against a concrete implementation&lt;/strong&gt; instead of an interface; and that&amp;rsquo;s not evident because, in my opinion, the example was &lt;strong&gt;cut too short&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Let&amp;rsquo;s speculate on the content of the &lt;code&gt;putOutFire()&lt;/code&gt; method:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;class Building
+{
+    public function putOutFire(Fireman $fireman)
+    {
+        $fireman-&amp;gt;wearProtectiveGear();
+        $fireman-&amp;gt;shootWaterAtFlames();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Why we have a type hint in the &lt;code&gt;putOutFire()&lt;/code&gt; method? Surely because we want to rely on some method that a &lt;code&gt;Fireman&lt;/code&gt; instance would give to us in the method body (i.e. the &lt;code&gt;wearProtectiveGear()&lt;/code&gt; and &lt;code&gt;shootWaterAtFlames()&lt;/code&gt;); if we remove the type hint, we would have no guarantees that those methods exists on the argument, and we would have to either use a &lt;code&gt;method_exists()&lt;/code&gt; call twice (oh, the horror!) or expose our &lt;code&gt;Building&lt;/code&gt; class to a possible fatal error.&lt;/p&gt;
+
+&lt;p&gt;To take the example further, we can make the &lt;code&gt;StrongAndAblePerson&lt;/code&gt; capable of put out a fire if we &lt;strong&gt;extract the needed methods in an interface&lt;/strong&gt;, defining a contract of what our &lt;code&gt;putOutFire()&lt;/code&gt; needs to know and use:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;interface TrainedFireFighter
+{
+    public function wearProtectiveGear(): void;
+    public function shootWaterAtFlames(): void;
+}
+
+class StrongAndAblePerson implements TrainedFireFighter { ... }
+class Fireman implements TrainedFireFighter { ... }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip; now we can have the &lt;code&gt;putOutFire()&lt;/code&gt; method with a broader type hint, that would accept both a &lt;code&gt;Fireman&lt;/code&gt; and any other class that implements the &lt;code&gt;TrainedFireFighter&lt;/code&gt; interface:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;class Building
+{
+    public function putOutFire(TrainedFireFighter $firefighter)
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;the-final-keyword&#34;&gt;The final keyword&lt;/h2&gt;
+
+&lt;p&gt;The only point of the video which I find relatable is the remark on the &lt;code&gt;final&lt;/code&gt; keyword.&lt;/p&gt;
+
+&lt;p&gt;Apart from the funny joke (&lt;em&gt;&amp;ldquo;I&amp;rsquo;m not your daddy!&amp;rdquo;&lt;/em&gt;), I find the final keyword &lt;strong&gt;not very usable in closed projects&lt;/strong&gt;, since its only usefulness is to impede the extension of some object. When the persons that could work on a codebase are well known and they can be coordinated, I think it&amp;rsquo;s better to leave that liberty to the coders, and just have an agreement on what can and cannot be done with that class.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, this keyword becomes useful when we are talking about &lt;strong&gt;open sourced code&lt;/strong&gt;: using it is a clear statement that reduces the surface of the API that the library is exposing to end users, in the same way &lt;code&gt;private&lt;/code&gt; is limiting access to properties.&lt;/p&gt;
+
+&lt;p&gt;Straightforwardly, the maintainer of the code is saying that this class is not extensible, because it may change internally without notice; this concept is also well explained by Marco Pivetta in his signature &amp;ldquo;Extremely defensive PHP&amp;rdquo; talk (which we cited also in our &lt;a href=&#34;https://engineering.facile.it/blog/eng/php-day-2017/&#34;&gt;previous blog post&lt;/a&gt;, &lt;a href=&#34;https://ocramius.github.io/extremely-defensive-php/#/90&#34;&gt;see related slide here&lt;/a&gt;) and &lt;a href=&#34;http://ocramius.github.io/blog/when-to-declare-classes-final/&#34;&gt;in his blog post about it&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;a-practical-example&#34;&gt;A practical example&lt;/h2&gt;
+
+&lt;p&gt;I would like to conclude this blog post with a practical example. I maintain &lt;a href=&#34;https://github.com/facile-it/paraunit/&#34;&gt;facile-it/paraunit&lt;/a&gt;, a parallelization tool that works on top of PHPUnit. In the past few days I was working on supporting PHPUnit v6, and that lead to bumping the minimum PHP supported version of the package to 7.0: &lt;a href=&#34;https://github.com/facile-it/paraunit/pull/93&#34;&gt;https://github.com/facile-it/paraunit/pull/93&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since previously the minimum supported version was PHP 5.3, I took the opportunity to go over the whole codebase and clean it up, using all the new language features that I could now take for granted: &lt;code&gt;::class&lt;/code&gt; shortcuts, array short syntax, but more importantly the aforementioned &lt;strong&gt;scalar and return type hints&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This is the perfect example to show that adding those type hints on already working code made a &lt;strong&gt;non-trivial difference&lt;/strong&gt; even if I wasn&amp;rsquo;t changing the objects&amp;rsquo; behavior, and it forced me to fix some of this stuff:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;it forced me &lt;a href=&#34;https://github.com/facile-it/paraunit/pull/93/files#diff-049f05e192bb0dcb9cf59ad2bbd43ceaR79&#34;&gt;to define more explicitly a default behavior&lt;/a&gt;, since a &lt;code&gt;null&lt;/code&gt; was no longer accepted in place of a string&lt;/li&gt;
+&lt;li&gt;this also lead me to &lt;a href=&#34;https://github.com/facile-it/paraunit/pull/93/commits/6aa9286256ed47c7b4500b990e030588b18b7770&#34;&gt;write an additional test&lt;/a&gt; for an uncovered, very common case&lt;/li&gt;
+&lt;li&gt;it made me realize that I had &lt;a href=&#34;https://github.com/facile-it/paraunit/pull/93/files#diff-f3225dfaa1d4e63e21a7e51880c63bbbR40&#34;&gt;a regex silently failing&lt;/a&gt; returning a bad result, and I had to take better care of it, leading to a simpler and more robust approach&lt;/li&gt;
+&lt;li&gt;this lead to &lt;a href=&#34;https://github.com/facile-it/paraunit/pull/93/commits/b5463b122e87f14dbaf6fa2ff78ba53f14ae737a#diff-59b76fc4702a8549daa568e542d71498R42&#34;&gt;additional tests too&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;it made me discover a &lt;a href=&#34;https://github.com/facile-it/paraunit/pull/93/commits/61c786c6faa0020465abd8243ee1415883193a94#diff-4fd831bf7fb1767a7a49e0954a98fb05R98&#34;&gt;specific behavior of the SPL file iterator classes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;strict-types-enforcing&#34;&gt;Strict types enforcing&lt;/h3&gt;
+
+&lt;p&gt;In the last part of this PR, I also added the &lt;code&gt;declare(strict_types=1)&lt;/code&gt; directive everywhere in my code. This directive changes the behavior of type hints: with it, passed values are no longer silently casted (if possible) to the type-hinted, required type, but instead they &lt;strong&gt;trigger an immediate error if the type doesn&amp;rsquo;t match&lt;/strong&gt;; for example, passing a &lt;code&gt;&amp;quot;10&amp;quot;&lt;/code&gt; string into a &lt;code&gt;int&lt;/code&gt; or &lt;code&gt;float&lt;/code&gt; type hint will no longer trigger an automatic conversion to &lt;code&gt;10&lt;/code&gt; or &lt;code&gt;10.0&lt;/code&gt;, but trigger an error.&lt;/p&gt;
+
+&lt;p&gt;I would admit that this is a matter of personal preference, and I would not suggest to use this everywhere, especially if there isn&amp;rsquo;t a very thorough test coverage; it may lead to unneeded failures in very unsuspecting places, and it may cause friction when intergrating code with external libraries that take advantage of the implicit type casting that PHP has always done.&lt;/p&gt;
+
+&lt;p&gt;But even in this little use case, &lt;a href=&#34;https://travis-ci.org/facile-it/paraunit/jobs/236293288&#34;&gt;it lead to discover a small issue&lt;/a&gt; with an outdated test code, were I was &lt;strong&gt;passing an empty string instead of a boolean&lt;/strong&gt;: that happened because I refactored a constructor some time ago, and I forgot to update the tests, and I missed it since the &lt;strong&gt;tests were not failing&lt;/strong&gt;. The error was even well highlighted by my IDE now, but before it was casted silently to a bool, and it matched the expected behavior by sheer luck!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/visual-debt-typehints/phpstorm-error-highlight.png&#34; alt=&#34;The error highlighted in PHPStorm&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h2&gt;
+
+&lt;p&gt;Type hints and other new PHP language construct help writing more cohesive, rigid code, that may lead to some &amp;ldquo;pain&amp;rdquo; while writing code and (mostly) tests; but this effort is just &lt;strong&gt;paying in advance&lt;/strong&gt;: a lot of bugs get discovered earlier, and refactoring and changing code become easier, since pieces of code that doesn&amp;rsquo;t match anymore are more visible.&lt;/p&gt;
+
+&lt;p&gt;In the example PR, the amount of changed code that is not method signatures is trivial, but I drastically reduced the amount of possible deviations that my code could take if a wrong value is passed through it, and I fixed and tested a few additional cases that I was forgetting about. Also, the usage of the &lt;code&gt;declare(strict_types=1)&lt;/code&gt; enforces even further this approach, raising the confidence that I have in the codebase.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Please mutate responsibly: 3 ways to improve your mutable objects</title>

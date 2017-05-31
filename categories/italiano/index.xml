@@ -6,8 +6,70 @@
     <description>Recent content in Italiano on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 15 Dec 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Apr 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/categories/italiano/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>#FacileHack 2017, 10 giorni dopo</title>
+      <link>https://engineering.facile.it/blog/ita/facilehack-2017-10-giorni-dopo/</link>
+      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/ita/facilehack-2017-10-giorni-dopo/</guid>
+      <description>
+
+&lt;p&gt;Dieci giorni fa è terminato &lt;a href=&#34;http://hackathon.facile.it/2017.html&#34;&gt;&lt;strong&gt;#FacileHack 2017&lt;/strong&gt;&lt;/a&gt;, la seconda edizione dell&amp;rsquo;hackathon organizzato da Facile.it. Tenere un evento di questo genere ci ha permesso di vedere all&amp;rsquo;opera e di confrontarci con tanti team molto eterogenei, composti da programmatori, designer e specialisti del marketing.&lt;/p&gt;
+
+&lt;p&gt;Il tema dell&amp;rsquo;hackathon di quest&amp;rsquo;anno è stata la &lt;strong&gt;connettività&lt;/strong&gt;: il nostro portale propone la comparazione dei servizi di connessione ad internet, e ha deciso di porre questo al centro della competizione. I diversi team si sono quindi affrontati su questo tema, per trovare modi per migliorare il business di Facile.it e l&amp;rsquo;esperienza utente degli utilizzatori del servizio.&lt;/p&gt;
+
+&lt;h1 id=&#34;miglioramento-continuo&#34;&gt;Miglioramento continuo&lt;/h1&gt;
+
+&lt;p&gt;L&amp;rsquo;esperienza accumulata dalla prima edizione ci ha permesso di realizzare con facilità questo evento: così come ci piace applicarci nel nostro lavoro di tutti i giorni, abbiamo voluto ricercare un miglioramento continuo e progressivo anche nell&amp;rsquo;organizzare un hackathon, e questo si è rivelato un approccio vincente.&lt;/p&gt;
+
+&lt;div style=&#34;text-align: center&#34;&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/X-OdVcH7CMs&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Uno dei punti che più ci ha convinto di questa edizione è stata la &lt;a href=&#34;http://hackathon.facile.it/2017.html#giuria&#34;&gt;giuria esterna&lt;/a&gt; composta da professionisti molto esperti di diversi settori. Nonostante i pochi minuti (soltanto sette) a disposizione dei vari team per presentare la propria idea, è stata molto brava ad analizzare le varie soluzioni ed a proporre le giuste domande per sviscerare i punti critici di ogni approccio presentato.&lt;/p&gt;
+
+&lt;h1 id=&#34;il-team-vincente&#34;&gt;Il team vincente&lt;/h1&gt;
+
+&lt;p&gt;Il team che ha vinto la competizione è stato &lt;strong&gt;Orange Smile&lt;/strong&gt;, con la proposta dell&amp;rsquo;assistente virtuale Facilino: la vittoria del team è stata decretata soprattutto dalla completezza della soluzione proposta, che andava dall&amp;rsquo;individuazione dei problemi, alla proposta di una soluzione, fino all&amp;rsquo;applicazione e al lancio sul mercato della stessa.&lt;/p&gt;
+
+&lt;div style=&#34;text-align: center&#34;&gt;
+&lt;img src=&#34;https://engineering.facile.it/images/facilehack-2017-10-giorni-dopo/orange-smile.jpg&#34; title=&#34;I vincitori di #FacileHack 2017: team Orange Smile&#34;/&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I vincitori si sono aggiudicati come premio un voucher del valore di 500 euro, per ogni componente della squadra, da spendere in formazione professionale attraverso i corsi di alto livello messi a disposizione dai partner &lt;a href=&#34;https://www.enter.it/it/ecosystem/education/&#34;&gt;LOG.ED&lt;/a&gt;, &lt;a href=&#34;http://www.ninjacademy.it/&#34;&gt;Ninja Academy&lt;/a&gt; e &lt;a href=&#34;https://www.fluentify.com/&#34;&gt;Fluentify&lt;/a&gt;. &lt;strong&gt;Puntare sulla formazione&lt;/strong&gt; ci è sembrata una scelta importante e in linea con lo spirito della nostra divisione engineering.&lt;/p&gt;
+
+&lt;p&gt;E alla fine non possiamo che salutarvi e aspettarvi per la prossima edizione!&lt;/p&gt;
+
+&lt;div style=&#34;text-align: center; margin-bottom: 2em&#34;&gt;
+&lt;img src=&#34;https://engineering.facile.it/images/facilehack-2017-10-giorni-dopo/facile-engineering-team.jpg&#34; title=&#34;FacileHack engineering team&#34;/&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>#FacileHack 2017 ci siamo quasi</title>
+      <link>https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/</link>
+      <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/facilehack-2017-ci-siamo-quasi/share.png&#34; alt=&#34;FacileHack&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mancano meno di 4 giorni alla seconda edizione di &lt;a href=&#34;http://hackathon.facile.it/2017.html&#34;&gt;&lt;strong&gt;#FacileHack&lt;/strong&gt;&lt;/a&gt;, la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana.&lt;/p&gt;
+
+&lt;p&gt;Attesa grande partecipazione all&amp;rsquo;evento anche da fuori Italia, le registrazioni sono state chiuse per sold-out all&amp;rsquo;inizio di questo mese.&lt;/p&gt;
+
+&lt;p&gt;In meno di 24 ore gli &lt;em&gt;hackers&lt;/em&gt; partecipanti dovranno confrontarsi, mettendo a dura prova le proprie capacità fisiche e creative, per presentare un&amp;rsquo;idea o un prototipo in grado di ottenere il punteggio massimo della &lt;a href=&#34;http://hackathon.facile.it/2017.html#giuria&#34;&gt;giuria&lt;/a&gt; di qualità.&lt;/p&gt;
+
+&lt;p&gt;Saranno &lt;strong&gt;Cristina Bianchini&lt;/strong&gt; (Vodafone Italia), &lt;strong&gt;Fabio Lalli&lt;/strong&gt; (IQUII), &lt;strong&gt;Deborah Raccagni&lt;/strong&gt; (Università Bocconi), &lt;strong&gt;Moreno Soppelsa&lt;/strong&gt; (Giornalista) e il nostro &lt;strong&gt;Mauro Giacobbe&lt;/strong&gt; (Facile.it), i componenti della giuria che avrà l&amp;rsquo;arduo compito di valutare il lavoro dei partecipanti all&amp;rsquo;hackathon sulla base di quattro criteri: attinenza alla sfida proposta, fattibilità tecnica, UI/UX e creatività.&lt;/p&gt;
+
+&lt;p&gt;Il team proclamato vincitore di #FacileHack 2017 riceverà in premio un voucher del valore di 500 euro, per ogni componente della squadra, da spendere in formazione professionale attraverso i corsi di alto livello messi a disposizione dai partner &lt;a href=&#34;https://www.enter.it/it/ecosystem/education/&#34;&gt;LOG.ED&lt;/a&gt;, &lt;a href=&#34;http://www.ninjacademy.it/&#34;&gt;Ninja Academy&lt;/a&gt; e &lt;a href=&#34;https://www.fluentify.com/&#34;&gt;Fluentify&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Non ci rimane che augurare buon #FacileHack da tutti noi!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Puli: Universal Packages for PHP</title>
@@ -2649,391 +2711,6 @@ Tutto questo mi ha colpito moltissimo perché anche nella nostra realtà (non ce
 &lt;p&gt;La serata si è poi conclusa con una carrellata di &lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/#Agile_Coaches&#34;&gt;esperienze&lt;/a&gt; vissute da tre coach. Dalla tastiera al coaching (senza lasciare la tastiera!). Le storie delle persone sono una delle cose di maggiore ispirazione. Per me penso sia bello ripartire da qui, con qualche pillola in più, inseguendo quel miglioramento continuo che ogni giorno sa riempirci di soddisfazioni.&lt;/p&gt;
 
 &lt;p&gt;A presto con i prossimi grandi eventi dell&amp;rsquo;autunno!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Programmazione Funzionale: perché preoccuparsi?</title>
-      <link>https://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</link>
-      <pubDate>Mon, 13 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</guid>
-      <description>
-
-&lt;p&gt;Nel suo discorso di accettazione del &lt;a href=&#34;http://amturing.acm.org/award_winners/dijkstra_1053701.cfm&#34;&gt;Premio Turing 1972&lt;/a&gt;, dal titolo &amp;ldquo;&lt;a href=&#34;https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html&#34;&gt;The humble programmer&lt;/a&gt;&amp;rdquo;, &lt;strong&gt;Edsger Wybe Dijkstra&lt;/strong&gt;, uno dei più celebri &lt;em&gt;computing scientists&lt;/em&gt; del 20° secolo (morto nel 2002), affrontò le cause della nota &lt;a href=&#34;https://it.wikipedia.org/wiki/Software_crisis&#34;&gt;Software Crisis&lt;/a&gt;, cioè la crisi che colpì l&amp;rsquo;industria del software nella seconda metà degli anni sessanta: la potenza e la capacità di elaborazione dei computer stavano &lt;strong&gt;crescendo esponenzialmente&lt;/strong&gt;, molto più rapidamente dell&amp;rsquo;abilità dei programmatori di &lt;strong&gt;gestire la complessità&lt;/strong&gt; e scrivere software funzionante. Nello stesso discorso, Dijkstra propose anche delle possibili strade da intraprendere che a suo avviso avrebbero portato aziende e università a migliorare la qualità del loro software. Riporto qui una frase che a mio parere riassume abbastanza bene l&amp;rsquo;intero discorso:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;I now suggest that we confine ourselves to the design and implementation of intellectually manageable programs.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Il suggerimento è quindi il seguente: un programmatore dovrebbe limitarsi a lavorare su programmi &lt;strong&gt;intellettualmente gestibili&lt;/strong&gt;, cioè programmi dei quali è possibile stabilire la correttezza semplicemente &lt;strong&gt;attraverso il ragionamento&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;indice&#34;&gt;Indice&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#la-software-crisis-nei-decenni&#34;&gt;La &lt;em&gt;Software Crisis&lt;/em&gt; nei decenni&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#cause-di-complessita&#34;&gt;Cause di complessità&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#pensare-ad-oggetti&#34;&gt;Pensare ad oggetti&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#un-vecchio-paradigma-programmazione-funzionale&#34;&gt;Un vecchio paradigma: Programmazione Funzionale&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a name=&#34;la-software-crisis-nei-decenni&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;la-software-crisis-nei-decenni&#34;&gt;La &lt;em&gt;Software Crisis&lt;/em&gt; nei decenni&lt;/h2&gt;
-
-&lt;p&gt;Molti anni sono passati da allora, e la pratica dello sviluppo software ha attraversato varie evoluzioni e trasformazioni. Rispetto ai tempi di &lt;a href=&#34;https://it.wikipedia.org/wiki/Fortran&#34;&gt;FORTRAN&lt;/a&gt; e &lt;a href=&#34;https://en.wikipedia.org/wiki/ALGOL_60&#34;&gt;Algol 60&lt;/a&gt;, nuovi linguaggi di programmazione sono emersi e si sono affermati come standard; nuove tecniche e paradigmi, come la programmazione orientata agli oggetti, si sono diffuse nell&amp;rsquo;industria del software dopo un lungo periodo di gestazione in &lt;a href=&#34;https://en.wikipedia.org/wiki/Object-oriented_programming#History&#34;&gt;università e centri di ricerca privati&lt;/a&gt;; diversi modi di gestire il processo di realizzazione del software e il suo ciclo di vita sono stati elaborati nei decenni, dal classico modello &lt;a href=&#34;https://en.wikipedia.org/wiki/Waterfall_model&#34;&gt;Waterfall&lt;/a&gt; alle moderne metodologie &lt;a href=&#34;http://engineering.facile.it/un-flusso-di-lavoro-agile/&#34;&gt;Agile&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ma &lt;strong&gt;il problema di fondo&lt;/strong&gt; espresso in &lt;em&gt;The humble programmer&lt;/em&gt; è praticamente &lt;strong&gt;rimasto intatto&lt;/strong&gt; nel corso dei decenni: lo sviluppo di funzionalità elaborate e la progettazione di strutture complesse portano al rilascio di software caratterizzato da molti &lt;em&gt;bug&lt;/em&gt;, o per meglio dire, &lt;strong&gt;errori&lt;/strong&gt; dovuti a una difficile, &lt;strong&gt;a volte apparentemente impossibile&lt;/strong&gt;, gestione della complessità. La possibilità di rilasciare software rapidamente e in maniera iterativa ha portato a &lt;strong&gt;integrare&lt;/strong&gt; del tutto questi errori nel processo di sviluppo e rilascio: questa integrazione è realizzata attraverso diverse tecniche, dal &lt;em&gt;debugging&lt;/em&gt;, praticato già dai primissimi programmatori oltre mezzo secolo fa, al &lt;a href=&#34;http://engineering.facile.it/tag/software-testing/&#34;&gt;&lt;em&gt;software testing&lt;/em&gt;&lt;/a&gt;, che permette, in maniera decisamente più efficace rispetto al &lt;em&gt;debugging&lt;/em&gt;, di &lt;strong&gt;identificare gli errori commessi&lt;/strong&gt; e porvi rimedio. Sfortunatamente il &lt;em&gt;testing&lt;/em&gt;, pur essendo una pratica ottima per verificare se ci siano errori in un particolare software, non è sufficiente a &lt;strong&gt;garantire&lt;/strong&gt; che questi errori non ci siano.&lt;/p&gt;
-
-&lt;p&gt;Notiamo inoltre che l&amp;rsquo;idea di integrare gli errori nel processo di &lt;em&gt;design&lt;/em&gt; è una caratteristica praticamente esclusiva dell&amp;rsquo;ingegneria del software, che &lt;strong&gt;la distingue radicalmente&lt;/strong&gt; dalle altre discipline ingegneristiche: in esse, tipicamente, si progettano componenti usando &lt;strong&gt;metodi matematici rigorosi&lt;/strong&gt; o software di calcolo numerico che permettono comunque di ottenere dati molto precisi, e poi si applicano margini di sicurezza per tener conto della variabilità dei processi di sviluppo dei materiali, delle imperfezioni di assemblaggio e delle oscillazioni nelle condizioni di esercizio. Da una parte questa differenza rappresenta &lt;strong&gt;un grande vantaggio&lt;/strong&gt; per l&amp;rsquo;ingegneria del software: non si può &amp;ldquo;iterare&amp;rdquo; nella costruzione di un grattacielo! D&amp;rsquo;altra parte penso sia necessario evitare che lo sviluppo software si trasformi in un banale processo di &lt;em&gt;trial and error&lt;/em&gt; perché, per quanto esso possa dimostrarsi efficace in alcuni casi, spesso &lt;strong&gt;non ci permette di capire razionalmente cosa stiamo facendo&lt;/strong&gt;, e può portare alla produzione di codice instabile e difficilmente gestibile. La verifica &lt;em&gt;a posteriori&lt;/em&gt; attuata grazie al &lt;em&gt;testing&lt;/em&gt; non dovrebbe essere considerata sufficiente a giudicare un software corretto. A mio parere, inoltre, non dovremmo considerare i &lt;em&gt;bug&lt;/em&gt; come se fossero &lt;strong&gt;concetti filosofici&lt;/strong&gt;, necessari e impossibili da eliminare. Ovviamente gli esseri umani compiono errori, ma la differenza tra un comune errore dovuto alle non perfette abilità di una persona, e un bug causato dall&amp;rsquo;eccessiva complessità di un software, è simile alla differenza che c&amp;rsquo;è tra lo scivolare su un pavimento bagnato perché non si è notato il messaggio di avviso, e lo sfracellarsi al suolo dopo aver tentato una scalata difficilissima senza attrezzatura e senza aver alcuna esperienza di montagna: nel secondo caso, &lt;strong&gt;ce la siamo cercata&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;In effetti, in un &lt;em&gt;essay&lt;/em&gt; scritto nel 1997 per il libro &lt;a href=&#34;https://books.google.it/books?id=9P5uwNpP1JAC&amp;amp;redir_esc=y&#34;&gt;Beyond Calculation: The Next Fifty Years of Computing&lt;/a&gt;, pubblicato a celebrazione dei primi 50 anni di vita del computer, lo stesso Dijkstra torna ad affrontare il tema della complessità non gestita, suggerendo che &lt;strong&gt;poco è cambiato&lt;/strong&gt; in merito al problema di fondo che già si era presentato più di 50 anni fa. Raccolgo qui poche parole prese dal &lt;em&gt;essay&lt;/em&gt; che, di nuovo, penso ne distillino il succo (grassetto mio):&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Computing&amp;rsquo;s core challenge is &lt;strong&gt;how not to make a mess of it&lt;/strong&gt;. [&amp;hellip;] Because we are dealing with artefacts, all unmastered complexity is of our own making; &lt;strong&gt;there is no one else to blame&lt;/strong&gt; and so we had better learn how &lt;strong&gt;not to introduce the complexity in the first place&lt;/strong&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a name=&#34;cause-di-complessita&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;cause-di-complessità&#34;&gt;Cause di complessità&lt;/h2&gt;
-
-&lt;p&gt;Ma quali sono le cause di tutta questa complessità? La fonte che, a mio parere, affronta in maniera più completa il problema della complessità nel software, proponendo soluzioni concrete, è il bellissimo (e lungo) articolo di Ben Moseley e Peter Marks &amp;ldquo;Out of the Tar Pit&amp;rdquo;(2006), reperibile &lt;a href=&#34;https://www.dropbox.com/s/nov94b39ikijwqd/tarpit.pdf?dl=0&#34;&gt;QUI&lt;/a&gt;. Per poter identificare i punti principali dell&amp;rsquo;articolo dobbiamo intanto dare &lt;strong&gt;una possibile definizione di &amp;ldquo;complessità&lt;/strong&gt;&amp;rdquo;, almeno per quanto riguarda lo sviluppo software; un primo tentativo potrebbe essere il seguente:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;la complessità di un software rappresenta la difficoltà nel ragionare sul suo funzionamento&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In base a questa definizione, ad esempio, nel caso in cui un software presenti un qualche errore potremmo giudicare tale software più o meno complesso in base a quanto sia difficile trovare l&amp;rsquo;errore utilizzando il solo ragionamento. Basandoci su questa definizione, possiamo estrapolare da &lt;em&gt;Out of the Tar Pit&lt;/em&gt; due principali cause di complessità:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;lo &lt;strong&gt;stato&lt;/strong&gt; delle variabili nel sistema&lt;/li&gt;
-&lt;li&gt;l&amp;rsquo;&lt;strong&gt;ordine&lt;/strong&gt; di esecuzione delle procedure&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In sintesi: la mente umana ha relativa difficoltà a tener traccia del modo in cui &lt;strong&gt;evolve nel tempo lo stato di molti parametri&lt;/strong&gt; in base a vari processi di trasformazione, specialmente se tale stato dipende anche &lt;strong&gt;dall&amp;rsquo;ordine in cui questi processi sono eseguiti&lt;/strong&gt;. In realtà riusciamo tranquillamente a gestire processi relativamente semplici attraverso una serie di trasformazioni di stato, si pensi all&amp;rsquo;atto di &amp;ldquo;fare una torta&amp;rdquo;: gli ingredienti di base &amp;ldquo;diventano&amp;rdquo; torta dopo una serie di stadi di trasformazione, che possiamo tranquillamente a tenere a mente, e se il risultato finale non è quello che ci aspettavamo riusciamo rapidamente a identificare l&amp;rsquo;errore nella procedura (la torta è troppo cotta, o abbiamo usato il sale al posto dello zucchero). In effetti seguire l&amp;rsquo;evoluzione di un processo di trasformazione costituito da una serie di procedure è assolutamente &lt;strong&gt;intuitivo&lt;/strong&gt; per la mente umana ed è alla base del paradigma di programmazione noto come &lt;strong&gt;programmazione procedurale&lt;/strong&gt;: nella mia breve esperienza personale ho potuto notare infatti che il metodo più frequentemente adottato nei corsi base di programmazione è proprio quello basato su alberi di scelte binarie &lt;em&gt;if-else&lt;/em&gt;, iterazioni e cicli con una o più condizioni di uscita. Purtroppo è facile osservare che questo modo di ragionare, sebbene sia perfettamente adatto a risolvere molti problemi pratici nella vita di tutti i giorni, &lt;strong&gt;non costituisca una strategia particolarmente efficace&lt;/strong&gt; quando si parla di programmi corposi e complessi, e con &amp;ldquo;corposi&amp;rdquo; intendo &amp;ldquo;più lunghi di un centinaio di righe&amp;rdquo;. È stato necessario introdurre nuove astrazioni, a più alto livello, per riuscire a superare la sempre incombente &lt;em&gt;software crisis&lt;/em&gt;, abbandonando ciò che appare intuitivo in favore di qualcosa di maggiormente gestibile ed efficiente.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&#34;pensare-ad-oggetti&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;pensare-ad-oggetti&#34;&gt;Pensare ad oggetti&lt;/h2&gt;
-
-&lt;p&gt;Vediamo in sintesi come il problema della complessità sia affrontato, a grandi linee, dal più diffuso e importante paradigma di sviluppo software adottato a sostituzione di quello procedurale: la programmazione orientata agli oggetti (&lt;em&gt;Object-Oriented Programming&lt;/em&gt;: &lt;strong&gt;OOP&lt;/strong&gt;). OOP adotta il principio &lt;strong&gt;dell&amp;rsquo;incapsulamento della complessità&lt;/strong&gt;: le varie strutture computazionali del nostro software, individualmente più o meno complesse, sono suddivise in porzioni sufficientemente indipendenti, rinchiuse in contenitori stagni collegati tra loro da interfacce chiare e dichiarative. Si noti intanto che questo &lt;strong&gt;non è&lt;/strong&gt; il modo in cui gli esseri umani agiscono; nel suo classico articolo &lt;a href=&#34;http://c2.com/doc/oopsla89/paper.html&#34;&gt;A Laboratory For Teaching Object-Oriented Thinking (1989)&lt;/a&gt;, il celebre &lt;a href=&#34;https://it.wikipedia.org/wiki/Kent_Beck&#34;&gt;Kent Beck&lt;/a&gt;, noto soprattutto per i fondamentali contributi alle metodologie &lt;a href=&#34;https://it.wikipedia.org/wiki/Extreme_programming&#34;&gt;Extreme Programming&lt;/a&gt; e &lt;a href=&#34;https://it.wikipedia.org/wiki/Test_driven_development&#34;&gt;Test Driven Development&lt;/a&gt;, affronta il problema che si incontra quando si cerca di &lt;strong&gt;insegnare agli studenti a &amp;ldquo;pensare a oggetti&amp;rdquo;&lt;/strong&gt;: come essere umani siamo abituati a pensare allo stato globale di una situazione; a spostarci per comunicare direttamente con chiunque; ad affidarci al modo particolare in cui le persone che conosciamo svolgeranno un certo compito. OOP è invece basato su concetti opposti: ogni oggetto dovrebbe &amp;ldquo;vedere&amp;rdquo; solo i suoi vicini diretti, e di questi non dovrebbe comunque conoscere alcun dettaglio interno. Osserviamo quindi che &lt;strong&gt;il sistema di astrazioni&lt;/strong&gt; su cui OOP è basato non ha nulla a che fare con la vita &amp;ldquo;reale&amp;rdquo; o con il nostro abituale modo di pensare agli oggetti &amp;ldquo;fisici&amp;rdquo;, e a ragione: un software è svariati ordini di grandezza più complesso rispetto a una qualsiasi struttura fisica, e richiede strumenti diversi per poter essere compreso e gestito.&lt;/p&gt;
-
-&lt;p&gt;In effetti un presunto punto di forza di OOP, spesso citato per fornire una prova dell&amp;rsquo;accessibilità di questo paradigma di programmazione, è costituito dall&amp;rsquo;idea che sia possibile trattare gli oggetti nel software come se fossero oggetti reali. Ho potuto osservare, tuttavia, che impostando proprietà e metodi delle classi come se queste fossero &lt;em&gt;template&lt;/em&gt; di oggetti reali, si tende a generare entità eccessivamente interdipendenti e poco flessibili. Questo porta a cadere in &lt;strong&gt;labirinti di complessità&lt;/strong&gt; paragonabili a quelli ottenuti in programmazione procedurale, nei quali lo &lt;strong&gt;stato mutabile&lt;/strong&gt; rende molto difficile la gestione, manutenzione e in generale la comprensibilità del sistema. Quindi spesso i concetti di &amp;ldquo;classe&amp;rdquo; e &amp;ldquo;oggetto&amp;rdquo; sono, purtroppo, &lt;strong&gt;usati in contesti sostanzialmente procedurali&lt;/strong&gt;: non sono rari metodi lunghi centinaia di righe con molti &lt;em&gt;if-else&lt;/em&gt; annidati, o riferimenti a dettagli di implementazione di altri oggetti, che dovrebbero rimanere &amp;ldquo;nascosti&amp;rdquo; al mondo esterno.&lt;/p&gt;
-
-&lt;p&gt;Un tentativo di soluzione a questi problemi è rappresentato dai &lt;strong&gt;design patterns&lt;/strong&gt;, cioè strutture di classi e interfacce che hanno dimostrato &lt;strong&gt;eccellente applicabilità e robustezza&lt;/strong&gt; nell&amp;rsquo;affrontare molti problemi pratici; ma essi sono appunto &lt;em&gt;pattern&lt;/em&gt;, non sono teoremi, la loro capacità di risolvere problemi è verificata dal tempo e dall&amp;rsquo;esperienza, ma essi non permettono in alcun modo di provare in maniera deterministica che un software sia corretto. Il problema di fondo è che, a causa della continua variazione di stato degli oggetti, la struttura di un software scritto in OOP non &lt;strong&gt;può essere rappresentata con un modello matematico&lt;/strong&gt;: funzioni ed equazioni rappresentano relazioni statiche tra variabili dipendenti e indipendenti, con parametri costanti per ogni relazione; variando i parametri, cambia la relazione. Quindi il sistema di astrazioni su cui OOP si basa non può essere descritto dalla matematica. Ma la matematica è proprio l&amp;rsquo;antico e potente strumento utilizzato in qualsiasi disciplina scientifica proprio quando è necessario &lt;strong&gt;fornire prove formali&lt;/strong&gt; della correttezza di sistemi che non possono essere concepiti in maniera dettagliata dalla sola intuizione umana.&lt;/p&gt;
-
-&lt;p&gt;&lt;a name=&#34;un-vecchio-paradigma-programmazione-funzionale&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;un-vecchio-paradigma-programmazione-funzionale&#34;&gt;Un vecchio paradigma: Programmazione Funzionale&lt;/h2&gt;
-
-&lt;p&gt;La &amp;ldquo;programmazione funzionale&amp;rdquo; (&lt;em&gt;Functional Programming&lt;/em&gt;: &lt;strong&gt;FP&lt;/strong&gt;) è un paradigma di sviluppo software in parte codificato già alla fine degli anni cinquanta, attraverso il noto linguaggio &lt;a href=&#34;https://en.wikipedia.org/wiki/Lisp_(programming_language)&#34;&gt;LISP&lt;/a&gt;, e gode di solide basi matematiche nella &lt;a href=&#34;https://en.wikipedia.org/wiki/Combinatory_logic&#34;&gt;logica combinatoria&lt;/a&gt; e nel &lt;a href=&#34;https://en.wikipedia.org/wiki/Lambda_calculus&#34;&gt;lambda calcolo&lt;/a&gt;: malgrado ciò, ha trovato difficoltà nel diffondersi sia nei corsi universitari di base che nelle aziende, forse per &lt;strong&gt;un&amp;rsquo;alta barriera d&amp;rsquo;ingresso&lt;/strong&gt;, dovuta appunto alle forti basi matematiche e alla manipolazione di concetti molto astratti e poco intuitivi.&lt;/p&gt;
-
-&lt;p&gt;FP si basa sull&amp;rsquo;idea che un software possa essere descritto attraverso l&amp;rsquo;applicazione di tre tecniche principali:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;la definizione di un gran numero di &lt;strong&gt;funzioni pure&lt;/strong&gt;, cioè funzioni &lt;strong&gt;senza effetti collaterali&lt;/strong&gt;: una funzione pura ritorna &lt;strong&gt;sempre&lt;/strong&gt; un valore, e tale valore è sempre lo stesso &lt;strong&gt;a parità di condizioni di ingresso&lt;/strong&gt;, quindi non potrà mai succedere che una certa funzione ritorni due diversi valori in due diversi momenti nel corso dell&amp;rsquo;esecuzione di un software se non cambiano i dati in ingresso alla funzione;&lt;/li&gt;
-&lt;li&gt;l&amp;rsquo;applicazione di queste funzioni ai dati soggetti a manipolazione nel nostro software, e la loro combinazione attraverso particolari funzioni note come &lt;strong&gt;funzioni di più altro ordine&lt;/strong&gt;, anch&amp;rsquo;esse pure, che però presentano altre funzioni tra i dati di ingresso e/o di uscita;&lt;/li&gt;
-&lt;li&gt;l&amp;rsquo;uso di dati &lt;strong&gt;immutabili&lt;/strong&gt; e l&amp;rsquo;assenza di variazione di stato, che permettono di trattare estese porzioni di un software come se fossero &lt;strong&gt;equazioni matematiche&lt;/strong&gt;;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Funzioni pure, indipendenti dallo stato di esecuzione di un software, rappresentano quindi delle &lt;strong&gt;relazioni statiche tra entità&lt;/strong&gt;: il processo di &lt;em&gt;testing&lt;/em&gt; sarà quindi più semplice perché ogni funzione da testare sarà del tutto indipendente dalle altre. In realtà il &lt;em&gt;testing&lt;/em&gt; in sé non è particolarmente importante in FP, perché tale paradigma si basa sull&amp;rsquo;idea di verificare &lt;em&gt;a priori&lt;/em&gt; che un programma sia corretto. Un software scritto in FP nasce in primo luogo da una costruzione teorica la cui correttezza è verificabile tramite &lt;a href=&#34;http://www.haskellforall.com/2013/12/equational-reasoning.html&#34;&gt;ragionamento equazionale&lt;/a&gt;. Saremo quindi in grado di ottenere un software corretto se:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ciascuna funzione sarà stata implementata correttamente;&lt;/li&gt;
-&lt;li&gt;avremo impostato le relazioni corrette tra le entità coinvolte;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In FP le funzioni sono anche &lt;strong&gt;dati&lt;/strong&gt;, nel senso che hanno un &lt;strong&gt;tipo associato&lt;/strong&gt;. Ad esempio, usando la notazione di Swift, possiamo definire il tipo di una funzione &lt;code&gt;square&lt;/code&gt;, che permette di elevare al quadrato un numero intero, nel seguente modo:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;let square: Int -&amp;gt; Int&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Possiamo leggere la definizione di questo &lt;em&gt;type&lt;/em&gt; così: una funzione che prende in ingresso un numero intero e ritorna un numero intero. Se nel software che stiamo scrivendo dovessimo trasformare un &lt;em&gt;array&lt;/em&gt; di numeri interi in un altro array con gli stessi numeri elevati al quadrato, potremmo definire una funzione &lt;code&gt;map&lt;/code&gt; con la seguente notazione:&lt;/p&gt;
-
-&lt;p&gt;&lt;code&gt;let map: ([Int], Int -&amp;gt; Int) -&amp;gt; [Int]&lt;/code&gt;&lt;/p&gt;
-
-&lt;p&gt;Questo &lt;em&gt;type&lt;/em&gt; definisce una funzione che prende in ingresso un &lt;em&gt;array&lt;/em&gt; di numeri interi e una funzione del tipo &lt;code&gt;Int -&amp;gt; Int&lt;/code&gt; (per esempio la funzione &lt;code&gt;square&lt;/code&gt;, definita prima). Abbiamo già visto in un &lt;a href=&#34;http://engineering.facile.it/type-first-development-in-swift/&#34;&gt;precedente articolo&lt;/a&gt; come &lt;strong&gt;ragionare sui tipi di dati e funzioni coinvolti&lt;/strong&gt; possa semplificare e irrobustire il design di un software: i prossimi articoli di questa serie serviranno da introduzione alla programmazione funzionale, trattando i principali strumenti utilizzati e mostrando un modo meno diffuso &lt;strong&gt;ma forse più efficace&lt;/strong&gt; di gestire la complessità del software.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>PHP 7 Overview</title>
-      <link>https://engineering.facile.it/blog/ita/php-7-overview/</link>
-      <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/ita/php-7-overview/</guid>
-      <description>
-
-&lt;p&gt;Il linguaggio che ha contribuito alla nascita e alla crescita di più del 80% dei siti web oggi online, tra i quali alcuni dei più famosi al mondo, è prossimo a una svolta.&lt;/p&gt;
-
-&lt;p&gt;Secondo la &lt;a href=&#34;https://wiki.php.net/rfc/php7timeline&#34;&gt;timeline ufficiale&lt;/a&gt; PHP 7 sarà rilasciato intorno al &lt;strong&gt;15 Ottobre 2015&lt;/strong&gt;: chi volesse provarlo in anteprima, tuttavia, può trovare binari, rpm, deb, dockerfiles e quant&amp;rsquo;altro su &lt;a href=&#34;http://php7.zend.com/&#34;&gt;php7.zend.com&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;La release 7 costituisce una delle più importanti per PHP, sia in termini di funzionalità che di performance.&lt;/p&gt;
-
-&lt;p&gt;Nell&amp;rsquo;ultimo anno il team degli internals ha affrontato innumerevoli sfide, tra cui:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Implementazione dell&amp;rsquo;&lt;a href=&#34;http://c2.com/cgi/wiki?AbstractSyntaxTree&#34;&gt;Abstract Syntax Tree&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;Riscrittura di grosse porzioni dello &lt;strong&gt;Zend Engine&lt;/strong&gt; che ora può beneficiare di nuove strutture dati e gestione delle risorse ottimizzata;&lt;/li&gt;
-&lt;li&gt;Disposizione di solide basi per aprire il linguaggio a futuri miglioramenti come la &lt;a href=&#34;https://en.wikipedia.org/wiki/Just-in-time_compilation&#34;&gt;Just in Time Compilation&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;Implementazione di un corposo set di nuove feature, come vedremo a breve.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;performance&#34;&gt;Performance&lt;/h2&gt;
-
-&lt;p&gt;Sull&amp;rsquo;onda degli ottimi risultati ottenuti dal team di HHVM, anche il team degli internals ha iniziato a lavorare estensivamente al miglioramento delle performance dell&amp;rsquo;implementazione originale di PHP. Gli impressionanti risultati (si parla di un miglioramento di circa il 100%) sono stati dimostrati da vari benchmark fatti sui vari CMS/Framework esistenti. Eccone di seguito due tra i più significativi:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://talks.php.net/oz15#/boxspecs&#34;&gt;Benchmark di Rasmus Lerdorf, 12 Marzo 2015, Sydney, Australia&lt;/a&gt; - Benchmark su vari CMS/Applicativi scritti in PHP in esecuzione sulle varie versioni di PHP e HHVM&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://pages.zend.com/rs/zendtechnologies/images/PHP7-Performance%20Infographic.pdf&#34;&gt;Infografica Zend&lt;/a&gt; - Benchmark di vari CMS/Framework (Magento 1.9, Wordpress, Drupal, Zend Framework 2, Laravel) su PHP 5.6 PHP 7 e HHVM 3.7. Contiene inoltre una comparazione tra PHP e altri linguaggi di scripting.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
-
-&lt;p&gt;Qui di seguito riportiamo alcune delle feature che ci hanno colpito maggiormente; l&amp;rsquo;elenco seguente non è da considerarsi esaustivo rispetto a tutte le feature di PHP 7: una lista completa di tutte le RFC può essere trovata &lt;a href=&#34;https://wiki.php.net/rfc#php_70&#34;&gt;qui&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;null-coalesce-operator&#34;&gt;Null Coalesce operator&lt;/h3&gt;
-
-&lt;p&gt;PHP RFC: &lt;a href=&#34;https://wiki.php.net/rfc/isset_ternary&#34;&gt;Null Coalesce Operator&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Il Null Coalesce operator (&lt;code&gt;??&lt;/code&gt;) ritorna l&amp;rsquo;operando di sinistra se questo non è &lt;code&gt;null&lt;/code&gt;, altrimenti ritorna l&amp;rsquo;operando di destra. Esso di fatto rappresenta un&amp;rsquo;abbreviazione dell&amp;rsquo;utilizzo di &lt;code&gt;isset()&lt;/code&gt; in un operatore ternario.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-$name = $_GET[’name’] ?? &amp;quot;Name&amp;quot;;
-// equivalente a
-$name = isset($_GET[’name’]) ? $_GET[’name’] : &amp;quot;Name&amp;quot;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://3v4l.org/SnCQY&#34;&gt;▶ Demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;uniform-variable-syntax&#34;&gt;Uniform Variable Syntax&lt;/h3&gt;
-
-&lt;p&gt;PHP RFC: &lt;a href=&#34;https://wiki.php.net/rfc/uniform_variable_syntax&#34;&gt;Uniform Variable Syntax&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;PHP 7 Introduce una nuova e più consistente sintassi delle variabili, che apre le porte ad alcuni nuovi modi di costruire le espressioni, come mostrato nei due esempi di seguito. Una lista più completa di esempi può essere trovata al link del RFC.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Annidare chiamate di funzione&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-$sum = function($l) {
-    return function($r) use ($l) {
-        return $l + $r;
-    };
-};
-
-echo $sum(4)(2); // 6
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://3v4l.org/mZHt3&#34;&gt;▶ Demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Effettuare una chiamata a metodo su un array contenente una coppia di oggetto: nome metodo.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-
-class Person
-{
-    public function getName()
-    {
-        return &amp;quot;Lorenzo&amp;quot;;
-    }
-}
-
-$p = new Person();
-echo [$p, &#39;getName&#39;]();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://3v4l.org/bEU7t&#34;&gt;▶ Demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;group-use-declarations&#34;&gt;Group use declarations&lt;/h3&gt;
-
-&lt;p&gt;PHP RFC: &lt;a href=&#34;https://wiki.php.net/rfc/group_use_declarations&#34;&gt;Group Use Declarations&lt;/a&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-use Zend\ModuleManager\ModuleEvent;
-use Zend\ModuleManager\ModuleManagerInterface;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Equivale a&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-use Zend\ModuleManager\{
-    ModuleEvent,
-    ModuleManagerInterface
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;combined-comparison-operator&#34;&gt;Combined Comparison operator&lt;/h3&gt;
-
-&lt;p&gt;PHP RFC: &lt;a href=&#34;https://wiki.php.net/rfc/combined-comparison-operator&#34;&gt;Combined Comparison (Spaceship) Operator&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Il Combined Comparison operator (aka &lt;em&gt;Spaceship Operator&lt;/em&gt;) è il nuovo operatore che mette in relazione i due operandi restituendo:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;-1&lt;/code&gt; se l&amp;rsquo;operando di sinistra è minore dell&amp;rsquo;operando di destra&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;1&lt;/code&gt; se l&amp;rsquo;operando di sinistra è maggiore dell&amp;rsquo;operando di destra&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;0&lt;/code&gt; se gli operandi sono uguali&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-echo 100 &amp;lt;=&amp;gt; 200; // -1
-echo 200 &amp;lt;=&amp;gt; 100; // 1
-echo 200 &amp;lt;=&amp;gt; 200; // 0
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://3v4l.org/PV5kq&#34;&gt;▶ Demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;context-sensitive-lexer&#34;&gt;Context sensitive lexer&lt;/h3&gt;
-
-&lt;p&gt;PHP RFC: &lt;a href=&#34;https://wiki.php.net/rfc/context_sensitive_lexer&#34;&gt;Context Sensitive Lexer&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Allo stato attuale PHP ha circa 64 keyword riservate globalmente.
-In PHP 7 questo comportamento è stato cambiato rendendo alcune keyword &lt;strong&gt;riservate solo in maniera parziale.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Nell&amp;rsquo;esempio vediamo come sia possibile dichiarare due metodi chiamati &lt;code&gt;list&lt;/code&gt; e &lt;code&gt;forEach&lt;/code&gt;. Questo non è possibile in PHP&amp;lt;7.0.0 per via del fatto che queste due keyword sono riservate globalmente e non parzialmente.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-class Collection {
-    public function forEach(callable $callback) {}
-    public function list() {}
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;anonymous-classes&#34;&gt;Anonymous classes&lt;/h3&gt;
-
-&lt;p&gt;PHP RFC: &lt;a href=&#34;https://wiki.php.net/rfc/anonymous_classes&#34;&gt;Anonymous Classes&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;PHP 7 introduce la possibilità di creare classi anonime che sono particolarmente utili, ad esempio nel caso in cui si abbia la necessità di implementare un&amp;rsquo;interfaccia per l&amp;rsquo;utilizzo immediato della classe stessa come dipendenza di un&amp;rsquo;altra classe.&lt;/p&gt;
-
-&lt;p&gt;Vediamo due esempi contrapposti, uno con named class e uno con classe anonima, assumendo di avere una classe &lt;code&gt;PersonNamePrinter&lt;/code&gt;che accetta nel proprio costruttore instanze di&lt;code&gt;PersonInterface&lt;/code&gt;. &lt;code&gt;PersonInterface&lt;/code&gt; richiede di implementare il solo metodo &lt;code&gt;getName()&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-class SpecificPerson implements PersonInterface
-{
-   public function getName()
-   {
-        return &amp;quot;Lorenzo&amp;quot;;
-   }
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;$person = new SpecificPerson()
-echo new PersonPrinter($person);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;equivale a&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-echo new PersonPrinter(new class implements PersonInterface {
-    public function getName()
-    {
-        return &amp;quot;Lorenzo&amp;quot;;
-    }
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;scalar-type-hints&#34;&gt;Scalar type hints&lt;/h3&gt;
-
-&lt;p&gt;PHP RFC: &lt;a href=&#34;https://wiki.php.net/rfc/scalar_type_hints&#34;&gt;Scalar Type Hints&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Questa feature introduce la possiblità di dichiarare il tipo di dato del parametro di una funzione utilizzando anche i nuovi tipi di dato scalari &lt;code&gt;int&lt;/code&gt;, &lt;code&gt;float&lt;/code&gt;, &lt;code&gt;string&lt;/code&gt; e &lt;code&gt;bool&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;È possibile rendere i parametri rigorosi (strict) facendo &lt;strong&gt;iniziare lo script con lo statement preposto a mutare questo comportamento&lt;/strong&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-declare(strict_types=1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Vediamo un esempio:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-
-function printIntValue(int $value)
-{
-    var_dump($value);
-}
-
-printIntValue(5.9); // int(5)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://3v4l.org/bp1Xt&#34;&gt;▶ Demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Nell&amp;rsquo;esempio precedente stiamo dichiarando una funzione &lt;code&gt;printIntValue&lt;/code&gt; la quale richiede che &lt;code&gt;$value&lt;/code&gt; sia di tipo &lt;code&gt;int&lt;/code&gt;; quindi andiamo a chiamare la funzione stessa passando invece &lt;code&gt;$value&lt;/code&gt; come &lt;code&gt;float(5.9)&lt;/code&gt;.
-Siccome al primo statement non abbiamo dichiarato i tipi come rigorosi, PHP costringerà il casting del valore passato a &lt;code&gt;int&lt;/code&gt;, troncando la parte dopo la virgola e convertendolo in &lt;code&gt;int(5)&lt;/code&gt;. Se invece avessimo dichiarato i tipi come rigorosi avremmo ottenuto un &lt;code&gt;TypeError&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;return-type-declarations&#34;&gt;Return Type Declarations&lt;/h3&gt;
-
-&lt;p&gt;PHP RFC: &lt;a href=&#34;https://wiki.php.net/rfc/return_types&#34;&gt;Return Type Declarations&lt;/a&gt;
-In PHP 7 è stata introdotta la possiblità di dichiarare il tipo di ritorno di una funzione.
-Alcuni vantaggi di questa feature sono:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Previene valori di ritorno non intenzionali;&lt;/li&gt;
-&lt;li&gt;Documenta i tipi di ritorno in maniera strict, diversamente da come è oggi con i commenti e phpdoc.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Vediamo un esempio:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-class DateTimeGenerator
-{
-    public function getDateTime() : \DateTime
-    {
-        return new \DateTime();
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://3v4l.org/3QXVK&#34;&gt;▶ Demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Nell&amp;rsquo;esempio precedente abbiamo dichiarato una classe &lt;code&gt;DateTimeGenerator&lt;/code&gt; che contiene un metodo &lt;code&gt;getDateTime()&lt;/code&gt; che deve ritornare necessariamente un&amp;rsquo;instanza di &lt;code&gt;\DateTime&lt;/code&gt;. Nel caso questo non avvenisse otterremmo ancora una volta un &lt;code&gt;TypeError&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;bind-closure-on-call&#34;&gt;Bind Closure on Call&lt;/h3&gt;
-
-&lt;p&gt;PHP RFC: &lt;a href=&#34;https://wiki.php.net/rfc/closure_apply&#34;&gt;Closure::call&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;In PHP 5.4 era già possibile fare il binding dello scope di una classe all&amp;rsquo;interno di una closure utilizzando &lt;a href=&#34;http://php.net/manual/en/closure.bindto.php&#34;&gt;Closure-&amp;gt;bindTo()&lt;/a&gt; e &lt;a href=&#34;http://php.net/manual/en/closure.bind.php&#34;&gt;Closure::bind()&lt;/a&gt;. Questo metodo richiedeva però la creazione di una closure intermedia che facesse da &lt;em&gt;collante&lt;/em&gt; tra l&amp;rsquo;invocazione della closure e il binding dello scope dell&amp;rsquo;oggetto.
-Questo non è più richiesto in PHP 7, dove è stato introdotto il metodo &lt;code&gt;Closure::call&lt;/code&gt; che permette di eseguire insieme i due step rendendo il tutto molto più compatto ed elegante.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-
-class DummyClass {private $value = 1;}
-
-// Before PHP 7
-$getValueCallBack = function() {return $this-&amp;gt;value;};
-$getValue = $getValueCallBack-&amp;gt;bindTo(new DummyClass, &#39;DummyClass&#39;);
-echo $getValue();
-
-// From PHP 7
-$getvalue = function() {return $this-&amp;gt;value;};
-echo $getValue-&amp;gt;call(new DummyClass);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://3v4l.org/YKtPC&#34;&gt;▶ Demo&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;filtered-unserialize&#34;&gt;Filtered Unserialize&lt;/h3&gt;
-
-&lt;p&gt;PHP RFC: &lt;a href=&#34;https://wiki.php.net/rfc/secure_unserialize&#34;&gt;Filtered Unserialize&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Questa feature permette di prevenire eventuali injection abilitando l&amp;rsquo;opzione di impostare una lista di classi per le quali è possibile fare l&amp;rsquo;unserialize.
-Tutte le classi non presenti nella lista saranno convertite nell&amp;rsquo;oggetto incompleto &lt;code&gt;__PHP_Incomplete_Class&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Nell&amp;rsquo;esempio seguente il contenuto di &lt;code&gt;$foo&lt;/code&gt; verrà deserializzato solo se &lt;code&gt;$foo&lt;/code&gt; sarà instanza di &lt;code&gt;OnePossibleClass&lt;/code&gt; o di &lt;code&gt;AnotherPossibileClass&lt;/code&gt;, altrimenti verrà convertito in &lt;code&gt;__PHP_Incomplete_Class&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$data = unserialize($foo, [&amp;quot;allowed_classes&amp;quot; =&amp;gt; [&amp;quot;OnePossibleClass&amp;quot;, &amp;quot;AnotherPossibileClass&amp;quot;]);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;conclusioni&#34;&gt;Conclusioni&lt;/h2&gt;
-
-&lt;p&gt;Ora andate! Testate le vostre applicazioni su PHP 7 e, se potete, aiutate a migrare le estensioni. Non sapete come fare? No problem, chiunque può iniziare a fare qualcosa con i giusti punti di partenza.&lt;/p&gt;
-
-&lt;p&gt;Ecco alcune risorse utili:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://gophp7.org/gophp7-ext/&#34;&gt;GoPHP7-ext&lt;/a&gt; Progetto che supporta la migrazione delle estensioni verso PHP 7, raccogliendo risorse e consigli utili ad ottenere questo scopo.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://spaghetti.io/cont/article/getting-started-with-php-extensions-development/52/1.html&#34;&gt;Getting started with PHP Extensions development&lt;/a&gt; - Un mio breve articolo (in inglese) su come scrivere la propria prima estensione PHP.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Se il post vi è piaciuto non dimenticate di condividerlo e di commentarlo qui sotto o su twitter menzionando &lt;a href=&#34;https://twitter.com/FacileIt_Engr&#34;&gt;@FacileIt_Engr&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

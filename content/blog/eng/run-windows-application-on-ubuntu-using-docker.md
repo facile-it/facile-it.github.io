@@ -5,8 +5,8 @@ date: "2017-07-11"
 draft: false
 share: true
 categories: [English, Docker, Linux]
-title: "Run Windows application on Ubuntu using Docker"
-twitterImage: "/images/run-windows-application-on-ubuntu-using-docker/docker_windows.png"
+title: "Run Windows apps on Ubuntu using Docker"
+twitterImage: "/images/run-windows-apps-on-ubuntu-using-docker/docker_windows.png"
 
 languageCode: "en-EN"
 type: "post"
@@ -14,43 +14,35 @@ toc: false
 
 ---
 
-Run Windows applications on Linux has always been tedious and boring. Hours and hours to run a simple notepad! This is bad.
-Fortunately thanks to Docker, we can do somebody else's work and have an already configured environment to run our Windows applications on Ubuntu.
+Running Windows apps on Linux has always been a tedious process: hours and hours to run a simple notepad! This is bad.
+Fortunately, thanks to Docker, we can take advantage of someone else's effort with an already configured environment to run our Windows apps on Ubuntu.
 
-**-- Disclaimer: Using Windows applications on linux can be harmful to your health. Do not abuse it and be careful! --**
+> **Disclaimer: using Windows apps on linux can be harmful to your health. Do not abuse it and be careful!**
 
-Docker is one of the software most used by DevOps and cloud gurus to recreate identical environments on different machines.
+Docker is one of most used softwares by DevOps and cloud gurus to generate identical environments on different machines, by providing an additional layer of abstraction on top of Linux containers (LXC):
 
-Docker provides an additional layer of abstraction of Linux containers (LXC).
+> LXC (Linux Containers) is an operating-level-level virtualization method for running multiple isolated Linux systems on a control host using a single Linux kernel. - [Wikipedia](https://en.wikipedia.org/wiki/LXC)
 
-> LXC (Linux Containers) is an operating-level-level virtualization method for running multiple isolated Linux systems on a control host using a single Linux kernel. * - Wikipedia *
+An overview of [Wine](https://www.winehq.org/) (MEGLIO SPIEGARE IN DUE PAROLE COS'È WINE, E LINKARE SUBITO IL SITO):
 
-An overview of Wine:
+> Wine (recursive acronym for Wine Is Not an Emulator) is a free and open-source compatibility layer that aims to allow computer programs (app software and computer games) developed for Microsoft Windows to run on Unix-like operating systems. - [Wikipedia](https://en.wikipedia.org/wiki/Wine_(software))
 
-> Wine (recursive acronym for Wine Is Not an Emulator) is a free and open-source compatibility layer that aims to allow computer programs (application software and computer games) developed for Microsoft Windows to run on Unix-like operating systems. * - Wikipedia *
+We're going to try and run a Windows GUI app (such as Firefox, Spotify or Skype) on Ubuntu by leveraging Docker and Wine.
 
-## What we do today?
+## Under the hood
 
-Today we try to run a Windows GUI application (such as Firefox, Spotify or Skype) on Ubuntu using Docker.
+To run Windows apps on Linux we usually need to download, install and configure Wine: the main goal of this article will be to write a ready-to-use docker image with a preconfigured environment for running Wine. We'll also need an [X server](https://www.x.org/wiki/) as rendering engine, but Ubuntu has one preinstalled so we'll simply connect the host server to our Docker container.
 
-## Under the wood
-
-To run Windows application on Linux we usually need download, install and configure [Wine](https://www.winehq.org/).
-In this tutorial we also use wine but it's preconfigured in a docker image ready-to-use.
-We need also an XServer, Ubuntu has one preinstalled, so we'll connect it to our container to use the host server as a rendering engine.
-
-### What we need?
+Thus, the main ingredients will be:
 
 - Ubuntu
 - Docker
 
-## Installation
+To install Docker on your Ubuntu machine you can follow [this tutorial](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04).
 
-To install docker follow this tutorial: [Install Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04)
+## TL;DR
 
-## Let's start in the easiest way!
-
-Open a terminal window, paste this snippet and voilà:
+In the end we'll be able to run, e.g., Notepad by just copying and pasting this snippet in a terminal window:
 
 ```sh
 docker run --rm -it \
@@ -60,16 +52,16 @@ docker run --rm -it \
     alexmanno/wine wine notepad.exe
 ```
 
-It will pull from docker hub the ```alexmanno/wine``` image and run the Windows's notepad.exe application.
+Docker will pull the `alexmanno/wine` image from [Docker Hub](https://hub.docker.com), and run the Windows notepad.exe app.
+
+PARAGRAFO IN CUI SI SPIEGA IL PROCESSO STEP-BY-STEP
+
+## macOS
+
+If you have a macOS system you can still use Docker to run Windows apps, but you need to install [XQuartz](https://www.xquartz.org/) to have an X Windows System running like on Ubuntu.
 
 ## Conclusion
 
-Our tests show that most portable applications downloaded from [PortableApps](https://portableapps.com/) work properly with this method, though with obvious performance dropouts.
-
-## Tips and tricks
-
-If you have a MacOS system you can do it anyway, but you need to install [xQuartz](https://www.xquartz.org/) to have an X Server like the Ubuntu's X.Org
-
-
-
-
+(QUALI TEST?)
+Our tests show that most portable apps downloaded from [PortableApps](https://portableapps.com/) work properly with this method, even if with obvious performance drops.
+(È UN PO' SCARNA COME CONCLUSIONE, SE NON C'È ALTRO DA SCRIVERE È MEGLIO INCORPORARE QUESTO PARAGRAFO IN UNO DEI PRECEDENTI)

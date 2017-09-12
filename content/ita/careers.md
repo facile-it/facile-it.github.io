@@ -31,29 +31,6 @@ Tutte le nostre applicazioni si basano sulla piattaforma LAMP. Per entrare nel n
 <a href="http://jobs.facile.it/chi-cerchiamo/candidati.html" target="\_blank">Candidati »</a>
 
 
-### Android Developer
-Facile.it è una web company con applicazioni sviluppate per Android e iOS usando tecnologie native.
-
-Cerchiamo un nuovo sviluppatore Android da inserire nel team di sviluppo mobile: la figura sarà coinvolta nell’analisi dei requisiti, nelle scelte tecnologiche e nella definizione delle strategie di sviluppo.
-
-*Il candidato ideale risponde sì alle seguenti domande:*
-
-- Sei appassionato di programmazione e ti piace migliorare e imparare sempre cose nuove?
-- Hai un’ottima conoscenza del SDK, almeno dalla versione 5 di Android, con esperienza nella risoluzione di problemi di retrocompatibilità fino ad Android 4.1 (API level 16)?
-- Hai familiarità con i principali pattern di programmazione a oggetti e i principi del SOLID?
-- Sai realizzare applicazioni client comunicanti con server tramite web service REST, con dati in formato JSON?
-- Hai familitarità con RxJava e hai sentito parlare di Kotlin?
-- Hai familiarità con Git?
-
-*È un valore aggiunto se:*
-
-- Ti piace scrivere codice pulito, testabile e facile da mantenere.
-- Possiedi capacità di refactoring e sviluppo di test unitari.
-- Hai esperienza nel processo di pubblicazione su Google Play Store.
-- Segui con interesse le novità nel mondo dello sviluppo per Android
-
-<a href="http://jobs.facile.it/chi-cerchiamo/candidati.html" target="\_blank">Candidati »</a>
-
 ### Cosa offriamo in Facile.it:
 
 

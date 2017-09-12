@@ -6,8 +6,146 @@
     <description>Recent content in PHP on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Sep 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to gradually upgrade toward PHPUnit 6 with namespaced classes</title>
+      <link>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</link>
+      <pubDate>Tue, 12 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</guid>
+      <description>
+
+&lt;p&gt;In the latest months I wrote multiple times, in different projects, code migrating &lt;strong&gt;PHPUnit&lt;/strong&gt; toward major &lt;strong&gt;version 6&lt;/strong&gt;. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: &lt;strong&gt;all classes got (finally!) namespaced&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp;amp; replace job, but since you need to introduce at least one &lt;code&gt;use PHPUnit\Framework\TestCase&lt;/code&gt; line at the top of each one of your test classes, it&amp;rsquo;s a boring and a little more than trivial task; also, &lt;strong&gt;upgrading it in a single big jump may not be feasible or prudent&lt;/strong&gt;, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.&lt;/p&gt;
+
+&lt;p&gt;In this article I will explain which steps I applied during those migrations, highlighting the most frequent hiccups.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-easy-one-only-tests&#34;&gt;The easy one: only tests&lt;/h2&gt;
+
+&lt;p&gt;To start with, you have to find all the &lt;strong&gt;usages of PHPUnit classes&lt;/strong&gt; in your project: a simple search for every occurrence of the string &lt;code&gt;PHPUnit_&lt;/code&gt; should be enough at the beginning. You should know that, in some recent versions previous to 6, PHPUnit delivers a &lt;strong&gt;forward compatibility&lt;/strong&gt; layer; this means that some of the most extended classes in the library are present also in the namespaced version, so they can be used before upgrading to the fully namespaced version.&lt;/p&gt;
+
+&lt;p&gt;If you want to update a simple project, where the only usage of PHPUnit classes is to create tests, you are very lucky. You need to require at &lt;strong&gt;minimum PHPUnit 4.8.35 or 5.4.3&lt;/strong&gt;, which includes the FC class &lt;code&gt;PHPUnit\Framework\TestCase&lt;/code&gt; as an alias for &lt;code&gt;\PHPUnit_Framework_TestCase&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You should choose the &lt;strong&gt;newest version as possible&lt;/strong&gt;, and that depends on which minimum version of PHP you want to support: if you work with (at least) PHP 5.6, you can use PHPUnit 5, otherwise you&amp;rsquo;re forced to use version 4.8.35. If you&amp;rsquo;re working on a (open source) library that needs to support both, you can do this in your &lt;code&gt;composer.json&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;require-dev&amp;quot;: {
+    &amp;quot;phpunit/phpunit&amp;quot;: &amp;quot;^4.8.35|^5.4.0&amp;quot;  
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this way you can use both, and Composer will choose the most updated one, depending on which PHP version you are using; this is &lt;strong&gt;pretty useful for testing with a CI tool&lt;/strong&gt; like Travis, since you should run your tests at least on the lowest and highest versions of PHP that you want to support.&lt;/p&gt;
+
+&lt;p&gt;Once you have required and installed the right version, the only modification that you need to do in your code is this one:&lt;/p&gt;
+
+&lt;p&gt;Before:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
+
+class MyTest extends \PHPUnit_Framework_TestCase
+{
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
+
+use PHPUnit\Framework\TestCase;
+
+class MyTest extends TestCase
+{
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;deprecations-of-phpunit-4&#34;&gt;Deprecations of PHPUnit 4&lt;/h3&gt;
+
+&lt;p&gt;Depending on your codebase, you may be forced to do one last step: your tests may be &lt;strong&gt;using deprecated methods from PHPUnit 4&lt;/strong&gt;, so you will need to fix those. Those issues are pretty easy to be found and fixed, because they will make your test fail when executed with PHPUnit 5. The full list of changes that may impact you are in the &lt;a href=&#34;https://github.com/sebastianbergmann/phpunit/blob/5.7/ChangeLog-5.0.md#500---2015-10-02&#34;&gt;changelog for version 5.0.0&lt;/a&gt;, but the most notable ones are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;you need to declare a whitelist in your &lt;code&gt;phpunit.xml&lt;/code&gt; configuration file to collect tests coverage&lt;/li&gt;
+&lt;li&gt;you must drop any usage of the &lt;code&gt;assertSelectCount()&lt;/code&gt;, &lt;code&gt;assertSelectRegExp()&lt;/code&gt;, &lt;code&gt;assertSelectEquals()&lt;/code&gt;, &lt;code&gt;assertTag()&lt;/code&gt;, &lt;code&gt;assertNotTag()&lt;/code&gt; assertions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-bumpy-one-implementing-a-testlistener&#34;&gt;The bumpy one: implementing a TestListener&lt;/h2&gt;
+
+&lt;p&gt;If in your project you extend other classes or interfaces from PHPUnit, you need to check which one. If we are talking about one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\PHPUnit_Framework_Assert&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\PHPUnit_Framework_AssertionFailedError&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\PHPUnit_Framework_Test&lt;/code&gt; (interface)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\PHPUnit_Framework_TestSuite&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;hellip; then your only requirement is to &lt;strong&gt;use at least PHPUnit 5.7.21&lt;/strong&gt;. This means that you have to drop support to any PHP version older than 5.6, if you still support it (and you should!).&lt;/p&gt;
+
+&lt;p&gt;If, instead, you implement a &lt;code&gt;\PHPUnit_Framework_TestListener&lt;/code&gt;, that may be a little trickier. The FC layer for that class is &lt;strong&gt;problematic&lt;/strong&gt;, since it&amp;rsquo;s an interface that has a lot of types applied to the methods&amp;rsquo; arguments; this, combined with the fact that in PHP you cannot change the type of an argument when extending (see &lt;a href=&#34;https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)&#34;&gt;covariance and contravariance&lt;/a&gt;), means that the FC class is nearly useless: &lt;strong&gt;you cannot be compatible with both&lt;/strong&gt; &lt;code&gt;\PHPUnit_Framework_TestListener&lt;/code&gt; and &lt;code&gt;\PHPUnit\Framework\TestListener&lt;/code&gt; with the same class.&lt;/p&gt;
+
+&lt;p&gt;If you are working on a &lt;strong&gt;single project&lt;/strong&gt;, you may just restrict the supported PHPUnit version and jump to the newest one while upgrading the listener too. But if you are working on a library, and you do not want to apply that restriction to your end users, it gets a little complicated.&lt;/p&gt;
+
+&lt;p&gt;In my case, while upgrading &lt;code&gt;facile-it/paraunit&lt;/code&gt;, I preferred &lt;a href=&#34;https://github.com/facile-it/paraunit/issues/54#issuecomment-302906556&#34;&gt;jumping from supporting 4.x/5.x directly to 6.x&lt;/a&gt;; Paraunit works directly on top of PHPUnit, and it works the same before and after this update (apart from new features), so &lt;strong&gt;dropping the old versions altogether&lt;/strong&gt; seemed a good enough approach for me.&lt;/p&gt;
+
+&lt;p&gt;In other cases, the listener is just provided as an additional help of the main library, so &lt;strong&gt;forcing the end user&lt;/strong&gt; to update his version of PHPUnit alongside with our library could be &lt;strong&gt;too harsh&lt;/strong&gt; or slow down the adoption of the new release. I tried doing this on &lt;a href=&#34;https://github.com/FriendsOfSymfony/FOSHttpCache/pull/365&#34;&gt;with a pull reques on &lt;code&gt;friendsofsymfony/http-cache&lt;/code&gt;&lt;/a&gt;, where I had to solve this specific issue. The &lt;strong&gt;only feasible solution&lt;/strong&gt; that I&amp;rsquo;ve found is this &lt;a href=&#34;https://github.com/symfony/phpunit-bridge/blob/3c0efb8609a32890a767bbbd39198a0e92572694/SymfonyTestsListener.php#L19&#34;&gt;specific snippet of code&lt;/a&gt;, that it was used in &lt;code&gt;symfony/phpunit-bridge&lt;/code&gt; to overcome the same problem:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;if (
+    class_exists(&#39;PHPUnit_Runner_Version&#39;) 
+    &amp;amp;&amp;amp; version_compare(\PHPUnit_Runner_Version::id(), &#39;6.0.0&#39;, &#39;&amp;lt;&#39;)
+) {
+    class_alias(&#39;Legacy\MyTestListener&#39;, &#39;MyTestListener&#39;);
+// Using an early return instead of a else does not work 
+// when using the PHPUnit phar due to some weird PHP behavior 
+// (the class gets defined without executing the code before it 
+// and so the definition is not properly conditional)
+} else {
+    class MyTestListener extends BaseTestListener
+    {
+        // ...
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This approach is based on writing two versions of the listener, one (inside a &lt;code&gt;legacy&lt;/code&gt; subfolder) which implements the old interface, the other that implements the new, namespaced one. With the above snippet, PHP is tricked into loading the right one, after checking if the loaded version of PHPUnit is lower than 6.0. In this way &lt;strong&gt;the end user can ignore the difference between the two classes&lt;/strong&gt;, use only the new class name and go on, since they will be switched in a hidden and automatic way.
+Once support for the old PHP and PHPUnit versions is dropped, this trick can be dropped too.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-next-step-from-5-to-6&#34;&gt;The next step: from 5 to 6&lt;/h2&gt;
+
+&lt;p&gt;Once all this migration is completed, and all the tests are green under all needed conditions, we can plan for the next step, &lt;strong&gt;upgrading to PHPUnit 6&lt;/strong&gt;. In reality, this step depends on a bigger, previous step: &lt;strong&gt;migrate to PHP 7&lt;/strong&gt;, because lower versions are no longer supported with PHPUnit 6.&lt;/p&gt;
+
+&lt;p&gt;When your project is ready for PHP 7, you can require the installation of PHPUnit 6; if you are working on a library that wants to support PHP 5.6 too, you can use the same trick as above in your &lt;code&gt;composer.json&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;require-dev&amp;quot;: {
+    &amp;quot;phpunit/phpunit&amp;quot;: &amp;quot;^5.4.0|^6.0&amp;quot;  
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip; so you&amp;rsquo;ll be using PHPUnit 5 under PHP 5.6, and 6 with PHP 7.0+. As before, you need to check that your tests are still passing, and avoid using any functionality that is deprecated in PHPUnit 5. You can find the full list in the &lt;a href=&#34;https://github.com/sebastianbergmann/phpunit/blob/6.0/ChangeLog-6.0.md#600---2017-02-03&#34;&gt;PHPUnit changelog for 6.0.0&lt;/a&gt;, but the most notable are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;getMock()&lt;/code&gt; must be replaced with &lt;code&gt;createMock()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;usages of &lt;code&gt;getMockWithoutInvokingTheOriginalConstructor()&lt;/code&gt; are no longer needed, it&amp;rsquo;s the default behavior now&lt;/li&gt;
+&lt;li&gt;if you intervene on global variables, it&amp;rsquo;s better to enable the &lt;code&gt;--globals-backup&lt;/code&gt; option, to save and restore them between tests (previously it was the default behavior)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setExpectedException()&lt;/code&gt; must be replaced:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;// before
+$this-&amp;gt;setExpectedException(Exception::class, $message);
+// after
+$this-&amp;gt;expectException(Exception::class);
+$this-&amp;gt;expectExceptionMessage($message);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And that&amp;rsquo;s all! I hope to make you save enough time and migraines with this little guide. Happy coding!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Why type hints and interfaces are not visual debt</title>
@@ -2403,43 +2541,6 @@ while ($retry) {
 &lt;p&gt;Le &lt;strong&gt;istruzioni&lt;/strong&gt; per l&amp;rsquo;installazione e l&amp;rsquo;uso sono disponibili su &lt;a href=&#34;https://github.com/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;strong&gt;&lt;em&gt;GitHub&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;, e chiunque è libero di &lt;strong&gt;contribuire&lt;/strong&gt; per migliorarne le funzionalità :)&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://packagist.org/packages/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;img src=&#34;https://poser.pugx.org/facile-it/doctrine-mysql-come-back/v/stable.svg&#34; alt=&#34;Latest Stable Version&#34; /&gt;&lt;/a&gt; &lt;a href=&#34;https://packagist.org/packages/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;img src=&#34;https://poser.pugx.org/facile-it/doctrine-mysql-come-back/downloads.svg&#34; alt=&#34;Total Downloads&#34; /&gt;&lt;/a&gt; &lt;a href=&#34;https://packagist.org/packages/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;img src=&#34;https://poser.pugx.org/facile-it/doctrine-mysql-come-back/license.svg&#34; alt=&#34;License&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>L&#39;operatore ternario è associativo a sinistra!</title>
-      <link>https://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</link>
-      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</guid>
-      <description>&lt;p&gt;Gli &lt;a href=&#34;http://it.wikipedia.org/wiki/Operatore_ternario&#34;&gt;&lt;em&gt;operatori ternari&lt;/em&gt;&lt;/a&gt; sono diffusi in molti linguaggi di programmazione e permettono di esprimire con una &lt;strong&gt;sintassi breve&lt;/strong&gt; logiche condizionali. Per utilizzarli propriamente in PHP è però necessario conoscerne il comportamento.&lt;/p&gt;
-
-&lt;p&gt;Vediamo un esempio&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;var_dump(true ? &#39;a&#39; : &#39;b&#39; ? &#39;c&#39; : &#39;d&#39;); // OUTPUT: string(1) &amp;quot;c&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Se state pensando che il risultato di questa espressione sia ovvio, vediamo cosa succede ad esempio in javascript&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;console.log(true ? &#39;a&#39; : &#39;b&#39; ? &#39;c&#39; : &#39;d&#39;); // OUTPUT: a
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Bene, mentre in PHP il risultato è dato da:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;true è vero, ritorna a&lt;/li&gt;
-&lt;li&gt;a castato a bool è vero, &lt;strong&gt;stampa c&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In javascript invece il ragionamento è diverso:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;true è vero, &lt;strong&gt;stampa a&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Perchè questa differenza? Semplicemente perchè in PHP, &lt;strong&gt;diversamente dalla maggioranza dei linguaggi&lt;/strong&gt;, l&amp;rsquo;operatore ternario è associativo a sinistra anzichè a destra.&lt;/p&gt;
-
-&lt;p&gt;Tenendone conto potremo evitare comportamenti inconsistenti nel nostro codice.&lt;/p&gt;
 </description>
     </item>
     

@@ -4,7 +4,7 @@
     <head>
         
             
-                <title>Facile.it devs @ phpDay 2017</title>
+                <title>How to gradually upgrade toward PHPUnit 6 with namespaced classes</title>
             
         
 
@@ -25,12 +25,12 @@
     
         <meta name="twitter:card" content="summary"/>
         
-            <meta name="twitter:image:src" content="https://engineering.facile.it/images/phpday-2017/phpday-logo.png"/>
+            <meta name="twitter:image:src" content="https://engineering.facile.it/images/social/twitter-card-logo.png"/>
         
     
     
-    <meta name="twitter:title" content="Facile.it devs @ phpDay 2017"/>
-    <meta name="twitter:description" content="Like clockwork, on May we head up to Verona to attend the phpDay conference; this time it was on May 12th and 13th. We met a lot of new people and known fellow PHP developers, and like previous years, we wanted to write down a light summary; like the previous ones, this won&rsquo;t be a full &ldquo;review&rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work."/>
+    <meta name="twitter:title" content="How to gradually upgrade toward PHPUnit 6 with namespaced classes"/>
+    <meta name="twitter:description" content="In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced. This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp; replace job, but since you need to introduce at least one use PHPUnit\Framework\TestCase line at the top of each one of your test classes, it&rsquo;s a boring and a little more than trivial task; also, upgrading it in a single big jump may not be feasible or prudent, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured."/>
     
         
             <meta name="twitter:creator" content="@AlessandroLai"/>
@@ -41,13 +41,13 @@
 <meta name="twitter:site" content="@FacileIt_Engr"/>
 
 
-        <meta property="og:title" content="Facile.it devs @ phpDay 2017" />
-<meta property="og:description" content="Like clockwork, on May we head up to Verona to attend the phpDay conference; this time it was on May 12th and 13th. We met a lot of new people and known fellow PHP developers, and like previous years, we wanted to write down a light summary; like the previous ones, this won&rsquo;t be a full &ldquo;review&rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work." />
+        <meta property="og:title" content="How to gradually upgrade toward PHPUnit 6 with namespaced classes" />
+<meta property="og:description" content="In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced. This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp; replace job, but since you need to introduce at least one use PHPUnit\Framework\TestCase line at the top of each one of your test classes, it&rsquo;s a boring and a little more than trivial task; also, upgrading it in a single big jump may not be feasible or prudent, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.facile.it/blog/eng/php-day-2017/" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/" />
 
 
-<meta property="og:updated_time" content="2017-05-16T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-09-12T00:00:00&#43;00:00"/>
 
 
 
@@ -63,12 +63,12 @@
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
         
-<meta itemprop="name" content="Facile.it devs @ phpDay 2017">
-<meta itemprop="description" content="Like clockwork, on May we head up to Verona to attend the phpDay conference; this time it was on May 12th and 13th. We met a lot of new people and known fellow PHP developers, and like previous years, we wanted to write down a light summary; like the previous ones, this won&rsquo;t be a full &ldquo;review&rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.">
+<meta itemprop="name" content="How to gradually upgrade toward PHPUnit 6 with namespaced classes">
+<meta itemprop="description" content="In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced. This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp; replace job, but since you need to introduce at least one use PHPUnit\Framework\TestCase line at the top of each one of your test classes, it&rsquo;s a boring and a little more than trivial task; also, upgrading it in a single big jump may not be feasible or prudent, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.">
 
 
-<meta itemprop="dateModified" content="2017-05-16T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="716">
+<meta itemprop="dateModified" content="2017-09-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1303">
 
 
 
@@ -269,43 +269,43 @@ ga('send', 'pageview');
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f&text=Facile.it%20devs%20%40%20phpDay%202017&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&text=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f&title=Facile.it%20devs%20%40%20phpDay%202017" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f&title=Facile.it%20devs%20%40%20phpDay%202017" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f&title=Facile.it%20devs%20%40%20phpDay%202017" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -322,7 +322,7 @@ ga('send', 'pageview');
     <header>
     <div class="title">
         
-            <h1><a href="https://engineering.facile.it/blog/eng/php-day-2017/">Facile.it devs @ phpDay 2017</a></h1>
+            <h1><a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/">How to gradually upgrade toward PHPUnit 6 with namespaced classes</a></h1>
             
         
         
@@ -334,8 +334,8 @@ ga('send', 'pageview');
             
         
 
-        <time class="published" datetime='2017-05-16'>
-            16 May 2017
+        <time class="published" datetime='2017-09-12'>
+            12 September 2017
         </time>
 
         
@@ -348,7 +348,7 @@ ga('send', 'pageview');
         
 
         
-            <p>4 minute read</p>
+            <p>7 minute read</p>
         
     </div>
 </header>
@@ -361,85 +361,133 @@ ga('send', 'pageview');
 
     
 
-<p>Like clockwork, on May we head up to Verona to attend the <strong><a href="https://2017.phpday.it/">phpDay conference</a></strong>; this time it was on <strong>May 12th and 13th</strong>.</p>
+<p>In the latest months I wrote multiple times, in different projects, code migrating <strong>PHPUnit</strong> toward major <strong>version 6</strong>. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: <strong>all classes got (finally!) namespaced</strong>.</p>
 
-<p>We met a lot of new people and known fellow PHP developers, and like <a href="https://engineering.facile.it/blog/ita/php-day-2015/">previous</a> <a href="https://engineering.facile.it/blog/eng/php-day-2016/">years</a>, we wanted to write down a light summary; like the previous ones, this won&rsquo;t be a full &ldquo;review&rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.</p>
+<p>This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp; replace job, but since you need to introduce at least one <code>use PHPUnit\Framework\TestCase</code> line at the top of each one of your test classes, it&rsquo;s a boring and a little more than trivial task; also, <strong>upgrading it in a single big jump may not be feasible or prudent</strong>, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.</p>
 
-<p>We hope to give a brief glimpse of what we experienced to fellow developers that hadn&rsquo;t the opportunity to attend, and to tempt some of you to join conferences like this one or those in the PHP community at large, for your personal and professional growth. Like last year, we will later edit this article embedding the videos of the talks, when they will got released.</p>
+<p>In this article I will explain which steps I applied during those migrations, highlighting the most frequent hiccups.</p>
 
-<p><blockquote class="twitter-tweet" data-lang="it"><p lang="en" dir="ltr">Are you wondering how the first day of the <a href="https://twitter.com/hashtag/phpDay?src=hash">#phpDay</a> went? That was amazing! <a href="https://t.co/6630Zguq1Q">pic.twitter.com/6630Zguq1Q</a></p>&mdash; phpDay by GrUSP (@phpday) <a href="https://twitter.com/phpday/status/863314622656458753">13 maggio 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<h2 id="the-easy-one-only-tests">The easy one: only tests</h2>
 
-<p>The talks are in chronological order, and we linked the slides when available. Enjoy your reading!</p>
+<p>To start with, you have to find all the <strong>usages of PHPUnit classes</strong> in your project: a simple search for every occurrence of the string <code>PHPUnit_</code> should be enough at the beginning. You should know that, in some recent versions previous to 6, PHPUnit delivers a <strong>forward compatibility</strong> layer; this means that some of the most extended classes in the library are present also in the namespaced version, so they can be used before upgrading to the fully namespaced version.</p>
 
-<h1 id="technical-talks">Technical Talks</h1>
+<p>If you want to update a simple project, where the only usage of PHPUnit classes is to create tests, you are very lucky. You need to require at <strong>minimum PHPUnit 4.8.35 or 5.4.3</strong>, which includes the FC class <code>PHPUnit\Framework\TestCase</code> as an alias for <code>\PHPUnit_Framework_TestCase</code>.</p>
 
-<h2 id="climbing-the-abstract-syntax-tree">Climbing the Abstract Syntax Tree</h2>
+<p>You should choose the <strong>newest version as possible</strong>, and that depends on which minimum version of PHP you want to support: if you work with (at least) PHP 5.6, you can use PHPUnit 5, otherwise you&rsquo;re forced to use version 4.8.35. If you&rsquo;re working on a (open source) library that needs to support both, you can do this in your <code>composer.json</code>:</p>
 
-<ul>
-<li>James Titcumb (<a href="https://twitter.com/asgrim">@asgrim</a>)</li>
-<li>Day 1 - 11:00 – 12:00 - track 2</li>
-</ul>
+<pre><code class="language-json">{
+  &quot;require-dev&quot;: {
+    &quot;phpunit/phpunit&quot;: &quot;^4.8.35|^5.4.0&quot;  
+  }
+}
+</code></pre>
 
-<p>This talk started a bit complicated, since it tackles a very complex matter: the Abstract Syntax Tree that has been added to PHP since version 7, and it the implications of its use; following up a bit, it included some very easy, low level example of how the language works with the AST, and the fact that the example were in PHP itself helped a lot in increasing the understanding of the matter.</p>
+<p>In this way you can use both, and Composer will choose the most updated one, depending on which PHP version you are using; this is <strong>pretty useful for testing with a CI tool</strong> like Travis, since you should run your tests at least on the lowest and highest versions of PHP that you want to support.</p>
 
-<h2 id="managing-dependencies-is-more-than-running-composer-update">Managing dependencies is more than running &ldquo;composer update&rdquo;</h2>
+<p>Once you have required and installed the right version, the only modification that you need to do in your code is this one:</p>
 
-<ul>
-<li>Nils Adermann (<a href="https://twitter.com/naderman">@naderman</a>)</li>
-<li>Day 1 - 15:30 – 16:30 - track 2</li>
-</ul>
+<p>Before:</p>
 
-<p>Nils is one of the co-authors of Composer, but this talk was about &ldquo;dependencies&rdquo; in general, not just about the literal, software ones: every software project has a lot of dependecies apart from the libs that we install in the vendor folder, and he explained how we should approach them, and how we should mitigate the risks that they can add to our work.</p>
+<pre><code class="language-php">&lt;?php
 
-<h2 id="the-science-of-code-reviews">The Science of Code Reviews</h2>
+class MyTest extends \PHPUnit_Framework_TestCase
+{
+    // ...
+}
+</code></pre>
 
-<ul>
-<li>Rick Kuipers (<a href="https://twitter.com/rskuipers">@rskuipers</a>)</li>
-<li>Day 2 - 12:00 – 13:00 - track 2 (<a href="https://speakerdeck.com/rskuipers/the-science-of-code-reviews">slides</a>)</li>
-</ul>
+<p>After:</p>
 
-<p>Code reviews and pair programming are two very valuable tools that we can leverage in our work as developers. This talk was really interesting, and it started from reasons behind why do them, up to suggestions and tips on how to improve them if you already do in your team.</p>
+<pre><code class="language-php">&lt;?php
 
-<h2 id="extremely-defensive-php">Extremely defensive PHP</h2>
+use PHPUnit\Framework\TestCase;
 
-<ul>
-<li>Marco Pivetta (<a href="https://twitter.com/ocramius">@ocramius</a>)</li>
-<li>Day 2 - 15:30 – 16:30 - track 1</li>
-</ul>
+class MyTest extends TestCase
+{
+    // ...
+}
+</code></pre>
 
-<p>Marco gave this talk already a lot of times on some conferences and some user groups, but it&rsquo;s great! He suggests how to write code in a &ldquo;defensive&rdquo; way, to avoid that others are able to do mistakes with it and create problems down the line.</p>
+<h3 id="deprecations-of-phpunit-4">Deprecations of PHPUnit 4</h3>
 
-<h1 id="keynotes">Keynotes</h1>
-
-<h2 id="code-manifesto">Code Manifesto</h2>
+<p>Depending on your codebase, you may be forced to do one last step: your tests may be <strong>using deprecated methods from PHPUnit 4</strong>, so you will need to fix those. Those issues are pretty easy to be found and fixed, because they will make your test fail when executed with PHPUnit 5. The full list of changes that may impact you are in the <a href="https://github.com/sebastianbergmann/phpunit/blob/5.7/ChangeLog-5.0.md#500---2015-10-02">changelog for version 5.0.0</a>, but the most notable ones are:</p>
 
 <ul>
-<li>Graham Daniels (<a href="https://twitter.com/greydnls">@greydnls</a>)</li>
-<li>Day 1 - 09:45 – 10:45</li>
+<li>you need to declare a whitelist in your <code>phpunit.xml</code> configuration file to collect tests coverage</li>
+<li>you must drop any usage of the <code>assertSelectCount()</code>, <code>assertSelectRegExp()</code>, <code>assertSelectEquals()</code>, <code>assertTag()</code>, <code>assertNotTag()</code> assertions</li>
 </ul>
 
-<p>The first keynote wasn&rsquo;t strictly technical, but it was still more than interesting: Graham guided us through how much inequality and hidden problems minorities (and especially women) have to face everyday in our line of work; Graham is also the author behind the <a href="https://github.com/greydnls/code-manifesto">Code Manifesto</a>, a basic list of principles to be followed on OSS and workplaces to actively fight this issues and encourage diversity.</p>
+<h2 id="the-bumpy-one-implementing-a-testlistener">The bumpy one: implementing a TestListener</h2>
 
-<h2 id="noestimates-the-10-new-principles-for-software-projects-predicting-without-estimating">NoEstimates: The 10 new principles for Software Projects - predicting without estimating</h2>
+<p>If in your project you extend other classes or interfaces from PHPUnit, you need to check which one. If we are talking about one of the following:</p>
 
 <ul>
-<li>Vasco Duarte (<a href="https://twitter.com/duarte_vasco">@duarte_vasco</a>)</li>
-<li>Day 2 - 09:45 – 10:45</li>
+<li><code>\PHPUnit_Framework_Assert</code></li>
+<li><code>\PHPUnit_Framework_AssertionFailedError</code></li>
+<li><code>\PHPUnit_Framework_Test</code> (interface)</li>
+<li><code>\PHPUnit_Framework_TestSuite</code></li>
 </ul>
 
-<p>Vasco is the famous author of the #NoEstimate strategy, and his keynote was aimed at explaining the wrong things the foundation of the issues of our industry, where estimates are always wrong and are often used to &ldquo;bet&rdquo; the future of our companies.</p>
+<p>&hellip; then your only requirement is to <strong>use at least PHPUnit 5.7.21</strong>. This means that you have to drop support to any PHP version older than 5.6, if you still support it (and you should!).</p>
 
-<h2 id="using-open-source-for-fun-and-profit">Using Open Source for Fun and Profit</h2>
+<p>If, instead, you implement a <code>\PHPUnit_Framework_TestListener</code>, that may be a little trickier. The FC layer for that class is <strong>problematic</strong>, since it&rsquo;s an interface that has a lot of types applied to the methods&rsquo; arguments; this, combined with the fact that in PHP you cannot change the type of an argument when extending (see <a href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)">covariance and contravariance</a>), means that the FC class is nearly useless: <strong>you cannot be compatible with both</strong> <code>\PHPUnit_Framework_TestListener</code> and <code>\PHPUnit\Framework\TestListener</code> with the same class.</p>
+
+<p>If you are working on a <strong>single project</strong>, you may just restrict the supported PHPUnit version and jump to the newest one while upgrading the listener too. But if you are working on a library, and you do not want to apply that restriction to your end users, it gets a little complicated.</p>
+
+<p>In my case, while upgrading <code>facile-it/paraunit</code>, I preferred <a href="https://github.com/facile-it/paraunit/issues/54#issuecomment-302906556">jumping from supporting 4.x/5.x directly to 6.x</a>; Paraunit works directly on top of PHPUnit, and it works the same before and after this update (apart from new features), so <strong>dropping the old versions altogether</strong> seemed a good enough approach for me.</p>
+
+<p>In other cases, the listener is just provided as an additional help of the main library, so <strong>forcing the end user</strong> to update his version of PHPUnit alongside with our library could be <strong>too harsh</strong> or slow down the adoption of the new release. I tried doing this on <a href="https://github.com/FriendsOfSymfony/FOSHttpCache/pull/365">with a pull reques on <code>friendsofsymfony/http-cache</code></a>, where I had to solve this specific issue. The <strong>only feasible solution</strong> that I&rsquo;ve found is this <a href="https://github.com/symfony/phpunit-bridge/blob/3c0efb8609a32890a767bbbd39198a0e92572694/SymfonyTestsListener.php#L19">specific snippet of code</a>, that it was used in <code>symfony/phpunit-bridge</code> to overcome the same problem:</p>
+
+<pre><code class="language-php">if (
+    class_exists('PHPUnit_Runner_Version') 
+    &amp;&amp; version_compare(\PHPUnit_Runner_Version::id(), '6.0.0', '&lt;')
+) {
+    class_alias('Legacy\MyTestListener', 'MyTestListener');
+// Using an early return instead of a else does not work 
+// when using the PHPUnit phar due to some weird PHP behavior 
+// (the class gets defined without executing the code before it 
+// and so the definition is not properly conditional)
+} else {
+    class MyTestListener extends BaseTestListener
+    {
+        // ...
+    }
+}
+</code></pre>
+
+<p>This approach is based on writing two versions of the listener, one (inside a <code>legacy</code> subfolder) which implements the old interface, the other that implements the new, namespaced one. With the above snippet, PHP is tricked into loading the right one, after checking if the loaded version of PHPUnit is lower than 6.0. In this way <strong>the end user can ignore the difference between the two classes</strong>, use only the new class name and go on, since they will be switched in a hidden and automatic way.
+Once support for the old PHP and PHPUnit versions is dropped, this trick can be dropped too.</p>
+
+<h2 id="the-next-step-from-5-to-6">The next step: from 5 to 6</h2>
+
+<p>Once all this migration is completed, and all the tests are green under all needed conditions, we can plan for the next step, <strong>upgrading to PHPUnit 6</strong>. In reality, this step depends on a bigger, previous step: <strong>migrate to PHP 7</strong>, because lower versions are no longer supported with PHPUnit 6.</p>
+
+<p>When your project is ready for PHP 7, you can require the installation of PHPUnit 6; if you are working on a library that wants to support PHP 5.6 too, you can use the same trick as above in your <code>composer.json</code>:</p>
+
+<pre><code class="language-json">{
+  &quot;require-dev&quot;: {
+    &quot;phpunit/phpunit&quot;: &quot;^5.4.0|^6.0&quot;  
+  }
+}
+</code></pre>
+
+<p>&hellip; so you&rsquo;ll be using PHPUnit 5 under PHP 5.6, and 6 with PHP 7.0+. As before, you need to check that your tests are still passing, and avoid using any functionality that is deprecated in PHPUnit 5. You can find the full list in the <a href="https://github.com/sebastianbergmann/phpunit/blob/6.0/ChangeLog-6.0.md#600---2017-02-03">PHPUnit changelog for 6.0.0</a>, but the most notable are:</p>
 
 <ul>
-<li>Gary Hockin (<a href="https://twitter.com/geeh">@geeh</a>)</li>
-<li>Day 2 - 17:30 – 18:30</li>
+<li><code>getMock()</code> must be replaced with <code>createMock()</code></li>
+<li>usages of <code>getMockWithoutInvokingTheOriginalConstructor()</code> are no longer needed, it&rsquo;s the default behavior now</li>
+<li>if you intervene on global variables, it&rsquo;s better to enable the <code>--globals-backup</code> option, to save and restore them between tests (previously it was the default behavior)</li>
+<li><code>setExpectedException()</code> must be replaced:</li>
 </ul>
 
-<p>In his keynote, Gary told us his story of how, from a simple developer, he became a Zend contributor first, and the JetBrains Developer Advocate now; the basic lessons that we can take from his experience is that open source contributions (no matter how small) are good for your career, and that when you give to the community, the community will give back to you very soon.</p>
+<pre><code class="language-php">// before
+$this-&gt;setExpectedException(Exception::class, $message);
+// after
+$this-&gt;expectException(Exception::class);
+$this-&gt;expectExceptionMessage($message);
+</code></pre>
 
-<p><img src="/images/phpday-2017/facile-engineering-team-phpday-2017.jpeg" alt="The Facile.it engineering team at PHPDay 2017" /></p>
+<p>And that&rsquo;s all! I hope to make you save enough time and migraines with this little guide. Happy coding!</p>
 
 
     <section id="social-share">
@@ -447,43 +495,43 @@ ga('send', 'pageview');
             
 
 
-<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f&text=Facile.it%20devs%20%40%20phpDay%202017&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&text=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
     <i class="fa fa-twitter"></i>
     <p>Twitter</p>
 </a></li>
 
 
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f" target="_blank" class="share-btn google-plus">
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f" target="_blank" class="share-btn google-plus">
     <i class="fa fa-google-plus"></i>
     <p>Google+</p>
 </a></li>
 
 
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f" target="_blank" class="share-btn facebook">
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f" target="_blank" class="share-btn facebook">
     <i class="fa fa-facebook"></i>
     <p>Facebook</p>
 </a></li>
 
 
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f&title=Facile.it%20devs%20%40%20phpDay%202017" target="_blank" class="share-btn reddit">
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn reddit">
     <i class="fa fa-reddit-alien"></i>
     <p>Reddit</p>
 </a></li>
 
 
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f&title=Facile.it%20devs%20%40%20phpDay%202017" target="_blank" class="share-btn linkedin">
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn linkedin">
     <i class="fa fa-linkedin"></i>
     <p>LinkedIn</p>
 </a></li>
 
 
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f&title=Facile.it%20devs%20%40%20phpDay%202017" target="_blank" class="share-btn stumbleupon">
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn stumbleupon">
     <i class="fa fa-stumbleupon"></i>
     <p>StumbleUpon</p>
 </a></li>
 
 
-<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2017%2f" target="_blank" class="share-btn email">
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f" target="_blank" class="share-btn email">
     <i class="fa fa-envelope"></i>
     <p>Email</p>
 </a></li>
@@ -513,7 +561,7 @@ ga('send', 'pageview');
     
         <li><a href="/categories/php">PHP</a></li>
     
-        <li><a href="/categories/conferences">Conferences</a></li>
+        <li><a href="/categories/software-testing">Software testing</a></li>
     
 </ul>
 
@@ -521,13 +569,10 @@ ga('send', 'pageview');
 </article>
 <ul class="actions pagination">
     
-        <li><a href="https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/"
-                class="button big previous">#FacileHack 2017, 10 days later</a></li>
+        <li><a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/"
+                class="button big previous">Why type hints and interfaces are not visual debt</a></li>
     
 
-    
-        <li><a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/"
-                class="button big next">Why type hints and interfaces are not visual debt</a></li>
     
 </ul>
 
@@ -540,9 +585,9 @@ ga('send', 'pageview');
 <div id="disqus_thread"></div>
 <script>
     var disqus_config = function () {
-        this.page.url = "https://engineering.facile.it/blog/eng/php-day-2017/";
-        this.page.identifier = "https://engineering.facile.it/blog/eng/php-day-2017/";
-        this.page.title = "Facile.it devs @ phpDay 2017";
+        this.page.url = "https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/";
+        this.page.identifier = "https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/";
+        this.page.title = "How to gradually upgrade toward PHPUnit 6 with namespaced classes";
     };
 
     (function () {

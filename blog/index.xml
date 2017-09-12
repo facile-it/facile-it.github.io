@@ -6,8 +6,146 @@
     <description>Recent content in Blogs on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 31 May 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Sep 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to gradually upgrade toward PHPUnit 6 with namespaced classes</title>
+      <link>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</link>
+      <pubDate>Tue, 12 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</guid>
+      <description>
+
+&lt;p&gt;In the latest months I wrote multiple times, in different projects, code migrating &lt;strong&gt;PHPUnit&lt;/strong&gt; toward major &lt;strong&gt;version 6&lt;/strong&gt;. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: &lt;strong&gt;all classes got (finally!) namespaced&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp;amp; replace job, but since you need to introduce at least one &lt;code&gt;use PHPUnit\Framework\TestCase&lt;/code&gt; line at the top of each one of your test classes, it&amp;rsquo;s a boring and a little more than trivial task; also, &lt;strong&gt;upgrading it in a single big jump may not be feasible or prudent&lt;/strong&gt;, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.&lt;/p&gt;
+
+&lt;p&gt;In this article I will explain which steps I applied during those migrations, highlighting the most frequent hiccups.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-easy-one-only-tests&#34;&gt;The easy one: only tests&lt;/h2&gt;
+
+&lt;p&gt;To start with, you have to find all the &lt;strong&gt;usages of PHPUnit classes&lt;/strong&gt; in your project: a simple search for every occurrence of the string &lt;code&gt;PHPUnit_&lt;/code&gt; should be enough at the beginning. You should know that, in some recent versions previous to 6, PHPUnit delivers a &lt;strong&gt;forward compatibility&lt;/strong&gt; layer; this means that some of the most extended classes in the library are present also in the namespaced version, so they can be used before upgrading to the fully namespaced version.&lt;/p&gt;
+
+&lt;p&gt;If you want to update a simple project, where the only usage of PHPUnit classes is to create tests, you are very lucky. You need to require at &lt;strong&gt;minimum PHPUnit 4.8.35 or 5.4.3&lt;/strong&gt;, which includes the FC class &lt;code&gt;PHPUnit\Framework\TestCase&lt;/code&gt; as an alias for &lt;code&gt;\PHPUnit_Framework_TestCase&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;You should choose the &lt;strong&gt;newest version as possible&lt;/strong&gt;, and that depends on which minimum version of PHP you want to support: if you work with (at least) PHP 5.6, you can use PHPUnit 5, otherwise you&amp;rsquo;re forced to use version 4.8.35. If you&amp;rsquo;re working on a (open source) library that needs to support both, you can do this in your &lt;code&gt;composer.json&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;require-dev&amp;quot;: {
+    &amp;quot;phpunit/phpunit&amp;quot;: &amp;quot;^4.8.35|^5.4.0&amp;quot;  
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this way you can use both, and Composer will choose the most updated one, depending on which PHP version you are using; this is &lt;strong&gt;pretty useful for testing with a CI tool&lt;/strong&gt; like Travis, since you should run your tests at least on the lowest and highest versions of PHP that you want to support.&lt;/p&gt;
+
+&lt;p&gt;Once you have required and installed the right version, the only modification that you need to do in your code is this one:&lt;/p&gt;
+
+&lt;p&gt;Before:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
+
+class MyTest extends \PHPUnit_Framework_TestCase
+{
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;After:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;&amp;lt;?php
+
+use PHPUnit\Framework\TestCase;
+
+class MyTest extends TestCase
+{
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;deprecations-of-phpunit-4&#34;&gt;Deprecations of PHPUnit 4&lt;/h3&gt;
+
+&lt;p&gt;Depending on your codebase, you may be forced to do one last step: your tests may be &lt;strong&gt;using deprecated methods from PHPUnit 4&lt;/strong&gt;, so you will need to fix those. Those issues are pretty easy to be found and fixed, because they will make your test fail when executed with PHPUnit 5. The full list of changes that may impact you are in the &lt;a href=&#34;https://github.com/sebastianbergmann/phpunit/blob/5.7/ChangeLog-5.0.md#500---2015-10-02&#34;&gt;changelog for version 5.0.0&lt;/a&gt;, but the most notable ones are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;you need to declare a whitelist in your &lt;code&gt;phpunit.xml&lt;/code&gt; configuration file to collect tests coverage&lt;/li&gt;
+&lt;li&gt;you must drop any usage of the &lt;code&gt;assertSelectCount()&lt;/code&gt;, &lt;code&gt;assertSelectRegExp()&lt;/code&gt;, &lt;code&gt;assertSelectEquals()&lt;/code&gt;, &lt;code&gt;assertTag()&lt;/code&gt;, &lt;code&gt;assertNotTag()&lt;/code&gt; assertions&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;the-bumpy-one-implementing-a-testlistener&#34;&gt;The bumpy one: implementing a TestListener&lt;/h2&gt;
+
+&lt;p&gt;If in your project you extend other classes or interfaces from PHPUnit, you need to check which one. If we are talking about one of the following:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\PHPUnit_Framework_Assert&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\PHPUnit_Framework_AssertionFailedError&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\PHPUnit_Framework_Test&lt;/code&gt; (interface)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;\PHPUnit_Framework_TestSuite&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;hellip; then your only requirement is to &lt;strong&gt;use at least PHPUnit 5.7.21&lt;/strong&gt;. This means that you have to drop support to any PHP version older than 5.6, if you still support it (and you should!).&lt;/p&gt;
+
+&lt;p&gt;If, instead, you implement a &lt;code&gt;\PHPUnit_Framework_TestListener&lt;/code&gt;, that may be a little trickier. The FC layer for that class is &lt;strong&gt;problematic&lt;/strong&gt;, since it&amp;rsquo;s an interface that has a lot of types applied to the methods&amp;rsquo; arguments; this, combined with the fact that in PHP you cannot change the type of an argument when extending (see &lt;a href=&#34;https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)&#34;&gt;covariance and contravariance&lt;/a&gt;), means that the FC class is nearly useless: &lt;strong&gt;you cannot be compatible with both&lt;/strong&gt; &lt;code&gt;\PHPUnit_Framework_TestListener&lt;/code&gt; and &lt;code&gt;\PHPUnit\Framework\TestListener&lt;/code&gt; with the same class.&lt;/p&gt;
+
+&lt;p&gt;If you are working on a &lt;strong&gt;single project&lt;/strong&gt;, you may just restrict the supported PHPUnit version and jump to the newest one while upgrading the listener too. But if you are working on a library, and you do not want to apply that restriction to your end users, it gets a little complicated.&lt;/p&gt;
+
+&lt;p&gt;In my case, while upgrading &lt;code&gt;facile-it/paraunit&lt;/code&gt;, I preferred &lt;a href=&#34;https://github.com/facile-it/paraunit/issues/54#issuecomment-302906556&#34;&gt;jumping from supporting 4.x/5.x directly to 6.x&lt;/a&gt;; Paraunit works directly on top of PHPUnit, and it works the same before and after this update (apart from new features), so &lt;strong&gt;dropping the old versions altogether&lt;/strong&gt; seemed a good enough approach for me.&lt;/p&gt;
+
+&lt;p&gt;In other cases, the listener is just provided as an additional help of the main library, so &lt;strong&gt;forcing the end user&lt;/strong&gt; to update his version of PHPUnit alongside with our library could be &lt;strong&gt;too harsh&lt;/strong&gt; or slow down the adoption of the new release. I tried doing this on &lt;a href=&#34;https://github.com/FriendsOfSymfony/FOSHttpCache/pull/365&#34;&gt;with a pull reques on &lt;code&gt;friendsofsymfony/http-cache&lt;/code&gt;&lt;/a&gt;, where I had to solve this specific issue. The &lt;strong&gt;only feasible solution&lt;/strong&gt; that I&amp;rsquo;ve found is this &lt;a href=&#34;https://github.com/symfony/phpunit-bridge/blob/3c0efb8609a32890a767bbbd39198a0e92572694/SymfonyTestsListener.php#L19&#34;&gt;specific snippet of code&lt;/a&gt;, that it was used in &lt;code&gt;symfony/phpunit-bridge&lt;/code&gt; to overcome the same problem:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;if (
+    class_exists(&#39;PHPUnit_Runner_Version&#39;) 
+    &amp;amp;&amp;amp; version_compare(\PHPUnit_Runner_Version::id(), &#39;6.0.0&#39;, &#39;&amp;lt;&#39;)
+) {
+    class_alias(&#39;Legacy\MyTestListener&#39;, &#39;MyTestListener&#39;);
+// Using an early return instead of a else does not work 
+// when using the PHPUnit phar due to some weird PHP behavior 
+// (the class gets defined without executing the code before it 
+// and so the definition is not properly conditional)
+} else {
+    class MyTestListener extends BaseTestListener
+    {
+        // ...
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This approach is based on writing two versions of the listener, one (inside a &lt;code&gt;legacy&lt;/code&gt; subfolder) which implements the old interface, the other that implements the new, namespaced one. With the above snippet, PHP is tricked into loading the right one, after checking if the loaded version of PHPUnit is lower than 6.0. In this way &lt;strong&gt;the end user can ignore the difference between the two classes&lt;/strong&gt;, use only the new class name and go on, since they will be switched in a hidden and automatic way.
+Once support for the old PHP and PHPUnit versions is dropped, this trick can be dropped too.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-next-step-from-5-to-6&#34;&gt;The next step: from 5 to 6&lt;/h2&gt;
+
+&lt;p&gt;Once all this migration is completed, and all the tests are green under all needed conditions, we can plan for the next step, &lt;strong&gt;upgrading to PHPUnit 6&lt;/strong&gt;. In reality, this step depends on a bigger, previous step: &lt;strong&gt;migrate to PHP 7&lt;/strong&gt;, because lower versions are no longer supported with PHPUnit 6.&lt;/p&gt;
+
+&lt;p&gt;When your project is ready for PHP 7, you can require the installation of PHPUnit 6; if you are working on a library that wants to support PHP 5.6 too, you can use the same trick as above in your &lt;code&gt;composer.json&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;require-dev&amp;quot;: {
+    &amp;quot;phpunit/phpunit&amp;quot;: &amp;quot;^5.4.0|^6.0&amp;quot;  
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&amp;hellip; so you&amp;rsquo;ll be using PHPUnit 5 under PHP 5.6, and 6 with PHP 7.0+. As before, you need to check that your tests are still passing, and avoid using any functionality that is deprecated in PHPUnit 5. You can find the full list in the &lt;a href=&#34;https://github.com/sebastianbergmann/phpunit/blob/6.0/ChangeLog-6.0.md#600---2017-02-03&#34;&gt;PHPUnit changelog for 6.0.0&lt;/a&gt;, but the most notable are:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;getMock()&lt;/code&gt; must be replaced with &lt;code&gt;createMock()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;usages of &lt;code&gt;getMockWithoutInvokingTheOriginalConstructor()&lt;/code&gt; are no longer needed, it&amp;rsquo;s the default behavior now&lt;/li&gt;
+&lt;li&gt;if you intervene on global variables, it&amp;rsquo;s better to enable the &lt;code&gt;--globals-backup&lt;/code&gt; option, to save and restore them between tests (previously it was the default behavior)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;setExpectedException()&lt;/code&gt; must be replaced:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-php&#34;&gt;// before
+$this-&amp;gt;setExpectedException(Exception::class, $message);
+// after
+$this-&amp;gt;expectException(Exception::class);
+$this-&amp;gt;expectExceptionMessage($message);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And that&amp;rsquo;s all! I hope to make you save enough time and migraines with this little guide. Happy coding!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Why type hints and interfaces are not visual debt</title>
@@ -1605,112 +1743,6 @@ $this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
 &lt;p&gt;At the end of the day, these and other &lt;strong&gt;good practices are helpful&lt;/strong&gt; for both your job and your personal life: you can go a long way in being fit and in the best shape while working, but stressful and (good) distracting events are unavoidable: you&amp;rsquo;ll often have to fight stress, fatigue or distractions, and there will be days where you can&amp;rsquo;t be at the top of your game, for any number of reasons.&lt;/p&gt;
 
 &lt;p&gt;Since programming is a mental job, I think that having instruments and good practices in your toolset is invaluable, being them the &lt;strong&gt;essential tools of our craft&lt;/strong&gt;. Thus, I hope that those little life/programming lessons I learned in these months will be useful to other people like me.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Facile.it devs @ PhpDay 2016</title>
-      <link>https://engineering.facile.it/blog/eng/php-day-2016/</link>
-      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/eng/php-day-2016/</guid>
-      <description>
-
-&lt;p&gt;Almost like a nice tradition, we went to the &lt;strong&gt;&lt;a href=&#34;http://2016.phpday.it/&#34;&gt;PHP Day conference&lt;/a&gt;&lt;/strong&gt; this year as well; this time too it was held in Verona, on &lt;strong&gt;May 13th and 14th&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;
-
-&lt;p&gt;In this way, we hope to give a brief glimpse of what we experienced to fellow developers that hadn&amp;rsquo;t the opportunity to attend, and to tempt some of you to join conferences like this one or those in the PHP community at large, for your personal and professional growth.&lt;/p&gt;
-
-&lt;p&gt;The talks are in chronological order, and we linked the slides when available. Enjoy your reading!&lt;/p&gt;
-
-&lt;h1 id=&#34;technical-talks&#34;&gt;Technical Talks&lt;/h1&gt;
-
-&lt;h2 id=&#34;your-api-is-a-ui&#34;&gt;Your API is a UI&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Christopher Hoult (&lt;a href=&#34;http://twitter.com/choult&#34;&gt;@choult&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Day 1 - 11:00 – 12:00 - track 1&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This was an interesting and very smooth talk. It stayed pretty general with nice advices about &lt;strong&gt;API development&lt;/strong&gt;, but showed some reasoning about a pyramidal &amp;ldquo;scheme of priorities&amp;rdquo; that we should follow, deriving from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs&#34;&gt;Maslow&amp;rsquo;s hierarchy of needs&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;dip-your-toes-in-the-sea-of-security&#34;&gt;Dip Your Toes in the Sea of Security&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;James Titcumb (&lt;a href=&#34;http://twitter.com/asgrim&#34;&gt;@asgrim&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Day 1 - 14:30 – 15:30 - track 1 (&lt;a href=&#34;http://www.slideshare.net/asgrim1/dip-your-toes-in-the-sea-of-security-phpday-2016&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this talk we saw an interesting overview of &lt;strong&gt;security issues&lt;/strong&gt; that a web application can encounter. It ranged from basic SQL injection, to timing attacks (that were explained pretty well!), to CSRF protection.&lt;/p&gt;
-
-&lt;h2 id=&#34;how-i-learned-to-stop-worrying-and-love-regular-expressions&#34;&gt;How I learned to stop worrying and love Regular Expressions&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Jordi Boggiano (&lt;a href=&#34;http://twitter.com/seldaek&#34;&gt;@seldaek&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Day 1 - 15:30 – 16:30 - track 1 (&lt;a href=&#34;http://slides.seld.be/?file=2016-05-13+How+I+learned+to+stop+worrying+and+love+Regular+Expressions.html&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this talk we went from basic &lt;strong&gt;regular expressions&lt;/strong&gt;, to basic pattern recognition, to advanced usage; the speaker took also the time to explain to us how the regex engine works, through thorough examples of pattern matching advancement and backtracking. Also, bonus points for the slides! They were pretty neat, and everything was themed to the &lt;em&gt;Dr. Strangelove&lt;/em&gt; movie, from images to phrases used in the examples.&lt;/p&gt;
-
-&lt;h2 id=&#34;dockerizing-your-php-ci-pipelines&#34;&gt;Dockerizing your PHP CI Pipelines&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Paul Dragoonis (&lt;a href=&#34;http://twitter.com/dr4goonis&#34;&gt;@dr4goonis&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Day 1 - 17:00 – 17:30 - track 2 (&lt;a href=&#34;http://dragoonis.com/talks/phpday-may-2016/#/&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This talk was about &lt;strong&gt;using Jenkins with Docker&lt;/strong&gt; and having optimized pipelines for fast builds and short commit-to-deploy times. It should have been a 1-hour-long talk, so the speaker had to cut short on a lot of things, but I took a lot of useful advice from it nonetheless. Fortunately, he was kind enough to give the extra bits of his talk in the unconference track the day after.&lt;/p&gt;
-
-&lt;h2 id=&#34;drinking-beer-with-a-raspberry-pi-and-php&#34;&gt;Drinking Beer with a Raspberry Pi and PHP&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Andrew Carter (&lt;a href=&#34;http://twitter.com/AndrewCarterUK&#34;&gt;@AndrewCarterUK&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Day 2 - 15:30 – 16:30 - track 1&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This talk was uncommon but really funny. The speaker explained that programming the Raspberry Pi is possible even with PHP! He showed us a working example of an AaaS (Alcohol as a Service) machine. It was a simple tool with a liquid pump and a flow detector that is used to fill up glasses with any kind of drink. It can be activated via API as any regular service. The speaker also explained how it is possible to communicate with external devices via the powerful IO pins using Unix device files.&lt;/p&gt;
-
-&lt;h2 id=&#34;evolution-of-web-application-architecture&#34;&gt;Evolution of Web Application Architecture&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Kore Nordmann (&lt;a href=&#34;http://twitter.com/koredn&#34;&gt;@koredn&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Day 2 - 15:30 – 16:30 - track 2 (&lt;a href=&#34;https://qafoo.com/resources/presentations/phpday_2016_2016/evolution_of_web_application_architecture.html&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The talk covered the &lt;strong&gt;evolution of the technological stack&lt;/strong&gt; behind a normal web application, from single-server to multi-server architecture. Each addition to the stack was discussed and weighted, without taking for granted any single step: from adding a master-slave database configuration, to caching session and\or query results. This gave us a pretty clear idea of &lt;strong&gt;when and why&lt;/strong&gt; such steps should be taken while adding new functionalities to a project, or overcoming technical challenges.&lt;/p&gt;
-
-&lt;h2 id=&#34;being-functional-in-php&#34;&gt;Being functional in PHP&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;David de Boer (&lt;a href=&#34;http://twitter.com/ddeboer_nl&#34;&gt;@ddeboer_nl&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Day 2 - 16:30 – 17:00 - track 1 (&lt;a href=&#34;http://www.slideshare.net/boerdedavid/being-functional-in-php-php-day-italy-2016&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This talk was an &lt;strong&gt;introduction to functional programming&lt;/strong&gt;. The speaker compared highly declarative languages such as Erlang with PHP. He demonstrated the options we have to adopt functional programming in PHP. Basic concepts were covered in a clear and simple way: mapping, reduction, function composition and higher-order functions. Particular focus was given to the use of pure functions and their main advantage: the absence of side effects. Finally, the speaker went through an interesting comparison between OOP and functional programming, showing their strengths and weaknesses.&lt;/p&gt;
-
-&lt;h1 id=&#34;keynotes&#34;&gt;Keynotes&lt;/h1&gt;
-
-&lt;h2 id=&#34;deploying-php-7&#34;&gt;Deploying PHP 7&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Rasmus Lerdorf (&lt;a href=&#34;http://twitter.com/rasmus&#34;&gt;@rasmus&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;Day 1 - 09:45 – 10:45 (&lt;a href=&#34;http://talks.php.net/phpday16#/&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Rasmus is a veteran at PHPDay, and he gives opening keynotes here almost every two years. This year&amp;rsquo;s was obviously about PHP 7, and it was more a technical talk than else. It went from &lt;strong&gt;benchmark data&lt;/strong&gt; to technical tips on how to smooth the transition to this new major version of PHP.&lt;/p&gt;
-
-&lt;h2 id=&#34;how-badoo-saved-1m-switching-to-php7&#34;&gt;How Badoo Saved $1M Switching to PHP7&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Nikolay Krapivnyy&lt;/li&gt;
-&lt;li&gt;Day 2 - 09:45 – 10:45 (&lt;a href=&#34;https://dl.dropboxusercontent.com/u/216377/verona_php_2.pdf&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The &lt;a href=&#34;https://techblog.badoo.com/blog/2016/03/14/how-badoo-saved-one-million-dollars-switching-to-php7/&#34;&gt;blog post&lt;/a&gt; about this technological switch made the rounds on a lot on PHP-related websites some months ago; this talk was very technical too, and it showed us how big is Badoo&amp;rsquo;s technological stack, with 3000 servers, 1000 of which running PHP. It gave us a nice overview of the &lt;strong&gt;technical challenges&lt;/strong&gt; that their tech team endured to do this upgrade, and how it gave them the possibility to save more than a half of their hardware resources; also&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;it&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Badoo put PHP 7 in production on Friday&amp;hellip; &lt;br&gt;/cc &lt;a href=&#34;https://twitter.com/agilegigi&#34;&gt;@agilegigi&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/poiluned%C3%ACcepensiamo?src=hash&#34;&gt;#poilunedìcepensiamo&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/phpday?src=hash&#34;&gt;#phpday&lt;/a&gt; &lt;a href=&#34;https://t.co/OEj3Emxxee&#34;&gt;pic.twitter.com/OEj3Emxxee&lt;/a&gt;&lt;/p&gt;&amp;mdash; Alessandro Lai (@AlessandroLai) &lt;a href=&#34;https://twitter.com/AlessandroLai/status/731403882321063936&#34;&gt;14 maggio 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 </description>
     </item>
     

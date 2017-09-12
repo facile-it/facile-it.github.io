@@ -219,15 +219,15 @@ ga('send', 'pageview');
 
                 
                     <li>
+                        <a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/"><p>How to gradually upgrade toward PHPUnit 6 with namespaced classes</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/"><p>Why type hints and interfaces are not visual debt</p></a>
                     </li>
                 
                     <li>
                         <a href="https://engineering.facile.it/blog/eng/php-day-2017/"><p>Facile.it devs @ phpDay 2017</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/"><p>#FacileHack 2017, 10 days later</p></a>
                     </li>
                 
             </ul>
@@ -240,6 +240,145 @@ ga('send', 'pageview');
     
     <div id="main">
         
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/">Da sviluppo a produzione con Docker e AWS Elastic Beanstalk</a></h2>
+        
+        
+        
+        
+            <p class="translated-article">
+                This article is also available
+                <a href="/blog/eng/from-development-to-production-with-docker-and-amazon-ecs">in english</a>
+            </p>
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published" datetime='2015-10-19'>
+            19 October 2015
+        </time>
+
+        
+            <a href="/authors/lorenzo" class="author">
+            
+                <span class="name">Lorenzo Fontana</span>
+                <img src="https://www.gravatar.com/avatar/575f040cd9e5e28e807ecf0d73c8a938?d=404&amp;s=250" alt="Lorenzo Fontana avatar" />
+            
+            </a>
+        
+            <a href="/authors/daniele" class="author">
+            
+                <span class="name">Daniele Contini</span>
+                <img src="/images/avatar-daniele.jpg" alt="Daniele Contini avatar" />
+            
+            </a>
+        
+
+        
+            <p>7 minute read</p>
+        
+    </div>
+</header>
+
+    
+
+    <p>In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione. Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy. In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue: nessun tipo di isolamento tra progetti che usano gli stessi servizi (versione, configurazione, dati); è difficile avere e mantenere in locale la stessa versione e la stessa configurazione dei servizi in produzione; condividere l&rsquo;ambiente di sviluppo con colleghi e collaboratori è difficile se non impossibile; Tutto questo conduce ad una delle peggiori frasi che io abbia mai sentito in tutta la mia esperienza lavorativa: It works on my machine (in locale funzionava) Potreste pensare che avrei potuto ottenere gli stessi risultati usando Vagrant o una classica macchina virtuale, ma questa soluzione non mi avrebbe dato i benefici di avere un layer di astrazione aggiuntivo senza dovermi preoccupare dell&rsquo;overhead.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+
+    
+        
+            <li>
+                
+                    <i class="fa fa-folder-open-o">&nbsp;</i>
+                
+        
+
+                
+                    Categories
+                
+            </li>
+    
+
+    
+        <li><a href="/categories/italiano">Italiano</a></li>
+    
+        <li><a href="/categories/docker">Docker</a></li>
+    
+        <li><a href="/categories/aws">AWS</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&text=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&title=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&title=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&title=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
         
             <article class="post">
     <header>
@@ -778,141 +917,6 @@ ga('send', 'pageview');
 </section>
 
         
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/">WAMP, Web Application Messaging Protocol.. e PHP!</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published" datetime='2015-09-28'>
-            28 September 2015
-        </time>
-
-        
-            <a href="/authors/luca" class="author">
-            
-                <span class="name">Luca Boeri</span>
-                <img src="/images/avatar-luca.jpg" alt="Luca Boeri avatar" />
-            
-            </a>
-        
-
-        
-            <p>5 minute read</p>
-        
-    </div>
-</header>
-
-    
-
-    <p>Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno scambio dati in due direzioni, efficiente e a bassa latenza, ha determinato l’ascesa negli ultimi anni di soluzioni basate su WebSocket. Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-
-    
-        
-            <li>
-                
-                    <i class="fa fa-folder-open-o">&nbsp;</i>
-                
-        
-
-                
-                    Categories
-                
-            </li>
-    
-
-    
-        <li><a href="/categories/italiano">Italiano</a></li>
-    
-        <li><a href="/categories/php">PHP</a></li>
-    
-        <li><a href="/categories/open-source">Open Source</a></li>
-    
-        <li><a href="/categories/python">Python</a></li>
-    
-        <li><a href="/categories/networking">Networking</a></li>
-    
-        <li><a href="/categories/websocket">Websocket</a></li>
-    
-        <li><a href="/categories/symfony">Symfony</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f&text=WAMP%2c%20Web%20Application%20Messaging%20Protocol..%20e%20PHP%21&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-</a></li>
-
-
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-</a></li>
-
-
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-</a></li>
-
-
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f&title=WAMP%2c%20Web%20Application%20Messaging%20Protocol..%20e%20PHP%21" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-</a></li>
-
-
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f&title=WAMP%2c%20Web%20Application%20Messaging%20Protocol..%20e%20PHP%21" target="_blank" class="share-btn linkedin">
-    <i class="fa fa-linkedin"></i>
-    <p>LinkedIn</p>
-</a></li>
-
-
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f&title=WAMP%2c%20Web%20Application%20Messaging%20Protocol..%20e%20PHP%21" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-</a></li>
-
-
-<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-</a></li>
-
-        </ul>
-    </section>
-</section>
-
-        
 		
         
 <ul class="actions pagination">
@@ -1042,6 +1046,27 @@ ga('send', 'pageview');
                                         
                                     
 
+                                    <h3><a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/">How to gradually upgrade toward PHPUnit 6 with namespaced classes</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2017-09-12'>
+                                        12 September 2017
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
+                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
                                     <h3><a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/">Why type hints and interfaces are not visual debt</a></h3>
 
                                     
@@ -1070,27 +1095,6 @@ ga('send', 'pageview');
                                     
                                     <time class="published" datetime='2017-05-16'>
                                         16 May 2017
-                                    </time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                    
-                                        
-                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
-                                        
-                                    
-
-                                    <h3><a href="https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/">#FacileHack 2017, 10 days later</a></h3>
-
-                                    
-                                        
-                                    
-                                    <time class="published" datetime='2017-04-04'>
-                                        4 April 2017
                                     </time>
                             </header>
                         </article>
@@ -1140,7 +1144,7 @@ ga('send', 'pageview');
                         <article>
                             <header>
                                 <a href="/categories/english/">English</a>
-                                <span style="float:right;">25</span>
+                                <span style="float:right;">26</span>
                             </header>
                         </article>
                     </li>
@@ -1151,7 +1155,7 @@ ga('send', 'pageview');
                         <article>
                             <header>
                                 <a href="/categories/php/">PHP</a>
-                                <span style="float:right;">17</span>
+                                <span style="float:right;">18</span>
                             </header>
                         </article>
                     </li>
@@ -1201,6 +1205,15 @@ ga('send', 'pageview');
                     </li>
                     
                 
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/software-testing/">Software testing</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
                     
                 
                     

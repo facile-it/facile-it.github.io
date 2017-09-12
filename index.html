@@ -32,7 +32,7 @@
 <meta property="og:url" content="https://engineering.facile.it/" />
 
 
-<meta property="og:updated_time" content="2017-05-31T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2017-09-12T00:00:00&#43;00:00"/>
 
 
 
@@ -219,15 +219,15 @@ ga('send', 'pageview');
 
                 
                     <li>
+                        <a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/"><p>How to gradually upgrade toward PHPUnit 6 with namespaced classes</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/"><p>Why type hints and interfaces are not visual debt</p></a>
                     </li>
                 
                     <li>
                         <a href="https://engineering.facile.it/blog/eng/php-day-2017/"><p>Facile.it devs @ phpDay 2017</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/"><p>#FacileHack 2017, 10 days later</p></a>
                     </li>
                 
             </ul>
@@ -240,6 +240,133 @@ ga('send', 'pageview');
     
     <div id="main">
         
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/">How to gradually upgrade toward PHPUnit 6 with namespaced classes</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published" datetime='2017-09-12'>
+            12 September 2017
+        </time>
+
+        
+            <a href="/authors/jean" class="author">
+            
+                <span class="name">Alessandro Lai</span>
+                <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" />
+            
+            </a>
+        
+
+        
+            <p>7 minute read</p>
+        
+    </div>
+</header>
+
+    
+
+    <p>In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced. This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp; replace job, but since you need to introduce at least one use PHPUnit\Framework\TestCase line at the top of each one of your test classes, it&rsquo;s a boring and a little more than trivial task; also, upgrading it in a single big jump may not be feasible or prudent, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+
+    
+        
+            <li>
+                
+                    <i class="fa fa-folder-open-o">&nbsp;</i>
+                
+        
+
+                
+                    Categories
+                
+            </li>
+    
+
+    
+        <li><a href="/categories/english">English</a></li>
+    
+        <li><a href="/categories/php">PHP</a></li>
+    
+        <li><a href="/categories/software-testing">Software testing</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&text=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
         
             <article class="post">
     <header>
@@ -761,133 +888,6 @@ ga('send', 'pageview');
 </section>
 
         
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/">#FacileHack 2017 ci siamo quasi</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published" datetime='2017-03-21'>
-            21 March 2017
-        </time>
-
-        
-            <a href="/authors/salvatore-cordiano" class="author">
-            
-                <span class="name">Salvatore Cordiano</span>
-                <img src="https://www.gravatar.com/avatar/84febdc35f5438ae1d2500482e2228fa" alt="Salvatore Cordiano avatar" />
-            
-            </a>
-        
-
-        
-            <p>1 minute read</p>
-        
-    </div>
-</header>
-
-    
-
-    <p>Mancano meno di 4 giorni alla seconda edizione di #FacileHack, la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana. Attesa grande partecipazione all&rsquo;evento anche da fuori Italia, le registrazioni sono state chiuse per sold-out all&rsquo;inizio di questo mese. In meno di 24 ore gli hackers partecipanti dovranno confrontarsi, mettendo a dura prova le proprie capacità fisiche e creative, per presentare un&rsquo;idea o un prototipo in grado di ottenere il punteggio massimo della giuria di qualità.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-
-    
-        
-            <li>
-                
-                    <i class="fa fa-folder-open-o">&nbsp;</i>
-                
-        
-
-                
-                    Categories
-                
-            </li>
-    
-
-    
-        <li><a href="/categories/italiano">Italiano</a></li>
-    
-        <li><a href="/categories/facilehack">FacileHack</a></li>
-    
-        <li><a href="/categories/hackathon">Hackathon</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2017-ci-siamo-quasi%2f&text=%23FacileHack%202017%20ci%20siamo%20quasi&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-</a></li>
-
-
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2017-ci-siamo-quasi%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-</a></li>
-
-
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2017-ci-siamo-quasi%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-</a></li>
-
-
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2017-ci-siamo-quasi%2f&title=%23FacileHack%202017%20ci%20siamo%20quasi" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-</a></li>
-
-
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2017-ci-siamo-quasi%2f&title=%23FacileHack%202017%20ci%20siamo%20quasi" target="_blank" class="share-btn linkedin">
-    <i class="fa fa-linkedin"></i>
-    <p>LinkedIn</p>
-</a></li>
-
-
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2017-ci-siamo-quasi%2f&title=%23FacileHack%202017%20ci%20siamo%20quasi" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-</a></li>
-
-
-<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2017-ci-siamo-quasi%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-</a></li>
-
-        </ul>
-    </section>
-</section>
-
-        
 		
         
 <ul class="actions pagination">
@@ -1016,6 +1016,27 @@ ga('send', 'pageview');
                                         
                                     
 
+                                    <h3><a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/">How to gradually upgrade toward PHPUnit 6 with namespaced classes</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2017-09-12'>
+                                        12 September 2017
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
+                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
                                     <h3><a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/">Why type hints and interfaces are not visual debt</a></h3>
 
                                     
@@ -1044,27 +1065,6 @@ ga('send', 'pageview');
                                     
                                     <time class="published" datetime='2017-05-16'>
                                         16 May 2017
-                                    </time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                    
-                                        
-                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
-                                        
-                                    
-
-                                    <h3><a href="https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/">#FacileHack 2017, 10 days later</a></h3>
-
-                                    
-                                        
-                                    
-                                    <time class="published" datetime='2017-04-04'>
-                                        4 April 2017
                                     </time>
                             </header>
                         </article>
@@ -1114,7 +1114,7 @@ ga('send', 'pageview');
                         <article>
                             <header>
                                 <a href="/categories/english/">English</a>
-                                <span style="float:right;">25</span>
+                                <span style="float:right;">26</span>
                             </header>
                         </article>
                     </li>
@@ -1125,7 +1125,7 @@ ga('send', 'pageview');
                         <article>
                             <header>
                                 <a href="/categories/php/">PHP</a>
-                                <span style="float:right;">17</span>
+                                <span style="float:right;">18</span>
                             </header>
                         </article>
                     </li>
@@ -1175,6 +1175,15 @@ ga('send', 'pageview');
                     </li>
                     
                 
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/software-testing/">Software testing</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
                     
                 
                     

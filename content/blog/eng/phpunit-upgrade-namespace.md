@@ -11,9 +11,9 @@ languageCode: "en-EN"
 type: "post"
 toc: false
 ---
-In the latest months I wrote multiple times, in different projects, code migrating **PHPUnit** toward major **version 6**. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: **all classes got (finally!) namespaces**.
+In the latest months I wrote multiple times, in different projects, code migrating **PHPUnit** toward major **version 6**. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: **all classes got (finally!) namespaced**.
 
-This means that any usage of those classes in your project needs to be updated. It may seem a simple find & replace job, but since you need to introduce at least one `use PHPUnit\Framework\TestCase` line at the top of each one of your test classes, it's a boring and a little more than trivial task; also, **upgrading it in a single big jump may not be feasible or prudent action**, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.
+This means that any usage of those classes in your project needs to be updated. It may seem a simple find & replace job, but since you need to introduce at least one `use PHPUnit\Framework\TestCase` line at the top of each one of your test classes, it's a boring and a little more than trivial task; also, **upgrading it in a single big jump may not be feasible or prudent**, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.
 
 In this article I will explain which steps I applied during those migrations, highlighting the most frequent hiccups.
 
@@ -56,7 +56,7 @@ class MyTest extends TestCase
 }
 ```
 ### Deprecations of PHPUnit 4
-Depending on your codebase, you may be force do to one last step: your tests may be **using deprecated methods from PHPUnit 4**, so you will need to fix those. Those issues are pretty easy to be found and fixed, because they will make your test fail when executed with PHPUnit 5. The full list of changes that may impact you are in the [changelog for version 5.0.0](https://github.com/sebastianbergmann/phpunit/blob/5.7/ChangeLog-5.0.md#500---2015-10-02), but the most notable ones are:
+Depending on your codebase, you may be forced to do one last step: your tests may be **using deprecated methods from PHPUnit 4**, so you will need to fix those. Those issues are pretty easy to be found and fixed, because they will make your test fail when executed with PHPUnit 5. The full list of changes that may impact you are in the [changelog for version 5.0.0](https://github.com/sebastianbergmann/phpunit/blob/5.7/ChangeLog-5.0.md#500---2015-10-02), but the most notable ones are:
 
  * you need to declare a whitelist in your `phpunit.xml` configuration file to collect tests coverage
  * you must drop any usage of the `assertSelectCount()`, `assertSelectRegExp()`, `assertSelectEquals()`, `assertTag()`, `assertNotTag()` assertions

@@ -1,8 +1,8 @@
 ---
 authors: ["jean"]
 comments: true
-date: "2017-09-01"
-draft: true
+date: "2017-09-12"
+draft: false
 share: true
 categories: [English, PHP, Software testing]
 title: "How to gradually upgrade toward PHPUnit 6 with namespaced classes"

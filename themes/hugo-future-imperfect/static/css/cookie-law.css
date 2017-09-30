@@ -1,0 +1,23 @@
+#cookie-law {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    color: white;
+    background: rgba(0, 0, 0, 0.75);
+    border-top: solid 1px rgba(160, 160, 160, 0.3);
+}
+
+#cookie-law .button {
+    margin-left: 1.5em;
+    height: 2.5em;
+    line-height: 2.5em;
+    padding: 0 1.5em;
+    font-size: 0.7em;
+    color: white !important;
+}

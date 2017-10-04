@@ -1,0 +1,7 @@
+<p>
+	<img data-src="{{ .Get "src" }}" class="lazy"{{ with .Get "title"}} title="{{.}}"{{ end }} width="100%"/>
+	<br/>
+	{{ if isset .Params "label" }}
+		<em>{{ .Get "label" }}</em>
+	{{ end }}
+</p>

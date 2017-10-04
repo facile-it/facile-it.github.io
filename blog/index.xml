@@ -6,8 +6,292 @@
     <description>Recent content in Blogs on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Oct 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Is it all PHP OPCache&#39;s fault?</title>
+      <link>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</link>
+      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</guid>
+      <description>
+
+&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&amp;rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;When I started my software developer career, I was very surprised to read the following sentence, attributed to &lt;a href=&#34;https://martinfowler.com/bliki/TwoHardThings.html&#34;&gt;Phil Karlton&lt;/a&gt;: &lt;em&gt;«There are only two hard things in Computer Science: &lt;strong&gt;cache invalidation&lt;/strong&gt; and &lt;strong&gt;naming things&lt;/strong&gt;»&lt;/em&gt;. In the beginning I was incredulous, because I didn&amp;rsquo;t really get the sense of these words. Not much later, I started to understand.&lt;/p&gt;
+
+&lt;p&gt;Without digging too much into the past, I&amp;rsquo;d like to talk about a recent cache issue we experienced in on our production infrastructure. Particularly we noticed a strange behavior after each deploy: immediately after a successful deployment procedure, as we refreshed pages that were modified with the new release, we didn&amp;rsquo;t see the updated code for a while. Actually, the scenario described above is very common with &lt;strong&gt;PHP&lt;/strong&gt; web applications. We have seen this behavior in the past but, after we moved to our new production environment, it became more noticeable. Therefore, we decided to investigate it.&lt;/p&gt;
+
+&lt;h1 id=&#34;our-deployment-procedure&#34;&gt;Our deployment procedure&lt;/h1&gt;
+
+&lt;p&gt;Before proceeding, I should describe how our deployment procedure works: our technology is mostly based on PHP, plus some frameworks like &lt;strong&gt;Symfony&lt;/strong&gt; and &lt;strong&gt;Zend Framework&lt;/strong&gt;. To ship our code in production we use an internal project called &lt;strong&gt;shark-do&lt;/strong&gt;, written by my team leader &lt;a href=&#34;https://luca.bo/&#34;&gt;Luca&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Shark-do&amp;rsquo;s philosophy is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;«If you can do it, you can do it in bash»&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The project&amp;rsquo;s in fact a bash script which allows to define a task and execute it from a recipe. Each project has its own recipe, as to manage the different steps needed, like delete useless files, generate configuration files, etc.&lt;/p&gt;
+
+&lt;p&gt;For example, I usually run &lt;code&gt;shark-do deploy collaboratori&lt;/code&gt;, to execute the deploy tasks for the &amp;ldquo;collaboratori&amp;rdquo; project, in which I&amp;rsquo;m involved, more than 5 times a day. This is generally comprised of the following steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;pull the last commit from origin/master;&lt;/li&gt;
+&lt;li&gt;setup folders, remove the unnecessary files and start creating a release;&lt;/li&gt;
+&lt;li&gt;install parameters, run composer install, download and dump assets;&lt;/li&gt;
+&lt;li&gt;create a release archive, transfer and extract it on the bastion machine;&lt;/li&gt;
+&lt;li&gt;call an Ansible procedure to start the release roll out using our infrastructure&amp;rsquo;s REST API;&lt;/li&gt;
+&lt;li&gt;switch releases, clean and remove old releases on the bastion machine;&lt;/li&gt;
+&lt;li&gt;tag the new release on New Relic and notify the end of the task on our Slack channel.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We should focus on point 5 because it&amp;rsquo;s the roll out phase. At that point, an &lt;a href=&#34;http://docs.ansible.com/ansible/latest/playbooks.html&#34;&gt;&lt;strong&gt;Ansible playbook&lt;/strong&gt;&lt;/a&gt; is responsible for copying the new release from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Bastion_host&#34;&gt;bastion host&lt;/a&gt; to all the target machines (front-end, batch, etc.), for setting up folders and permissions, and for doing cache warm-up and release switch. As described previously, each deployment procedure consists of many mandatory activities, but the turning point is when the current project&amp;rsquo;s folder changes: this is usually done through a symlink swap from the previous release folder to the new one. The current project folder is the document root of the specific web application.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s just something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ln -sf /var/www/{APP_NAME}/releases/@YYYYMMDDHHIISS /var/www/{APP_NAME}/current
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;-s&lt;/code&gt; option is used to create a symbolic link, while &lt;code&gt;-f&lt;/code&gt; is used to force the symlink creation if the target already exists; &lt;code&gt;{APP_NAME}&lt;/code&gt; represents the project&amp;rsquo;s name.&lt;/p&gt;
+
+&lt;p&gt;Our deployment strategy is very common in the PHP world. We store multiple releases of the same application on the production machines, and we use a symlink to the current version. This way we should deploy &lt;strong&gt;atomically and safely&lt;/strong&gt;, without impacting the production traffic.&lt;/p&gt;
+
+&lt;p&gt;Last but not least, we have about 15 front-end machines behind a load-balancer with a round-robin workload balancing policy (more than twice the previous number of servers). Now the question is: what happens after the release switch?&lt;/p&gt;
+
+&lt;h1 id=&#34;it-s-all-php-opcache-s-fault&#34;&gt;It&amp;rsquo;s all PHP OPCache&amp;rsquo;s fault (?)&lt;/h1&gt;
+
+&lt;p&gt;Some caveats: the goal of this article is not to dive deeply in a PHP script execution flow, but to lay down the foundations to understand my reasoning about the problem; I am also only taking into account PHP version 7.&lt;/p&gt;
+
+&lt;p&gt;It can be useful to revisit how PHP code is executed. When we run a PHP script, our source code undergoes four phases:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/realpath-cache-is-it-all-php-opcache-s-fault/graph_1.png&#34; alt=&#34;How does PHP work?&#34; /&gt;
+&lt;em&gt;How does PHP work?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The first phase is managed by a lexer: the &lt;strong&gt;PHP lexer&lt;/strong&gt; is responsible for matching language keywords like &lt;code&gt;function&lt;/code&gt;, &lt;code&gt;return&lt;/code&gt; and &lt;code&gt;static&lt;/code&gt; to individual pieces generally called &lt;em&gt;tokens&lt;/em&gt;. Each token is often decorated with some metadata, necessary for the next phase.&lt;/p&gt;
+
+&lt;p&gt;The second phase is managed by a parser: the &lt;strong&gt;PHP parser&lt;/strong&gt; is responsible for analyzing single or multiple tokens, and match them to language structure patterns. For example &lt;code&gt;$foo + 5&lt;/code&gt; is recognized as a binary &amp;ldquo;sum&amp;rdquo; operation, and the variable &lt;code&gt;$foo&lt;/code&gt; and the number &lt;code&gt;5&lt;/code&gt; are recognized as operands. Here, the parser builds the &lt;a href=&#34;https://wiki.php.net/rfc/abstract_syntax_tree&#34;&gt;&lt;strong&gt;Abstract Syntax Tree (AST)&lt;/strong&gt;&lt;/a&gt; in a recursive way. Usually, lexer and parser are mentioned together as a single task.&lt;/p&gt;
+
+&lt;p&gt;The third phase is the &lt;strong&gt;compilation&lt;/strong&gt;. In this phase, the AST is visited and it&amp;rsquo;s translated into an ordered sequence of OPCodes instructions. Every OPCode could be considered as a low-level &lt;strong&gt;Zend Virtual Machine&lt;/strong&gt; operation. The full list of supported OPCodes is available &lt;a href=&#34;https://github.com/php/php-src/blob/php-7.0.0/Zend/zend_vm_opcodes.h&#34;&gt;here&lt;/a&gt;. The last phase is the &lt;strong&gt;execution&lt;/strong&gt;. The Zend VM runs every single task described by OPCode, and produces the result.&lt;/p&gt;
+
+&lt;p&gt;The first three phases of the above described &amp;ldquo;pipeline&amp;rdquo; (lexer, parser and compiler), and the third in particular takes a lot of time and resources (memory and CPU). To minimize the weight of the compilation phase, PHP 5.5 introduced the &lt;a href=&#34;http://php.net/manual/en/book.opcache.php&#34;&gt;&lt;strong&gt;Zend OPcache extension&lt;/strong&gt;&lt;/a&gt;. If enabled, this extension will cache the output of the compilation step (OPCodes) into shared memory (shm, mmap, etc.), such that every PHP script is compiled only once, and different requests can be executed skipping the compilation task. If the source code on the non-development environment is not frequently changed, the PHP execution time should be reduced by a factor of at least two.&lt;/p&gt;
+
+&lt;p&gt;The OPcache extension is also responsible for the OPCodes optimization, but that&amp;rsquo;s out of scope for this article.&lt;/p&gt;
+
+&lt;p&gt;In the light of the above, it&amp;rsquo;s reasonable to expect that the strange behavior experienced in our production environment is all OPCache&amp;rsquo;s fault. If that&amp;rsquo;s right, we should be able to reproduce the issue and solve it by disabling the OPCache extension. To test this hypothesis I&amp;rsquo;ve prepared a very simple demo environment using a &lt;strong&gt;Docker&lt;/strong&gt; container with PHP 7.0 and Apache 2.4. The full code is available on &lt;a href=&#34;https://github.com/salvatorecordiano/facile-it-realpath_cache&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I wrote some shortcuts to simplify the process:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;start.sh&lt;/code&gt; starts the Docker container with the right configuration;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;release-switcher.sh&lt;/code&gt; swaps the current release symlink every 10 seconds;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;release-watcher.sh&lt;/code&gt; checks the current release served by Apache every second, by making an HTTP request.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Just clone the GitHub repository and you&amp;rsquo;re ready to test, assuming Docker is already installed on your machine.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/salvatorecordiano/facile-it-realpath_cache
+cd facile-it-realpath_cache
+docker pull salvatorecordiano/realpath_cache
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To reproduce the cache issue, you have to run the following commands in parallel, using three different command lines:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# start the container with production configuration
+./start.sh production 
+# start switching the current release
+./release-switcher.sh
+# start watching the current web server response 
+./release-watcher.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following &lt;a href=&#34;https://www.youtube.com/watch?v=PNjyi42VwP4&#34;&gt;video&lt;/a&gt; shows the execution output.&lt;/p&gt;
+
+&lt;p&gt;
+	&lt;img data-src=&#34;/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production.gif&#34; class=&#34;lazy&#34; title=&#34;Execution with configuration: production&#34; width=&#34;100%&#34;/&gt;
+	&lt;br/&gt;
+	
+		&lt;em&gt;Execution with configuration: production&lt;/em&gt;
+	
+&lt;/p&gt;
+
+
+&lt;p&gt;As expected we are experiencing the cache issue: after a release switch, we&amp;rsquo;re not seeing the right code as the output of an HTTP request.&lt;/p&gt;
+
+&lt;p&gt;Now we disable the OPCache extension and redo the test.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# start the container with production configuration and opcache disabled
+./start.sh production-no-opcache 
+# start switching the current release
+./release-switcher.sh
+# start watching the current web server response 
+./release-watcher.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following &lt;a href=&#34;https://www.youtube.com/watch?v=WB78eE0kwUo&#34;&gt;video&lt;/a&gt; shows the output of this new execution.&lt;/p&gt;
+
+&lt;p&gt;
+	&lt;img data-src=&#34;/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production_no_opcache.gif&#34; class=&#34;lazy&#34; title=&#34;Execution with configuration: production&#34; width=&#34;100%&#34;/&gt;
+	&lt;br/&gt;
+	
+		&lt;em&gt;Execution with configuration: production-no-opcache&lt;/em&gt;
+	
+&lt;/p&gt;
+
+
+&lt;p&gt;This is unexpected, we are experiencing the previous behavior, thus something is missing from our reasoning: &lt;strong&gt;it&amp;rsquo;s not all OPCache&amp;rsquo;s fault after all&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;realpath-cache-the-true-culprit&#34;&gt;realpath_cache: the true culprit&lt;/h1&gt;
+
+&lt;p&gt;When we use &lt;code&gt;include/require&lt;/code&gt; functions or PHP autoload, we should probably think about &lt;strong&gt;realpath_cache&lt;/strong&gt;. Real path cache is a PHP feature that allows to &lt;strong&gt;cache paths resolution for files and folders&lt;/strong&gt;, in order to minimize time-consuming disk lookups and improve performance. This is very useful when working with many third party libraries, or frameworks like Symfony, Zend or Laravel, because they use a huge number of files.&lt;/p&gt;
+
+&lt;p&gt;The path cache mechanism was introduced in PHP 5.1.0. At the present moment there&amp;rsquo;s no mention of this feature in the official docs, if not for the functions &lt;code&gt;realpath_cache_get()&lt;/code&gt;, &lt;code&gt;realpath_cache_size()&lt;/code&gt;, &lt;code&gt;clearstatcache()&lt;/code&gt; and the &lt;code&gt;php.ini&lt;/code&gt; parameters &lt;code&gt;realpath_cache_size&lt;/code&gt; and &lt;code&gt;realpath_cache_ttl&lt;/code&gt;.  The only external reference I was able to find is an &lt;a href=&#34;http://blog.jpauli.tech/2014/06/30/realpath-cache.html&#34;&gt;old post&lt;/a&gt; written by &lt;strong&gt;Julien Pauli&lt;/strong&gt; in 2014. In his post Pauli, a well-known PHP contributor, explains how PHP resolves a path behind the scenes.&lt;/p&gt;
+
+&lt;p&gt;When we access a file, PHP tries to resolve it&amp;rsquo;s path using the &lt;code&gt;stat()&lt;/code&gt; Unix system call: it returns file attributes (like permission, filename extensions and other metadata) about an &lt;strong&gt;inode&lt;/strong&gt;. In the Unix world, an inode is a data structure used to describe a file system object such as a file or a directory. PHP puts the result of the system call in a data structure called &lt;code&gt;realpath_cache_bucket&lt;/code&gt;, excluding some things like permissions and owners. So, if we try to access the same file twice, the bucket lookup will spare us another slow system call. To deepen the subject, I suggest reading this bit of &lt;a href=&#34;https://github.com/php/php-src/blob/php-7.0.0/Zend/zend_virtual_cwd.c&#34;&gt;PHP source code&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The function &lt;code&gt;realpath_cache_get&lt;/code&gt; was introduced in PHP 5.3.2 and it allows one to get an array of all the real path cache entries. For each element of the array, the key is the resolved path, and the value is another array of data like &lt;code&gt;key&lt;/code&gt;, &lt;code&gt;is_dir&lt;/code&gt;, &lt;code&gt;realpath&lt;/code&gt;, &lt;code&gt;expires&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;What follows is the output of &lt;code&gt;print_r(realpath_cache_get());&lt;/code&gt; in our Docker test environment:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-PHP&#34;&gt;Array
+(
+    [/var/www/html] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 1438560323331296433
+            [is_dir] =&amp;gt; 1
+            [realpath] =&amp;gt; /var/www/html
+            [expires] =&amp;gt; 1504549899
+        )
+    [/var/www] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 1.5408950988325E+19
+            [is_dir] =&amp;gt; 1
+            [realpath] =&amp;gt; /var/www
+            [expires] =&amp;gt; 1504549899
+        )
+    [/var] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 1.6710127960665E+19
+            [is_dir] =&amp;gt; 1
+            [realpath] =&amp;gt; /var
+            [expires] =&amp;gt; 1504549899
+        )
+    [/var/www/html/release1] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 7631224517412515240
+            [is_dir] =&amp;gt; 1
+            [realpath] =&amp;gt; /var/www/html/release1
+            [expires] =&amp;gt; 1504549899
+        )
+    [/var/www/current] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 1.7062595747834E+19
+            [is_dir] =&amp;gt; 1
+            [realpath] =&amp;gt; /var/www/html/release1
+            [expires] =&amp;gt; 1504549899
+        )
+    [/var/www/current/index.php] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 6899135167081162414
+            [is_dir] =&amp;gt; 0
+            [realpath] =&amp;gt; /var/www/html/release1/index.php
+            [expires] =&amp;gt; 1504549899
+        )
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the previous code:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;key&lt;/code&gt; is a float, and represents a hash associated with the path;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;is_dir&lt;/code&gt; is a boolean, and it&amp;rsquo;s true when the resolved path is a directory, otherwise it&amp;rsquo;s false;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;realpath&lt;/code&gt; is the resolved path, as a string;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;expires&lt;/code&gt; is an integer, and it represents the time when the path cache will be invalidated; this value is strictly related to the parameter &lt;code&gt;realpath_cache_ttl&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the previous sample we have 6 paths, but they&amp;rsquo;re all related to the resolution of the path &lt;code&gt;/var/www/current/index.php&lt;/code&gt;. PHP has created 6 cache keys to resolve just one path. So a path is resolved by splitting it in parts and resolving them one at a time. In our case the &amp;ldquo;real&amp;rdquo; path is &lt;code&gt;/var/www/html/release1/index.php&lt;/code&gt; because &lt;code&gt;/var/www/current&lt;/code&gt; is a symlink to the folder &lt;code&gt;/var/www/html/release1&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Julien Pauli&amp;rsquo;s post also specifies:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;«The realpath cache is process bound, and not shared into shared memory».&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This means that the &lt;strong&gt;cache must expire for every PHP process&lt;/strong&gt;. So if we are using &lt;a href=&#34;https://php-fpm.org&#34;&gt;&lt;strong&gt;PHP-FPM&lt;/strong&gt;&lt;/a&gt; to clean the whole web server, we need to wait that the cache expires for every worker of the pool. This can be useful to understand what happens during our test while using the configuration &lt;code&gt;production-no-opcache&lt;/code&gt;. Even if OPCache is disabled after the symlink swap, PHP will notify every process about the paths&amp;rsquo; expiration slowly.&lt;/p&gt;
+
+&lt;p&gt;In our real production environment we must consider that we have 15 front-end machines, hosting many web applications. Every machine has one PHP-FPM pool that is composed of 35 workers + 1 master process. This explains why the &amp;ldquo;strange behavior&amp;rdquo; is more evident in the new environment. We can &lt;strong&gt;tune the real path cache impact&lt;/strong&gt; on our web application using the above mentioned the parameters &lt;code&gt;realpath_cache_size&lt;/code&gt; and &lt;code&gt;realpath_cache_ttl&lt;/code&gt;: the former determines the size of the real path bucket to be used by PHP. It is an integer and incrementing this value can be useful if our web application uses a huge number of files. The other configuration directive &lt;code&gt;realpath_cache_ttl&lt;/code&gt;, as already mentioned, represents the duration in seconds for which the real path information should be cached.&lt;/p&gt;
+
+&lt;p&gt;Now we have the full picture, and we can re-enable the OPCache extension and disable real path cache, setting up size and time to live (TTL) as described below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;realpath_cache_size=0k
+realpath_cache_ttl=-1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s run our (hopefully) last test:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# start the container with production configuration, opcache enabled and realpath_cache disabled
+./start.sh production-no-realpath-cache 
+# start switching the current release
+./release-switcher.sh
+# start watching the current web server response 
+./release-watcher.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following &lt;a href=&#34;https://www.youtube.com/watch?v=Qry6cvUmf3c&#34;&gt;video&lt;/a&gt; shows the output of the last execution.&lt;/p&gt;
+
+&lt;p&gt;
+	&lt;img data-src=&#34;/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production_no_realpath_cache.gif&#34; class=&#34;lazy&#34; title=&#34;Execution with configuration: production&#34; width=&#34;100%&#34;/&gt;
+	&lt;br/&gt;
+	
+		&lt;em&gt;Execution with configuration: production-no-realpath-cache&lt;/em&gt;
+	
+&lt;/p&gt;
+
+
+&lt;p&gt;It&amp;rsquo;s crucial to point out that our last configuration is &lt;strong&gt;strongly discouraged&lt;/strong&gt; on a production environment, because it will force PHP to always resolve every path it encounters, with a negative impact on the performance.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h1&gt;
+
+&lt;p&gt;The goal of this article was to unveil the mystery about our cache issue, and to share what I learned about OPCache and real path cache, and their differences. The scenario described at the beginning of the post is not a real issue but, for example, if a request starts on one version of the code, then it tries to access other files during its execution, and these files are updated, moved or deleted in subsequent versions of the code, it could result in actual problems: in the worst case a solution could be to guarantee the compatibility between two contiguous releases, but the said condition it&amp;rsquo;s very hard to achieve.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s necessary to implement an &lt;strong&gt;atomic deployment strategy&lt;/strong&gt;, in the strict sense of the word. This could be reached for example using containers or more simply using a new isolated PHP-FPM memory pool for each deployed release. The last solution requires at least double the amount of memory, to keep more FPM pools up and running at the same time.&lt;/p&gt;
+
+&lt;p&gt;Another approach is to use an Apache module called &lt;code&gt;mod_realdoc&lt;/code&gt; to support atomic deploys. It was written by &lt;a href=&#34;https://github.com/etsy/mod_realdoc&#34;&gt;&lt;strong&gt;Rasmus Lerdorf&lt;/strong&gt;&lt;/a&gt;. The trick implemented in &lt;code&gt;mod_realdoc&lt;/code&gt; is to call real path on the &lt;code&gt;DOCUMENT_ROOT&lt;/code&gt; symlink at the beginning of a request, and to set the absolute path as the real document root for the whole request. Consequently, requests that started before a symlink change will continue to execute on the previous symlink target.
+The only problem of that module is the requirement of &lt;a href=&#34;https://httpd.apache.org/docs/2.4/mod/prefork.html&#34;&gt;&lt;strong&gt;Apache Multi-Processing Module (MPM) prefork&lt;/strong&gt;&lt;/a&gt;. MPM prefork implements a non-threaded, forking based server that spawns new processes and keeps them alive to serve requests. It is the best MPM for isolating each request, so that a problem with a single request will not affect the others. But it&amp;rsquo;s not the best for when the server is under heavy load, because there&amp;rsquo;s going to be one process per request, thus concurrent requests will suffer since they&amp;rsquo;re forced to wait until a server process is freed. The same result of &lt;code&gt;mod_realdoc&lt;/code&gt; could be achieved at PHP level in the application front controller by defining the base root via &lt;code&gt;realpath(__FILE__)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re using the &lt;strong&gt;nginx&lt;/strong&gt; web server in front of PHP, you are lucky! To avoid the symlinks update during ongoing requests, you must give nginx the responsibility to resolve symlinks and assign them to &lt;code&gt;DOCUMENT_ROOT&lt;/code&gt;. You simply need to change a few lines on your server blocks, as described below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# default configuration
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+fastcgi_param DOCUMENT_ROOT $document_root;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# configuration with real path resolution
+fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+fastcgi_param DOCUMENT_ROOT $realpath_root;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With the above changes nginx will resolve the symlinks, hiding them from PHP.&lt;/p&gt;
+
+&lt;p&gt;These are just some discussed solutions to fight against real path cache issues, and there is no universal &amp;ldquo;right&amp;rdquo; way. You must always find the best solution considering your particular requirements and infrastructure.&lt;/p&gt;
+
+&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.jpauli.tech/2014/06/30/realpath-cache.html&#34;&gt;realpath_cache&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codeascraft.com/2013/07/01/atomic-deploys-at-etsy/&#34;&gt;Atomic deploys at Etsy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/etsy/mod_realdoc&#34;&gt;mod_realdoc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sitepoint.com/understanding-opcache/&#34;&gt;Understanding OpCache&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://secure.php.net/opcache&#34;&gt;PHP OPCache&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/asgrim1/climbing-the-abstract-syntax-tree-phpday-2017&#34;&gt;Climbing the Abstract Syntax Tree&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>How to gradually upgrade toward PHPUnit 6 with namespaced classes</title>
@@ -1655,94 +1939,6 @@ More about event-driven programming &lt;a href=&#34;https://en.wikipedia.org/wik
 &lt;p&gt;Functions are very useful when we want to build lightweight applications based on &lt;em&gt;microservices&lt;/em&gt; with no server. Their approach could be considered a way to achieve fine-grained microservices, in which there is a relation one-to-one between functions and endpoints instead of one service per one resource: for this reason they are often referred to as &lt;em&gt;nanoservices&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;They could help developers in focusing on the code, while only charging for code really running in an infrastructure that&amp;rsquo;s able to autonomously grow upon demand, without lots of efforts in managing it. With functions, we can see our code as a series of small and independent building blocks, that can be easily replaced or connected with other blocks using events. Also, Lamba could help small team in reusing existing skills while adopting different languages, in order to develop software that better matches business&amp;rsquo; requirements.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How PHP 7 &amp; TDD helped me sleep better</title>
-      <link>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
-      <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
-      <description>
-
-&lt;h1 id=&#34;the-enemies-of-programming&#34;&gt;The enemies of programming&lt;/h1&gt;
-
-&lt;p&gt;As many of you will agree with me, &lt;strong&gt;sleep deprivation&lt;/strong&gt; is the enemy of programming.&lt;br /&gt;
-Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;/strong&gt;.
-&lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;a href=&#34;http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/&#34;&gt;&lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/interruption.png&#34; alt=&#34;Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.&lt;/p&gt;
-
-&lt;h1 id=&#34;my-experience&#34;&gt;My experience&lt;/h1&gt;
-
-&lt;p&gt;On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5.5, Symfony 2.8, Doctrine etc.; luckily, in this project we use a good deal of &lt;strong&gt;good practices&lt;/strong&gt;, and &lt;strong&gt;automated software testing&lt;/strong&gt; is one of those. I actually switched to this job to learn about doing automatic testing, continuous integration and other best practices.&lt;/p&gt;
-
-&lt;p&gt;Almost half a year ago &lt;strong&gt;I became a dad&lt;/strong&gt;. It has been great, and you also get some unexpected perks! For example, my colleagues got me this gift for my son:
-&lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg&#34; alt=&#34;A blue elePHPant!&#34; /&gt;
-&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;So, we can say that his future is pretty clear&amp;hellip; But don&amp;rsquo;t say this to my wife!&lt;/p&gt;
-
-&lt;p&gt;During the pregnancy, many of my friends and fellow parents warned me half jokingly about one thing: &lt;em&gt;&amp;ldquo;sleep now, you&amp;rsquo;ll be deadly tired after!&amp;rdquo;&lt;/em&gt;. Now I can say that they were a bit exaggerating, but I can&amp;rsquo;t deny that, having a child takes a toll on your sleep schedule&amp;hellip; Even if, as in my case having a 9 to 6 office job, my wonderful wife does all the parenting heavy lifting (and I consider myself pretty lucky for having her!).&lt;/p&gt;
-
-&lt;p&gt;A few months after my son was born I also had the opportunity to start &lt;strong&gt;a new, fresh project&lt;/strong&gt;. To be completely honest, it was not actually fresh: it was a &lt;strong&gt;complete rewrite&lt;/strong&gt; of an internal service that&amp;rsquo;s used to manage the invoices for multiple business units inside our company. I knew pretty well that the old system had to be replaced, so I was put in charge of redoing it from scratch.&lt;/p&gt;
-
-&lt;p&gt;One of the issue with the old system (and the main reason behind the rewrite) was &lt;strong&gt;maintainability&lt;/strong&gt;: we had no tests, we had no proper development environment, and its design wasn&amp;rsquo;t that great; also, bureaucracy and invoicing are the core domain of the system, so it was inherently complex. It was the perfect environment to witness the &lt;a href=&#34;https://en.wikipedia.org/wiki/Broken_windows_theory&#34;&gt;broken windows theory&lt;/a&gt; in action: the code base got worse over time, one patch, copy paste or quick fix at a time.&lt;/p&gt;
-
-&lt;p&gt;Obviously, as anyone that&amp;rsquo;s passionate in technology would do, I took the opportunity to use a lot of new shiny tools: I picked &lt;strong&gt;PHP 7&lt;/strong&gt;, which had just been released, and started the project with something familiar to me but still pretty new and cool, &lt;strong&gt;Symfony 3.0&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;what-i-found-to-be-useful&#34;&gt;What I found to be useful&lt;/h1&gt;
-
-&lt;p&gt;I rambled and thought about this project a lot in the past months with my colleagues, because the old system was costing us a lot of overhead in usage and maintenance, and we had a pretty clear idea of what its problems were, so I didn&amp;rsquo;t need to study a lot before starting to write the first classes.&lt;/p&gt;
-
-&lt;p&gt;Thus, I had to spend &lt;em&gt;some&lt;/em&gt; time thinking about an object oriented design for my project, but I was rapidly able to start writing code with confidence. In the end, most of this confidence came from a few choices that I pursued during the development of this project.&lt;/p&gt;
-
-&lt;h2 id=&#34;tdd-and-high-coverage&#34;&gt;TDD and high coverage&lt;/h2&gt;
-
-&lt;p&gt;The first choice that I am pretty satisfied about is &lt;strong&gt;automatic testing&lt;/strong&gt;: I already knew the advantages of doing tests and Test Driven Development, but in the previous project that practice was not introduced from the start, so not all the codebase was covered, and we couldn&amp;rsquo;t (or wouldn&amp;rsquo;t?) do TDD 100% of the time.&lt;/p&gt;
-
-&lt;p&gt;In this case instead &lt;strong&gt;I wanted to write nearly everything with TDD&lt;/strong&gt;, and keep a &lt;strong&gt;very high threshold for the minimum coverage&lt;/strong&gt; achieved through automatic testing. Right now I&amp;rsquo;m sitting on a ~92% test coverage, and I feel proud about it. This wasn&amp;rsquo;t a mere &amp;ldquo;let&amp;rsquo;s hit 100%!&amp;rdquo; mindless goal (&lt;a href=&#34;https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/&#34;&gt;since it&amp;rsquo;s pointless&lt;/a&gt;), but it fueled &lt;strong&gt;a positive feedback cycle&lt;/strong&gt; instead: the more I used TDD in writing new classes, the more the coverage rose and stayed high; at the same time, I found myself inspecting the coverage reports to find missing spots, and that allowed me to discover many edge-cases that I didn&amp;rsquo;t test and should have been.&lt;/p&gt;
-
-&lt;p&gt;Of course, I still left some parts without coverage or specific tests, since it was pointless to test them (e.g. Doctrine entities), while I covered some parts multiple times, since they were &lt;strong&gt;critical paths&lt;/strong&gt; inside my application.&lt;/p&gt;
-
-&lt;h2 id=&#34;unit-tests-to-the-rescue&#34;&gt;Unit tests to the rescue!&lt;/h2&gt;
-
-&lt;p&gt;Last but not least, the main critical advantage that TDD gave me was &lt;strong&gt;focus even on strained days&lt;/strong&gt;: I wrote the classes starting from unit tests, giving all my effort to one piece of code at a time, without having to keep in mind the entire project with its complexities.&lt;/p&gt;
-
-&lt;p&gt;I then wrote some functional tests to assure that the &lt;strong&gt;collaboration between my unit-tested objects&lt;/strong&gt; was fine, and this later step was also useful in delaying the definition of the classes as services inside the Symfony DI container. I was also &lt;strong&gt;able to change my mind&lt;/strong&gt; a few times on some details of the design without having to suffer mental confusion or rewrite too much code.&lt;/p&gt;
-
-&lt;h2 id=&#34;php-7-scalar-and-return-types-declarations&#34;&gt;PHP 7: scalar and return types declarations&lt;/h2&gt;
-
-&lt;p&gt;The second good choice was &lt;strong&gt;PHP 7&lt;/strong&gt;: among the reasons behind it as the language version of choice for this project were the &lt;a href=&#34;http://php.net/manual/en/migration70.new-features.php&#34;&gt;two main new features&lt;/a&gt; introduced: &lt;strong&gt;scalar types&lt;/strong&gt; and &lt;strong&gt;return type declarations&lt;/strong&gt;.
-&lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg&#34; alt=&#34;Return types, return types everywhere!&#34; /&gt;
-&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Before Facile.it, I worked as C++ developer, and oh boy! did I miss scalars and return types!&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&amp;ldquo;I came onboard of the PHP community right on time&amp;rdquo;&lt;/em&gt;, I thought&amp;hellip; So I took advantage of the situation to start using all these new features. I enjoyed having again the possibility to typehint strings and integers; I discovered how return types declaration enforces the cohesion of your objects really well, making it &lt;strong&gt;rightly painful to return different things&lt;/strong&gt;: it became impossible to return &lt;em&gt;something&lt;/em&gt; OR &lt;em&gt;null&lt;/em&gt;, for example.&lt;/p&gt;
-
-&lt;p&gt;Interestingly, in my tests I found myself writing a lot of this kind of code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$result = $testClass-&amp;gt;method();
-$this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I did this more than once, just to realize that I was wasting my time! This was normally the first TDD step on PHP 5.x code, but now this kinds of assertion were futile, because the return type was already checked at a language level! Great!&lt;/p&gt;
-
-&lt;p&gt;Return types also proved themselves to be a &lt;strong&gt;double-edged sword&lt;/strong&gt; in some cases, especially on Doctrine entities: they are really useful to enforce consistency in your values, since they trigger a &lt;code&gt;\TypeError&lt;/code&gt; each time you call a getter method on a erroneously empty property, but &lt;strong&gt;you can&amp;rsquo;t use them on nullable fields&lt;/strong&gt;, since it will break your application at any time during execution.&lt;/p&gt;
-
-&lt;p&gt;On the other hand, having return types declared on your business-logic classes it&amp;rsquo;s pretty useful, even more when used in conjunction with TDD: every time you define a mock you are forced to declare expectations and predictions with the right types, so it &lt;strong&gt;indirectly helps maintaining the collaboration contract between objects&lt;/strong&gt;, without too much hassle. If I changed a method&amp;rsquo;s signature that was mocked somewhere, the mock would break the test, &lt;strong&gt;highlighting the issue and making the tests&lt;/strong&gt; (and an high coverage) &lt;strong&gt;even more valuable&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h1&gt;
-
-&lt;p&gt;At the end of the day, these and other &lt;strong&gt;good practices are helpful&lt;/strong&gt; for both your job and your personal life: you can go a long way in being fit and in the best shape while working, but stressful and (good) distracting events are unavoidable: you&amp;rsquo;ll often have to fight stress, fatigue or distractions, and there will be days where you can&amp;rsquo;t be at the top of your game, for any number of reasons.&lt;/p&gt;
-
-&lt;p&gt;Since programming is a mental job, I think that having instruments and good practices in your toolset is invaluable, being them the &lt;strong&gt;essential tools of our craft&lt;/strong&gt;. Thus, I hope that those little life/programming lessons I learned in these months will be useful to other people like me.&lt;/p&gt;
 </description>
     </item>
     

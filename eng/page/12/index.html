@@ -38,7 +38,7 @@
 <meta property="og:url" content="https://engineering.facile.it/eng/" />
 
 
-<meta property="og:updated_time" content="2015-03-16T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-03-23T00:00:00&#43;00:00"/>
 
 
 
@@ -220,15 +220,15 @@ ga('send', 'pageview');
 
                 
                     <li>
+                        <a href="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/"><p>Is it all PHP OPCache&#39;s fault?</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/"><p>How to gradually upgrade toward PHPUnit 6 with namespaced classes</p></a>
                     </li>
                 
                     <li>
                         <a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/"><p>Why type hints and interfaces are not visual debt</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://engineering.facile.it/blog/eng/php-day-2017/"><p>Facile.it devs @ phpDay 2017</p></a>
                     </li>
                 
             </ul>
@@ -243,6 +243,82 @@ ga('send', 'pageview');
         
             
         
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/">PHP coding standard: PSR-7  HTTP message interfaces</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published" datetime='2015-03-23'>
+            23 March 2015
+        </time>
+
+        
+            <a href="/authors/michele" class="author">
+            
+                <span class="name">Michele Carino</span>
+                <img src="https://www.gravatar.com/avatar/7f5e6b105d80029b84f67b62d43b8445?d=404&amp;s=250" alt="Michele Carino avatar" />
+            
+            </a>
+        
+
+        
+            <p>6 minute read</p>
+        
+    </div>
+</header>
+
+    
+
+    <p>Le specifiche PSR-7 descrivono una proposta di standardizzazione delle interfacce per i messaggi HTTP. Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, definisce una serie di regole di comunicazione che vengono implementate dalle applicazioni client e server che lo adottano. A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+
+    
+        
+            <li>
+                
+                    <i class="fa fa-folder-open-o">&nbsp;</i>
+                
+        
+
+                
+                    Categories
+                
+            </li>
+    
+
+    
+        <li><a href="/categories/italiano">Italiano</a></li>
+    
+        <li><a href="/categories/php">PHP</a></li>
+    
+        <li><a href="/categories/psr">PSR</a></li>
+    
+        <li><a href="/categories/php-coding-standards">PHP Coding standards</a></li>
+    
+        <li><a href="/categories/open-source">Open Source</a></li>
+    
+</ul>
+
+    </footer>
+</article>
 
         
             <article class="post">
@@ -537,78 +613,6 @@ ga('send', 'pageview');
 </article>
 
         
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/">var_dump() aggiunge proprietà pubbliche a DateTime</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published" datetime='2015-03-02'>
-            2 March 2015
-        </time>
-
-        
-            <a href="/authors/lorenzo" class="author">
-            
-                <span class="name">Lorenzo Fontana</span>
-                <img src="https://www.gravatar.com/avatar/575f040cd9e5e28e807ecf0d73c8a938?d=404&amp;s=250" alt="Lorenzo Fontana avatar" />
-            
-            </a>
-        
-
-        
-            <p>2 minute read</p>
-        
-    </div>
-</header>
-
-    
-
-    <p>PHP, fin dalla versione 5.2.0, introduce gli oggetti \DateTime per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali. Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate var_dump, print_r, var_export o debug_zval_dump su un istanza di \DateTime. Considerando il seguente codice e il suo output: $date = new \DateTime(); var_dump(isset($date-&gt;date)); // OUTPUT: bool(false) ci rendiamo conto del fatto che non esiste alcuna proprietà $date all&rsquo;interno dell&rsquo;istanza di \DateTime.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-
-    
-        
-            <li>
-                
-                    <i class="fa fa-folder-open-o">&nbsp;</i>
-                
-        
-
-                
-                    Categories
-                
-            </li>
-    
-
-    
-        <li><a href="/categories/italiano">Italiano</a></li>
-    
-        <li><a href="/categories/php">PHP</a></li>
-    
-        <li><a href="/categories/php-internals">PHP internals</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
 
         
 <ul class="actions pagination">
@@ -618,7 +622,8 @@ ga('send', 'pageview');
     
 
     
-        <li><a href="#" class="disabled button big next">Next Page</a></li>
+        <li><a href="/eng/page/13/"
+                class="button big next">Next Page</a></li>
     
 </ul>
 
@@ -732,6 +737,27 @@ ga('send', 'pageview');
                             <header>
                                     
                                         
+                                            <img src="https://www.gravatar.com/avatar/84febdc35f5438ae1d2500482e2228fa" alt="Salvatore Cordiano avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
+                                    <h3><a href="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/">Is it all PHP OPCache&#39;s fault?</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2017-10-04'>
+                                        4 October 2017
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
                                             <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
                                         
                                     
@@ -764,27 +790,6 @@ ga('send', 'pageview');
                                     
                                     <time class="published" datetime='2017-05-31'>
                                         31 May 2017
-                                    </time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                    
-                                        
-                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
-                                        
-                                    
-
-                                    <h3><a href="https://engineering.facile.it/blog/eng/php-day-2017/">Facile.it devs @ phpDay 2017</a></h3>
-
-                                    
-                                        
-                                    
-                                    <time class="published" datetime='2017-05-16'>
-                                        16 May 2017
                                     </time>
                             </header>
                         </article>
@@ -834,7 +839,7 @@ ga('send', 'pageview');
                         <article>
                             <header>
                                 <a href="/categories/english/">English</a>
-                                <span style="float:right;">26</span>
+                                <span style="float:right;">27</span>
                             </header>
                         </article>
                     </li>
@@ -845,7 +850,7 @@ ga('send', 'pageview');
                         <article>
                             <header>
                                 <a href="/categories/php/">PHP</a>
-                                <span style="float:right;">18</span>
+                                <span style="float:right;">19</span>
                             </header>
                         </article>
                     </li>
@@ -904,6 +909,10 @@ ga('send', 'pageview');
                             </header>
                         </article>
                     </li>
+                    
+                
+                    
+                
                     
                 
                     
@@ -1152,15 +1161,21 @@ ga('send', 'pageview');
         
 
         
-            <script src="/js/jquery.min.js"></script>
-            <script src="/js/skel.min.js"></script>
-            <script src="/js/util.js"></script>
-            <script src="/js/main.js"></script>
-            <script src="/js/backToTop.js"></script>
-            <script src="/js/highlight.pack.js"></script>
+            <script type="text/javascript" src="/js/jquery.min.js"></script>
+            <script type="text/javascript" src="/js/skel.min.js"></script>
+            <script type="text/javascript" src="/js/util.js"></script>
+            <script type="text/javascript" src="/js/main.js"></script>
+            <script type="text/javascript" src="/js/backToTop.js"></script>
+            <script type="text/javascript" src="/js/highlight.pack.js"></script>
+            <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
         
             
-            <script>hljs.initHighlightingOnLoad();</script>
+            <script type="text/javascript">
+                hljs.initHighlightingOnLoad();
+                $(function() {
+                    $('.lazy').Lazy();
+                });
+            </script>
             
     </body>
 </html>

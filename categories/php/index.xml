@@ -6,8 +6,292 @@
     <description>Recent content in PHP on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Oct 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/categories/php/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Is it all PHP OPCache&#39;s fault?</title>
+      <link>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</link>
+      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</guid>
+      <description>
+
+&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&amp;rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+
+&lt;p&gt;When I started my software developer career, I was very surprised to read the following sentence, attributed to &lt;a href=&#34;https://martinfowler.com/bliki/TwoHardThings.html&#34;&gt;Phil Karlton&lt;/a&gt;: &lt;em&gt;«There are only two hard things in Computer Science: &lt;strong&gt;cache invalidation&lt;/strong&gt; and &lt;strong&gt;naming things&lt;/strong&gt;»&lt;/em&gt;. In the beginning I was incredulous, because I didn&amp;rsquo;t really get the sense of these words. Not much later, I started to understand.&lt;/p&gt;
+
+&lt;p&gt;Without digging too much into the past, I&amp;rsquo;d like to talk about a recent cache issue we experienced in on our production infrastructure. Particularly we noticed a strange behavior after each deploy: immediately after a successful deployment procedure, as we refreshed pages that were modified with the new release, we didn&amp;rsquo;t see the updated code for a while. Actually, the scenario described above is very common with &lt;strong&gt;PHP&lt;/strong&gt; web applications. We have seen this behavior in the past but, after we moved to our new production environment, it became more noticeable. Therefore, we decided to investigate it.&lt;/p&gt;
+
+&lt;h1 id=&#34;our-deployment-procedure&#34;&gt;Our deployment procedure&lt;/h1&gt;
+
+&lt;p&gt;Before proceeding, I should describe how our deployment procedure works: our technology is mostly based on PHP, plus some frameworks like &lt;strong&gt;Symfony&lt;/strong&gt; and &lt;strong&gt;Zend Framework&lt;/strong&gt;. To ship our code in production we use an internal project called &lt;strong&gt;shark-do&lt;/strong&gt;, written by my team leader &lt;a href=&#34;https://luca.bo/&#34;&gt;Luca&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Shark-do&amp;rsquo;s philosophy is:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;«If you can do it, you can do it in bash»&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The project&amp;rsquo;s in fact a bash script which allows to define a task and execute it from a recipe. Each project has its own recipe, as to manage the different steps needed, like delete useless files, generate configuration files, etc.&lt;/p&gt;
+
+&lt;p&gt;For example, I usually run &lt;code&gt;shark-do deploy collaboratori&lt;/code&gt;, to execute the deploy tasks for the &amp;ldquo;collaboratori&amp;rdquo; project, in which I&amp;rsquo;m involved, more than 5 times a day. This is generally comprised of the following steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;pull the last commit from origin/master;&lt;/li&gt;
+&lt;li&gt;setup folders, remove the unnecessary files and start creating a release;&lt;/li&gt;
+&lt;li&gt;install parameters, run composer install, download and dump assets;&lt;/li&gt;
+&lt;li&gt;create a release archive, transfer and extract it on the bastion machine;&lt;/li&gt;
+&lt;li&gt;call an Ansible procedure to start the release roll out using our infrastructure&amp;rsquo;s REST API;&lt;/li&gt;
+&lt;li&gt;switch releases, clean and remove old releases on the bastion machine;&lt;/li&gt;
+&lt;li&gt;tag the new release on New Relic and notify the end of the task on our Slack channel.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;We should focus on point 5 because it&amp;rsquo;s the roll out phase. At that point, an &lt;a href=&#34;http://docs.ansible.com/ansible/latest/playbooks.html&#34;&gt;&lt;strong&gt;Ansible playbook&lt;/strong&gt;&lt;/a&gt; is responsible for copying the new release from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Bastion_host&#34;&gt;bastion host&lt;/a&gt; to all the target machines (front-end, batch, etc.), for setting up folders and permissions, and for doing cache warm-up and release switch. As described previously, each deployment procedure consists of many mandatory activities, but the turning point is when the current project&amp;rsquo;s folder changes: this is usually done through a symlink swap from the previous release folder to the new one. The current project folder is the document root of the specific web application.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s just something like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;ln -sf /var/www/{APP_NAME}/releases/@YYYYMMDDHHIISS /var/www/{APP_NAME}/current
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The &lt;code&gt;-s&lt;/code&gt; option is used to create a symbolic link, while &lt;code&gt;-f&lt;/code&gt; is used to force the symlink creation if the target already exists; &lt;code&gt;{APP_NAME}&lt;/code&gt; represents the project&amp;rsquo;s name.&lt;/p&gt;
+
+&lt;p&gt;Our deployment strategy is very common in the PHP world. We store multiple releases of the same application on the production machines, and we use a symlink to the current version. This way we should deploy &lt;strong&gt;atomically and safely&lt;/strong&gt;, without impacting the production traffic.&lt;/p&gt;
+
+&lt;p&gt;Last but not least, we have about 15 front-end machines behind a load-balancer with a round-robin workload balancing policy (more than twice the previous number of servers). Now the question is: what happens after the release switch?&lt;/p&gt;
+
+&lt;h1 id=&#34;it-s-all-php-opcache-s-fault&#34;&gt;It&amp;rsquo;s all PHP OPCache&amp;rsquo;s fault (?)&lt;/h1&gt;
+
+&lt;p&gt;Some caveats: the goal of this article is not to dive deeply in a PHP script execution flow, but to lay down the foundations to understand my reasoning about the problem; I am also only taking into account PHP version 7.&lt;/p&gt;
+
+&lt;p&gt;It can be useful to revisit how PHP code is executed. When we run a PHP script, our source code undergoes four phases:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/realpath-cache-is-it-all-php-opcache-s-fault/graph_1.png&#34; alt=&#34;How does PHP work?&#34; /&gt;
+&lt;em&gt;How does PHP work?&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The first phase is managed by a lexer: the &lt;strong&gt;PHP lexer&lt;/strong&gt; is responsible for matching language keywords like &lt;code&gt;function&lt;/code&gt;, &lt;code&gt;return&lt;/code&gt; and &lt;code&gt;static&lt;/code&gt; to individual pieces generally called &lt;em&gt;tokens&lt;/em&gt;. Each token is often decorated with some metadata, necessary for the next phase.&lt;/p&gt;
+
+&lt;p&gt;The second phase is managed by a parser: the &lt;strong&gt;PHP parser&lt;/strong&gt; is responsible for analyzing single or multiple tokens, and match them to language structure patterns. For example &lt;code&gt;$foo + 5&lt;/code&gt; is recognized as a binary &amp;ldquo;sum&amp;rdquo; operation, and the variable &lt;code&gt;$foo&lt;/code&gt; and the number &lt;code&gt;5&lt;/code&gt; are recognized as operands. Here, the parser builds the &lt;a href=&#34;https://wiki.php.net/rfc/abstract_syntax_tree&#34;&gt;&lt;strong&gt;Abstract Syntax Tree (AST)&lt;/strong&gt;&lt;/a&gt; in a recursive way. Usually, lexer and parser are mentioned together as a single task.&lt;/p&gt;
+
+&lt;p&gt;The third phase is the &lt;strong&gt;compilation&lt;/strong&gt;. In this phase, the AST is visited and it&amp;rsquo;s translated into an ordered sequence of OPCodes instructions. Every OPCode could be considered as a low-level &lt;strong&gt;Zend Virtual Machine&lt;/strong&gt; operation. The full list of supported OPCodes is available &lt;a href=&#34;https://github.com/php/php-src/blob/php-7.0.0/Zend/zend_vm_opcodes.h&#34;&gt;here&lt;/a&gt;. The last phase is the &lt;strong&gt;execution&lt;/strong&gt;. The Zend VM runs every single task described by OPCode, and produces the result.&lt;/p&gt;
+
+&lt;p&gt;The first three phases of the above described &amp;ldquo;pipeline&amp;rdquo; (lexer, parser and compiler), and the third in particular takes a lot of time and resources (memory and CPU). To minimize the weight of the compilation phase, PHP 5.5 introduced the &lt;a href=&#34;http://php.net/manual/en/book.opcache.php&#34;&gt;&lt;strong&gt;Zend OPcache extension&lt;/strong&gt;&lt;/a&gt;. If enabled, this extension will cache the output of the compilation step (OPCodes) into shared memory (shm, mmap, etc.), such that every PHP script is compiled only once, and different requests can be executed skipping the compilation task. If the source code on the non-development environment is not frequently changed, the PHP execution time should be reduced by a factor of at least two.&lt;/p&gt;
+
+&lt;p&gt;The OPcache extension is also responsible for the OPCodes optimization, but that&amp;rsquo;s out of scope for this article.&lt;/p&gt;
+
+&lt;p&gt;In the light of the above, it&amp;rsquo;s reasonable to expect that the strange behavior experienced in our production environment is all OPCache&amp;rsquo;s fault. If that&amp;rsquo;s right, we should be able to reproduce the issue and solve it by disabling the OPCache extension. To test this hypothesis I&amp;rsquo;ve prepared a very simple demo environment using a &lt;strong&gt;Docker&lt;/strong&gt; container with PHP 7.0 and Apache 2.4. The full code is available on &lt;a href=&#34;https://github.com/salvatorecordiano/facile-it-realpath_cache&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I wrote some shortcuts to simplify the process:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;start.sh&lt;/code&gt; starts the Docker container with the right configuration;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;release-switcher.sh&lt;/code&gt; swaps the current release symlink every 10 seconds;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;release-watcher.sh&lt;/code&gt; checks the current release served by Apache every second, by making an HTTP request.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Just clone the GitHub repository and you&amp;rsquo;re ready to test, assuming Docker is already installed on your machine.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git clone https://github.com/salvatorecordiano/facile-it-realpath_cache
+cd facile-it-realpath_cache
+docker pull salvatorecordiano/realpath_cache
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To reproduce the cache issue, you have to run the following commands in parallel, using three different command lines:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# start the container with production configuration
+./start.sh production 
+# start switching the current release
+./release-switcher.sh
+# start watching the current web server response 
+./release-watcher.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following &lt;a href=&#34;https://www.youtube.com/watch?v=PNjyi42VwP4&#34;&gt;video&lt;/a&gt; shows the execution output.&lt;/p&gt;
+
+&lt;p&gt;
+	&lt;img data-src=&#34;/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production.gif&#34; class=&#34;lazy&#34; title=&#34;Execution with configuration: production&#34; width=&#34;100%&#34;/&gt;
+	&lt;br/&gt;
+	
+		&lt;em&gt;Execution with configuration: production&lt;/em&gt;
+	
+&lt;/p&gt;
+
+
+&lt;p&gt;As expected we are experiencing the cache issue: after a release switch, we&amp;rsquo;re not seeing the right code as the output of an HTTP request.&lt;/p&gt;
+
+&lt;p&gt;Now we disable the OPCache extension and redo the test.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# start the container with production configuration and opcache disabled
+./start.sh production-no-opcache 
+# start switching the current release
+./release-switcher.sh
+# start watching the current web server response 
+./release-watcher.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following &lt;a href=&#34;https://www.youtube.com/watch?v=WB78eE0kwUo&#34;&gt;video&lt;/a&gt; shows the output of this new execution.&lt;/p&gt;
+
+&lt;p&gt;
+	&lt;img data-src=&#34;/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production_no_opcache.gif&#34; class=&#34;lazy&#34; title=&#34;Execution with configuration: production&#34; width=&#34;100%&#34;/&gt;
+	&lt;br/&gt;
+	
+		&lt;em&gt;Execution with configuration: production-no-opcache&lt;/em&gt;
+	
+&lt;/p&gt;
+
+
+&lt;p&gt;This is unexpected, we are experiencing the previous behavior, thus something is missing from our reasoning: &lt;strong&gt;it&amp;rsquo;s not all OPCache&amp;rsquo;s fault after all&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&#34;realpath-cache-the-true-culprit&#34;&gt;realpath_cache: the true culprit&lt;/h1&gt;
+
+&lt;p&gt;When we use &lt;code&gt;include/require&lt;/code&gt; functions or PHP autoload, we should probably think about &lt;strong&gt;realpath_cache&lt;/strong&gt;. Real path cache is a PHP feature that allows to &lt;strong&gt;cache paths resolution for files and folders&lt;/strong&gt;, in order to minimize time-consuming disk lookups and improve performance. This is very useful when working with many third party libraries, or frameworks like Symfony, Zend or Laravel, because they use a huge number of files.&lt;/p&gt;
+
+&lt;p&gt;The path cache mechanism was introduced in PHP 5.1.0. At the present moment there&amp;rsquo;s no mention of this feature in the official docs, if not for the functions &lt;code&gt;realpath_cache_get()&lt;/code&gt;, &lt;code&gt;realpath_cache_size()&lt;/code&gt;, &lt;code&gt;clearstatcache()&lt;/code&gt; and the &lt;code&gt;php.ini&lt;/code&gt; parameters &lt;code&gt;realpath_cache_size&lt;/code&gt; and &lt;code&gt;realpath_cache_ttl&lt;/code&gt;.  The only external reference I was able to find is an &lt;a href=&#34;http://blog.jpauli.tech/2014/06/30/realpath-cache.html&#34;&gt;old post&lt;/a&gt; written by &lt;strong&gt;Julien Pauli&lt;/strong&gt; in 2014. In his post Pauli, a well-known PHP contributor, explains how PHP resolves a path behind the scenes.&lt;/p&gt;
+
+&lt;p&gt;When we access a file, PHP tries to resolve it&amp;rsquo;s path using the &lt;code&gt;stat()&lt;/code&gt; Unix system call: it returns file attributes (like permission, filename extensions and other metadata) about an &lt;strong&gt;inode&lt;/strong&gt;. In the Unix world, an inode is a data structure used to describe a file system object such as a file or a directory. PHP puts the result of the system call in a data structure called &lt;code&gt;realpath_cache_bucket&lt;/code&gt;, excluding some things like permissions and owners. So, if we try to access the same file twice, the bucket lookup will spare us another slow system call. To deepen the subject, I suggest reading this bit of &lt;a href=&#34;https://github.com/php/php-src/blob/php-7.0.0/Zend/zend_virtual_cwd.c&#34;&gt;PHP source code&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The function &lt;code&gt;realpath_cache_get&lt;/code&gt; was introduced in PHP 5.3.2 and it allows one to get an array of all the real path cache entries. For each element of the array, the key is the resolved path, and the value is another array of data like &lt;code&gt;key&lt;/code&gt;, &lt;code&gt;is_dir&lt;/code&gt;, &lt;code&gt;realpath&lt;/code&gt;, &lt;code&gt;expires&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;What follows is the output of &lt;code&gt;print_r(realpath_cache_get());&lt;/code&gt; in our Docker test environment:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-PHP&#34;&gt;Array
+(
+    [/var/www/html] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 1438560323331296433
+            [is_dir] =&amp;gt; 1
+            [realpath] =&amp;gt; /var/www/html
+            [expires] =&amp;gt; 1504549899
+        )
+    [/var/www] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 1.5408950988325E+19
+            [is_dir] =&amp;gt; 1
+            [realpath] =&amp;gt; /var/www
+            [expires] =&amp;gt; 1504549899
+        )
+    [/var] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 1.6710127960665E+19
+            [is_dir] =&amp;gt; 1
+            [realpath] =&amp;gt; /var
+            [expires] =&amp;gt; 1504549899
+        )
+    [/var/www/html/release1] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 7631224517412515240
+            [is_dir] =&amp;gt; 1
+            [realpath] =&amp;gt; /var/www/html/release1
+            [expires] =&amp;gt; 1504549899
+        )
+    [/var/www/current] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 1.7062595747834E+19
+            [is_dir] =&amp;gt; 1
+            [realpath] =&amp;gt; /var/www/html/release1
+            [expires] =&amp;gt; 1504549899
+        )
+    [/var/www/current/index.php] =&amp;gt; Array
+        (
+            [key] =&amp;gt; 6899135167081162414
+            [is_dir] =&amp;gt; 0
+            [realpath] =&amp;gt; /var/www/html/release1/index.php
+            [expires] =&amp;gt; 1504549899
+        )
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the previous code:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;key&lt;/code&gt; is a float, and represents a hash associated with the path;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;is_dir&lt;/code&gt; is a boolean, and it&amp;rsquo;s true when the resolved path is a directory, otherwise it&amp;rsquo;s false;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;realpath&lt;/code&gt; is the resolved path, as a string;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;expires&lt;/code&gt; is an integer, and it represents the time when the path cache will be invalidated; this value is strictly related to the parameter &lt;code&gt;realpath_cache_ttl&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the previous sample we have 6 paths, but they&amp;rsquo;re all related to the resolution of the path &lt;code&gt;/var/www/current/index.php&lt;/code&gt;. PHP has created 6 cache keys to resolve just one path. So a path is resolved by splitting it in parts and resolving them one at a time. In our case the &amp;ldquo;real&amp;rdquo; path is &lt;code&gt;/var/www/html/release1/index.php&lt;/code&gt; because &lt;code&gt;/var/www/current&lt;/code&gt; is a symlink to the folder &lt;code&gt;/var/www/html/release1&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Julien Pauli&amp;rsquo;s post also specifies:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;«The realpath cache is process bound, and not shared into shared memory».&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This means that the &lt;strong&gt;cache must expire for every PHP process&lt;/strong&gt;. So if we are using &lt;a href=&#34;https://php-fpm.org&#34;&gt;&lt;strong&gt;PHP-FPM&lt;/strong&gt;&lt;/a&gt; to clean the whole web server, we need to wait that the cache expires for every worker of the pool. This can be useful to understand what happens during our test while using the configuration &lt;code&gt;production-no-opcache&lt;/code&gt;. Even if OPCache is disabled after the symlink swap, PHP will notify every process about the paths&amp;rsquo; expiration slowly.&lt;/p&gt;
+
+&lt;p&gt;In our real production environment we must consider that we have 15 front-end machines, hosting many web applications. Every machine has one PHP-FPM pool that is composed of 35 workers + 1 master process. This explains why the &amp;ldquo;strange behavior&amp;rdquo; is more evident in the new environment. We can &lt;strong&gt;tune the real path cache impact&lt;/strong&gt; on our web application using the above mentioned the parameters &lt;code&gt;realpath_cache_size&lt;/code&gt; and &lt;code&gt;realpath_cache_ttl&lt;/code&gt;: the former determines the size of the real path bucket to be used by PHP. It is an integer and incrementing this value can be useful if our web application uses a huge number of files. The other configuration directive &lt;code&gt;realpath_cache_ttl&lt;/code&gt;, as already mentioned, represents the duration in seconds for which the real path information should be cached.&lt;/p&gt;
+
+&lt;p&gt;Now we have the full picture, and we can re-enable the OPCache extension and disable real path cache, setting up size and time to live (TTL) as described below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;realpath_cache_size=0k
+realpath_cache_ttl=-1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s run our (hopefully) last test:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# start the container with production configuration, opcache enabled and realpath_cache disabled
+./start.sh production-no-realpath-cache 
+# start switching the current release
+./release-switcher.sh
+# start watching the current web server response 
+./release-watcher.sh
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The following &lt;a href=&#34;https://www.youtube.com/watch?v=Qry6cvUmf3c&#34;&gt;video&lt;/a&gt; shows the output of the last execution.&lt;/p&gt;
+
+&lt;p&gt;
+	&lt;img data-src=&#34;/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production_no_realpath_cache.gif&#34; class=&#34;lazy&#34; title=&#34;Execution with configuration: production&#34; width=&#34;100%&#34;/&gt;
+	&lt;br/&gt;
+	
+		&lt;em&gt;Execution with configuration: production-no-realpath-cache&lt;/em&gt;
+	
+&lt;/p&gt;
+
+
+&lt;p&gt;It&amp;rsquo;s crucial to point out that our last configuration is &lt;strong&gt;strongly discouraged&lt;/strong&gt; on a production environment, because it will force PHP to always resolve every path it encounters, with a negative impact on the performance.&lt;/p&gt;
+
+&lt;h1 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h1&gt;
+
+&lt;p&gt;The goal of this article was to unveil the mystery about our cache issue, and to share what I learned about OPCache and real path cache, and their differences. The scenario described at the beginning of the post is not a real issue but, for example, if a request starts on one version of the code, then it tries to access other files during its execution, and these files are updated, moved or deleted in subsequent versions of the code, it could result in actual problems: in the worst case a solution could be to guarantee the compatibility between two contiguous releases, but the said condition it&amp;rsquo;s very hard to achieve.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s necessary to implement an &lt;strong&gt;atomic deployment strategy&lt;/strong&gt;, in the strict sense of the word. This could be reached for example using containers or more simply using a new isolated PHP-FPM memory pool for each deployed release. The last solution requires at least double the amount of memory, to keep more FPM pools up and running at the same time.&lt;/p&gt;
+
+&lt;p&gt;Another approach is to use an Apache module called &lt;code&gt;mod_realdoc&lt;/code&gt; to support atomic deploys. It was written by &lt;a href=&#34;https://github.com/etsy/mod_realdoc&#34;&gt;&lt;strong&gt;Rasmus Lerdorf&lt;/strong&gt;&lt;/a&gt;. The trick implemented in &lt;code&gt;mod_realdoc&lt;/code&gt; is to call real path on the &lt;code&gt;DOCUMENT_ROOT&lt;/code&gt; symlink at the beginning of a request, and to set the absolute path as the real document root for the whole request. Consequently, requests that started before a symlink change will continue to execute on the previous symlink target.
+The only problem of that module is the requirement of &lt;a href=&#34;https://httpd.apache.org/docs/2.4/mod/prefork.html&#34;&gt;&lt;strong&gt;Apache Multi-Processing Module (MPM) prefork&lt;/strong&gt;&lt;/a&gt;. MPM prefork implements a non-threaded, forking based server that spawns new processes and keeps them alive to serve requests. It is the best MPM for isolating each request, so that a problem with a single request will not affect the others. But it&amp;rsquo;s not the best for when the server is under heavy load, because there&amp;rsquo;s going to be one process per request, thus concurrent requests will suffer since they&amp;rsquo;re forced to wait until a server process is freed. The same result of &lt;code&gt;mod_realdoc&lt;/code&gt; could be achieved at PHP level in the application front controller by defining the base root via &lt;code&gt;realpath(__FILE__)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;rsquo;re using the &lt;strong&gt;nginx&lt;/strong&gt; web server in front of PHP, you are lucky! To avoid the symlinks update during ongoing requests, you must give nginx the responsibility to resolve symlinks and assign them to &lt;code&gt;DOCUMENT_ROOT&lt;/code&gt;. You simply need to change a few lines on your server blocks, as described below:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# default configuration
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+fastcgi_param DOCUMENT_ROOT $document_root;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;# configuration with real path resolution
+fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+fastcgi_param DOCUMENT_ROOT $realpath_root;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With the above changes nginx will resolve the symlinks, hiding them from PHP.&lt;/p&gt;
+
+&lt;p&gt;These are just some discussed solutions to fight against real path cache issues, and there is no universal &amp;ldquo;right&amp;rdquo; way. You must always find the best solution considering your particular requirements and infrastructure.&lt;/p&gt;
+
+&lt;h1 id=&#34;references&#34;&gt;References&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.jpauli.tech/2014/06/30/realpath-cache.html&#34;&gt;realpath_cache&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codeascraft.com/2013/07/01/atomic-deploys-at-etsy/&#34;&gt;Atomic deploys at Etsy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/etsy/mod_realdoc&#34;&gt;mod_realdoc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.sitepoint.com/understanding-opcache/&#34;&gt;Understanding OpCache&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://secure.php.net/opcache&#34;&gt;PHP OPCache&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.slideshare.net/asgrim1/climbing-the-abstract-syntax-tree-phpday-2017&#34;&gt;Climbing the Abstract Syntax Tree&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>How to gradually upgrade toward PHPUnit 6 with namespaced classes</title>
@@ -2464,83 +2748,6 @@ class AcmeLifeCycle
 &lt;li&gt;Implementazione di Matthew Weier O&amp;rsquo;Phinney: &lt;a href=&#34;https://github.com/phly/http/tree/master/src&#34;&gt;https://github.com/phly/http/tree/master/src&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;Michael Dowling spiega la streaming interface: &lt;a href=&#34;http://mtdowling.com/blog/2014/07/03/a-case-for-higher-level-php-streams/&#34;&gt;http://mtdowling.com/blog/2014/07/03/a-case-for-higher-level-php-streams/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>MySQL has gone away? Come back!</title>
-      <link>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</link>
-      <pubDate>Mon, 09 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</guid>
-      <description>
-
-&lt;p&gt;A ben più di uno sviluppatore sarà capitato di incappare nel comune errore &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.5/en/gone-away.html&#34;&gt;&lt;em&gt;MySQL server has gone away!&lt;/em&gt;&lt;/a&gt;, magari seguito da un eccezione lanciata da una delle &lt;a href=&#34;http://php.net/manual/en/book.pdo.php&#34;&gt;&lt;strong&gt;classi PDO&lt;/strong&gt;&lt;/a&gt;, come ad esempio &lt;em&gt;PDOStatement::execute(): Error reading result set&amp;rsquo;s header&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Nella maggior parte dei casi, quando questo avviene in ambiente PHP, siamo connessi in maniera &lt;strong&gt;persistente&lt;/strong&gt; (per fortuna!) ed a causa di una esecuzione &lt;strong&gt;troppo lunga&lt;/strong&gt;, la connessione col server MySQL va in &lt;strong&gt;timeout&lt;/strong&gt;. Lunghi tasks in batch, chiamate a ws non particolarmente rapidi, carichi elevati del server, sono alcuni degli scenari possibili.&lt;/p&gt;
-
-&lt;p&gt;Qualora l&amp;rsquo;errore sia noto e prevedibile (ad esempio avvenga alla stessa linea di codice ad ogni esecuzione) è possibile chiudere la connessione in maniera esplicita ed evitarlo, ma questa logica oltre che risultare &lt;strong&gt;scomoda&lt;/strong&gt; e &lt;strong&gt;ripetitiva&lt;/strong&gt; non è sempre applicabile e richiede una esplicita precauzione dello sviluppatore.&lt;/p&gt;
-
-&lt;h3 id=&#34;ma-quanto-è-grave-il-problema&#34;&gt;Ma quanto è grave il problema?&lt;/h3&gt;
-
-&lt;p&gt;Come illustrato, un errore di tipo &lt;em&gt;MySQL server has gone away&lt;/em&gt; &lt;strong&gt;non&lt;/strong&gt; ha alterato le informazioni presenti nel database, &lt;strong&gt;non&lt;/strong&gt; implica un errore logico o di integrità e &lt;strong&gt;non&lt;/strong&gt; ci impedisce di tentare nuovamente la query da cui è scaturito. Perciò si potrebbe dire che, da un punto di vista applicativo l&amp;rsquo;errore, se correttamente &lt;strong&gt;intercettato e gestito&lt;/strong&gt;, non sia per nulla grave.&lt;/p&gt;
-
-&lt;h3 id=&#34;allora-potrei-ignorarlo&#34;&gt;Allora potrei ignorarlo?&lt;/h3&gt;
-
-&lt;p&gt;Ignorare deliberatamente degli errori non può essere considerata una strategia vincente, perciò per prima cosa bisogna assicurarsi di aver fatto tutto quanto suggerito nella &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.5/en/gone-away.html&#34;&gt;documentazione&lt;/a&gt; per &lt;strong&gt;rimuovere le cause del problema&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;e-se-non-dovesse-bastare&#34;&gt;E se non dovesse bastare?&lt;/h3&gt;
-
-&lt;p&gt;Ritentare la query dovrebbe essere sempre possibile nonchè piuttosto semplice, a patto di saper riconoscere con precisione le eccezioni del &lt;strong&gt;tipo corretto&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;A tal proposito è importante ricordare come la classe &lt;a href=&#34;http://php.net/manual/en/class.pdoexception.php&#34;&gt;&lt;em&gt;PDOException&lt;/em&gt;&lt;/a&gt; non fornisca attraverso il metodo pubblico &lt;em&gt;getCode()&lt;/em&gt; il &lt;strong&gt;codice di errore del DB vendor&lt;/strong&gt; (es. &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.5/en/error-messages-client.html#error_cr_server_gone_error&#34;&gt;2006&lt;/a&gt; per MySQL), ma lo inserisca piuttosto nel &lt;em&gt;message&lt;/em&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/** @var $e PDOException */
-echo $e-&amp;gt;getMessage(); // &#39;SQLSTATE[HY000]: General error: 2006 MySQL server has gone away&#39;`
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;come-funziona&#34;&gt;Come funziona?&lt;/h3&gt;
-
-&lt;p&gt;Chiariamoci le idee con del codice:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$sql = &#39;SELECT count(*) FROM `TABLE`&#39;;
-$retry = true;
-
-while ($retry) {
-
-    try {
-
-        $nb = $pdo-&amp;gt;query($sql)-&amp;gt;fetchColumn();
-
-    } catch (PDOException $e) {
-		
-        $retry = false;
-        
-        if($this-&amp;gt;isMySQLHasGoneAwayException($e)) {
-        
-        	$this-&amp;gt;reconectDB();
-            $retry = true;
-        }
-    }        
-}
-# CODICE DEMO, NON FUNZIONANTE!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nell&amp;rsquo;esempio  sopra riportato, una volta accertata la natura dell&amp;rsquo;eccezione si procede &lt;strong&gt;riconnettendosi&lt;/strong&gt; al database (una &lt;strong&gt;nuova&lt;/strong&gt; connessione!) e &lt;strong&gt;ripetendo&lt;/strong&gt; la query, magari con un limite di tentativi per evitare ricursioni infinite!&lt;/p&gt;
-
-&lt;p&gt;Trattandosi di una &lt;strong&gt;nuova connessione&lt;/strong&gt;, non è possibile utilizzare questa procedura nel caso l&amp;rsquo;errore avvenga durante una &lt;a href=&#34;http://en.wikipedia.org/wiki/Database_transaction&#34;&gt;&lt;strong&gt;transazione&lt;/strong&gt;&lt;/a&gt; MySQL. Tutte le query inviate all&amp;rsquo;interno della connessione sarebbero ovviamente &lt;strong&gt;perdute&lt;/strong&gt; e non sarebbe possibile recuperarle!&lt;/p&gt;
-
-&lt;h3 id=&#34;ma-devo-farlo-ogni-volta-a-mano&#34;&gt;Ma devo farlo ogni volta a mano?&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;NO!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;In &lt;a href=&#34;http://www.facile.it/&#34;&gt;&lt;strong&gt;Facile.it&lt;/strong&gt;&lt;/a&gt;, utilizzando largamente l&amp;rsquo;ORM &lt;em&gt;Doctrine&lt;/em&gt;, abbiamo pensato allo sviluppo di una piccola estensione, &lt;a href=&#34;https://github.com/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;strong&gt;DoctrineMySQLComeBack&lt;/strong&gt;&lt;/a&gt; che riteniamo utile distribuire in maniera &lt;strong&gt;libera&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Compatibile dalla versione 2.3 fino alla stabile 2.5, si occupa di &lt;strong&gt;ritentare automaticamente&lt;/strong&gt; le SELECT in ambiente MySQL. Cosi non ci si dovrà più preoccupare del successo di ogni singola query per portare a termine le esecuzioni.&lt;/p&gt;
-
-&lt;p&gt;Le &lt;strong&gt;istruzioni&lt;/strong&gt; per l&amp;rsquo;installazione e l&amp;rsquo;uso sono disponibili su &lt;a href=&#34;https://github.com/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;strong&gt;&lt;em&gt;GitHub&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;, e chiunque è libero di &lt;strong&gt;contribuire&lt;/strong&gt; per migliorarne le funzionalità :)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://packagist.org/packages/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;img src=&#34;https://poser.pugx.org/facile-it/doctrine-mysql-come-back/v/stable.svg&#34; alt=&#34;Latest Stable Version&#34; /&gt;&lt;/a&gt; &lt;a href=&#34;https://packagist.org/packages/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;img src=&#34;https://poser.pugx.org/facile-it/doctrine-mysql-come-back/downloads.svg&#34; alt=&#34;Total Downloads&#34; /&gt;&lt;/a&gt; &lt;a href=&#34;https://packagist.org/packages/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;img src=&#34;https://poser.pugx.org/facile-it/doctrine-mysql-come-back/license.svg&#34; alt=&#34;License&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

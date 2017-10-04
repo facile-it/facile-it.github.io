@@ -3,7 +3,12 @@
   
   <url>
     <loc>https://engineering.facile.it/</loc>
-    <lastmod>2017-09-12T00:00:00+00:00</lastmod>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
   </url>
   
   <url>

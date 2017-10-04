@@ -32,7 +32,7 @@
 <meta property="og:url" content="https://engineering.facile.it/" />
 
 
-<meta property="og:updated_time" content="2015-07-15T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-07-22T00:00:00&#43;00:00"/>
 
 
 
@@ -219,15 +219,15 @@ ga('send', 'pageview');
 
                 
                     <li>
+                        <a href="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/"><p>Is it all PHP OPCache&#39;s fault?</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/"><p>How to gradually upgrade toward PHPUnit 6 with namespaced classes</p></a>
                     </li>
                 
                     <li>
                         <a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/"><p>Why type hints and interfaces are not visual debt</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://engineering.facile.it/blog/eng/php-day-2017/"><p>Facile.it devs @ phpDay 2017</p></a>
                     </li>
                 
             </ul>
@@ -240,6 +240,133 @@ ga('send', 'pageview');
     
     <div id="main">
         
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/">Si fa presto a dire Docker (e OS X)</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published" datetime='2015-07-22'>
+            22 July 2015
+        </time>
+
+        
+            <a href="/authors/daniele" class="author">
+            
+                <span class="name">Daniele Contini</span>
+                <img src="/images/avatar-daniele.jpg" alt="Daniele Contini avatar" />
+            
+            </a>
+        
+
+        
+            <p>5 minute read</p>
+        
+    </div>
+</header>
+
+    
+
+    <p>Di guide per l&rsquo;installazione di Docker su OS X è pieno il web, ma le soluzioni sono molte e spesso scegliere non è facile. In questo articolo vi mostrerò quello che è stato il mio personale percorso, nella speranza che possa essere utile a chiarirvi le idee e magari evitare qualche buco nell&rsquo;acqua. Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+
+    
+        
+            <li>
+                
+                    <i class="fa fa-folder-open-o">&nbsp;</i>
+                
+        
+
+                
+                    Categories
+                
+            </li>
+    
+
+    
+        <li><a href="/categories/italiano">Italiano</a></li>
+    
+        <li><a href="/categories/osx">OSX</a></li>
+    
+        <li><a href="/categories/docker">Docker</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fsi-fa-presto-a-dire-docker-e-os-x%2f&text=Si%20fa%20presto%20a%20dire%20Docker%20%28e%20OS%20X%29&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fsi-fa-presto-a-dire-docker-e-os-x%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fsi-fa-presto-a-dire-docker-e-os-x%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fsi-fa-presto-a-dire-docker-e-os-x%2f&title=Si%20fa%20presto%20a%20dire%20Docker%20%28e%20OS%20X%29" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fsi-fa-presto-a-dire-docker-e-os-x%2f&title=Si%20fa%20presto%20a%20dire%20Docker%20%28e%20OS%20X%29" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fsi-fa-presto-a-dire-docker-e-os-x%2f&title=Si%20fa%20presto%20a%20dire%20Docker%20%28e%20OS%20X%29" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fsi-fa-presto-a-dire-docker-e-os-x%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
         
             <article class="post">
     <header>
@@ -749,140 +876,6 @@ ga('send', 'pageview');
 </section>
 
         
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/">Continuous Integration con Docker e Drone</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published" datetime='2015-06-12'>
-            12 June 2015
-        </time>
-
-        
-            <a href="/authors/lorenzo" class="author">
-            
-                <span class="name">Lorenzo Fontana</span>
-                <img src="https://www.gravatar.com/avatar/575f040cd9e5e28e807ecf0d73c8a938?d=404&amp;s=250" alt="Lorenzo Fontana avatar" />
-            
-            </a>
-        
-            <a href="/authors/luca" class="author">
-            
-                <span class="name">Luca Boeri</span>
-                <img src="/images/avatar-luca.jpg" alt="Luca Boeri avatar" />
-            
-            </a>
-        
-
-        
-            <p>7 minute read</p>
-        
-    </div>
-</header>
-
-    
-
-    <p>La continuous integration è una pratica che consiste nel frequente allineamento, su di una base comune definita mainline, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto. Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione Object Oriented Design: With Applications, la pratica è stata estesa e sviluppata all&rsquo;interno dell&rsquo;extreme programming, fino a sostenere la necessità di allineare le copie di lavoro diverse volte al giorno. Il vantaggio principale nell&rsquo;adottare la pratica è quello di evitare l&rsquo;integration hell (o merge hell) minimizzando il rischio legato a copie di lavoro divergenti di difficile integrazione.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-
-    
-        
-            <li>
-                
-                    <i class="fa fa-folder-open-o">&nbsp;</i>
-                
-        
-
-                
-                    Categories
-                
-            </li>
-    
-
-    
-        <li><a href="/categories/italiano">Italiano</a></li>
-    
-        <li><a href="/categories/docker">Docker</a></li>
-    
-        <li><a href="/categories/continuous-integration">Continuous integration</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcontinuos-integration-docker-drone%2f&text=Continuous%20Integration%20con%20Docker%20e%20Drone&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-</a></li>
-
-
-<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcontinuos-integration-docker-drone%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-</a></li>
-
-
-<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcontinuos-integration-docker-drone%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-</a></li>
-
-
-<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcontinuos-integration-docker-drone%2f&title=Continuous%20Integration%20con%20Docker%20e%20Drone" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-</a></li>
-
-
-<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcontinuos-integration-docker-drone%2f&title=Continuous%20Integration%20con%20Docker%20e%20Drone" target="_blank" class="share-btn linkedin">
-    <i class="fa fa-linkedin"></i>
-    <p>LinkedIn</p>
-</a></li>
-
-
-<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcontinuos-integration-docker-drone%2f&title=Continuous%20Integration%20con%20Docker%20e%20Drone" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-</a></li>
-
-
-<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fcontinuos-integration-docker-drone%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-</a></li>
-
-        </ul>
-    </section>
-</section>
-
-        
 		
         
 <ul class="actions pagination">
@@ -1008,6 +1001,27 @@ ga('send', 'pageview');
                             <header>
                                     
                                         
+                                            <img src="https://www.gravatar.com/avatar/84febdc35f5438ae1d2500482e2228fa" alt="Salvatore Cordiano avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
+                                    <h3><a href="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/">Is it all PHP OPCache&#39;s fault?</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2017-10-04'>
+                                        4 October 2017
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
                                             <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
                                         
                                     
@@ -1040,27 +1054,6 @@ ga('send', 'pageview');
                                     
                                     <time class="published" datetime='2017-05-31'>
                                         31 May 2017
-                                    </time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                    
-                                        
-                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
-                                        
-                                    
-
-                                    <h3><a href="https://engineering.facile.it/blog/eng/php-day-2017/">Facile.it devs @ phpDay 2017</a></h3>
-
-                                    
-                                        
-                                    
-                                    <time class="published" datetime='2017-05-16'>
-                                        16 May 2017
                                     </time>
                             </header>
                         </article>
@@ -1110,7 +1103,7 @@ ga('send', 'pageview');
                         <article>
                             <header>
                                 <a href="/categories/english/">English</a>
-                                <span style="float:right;">26</span>
+                                <span style="float:right;">27</span>
                             </header>
                         </article>
                     </li>
@@ -1121,7 +1114,7 @@ ga('send', 'pageview');
                         <article>
                             <header>
                                 <a href="/categories/php/">PHP</a>
-                                <span style="float:right;">18</span>
+                                <span style="float:right;">19</span>
                             </header>
                         </article>
                     </li>
@@ -1180,6 +1173,10 @@ ga('send', 'pageview');
                             </header>
                         </article>
                     </li>
+                    
+                
+                    
+                
                     
                 
                     
@@ -1428,15 +1425,21 @@ ga('send', 'pageview');
         
 
         
-            <script src="/js/jquery.min.js"></script>
-            <script src="/js/skel.min.js"></script>
-            <script src="/js/util.js"></script>
-            <script src="/js/main.js"></script>
-            <script src="/js/backToTop.js"></script>
-            <script src="/js/highlight.pack.js"></script>
+            <script type="text/javascript" src="/js/jquery.min.js"></script>
+            <script type="text/javascript" src="/js/skel.min.js"></script>
+            <script type="text/javascript" src="/js/util.js"></script>
+            <script type="text/javascript" src="/js/main.js"></script>
+            <script type="text/javascript" src="/js/backToTop.js"></script>
+            <script type="text/javascript" src="/js/highlight.pack.js"></script>
+            <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
         
             
-            <script>hljs.initHighlightingOnLoad();</script>
+            <script type="text/javascript">
+                hljs.initHighlightingOnLoad();
+                $(function() {
+                    $('.lazy').Lazy();
+                });
+            </script>
             
     </body>
 </html>

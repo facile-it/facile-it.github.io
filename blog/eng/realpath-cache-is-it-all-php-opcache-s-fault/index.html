@@ -1,0 +1,1310 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Is it all PHP OPCache&#39;s fault?</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.16" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+            
+        
+
+        
+    
+        <meta name="twitter:card" content="summary"/>
+        
+            <meta name="twitter:image:src" content="https://engineering.facile.it/images/realpath-cache-is-it-all-php-opcache-s-fault/share.jpg"/>
+        
+    
+    
+    <meta name="twitter:title" content="Is it all PHP OPCache&#39;s fault?"/>
+    <meta name="twitter:description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit. Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things»."/>
+    
+        
+            <meta name="twitter:creator" content="@parallelit"/>
+        
+    
+
+
+<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+
+        <meta property="og:title" content="Is it all PHP OPCache&#39;s fault?" />
+<meta property="og:description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit. Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things»." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/" />
+
+
+<meta property="og:updated_time" content="2017-10-04T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Is it all PHP OPCache&#39;s fault?">
+<meta itemprop="description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit. Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things».">
+
+
+<meta itemprop="dateModified" content="2017-10-04T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2707">
+
+
+
+<meta itemprop="keywords" content="algatux,daniele,elviro,engineering,francesco,giacomo,jean,lorenzo,luca,mario-maraone,matteo,michele,nicola,salvatore-cordiano,sergio,simone-lazzaroni,vito,AES,AWS,Agile,Algorithms,Android,Angular,Artificial intelligence,Blog,C,CMake,Code reuse,Codemotion,Conferences,Continuous integration,DSL,Database,Design patterns,Docker,Doctrine,Encryption,English,Event driven,FacileHack,Filesystem,Functional programming,Fuse,Git,GitHub,GraphQL,HTTP,Hackathon,Hugo,Italiano,JSON,JVM,JWT,Java,Javascript,Kanban,Kotlin,MessagePack,Monad,MySQL,Networking,NewRelic,Node.js,OOP,OPCache,OSX,Objective-C,Open Source,PHP,PHP Coding standards,PHP internals,PSR,Python,REST,RSA,Rjindael,SOLID,Scrum,Security,Semantic versioning,Serverless,Signal,Software Crisis,Software Testing,Software complexity,Software testing,Static site,Structured programming,Swift,Symfony,TDD,Test coverage,Type First Development,UI,WebComponent,Websocket,Xcode,realpath_cache," />
+
+        
+
+        
+        
+
+        
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/monokai-sublime.css">
+        
+        
+        
+        
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-22342495-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">Facile.it Engineering</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/categories">
+                        
+                            <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/authors">
+                        
+                            <i class="fa fa-pencil">&nbsp;</i>Authors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/ita/careers">
+                        
+                            <i class="fa fa-briefcase">&nbsp;</i>Careers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/eng/who-we-are">
+                        
+                            <i class="fa fa-users">&nbsp;</i>Who we are
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:https://engineering.facile.it">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/categories">
+                            <h3>
+                                
+                                    <i class="fa fa-folder-open-o">&nbsp;</i>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/authors">
+                            <h3>
+                                
+                                    <i class="fa fa-pencil">&nbsp;</i>
+                                
+                                Authors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/ita/careers">
+                            <h3>
+                                
+                                    <i class="fa fa-briefcase">&nbsp;</i>
+                                
+                                Careers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/eng/who-we-are">
+                            <h3>
+                                
+                                    <i class="fa fa-users">&nbsp;</i>
+                                
+                                Who we are
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/"><p>Is it all PHP OPCache&#39;s fault?</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/"><p>How to gradually upgrade toward PHPUnit 6 with namespaced classes</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/"><p>Why type hints and interfaces are not visual debt</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f&text=Is%20it%20all%20PHP%20OPCache%27s%20fault%3f&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f&title=Is%20it%20all%20PHP%20OPCache%27s%20fault%3f" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f&title=Is%20it%20all%20PHP%20OPCache%27s%20fault%3f" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f&title=Is%20it%20all%20PHP%20OPCache%27s%20fault%3f" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/">Is it all PHP OPCache&#39;s fault?</a></h1>
+            
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published" datetime='2017-10-04'>
+            4 October 2017
+        </time>
+
+        
+            <a href="/authors/salvatore-cordiano" class="author">
+            
+                <span class="name">Salvatore Cordiano</span>
+                <img src="https://www.gravatar.com/avatar/84febdc35f5438ae1d2500482e2228fa" alt="Salvatore Cordiano avatar" />
+            
+            </a>
+        
+
+        
+            <p>13 minute read</p>
+        
+    </div>
+</header>
+
+
+    
+
+
+    
+
+    
+
+<h1 id="abstract">Abstract</h1>
+
+<p><em>Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.</em></p>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>When I started my software developer career, I was very surprised to read the following sentence, attributed to <a href="https://martinfowler.com/bliki/TwoHardThings.html">Phil Karlton</a>: <em>«There are only two hard things in Computer Science: <strong>cache invalidation</strong> and <strong>naming things</strong>»</em>. In the beginning I was incredulous, because I didn&rsquo;t really get the sense of these words. Not much later, I started to understand.</p>
+
+<p>Without digging too much into the past, I&rsquo;d like to talk about a recent cache issue we experienced in on our production infrastructure. Particularly we noticed a strange behavior after each deploy: immediately after a successful deployment procedure, as we refreshed pages that were modified with the new release, we didn&rsquo;t see the updated code for a while. Actually, the scenario described above is very common with <strong>PHP</strong> web applications. We have seen this behavior in the past but, after we moved to our new production environment, it became more noticeable. Therefore, we decided to investigate it.</p>
+
+<h1 id="our-deployment-procedure">Our deployment procedure</h1>
+
+<p>Before proceeding, I should describe how our deployment procedure works: our technology is mostly based on PHP, plus some frameworks like <strong>Symfony</strong> and <strong>Zend Framework</strong>. To ship our code in production we use an internal project called <strong>shark-do</strong>, written by my team leader <a href="https://luca.bo/">Luca</a>.</p>
+
+<p>Shark-do&rsquo;s philosophy is:</p>
+
+<blockquote>
+<p>«If you can do it, you can do it in bash»</p>
+</blockquote>
+
+<p>The project&rsquo;s in fact a bash script which allows to define a task and execute it from a recipe. Each project has its own recipe, as to manage the different steps needed, like delete useless files, generate configuration files, etc.</p>
+
+<p>For example, I usually run <code>shark-do deploy collaboratori</code>, to execute the deploy tasks for the &ldquo;collaboratori&rdquo; project, in which I&rsquo;m involved, more than 5 times a day. This is generally comprised of the following steps:</p>
+
+<ol>
+<li>pull the last commit from origin/master;</li>
+<li>setup folders, remove the unnecessary files and start creating a release;</li>
+<li>install parameters, run composer install, download and dump assets;</li>
+<li>create a release archive, transfer and extract it on the bastion machine;</li>
+<li>call an Ansible procedure to start the release roll out using our infrastructure&rsquo;s REST API;</li>
+<li>switch releases, clean and remove old releases on the bastion machine;</li>
+<li>tag the new release on New Relic and notify the end of the task on our Slack channel.</li>
+</ol>
+
+<p>We should focus on point 5 because it&rsquo;s the roll out phase. At that point, an <a href="http://docs.ansible.com/ansible/latest/playbooks.html"><strong>Ansible playbook</strong></a> is responsible for copying the new release from the <a href="https://en.wikipedia.org/wiki/Bastion_host">bastion host</a> to all the target machines (front-end, batch, etc.), for setting up folders and permissions, and for doing cache warm-up and release switch. As described previously, each deployment procedure consists of many mandatory activities, but the turning point is when the current project&rsquo;s folder changes: this is usually done through a symlink swap from the previous release folder to the new one. The current project folder is the document root of the specific web application.</p>
+
+<p>It&rsquo;s just something like this:</p>
+
+<pre><code class="language-bash">ln -sf /var/www/{APP_NAME}/releases/@YYYYMMDDHHIISS /var/www/{APP_NAME}/current
+</code></pre>
+
+<p>The <code>-s</code> option is used to create a symbolic link, while <code>-f</code> is used to force the symlink creation if the target already exists; <code>{APP_NAME}</code> represents the project&rsquo;s name.</p>
+
+<p>Our deployment strategy is very common in the PHP world. We store multiple releases of the same application on the production machines, and we use a symlink to the current version. This way we should deploy <strong>atomically and safely</strong>, without impacting the production traffic.</p>
+
+<p>Last but not least, we have about 15 front-end machines behind a load-balancer with a round-robin workload balancing policy (more than twice the previous number of servers). Now the question is: what happens after the release switch?</p>
+
+<h1 id="it-s-all-php-opcache-s-fault">It&rsquo;s all PHP OPCache&rsquo;s fault (?)</h1>
+
+<p>Some caveats: the goal of this article is not to dive deeply in a PHP script execution flow, but to lay down the foundations to understand my reasoning about the problem; I am also only taking into account PHP version 7.</p>
+
+<p>It can be useful to revisit how PHP code is executed. When we run a PHP script, our source code undergoes four phases:</p>
+
+<p><img src="/images/realpath-cache-is-it-all-php-opcache-s-fault/graph_1.png" alt="How does PHP work?" />
+<em>How does PHP work?</em></p>
+
+<p>The first phase is managed by a lexer: the <strong>PHP lexer</strong> is responsible for matching language keywords like <code>function</code>, <code>return</code> and <code>static</code> to individual pieces generally called <em>tokens</em>. Each token is often decorated with some metadata, necessary for the next phase.</p>
+
+<p>The second phase is managed by a parser: the <strong>PHP parser</strong> is responsible for analyzing single or multiple tokens, and match them to language structure patterns. For example <code>$foo + 5</code> is recognized as a binary &ldquo;sum&rdquo; operation, and the variable <code>$foo</code> and the number <code>5</code> are recognized as operands. Here, the parser builds the <a href="https://wiki.php.net/rfc/abstract_syntax_tree"><strong>Abstract Syntax Tree (AST)</strong></a> in a recursive way. Usually, lexer and parser are mentioned together as a single task.</p>
+
+<p>The third phase is the <strong>compilation</strong>. In this phase, the AST is visited and it&rsquo;s translated into an ordered sequence of OPCodes instructions. Every OPCode could be considered as a low-level <strong>Zend Virtual Machine</strong> operation. The full list of supported OPCodes is available <a href="https://github.com/php/php-src/blob/php-7.0.0/Zend/zend_vm_opcodes.h">here</a>. The last phase is the <strong>execution</strong>. The Zend VM runs every single task described by OPCode, and produces the result.</p>
+
+<p>The first three phases of the above described &ldquo;pipeline&rdquo; (lexer, parser and compiler), and the third in particular takes a lot of time and resources (memory and CPU). To minimize the weight of the compilation phase, PHP 5.5 introduced the <a href="http://php.net/manual/en/book.opcache.php"><strong>Zend OPcache extension</strong></a>. If enabled, this extension will cache the output of the compilation step (OPCodes) into shared memory (shm, mmap, etc.), such that every PHP script is compiled only once, and different requests can be executed skipping the compilation task. If the source code on the non-development environment is not frequently changed, the PHP execution time should be reduced by a factor of at least two.</p>
+
+<p>The OPcache extension is also responsible for the OPCodes optimization, but that&rsquo;s out of scope for this article.</p>
+
+<p>In the light of the above, it&rsquo;s reasonable to expect that the strange behavior experienced in our production environment is all OPCache&rsquo;s fault. If that&rsquo;s right, we should be able to reproduce the issue and solve it by disabling the OPCache extension. To test this hypothesis I&rsquo;ve prepared a very simple demo environment using a <strong>Docker</strong> container with PHP 7.0 and Apache 2.4. The full code is available on <a href="https://github.com/salvatorecordiano/facile-it-realpath_cache">Github</a>.</p>
+
+<p>I wrote some shortcuts to simplify the process:</p>
+
+<ul>
+<li><code>start.sh</code> starts the Docker container with the right configuration;</li>
+<li><code>release-switcher.sh</code> swaps the current release symlink every 10 seconds;</li>
+<li><code>release-watcher.sh</code> checks the current release served by Apache every second, by making an HTTP request.</li>
+</ul>
+
+<p>Just clone the GitHub repository and you&rsquo;re ready to test, assuming Docker is already installed on your machine.</p>
+
+<pre><code class="language-bash">git clone https://github.com/salvatorecordiano/facile-it-realpath_cache
+cd facile-it-realpath_cache
+docker pull salvatorecordiano/realpath_cache
+</code></pre>
+
+<p>To reproduce the cache issue, you have to run the following commands in parallel, using three different command lines:</p>
+
+<pre><code class="language-bash"># start the container with production configuration
+./start.sh production 
+# start switching the current release
+./release-switcher.sh
+# start watching the current web server response 
+./release-watcher.sh
+</code></pre>
+
+<p>The following <a href="https://www.youtube.com/watch?v=PNjyi42VwP4">video</a> shows the execution output.</p>
+
+<p>
+	<img data-src="/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production.gif" class="lazy" title="Execution with configuration: production" width="100%"/>
+	<br/>
+	
+		<em>Execution with configuration: production</em>
+	
+</p>
+
+
+<p>As expected we are experiencing the cache issue: after a release switch, we&rsquo;re not seeing the right code as the output of an HTTP request.</p>
+
+<p>Now we disable the OPCache extension and redo the test.</p>
+
+<pre><code class="language-bash"># start the container with production configuration and opcache disabled
+./start.sh production-no-opcache 
+# start switching the current release
+./release-switcher.sh
+# start watching the current web server response 
+./release-watcher.sh
+</code></pre>
+
+<p>The following <a href="https://www.youtube.com/watch?v=WB78eE0kwUo">video</a> shows the output of this new execution.</p>
+
+<p>
+	<img data-src="/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production_no_opcache.gif" class="lazy" title="Execution with configuration: production" width="100%"/>
+	<br/>
+	
+		<em>Execution with configuration: production-no-opcache</em>
+	
+</p>
+
+
+<p>This is unexpected, we are experiencing the previous behavior, thus something is missing from our reasoning: <strong>it&rsquo;s not all OPCache&rsquo;s fault after all</strong>.</p>
+
+<h1 id="realpath-cache-the-true-culprit">realpath_cache: the true culprit</h1>
+
+<p>When we use <code>include/require</code> functions or PHP autoload, we should probably think about <strong>realpath_cache</strong>. Real path cache is a PHP feature that allows to <strong>cache paths resolution for files and folders</strong>, in order to minimize time-consuming disk lookups and improve performance. This is very useful when working with many third party libraries, or frameworks like Symfony, Zend or Laravel, because they use a huge number of files.</p>
+
+<p>The path cache mechanism was introduced in PHP 5.1.0. At the present moment there&rsquo;s no mention of this feature in the official docs, if not for the functions <code>realpath_cache_get()</code>, <code>realpath_cache_size()</code>, <code>clearstatcache()</code> and the <code>php.ini</code> parameters <code>realpath_cache_size</code> and <code>realpath_cache_ttl</code>.  The only external reference I was able to find is an <a href="http://blog.jpauli.tech/2014/06/30/realpath-cache.html">old post</a> written by <strong>Julien Pauli</strong> in 2014. In his post Pauli, a well-known PHP contributor, explains how PHP resolves a path behind the scenes.</p>
+
+<p>When we access a file, PHP tries to resolve it&rsquo;s path using the <code>stat()</code> Unix system call: it returns file attributes (like permission, filename extensions and other metadata) about an <strong>inode</strong>. In the Unix world, an inode is a data structure used to describe a file system object such as a file or a directory. PHP puts the result of the system call in a data structure called <code>realpath_cache_bucket</code>, excluding some things like permissions and owners. So, if we try to access the same file twice, the bucket lookup will spare us another slow system call. To deepen the subject, I suggest reading this bit of <a href="https://github.com/php/php-src/blob/php-7.0.0/Zend/zend_virtual_cwd.c">PHP source code</a>.</p>
+
+<p>The function <code>realpath_cache_get</code> was introduced in PHP 5.3.2 and it allows one to get an array of all the real path cache entries. For each element of the array, the key is the resolved path, and the value is another array of data like <code>key</code>, <code>is_dir</code>, <code>realpath</code>, <code>expires</code>.</p>
+
+<p>What follows is the output of <code>print_r(realpath_cache_get());</code> in our Docker test environment:</p>
+
+<pre><code class="language-PHP">Array
+(
+    [/var/www/html] =&gt; Array
+        (
+            [key] =&gt; 1438560323331296433
+            [is_dir] =&gt; 1
+            [realpath] =&gt; /var/www/html
+            [expires] =&gt; 1504549899
+        )
+    [/var/www] =&gt; Array
+        (
+            [key] =&gt; 1.5408950988325E+19
+            [is_dir] =&gt; 1
+            [realpath] =&gt; /var/www
+            [expires] =&gt; 1504549899
+        )
+    [/var] =&gt; Array
+        (
+            [key] =&gt; 1.6710127960665E+19
+            [is_dir] =&gt; 1
+            [realpath] =&gt; /var
+            [expires] =&gt; 1504549899
+        )
+    [/var/www/html/release1] =&gt; Array
+        (
+            [key] =&gt; 7631224517412515240
+            [is_dir] =&gt; 1
+            [realpath] =&gt; /var/www/html/release1
+            [expires] =&gt; 1504549899
+        )
+    [/var/www/current] =&gt; Array
+        (
+            [key] =&gt; 1.7062595747834E+19
+            [is_dir] =&gt; 1
+            [realpath] =&gt; /var/www/html/release1
+            [expires] =&gt; 1504549899
+        )
+    [/var/www/current/index.php] =&gt; Array
+        (
+            [key] =&gt; 6899135167081162414
+            [is_dir] =&gt; 0
+            [realpath] =&gt; /var/www/html/release1/index.php
+            [expires] =&gt; 1504549899
+        )
+)
+</code></pre>
+
+<p>In the previous code:</p>
+
+<ul>
+<li><code>key</code> is a float, and represents a hash associated with the path;</li>
+<li><code>is_dir</code> is a boolean, and it&rsquo;s true when the resolved path is a directory, otherwise it&rsquo;s false;</li>
+<li><code>realpath</code> is the resolved path, as a string;</li>
+<li><code>expires</code> is an integer, and it represents the time when the path cache will be invalidated; this value is strictly related to the parameter <code>realpath_cache_ttl</code>.</li>
+</ul>
+
+<p>In the previous sample we have 6 paths, but they&rsquo;re all related to the resolution of the path <code>/var/www/current/index.php</code>. PHP has created 6 cache keys to resolve just one path. So a path is resolved by splitting it in parts and resolving them one at a time. In our case the &ldquo;real&rdquo; path is <code>/var/www/html/release1/index.php</code> because <code>/var/www/current</code> is a symlink to the folder <code>/var/www/html/release1</code>.</p>
+
+<p>Julien Pauli&rsquo;s post also specifies:</p>
+
+<blockquote>
+<p>«The realpath cache is process bound, and not shared into shared memory».</p>
+</blockquote>
+
+<p>This means that the <strong>cache must expire for every PHP process</strong>. So if we are using <a href="https://php-fpm.org"><strong>PHP-FPM</strong></a> to clean the whole web server, we need to wait that the cache expires for every worker of the pool. This can be useful to understand what happens during our test while using the configuration <code>production-no-opcache</code>. Even if OPCache is disabled after the symlink swap, PHP will notify every process about the paths&rsquo; expiration slowly.</p>
+
+<p>In our real production environment we must consider that we have 15 front-end machines, hosting many web applications. Every machine has one PHP-FPM pool that is composed of 35 workers + 1 master process. This explains why the &ldquo;strange behavior&rdquo; is more evident in the new environment. We can <strong>tune the real path cache impact</strong> on our web application using the above mentioned the parameters <code>realpath_cache_size</code> and <code>realpath_cache_ttl</code>: the former determines the size of the real path bucket to be used by PHP. It is an integer and incrementing this value can be useful if our web application uses a huge number of files. The other configuration directive <code>realpath_cache_ttl</code>, as already mentioned, represents the duration in seconds for which the real path information should be cached.</p>
+
+<p>Now we have the full picture, and we can re-enable the OPCache extension and disable real path cache, setting up size and time to live (TTL) as described below:</p>
+
+<pre><code class="language-bash">realpath_cache_size=0k
+realpath_cache_ttl=-1
+</code></pre>
+
+<p>Let&rsquo;s run our (hopefully) last test:</p>
+
+<pre><code class="language-bash"># start the container with production configuration, opcache enabled and realpath_cache disabled
+./start.sh production-no-realpath-cache 
+# start switching the current release
+./release-switcher.sh
+# start watching the current web server response 
+./release-watcher.sh
+</code></pre>
+
+<p>The following <a href="https://www.youtube.com/watch?v=Qry6cvUmf3c">video</a> shows the output of the last execution.</p>
+
+<p>
+	<img data-src="/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production_no_realpath_cache.gif" class="lazy" title="Execution with configuration: production" width="100%"/>
+	<br/>
+	
+		<em>Execution with configuration: production-no-realpath-cache</em>
+	
+</p>
+
+
+<p>It&rsquo;s crucial to point out that our last configuration is <strong>strongly discouraged</strong> on a production environment, because it will force PHP to always resolve every path it encounters, with a negative impact on the performance.</p>
+
+<h1 id="conclusions">Conclusions</h1>
+
+<p>The goal of this article was to unveil the mystery about our cache issue, and to share what I learned about OPCache and real path cache, and their differences. The scenario described at the beginning of the post is not a real issue but, for example, if a request starts on one version of the code, then it tries to access other files during its execution, and these files are updated, moved or deleted in subsequent versions of the code, it could result in actual problems: in the worst case a solution could be to guarantee the compatibility between two contiguous releases, but the said condition it&rsquo;s very hard to achieve.</p>
+
+<p>It&rsquo;s necessary to implement an <strong>atomic deployment strategy</strong>, in the strict sense of the word. This could be reached for example using containers or more simply using a new isolated PHP-FPM memory pool for each deployed release. The last solution requires at least double the amount of memory, to keep more FPM pools up and running at the same time.</p>
+
+<p>Another approach is to use an Apache module called <code>mod_realdoc</code> to support atomic deploys. It was written by <a href="https://github.com/etsy/mod_realdoc"><strong>Rasmus Lerdorf</strong></a>. The trick implemented in <code>mod_realdoc</code> is to call real path on the <code>DOCUMENT_ROOT</code> symlink at the beginning of a request, and to set the absolute path as the real document root for the whole request. Consequently, requests that started before a symlink change will continue to execute on the previous symlink target.
+The only problem of that module is the requirement of <a href="https://httpd.apache.org/docs/2.4/mod/prefork.html"><strong>Apache Multi-Processing Module (MPM) prefork</strong></a>. MPM prefork implements a non-threaded, forking based server that spawns new processes and keeps them alive to serve requests. It is the best MPM for isolating each request, so that a problem with a single request will not affect the others. But it&rsquo;s not the best for when the server is under heavy load, because there&rsquo;s going to be one process per request, thus concurrent requests will suffer since they&rsquo;re forced to wait until a server process is freed. The same result of <code>mod_realdoc</code> could be achieved at PHP level in the application front controller by defining the base root via <code>realpath(__FILE__)</code>.</p>
+
+<p>If you&rsquo;re using the <strong>nginx</strong> web server in front of PHP, you are lucky! To avoid the symlinks update during ongoing requests, you must give nginx the responsibility to resolve symlinks and assign them to <code>DOCUMENT_ROOT</code>. You simply need to change a few lines on your server blocks, as described below:</p>
+
+<pre><code class="language-bash"># default configuration
+fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+fastcgi_param DOCUMENT_ROOT $document_root;
+</code></pre>
+
+<pre><code class="language-bash"># configuration with real path resolution
+fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+fastcgi_param DOCUMENT_ROOT $realpath_root;
+</code></pre>
+
+<p>With the above changes nginx will resolve the symlinks, hiding them from PHP.</p>
+
+<p>These are just some discussed solutions to fight against real path cache issues, and there is no universal &ldquo;right&rdquo; way. You must always find the best solution considering your particular requirements and infrastructure.</p>
+
+<h1 id="references">References</h1>
+
+<ul>
+<li><a href="http://blog.jpauli.tech/2014/06/30/realpath-cache.html">realpath_cache</a></li>
+<li><a href="https://codeascraft.com/2013/07/01/atomic-deploys-at-etsy/">Atomic deploys at Etsy</a></li>
+<li><a href="https://github.com/etsy/mod_realdoc">mod_realdoc</a></li>
+<li><a href="https://www.sitepoint.com/understanding-opcache/">Understanding OpCache</a></li>
+<li><a href="https://secure.php.net/opcache">PHP OPCache</a></li>
+<li><a href="https://www.slideshare.net/asgrim1/climbing-the-abstract-syntax-tree-phpday-2017">Climbing the Abstract Syntax Tree</a></li>
+</ul>
+
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f&text=Is%20it%20all%20PHP%20OPCache%27s%20fault%3f&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f&title=Is%20it%20all%20PHP%20OPCache%27s%20fault%3f" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f&title=Is%20it%20all%20PHP%20OPCache%27s%20fault%3f" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f&title=Is%20it%20all%20PHP%20OPCache%27s%20fault%3f" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2frealpath-cache-is-it-all-php-opcache-s-fault%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    <footer>
+        <ul class="stats">
+    
+
+    
+        
+            <li>
+                
+                    <i class="fa fa-folder-open-o">&nbsp;</i>
+                
+        
+
+                
+                    Categories
+                
+            </li>
+    
+
+    
+        <li><a href="/categories/english">English</a></li>
+    
+        <li><a href="/categories/php">PHP</a></li>
+    
+        <li><a href="/categories/opcache">OPCache</a></li>
+    
+        <li><a href="/categories/realpath_cache">realpath_cache</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/"
+                class="button big previous">How to gradually upgrade toward PHPUnit 6 with namespaced classes</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = "https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/";
+        this.page.identifier = "https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/";
+        this.page.title = "Is it all PHP OPCache's fault?";
+    };
+
+    (function () {
+        var d = document, s = d.createElement('script');
+
+        s.src = '//facile-it.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <a href="/" style="border-bottom: none"><img src="/images/logo_engineering.png" width="100%" alt="Facile.it Engineering" /></a>
+                
+            
+            
+                <header>
+                    <h2></h2>
+                    <p>News, repos, tips & trends from the Facile.it Engineering team!</p>
+                </header>
+            
+            
+                <ul class="icons">
+                    
+<li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+<li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+<li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+<li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
+            
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
+                                            <img src="https://www.gravatar.com/avatar/84febdc35f5438ae1d2500482e2228fa" alt="Salvatore Cordiano avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
+                                    <h3><a href="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/">Is it all PHP OPCache&#39;s fault?</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2017-10-04'>
+                                        4 October 2017
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
+                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
+                                    <h3><a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/">How to gradually upgrade toward PHPUnit 6 with namespaced classes</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2017-09-12'>
+                                        12 September 2017
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
+                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
+                                    <h3><a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/">Why type hints and interfaces are not visual debt</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2017-05-31'>
+                                        31 May 2017
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Top categories</a></h3>
+                </header>
+
+                
+
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/italiano/">Italiano</a>
+                                <span style="float:right;">34</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/english/">English</a>
+                                <span style="float:right;">27</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/php/">PHP</a>
+                                <span style="float:right;">19</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/conferences/">Conferences</a>
+                                <span style="float:right;">10</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/functional-programming/">Functional programming</a>
+                                <span style="float:right;">10</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/swift/">Swift</a>
+                                <span style="float:right;">8</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/open-source/">Open Source</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/software-testing/">Software testing</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <li>
+                    <ul class="actions">
+                        <li><a href="/categories"
+                            class="button">View more categories</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    
+
+    
+        
+
+    
+        <section id="footer">
+            
+                <ul class="icons">
+                    
+<li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+<li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+<li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+<li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
+            
+
+            <p class="copyright">
+                &copy; <a href="http://www.facile.it/" target="_blank">Facile.it</a> Engineering, leggi <a href="/ita/chi-siamo" target="_blank">chi siamo</a><br>
+                <a href="/ita/disclaimer" rel="nofollow">Disclaimer</a><br>
+                Design <a href="http://html5up.net" rel="nofollow" target="_blank">HTML5 UP</a><br>
+                Ported by <a href="//github.com/jpescador" rel="nofollow" target="_blank">Julio Pescador</a><br>
+                Modified by <a href="//github.com/Jean85" rel="nofollow" target="_blank">Alessandro Lai</a><br>
+                Powered by <a href="//gohugo.io" rel="nofollow" target="_blank">Hugo</a>
+            </p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+        
+
+        
+            <script type="text/javascript" src="/js/jquery.min.js"></script>
+            <script type="text/javascript" src="/js/skel.min.js"></script>
+            <script type="text/javascript" src="/js/util.js"></script>
+            <script type="text/javascript" src="/js/main.js"></script>
+            <script type="text/javascript" src="/js/backToTop.js"></script>
+            <script type="text/javascript" src="/js/highlight.pack.js"></script>
+            <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
+        
+            
+            <script type="text/javascript">
+                hljs.initHighlightingOnLoad();
+                $(function() {
+                    $('.lazy').Lazy();
+                });
+            </script>
+            
+    </body>
+</html>
+

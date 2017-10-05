@@ -18,7 +18,7 @@ _Upon migrating to a new infrastructure we started experiencing cache issues aft
 
 When I started my software developer career, I was very surprised to read the following sentence, attributed to [Phil Karlton](https://martinfowler.com/bliki/TwoHardThings.html): _«There are only two hard things in Computer Science: **cache invalidation** and **naming things**»_. In the beginning I was incredulous, because I didn't really get the sense of these words. Not much later, I started to understand. 
 
-Without digging too much into the past, I'd like to talk about a recent cache issue we experienced in on our production infrastructure. Particularly we noticed a strange behavior after each deploy: immediately after a successful deployment procedure, as we refreshed pages that were modified with the new release, we didn't see the updated code for a while. Actually, the scenario described above is very common with **PHP** web applications. We have seen this behavior in the past but, after we moved to our new production environment, it became more noticeable. Therefore, we decided to investigate it.
+Without digging too much into the past, I'd like to talk about a recent cache issue we experienced in our production infrastructure. Particularly we noticed a strange behavior after each deploy: immediately after a successful deployment procedure, as we refreshed pages that were modified with the new release, we didn't see the updated code for a while. Actually, the scenario described above is very common with **PHP** web applications. We have seen this behavior in the past but, after we moved to our new production environment, it became more noticeable. Therefore, we decided to investigate it.
 
 # Our deployment procedure
 

@@ -68,7 +68,7 @@
 
 
 <meta itemprop="dateModified" content="2017-10-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2707">
+<meta itemprop="wordCount" content="2706">
 
 
 
@@ -369,7 +369,7 @@ ga('send', 'pageview');
 
 <p>When I started my software developer career, I was very surprised to read the following sentence, attributed to <a href="https://martinfowler.com/bliki/TwoHardThings.html">Phil Karlton</a>: <em>«There are only two hard things in Computer Science: <strong>cache invalidation</strong> and <strong>naming things</strong>»</em>. In the beginning I was incredulous, because I didn&rsquo;t really get the sense of these words. Not much later, I started to understand.</p>
 
-<p>Without digging too much into the past, I&rsquo;d like to talk about a recent cache issue we experienced in on our production infrastructure. Particularly we noticed a strange behavior after each deploy: immediately after a successful deployment procedure, as we refreshed pages that were modified with the new release, we didn&rsquo;t see the updated code for a while. Actually, the scenario described above is very common with <strong>PHP</strong> web applications. We have seen this behavior in the past but, after we moved to our new production environment, it became more noticeable. Therefore, we decided to investigate it.</p>
+<p>Without digging too much into the past, I&rsquo;d like to talk about a recent cache issue we experienced in our production infrastructure. Particularly we noticed a strange behavior after each deploy: immediately after a successful deployment procedure, as we refreshed pages that were modified with the new release, we didn&rsquo;t see the updated code for a while. Actually, the scenario described above is very common with <strong>PHP</strong> web applications. We have seen this behavior in the past but, after we moved to our new production environment, it became more noticeable. Therefore, we decided to investigate it.</p>
 
 <h1 id="our-deployment-procedure">Our deployment procedure</h1>
 

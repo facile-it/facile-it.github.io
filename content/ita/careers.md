@@ -38,7 +38,7 @@ Quasi tutte le nostre applicazioni si basano sulla piattaforma LAMP. Per entrare
  * Ti senti a tuo agio nell’interrogare e progettare database?
  * Ami lavorare in team e condividere quello che impari?
 
-**E' un valore aggiunto se...**
+**È un valore aggiunto se...**
 
  * conosci i principali Design Pattern;
  * usi sistemi di continuous integration;
@@ -56,7 +56,7 @@ Quasi tutte le nostre applicazioni si basano sulla piattaforma LAMP. Per entrare
  * Ami lavorare in team e condividere quello che impari?
  * Ti interessa progredire nelle tue abilità tecniche, studiare e migliorarti costantemente?
 
-**E' un valore aggiunto se...**
+**È un valore aggiunto se...**
 
  * hai esperienza approfondita con uno dei principali framework (Symfony 2 / 3, Zend 2 / 3, etc);
  * hai esperienza approfondita con test automatici e TDD;

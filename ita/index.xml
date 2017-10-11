@@ -31,35 +31,11 @@
       <guid>https://engineering.facile.it/ita/careers/</guid>
       <description>
 
-&lt;h3 id=&#34;web-developer&#34;&gt;Web Developer&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/careers/banner.png&#34; alt=&#34;Facile.it - lavora con noi!&#34; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Facile.it è in costante crescita e siamo sempre alla ricerca di programmatori da aggiungere al nostro team. Questa proposta è rivolta a sviluppatori PHP di grande esperienza, che credono nell’innovazione e sono sempre attenti alle nuove tecnologie e non vedono l’ora di metterle in pratica. Siamo un gruppo di lavoro dinamico, giovane e divertente. Siamo in totale 20 programmatori e gestiamo diversi progetti con vari stack tecnologici: Symfony2, Zend 2 e anche qualcosa fatto in casa.&lt;/p&gt;
+&lt;p&gt;Facile.it è in costante crescita e siamo sempre alla ricerca di programmatori da aggiungere al nostro team. Questa proposta è rivolta a sviluppatori PHP di grande esperienza, che credono nell’innovazione e sono sempre attenti alle nuove tecnologie e non vedono l’ora di metterle in pratica. Siamo un gruppo di lavoro dinamico, giovane e divertente. Siamo in totale quasi 40 programmatori e gestiamo diversi progetti con vari stack tecnologici: Symfony 3, ZendFramework 3 e anche qualcosa fatto in casa.&lt;/p&gt;
 
-&lt;p&gt;Tutte le nostre applicazioni si basano sulla piattaforma LAMP. Per entrare nel nostro team devi quindi conoscere bene strumenti quali Linux, Apache, MySQL e PHP, oltre a rispondere “sì” a queste domande:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ti appassiona la programmazione a oggetti ed usi i principali Design Pattern?&lt;/li&gt;
-&lt;li&gt;Scrivi codice pulito (Coding Standards) e sai gestire correttamente le dipendenze (Composer)?&lt;/li&gt;
-&lt;li&gt;Sei capace di gestire cospicui flussi di dati da webservice?&lt;/li&gt;
-&lt;li&gt;Se parliamo di HTTP e REST sai a cosa alludiamo?&lt;/li&gt;
-&lt;li&gt;Ti senti a tuo agio nel progettare database MySQL che dovranno trattare milioni di record?&lt;/li&gt;
-&lt;li&gt;Hai dimestichezza con almeno uno tra Backbone.js, Ember.js o AngularJs? (jQuery è d’obbligo!)&lt;/li&gt;
-&lt;li&gt;Sei in grado di raccogliere specifiche, analizzarle e proporre soluzioni concrete?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;em&gt;Son da considerarsi titoli preferenziali:&lt;/em&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Conoscenza Framework PHP (Symfony2 o Zend Framework 2)&lt;/li&gt;
-&lt;li&gt;Esperienza con test automatici (meglio ancora TDD)&lt;/li&gt;
-&lt;li&gt;Conoscenza delle espressioni regolari&lt;/li&gt;
-&lt;li&gt;Doti sistemistiche ambiente Linux&lt;/li&gt;
-&lt;li&gt;Abitudine all&amp;rsquo;utilizzo di sistemi di versionamento del codice (noi usiamo GIT!)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jobs.facile.it/chi-cerchiamo/candidati.html&#34; target=&#34;\_blank&#34;&gt;Candidati »&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;cosa-offriamo-in-facile-it&#34;&gt;Cosa offriamo in Facile.it:&lt;/h3&gt;
+&lt;h1 id=&#34;cosa-offriamo-in-facile-it&#34;&gt;Cosa offriamo in Facile.it:&lt;/h1&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Assunzione a tempo indeterminato con RAL in base alla tua esperienza + fondo salute integrativo&lt;/li&gt;
@@ -71,6 +47,52 @@
 &lt;li&gt;Sala relax con sofà, ping-pong e calcetto&lt;/li&gt;
 &lt;li&gt;Convenzioni (bar, ristoranti, palestre and more!), Ticket Restaurant, caffè, acqua e frutta fresca ogni giorno&lt;/li&gt;
 &lt;li&gt;Fare il lavoro che ami in una realtà italiana di successo con un top team al tuo fianco&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://jobs.facile.it/chi-cerchiamo/candidati.html&#34; target=&#34;\_blank&#34;&gt;Candidati »&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Quasi tutte le nostre applicazioni si basano sulla piattaforma LAMP. Per entrare nel nostro team devi quindi conoscere bene strumenti quali Linux, Apache, MySQL e PHP, oltre a rispondere “sì” a queste domande:&lt;/p&gt;
+
+&lt;h1 id=&#34;candidato-base&#34;&gt;Candidato base&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Ti appassiona la programmazione, in particolare la programmazione a oggetti?&lt;/li&gt;
+&lt;li&gt;Hai mai lavorato con web service?&lt;/li&gt;
+&lt;li&gt;Hai familiarità con librerie JS come jQuery?&lt;/li&gt;
+&lt;li&gt;Ti senti a tuo agio nell’interrogare e progettare database?&lt;/li&gt;
+&lt;li&gt;Ami lavorare in team e condividere quello che impari?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;E&amp;rsquo; un valore aggiunto se&amp;hellip;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;conosci i principali Design Pattern;&lt;/li&gt;
+&lt;li&gt;usi sistemi di continuous integration;&lt;/li&gt;
+&lt;li&gt;hai esperienza con test automatici (TDD);&lt;/li&gt;
+&lt;li&gt;sei appassionato di Open Source;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&#34;candidato-senior&#34;&gt;Candidato senior&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;La programmazione a oggetti è il tuo pane quotidiano?&lt;/li&gt;
+&lt;li&gt;Hai almeno cinque anni di esperienza come sviluppatore web?&lt;/li&gt;
+&lt;li&gt;Utilizzi un sistema di versionamento del codice (preferibilmente Git)?&lt;/li&gt;
+&lt;li&gt;Sai cosa sono i design pattern, le regole del SOLID e li utilizzi?&lt;/li&gt;
+&lt;li&gt;Conosci i principi del REST?&lt;/li&gt;
+&lt;li&gt;Hai sviluppato delle API REST e del codice per consumarle?&lt;/li&gt;
+&lt;li&gt;Ami lavorare in team e condividere quello che impari?&lt;/li&gt;
+&lt;li&gt;Ti interessa progredire nelle tue abilità tecniche, studiare e migliorarti costantemente?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;E&amp;rsquo; un valore aggiunto se&amp;hellip;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;hai esperienza approfondita con uno dei principali framework (Symfony &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt;, Zend &lt;sup&gt;2&lt;/sup&gt;&amp;frasl;&lt;sub&gt;3&lt;/sub&gt;, etc);&lt;/li&gt;
+&lt;li&gt;hai esperienza approfondita con test automatici e TDD;&lt;/li&gt;
+&lt;li&gt;usi sistemi di continuous integration;&lt;/li&gt;
+&lt;li&gt;hai un account su GitHub e hai dimestichezza col software Open Source;&lt;/li&gt;
+&lt;li&gt;ti interessa lavorare con altre tecnologie quali Docker, RabbitMQ, MongoDB.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

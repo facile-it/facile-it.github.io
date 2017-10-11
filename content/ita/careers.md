@@ -6,6 +6,7 @@ share: true
 title: "Careers"
 
 image: "/images/careers/banner.png"
+twitterlargeimage: "/images/careers/banner.png"
 
 ---
 
@@ -57,7 +58,7 @@ Quasi tutte le nostre applicazioni si basano sulla piattaforma LAMP. Per entrare
 
 **E' un valore aggiunto se...**
 
- * hai esperienza approfondita con uno dei principali framework (Symfony 2/3, Zend 2/3, etc);
+ * hai esperienza approfondita con uno dei principali framework (Symfony 2 / 3, Zend 2 / 3, etc);
  * hai esperienza approfondita con test automatici e TDD;
  * usi sistemi di continuous integration;
  * hai un account su GitHub e hai dimestichezza col software Open Source;

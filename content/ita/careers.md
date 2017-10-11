@@ -42,7 +42,7 @@ Quasi tutte le nostre applicazioni si basano sulla piattaforma LAMP. Per entrare
 
  * conosci i principali Design Pattern;
  * usi sistemi di continuous integration;
- * hai esperienza con test automatici (TDD);
+ * hai esperienza con test automatici;
  * sei appassionato di Open Source;
 
 # Candidato senior

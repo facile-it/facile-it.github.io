@@ -18,7 +18,7 @@ Facile.it è in costante crescita e siamo sempre alla ricerca di programmatori d
 
 - Assunzione a tempo indeterminato con RAL in base alla tua esperienza + fondo salute integrativo
 - Possibilità di crescita economica in base alle nuove competenze acquisite
-- 1 venerdì al mese fuori ufficio dedicato alla condivisione ed allo studio col team
+- Un venerdì al mese dedicato alla formazione e al team building
 - Biblioteca di libri di tecnologia con più di 100 titoli
 - Budget annuale di 1.500€ per l’hardware e software di cui hai bisogno
 - Partecipazione ad eventi di tecnologia a nostro carico (Pragma Conference, Droidcon, Codemotion, etc)

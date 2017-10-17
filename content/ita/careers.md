@@ -16,15 +16,15 @@ Facile.it è in costante crescita e siamo sempre alla ricerca di programmatori d
 
 # Cosa offriamo in Facile.it:
 
-- Assunzione a tempo indeterminato con RAL in base alla tua esperienza + fondo salute integrativo
-- Possibilità di crescita economica in base alle nuove competenze acquisite
-- Un venerdì al mese dedicato alla formazione e al team building
-- Biblioteca di libri di tecnologia con più di 100 titoli
-- Budget annuale di 1.500€ per l’hardware e software di cui hai bisogno
-- Partecipazione ad eventi di tecnologia a nostro carico (Pragma Conference, Droidcon, Codemotion, etc)
-- Sala relax con sofà, ping-pong e calcetto
-- Convenzioni (bar, ristoranti, palestre and more!), Ticket Restaurant, caffè, acqua e frutta fresca ogni giorno
-- Fare il lavoro che ami in una realtà italiana di successo con un top team al tuo fianco
+ * Assunzione a tempo indeterminato con RAL in base alla tua esperienza + fondo salute integrativo
+ * Possibilità di crescita economica in base alle nuove competenze acquisite
+ * Un venerdì al mese dedicato alla formazione e al team building
+ * Biblioteca di libri di tecnologia con più di 100 titoli
+ * Budget annuale di 1.500€ per l’hardware e software di cui hai bisogno
+ * Partecipazione ad eventi di tecnologia a nostro carico (Pragma Conference, Droidcon, Codemotion, etc)
+ * Sala relax con sofà, ping-pong e calcetto
+ * Convenzioni (bar, ristoranti, palestre and more!), Ticket Restaurant, caffè, acqua e frutta fresca ogni giorno
+ * Fare il lavoro che ami in una realtà italiana di successo con un top team al tuo fianco
 
 <a href="http://jobs.facile.it/chi-cerchiamo/candidati.html" target="\_blank">Candidati »</a>
 
@@ -43,7 +43,7 @@ Quasi tutte le nostre applicazioni si basano sulla piattaforma LAMP. Per entrare
  * conosci i principali Design Pattern;
  * usi sistemi di continuous integration;
  * hai esperienza con test automatici;
- * sei appassionato di Open Source;
+ * sei appassionato di Open Source.
 
 # Candidato senior
  

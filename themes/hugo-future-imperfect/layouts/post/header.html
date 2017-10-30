@@ -12,13 +12,13 @@
         {{ with .Params.ita }}
             <p class="translated-article">
                 Questo articolo è disponibile anche
-                <a href="/blog/ita/{{ . }}">in italiano</a>
+                <a href="/blog/ita/{{ . }}/">in italiano</a>
             </p>
         {{ end }}
         {{ with .Params.eng }}
             <p class="translated-article">
                 This article is also available
-                <a href="/blog/eng/{{ . }}">in english</a>
+                <a href="/blog/eng/{{ . }}/">in english</a>
             </p>
         {{ end }}
     </div>
@@ -34,7 +34,7 @@
         </time>
 
         {{ range .Params.authors }}
-            <a href="/authors/{{ . }}" class="author">
+            <a href="/authors/{{ . }}/" class="author">
             {{ with index $.Site.Data.authors . }}
                 <span class="name">{{ .name }}</span>
                 <img src="{{ .thumbnail }}" alt="{{ .name }} avatar" />

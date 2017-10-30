@@ -1,50 +1,57 @@
 # Facile.it Engineering Blog
-This is the repo behind [http://engineering.facile.it/](http://engineering.facile.it/)
+
+This is the repo behind [https://engineering.facile.it/](https://engineering.facile.it/).
 
 ## Cloning instructions
+
 ```
 git clone git@github.com:facile-it/facile-it.github.io.git
 ```
+
 ## Usage
+
  * No need to install anything, Hugo binaries are committed in the repo (for Linux and OSX, both x64)
  * To serve the site locally (with drafts enabled):
+
 ```
-./hugo server --buildDrafts
+./hugo server -D
 ```
 or, if you are on Windows:
+
 ```
-bin\hugo.exe server --buildDrafts
+bin\hugo.exe server -D
 ```
 
- * To deploy the blog: 
+ * To deploy the blog:
+ 
 ```
 ./deploy
 ```
 
 ## Front matter documentation
 
-`authors`: an array of the authors of the article; the names must match the .yml files in the `/data/authors` folder
+`authors`: an array of the authors of the article; the names must match the .yml files in the `/data/authors` folder;
 
-`comments`: enables Disqus at the end of the page (disabled anyway when serving locally)
+`comments`: enables Disqus at the end of the page (disabled anyway when serving locally);
 
-`date`: the supposed date of publishing
+`date`: the supposed date of publishing;
 
-`draft`: to enable a draft status, which will block the article from being published during a deploy
+`draft`: to enable a draft status, which will block the article from being published during a deploy;
 
-`share`: if true, enables the social sharing buttons
+`share`: if true, enables the social sharing buttons;
 
-`categories`: the categories where the article will be listed under; watch out for caps matching, and add always the language category
+`categories`: the categories where the article will be listed under; watch out for caps matching, and add always the language category;
 
-`title`: the title of the article
+`title`: the title of the article;
 
-`languageCode`: suggested, not needed, default is "en-En"
+`languageCode`: suggested, not needed, default is "en-En";
 
-`type`: always "post" for articles
+`type`: always "post" for articles;
 
-`aliases`: an array of URLS which will redirect to this page; used for the transition from the old site
+`aliases`: an array of URLS which will redirect to this page; used for the transition from the old site;
 
-`ita` or `eng`: the file name of the article of the opposite language, to obtain cross-linking between translations
+`ita` or `eng`: the file name of the article of the opposite language, to obtain cross-linking between translations;
 
-`twitterImage`: used for the twitter cards when sharing the url of this page; needs to be at least 120x120, will be cropped to square. If not specified, the ENGR logo will be used
+`twitterImage`: used for the twitter cards when sharing the url of this page; needs to be at least 120x120, will be cropped to square. If not specified, the ENGR logo will be used;
 
 `twitterLargeImage`: used for the twitter cards too; needs to be at least 280x150px.

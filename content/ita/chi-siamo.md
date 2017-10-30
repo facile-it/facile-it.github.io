@@ -6,7 +6,7 @@ share: true
 title: "Chi siamo"
 ---
 
-This page is also available in <a href="/eng/who-we-are">english</a>.
+This page is also available in <a href="/eng/who-we-are/">english</a>.
 
 Facile.it ha un nutrito e appassionato gruppo di sviluppatori. I progetti del gruppo Facile.it si basano su PHP fin dal 2008, più il tempo passa più nuove tecnologie entrano a far parte del Know How aziendale.
 Questo Blog permette ai nostri sviluppatori di condividere consigli ed esperienze dirette con le tecnologie che usano quotidianamente.

@@ -6,7 +6,7 @@ share: true
 title: "Who we are"
 ---
 
-Questa pagina è disponibile anche in <a href="/ita/chi-siamo">italiano</a>.
+Questa pagina è disponibile anche in <a href="/ita/chi-siamo/">italiano</a>.
 
 Facile.it rely on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. 
 This blog allows our developers to share tips and direct experiences with new technologies.

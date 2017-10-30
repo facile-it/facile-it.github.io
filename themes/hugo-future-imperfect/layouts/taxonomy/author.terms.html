@@ -20,7 +20,7 @@
                     <article>
                         <header>
                             {{ with index $.Site.Data.authors $value.Name }}
-                                <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}">
+                                <a href="/{{ $data.Plural }}/{{ $value.Name | urlize }}/">
                                     <img src="{{ .thumbnail }}" alt="{{ .name }} avatar" style="margin-right:8px; vertical-align: text-top; float:left; border-radius: 100%; display: block; width: 3.5em;"/>
                                     {{ .name }}
                                 </a>

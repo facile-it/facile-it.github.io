@@ -66,22 +66,22 @@ menu:
   main:
     - categories:
       name: "Categories"
-      url: "/categories"
+      url: "/categories/"
       identifier: "fa fa-folder-open-o"
       weight: 2
     - categories:
       name: "Authors"
-      url: "/authors"
+      url: "/authors/"
       identifier: "fa fa-pencil"
       weight: 3
     - categories:
       name: "Careers"
-      url: "/ita/careers"
+      url: "/ita/careers/"
       identifier: "fa fa-briefcase"
       weight: 4
     - categories:
       name: "Who we are"
-      url: "/eng/who-we-are"
+      url: "/eng/who-we-are/"
       identifier: "fa fa-users"
       weight: 5
 

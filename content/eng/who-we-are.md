@@ -8,7 +8,7 @@ title: "Who we are"
 
 Questa pagina è disponibile anche in <a href="/ita/chi-siamo/">italiano</a>.
 
-Facile.it rely on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. 
+Facile.it relies on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. 
 This blog allows our developers to share tips and direct experiences with new technologies.
 
 Facile.it is the leading price comparison website in Italy; also Assicurazione.it, Prestiti.it and Mutui.it are part of the Group. Every month we help more than 1.5 million Italians to cut their expenses, thanks to our broadband offers comparaison service. People can also save money by confronting the deals of our providers for car insurances or motorbike insurances.

@@ -22,7 +22,7 @@ Facile.it è in costante crescita e siamo sempre alla ricerca di programmatori d
  * Biblioteca di libri di tecnologia con più di 100 titoli
  * Budget annuale di 1.500€ per l’hardware e software di cui hai bisogno
  * Partecipazione ad eventi di tecnologia a nostro carico (Pragma Conference, Droidcon, Codemotion, etc)
- * Sala relax con sofà, ping-pong e calcetto
+ * Ufficio in centro a Milano (MM3 Missori) con sala relax, sofà, ping-pong e calcetto
  * Convenzioni (bar, ristoranti, palestre and more!), Ticket Restaurant, caffè, acqua e frutta fresca ogni giorno
  * Fare il lavoro che ami in una realtà italiana di successo con un top team al tuo fianco
 

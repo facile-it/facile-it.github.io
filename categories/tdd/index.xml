@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Jun 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/categories/tdd/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/categories/tdd/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>How PHP 7 &amp; TDD helped me sleep better</title>
@@ -15,86 +17,9 @@
       <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
-      <description>
-
-&lt;h1 id=&#34;the-enemies-of-programming&#34;&gt;The enemies of programming&lt;/h1&gt;
-
-&lt;p&gt;As many of you will agree with me, &lt;strong&gt;sleep deprivation&lt;/strong&gt; is the enemy of programming.&lt;br /&gt;
-Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;/strong&gt;.
-&lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;a href=&#34;http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/&#34;&gt;&lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/interruption.png&#34; alt=&#34;Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)&#34; /&gt;&lt;/a&gt;
-&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.&lt;/p&gt;
-
-&lt;h1 id=&#34;my-experience&#34;&gt;My experience&lt;/h1&gt;
-
-&lt;p&gt;On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5.5, Symfony 2.8, Doctrine etc.; luckily, in this project we use a good deal of &lt;strong&gt;good practices&lt;/strong&gt;, and &lt;strong&gt;automated software testing&lt;/strong&gt; is one of those. I actually switched to this job to learn about doing automatic testing, continuous integration and other best practices.&lt;/p&gt;
-
-&lt;p&gt;Almost half a year ago &lt;strong&gt;I became a dad&lt;/strong&gt;. It has been great, and you also get some unexpected perks! For example, my colleagues got me this gift for my son:
-&lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg&#34; alt=&#34;A blue elePHPant!&#34; /&gt;
-&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;So, we can say that his future is pretty clear&amp;hellip; But don&amp;rsquo;t say this to my wife!&lt;/p&gt;
-
-&lt;p&gt;During the pregnancy, many of my friends and fellow parents warned me half jokingly about one thing: &lt;em&gt;&amp;ldquo;sleep now, you&amp;rsquo;ll be deadly tired after!&amp;rdquo;&lt;/em&gt;. Now I can say that they were a bit exaggerating, but I can&amp;rsquo;t deny that, having a child takes a toll on your sleep schedule&amp;hellip; Even if, as in my case having a 9 to 6 office job, my wonderful wife does all the parenting heavy lifting (and I consider myself pretty lucky for having her!).&lt;/p&gt;
-
-&lt;p&gt;A few months after my son was born I also had the opportunity to start &lt;strong&gt;a new, fresh project&lt;/strong&gt;. To be completely honest, it was not actually fresh: it was a &lt;strong&gt;complete rewrite&lt;/strong&gt; of an internal service that&amp;rsquo;s used to manage the invoices for multiple business units inside our company. I knew pretty well that the old system had to be replaced, so I was put in charge of redoing it from scratch.&lt;/p&gt;
-
-&lt;p&gt;One of the issue with the old system (and the main reason behind the rewrite) was &lt;strong&gt;maintainability&lt;/strong&gt;: we had no tests, we had no proper development environment, and its design wasn&amp;rsquo;t that great; also, bureaucracy and invoicing are the core domain of the system, so it was inherently complex. It was the perfect environment to witness the &lt;a href=&#34;https://en.wikipedia.org/wiki/Broken_windows_theory&#34;&gt;broken windows theory&lt;/a&gt; in action: the code base got worse over time, one patch, copy paste or quick fix at a time.&lt;/p&gt;
-
-&lt;p&gt;Obviously, as anyone that&amp;rsquo;s passionate in technology would do, I took the opportunity to use a lot of new shiny tools: I picked &lt;strong&gt;PHP 7&lt;/strong&gt;, which had just been released, and started the project with something familiar to me but still pretty new and cool, &lt;strong&gt;Symfony 3.0&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;what-i-found-to-be-useful&#34;&gt;What I found to be useful&lt;/h1&gt;
-
-&lt;p&gt;I rambled and thought about this project a lot in the past months with my colleagues, because the old system was costing us a lot of overhead in usage and maintenance, and we had a pretty clear idea of what its problems were, so I didn&amp;rsquo;t need to study a lot before starting to write the first classes.&lt;/p&gt;
-
-&lt;p&gt;Thus, I had to spend &lt;em&gt;some&lt;/em&gt; time thinking about an object oriented design for my project, but I was rapidly able to start writing code with confidence. In the end, most of this confidence came from a few choices that I pursued during the development of this project.&lt;/p&gt;
-
-&lt;h2 id=&#34;tdd-and-high-coverage&#34;&gt;TDD and high coverage&lt;/h2&gt;
-
-&lt;p&gt;The first choice that I am pretty satisfied about is &lt;strong&gt;automatic testing&lt;/strong&gt;: I already knew the advantages of doing tests and Test Driven Development, but in the previous project that practice was not introduced from the start, so not all the codebase was covered, and we couldn&amp;rsquo;t (or wouldn&amp;rsquo;t?) do TDD 100% of the time.&lt;/p&gt;
-
-&lt;p&gt;In this case instead &lt;strong&gt;I wanted to write nearly everything with TDD&lt;/strong&gt;, and keep a &lt;strong&gt;very high threshold for the minimum coverage&lt;/strong&gt; achieved through automatic testing. Right now I&amp;rsquo;m sitting on a ~92% test coverage, and I feel proud about it. This wasn&amp;rsquo;t a mere &amp;ldquo;let&amp;rsquo;s hit 100%!&amp;rdquo; mindless goal (&lt;a href=&#34;https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/&#34;&gt;since it&amp;rsquo;s pointless&lt;/a&gt;), but it fueled &lt;strong&gt;a positive feedback cycle&lt;/strong&gt; instead: the more I used TDD in writing new classes, the more the coverage rose and stayed high; at the same time, I found myself inspecting the coverage reports to find missing spots, and that allowed me to discover many edge-cases that I didn&amp;rsquo;t test and should have been.&lt;/p&gt;
-
-&lt;p&gt;Of course, I still left some parts without coverage or specific tests, since it was pointless to test them (e.g. Doctrine entities), while I covered some parts multiple times, since they were &lt;strong&gt;critical paths&lt;/strong&gt; inside my application.&lt;/p&gt;
-
-&lt;h2 id=&#34;unit-tests-to-the-rescue&#34;&gt;Unit tests to the rescue!&lt;/h2&gt;
-
-&lt;p&gt;Last but not least, the main critical advantage that TDD gave me was &lt;strong&gt;focus even on strained days&lt;/strong&gt;: I wrote the classes starting from unit tests, giving all my effort to one piece of code at a time, without having to keep in mind the entire project with its complexities.&lt;/p&gt;
-
-&lt;p&gt;I then wrote some functional tests to assure that the &lt;strong&gt;collaboration between my unit-tested objects&lt;/strong&gt; was fine, and this later step was also useful in delaying the definition of the classes as services inside the Symfony DI container. I was also &lt;strong&gt;able to change my mind&lt;/strong&gt; a few times on some details of the design without having to suffer mental confusion or rewrite too much code.&lt;/p&gt;
-
-&lt;h2 id=&#34;php-7-scalar-and-return-types-declarations&#34;&gt;PHP 7: scalar and return types declarations&lt;/h2&gt;
-
-&lt;p&gt;The second good choice was &lt;strong&gt;PHP 7&lt;/strong&gt;: among the reasons behind it as the language version of choice for this project were the &lt;a href=&#34;http://php.net/manual/en/migration70.new-features.php&#34;&gt;two main new features&lt;/a&gt; introduced: &lt;strong&gt;scalar types&lt;/strong&gt; and &lt;strong&gt;return type declarations&lt;/strong&gt;.
-&lt;p style=&#34;text-align: center;&#34;&gt;
-    &lt;img src=&#34;https://engineering.facile.it/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg&#34; alt=&#34;Return types, return types everywhere!&#34; /&gt;
-&lt;/p&gt;&lt;/p&gt;
-
-&lt;p&gt;Before Facile.it, I worked as C++ developer, and oh boy! did I miss scalars and return types!&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&amp;ldquo;I came onboard of the PHP community right on time&amp;rdquo;&lt;/em&gt;, I thought&amp;hellip; So I took advantage of the situation to start using all these new features. I enjoyed having again the possibility to typehint strings and integers; I discovered how return types declaration enforces the cohesion of your objects really well, making it &lt;strong&gt;rightly painful to return different things&lt;/strong&gt;: it became impossible to return &lt;em&gt;something&lt;/em&gt; OR &lt;em&gt;null&lt;/em&gt;, for example.&lt;/p&gt;
-
-&lt;p&gt;Interestingly, in my tests I found myself writing a lot of this kind of code:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$result = $testClass-&amp;gt;method();
-$this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I did this more than once, just to realize that I was wasting my time! This was normally the first TDD step on PHP 5.x code, but now this kinds of assertion were futile, because the return type was already checked at a language level! Great!&lt;/p&gt;
-
-&lt;p&gt;Return types also proved themselves to be a &lt;strong&gt;double-edged sword&lt;/strong&gt; in some cases, especially on Doctrine entities: they are really useful to enforce consistency in your values, since they trigger a &lt;code&gt;\TypeError&lt;/code&gt; each time you call a getter method on a erroneously empty property, but &lt;strong&gt;you can&amp;rsquo;t use them on nullable fields&lt;/strong&gt;, since it will break your application at any time during execution.&lt;/p&gt;
-
-&lt;p&gt;On the other hand, having return types declared on your business-logic classes it&amp;rsquo;s pretty useful, even more when used in conjunction with TDD: every time you define a mock you are forced to declare expectations and predictions with the right types, so it &lt;strong&gt;indirectly helps maintaining the collaboration contract between objects&lt;/strong&gt;, without too much hassle. If I changed a method&amp;rsquo;s signature that was mocked somewhere, the mock would break the test, &lt;strong&gt;highlighting the issue and making the tests&lt;/strong&gt; (and an high coverage) &lt;strong&gt;even more valuable&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h1 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h1&gt;
-
-&lt;p&gt;At the end of the day, these and other &lt;strong&gt;good practices are helpful&lt;/strong&gt; for both your job and your personal life: you can go a long way in being fit and in the best shape while working, but stressful and (good) distracting events are unavoidable: you&amp;rsquo;ll often have to fight stress, fatigue or distractions, and there will be days where you can&amp;rsquo;t be at the top of your game, for any number of reasons.&lt;/p&gt;
-
-&lt;p&gt;Since programming is a mental job, I think that having instruments and good practices in your toolset is invaluable, being them the &lt;strong&gt;essential tools of our craft&lt;/strong&gt;. Thus, I hope that those little life/programming lessons I learned in these months will be useful to other people like me.&lt;/p&gt;
-</description>
+      <description>The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
+Maybe we fear only one thing more than that: being interrupted.  While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.
+My experience On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5.</description>
     </item>
     
     <item>
@@ -103,136 +28,9 @@ $this-&amp;gt;assertInstanceOf(SomeClass::class, $result);
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
-      <description>
-
-&lt;p&gt;Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.&lt;/p&gt;
-
-&lt;p&gt;Numerosi sono i fattori che hanno reso il code coverage popolare:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;è una metrica facile da comprendere;&lt;/li&gt;
-&lt;li&gt;si misura senza difficoltà;&lt;/li&gt;
-&lt;li&gt;è oggettiva e imparziale;&lt;/li&gt;
-&lt;li&gt;è universale (applicabile a tutti i paradigmi di programmazione).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Ma al di là di questi vantaggi, &lt;strong&gt;&lt;em&gt;possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;quando-un-test-è-efficace&#34;&gt;Quando un test è efficace?&lt;/h3&gt;
-
-&lt;p&gt;Una test suite è considerata efficace se consente di rilevare una grande quantità di failure; d&amp;rsquo;altronde, ciò è proprio la finalità ultima del software testing.
-La massima efficacia è realizzabile solo applicando testing esaustivo ma, siccome ciò è spesso impraticabile, ci si accontenta di test più semplici con un&amp;rsquo;efficacia inferiore.
-È importante notare che, a differenza del coverage, il livello d&amp;rsquo;efficacia viene stabilito soggettivamente dallo sviluppatore.&lt;/p&gt;
-
-&lt;h3 id=&#34;quanti-tipi-di-coverage&#34;&gt;Quanti tipi di coverage?&lt;/h3&gt;
-
-&lt;p&gt;La copertura può essere misurata in molti modi differenti. Essa è sempre un rapporto tipicamente espresso in forma percentuale.&lt;/p&gt;
-
-&lt;p&gt;La formula per il calcolo del coverage è la seguente:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Notare il termine generico &lt;em&gt;obiettivo&lt;/em&gt;: diverse tipologie di coverage hanno obiettivi differenti.
-Qui di seguito è presente un elenco esemplificativo e non esaustivo delle diverse tipologie di coverage:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Statement coverage&lt;/li&gt;
-&lt;li&gt;Branch coverage (o decision coverage)&lt;/li&gt;
-&lt;li&gt;Condition coverage&lt;/li&gt;
-&lt;li&gt;Function/Method coverage&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Nel corso di quest&amp;rsquo;articolo si fa riferimento sempre allo Statement coverage, talvolta chiamato semplicemente &amp;ldquo;coverage&amp;rdquo;.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h3 id=&#34;un-esempio-pratico&#34;&gt;Un esempio pratico&lt;/h3&gt;
-
-&lt;h4 id=&#34;funzione-under-test&#34;&gt;Funzione under-test&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def weightedAverage(array):
-	sum = weightSum = 0     # Bug, dovrebbe essere: sum = weightSum = 0.0
-	for (value, weight) in array:
-		sum += value        # Bug, dovrebbe essere: sum += value * weight
-		weightSum += weight
-	return sum / weightSum
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Le specifiche della funzione &lt;em&gt;weightedAverage&lt;/em&gt; sono le seguenti:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Calcolare la media ponderata di un array contenente coppie di valori.&lt;br /&gt;
-Ad esempio: &lt;code&gt;[(10, 2), (11, 4), (5, 1)]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Restituire sempre un risultato di tipo float.&lt;/li&gt;
-&lt;li&gt;Non effettuare divisione tra interi per non ridurre la precisione del risultato.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I commenti già presenti nel codice evidenziano due errori importanti:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;La media non è calcolata correttamente: l&amp;rsquo;istruzione &lt;code&gt;sum += value&lt;/code&gt; dovrebbe essere &lt;code&gt;sum += value * weight&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;L&amp;rsquo;output della funzione non è di tipo float se i dati di input sono interi.&lt;br /&gt;
-L&amp;rsquo;errore è risolvibile modificando &lt;code&gt;sum = weightSum = 0&lt;/code&gt; in &lt;code&gt;sum = weightSum = 0.0&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;test-suite-1&#34;&gt;Test suite #1&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def testWeightedAverage():
-	expected = 25.0
-	inputArray = [(24, 1), (26, 1)]
-	actual = weightedAverage(inputArray)
-	if expected == actual:
-		print &#39;Okay&#39;
-	else:
-		print &#39;Failure!&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;La test suite #1 ha statement coverage 100%, tuttavia non consente di rilevare i due errori menzionati in precedenza. Sebbene la coverage sia alta, l&amp;rsquo;efficacia è molto bassa.&lt;/p&gt;
-
-&lt;h4 id=&#34;test-suite-2&#34;&gt;Test suite #2&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def testWeightedAverageDifferentWeight():
-	expected = 26.0
-	inputArray = [(24, 1), (27, 2)]
-	actual = weightedAverage(inputArray)
-	if expected == actual:
-		print &#39;Okay&#39;
-	else:
-		print &#39;Failure!&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;La test suite #2 ha statement coverage 100%, ma non consente di verificare correttamente che l&amp;rsquo;output della funzione sia di tipo float.
-Il primo errore viene rilevato, il secondo no.
-È importante notare che questo problema viene risolto aggiungendo l&amp;rsquo;asserzione &lt;code&gt;type(actual) is float&lt;/code&gt;.&lt;br /&gt;
-Le asserzioni sono parte fondamentale del testing; date loro la giusta importanza! Ogni buona asserzione in più consente di migliorare sensibilmente l&amp;rsquo;efficacia dei vostri test case.&lt;/p&gt;
-
-&lt;h4 id=&#34;test-suite-3&#34;&gt;Test suite #3&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def testWeightedAverageFloatResult():
-	expected = 27.2
-	inputArray = [(24, 1), (28, 4)]
-	actual = weightedAverage(inputArray)
-	if expected == actual:
-		print &#39;Okay&#39;
-	else:
-		print &#39;Failure!&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;La test suite #3 ha statement coverage 100% ed è efficace perché ci consente di rilevare tutti gli errori.&lt;/p&gt;
-
-&lt;h3 id=&#34;conclusioni&#34;&gt;Conclusioni&lt;/h3&gt;
-
-&lt;p&gt;Abbiamo visto che percentuali di coverage alte non sempre implicano test efficaci.
-Tuttavia test suite efficaci hanno necessariamente bisogno di coverage rate alti.
-In temini logici possiamo quindi affermare che:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--1-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Coverage rate bassi sono un campanello d&amp;rsquo;allarme che ci consente di stabilire la scarca efficacia dei test.
-Possiamo infatti affermare che:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/software-testing-coverage-vs-efficacia/CodeCogsEqn--2-.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-</description>
+      <description>Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.
+Numerosi sono i fattori che hanno reso il code coverage popolare:
+ è una metrica facile da comprendere; si misura senza difficoltà; è oggettiva e imparziale; è universale (applicabile a tutti i paradigmi di programmazione).  Ma al di là di questi vantaggi, possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?</description>
     </item>
     
   </channel>

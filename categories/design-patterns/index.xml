@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Apr 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/categories/design-patterns/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/categories/design-patterns/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Il principio OPEN/CLOSE le sue origini e i casi d&#39;uso</title>
@@ -15,161 +17,9 @@
       <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/principio-open-close-le-sue-origini-e-i-casi-d-uso/</guid>
-      <description>
-
-&lt;h2 id=&#34;definizione&#34;&gt;Definizione:&lt;/h2&gt;
-
-&lt;p&gt;Il principio &lt;em&gt;OPEN/CLOSE&lt;/em&gt; fa riferimento all&amp;rsquo;acronimo &lt;a href=&#34;http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)&#34;&gt;SOLID&lt;/a&gt;.  introdotto da  Michael Feathers che riporta alcune &lt;em&gt;buone pratiche&lt;/em&gt; di programmazione ad oggetti ancora di forte attualità.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;OPEN/CLOSE&lt;/em&gt; (la &lt;strong&gt;O&lt;/strong&gt; dell&amp;rsquo;acronimo), nella sua definizione più generale indica che:  un modulo (un oggetto, una classe o un gruppo di funzioni) debba essere &lt;strong&gt;aperto alle estensioni&lt;/strong&gt; ma &lt;strong&gt;chiuso alle modifiche&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Questo principio tuttavia non è altro che la formalizzazione e il raggruppamento di concetti e linee guida già presenti da tempo nella programmazione ad oggetti.&lt;/p&gt;
-
-&lt;h3 id=&#34;chiuso-alle-modifiche&#34;&gt;Chiuso alle modifiche&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Chiuso alle modifiche che potrebbero aver effetto sul client&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Possiamo esprimere questa linea guida anche come  un evoluzione di Single responsibility: Un modulo prodotto con un buon design avrà una responsabilità precisa, definita e, quindi, non vi sarà la necessita di modificare il suo comportamento, &lt;strong&gt;anche alla luce di nuove specifiche&lt;/strong&gt;.
-Per chiarire ancora di più il concetto dobbiamo fare riferimento ad un altro famoso acronimo della programmazioni ad aggetti: GRASP e, in particolare, all&amp;rsquo;idea di &lt;a href=&#34;http://www.martinfowler.com/ieeeSoftware/protectedVariation.pdf&#34;&gt;Protected Variations&lt;/a&gt; (da ora in poi &lt;em&gt;PV&lt;/em&gt;) e di &lt;a href=&#34;http://en.wikipedia.org/wiki/Loose_coupling&#34;&gt;Low coupling&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;In un articolo di &lt;a href=&#34;http://en.wikipedia.org/wiki/Craig_Larman&#34;&gt;Craig Larman&lt;/a&gt; si parla di &lt;em&gt;PV&lt;/em&gt; come la necessità di:&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Nascondere l&amp;rsquo;implementazione (&lt;a href=&#34;http://en.wikipedia.org/wiki/Information_hiding&#34;&gt;information hiding&lt;/a&gt;) e le informazioni legate al design (hidden implementation) agli altri moduli in particolar modo al presentarsi di scelte difficili o cambiamenti molto frequenti.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Questo garantisce, in generale, un livello di flessibilità superiore, si pensi a questo semplice esempio:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/** Questa classe è esposta al client **/
-class ClasseEsterna 
-{
-  private var $oggettoInterno;
-
-  public function incrementa()       {
-    [...]           
-    return $this-&amp;gt;oggettoInterno-&amp;gt;complessaFunzioneDiIncremento();
-  }     
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Si può notare come :&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;L&amp;rsquo;implementazione della &lt;em&gt;complessa&lt;/em&gt; funzione interna è nascosta al client;&lt;/li&gt;
-&lt;li&gt;All&amp;rsquo;evolvere della &lt;strong&gt;complessaFunzioneDiIncremento&lt;/strong&gt; il nostro client sarà ==protetto== dalle modifiche;&lt;/li&gt;
-&lt;li&gt;Abbiamo realizzato un &lt;em&gt;low coupling&lt;/em&gt; fra la l&amp;rsquo;&lt;strong&gt;oggettoInterno&lt;/strong&gt; e il client che utilizza la &lt;strong&gt;ClasseEsterna&lt;/strong&gt;, promuovendo, di fatto, il ==riuso== di &lt;strong&gt;oggettoInterno&lt;/strong&gt; in altri contesti.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;aperto-alle-estensioni&#34;&gt;Aperto alle estensioni:&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;em&gt;Aperto ad essere esteso ed adattato&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Le modalità tramite le quali è possibile modificare il comportamento di un modulo per accogliere le nuove esigenze ed evoluzioni è tramite le estensioni.&lt;/p&gt;
-
-&lt;p&gt;In questo caso il concetto di estensione può essere visto sia in senso stretto (Ereditarietà) sia in senso lato come aggiunta di nuove classi, attributi metodi etc..&lt;/p&gt;
-
-&lt;p&gt;Sembrerebbe che questi due attributi siano in contrapposizione; Il modo classico per estendere il comportamento di un modulo è effettuare modifiche al modulo stesso.
-Un modulo che non può cambiare è solitamente considerato qualcosa che ha un comportamento fisso e che non può evolvere.&lt;/p&gt;
-
-&lt;p&gt;Un esempio è il pattern chain of responsibility che vediamo di seguito.&lt;/p&gt;
-
-&lt;h3 id=&#34;chain-of-responsibility&#34;&gt;Chain of responsibility:&lt;/h3&gt;
-
-&lt;p&gt;Questo pattern risolve un’ampia classe di situazioni nelle quali vi sia la necessità di eseguire operazioni &lt;strong&gt;sequenziali&lt;/strong&gt; e &lt;strong&gt;condizionali&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;La chain of responsibility è composta da 2 soggetti:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;1&lt;/strong&gt; gestore.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;n&lt;/strong&gt; anelli.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;GESTORE:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Nella definizione teorica della catena questo soggetto non esiste!
-Tuttavia, per avvicinarci ad  un implementazione di questo pattern, è necessario utilizzare un vigile della catena che è a conoscenza dello stato globale dell’esecuzione.
-Il gestore ha la responsabilità di chiamare in causa i singoli anelli e di restituire il risultato dell’esecuzione globale.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-PHP&#34;&gt;
-class Gestore
-{
-
-    /**
-     * Il metodo execute chiama in causa tutti gli anelli della catena.
-     * @param Object $oggetto
-     * @return Object
-     **/
-    public function execute(Object $oggetto)
-    {
-
-        // [...]
-
-        foreach ($listaAnelli as $anello) {
-            $anello-&amp;gt;handle($oggetto);
-        }
-
-        // [...]
-
-        return $oggetto;
-
-    }
-
-
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;ANELLI:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I singoli anelli implementano un interfaccia comune che solitamente espone un solo metodo pubblico esempio &lt;em&gt;handle&lt;/em&gt; .&lt;strong&gt;Non possono&lt;/strong&gt; tener conto del risultato di precedenti anelli, non sono a conoscenza dello stato globale dell’esecuzione e possono, quindi, prendere solo decisioni locali.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-PHP&#34;&gt;interface AnelloInterface {
-
- /**
-  * Il metodo handle effettua delle operazioni sull&#39;oggetto in esame.
-  * @param Object $oggetto
-  * @return void
-  **/
- function handle(Object $oggetto);
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;Come rispettiamo PV ? Ovvero, come proteggiamo il client da future evoluzione del sistema?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Il client utilizzerà sempre &lt;strong&gt;la stessa API&lt;/strong&gt; esposta dal gestore della catena. Le modifiche non interesseranno, infatti, il contratto fra client e gestore.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Il sistema è aperto alle estensioni?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;All&amp;rsquo;evoluzione della catena verranno inseriti nuovi anelli che copriranno ulteriori casi d&amp;rsquo;uso o funzionalità. Sebbene i nuovi anelli dovranno implementare la stessa interfaccia potranno avere una logica interna completamente personalizzabile.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Esiste una forte separazione fra i moduli del sistema?&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Il low coupling in questa caso è garantito da 2 aspetti:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Il client non conosce gli elementi della catena perché ha una relazione diretta solamente con il gestore.&lt;/li&gt;
-&lt;li&gt;È presente coesione fra l&amp;rsquo;interfaccia dei singoli anelli e il gestore. Purché si rispetti questo contratto è possibile esprimere anche logiche complesse.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;conclusione&#34;&gt;Conclusione:&lt;/h3&gt;
-
-&lt;p&gt;È necessario &lt;strong&gt;scegliere le proprie battaglie&lt;/strong&gt; quando si parla di design, sia che si tratti di scelte macro-architetturali che piccole scelte sulla singola istanza.&lt;/p&gt;
-
-&lt;p&gt;I principi che non stati esposti non sono applicabili in tutte le situazioni, un bravo sviluppatore cercherà di utilizzare PV e low coupling in &lt;strong&gt;aree strategiche del sistema&lt;/strong&gt;, &lt;strong&gt;spesso soggette a cambiamento&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Se non si riesce ad identificare correttamente queste aree non si farà altro che introdurre una maggiore complessità generale che, in certe situazioni può essere deleteria.&lt;/p&gt;
-
-&lt;p&gt;L&amp;rsquo;obbiettivo finale dovrebbe essere sempre minimizzare l&amp;rsquo;impatto sul sistema dei (naturali) cambiamenti; Open/Close PV e low coupling sono alcune delle strategie più efficaci.&lt;/p&gt;
-
-&lt;h4 id=&#34;bibliografia&#34;&gt;Bibliografia&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Craig Larman - &lt;a href=&#34;http://www.utdallas.edu/~chung/SP/applying-uml-and-patterns.pdf&#34;&gt;Applying UML and Patterns – An Introduction to Object-Oriented Analysis and Design and Iterative Development (3rd ed.)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Parnas, D.L. - &lt;a href=&#34;https://www.cs.umd.edu/class/spring2003/cmsc838p/Design/criteria.pdf&#34;&gt;&amp;ldquo;On the Criteria To Be Used in Decomposing Systems into Modules&amp;rdquo;.&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Craig Larman - &lt;a href=&#34;http://www.martinfowler.com/ieeeSoftware/protectedVariation.pdf&#34;&gt;&amp;ldquo;Protected Variation: The Importance of Being Closed&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;SIGS Publications - &lt;a href=&#34;http://www.objectmentor.com/resources/articles/ocp.pdf&#34;&gt;The Open-Closed Principle: C++ Report&lt;/a&gt;
-&lt;a href=&#34;http://en.wikipedia.org/wiki/Information_hiding&#34;&gt;Information Hiding&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Definizione: Il principio OPEN/CLOSE fa riferimento all&amp;rsquo;acronimo SOLID. introdotto da Michael Feathers che riporta alcune buone pratiche di programmazione ad oggetti ancora di forte attualità.
+OPEN/CLOSE (la O dell&amp;rsquo;acronimo), nella sua definizione più generale indica che: un modulo (un oggetto, una classe o un gruppo di funzioni) debba essere aperto alle estensioni ma chiuso alle modifiche.
+Questo principio tuttavia non è altro che la formalizzazione e il raggruppamento di concetti e linee guida già presenti da tempo nella programmazione ad oggetti.</description>
     </item>
     
   </channel>

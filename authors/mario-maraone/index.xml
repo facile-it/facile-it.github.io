@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mario-maraone on Facile.it Engineering</title>
+    <title>Mario-maraone on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/mario-maraone/</link>
-    <description>Recent content in mario-maraone on Facile.it Engineering</description>
+    <description>Recent content in Mario-maraone on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 07 Nov 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/authors/mario-maraone/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/authors/mario-maraone/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Looking back at Symfony Day Rome 2016</title>
@@ -15,90 +17,7 @@
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</guid>
-      <description>
-
-&lt;p&gt;Every year the &lt;a href=&#34;http://www.grusp.org/&#34;&gt;GrUSP&lt;/a&gt;, in cooperation with one of the italian PHP user groups, organizes the italian &lt;strong&gt;&lt;a href=&#34;http://symfony.com/&#34;&gt;Symfony&lt;/a&gt;&lt;/strong&gt; conference. This year the &lt;a href=&#34;http://2016.symfonyday.it/&#34;&gt;event&lt;/a&gt; was organized in the Capital on 28th October with the help of &lt;a href=&#34;http://roma.grusp.org/&#34;&gt;PHP User Group Roma&lt;/a&gt;, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.&lt;/p&gt;
-
-&lt;p&gt;This post would be a short recap of all the talks.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/faciledev_symfonyday_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;schedule&#34;&gt;Schedule&lt;/h1&gt;
-
-&lt;h2 id=&#34;symfony-and-micro-not-so-much-service&#34;&gt;Symfony and micro (not so much) service&lt;/h2&gt;
-
-&lt;p&gt;Talk by: &lt;strong&gt;&lt;a href=&#34;https://twitter.com/_orso_&#34;&gt;Michele Orselli&lt;/a&gt;&lt;/strong&gt;
-&lt;br/&gt;Duration: 30 minutes&lt;/p&gt;
-
-&lt;p&gt;Michele Orselli presented a case study of a &lt;a href=&#34;https://en.wikipedia.org/wiki/Monolithic_application&#34;&gt;monolithic application&lt;/a&gt; broken down into many smaller microservices. How many ways can we split a webapp? Why smaller is better? How services can interact each other? In his talk Michele answered all those questions focusing on all the advantages of the proposed architecture and a few common pitfalls.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;View slides &lt;a href=&#34;http://www.slideshare.net/MicheleOrselli/symfony-e-micro-non-cosi-tanto-services&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;scaling-symfony-apps&#34;&gt;Scaling Symfony apps&lt;/h2&gt;
-
-&lt;p&gt;Talk by: &lt;strong&gt;&lt;a href=&#34;https://twitter.com/mat_teo8&#34;&gt;Matteo Moretti&lt;/a&gt;&lt;/strong&gt;
-&lt;br/&gt;Duration: 45 minutes&lt;/p&gt;
-
-&lt;p&gt;A scalable application must support an increasing amount of data or a growing number of users. In his talk, Matteo Moretti described the architecture needed to scale. He divided the overall architecture into 4 main components: web server, sessions, database and the filesystem. He explained the right configuration to his main purpose: improving performance of a webapp.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;View slides &lt;a href=&#34;http://www.slideshare.net/matteomoro8/scaling-symfony-apps&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;e-commerce-with-symfony-from-case-study-to-reality&#34;&gt;E-commerce with Symfony: from case study to reality&lt;/h2&gt;
-
-&lt;p&gt;Talk by: &lt;strong&gt;&lt;a href=&#34;https://twitter.com/dymissy&#34;&gt;Simone D&amp;rsquo;Amico&lt;/a&gt;&lt;/strong&gt;
-&lt;br/&gt;Duration: 30 minutes&lt;/p&gt;
-
-&lt;p&gt;Sylius, Elcodi, Thelia, Sonata Project, Well Commerce, Shop Plus, Aimeos: these are the most popular results you can find if you google  &amp;ldquo;e-commerce solution with Symfony&amp;rdquo;. But which one is the final winner? Why choosing one or another? Simone D&amp;rsquo;Amico reviewed all of these frameworks and libraries comparing strengths and drawbacks. Moreover he clarified the stack he used to build an e-commerce platform.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;View slides &lt;a href=&#34;http://www.slideshare.net/dymissy/ecommerce-con-sf-dal-case-study-alla-realt&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;a-journey-into-symfony-form-component&#34;&gt;A journey into Symfony form component&lt;/h2&gt;
-
-&lt;p&gt;Talk by: &lt;strong&gt;&lt;a href=&#34;https://twitter.com/SamueleLilli&#34;&gt;Samuele Lilli&lt;/a&gt;&lt;/strong&gt;
-&lt;br/&gt;Duration: 45 minutes&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://symfony.com/doc/current/forms.html&#34;&gt;Symfony form component&lt;/a&gt; is the main obstacle for beginners and newbies in the Symfony world. Samuele Lilli gave a talk with the purpose to clarify this hot topic with a lot of examples and code snippets. He started from the simplest form examples to more advanced ones. He revealed a lot of tips and explanations for several scenarios in order to make this powerful component understandable and manageable by everyone.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;View slides &lt;a href=&#34;http://www.slideshare.net/SamueleLilli/symfony-day-2016&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/looking-back-at-symfony-day-rome-2016/symfonyday_collage.jpg&#34; alt=&#34;Symfony Day 2016&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;php7-and-rich-domain-model&#34;&gt;PHP7 and Rich Domain Model&lt;/h2&gt;
-
-&lt;p&gt;Talk by: &lt;strong&gt;&lt;a href=&#34;https://twitter.com/garakkio&#34;&gt;Massimiliano Arione&lt;/a&gt;&lt;/strong&gt;
-&lt;br/&gt;Duration: 30 minutes&lt;/p&gt;
-
-&lt;p&gt;In this talk Massimiliano Arione told about his experience in the migration to PHP7 of a Symfony based project. Particularly he focused on the usage of type hinting and return types and the issues encountered with an &lt;a href=&#34;https://en.wikipedia.org/wiki/Anemic_domain_model&#34;&gt;Anemic Domain Model&lt;/a&gt; approach suggested by the framework official documentation. He showed how to combine a Rich Domain Model without giving up new language features.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;View slides &lt;a href=&#34;http://www.slideshare.net/garak/php7-e-rich-domain-model&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;relevance-sorting-with-elasticsearch-and-a-bit-of-maths&#34;&gt;Relevance sorting with Elasticsearch &amp;amp; a bit of maths&lt;/h2&gt;
-
-&lt;p&gt;Talk by: &lt;strong&gt;&lt;a href=&#34;https://twitter.com/mattbit_&#34;&gt;Matteo Dora&lt;/a&gt;&lt;/strong&gt;
-&lt;br/&gt;Duration: 45 minutes&lt;/p&gt;
-
-&lt;p&gt;The main topic of the talk was &lt;a href=&#34;https://www.elastic.co/products/elasticsearch&#34;&gt;Elasticsearch&lt;/a&gt;. Elasticsearch is a distributed, RESTful search and analytics engine with a great Symfony integration. Matteo Dora, the speaker of this talk, explained how to deal when the sorting by relevance becomes hard using the right amount of math and &lt;a href=&#34;https://github.com/FriendsOfSymfony/FOSElasticaBundle&#34;&gt;FOSElasticaBundle&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;View slides &lt;a href=&#34;https://speakerdeck.com/mattbit/elasticsearch-and-a-bit-of-maths&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;command-the-easy-way&#34;&gt;Command: the easy way&lt;/h2&gt;
-
-&lt;p&gt;Talk by: &lt;strong&gt;&lt;a href=&#34;https://twitter.com/aczepod&#34;&gt;Antonio Carella&lt;/a&gt;&lt;/strong&gt;
-&lt;br/&gt;Duration: 30 minutes&lt;/p&gt;
-
-&lt;p&gt;Antonio Carella illustrated a real case how to create command-line commands using the &lt;a href=&#34;https://symfony.com/doc/current/console.html&#34;&gt;Symfony console component&lt;/a&gt;. He showed how console commands can be used for any recurring task, such as cronjobs, imports, or other batch jobs.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;View slides &lt;a href=&#34;http://www.slideshare.net/antoninocarella1/command-the-easy-way&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;orm-hero&#34;&gt;ORM hero&lt;/h2&gt;
-
-&lt;p&gt;Talk by: &lt;strong&gt;&lt;a href=&#34;https://twitter.com/toretto460&#34;&gt;Simone Di Maulo&lt;/a&gt;&lt;/strong&gt;
-&lt;br/&gt;Duration: 45 minutes&lt;/p&gt;
-
-&lt;p&gt;This talk was a journey in the &lt;em&gt;magical world&lt;/em&gt; of &lt;a href=&#34;http://www.doctrine-project.org/&#34;&gt;Doctrine&lt;/a&gt;, the most known ORM for Symfony and not only. Simone Di Maulo described how Doctrine works under the hood to better understand when and why to use its features.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;View slides &lt;a href=&#34;http://www.slideshare.net/SimoneDiMaulo/orm-hero&#34;&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-</description>
+      <description>Every year the GrUSP, in cooperation with one of the italian PHP user groups, organizes the italian Symfony conference. This year the event was organized in the Capital on 28th October with the help of PHP User Group Roma, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.</description>
     </item>
     
   </channel>

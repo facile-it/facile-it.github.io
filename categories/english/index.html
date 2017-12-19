@@ -18,7 +18,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.16" />
+        <meta name="generator" content="Hugo 0.31.1" />
         
 
 
@@ -40,7 +40,9 @@
 <meta property="og:url" content="https://engineering.facile.it/categories/english/" />
 
 
+
 <meta property="og:updated_time" content="2017-10-04T00:00:00&#43;00:00"/>
+
 
 
 
@@ -79,7 +81,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-22342495-1', 'auto');
 ga('send', 'pageview');
@@ -281,7 +283,8 @@ ga('send', 'pageview');
 
     
 
-    <p>Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit. Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things».</p>
+    <p>Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
+Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things».</p>
 
     <footer>
         <ul class="actions">
@@ -355,7 +358,8 @@ ga('send', 'pageview');
 
     
 
-    <p>In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced. This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp; replace job, but since you need to introduce at least one use PHPUnit\Framework\TestCase line at the top of each one of your test classes, it&rsquo;s a boring and a little more than trivial task; also, upgrading it in a single big jump may not be feasible or prudent, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.</p>
+    <p>In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced.
+This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp; replace job, but since you need to introduce at least one use PHPUnit\Framework\TestCase line at the top of each one of your test classes, it&rsquo;s a boring and a little more than trivial task; also, upgrading it in a single big jump may not be feasible or prudent, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.</p>
 
     <footer>
         <ul class="actions">
@@ -427,7 +431,10 @@ ga('send', 'pageview');
 
     
 
-    <p>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints. Scalar type hints &amp; return types vs no scalar type hints &amp; return types is #PHP&#39;s new spaces vs tabs &mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017 After asking references about this, someone alluded to this very short video: &ldquo;PHP Bits: Visual Debt&rdquo; (it&rsquo;s only 3 minutes, please watch it before continue reading).</p>
+    <p>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
+Scalar type hints &amp; return types vs no scalar type hints &amp; return types is #PHP&#39;s new spaces vs tabs
+&mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017
+After asking references about this, someone alluded to this very short video: &ldquo;PHP Bits: Visual Debt&rdquo; (it&rsquo;s only 3 minutes, please watch it before continue reading).</p>
 
     <footer>
         <ul class="actions">
@@ -501,7 +508,8 @@ ga('send', 'pageview');
 
     
 
-    <p>Like clockwork, on May we head up to Verona to attend the phpDay conference; this time it was on May 12th and 13th. We met a lot of new people and known fellow PHP developers, and like previous years, we wanted to write down a light summary; like the previous ones, this won&rsquo;t be a full &ldquo;review&rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.</p>
+    <p>Like clockwork, on May we head up to Verona to attend the phpDay conference; this time it was on May 12th and 13th.
+We met a lot of new people and known fellow PHP developers, and like previous years, we wanted to write down a light summary; like the previous ones, this won&rsquo;t be a full &ldquo;review&rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.</p>
 
     <footer>
         <ul class="actions">
@@ -578,7 +586,8 @@ ga('send', 'pageview');
 
     
 
-    <p>Ten days ago #FacileHack 2017 came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers. The hackathon&rsquo;s theme for this year was connectivity: our site offers the comparation between internet access services, and we have decided to put this at the center of the competition.</p>
+    <p>Ten days ago #FacileHack 2017 came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers.
+The hackathon&rsquo;s theme for this year was connectivity: our site offers the comparation between internet access services, and we have decided to put this at the center of the competition.</p>
 
     <footer>
         <ul class="actions">

@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Sep 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/ita/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/ita/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Disclaimer</title>
@@ -15,12 +17,9 @@
       <pubDate>Wed, 21 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/ita/disclaimer/</guid>
-      <description>&lt;p&gt;Questo blog non rappresenta una testata giornalistica e viene aggiornato senza alcuna periodicità. Non può pertanto considerarsi un prodotto editoriale ai sensi della Legge n. 62 del 07/03/2001.&lt;/p&gt;
-
-&lt;p&gt;Facile.it S.p.A. non ha e non si assume alcuna responsabilità per l&amp;rsquo;attualità, la correttezza, la completezza o la qualità delle informazioni messe a disposizione, ivi compresi i contenuti dei siti collegati e/o citati.&lt;/p&gt;
-
-&lt;p&gt;Facile.it, inoltre, si riserva il diritto e la facoltà di rimuovere le informazioni proprie e/o fornite da terzi senza alcun preavviso.&lt;/p&gt;
-</description>
+      <description>Questo blog non rappresenta una testata giornalistica e viene aggiornato senza alcuna periodicità. Non può pertanto considerarsi un prodotto editoriale ai sensi della Legge n. 62 del 07/03/2001.
+Facile.it S.p.A. non ha e non si assume alcuna responsabilità per l&amp;rsquo;attualità, la correttezza, la completezza o la qualità delle informazioni messe a disposizione, ivi compresi i contenuti dei siti collegati e/o citati.
+Facile.it, inoltre, si riserva il diritto e la facoltà di rimuovere le informazioni proprie e/o fornite da terzi senza alcun preavviso.</description>
     </item>
     
     <item>
@@ -29,72 +28,7 @@
       <pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/ita/careers/</guid>
-      <description>
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/careers/banner.png&#34; alt=&#34;Facile.it - lavora con noi!&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Facile.it è in costante crescita e siamo sempre alla ricerca di programmatori da aggiungere al nostro team. Questa proposta è rivolta a sviluppatori PHP di grande esperienza, che credono nell’innovazione e sono sempre attenti alle nuove tecnologie e non vedono l’ora di metterle in pratica. Siamo un gruppo di lavoro dinamico, giovane e divertente. Siamo in totale quasi 40 programmatori e gestiamo diversi progetti con vari stack tecnologici: Symfony 3, ZendFramework 3 e anche qualcosa fatto in casa.&lt;/p&gt;
-
-&lt;h1 id=&#34;cosa-offriamo-in-facile-it&#34;&gt;Cosa offriamo in Facile.it:&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Assunzione a tempo indeterminato con RAL in base alla tua esperienza + fondo salute integrativo&lt;/li&gt;
-&lt;li&gt;Possibilità di crescita economica in base alle nuove competenze acquisite&lt;/li&gt;
-&lt;li&gt;Un venerdì al mese dedicato alla formazione e al team building&lt;/li&gt;
-&lt;li&gt;Biblioteca di libri di tecnologia con più di 100 titoli&lt;/li&gt;
-&lt;li&gt;Budget annuale di 1.500€ per l’hardware e software di cui hai bisogno&lt;/li&gt;
-&lt;li&gt;Partecipazione ad eventi di tecnologia a nostro carico (Pragma Conference, Droidcon, Codemotion, etc)&lt;/li&gt;
-&lt;li&gt;Ufficio in centro a Milano (MM3 Missori) con sala relax, sofà, ping-pong e calcetto&lt;/li&gt;
-&lt;li&gt;Convenzioni (bar, ristoranti, palestre and more!), Ticket Restaurant, caffè, acqua e frutta fresca ogni giorno&lt;/li&gt;
-&lt;li&gt;Fare il lavoro che ami in una realtà italiana di successo con un top team al tuo fianco&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://jobs.facile.it/chi-cerchiamo/candidati.html&#34; target=&#34;\_blank&#34;&gt;Candidati »&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Quasi tutte le nostre applicazioni si basano sulla piattaforma LAMP. Per entrare nel nostro team devi quindi conoscere bene strumenti quali Linux, Apache, MySQL e PHP, oltre a rispondere “sì” a queste domande:&lt;/p&gt;
-
-&lt;h1 id=&#34;candidato-base&#34;&gt;Candidato base&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ti appassiona la programmazione, in particolare la programmazione a oggetti?&lt;/li&gt;
-&lt;li&gt;Hai mai lavorato con web service?&lt;/li&gt;
-&lt;li&gt;Hai familiarità con librerie JS come jQuery?&lt;/li&gt;
-&lt;li&gt;Ti senti a tuo agio nell’interrogare e progettare database?&lt;/li&gt;
-&lt;li&gt;Ami lavorare in team e condividere quello che impari?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;È un valore aggiunto se&amp;hellip;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;conosci i principali Design Pattern;&lt;/li&gt;
-&lt;li&gt;usi sistemi di continuous integration;&lt;/li&gt;
-&lt;li&gt;hai esperienza con test automatici;&lt;/li&gt;
-&lt;li&gt;sei appassionato di Open Source.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;candidato-senior&#34;&gt;Candidato senior&lt;/h1&gt;
-
-&lt;ul&gt;
-&lt;li&gt;La programmazione a oggetti è il tuo pane quotidiano?&lt;/li&gt;
-&lt;li&gt;Hai almeno cinque anni di esperienza come sviluppatore web?&lt;/li&gt;
-&lt;li&gt;Utilizzi un sistema di versionamento del codice (preferibilmente Git)?&lt;/li&gt;
-&lt;li&gt;Sai cosa sono i design pattern, le regole del SOLID e li utilizzi?&lt;/li&gt;
-&lt;li&gt;Conosci i principi del REST?&lt;/li&gt;
-&lt;li&gt;Hai sviluppato delle API REST e del codice per consumarle?&lt;/li&gt;
-&lt;li&gt;Ami lavorare in team e condividere quello che impari?&lt;/li&gt;
-&lt;li&gt;Ti interessa progredire nelle tue abilità tecniche, studiare e migliorarti costantemente?&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;È un valore aggiunto se&amp;hellip;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;hai esperienza approfondita con uno dei principali framework (Symfony 2 / 3, Zend 2 / 3, etc);&lt;/li&gt;
-&lt;li&gt;hai esperienza approfondita con test automatici e TDD;&lt;/li&gt;
-&lt;li&gt;usi sistemi di continuous integration;&lt;/li&gt;
-&lt;li&gt;hai un account su GitHub e hai dimestichezza col software Open Source;&lt;/li&gt;
-&lt;li&gt;ti interessa lavorare con altre tecnologie quali Docker, RabbitMQ, MongoDB.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Facile.it è in costante crescita e siamo sempre alla ricerca di programmatori da aggiungere al nostro team. Questa proposta è rivolta a sviluppatori PHP di grande esperienza, che credono nell’innovazione e sono sempre attenti alle nuove tecnologie e non vedono l’ora di metterle in pratica. Siamo un gruppo di lavoro dinamico, giovane e divertente. Siamo in totale quasi 40 programmatori e gestiamo diversi progetti con vari stack tecnologici: Symfony 3, ZendFramework 3 e anche qualcosa fatto in casa.</description>
     </item>
     
     <item>
@@ -103,15 +37,9 @@
       <pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/ita/chi-siamo/</guid>
-      <description>&lt;p&gt;This page is also available in &lt;a href=&#34;https://engineering.facile.it/eng/who-we-are/&#34;&gt;english&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Facile.it ha un nutrito e appassionato gruppo di sviluppatori. I progetti del gruppo Facile.it si basano su PHP fin dal 2008, più il tempo passa più nuove tecnologie entrano a far parte del Know How aziendale.
-Questo Blog permette ai nostri sviluppatori di condividere consigli ed esperienze dirette con le tecnologie che usano quotidianamente.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.facile.it/&#34; target=&#34;_blank&#34;&gt;Facile.it&lt;/a&gt; è il sito leader nella comparazione online, il gruppo comprende anche i domini &lt;a href=&#34;http://www.assicurazione.it/&#34; target=&#34;_blank&#34;&gt;Assicurazione.it&lt;/a&gt;, &lt;a href=&#34;http://www.prestiti.it/&#34; target=&#34;_blank&#34;&gt;Prestiti.it&lt;/a&gt; e &lt;a href=&#34;http://www.mutui.it/&#34; target=&#34;_blank&#34;&gt;Mutui.it&lt;/a&gt;. Ogni mese aiuta oltre 1,5 milioni di italiani a tagliare le spese ricorrenti, grazie al rapido confronto delle &lt;a href=&#34;http://www.facile.it/adsl/risultati.html&#34; target=&#34;_blank&#34;&gt;offerte ADSL&lt;/a&gt; o alla possibilità di risparmiare confrontando le offerte delle compagnie partner per le &lt;a href=&#34;http://www.facile.it/assicurazioni-auto.html&#34; target=&#34;_blank&#34;&gt;assicurazioni auto&lt;/a&gt; e per la stipula di un’&lt;a href=&#34;http://www.facile.it/assicurazioni-moto.html&#34; target=&#34;_blank&#34;&gt;assicurazione moto&lt;/a&gt;.
-Il comparatore ha conquistato la fiducia dei suoi utenti e ha potuto così aumentare costantemente le categorie di prodotti e servizi rendendo disponibile il &lt;a href=&#34;https://www.facile.it/mutui/risultati-acquisto.html&#34; target=&#34;_blank&#34;&gt;calcolo rata mutuo&lt;/a&gt; e il confronto di &lt;a href=&#34;http://www.facile.it/prestiti-personali.html&#34; target=&#34;_blank&#34;&gt;prestiti personali&lt;/a&gt; oltre a quello delle offerte delle banche per &lt;a href=&#34;http://www.facile.it/prestiti.html&#34; target=&#34;_blank&#34;&gt;prestiti online&lt;/a&gt;.
-Facile.it consente di trovare online le migliori offerte per privati, aziende e liberi professionisti con partiva iva rendendo facile risparmiare sul costo di &lt;a href=&#34;http://www.facile.it/energia-luce-gas.html&#34; target=&#34;_blank&#34;&gt;luce e gas&lt;/a&gt; e sulla bolletta telefonica grazie alle &lt;a href=&#34;http://www.facile.it/adsl-internet-casa.html&#34; target=&#34;_blank&#34;&gt;offerte internet casa&lt;/a&gt;. Oltre a tutti i servizi precedentemente elencati gli utenti di Facile.it hanno la possibilità di aprire &lt;a href=&#34;http://www.facile.it/conti-correnti.html&#34; target=&#34;_blank&#34;&gt;conti correnti&lt;/a&gt;, ottenere &lt;a href=&#34;http://www.facile.it/carta-di-credito.html&#34; target=&#34;_blank&#34;&gt;carte di credito&lt;/a&gt;, reperire sconti e buoni sconto e confrontare le offerte per le gomme auto.&lt;/p&gt;
-</description>
+      <description>This page is also available in english.
+Facile.it ha un nutrito e appassionato gruppo di sviluppatori. I progetti del gruppo Facile.it si basano su PHP fin dal 2008, più il tempo passa più nuove tecnologie entrano a far parte del Know How aziendale. Questo Blog permette ai nostri sviluppatori di condividere consigli ed esperienze dirette con le tecnologie che usano quotidianamente.
+Facile.it è il sito leader nella comparazione online, il gruppo comprende anche i domini Assicurazione.</description>
     </item>
     
   </channel>

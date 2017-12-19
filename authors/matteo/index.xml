@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>matteo on Facile.it Engineering</title>
+    <title>Matteo on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/matteo/</link>
-    <description>Recent content in matteo on Facile.it Engineering</description>
+    <description>Recent content in Matteo on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 21 Apr 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/authors/matteo/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/authors/matteo/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Introduzione al tracciamento di eventi lato server</title>
@@ -15,39 +17,7 @@
       <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</guid>
-      <description>
-
-&lt;p&gt;L’adozione di strategie &lt;em&gt;DevOps&lt;/em&gt; ha portato negli ultimi anni ad incrementare le aree coperte da &lt;strong&gt;tool di monitoring&lt;/strong&gt; in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei &lt;strong&gt;server&lt;/strong&gt; o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le &lt;strong&gt;applicazioni&lt;/strong&gt; stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc. ecc.).&lt;/p&gt;
-
-&lt;p&gt;Per entrambi i casi lo sviluppatore ha a disposizione sia soluzioni &lt;strong&gt;open source&lt;/strong&gt; che soluzioni &lt;strong&gt;SaaS&lt;/strong&gt;: la differenza sostanziale, a parità di feature principali, rimane la gestione dell’infrastruttura aggiuntiva, necessaria a supportare le operazioni per la raccolta dei dati inviati dai sensori predisposti a monitorare le metriche che interessano. Nonostante gli strumenti si facciano sempre più abbondanti (basti pensare a tutte le soluzioni recenti per il salvataggio di time series) e user-friendly, volersi affidare a provider terzi può essere un modo per concentrarsi maggiormente sul valore aggiunto che si vuole dare all’utente finale con la propria applicazione, senza doversi preoccupare di questioni di contorno.&lt;/p&gt;
-
-&lt;p&gt;Tra i principali prodotti SaaS presenti sul mercato troviamo &lt;em&gt;&lt;a href=&#34;http://newrelic.com/&#34;&gt;NewRelic&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&#34;http://www.appdynamics.com/&#34;&gt;AppDynamics&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&#34;https://www.serverdensity.com&#34;&gt;ServerDensity&lt;/a&gt;&lt;/em&gt; e &lt;em&gt;&lt;a href=&#34;https://www.ruxit.com&#34;&gt;Ruxit&lt;/a&gt;&lt;/em&gt;, ciascuno con i propri prezzi e le proprie peculiarità, ma tutti che permettono di avere un costante monitoraggio della propria applicazione, dal browser dell’utente fino alla query per salvare i dati, gratis o con costi mensili contenuti e proporzionali alla dimensione della propria infrastruttura.&lt;/p&gt;
-
-&lt;p&gt;A &lt;strong&gt;Facile.it&lt;/strong&gt; viene utilizzato &lt;strong&gt;NewRelic&lt;/strong&gt; non solo per il monitoraggio base dei servizi che compongono il sito ma, grazie a &lt;strong&gt;NewRelic Insights&lt;/strong&gt;, perché viene data la possibilità di salvare eventi personalizzati che possono dare maggiori informazioni sia agli sviluppatori che ai business analysts. Per poter accedere a &lt;strong&gt;NewRelic Insights&lt;/strong&gt; bisogna avere un account a pagamento, ma è comunque possibile sperimentare l’eventuale utilità per le proprie esigenze grazie al periodo di prova di 14 giorni.&lt;/p&gt;
-
-&lt;p&gt;La raccolta dei dati può avvenire in due modi:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;tramite &lt;strong&gt;&lt;em&gt;custom attributes&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;tramite &lt;strong&gt;&lt;em&gt;eventi personalizzati&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;custom-attributes&#34;&gt;Custom Attributes&lt;/h4&gt;
-
-&lt;p&gt;I &lt;em&gt;custom attributes&lt;/em&gt; sono delle coppie di chiave-valore da aggiungere alla transazione corrente (Web e Non-Web) già tracciata dagli strumenti di &lt;em&gt;NewRelic&lt;/em&gt; per i principali linguaggi di programmazione (&lt;strong&gt;PHP&lt;/strong&gt;, &lt;strong&gt;NodeJs&lt;/strong&gt;, &lt;strong&gt;Ruby&lt;/strong&gt;, &lt;strong&gt;Python&lt;/strong&gt;, &lt;em&gt;Java&lt;/em&gt;, &lt;em&gt;.NET&lt;/em&gt;). Possiamo aggiungere ad esempio l’utente attualmente collegato che sta effettuando tale transazione, il numero di oggetti presenti nel carrello o ancora il loro valore.&lt;/p&gt;
-
-&lt;p&gt;Ad esempio, tramite l&amp;rsquo;estensione di &lt;em&gt;NewRelic&lt;/em&gt; disponibile per &lt;strong&gt;PHP&lt;/strong&gt;, è possibile aggiungere i dettagli dell&amp;rsquo;utente attualmente collegato chiamando la funzione &lt;code&gt;newrelic_add_custom_parameter (&#39;userID&#39;, $userId)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;eventi-personalizzati&#34;&gt;Eventi personalizzati&lt;/h4&gt;
-
-&lt;p&gt;Gli &lt;em&gt;eventi personalizzati&lt;/em&gt; vanno inviati ad un &lt;strong&gt;webservice REST&lt;/strong&gt; in formato &lt;strong&gt;JSON&lt;/strong&gt;. Ci mettono in grado di tracciare un qualsiasi evento all’interno di una normale transazione già tracciata da NewRelic, come ad esempio i tempi di risposta di un servizio esterno utilizzato dall’applicazione.&lt;/p&gt;
-
-&lt;p&gt;Gli eventi personalizzati possono essere registrati richiamando la relativa funzione &lt;code&gt;newrelic_record_custom_event(&#39;DNDServiceCall&#39;,[&#39;business&#39; =&amp;gt; &#39;telefonia&#39;, &#39;responseTime&#39; =&amp;gt; 1500])&lt;/code&gt; disponibile nelle ultime versioni dell&amp;rsquo;estensione &lt;strong&gt;PHP&lt;/strong&gt; oppure tramite una semplice chiamata cURL come indicato dalla &lt;a href=&#34;https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/inserting-custom-events-insights-api&#34;&gt;documentazione&lt;/a&gt; sui &lt;em&gt;custom events&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Una volta che i dati vengono raccolti da &lt;em&gt;NewRelic&lt;/em&gt; è possibile analizzarli tramite delle semplici query in un linguaggio simil-&lt;em&gt;SQL&lt;/em&gt;, in questo caso chiamato &lt;strong&gt;NRQL&lt;/strong&gt; (&lt;em&gt;NewRelic Query Language&lt;/em&gt;). La sintassi base di una SELECT in SQL viene mantenuta, ma vengono forniti strumenti per meglio gestire le serie temporali, tramite &lt;strong&gt;TIMESERIES&lt;/strong&gt;, &lt;strong&gt;SINCE&lt;/strong&gt;, &lt;strong&gt;UNTIL&lt;/strong&gt;: una trattazione più approfondita è disponibile alla relativa pagina della &lt;a href=&#34;https://docs.newrelic.com/docs/insights/new-relic-insights/using-new-relic-query-language/nrql-reference&#34;&gt;documentazione&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I risultati delle &lt;em&gt;query&lt;/em&gt; vengono resi disponibili in formato &lt;strong&gt;JSON&lt;/strong&gt;, oppure come widget da poter integrare poi in una dashboard, in maniera da tenere sempre sotto controllo le metriche più importanti per la conduzione del proprio business. Inoltre tramite &lt;a href=&#34;https://docs.newrelic.com/docs/insights/new-relic-insights/using-insights-interface/exploring-your-data&#34;&gt;Data Explorer&lt;/a&gt; è possibile consultare un campione degli eventi recentemente inviati dalla nostra applicazione a &lt;em&gt;NewRelic&lt;/em&gt;, così da poter eventualmente raffinare le strutture dati con cui vengono raccolti.&lt;/p&gt;
-</description>
+      <description>L’adozione di strategie DevOps ha portato negli ultimi anni ad incrementare le aree coperte da tool di monitoring in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei server o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le applicazioni stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc.</description>
     </item>
     
     <item>
@@ -56,67 +26,8 @@
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</guid>
-      <description>&lt;p&gt;Le &lt;strong&gt;ACL&lt;/strong&gt; (&lt;em&gt;Access Control List&lt;/em&gt;) sono un strumento molto potente per poter definire l&amp;rsquo;accesso a risorse con una granularità molto fine. Nel quotidiano abbiamo già modo di utilizzarle per definire i permessi per accedere a file su Unix o quali pacchetti far passare attraverso un firewall o ancora l&amp;rsquo;accesso a database.&lt;/p&gt;
-
-&lt;p&gt;In &lt;strong&gt;Symfony&lt;/strong&gt; le &lt;em&gt;ACL&lt;/em&gt; sono disponibili &lt;em&gt;out-of-the-box&lt;/em&gt; nel caso di installazione completa e permettono la definizione delle regole di accesso a risorse tramite &lt;strong&gt;ruoli&lt;/strong&gt; e &lt;strong&gt;maschere&lt;/strong&gt;. Mentre i &lt;strong&gt;ruoli&lt;/strong&gt; rappresentano dei sottoinsiemi degli utenti di una data applicazione (&lt;em&gt;amministratori&lt;/em&gt;, &lt;em&gt;backoffice&lt;/em&gt;, &lt;em&gt;business analyst&lt;/em&gt;) e possono essere visti come delle etichette da assegnare ad un utente, le &lt;strong&gt;maschere&lt;/strong&gt; sono la rappresentazione numerica delle azioni che possono essere effettuate dagli utenti aventi determinati ruoli. Per tornare all&amp;rsquo;esempio del filesystem Unix, i ruoli possono essere &lt;em&gt;Owner&lt;/em&gt;, &lt;em&gt;Group&lt;/em&gt; o &lt;em&gt;Others&lt;/em&gt; mentre le maschere sono ad esempio 7 (lettura, scrittura e esecuzione) indicato per ciascun ruolo.&lt;/p&gt;
-
-&lt;p&gt;Avendo la possibilità di poter definire più di soli tre ruoli e più di sole tre azioni chiaramente le opportunità diventano molteplici dando quindi estrema flessibilità al sistema.&lt;/p&gt;
-
-&lt;p&gt;Di base &lt;strong&gt;Symfony&lt;/strong&gt; persiste le informazioni definite tramite le &lt;em&gt;ACL&lt;/em&gt; (chiamate &lt;strong&gt;ACE&lt;/strong&gt; ovvero &lt;em&gt;Access Control Entry&lt;/em&gt;) in tabelle specifiche tramite cui verificare se un utente può o meno effettuare una operazione: la verifica è immediata tramite le API esposte da &lt;strong&gt;Symfony&lt;/strong&gt; fintanto che si tratta di operare su una singola risorsa ma la soluzione non scala certamente nel caso si debbano filtrare le risorse accessibili da un utente. Per una più approfondita trattazione su come utilizzare le API rese disponibili da &lt;strong&gt;Symfony&lt;/strong&gt;, rimandiamo alla &lt;a href=&#34;http://symfony.com/it/doc/current/cookbook/security/acl.html&#34;&gt;relativa pagina della documentazione&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Per ovviare a questo problema all&amp;rsquo;interno di un progetto di &lt;strong&gt;Facile.it&lt;/strong&gt; si è pensato di adottare una soluzione che faccia uso di &lt;a href=&#34;https://www.elastic.co/products/elasticsearch&#34;&gt;&lt;strong&gt;ElasticSearch&lt;/strong&gt;&lt;/a&gt; per poter restituire ad un utente il sottoinsieme dei record a cui può accedere quando scorre una lista di record. &lt;strong&gt;ElasticSearch&lt;/strong&gt; era già stato scelto per poter migliorare la ricerca all&amp;rsquo;interno dei record delle differenti entità archiviate sul database relazionale, quindi si è trattato di operare due scelte che permettessero una gestione ottimale:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;dividere ciascuna entità persitita come documento su &lt;strong&gt;ElasticSearch&lt;/strong&gt; in due parti, &lt;em&gt;metadata&lt;/em&gt; e &lt;em&gt;data&lt;/em&gt;;&lt;/li&gt;
-&lt;li&gt;realizzare delle &lt;strong&gt;annotation custom&lt;/strong&gt; per poter esprimere le &lt;strong&gt;ACE&lt;/strong&gt; per ciascuna entità e campo delle entità.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Dividere il documento in due parti rappresenta il punto di partenza per ottenere il risultato cercato: ogni volta che &lt;strong&gt;FOSElasticaBundle&lt;/strong&gt; procede con la copia di una entità su &lt;strong&gt;ElasticSearch&lt;/strong&gt;, viene richiamata una callback (definibile con la configurazione del bundle) che si occupa di recuperare tutte le &lt;strong&gt;ACE&lt;/strong&gt; dell&amp;rsquo;entità in questione e includerle nel campo &lt;em&gt;metadata&lt;/em&gt; del documento.
-Successivamente, quando si vorrà effettuare una query sull&amp;rsquo;insieme dei record persistiti su &lt;strong&gt;ElasticSearch&lt;/strong&gt;, si dovrà solamente replicare le logiche (generiche) per l&amp;rsquo;applicazione delle &lt;strong&gt;ACL&lt;/strong&gt; per così ottenere i soli risultati che l&amp;rsquo;utente può accedere. In questo modo vengono evitate complesse query su un database relazionale (che prevedono l&amp;rsquo;utilizzo di diverse join su più tabelle) come invece sarebbe richiesto da un approccio basato sul solo utilizzo di &lt;strong&gt;MySQL&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Tramite le &lt;strong&gt;annotation&lt;/strong&gt; è invece possibile definire le varie &lt;strong&gt;ACE&lt;/strong&gt; per ciascuna classe o attributo della classe così da poter configurare l&amp;rsquo;accesso alle entità direttamente dai file delle entità stesse, fornendo uno strumento familiare per chi normalmente non utilizza le &lt;strong&gt;ACL&lt;/strong&gt;. Per creare una annotation custom rimandiamo anche in questo caso all&amp;rsquo;articolo presente nella &lt;a href=&#34;http://doctrine-common.readthedocs.org/en/latest/reference/annotations.html&#34;&gt;documentazione di &lt;strong&gt;Doctrine&lt;/strong&gt;&lt;/a&gt; ricordando, però, che è importante gestire una propria &lt;strong&gt;cache delle annotation&lt;/strong&gt; perchè questa non è fornita di base da &lt;strong&gt;Doctrine&lt;/strong&gt;. Un comando apposito può facilitare la gestione dell&amp;rsquo;aggiornamento delle &lt;strong&gt;ACE&lt;/strong&gt; di una entità ogni qualvolta venga effettuato un &lt;em&gt;deploy&lt;/em&gt; dell&amp;rsquo;applicazione, integrando così le &lt;em&gt;annotation&lt;/em&gt; create con le &lt;em&gt;API&lt;/em&gt; di &lt;strong&gt;Symfony&lt;/strong&gt; per le &lt;strong&gt;ACL&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Il file che definisce una entità di &lt;strong&gt;Doctrine&lt;/strong&gt; potrà dunque presentarsi in questo modo.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;?php
-namespace Facile\Ws\Bundle\Entity;
-
-use Doctrine\ORM\Mapping as ORM;
-use Facile\Ws\BunnyBundle\Annotation\EntityAce as ACE;
-
-/**
- * @ORM\Table(name=&amp;quot;user&amp;quot;)
- * @ORM\Entity
- * @ACE(&amp;quot;ROLE&amp;quot;, name=&amp;quot;ROLE_ADMIN&amp;quot;, mask=&amp;quot;MASK_MASTER&amp;quot;)
- * @ACE(&amp;quot;ROLE&amp;quot;, name=&amp;quot;ROLE_USER&amp;quot;, mask=&amp;quot;MASK_VIEW&amp;quot;)
- */
-class User
-{
-    /**
-     * @ORM\Column(name=&amp;quot;id&amp;quot;, type=&amp;quot;smallint&amp;quot;, nullable=false, options={&amp;quot;unsigned&amp;quot;=true})
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy=&amp;quot;AUTO&amp;quot;)
-     * @ACE(&amp;quot;ROLE&amp;quot;, name=&amp;quot;ROLE_USER&amp;quot;, mask=&amp;quot;MASK_VIEW&amp;quot;)
-     */
-    protected $id;
-
-    /**
-     * @ORM\Column(name=&amp;quot;timestamp&amp;quot;, type=&amp;quot;datetime&amp;quot;, nullable=false)
-     * @ACE(&amp;quot;ROLE&amp;quot;, name=&amp;quot;ROLE_USER&amp;quot;, mask=&amp;quot;MASK_VIEW&amp;quot;)
-     */
-    protected $timestamp;
-
-    /**
-     * @ORM\Column(type=&amp;quot;string&amp;quot;, length=25, unique=true)
-     * @ACE(&amp;quot;ROLE&amp;quot;, name=&amp;quot;ROLE_ADMIN&amp;quot;, mask=&amp;quot;MASK_MASTER&amp;quot;)
-     * @ACE(&amp;quot;ROLE&amp;quot;, name=&amp;quot;ROLE_USER&amp;quot;, mask=&amp;quot;MASK_VIEW&amp;quot;)
-     */
-    protected $username;
-
-    ...
- }
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+      <description>Le ACL (Access Control List) sono un strumento molto potente per poter definire l&amp;rsquo;accesso a risorse con una granularità molto fine. Nel quotidiano abbiamo già modo di utilizzarle per definire i permessi per accedere a file su Unix o quali pacchetti far passare attraverso un firewall o ancora l&amp;rsquo;accesso a database.
+In Symfony le ACL sono disponibili out-of-the-box nel caso di installazione completa e permettono la definizione delle regole di accesso a risorse tramite ruoli e maschere.</description>
     </item>
     
   </channel>

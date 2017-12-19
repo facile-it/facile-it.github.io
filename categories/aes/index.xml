@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 05 Oct 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/categories/aes/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/categories/aes/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Protection of sensitive data using encryption</title>
@@ -15,101 +17,9 @@
       <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/protection-of-sensitive-data-using-encryption/</guid>
-      <description>
-
-&lt;p&gt;Data protection is one of the major and recurrent problems in recent years: whether it is private information of users, or the company for which we work, the problem is always the same.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;How to protect such data from any attackers who would - and could (!!) - be able to gain possession?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Before arriving at the solution of this problem, however, is right to split the series in at least two branches. In the wwww data can be &amp;ldquo;obtained&amp;rdquo; in two different moments: 1) as they pass over the network in packets, or 2) after their storing (eg. database or file) in one or more servers.&lt;/p&gt;
-
-&lt;p&gt;This article will explore the second case, and will be proposed a solution: how to protect the data that we have accumulated sparingly &amp;ldquo;in house&amp;rdquo; ?.&lt;/p&gt;
-
-&lt;h2 id=&#34;putting-data-in-the-safe&#34;&gt;Putting data in the safe&lt;/h2&gt;
-
-&lt;p&gt;In case of stored data, for example, within a database; it is certainly more difficult to achieve our treasure, because they are &amp;ldquo;safe&amp;rdquo; in a protected environment, which we trust more than the volatility of the net.
-However it is better not to feel too sure: the more our data will be valuable, as any interested parties will be encouraged to seek every way to obtain them.
-Any flaw, both hardware and software, however limited in time could expose our wealth to various attacks, allowing anyone (or almost) to get them.&lt;/p&gt;
-
-&lt;p&gt;A possible and effective protection technique in these cases is &lt;strong&gt;making useless or unreadable data&lt;/strong&gt; for those who have obtained them in an illegitimate manner, through their storage in encrypted form.&lt;/p&gt;
-
-&lt;p&gt;What we propose below is a possible solution to the problem of how to store and encrypt this data, in order to obtain an adequate level of safety and maintain good elasticity, so as to allow different implementations and to cover as many possible use cases.&lt;/p&gt;
-
-&lt;p&gt;The same solution provides that the first part of the exposed problematic (data protection during transit) is resolved, and will be based on the combined use of two different types of encryption algorithms.&lt;/p&gt;
-
-&lt;h2 id=&#34;cryptographic-algorithms-symmetric-and-asymmetric&#34;&gt;Cryptographic Algorithms Symmetric and asymmetric&lt;/h2&gt;
-
-&lt;p&gt;With cryptographic algorithms ** refer to all processes and procedures aimed at obtaining a given &amp;ldquo;clouded&amp;rdquo; so as not to be understandable / intelligible ** by persons not authorized to read it.&lt;/p&gt;
-
-&lt;h3 id=&#34;symmetric-algorithms&#34;&gt;Symmetric Algorithms&lt;/h3&gt;
-
-&lt;p&gt;This type of algorithm is based on the use of encryption keys said symmetrical that allow  &lt;strong&gt;to encrypt and decrypt data using the same cryptographic key&lt;/strong&gt;.
-An example is &lt;a href=&#34;https://en.wikipedia.org/wiki/Advanced_Encryption_Standard&#34;&gt;AES&lt;/a&gt; (Advanced Encryption Standard) algorithm, evolution of &lt;a href=&#34;https://en.wikipedia.org/wiki/Rijndael_key_schedule&#34;&gt;Rijndael&lt;/a&gt; the whose characteristics can be summarized in a good level of safety and excellent speed, whether it is implemented in hardware or software.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/aes.png&#34; alt=&#34;AES&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;asymmetric-algorithms&#34;&gt;Asymmetric Algorithms&lt;/h3&gt;
-
-&lt;p&gt;The asymmetric algorithms are distinguished from the previous to the use of two distinct ** cryptographic keys, said public and private, to perform the encryption and decryption operations.
-The name derives from the method by which the two keys are to be used. The public key is freely exchanged, &lt;strong&gt;The private key is known only to those who have to be able to read&lt;/strong&gt; data or messages exchanged.
-The feature that characterizes these keys is the impossibility of obtaining, for example, the private key being in possession of the public key. Unless a particular algorithm exploits, the only method to obtain this key is the brute force **on that data.
-In this case the example for excellence is &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_(cryptosystem)&#34;&gt;RSA&lt;/a&gt;, a de facto standard in the security on data transmission: it is in fact widely used to encrypt the communications that take place between the client and server.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/rsa.png&#34; alt=&#34;RSA&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;the-solution-combining-rsa-and-aes&#34;&gt;The solution combining RSA and AES&lt;/h2&gt;
-
-&lt;p&gt;Now that we have rehearsed the technological basis, we can think about how to implement a solution.&lt;/p&gt;
-
-&lt;p&gt;Imagine we have a platform that allows various users to connect with their credentials and perform various operations, including storing their own private documents (photos, documents, passwords, contracts, etc.) that need a more high level of security, and maybe we can share this information with each other in the near future.&lt;/p&gt;
-
-&lt;p&gt;From these simple conditions, and preparing all the future &amp;ldquo;sharable&amp;rdquo; document, a possible solution is the following:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;We will use AES to encrypt individual documents;&lt;/li&gt;
-&lt;li&gt;For the sharing, we will use a table (exchange) of our database; inside the owner of the document will be tracked and users can access it;&lt;/li&gt;
-&lt;li&gt;Each user will have his key ring containing the RSA keys that serve as &amp;ldquo;lock&amp;rdquo; for the individual document key;&lt;/li&gt;
-&lt;li&gt;You will need to also obfuscate the private key of each user, so as to allow access only to the owner;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;managing-users&#34;&gt;Managing Users&lt;/h3&gt;
-
-&lt;p&gt;At the creation of a new user, we must &lt;strong&gt;generate a new RSA key pair&lt;/strong&gt; , which will go tied to the user.
-Before storing these keys in the database (along with the user&amp;rsquo;s credentials on another table), the private key will need to be obfuscated. It is good practice, in these cases, to let the user to choose a &lt;strong&gt;masterkey&lt;/strong&gt;**, to be used in turn to encrypt the private key with a symmetric algorithm.
-Masterkey chosen will be very important as it will be required each time we have to decipher our data (unfortunately, the user experience is sacrificed in favor of a much higher level of security).
-&lt;strong&gt;N.B.&lt;/strong&gt; It is strongly recommended not to store the masterkey (in any form) on the server: the attacker could easily access it and groped to force unlocking consequently all the other keys.&lt;/p&gt;
-
-&lt;h3 id=&#34;encrypt-document&#34;&gt;Encrypt Document&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Each time&lt;/strong&gt; a user will upload a file or insert a text to be protected, you will need to generate a new &lt;strong&gt;unique&lt;/strong&gt; symmetric key. We will use the key to encrypt the document using AES and store it in our database.&lt;/p&gt;
-
-&lt;h3 id=&#34;associate-the-file-to-the-user&#34;&gt;Associate the file to the user&lt;/h3&gt;
-
-&lt;p&gt;As a last step we have to associate the encrypted data to the user who is storing them. It&amp;rsquo;s time to use the &amp;ldquo;exchange table&amp;rdquo;. We will insert a record containing references to the user and the file, together with the unique key tied to it. But the key will be encrypted before using the user&amp;rsquo;s public key.&lt;/p&gt;
-
-&lt;p&gt;We got a similar system to the one shown below:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/system.png&#34; alt=&#34;System&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;share&#34;&gt;Share!&lt;/h3&gt;
-
-&lt;p&gt;Each time a document (or who has obtained the right to read it) owner user wants to share it with a second user we will simply do the following:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Require user masterkey;&lt;/li&gt;
-&lt;li&gt;Decrypt the private key of the same user using the key you just obtained;&lt;/li&gt;
-&lt;li&gt;Decipher the key document related to (recovered from the exchange table);&lt;/li&gt;
-&lt;li&gt;Make a copy of the exchange record, replacing the user with the target and re-encrypting the key exchange with the public of the recipient;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;and-now&#34;&gt;And now?&lt;/h3&gt;
-
-&lt;p&gt;Now that we have completed (at least theoretically) our data protection system &lt;strong&gt;we are definitely safe?&lt;/strong&gt; &lt;strong&gt;Absolutely not&lt;/strong&gt; Leaving aside the smooth technical operation carried out so far, we must remember that we have entrusted much of &lt;strong&gt;our system security to the user&lt;/strong&gt; .
-The weakness lies in the fact masterkey is left in the hands of our users: if they were to share it, or lose it, it would be impossible to guarantee the security or the recovery of stored data.
-Also a key - which is user&amp;rsquo;s choice - too simple would be easy to circumvent through brute force or other techniques.&lt;/p&gt;
-
-&lt;p&gt;Finally, I want to urge you to comply with all &lt;a href=&#34;https://en.wikipedia.org/wiki/Password#Factors_in_the_security_of_a_password_system&#34;&gt;general rules concerning the composition of the password&lt;/a&gt;, avoid users to choose a too simple one.&lt;/p&gt;
-</description>
+      <description>Data protection is one of the major and recurrent problems in recent years: whether it is private information of users, or the company for which we work, the problem is always the same.
+How to protect such data from any attackers who would - and could (!!) - be able to gain possession?
+Before arriving at the solution of this problem, however, is right to split the series in at least two branches.</description>
     </item>
     
     <item>
@@ -118,101 +28,9 @@ Also a key - which is user&amp;rsquo;s choice - too simple would be easy to circ
       <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</guid>
-      <description>
-
-&lt;p&gt;La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&amp;rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Come proteggere questi dati da eventuali malintenzionati che vorrebbero -  e potrebbero(!!) -  riuscire a entrarne in possesso ?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Prima di arrivare alla soluzione di questo problema però, è doveroso suddividere la casistica in almeno due rami. Nel mondo del web i dati possono essere &amp;ldquo;ottenuti&amp;rdquo; in due momenti differenti: 1) mentre transitano sulla rete sotto forma di pacchetti, oppure 2) successivamente al loro immagazzinamento (es. database o file) all&amp;rsquo;interno di uno o più server.&lt;/p&gt;
-
-&lt;p&gt;In questo articolo esploreremo il secondo caso, e verrà proposta una possibile soluzione: come proteggere quei dati che parsimoniosamente abbiamo accumulato &amp;ldquo;in casa&amp;rdquo;?.&lt;/p&gt;
-
-&lt;h2 id=&#34;mettere-i-dati-in-cassaforte&#34;&gt;Mettere i dati in cassaforte&lt;/h2&gt;
-
-&lt;p&gt;In caso di dati immagazzinati, ad esempio, all&amp;rsquo;interno di un database; è certamente più difficile raggiungere il nostro tesoro, in quanto già al &amp;ldquo;sicuro&amp;rdquo; all&amp;rsquo;interno di un ambiente protetto, del quale ci fidiamo maggiormente rispetto alla volatilità della rete.
-Tuttavia è meglio non sentirsi troppo sicuri: più i nostri dati saranno preziosi, più eventuali interessati saranno stimolati a ricercare ogni via per ottenerli.
-Una qualsiasi falla, sia hardware che software, per quanto limitata nel tempo potrebbe esporre le nostre ricchezze ad attacchi di vario genere, permettendo a chiunque (o quasi) di ottenerle.&lt;/p&gt;
-
-&lt;p&gt;Una possibile ed efficace tecnica di protezione in questi casi è &lt;strong&gt;rendere inutili o illeggibili i dati&lt;/strong&gt; per coloro che li hanno ottenuti in maniera illegittima, attraverso il loro immagazzinamento in forma cifrata.&lt;/p&gt;
-
-&lt;p&gt;Quella che proporrò di seguito è una possibile soluzione al problema di come immagazzinare e cifrare questi dati, in modo da ottenere un livello di sicurezza adeguato e mantenere una buona elasticità, tanto da permettere differenti implementazioni e da coprire quanti più possibili casi d&amp;rsquo;uso.&lt;/p&gt;
-
-&lt;p&gt;La soluzione stessa prevede che la prima parte della problematica esposta (protezione dei dati durante il transito) sia risolta, e si baserà sull&amp;rsquo;uso combinato di due tipologie differenti di algoritmi di cifratura.&lt;/p&gt;
-
-&lt;h2 id=&#34;algoritmi-crittografici-simmetrici-e-asimmetrici&#34;&gt;Algoritmi Crittografici Simmetrici e Asimmetrici&lt;/h2&gt;
-
-&lt;p&gt;Con &lt;em&gt;algoritmi crittografici&lt;/em&gt; si intendono tutti quei &lt;strong&gt;processi e procedure finalizzati ad ottenere un dato &amp;ldquo;offuscato&amp;rdquo; in modo da non essere comprensibile/intelligibile&lt;/strong&gt; da persone non autorizzate a leggerlo.&lt;/p&gt;
-
-&lt;h3 id=&#34;algoritmi-simmetrici&#34;&gt;Algoritmi Simmetrici&lt;/h3&gt;
-
-&lt;p&gt;Questa tipologia di algoritmi si basa sull&amp;rsquo;uso di chiavi di cifratura dette &lt;strong&gt;simmetriche&lt;/strong&gt; che permettono di cifrare e decifrare dati &lt;strong&gt;utilizzando la medesima chiave crittografica&lt;/strong&gt;.
-Un esempio è &lt;a href=&#34;https://en.wikipedia.org/wiki/Advanced_Encryption_Standard&#34;&gt;AES&lt;/a&gt; (Advanced Encryption Standard), evoluzione dell&amp;rsquo;algoritmo &lt;a href=&#34;https://en.wikipedia.org/wiki/Rijndael_key_schedule&#34;&gt;Rijndael&lt;/a&gt; le cui caratteristiche si possono riassumere in un buon livello di sicurezza ed un&amp;rsquo;ottima velocità, sia che venga implementato via hardware che software.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/aes.png&#34; alt=&#34;AES&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;algoritmi-asimmetrici&#34;&gt;Algoritmi Asimmetrici&lt;/h3&gt;
-
-&lt;p&gt;Gli algoritmi asimmetrici si distinguono dai precedenti per l&amp;rsquo;utilizzo di &lt;strong&gt;due chiavi crittografiche distinte&lt;/strong&gt;, dette pubblica e privata, per effettuare le operazioni di cifratura e decifratura.
-Il nome deriva dal metodo con il quale le due chiavi devono essere utilizzate. La chiave pubblica viene &lt;strong&gt;liberamente scambiata&lt;/strong&gt;, mentre la chiave privata &lt;strong&gt;rimane a conoscenza solo di coloro che devono poter leggere i dati&lt;/strong&gt; o i messaggi scambiati.
-La particolarità che caratterizza queste chiavi è l&amp;rsquo;impossibilità di ricavare, ad esempio, la chiave privata essendo in possesso della chiave pubblica. A meno di particolari exploit dell&amp;rsquo;algoritmo, l&amp;rsquo;unico metodo per ottenere tale chiave è il &lt;strong&gt;brute force&lt;/strong&gt; sui dati stessi.
-In questo caso l&amp;rsquo;esempio per eccellenza è &lt;a href=&#34;https://en.wikipedia.org/wiki/RSA_(cryptosystem)&#34;&gt;RSA&lt;/a&gt;, uno standard di fatto nella sicurezza riguardante la trasmissione di dati: è infatti largamente utilizzato per cifrare le comunicazioni che avvengono tra client e server.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/rsa.png&#34; alt=&#34;RSA&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;la-soluzione-combinando-rsa-e-aes&#34;&gt;La soluzione combinando RSA e AES&lt;/h2&gt;
-
-&lt;p&gt;Ora che abbiamo ripassato le basi tecnologiche, possiamo pensare a come implementare una soluzione.&lt;/p&gt;
-
-&lt;p&gt;Immaginiamo di avere una piattaforma che permetta ai vari &lt;strong&gt;utenti&lt;/strong&gt; di collegarsi con le proprie credenziali e di effettuare svariate operazioni, tra cui immagazzinare i propri documenti privati (foto, documenti, password, contratti, etc.) che necessitano di un più alto livello di sicurezza, e magari di poter condividere tra loro questi dati in un futuro prossimo.&lt;/p&gt;
-
-&lt;p&gt;Partendo da queste semplici condizioni, e predisponendo il tutto alla futura &amp;ldquo;condivisibilità&amp;rdquo; dei documenti, una possibile soluzione è la seguente:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;utilizzeremo AES per cifrare i singoli documenti;&lt;/li&gt;
-&lt;li&gt;per permettere la condivisione, utilizzeremo una tabella (di scambio) del nostro database; al suo interno verranno tracciati il proprietario del documento e gli utenti che potranno accedervi;&lt;/li&gt;
-&lt;li&gt;ogni singolo utente avrà il suo portachiavi, contenente le chiavi RSA che fungeranno da &amp;ldquo;lucchetto&amp;rdquo; per la chiave del singolo documento;&lt;/li&gt;
-&lt;li&gt;sarà necessario offuscare anche la chiave privata di ogni utente, in modo da permetterne l&amp;rsquo;accesso solo al proprietario;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;gestire-gli-utenti&#34;&gt;Gestire gli utenti&lt;/h3&gt;
-
-&lt;p&gt;Alla creazione di un nuovo utente sarà nostra premura &lt;strong&gt;generare una nuova coppia di chiavi&lt;/strong&gt; RSA, che andrà legata all&amp;rsquo;utente.
-Prima di memorizzare queste chiavi nel database (assieme alle credenziali dell&amp;rsquo;utente o in un&amp;rsquo;altra tabella), sarà necessario offuscare la chiave privata. È buona prassi, in questi casi, far scegliere una &lt;strong&gt;masterkey&lt;/strong&gt; all&amp;rsquo;utente, da utilizzare per cifrare a sua volta la chiave privata con algoritmo simmetrico.
-La masterkey scelta sarà importantissima in quanto andrà richiesta ogni qual volta dovremo decifrare i nostri dati (purtroppo la user experience è sacrificata a favore di un livello di sicurezza nettamente maggiore).
-&lt;strong&gt;N.B.&lt;/strong&gt; È assolutamente sconsigliato memorizzare la masterkey (in qualsiasi forma) sul server: l&amp;rsquo;attaccante potrebbe facilmente accedervi e tentare di forzarla sbloccando di conseguenza tutte le altre chiavi.&lt;/p&gt;
-
-&lt;h3 id=&#34;cifrare-il-documento&#34;&gt;Cifrare il documento&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;Ogni volta&lt;/strong&gt; in cui un utente caricherà un file o inserirà un testo da proteggere, sarà necessario generare una nuova chiave simmetrica &lt;strong&gt;univoca&lt;/strong&gt;. Useremo la chiave per cifrare il documento utilizzando AES e lo memorizzeremo all&amp;rsquo;interno della nostra base dati.&lt;/p&gt;
-
-&lt;h3 id=&#34;associare-il-file-all-utente&#34;&gt;Associare il file all&amp;rsquo;utente&lt;/h3&gt;
-
-&lt;p&gt;Come ultimo passo dovremo associare i dati cifrati all&amp;rsquo;utente che li sta memorizzando. È il momento di utilizzare la &amp;ldquo;tabella di scambio&amp;rdquo;. Inseriremo un record contenente i riferimenti all&amp;rsquo;utente e al file, insieme alla chiave univoca legata a quest&amp;rsquo;ultimo. La chiave verrà però prima cifrata utilizzando la chiave pubblica dell&amp;rsquo;utente.&lt;/p&gt;
-
-&lt;p&gt;Abbiamo ottenuto un sistema simile a quello visualizzato di seguito:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/protezione-di-dati-sensibili-usando-la-crittografia/system.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;condividere&#34;&gt;Condividere!&lt;/h3&gt;
-
-&lt;p&gt;Ogni volta in cui un utente proprietario di un documento (o che ha ottenuto il diritto di leggerlo) vorrà condividerlo con un secondo utente sarà sufficiente operare come segue:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;richiedere la masterkey dell&amp;rsquo;utente;&lt;/li&gt;
-&lt;li&gt;decifrare la chiave privata dello stesso utente utilizzando la chiave appena ottenuta;&lt;/li&gt;
-&lt;li&gt;decifrare la chiave legata al documento (recuperata dalla tabella di scambio);&lt;/li&gt;
-&lt;li&gt;effettuare una copia del record di scambio, sostituendo l&amp;rsquo;utente con quello di destinazione e cifrando nuovamente la chiave di scambio con quella pubblica del destinatario;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;e-ora&#34;&gt;E ora?&lt;/h3&gt;
-
-&lt;p&gt;Ora che abbiamo ultimato (almeno teoricamente) il nostro sistema di protezione dei dati &lt;strong&gt;siamo definitivamente al sicuro?&lt;/strong&gt; &lt;strong&gt;Assolutamente no!&lt;/strong&gt; Tralasciando il buon esercizio tecnico svolto fin ora, dobbiamo ricordarci che &lt;strong&gt;abbiamo affidato buona parte della sicurezza del nostro sistema all&amp;rsquo;utente&lt;/strong&gt;.
-Il punto debole infatti risiede nella masterkey che resta nelle mani dei nostri utenti: se questi ultimi dovessero condividerla, o perderla, sarebbe impossibile garantire la sicurezza o il recupero dei dati immagazzinati.
-Inoltre una chiave - che è scelta dell&amp;rsquo;utente - troppo semplice sarebbe facilmente aggirabile tramite brute force o altre tecniche.&lt;/p&gt;
-
-&lt;p&gt;In conclusione, tengo ad esortarvi a rispettare tutte le &lt;a href=&#34;https://en.wikipedia.org/wiki/Password#Factors_in_the_security_of_a_password_system&#34;&gt;regole generali riguardanti la composizione delle password&lt;/a&gt;, impendendo agli utenti di sceglierne una troppo semplice.&lt;/p&gt;
-</description>
+      <description>La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&amp;rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.
+Come proteggere questi dati da eventuali malintenzionati che vorrebbero - e potrebbero(!!) - riuscire a entrarne in possesso ?
+Prima di arrivare alla soluzione di questo problema però, è doveroso suddividere la casistica in almeno due rami.</description>
     </item>
     
   </channel>

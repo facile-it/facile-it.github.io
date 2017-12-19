@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 21 Apr 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/categories/newrelic/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/categories/newrelic/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Introduzione al tracciamento di eventi lato server</title>
@@ -15,39 +17,7 @@
       <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</guid>
-      <description>
-
-&lt;p&gt;L’adozione di strategie &lt;em&gt;DevOps&lt;/em&gt; ha portato negli ultimi anni ad incrementare le aree coperte da &lt;strong&gt;tool di monitoring&lt;/strong&gt; in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei &lt;strong&gt;server&lt;/strong&gt; o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le &lt;strong&gt;applicazioni&lt;/strong&gt; stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc. ecc.).&lt;/p&gt;
-
-&lt;p&gt;Per entrambi i casi lo sviluppatore ha a disposizione sia soluzioni &lt;strong&gt;open source&lt;/strong&gt; che soluzioni &lt;strong&gt;SaaS&lt;/strong&gt;: la differenza sostanziale, a parità di feature principali, rimane la gestione dell’infrastruttura aggiuntiva, necessaria a supportare le operazioni per la raccolta dei dati inviati dai sensori predisposti a monitorare le metriche che interessano. Nonostante gli strumenti si facciano sempre più abbondanti (basti pensare a tutte le soluzioni recenti per il salvataggio di time series) e user-friendly, volersi affidare a provider terzi può essere un modo per concentrarsi maggiormente sul valore aggiunto che si vuole dare all’utente finale con la propria applicazione, senza doversi preoccupare di questioni di contorno.&lt;/p&gt;
-
-&lt;p&gt;Tra i principali prodotti SaaS presenti sul mercato troviamo &lt;em&gt;&lt;a href=&#34;http://newrelic.com/&#34;&gt;NewRelic&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&#34;http://www.appdynamics.com/&#34;&gt;AppDynamics&lt;/a&gt;&lt;/em&gt;, &lt;em&gt;&lt;a href=&#34;https://www.serverdensity.com&#34;&gt;ServerDensity&lt;/a&gt;&lt;/em&gt; e &lt;em&gt;&lt;a href=&#34;https://www.ruxit.com&#34;&gt;Ruxit&lt;/a&gt;&lt;/em&gt;, ciascuno con i propri prezzi e le proprie peculiarità, ma tutti che permettono di avere un costante monitoraggio della propria applicazione, dal browser dell’utente fino alla query per salvare i dati, gratis o con costi mensili contenuti e proporzionali alla dimensione della propria infrastruttura.&lt;/p&gt;
-
-&lt;p&gt;A &lt;strong&gt;Facile.it&lt;/strong&gt; viene utilizzato &lt;strong&gt;NewRelic&lt;/strong&gt; non solo per il monitoraggio base dei servizi che compongono il sito ma, grazie a &lt;strong&gt;NewRelic Insights&lt;/strong&gt;, perché viene data la possibilità di salvare eventi personalizzati che possono dare maggiori informazioni sia agli sviluppatori che ai business analysts. Per poter accedere a &lt;strong&gt;NewRelic Insights&lt;/strong&gt; bisogna avere un account a pagamento, ma è comunque possibile sperimentare l’eventuale utilità per le proprie esigenze grazie al periodo di prova di 14 giorni.&lt;/p&gt;
-
-&lt;p&gt;La raccolta dei dati può avvenire in due modi:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;tramite &lt;strong&gt;&lt;em&gt;custom attributes&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;tramite &lt;strong&gt;&lt;em&gt;eventi personalizzati&lt;/em&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id=&#34;custom-attributes&#34;&gt;Custom Attributes&lt;/h4&gt;
-
-&lt;p&gt;I &lt;em&gt;custom attributes&lt;/em&gt; sono delle coppie di chiave-valore da aggiungere alla transazione corrente (Web e Non-Web) già tracciata dagli strumenti di &lt;em&gt;NewRelic&lt;/em&gt; per i principali linguaggi di programmazione (&lt;strong&gt;PHP&lt;/strong&gt;, &lt;strong&gt;NodeJs&lt;/strong&gt;, &lt;strong&gt;Ruby&lt;/strong&gt;, &lt;strong&gt;Python&lt;/strong&gt;, &lt;em&gt;Java&lt;/em&gt;, &lt;em&gt;.NET&lt;/em&gt;). Possiamo aggiungere ad esempio l’utente attualmente collegato che sta effettuando tale transazione, il numero di oggetti presenti nel carrello o ancora il loro valore.&lt;/p&gt;
-
-&lt;p&gt;Ad esempio, tramite l&amp;rsquo;estensione di &lt;em&gt;NewRelic&lt;/em&gt; disponibile per &lt;strong&gt;PHP&lt;/strong&gt;, è possibile aggiungere i dettagli dell&amp;rsquo;utente attualmente collegato chiamando la funzione &lt;code&gt;newrelic_add_custom_parameter (&#39;userID&#39;, $userId)&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;eventi-personalizzati&#34;&gt;Eventi personalizzati&lt;/h4&gt;
-
-&lt;p&gt;Gli &lt;em&gt;eventi personalizzati&lt;/em&gt; vanno inviati ad un &lt;strong&gt;webservice REST&lt;/strong&gt; in formato &lt;strong&gt;JSON&lt;/strong&gt;. Ci mettono in grado di tracciare un qualsiasi evento all’interno di una normale transazione già tracciata da NewRelic, come ad esempio i tempi di risposta di un servizio esterno utilizzato dall’applicazione.&lt;/p&gt;
-
-&lt;p&gt;Gli eventi personalizzati possono essere registrati richiamando la relativa funzione &lt;code&gt;newrelic_record_custom_event(&#39;DNDServiceCall&#39;,[&#39;business&#39; =&amp;gt; &#39;telefonia&#39;, &#39;responseTime&#39; =&amp;gt; 1500])&lt;/code&gt; disponibile nelle ultime versioni dell&amp;rsquo;estensione &lt;strong&gt;PHP&lt;/strong&gt; oppure tramite una semplice chiamata cURL come indicato dalla &lt;a href=&#34;https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/inserting-custom-events-insights-api&#34;&gt;documentazione&lt;/a&gt; sui &lt;em&gt;custom events&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Una volta che i dati vengono raccolti da &lt;em&gt;NewRelic&lt;/em&gt; è possibile analizzarli tramite delle semplici query in un linguaggio simil-&lt;em&gt;SQL&lt;/em&gt;, in questo caso chiamato &lt;strong&gt;NRQL&lt;/strong&gt; (&lt;em&gt;NewRelic Query Language&lt;/em&gt;). La sintassi base di una SELECT in SQL viene mantenuta, ma vengono forniti strumenti per meglio gestire le serie temporali, tramite &lt;strong&gt;TIMESERIES&lt;/strong&gt;, &lt;strong&gt;SINCE&lt;/strong&gt;, &lt;strong&gt;UNTIL&lt;/strong&gt;: una trattazione più approfondita è disponibile alla relativa pagina della &lt;a href=&#34;https://docs.newrelic.com/docs/insights/new-relic-insights/using-new-relic-query-language/nrql-reference&#34;&gt;documentazione&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I risultati delle &lt;em&gt;query&lt;/em&gt; vengono resi disponibili in formato &lt;strong&gt;JSON&lt;/strong&gt;, oppure come widget da poter integrare poi in una dashboard, in maniera da tenere sempre sotto controllo le metriche più importanti per la conduzione del proprio business. Inoltre tramite &lt;a href=&#34;https://docs.newrelic.com/docs/insights/new-relic-insights/using-insights-interface/exploring-your-data&#34;&gt;Data Explorer&lt;/a&gt; è possibile consultare un campione degli eventi recentemente inviati dalla nostra applicazione a &lt;em&gt;NewRelic&lt;/em&gt;, così da poter eventualmente raffinare le strutture dati con cui vengono raccolti.&lt;/p&gt;
-</description>
+      <description>L’adozione di strategie DevOps ha portato negli ultimi anni ad incrementare le aree coperte da tool di monitoring in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei server o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le applicazioni stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc.</description>
     </item>
     
   </channel>

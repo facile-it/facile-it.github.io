@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Jul 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/categories/agile/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/categories/agile/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>MiniIAD Vimercate 2015: reportage</title>
@@ -15,48 +17,8 @@
       <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</guid>
-      <description>
-
-&lt;p&gt;Lo scorso 23 Maggio 2015, si è tenuto a Vimercate, presso la sede di Alcatel-Lucent all&amp;rsquo;Energy Park, il &lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/&#34;&gt;Mini Italian Agile Day&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Anche in occasione di questo evento Facile.it si è presentata con una piccola delegazione. Sono andato all&amp;rsquo;incontro cercando di polarizzare bene le mie aspettative della giornata. Da un evento della &lt;strong&gt;comunità Agile&lt;/strong&gt; mi aspetto un &lt;strong&gt;confronto&lt;/strong&gt;, una &lt;strong&gt;crescita&lt;/strong&gt;, nonché l&amp;rsquo;occasione di incontrare qualche volto amico, qualche ex collega o qualche guru a cui chiedere consiglio!&lt;/p&gt;
-
-&lt;p&gt;Parlare di recensione della giornata mi sembra inappropriato. Preferisco soffermarmi su cosa mi ha colpito e cosa mi sono portato a casa da questa esperienza.&lt;/p&gt;
-
-&lt;h2 id=&#34;welcome-coffee&#34;&gt;Welcome coffee&lt;/h2&gt;
-
-&lt;p&gt;Partiamo dal primo impatto: la location. Beh, complimenti ad Alcatel perché ha una sede molto bella! raggiungerla in auto non è stato tanto difficile e tutto quel verde dentro e fuori dagli uffici trasmette una bella sensazione. Come al solito sono in ritardo, giusto il tempo di un caffè, offerto dal nostro host, e qualche stretta di mano e subito si comincia.&lt;/p&gt;
-
-&lt;h2 id=&#34;keynote&#34;&gt;Keynote&lt;/h2&gt;
-
-&lt;p&gt;Il keynote è di &lt;a href=&#34;https://twitter.com/ixhd&#34;&gt;Cliff Hazell&lt;/a&gt;, un ragazzo che fa l&amp;rsquo;agile coach in Spotify. Ha illustrato una &lt;strong&gt;tecnica di visualizzazione&lt;/strong&gt; della conoscenza e dei processi su una grande parete con dei post-it. Un qualcosa che mi ha ricordato l&amp;rsquo;&lt;a href=&#34;http://ziobrando.blogspot.it/2013/11/introducing-event-storming.html&#34;&gt;event storming&lt;/a&gt; che ho visto raccontare da &lt;a href=&#34;http://www.avanscoperta.it/it/author/a-brandolini/&#34;&gt;Alberto Brandolini&lt;/a&gt; a BetterSoftware, tuttavia mi è parso ci siano alcune differenze. In entrambi i metodi il risultato finale è &lt;strong&gt;una parete piena di post-it che spiegano il modello&lt;/strong&gt; da sviluppare. Nell&amp;rsquo;event storming, la creazione partecipata della parete è l&amp;rsquo;evoluzione degli stati del modello sono il punto focale. Non ho mai avuto il piacere di usare event storming, ma tutte le presentazioni che ho visto delineano il modo in cui la parete &amp;ldquo;si riempie&amp;rdquo;, mentre ho poche informazioni su come questa poi si traduca in software. Piuttosto, mi pare di aver colto che Cliff ponga molta enfasi su come man mano la conoscenza che stiamo visualizzando si evolva e man mano si traduca in componenti software. Mi intriga l&amp;rsquo;ipotesi di combinare le due cose!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/miniiad-vimercate-2015-reportage/visualization.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;agile-e-il-business-delle-aziende&#34;&gt;Agile e il business delle aziende&lt;/h2&gt;
-
-&lt;p&gt;La mia giornata prosegue parlando di &lt;strong&gt;&lt;a href=&#34;http://www.ideastartup.it/startupzionario/&#34;&gt;Startup&lt;/a&gt;&lt;/strong&gt; e &lt;strong&gt;&lt;a href=&#34;https://it.wikipedia.org/wiki/Produzione_snella&#34;&gt;Lean&lt;/a&gt;&lt;/strong&gt; con &lt;a href=&#34;https://twitter.com/felicepescatore&#34;&gt;Felice Pescatore&lt;/a&gt;. Una sessione sul percorso &amp;ldquo;&lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/#leanstartup&#34;&gt;dal garage al grattacielo&lt;/a&gt;&amp;rdquo;. Bello stile, coinvolgente! Ho già letto tanto su Lean, purtroppo non ho portato via nulla di nuovo.
-Anche il talk successivo &lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/#Kanban_experiment&#34;&gt;Kanban experiment&lt;/a&gt;, su &lt;strong&gt;&lt;a href=&#34;https://it.wikipedia.org/wiki/Kanban&#34;&gt;Kanban&lt;/a&gt;&lt;/strong&gt;, non mi ha detto nulla di nuovo. Mi piace però constatare che molti gruppi di lavoro che si stanno avvicinando alle metodologie Agili, scelgono Kanban.&lt;/p&gt;
-
-&lt;h2 id=&#34;large-scaling-scrum&#34;&gt;Large Scaling SCRUM&lt;/h2&gt;
-
-&lt;p&gt;Dopo un buon pranzo, ho assistito ad una &lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/#LeSS_Adoption&#34;&gt;sessione&lt;/a&gt; su &lt;strong&gt;&lt;a href=&#34;http://less.works/&#34;&gt;Less&lt;/a&gt;&lt;/strong&gt;. E quì rimango veramente sorpreso in positivo. Non conoscevo Less e penso se ne dovrebbe parlare di più, soprattutto in aziende con tanti gruppi di lavoro diversi. &lt;a href=&#34;https://www.youtube.com/watch?v=PTjnw9EXsD4&#34;&gt;Francesco Sferlazza&lt;/a&gt; ha raccontato come in Alcatel hanno introdotto Less (Large Scaling SCRUM). In sostanza, si tratta di un framework per &lt;strong&gt;attuare SCRUM in aziende composte da svariati sottogruppi che fanno SCRUM che però hanno delle dipendenze vicendevoli&lt;/strong&gt;. Con SCRUM si dovrebbero costituire dei gruppi completamente indipendenti, composti da tutte le risorse necessarie per realizzare l&amp;rsquo;obiettivo. In realtà estremamente complesse, come appunto una grandissima azienda di telefonia, non è possibile considerare nello stesso aggregato i manutentori delle centraline telefoniche con gli esperti di design dei dispositivi da installare. In sostanza, si deve armonizzare il lavoro di gruppi diversi in cui in ciascuno si applica SCRUM.
-Tutto questo mi ha colpito moltissimo perché anche nella nostra realtà (non certo così grande e complessa) alcuni elementi della filiera non riusciamo a portarli dentro tutti i team. Ad esempio i web designer o il team di marketing. Tutti i team condividono il tempo e le competenze di questi gruppi, che a loro volta fanno iterazioni settimanali (non SCRUM). Il talk mi ha illustrato alcuni dei vantaggi di Less ed ha stuzzicato la mia curiosità. Ora dovrò capire come applicarlo concretamente!&lt;/p&gt;
-
-&lt;h2 id=&#34;retrospettive-creative&#34;&gt;Retrospettive creative&lt;/h2&gt;
-
-&lt;p&gt;Si è andato avanti parlando di &lt;strong&gt;&lt;a href=&#34;http://retrospectivewiki.org/index.php?title=Main_Page&#34;&gt;retrospettive&lt;/a&gt;&lt;/strong&gt; con Marco Di Biase, uno SCRUM Master di Bravofly. Su questo tema, devo dare il merito a Marco di aver &lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/#Miglioramento_continuo&#34;&gt;condiviso&lt;/a&gt; un sacco di idee e scoperte fatte nel corso della sua esperienza. Io, ad esempio, ho iniziato a fare retrospettive con un certo format e da allora son riuscito a coinvolgere gli interlocutori più disparati del team (facciamo retrospettive tra team di addetti alla vendita e vengono fuori continue azioni di miglioramento come dalle retrospettive tra programmatori). Ma non ho mai provato a fare e farmi delle &lt;strong&gt;domande diverse durante gli incontri&lt;/strong&gt;. Marco accennava che &lt;a href=&#34;https://twitter.com/p_pugliese&#34;&gt;Pierluigi Pugliese&lt;/a&gt; gli abbia mostrato decine di approcci diversi.&lt;/p&gt;
-
-&lt;p&gt;Mi ha colpito in particolare il format della retrospettiva con i cerchi concentrici che Marco suggerisce di usare per le iterazioni o per i periodi in cui le cose non vanno particolarmente bene, per ragionare sui problemi: ogni cerchio è un attore; il cerchio di cosa posso controllare io per fare meglio, di cosa può controllare il team per fare meglio e cosa invece è fuori dal nostro controllo ma sta facendo andare male le cose.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/miniiad-vimercate-2015-reportage/retrospettiva-cerchi.jpg&#34; alt=&#34;Retrospettiva con cerchi&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;conclusioni&#34;&gt;Conclusioni&lt;/h2&gt;
-
-&lt;p&gt;La serata si è poi conclusa con una carrellata di &lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/#Agile_Coaches&#34;&gt;esperienze&lt;/a&gt; vissute da tre coach. Dalla tastiera al coaching (senza lasciare la tastiera!). Le storie delle persone sono una delle cose di maggiore ispirazione. Per me penso sia bello ripartire da qui, con qualche pillola in più, inseguendo quel miglioramento continuo che ogni giorno sa riempirci di soddisfazioni.&lt;/p&gt;
-
-&lt;p&gt;A presto con i prossimi grandi eventi dell&amp;rsquo;autunno!&lt;/p&gt;
-</description>
+      <description>Lo scorso 23 Maggio 2015, si è tenuto a Vimercate, presso la sede di Alcatel-Lucent all&amp;rsquo;Energy Park, il Mini Italian Agile Day.
+Anche in occasione di questo evento Facile.it si è presentata con una piccola delegazione. Sono andato all&amp;rsquo;incontro cercando di polarizzare bene le mie aspettative della giornata. Da un evento della comunità Agile mi aspetto un confronto, una crescita, nonché l&amp;rsquo;occasione di incontrare qualche volto amico, qualche ex collega o qualche guru a cui chiedere consiglio!</description>
     </item>
     
     <item>
@@ -65,70 +27,8 @@ Tutto questo mi ha colpito moltissimo perché anche nella nostra realtà (non ce
       <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</guid>
-      <description>
-
-&lt;p&gt;Parlare di &lt;strong&gt;metodologie di lavoro&lt;/strong&gt; in azienda è una cosa piuttosto complessa, soprattutto perché non è possibile generalizzare un modo di lavoro che sia universalmente valido. Sento sempre più persone dire &amp;ldquo;con &lt;a href=&#34;http://it.wikipedia.org/wiki/Scrum_%28informatica%29&#34;&gt;SCRUM&lt;/a&gt; avrai risultati assicurati&amp;rdquo;. Lo trovo piuttosto riduttivo.&lt;/p&gt;
-
-&lt;p&gt;In sostanza, sempre più persone hanno tradotto i &lt;a href=&#34;http://agilemanifesto.org/iso/it/&#34;&gt;valori&lt;/a&gt; ed i &lt;a href=&#34;http://agilemanifesto.org/iso/it/principles.html&#34;&gt;princìpi&lt;/a&gt; promossi dal manifesto agile in una serie di &amp;ldquo;ricette&amp;rdquo; pronte da seguire fedelmente per ottenere buoni risultati. Cosa c’è di &amp;ldquo;&lt;a href=&#34;http://it.wikipedia.org/wiki/Metodologia_agile&#34;&gt;agile&lt;/a&gt;&amp;rdquo; in tutto ciò? E’ come cucinare con un robot da cucina&amp;hellip;
-Ecco perché sono sempre più convinto che la vera ricetta del successo nei progetti sia qualcosa che si scopre &amp;ldquo;assaggiando&amp;rdquo; gli ingredienti che mettiamo nella ricetta (andrò avanti con la metafora della cucina, siete avvisati!).&lt;/p&gt;
-
-&lt;p&gt;Ad alcuni possono piacere le ricette semplici, come una bella grigliata. Come quei gruppi che apprezzano un manager molto presente, che dica a tutti cosa debbano fare, passo dopo passo. Qualcosa di &amp;ldquo;semplice&amp;rdquo; ma efficace.
-Altri amano qualcosa di creativo, come una ricetta raffinata di un ristorante stellato. Un complesso artifizio di procedure di comunicazione per la gestione del lavoro. Penso ai gruppi che si coordinano da remoto con svariati tool. Li ammiro molto, io avrei difficoltà.
-Infine, i gruppi che adorano il fast food. Quello sempre uguale ovunque tu sia, e che piace a quasi tutti i palati. Si perché, diciamocelo, piace a tutti. Come &lt;a href=&#34;http://it.wikipedia.org/wiki/Scrum_%28informatica%29&#34;&gt;SCRUM&lt;/a&gt;!
-Quindi, uscendo dalla metafora, potremmo dire che &lt;a href=&#34;http://it.wikipedia.org/wiki/Scrum_%28informatica%29&#34;&gt;SCRUM&lt;/a&gt; è la ricetta perfetta perché piace a tutti (o quasi). Ma siamo sicuri che il famoso panino della nota catena americana sia anche il miglior modo di mangiare?&lt;/p&gt;
-
-&lt;h3 id=&#34;imparare-dai-propri-errori&#34;&gt;Imparare dai propri errori&lt;/h3&gt;
-
-&lt;p&gt;Il nostro gruppo di lavoro, ad esempio, ha passato mesi cercando di applicare la ricetta di &lt;a href=&#34;http://it.wikipedia.org/wiki/Scrum_%28informatica%29&#34;&gt;SCRUM&lt;/a&gt;. Un mezzo disastro. Ci siamo chiesti dove stessimo sbagliando, finché non abbiamo definitivamente fatto indigestione. Piccoli o grandi conflitti interni al team ed una dose di stress altissima. Le nostre &lt;a href=&#34;http://en.wikipedia.org/wiki/Retrospective#Software_development&#34;&gt;retrospettive&lt;/a&gt; (retaggio dell’agile, non certo perché avessimo capito di cosa si trattasse veramente!) sembravano più sedute di terapia di gruppo, che momenti di condivisione e confronto. Col senno di poi siamo in grado di fare la lista delle cose che non andavano:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;il nostro cliente interno aveva &lt;strong&gt;bisogni che cambiavano&lt;/strong&gt; ad una velocità tale da vanificare qualsiasi iterazione pianificata. Questo generava grande frustrazione nel gruppo che sentiva di disattendere il valore dell’abbracciare il cambiamento;&lt;/li&gt;
-&lt;li&gt;il gruppo aveva appena perso delle pedine storiche che avevano lasciato in eredità un software costruito su un &lt;strong&gt;dominio complesso&lt;/strong&gt;. Non c’era la seniority necessaria per fare delle stime attendibili. Ogni iterazione era un bagno di sangue &lt;strong&gt;contro il tempo&lt;/strong&gt;, a danno della qualità del codice o della vita dei programmatori che lavoravano troppo;&lt;/li&gt;
-&lt;li&gt;non avevamo capito &lt;strong&gt;l’importanza dello SCRUM Master&lt;/strong&gt;, qualcuno che sappia proteggere i valori e le cerimonie di questa pratica. Passavamo da un’iterazione all’altra senza prenderci nemmeno il tempo di celebrare i successi. Fare i panini della nota catena, in casa, senza il particolare controllo qualità che la catena impone ai propri franchise è un esperimento fallito in partenza.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;cambiare-ricetta&#34;&gt;Cambiare ricetta&lt;/h3&gt;
-
-&lt;p&gt;Penso che essere agili sia, in primo luogo, non lasciarsi intrappolare da preconcetti. Ecco perché un giorno ho riunito il team ed ho detto che non mi riconoscevo in quel modo di lavorare!
-Abbiamo iniziato a pensare ad &lt;strong&gt;una ricetta diversa&lt;/strong&gt;, qualcosa che fosse più adatto al nostro palato. Guardando le caratteristiche del nostro gruppo e del contesto in cui lavoriamo abbiamo osservato che:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ogni giorno le &lt;strong&gt;priorità&lt;/strong&gt; sono potenzialmente rimesse in discussione;
-vogliamo fare qualità e vogliamo che il progetto sia al passo con la tecnologia;&lt;/li&gt;
-&lt;li&gt;abbiamo un team con una buona esperienza ma deve entrare nelle dinamiche di un &lt;strong&gt;dominio complesso&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;dobbiamo ancora scoprire &lt;strong&gt;la nostra velocity, che comunque cambierà&lt;/strong&gt; man mano che prendiamo confidenza col dominio. Insomma, la velocity non sarebbe un parametro utile per le stime;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;non possiamo rallentare&lt;/strong&gt; perché il cliente ha bisogno di noi;
-abbiamo un elevato numero di bug;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Il nostro gruppo è composto da &lt;strong&gt;5 programmatori ed un product specialist&lt;/strong&gt;, una persona che si occupa di tracciare i bisogni degli utenti, i bug e ci aiuta a far in modo che il prodotto sia bello e curato.
-Ricevendo continue richieste, la prima cosa da fare è non perderne traccia. Abbiamo aperto un foglio di calcolo condiviso su Google Drive in cui scriviamo le storie che arrivano al product specialist, assegnamo un’etichetta che mostri al volo di cosa si tratti (frontend, fatture, bug, etc.) e facciamo una stima estremamente generica (è una storia piccola, epica, etc); di fatto si tratta del nostro &lt;strong&gt;backlog&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ogni inizio del mese facciamo una &lt;strong&gt;revisione del backlog&lt;/strong&gt; insieme al manager per capire se ci sono delle cose più prioritarie di altre e facciamo pulizia.
-Uno dei capisaldi della nostra ricetta è la &lt;strong&gt;prioritizzazione continua&lt;/strong&gt;. Ingrediente di base, dunque, il &lt;a href=&#34;http://it.wikipedia.org/wiki/Kanban&#34;&gt;Kanban&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Abbiamo aperto una board su &lt;a href=&#34;http://www.trello.com&#34;&gt;Trello&lt;/a&gt; dove far evolvere &lt;strong&gt;le storie (i task)&lt;/strong&gt; da una colonna all’altra. Si parte dalla colonna &amp;ldquo;&lt;em&gt;prossime cose da fare&lt;/em&gt;&amp;rdquo;, che carichiamo man mano che si svuota, dal backlog o, molto più spesso, con le cose che scopriamo giorno dopo giorno parlando con il cliente (ecco la &lt;em&gt;prioritizzazione continua&lt;/em&gt;!). Esempio tipico: &amp;ldquo;se metteste anche quella statistica nella pagina dei report delle vendite avremmo più controllo su quel target di clienti&amp;rdquo;&amp;hellip; fatto!&lt;/p&gt;
-
-&lt;p&gt;Ogni storia riporta l’etichetta già indicata nel backlog, così un programmatore ha il polso di quale sia il dominio legato alla storia. Un nuovo arrivato avrebbe più difficoltà a lavorare sul dominio della contabilità. E’ meglio che si concentri su altre storie, col tempo prenderà confidenza anche con quel mondo.&lt;/p&gt;
-
-&lt;p&gt;Quando un programmatore è libero &lt;strong&gt;&amp;ldquo;adotta&amp;rdquo; una storia&lt;/strong&gt;, la porta nella colonna con le cose che stiamo facendo e ci appiccica il proprio avatar. Durante lo sviluppo si occupa di tutto: la raccolta delle informazioni, verifica i mockup, prepara la demo con il cliente, etc.
-Quando ha finito ed è pronto a metterla in produzione la sposta nella colonna &amp;ldquo;&lt;em&gt;da provare in produzione&lt;/em&gt;&amp;rdquo;. Il task resta là finché un caso reale non ci permette di dire &amp;ldquo;funziona!&amp;rdquo;. A quel punto va nelle cose &amp;ldquo;&lt;em&gt;fatte&lt;/em&gt;&amp;rdquo;.&lt;/p&gt;
-
-&lt;p&gt;In tutte le storie cerchiamo di metterci quanta &lt;strong&gt;più qualità possibile&lt;/strong&gt;, facciamo i &lt;strong&gt;test funzionali ed unitari&lt;/strong&gt; e teniamo sotto controllo il nostro tool di &lt;strong&gt;continuous integration&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Le storie su &lt;strong&gt;nuovi domini&lt;/strong&gt; sono quelle più critiche, perché portano a fare molte nuove scelte di architettura. Io sono convinto che il &lt;strong&gt;&lt;a href=&#34;http://it.wikipedia.org/wiki/Pair_programming&#34;&gt;pair programming&lt;/a&gt;&lt;/strong&gt; non sia una tecnica per raddoppiare la velocità, piuttosto un modo per &lt;strong&gt;dimezzare la stupidità&lt;/strong&gt;! Si può sempre sbagliare, ma prendere una cantonata in due è raro. E’ più probabile che si faccia challenge a vicenda per le scelte importanti. Quindi in questi casi mettiamo insieme due programmatori e facciamo in modo che si confrontino.&lt;/p&gt;
-
-&lt;p&gt;Se una storia stenta ad andare in &amp;ldquo;&lt;em&gt;fatto&lt;/em&gt;&amp;rdquo; siamo pronti a metterci anche in 2 o 3 pur di portare la storia a risultato, come ci insegna il &lt;a href=&#34;http://it.wikipedia.org/wiki/Kanban&#34;&gt;Kanban&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;A rotazione (ruotiamo ogni 2 settimane), uno o più programmatori nel team ci aiutano a gestire uno dei problemi che rischiano di compromettere i nostri piani. Li chiamiamo i &lt;strong&gt;wallman&lt;/strong&gt;! Ci proteggono dalle &lt;strong&gt;continue interruzioni&lt;/strong&gt; che altrimenti il team subirebbe, per gestire i bug o le varie richieste che vengono dal cliente.
-Nel tempo &amp;ldquo;libero&amp;rdquo; (per fortuna oggi è tanto!) fanno una cosa estremamente importante per la salute del progetto: il &lt;strong&gt;refactoring&lt;/strong&gt;! Il team, in pieno spirito &lt;a href=&#34;http://en.wikipedia.org/wiki/Lean_software_development&#34;&gt;Lean&lt;/a&gt;, rilascia tante feature sperimentali a grande velocità. Alcune di queste sono dei piccoli accrocchi su pezzi di codice preesistenti. Quando la prova del mercato ci da un feedback positivo, un wallman ci aiuta a ripulire il codice. In questo modo, il team può concentrarsi sul rilasciare tanto valore per il business, consapevole che qualcuno copre le spalle.&lt;/p&gt;
-
-&lt;p&gt;Questa ricetta, come ogni grande ricetta, è una lenta e ragionata combinazione di ingredienti per soddisfare il nostro gusto. &lt;strong&gt;A noi piace!&lt;/strong&gt; Non è detto che vada bene con tutti, ma sicuramente rispetta i valori fondamentali di collaborazione, creazione del valore e rispetto che sono propri del manifesto agile.&lt;/p&gt;
-
-&lt;h3 id=&#34;la-ricetta-ideale&#34;&gt;La ricetta ideale&lt;/h3&gt;
-
-&lt;p&gt;Un po&amp;rsquo; come nella cucina, dove ogni buona ricetta ha una parte dolce ed una nota acida, ogni combinazione di pratiche agili deve rispettare i princìpi fondamentali. Calateli nella vostra realtà! Tutto si migliora confrantandosi, facendo &lt;a href=&#34;http://en.wikipedia.org/wiki/Retrospective#Software_development&#34;&gt;retrospettive&lt;/a&gt;. Alla fine arriva la giusta combinazione che vi farà dimenticare il fast food. E’ decisamente più gustoso un bel panino artigianale!&lt;/p&gt;
-</description>
+      <description>Parlare di metodologie di lavoro in azienda è una cosa piuttosto complessa, soprattutto perché non è possibile generalizzare un modo di lavoro che sia universalmente valido. Sento sempre più persone dire &amp;ldquo;con SCRUM avrai risultati assicurati&amp;rdquo;. Lo trovo piuttosto riduttivo.
+In sostanza, sempre più persone hanno tradotto i valori ed i princìpi promossi dal manifesto agile in una serie di &amp;ldquo;ricette&amp;rdquo; pronte da seguire fedelmente per ottenere buoni risultati. Cosa c’è di &amp;ldquo;agile&amp;rdquo; in tutto ciò?</description>
     </item>
     
   </channel>

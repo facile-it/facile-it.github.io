@@ -10,7 +10,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.16" />
+        <meta name="generator" content="Hugo 0.31.1" />
         
 
 
@@ -30,7 +30,8 @@
     
     
     <meta name="twitter:title" content="Is it all PHP OPCache&#39;s fault?"/>
-    <meta name="twitter:description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit. Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things»."/>
+    <meta name="twitter:description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
+Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things»."/>
     
         
             <meta name="twitter:creator" content="@parallelit"/>
@@ -42,12 +43,17 @@
 
 
         <meta property="og:title" content="Is it all PHP OPCache&#39;s fault?" />
-<meta property="og:description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit. Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things»." />
+<meta property="og:description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
+Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things»." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/" />
 
 
-<meta property="og:updated_time" content="2017-10-04T00:00:00&#43;00:00"/>
+
+<meta property="article:published_time" content="2017-10-04T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2017-10-04T00:00:00&#43;00:00"/>
+
 
 
 
@@ -64,15 +70,17 @@
         <meta property="og:image:height" content="512">
         
 <meta itemprop="name" content="Is it all PHP OPCache&#39;s fault?">
-<meta itemprop="description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit. Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things».">
+<meta itemprop="description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
+Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things».">
 
 
+<meta itemprop="datePublished" content="2017-10-04T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-10-04T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="2706">
 
 
 
-<meta itemprop="keywords" content="algatux,daniele,elviro,engineering,francesco,giacomo,jean,lorenzo,luca,mario-maraone,matteo,michele,nicola,salvatore-cordiano,sergio,simone-lazzaroni,vito,AES,AWS,Agile,Algorithms,Android,Angular,Artificial intelligence,Blog,C,CMake,Code reuse,Codemotion,Conferences,Continuous integration,DSL,Database,Design patterns,Docker,Doctrine,Encryption,English,Event driven,FacileHack,Filesystem,Functional programming,Fuse,Git,GitHub,GraphQL,HTTP,Hackathon,Hugo,Italiano,JSON,JVM,JWT,Java,Javascript,Kanban,Kotlin,MessagePack,Monad,MySQL,Networking,NewRelic,Node.js,OOP,OPCache,OSX,Objective-C,Open Source,PHP,PHP Coding standards,PHP internals,PSR,Python,REST,RSA,Rjindael,SOLID,Scrum,Security,Semantic versioning,Serverless,Signal,Software Crisis,Software Testing,Software complexity,Software testing,Static site,Structured programming,Swift,Symfony,TDD,Test coverage,Type First Development,UI,WebComponent,Websocket,Xcode,realpath_cache," />
+<meta itemprop="keywords" content="" />
 
         
 
@@ -94,7 +102,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-22342495-1', 'auto');
 ga('send', 'pageview');

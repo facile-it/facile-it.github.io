@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <url>
-    <loc>https://engineering.facile.it/</loc>
-    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</loc>
@@ -329,6 +325,630 @@
   <url>
     <loc>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</loc>
     <lastmod>2015-03-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/aes/</loc>
+    <lastmod>2015-10-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/aws/</loc>
+    <lastmod>2016-09-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/agile/</loc>
+    <lastmod>2015-07-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/algatux/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/algorithms/</loc>
+    <lastmod>2015-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/android/</loc>
+    <lastmod>2017-02-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/angular/</loc>
+    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/artificial-intelligence/</loc>
+    <lastmod>2015-05-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/blog/</loc>
+    <lastmod>2016-04-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/c/</loc>
+    <lastmod>2016-01-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/cmake/</loc>
+    <lastmod>2016-01-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/</loc>
+    <lastmod>2015-10-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/code-reuse/</loc>
+    <lastmod>2015-12-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/codemotion/</loc>
+    <lastmod>2015-11-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/conferences/</loc>
+    <lastmod>2017-05-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/continuous-integration/</loc>
+    <lastmod>2015-06-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/dsl/</loc>
+    <lastmod>2017-02-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/daniele/</loc>
+    <lastmod>2015-11-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/database/</loc>
+    <lastmod>2015-10-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/design-patterns/</loc>
+    <lastmod>2015-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/docker/</loc>
+    <lastmod>2015-10-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/doctrine/</loc>
+    <lastmod>2015-10-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/elviro/</loc>
+    <lastmod>2016-12-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/encryption/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/engineering/</loc>
+    <lastmod>2016-12-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/english/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/eng/</loc>
+    <lastmod>2016-03-24T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/event-driven/</loc>
+    <lastmod>2016-09-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/facilehack/</loc>
+    <lastmod>2017-04-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/filesystem/</loc>
+    <lastmod>2016-01-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/francesco/</loc>
+    <lastmod>2015-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/functional-programming/</loc>
+    <lastmod>2016-12-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/fuse/</loc>
+    <lastmod>2016-01-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/giacomo/</loc>
+    <lastmod>2017-02-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/git/</loc>
+    <lastmod>2015-06-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/github/</loc>
+    <lastmod>2016-04-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/graphql/</loc>
+    <lastmod>2016-01-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/http/</loc>
+    <lastmod>2016-05-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/hackathon/</loc>
+    <lastmod>2017-04-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/hugo/</loc>
+    <lastmod>2016-04-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/ita/</loc>
+    <lastmod>2016-09-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/italiano/</loc>
+    <lastmod>2017-04-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/json/</loc>
+    <lastmod>2016-10-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/jvm/</loc>
+    <lastmod>2017-02-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/jwt/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/java/</loc>
+    <lastmod>2017-02-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/javascript/</loc>
+    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/jean/</loc>
+    <lastmod>2017-09-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/kanban/</loc>
+    <lastmod>2015-04-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/kotlin/</loc>
+    <lastmod>2017-02-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/lorenzo/</loc>
+    <lastmod>2016-01-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/luca/</loc>
+    <lastmod>2015-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/mario-maraone/</loc>
+    <lastmod>2016-11-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/matteo/</loc>
+    <lastmod>2015-04-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/messagepack/</loc>
+    <lastmod>2016-10-25T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/michele/</loc>
+    <lastmod>2015-06-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/monad/</loc>
+    <lastmod>2015-11-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/mysql/</loc>
+    <lastmod>2015-10-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/networking/</loc>
+    <lastmod>2016-05-11T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/newrelic/</loc>
+    <lastmod>2015-04-21T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/nicola/</loc>
+    <lastmod>2015-07-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/node.js/</loc>
+    <lastmod>2016-01-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/oop/</loc>
+    <lastmod>2017-05-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/opcache/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/osx/</loc>
+    <lastmod>2015-07-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/objective-c/</loc>
+    <lastmod>2015-11-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/open-source/</loc>
+    <lastmod>2015-12-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/php/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/php-coding-standards/</loc>
+    <lastmod>2015-03-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/php-internals/</loc>
+    <lastmod>2015-03-02T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/psr/</loc>
+    <lastmod>2015-03-23T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/python/</loc>
+    <lastmod>2015-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/rest/</loc>
+    <lastmod>2016-01-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/rsa/</loc>
+    <lastmod>2015-10-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/realpath_cache/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/rjindael/</loc>
+    <lastmod>2015-10-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/solid/</loc>
+    <lastmod>2015-04-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/salvatore-cordiano/</loc>
+    <lastmod>2017-10-04T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/scrum/</loc>
+    <lastmod>2015-04-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/security/</loc>
+    <lastmod>2016-04-08T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/semantic-versioning/</loc>
+    <lastmod>2015-06-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/sergio/</loc>
+    <lastmod>2016-05-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/serverless/</loc>
+    <lastmod>2016-09-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/signal/</loc>
+    <lastmod>2016-03-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/simone-lazzaroni/</loc>
+    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/software-crisis/</loc>
+    <lastmod>2015-07-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/software-testing/</loc>
+    <lastmod>2015-10-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/software-complexity/</loc>
+    <lastmod>2015-09-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/software-testing/</loc>
+    <lastmod>2017-09-12T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/static-site/</loc>
+    <lastmod>2016-04-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/structured-programming/</loc>
+    <lastmod>2015-09-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/swift/</loc>
+    <lastmod>2016-03-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/symfony/</loc>
+    <lastmod>2016-11-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/tdd/</loc>
+    <lastmod>2016-06-07T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/test-coverage/</loc>
+    <lastmod>2015-03-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/type-first-development/</loc>
+    <lastmod>2015-05-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/ui/</loc>
+    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/vito/</loc>
+    <lastmod>2016-01-18T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/webcomponent/</loc>
+    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/websocket/</loc>
+    <lastmod>2015-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/xcode/</loc>
+    <lastmod>2015-06-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

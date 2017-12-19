@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Blog restyling: switching to Hugo and GitHub Pages</title>
@@ -15,67 +17,8 @@
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</guid>
-      <description>
-
-&lt;p&gt;As you may have noticed, we went through a bit of a restyling in the last few days, and our blog changed a lot in terms of appearance and structure.
-We are very happy with those changes, but the reason behind this transition is not just a simple template change.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-we-were-searching-for&#34;&gt;What we were searching for&lt;/h2&gt;
-
-&lt;p&gt;Before, we were using an hosted CMS to run the blog, &lt;a href=&#34;https://ghost.org/&#34;&gt;Ghost&lt;/a&gt;. We were happy with the results, it wasn&amp;rsquo;t our concern to administrate the server or bother about other hosting stuff.&lt;/p&gt;
-
-&lt;p&gt;But, as many other developers, we were &lt;strong&gt;hitching for something&lt;/strong&gt; more aligned with our inclinations: we wanted a tool that was closer to our daily jobs and our skills. We were also having &lt;strong&gt;problems during the revision phase&lt;/strong&gt; of the articles, since multiple persons couldn&amp;rsquo;t review and edit an article at the same time, fearing the risk of overwriting each other&amp;rsquo;s work.&lt;/p&gt;
-
-&lt;p&gt;We then came down with a list of requirements for our blog; we wanted:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;easy review of articles&lt;/strong&gt;: parallels reviews are a must&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;an easy workflow&lt;/strong&gt;: no major overhead, since the blog contributions are voluntary amongs us; we want to dedicate all the time to writing the articles, not wrestling with technical difficulties&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;no security flaws&lt;/strong&gt;: this point disqualified Wordpress and other famous CMS solutions; we wouldn&amp;rsquo;t like to spend time staying ahead of possible security risks, or have to worry over the hosting and installation problems that a widespread used CMS has&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;easy image hosting&lt;/strong&gt; and embedding&lt;/li&gt;
-&lt;li&gt;easy management and modifications of the &lt;strong&gt;template&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;easy integrations of previously used &lt;a href=&#34;https://disqus.com/&#34;&gt;Disqus comments&lt;/a&gt; and Google Analytics&lt;/li&gt;
-&lt;li&gt;preferably &lt;strong&gt;markdown content format&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;support for &lt;strong&gt;multilanguage articles&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;git-and-the-github-pages&#34;&gt;Git and the GitHub pages&lt;/h2&gt;
-
-&lt;p&gt;The first solution that came to us was obviously &lt;strong&gt;Git&lt;/strong&gt;, the everyday tool for a team of developers working on the same piece of code (or text, in this case). We obviously then thought of the &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub pages&lt;/a&gt; as an hosting solution: that is ideal, since we already have a &lt;a href=&#34;https://github.com/facile-it&#34;&gt;Github organization&lt;/a&gt; in place, so an organization homepage/site would perfectly fit the bill for our blog.&lt;/p&gt;
-
-&lt;h2 id=&#34;hugo&#34;&gt;Hugo&lt;/h2&gt;
-
-&lt;p&gt;Once we set our eyes to that hosting solution, we started to search for a solution for building our blog. The proposed solution was &lt;a href=&#34;http://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;: it&amp;rsquo;s a static site generator, developed in Go, which fitted almost all of our requisites; also:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;it generates the static HMTL site live, with a &lt;strong&gt;&lt;a href=&#34;https://gohugo.io/extras/livereload/&#34;&gt;live reload&lt;/a&gt; functionality&lt;/strong&gt;: while you edit your markdown article, the site refresh itself on each save of the file(s), so you can see a live preview of what you&amp;rsquo;re writing&lt;/li&gt;
-&lt;li&gt;there are many templates ready to be used, and we &lt;a href=&#34;http://themes.gohugo.io/future-imperfect/&#34;&gt;chose one&lt;/a&gt; to be modified to our needs&lt;/li&gt;
-&lt;li&gt;the templates are built with the Go Templating engine, and with some easy manual edits we obtained all the requested features: multi-author support, link between translated articles, recent articles and top categories in the sidebar&amp;hellip;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;deploying&#34;&gt;Deploying&lt;/h2&gt;
-
-&lt;p&gt;The last step needed to smooth out our workflow was to find a &lt;strong&gt;deploy strategy&lt;/strong&gt;. Github pages need to have the site content published onto the master branch, and we obviously wanted to separate the source code of the site from that.&lt;/p&gt;
-
-&lt;p&gt;We needed an easy way to reproduce this steps, ideally with a script commited to the repo, ready for everyone to use:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;generate&lt;/strong&gt; the static site with Hugo&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;avoid mixing (and committing)&lt;/strong&gt; the static copy with the source files&lt;/li&gt;
-&lt;li&gt;commit the files to the master branch&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Hugo normally generates the static copy in the &lt;code&gt;./public&lt;/code&gt; directory; to achieve this we used &lt;a href=&#34;https://github.com/X1011/git-directory-deploy&#34;&gt;a script that I found on GitHub itself&lt;/a&gt; that solved this exact problem. We started an empty &lt;code&gt;source&lt;/code&gt; branch, &lt;strong&gt;detached&lt;/strong&gt; from master:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git checkout -b source --orphan
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We started our Hugo site inside it, and we put the &lt;code&gt;./public&lt;/code&gt; in the &lt;code&gt;.gitIgnore&lt;/code&gt;, so each static generation would not be committed. We then prepared the deploy script that, after generating the static site, uses a Git subtree approach to commit its content to the master branch, with a commit message of &lt;code&gt;publish: &amp;lt;last commit message from source&amp;gt;&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;et-voilà-here-we-are&#34;&gt;Et voilà, here we are!&lt;/h2&gt;
-
-&lt;p&gt;So, we hope that you will enjoy our new blog at least as much as we enjoyed building it ! Happy reading!&lt;/p&gt;
-</description>
+      <description>As you may have noticed, we went through a bit of a restyling in the last few days, and our blog changed a lot in terms of appearance and structure. We are very happy with those changes, but the reason behind this transition is not just a simple template change.
+What we were searching for Before, we were using an hosted CMS to run the blog, Ghost. We were happy with the results, it wasn&amp;rsquo;t our concern to administrate the server or bother about other hosting stuff.</description>
     </item>
     
   </channel>

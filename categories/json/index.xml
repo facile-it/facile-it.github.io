@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 25 Oct 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/categories/json/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/categories/json/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>MessagePack: an alternative to JSON?</title>
@@ -15,137 +17,7 @@
       <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
-      <description>
-
-&lt;p&gt;When we talk about data interchange in web applications, &lt;strong&gt;&lt;a href=&#34;http://www.json.org/&#34;&gt;JSON&lt;/a&gt;&lt;/strong&gt; is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist &lt;a href=&#34;https://www.w3.org/XML/&#34;&gt;XML&lt;/a&gt; (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like &lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;Google’s &lt;strong&gt;Protocol Buffers&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://avro.apache.org/&#34;&gt;Apache &lt;strong&gt;Avro&lt;/strong&gt;&lt;/a&gt; or &lt;strong&gt;&lt;a href=&#34;http://msgpack.org/&#34;&gt;MessagePack&lt;/a&gt;&lt;/strong&gt;. In being thorough, we should also mention &lt;a href=&#34;http://www.gzip.org/&#34;&gt;gzip&lt;/a&gt; JSON compression (sometimes called &amp;ldquo;&lt;em&gt;JSONC&lt;/em&gt;&amp;rdquo;), and &lt;a href=&#34;http://bsonspec.org/&#34;&gt;BSON&lt;/a&gt;, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we&amp;rsquo;ll discuss MessagePack in depth.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/message-pack-an-alternative-to-json/msgpack.png&#34; alt=&#34;MessagePack&#34; /&gt;
-&lt;em&gt;JSON Vs MessagePack (source: &lt;a href=&#34;http://msgpack.org/&#34;&gt;msgpack.org&lt;/a&gt;)&lt;/em&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;what-is-messagepack&#34;&gt;What is MessagePack?&lt;/h1&gt;
-
-&lt;p&gt;« &lt;em&gt;MessagePack is an efficient binary serialization format. It lets you exchange data among multiple languages like JSON. But it&amp;rsquo;s faster and smaller&lt;/em&gt; ». To start using MessagePack we need to convert our application objects into MessagePack format: this process is called &lt;em&gt;serialization&lt;/em&gt;, while the reverse process is called &lt;em&gt;deserialization&lt;/em&gt;. The following example can help us better understand what we&amp;rsquo;re talking about. Consider this simple JSON:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
-	&amp;quot;id&amp;quot;: 4,                    // integer
-	&amp;quot;isActive&amp;quot;: true,           // boolean
-	&amp;quot;fullname&amp;quot;: &amp;quot;Homer Simpson&amp;quot; // string
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;JSON requires 56 bytes to represent a very simple user object, while MessagePack only needs 38 bytes (compression ratio 1.47, yielding a 32% saving in size). See below the output of the serialization process for the above JSON:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;83 a2 69 64 04 a8 69 73 41 63 74 69 76 65 c3 a8 66 75 6c 6c 6e 61 6d 65 ad 48 6f 6d 65 72 20 53 69 6d 70 73 6f 6e
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We can see how MessagePack serialization works by reading the &lt;a href=&#34;https://github.com/msgpack/msgpack/blob/master/spec.md&#34;&gt;official specification&lt;/a&gt;. Also, we can split the previous hexadecimal representation to emphasize and explain data types as follows:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;83                                          // 3-element map
-a2 69 64                                    // 2-byte string &amp;quot;id&amp;quot;
-04                                          // integer 4
-a8 69 73 41 63 74 69 76 65                  // 8-byte string &amp;quot;isActive&amp;quot; 
-c3                                          // boolean true
-a8 66 75 6c 6c 6e 61 6d 65                  // 8-byte string &amp;quot;fullname&amp;quot;
-ad 48 6f 6d 65 72 20 53 69 6d 70 73 6f 6e   // 13-byte string &amp;quot;Homer Simpson&amp;quot;
-                                            // total 38 bytes
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now it&amp;rsquo;s very simple to figure out the meaning of the sentence « &lt;em&gt;Small integers are encoded into a single byte, and typical short strings require only one extra byte in addition to the strings themselves&lt;/em&gt; » reported in the headline of MessagePack website.&lt;/p&gt;
-
-&lt;p&gt;The main features of MessagePack are:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;it&amp;rsquo;s designed for network communication and to be transparently converted from and to JSON;&lt;/li&gt;
-&lt;li&gt;it supports in-place updating, so it&amp;rsquo;s possible to modify part of a stored object without reserializing it as a whole;&lt;/li&gt;
-&lt;li&gt;it has a flexible &lt;a href=&#34;https://en.wikipedia.org/wiki/Remote_procedure_call&#34;&gt;Remote Procedure Call (RPC)&lt;/a&gt; and streaming API implementation;&lt;/li&gt;
-&lt;li&gt;it supports &lt;a href=&#34;https://en.wikipedia.org/wiki/Type_system#Static_type_checking&#34;&gt;static-type-checking&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;supported-data-types&#34;&gt;Supported data types&lt;/h1&gt;
-
-&lt;p&gt;Data types listed by the specification are very similar to those in JSON, that is:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Integer&lt;/strong&gt; represents an &lt;code&gt;integer&lt;/code&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Boolean&lt;/strong&gt; represents &lt;code&gt;true&lt;/code&gt; or &lt;code&gt;false&lt;/code&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Nil&lt;/strong&gt; represents &lt;code&gt;nil&lt;/code&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Float&lt;/strong&gt; represents a &lt;a href=&#34;https://en.wikipedia.org/wiki/IEEE_floating_point&#34;&gt;IEEE 754&lt;/a&gt; double precision floating point numbers including &lt;code&gt;NaN&lt;/code&gt; and &lt;code&gt;Infinity&lt;/code&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;String&lt;/strong&gt; is a &lt;code&gt;raw type&lt;/code&gt; and it represents a UTF-8 string;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Binary&lt;/strong&gt; is a &lt;code&gt;raw type&lt;/code&gt; and it represents a binary data using byte array;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Array&lt;/strong&gt; represents a sequence of objects;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Map&lt;/strong&gt; represents a dictionary (key-value pairs of objects);&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Extension&lt;/strong&gt; represents a tuple of data whose meaning is defined by applications.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&#34;a-naive-benchmark&#34;&gt;A naive benchmark&lt;/h1&gt;
-
-&lt;p&gt;Up to this point our reasoning was focused on &lt;strong&gt;space efficiency&lt;/strong&gt;, but a good theoretical computing scientist would have criticized us since we didn&amp;rsquo;t mention &lt;strong&gt;time complexity&lt;/strong&gt;. In fact, the process of data &lt;em&gt;compression&lt;/em&gt; and &lt;em&gt;decompression&lt;/em&gt; is not negligible. We can analyze and compare, for example, the time required to parse a JSON document and to unpack a MessagePack document: that&amp;rsquo;s not completely scientific, but it&amp;rsquo;s a start.&lt;/p&gt;
-
-&lt;p&gt;We wrote two &lt;strong&gt;&lt;a href=&#34;https://nodejs.org/en/&#34;&gt;Node.js&lt;/a&gt;&lt;/strong&gt; scripts to execute 1 million JSON parsing and 1 million MessagePack unpacking operations of a &lt;a href=&#34;https://github.com/salvatorecordiano/facile-it-message-pack-benchmark/blob/master/document.json&#34;&gt;sample document&lt;/a&gt; containing the same data in the two formats.&lt;/p&gt;
-
-&lt;p&gt;A simplified version of the code could be something like this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-javascript&#34;&gt;// inside script &amp;quot;test_parse_json.js&amp;quot;
-for (var i = 0;i&amp;lt;1000000;i++) {
-    JSON.parse(jsonDocument); // JSON document parsing
-}
-
-// inside script &amp;quot;test_unpack_msgpack.js&amp;quot;
-for (var i = 0;i&amp;lt;1000000;i++) {
-    msgpack.unpack(msgPackDocument); // MessagePack document unpacking
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To easily profile our scripts we can run them as below:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-sql&#34;&gt;aiace:msgpack parallel$ time node test_parse_json.js
-
-real	0m47.296s
-user	0m47.202s
-sys	0m0.059s
-
-aiace:msgpack parallel$ time node test_unpack_msgpack.js
-
-real	1m47.244s
-user	1m47.050s
-sys	0m0.120s
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Numbers are self-explanatory: the MessagePack binary is &lt;em&gt;smaller&lt;/em&gt; than the minified JSON, but MessagePack deserialization is clearly &lt;em&gt;slower&lt;/em&gt; than JSON parsing process.&lt;/p&gt;
-
-&lt;p&gt;Before going on, we also need to say that all tests are executed in the following described environment and the full code of this benchmark is free available &lt;a href=&#34;https://github.com/salvatorecordiano/facile-it-message-pack-benchmark/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;// Machine
-OS : Darwin 15.6 (x64)
-RAM: 16.384 MB
-CPU: 2.200 MHz Intel(R) Core(TM) i7-4770HQ CPU @ 2.20GHz
-
-// Runtime versions
-aiace:msgpack parallel$ node -v
-v6.8.1
-aiace:msgpack parallel$ npm -v
-3.10.9
-
-// Module versions
-aiace:msgpack parallel$ npm list msgpack
-benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
-└── msgpack@1.0.2
-
-aiace:msgpack parallel$ npm list fs
-benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
-└── fs@0.0.1-security
-
-aiace:msgpack parallel$ npm list assert
-benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
-└── assert@1.4.1
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h1 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h1&gt;
-
-&lt;p&gt;MessagePack allows to save more than 40% of network bandwidth consumption with little more than one line of code. A smaller payload means that less data are transmitted, and that&amp;rsquo;s very useful in &lt;strong&gt;mobile&lt;/strong&gt; and &lt;a href=&#34;https://en.wikipedia.org/wiki/Internet_of_things&#34;&gt;&lt;strong&gt;Internet of Things (IoT)&lt;/strong&gt;&lt;/a&gt; applications, where there&amp;rsquo;s special care in power efficiency; but we should also pay attention to the overall size of each request, to avoid the absurd situation in which the &lt;em&gt;header&lt;/em&gt; is larger than the &lt;em&gt;payload&lt;/em&gt; (&lt;a href=&#34;https://en.wikipedia.org/wiki/Overhead_(computing)&#34;&gt;overhead&lt;/a&gt;).&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s important to underline that, while MessagePack is supported by over &lt;a href=&#34;http://msgpack.org/#languages&#34;&gt;50 programming languages&lt;/a&gt;, it doesn&amp;rsquo;t seem to be particularly efficient from a computational perspective, and can be hard to debug due to being non human-readable.&lt;/p&gt;
-</description>
+      <description>When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &amp;ldquo;JSONC&amp;rdquo;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.</description>
     </item>
     
   </channel>

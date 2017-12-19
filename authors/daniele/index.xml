@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>daniele on Facile.it Engineering</title>
+    <title>Daniele on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/daniele/</link>
-    <description>Recent content in daniele on Facile.it Engineering</description>
+    <description>Recent content in Daniele on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Nov 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/authors/daniele/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/authors/daniele/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>#FacileHack 2015</title>
@@ -15,15 +17,8 @@
       <pubDate>Wed, 25 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/facilehack-2015/</guid>
-      <description>&lt;p&gt;Sono stati due giorni ricchi di emozioni quelli trascorsi con i partecipanti di #FacileHack, il primo hackathon organizzato da Facile.it.
-Abbiamo visto impegno nella competizione, talenti diversi e complementari tra loro, passione per la tecnologia, serietà e molto caffè&amp;hellip; momenti che vogliamo rivivere insieme a voi con questo video.&lt;/p&gt;
-
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/7B8NtkvNXlQ&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/oWWJX5WUZ8A&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Grazie a tutti!&lt;/p&gt;
-</description>
+      <description>Sono stati due giorni ricchi di emozioni quelli trascorsi con i partecipanti di #FacileHack, il primo hackathon organizzato da Facile.it. Abbiamo visto impegno nella competizione, talenti diversi e complementari tra loro, passione per la tecnologia, serietà e molto caffè&amp;hellip; momenti che vogliamo rivivere insieme a voi con questo video.
+  Grazie a tutti!</description>
     </item>
     
     <item>
@@ -32,185 +27,9 @@ Abbiamo visto impegno nella competizione, talenti diversi e complementari tra lo
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
-      <description>
-
-&lt;h2 id=&#34;in-locale-funzionava&#34;&gt;In locale funzionava&lt;/h2&gt;
-
-&lt;p&gt;Questo articolo si rivolge a chi ha già una &lt;a href=&#34;https://docs.docker.com/articles/basics&#34;&gt;conoscenza base di docker&lt;/a&gt; e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.&lt;/p&gt;
-
-&lt;p&gt;Avere un ambiente di sviluppo/test &lt;strong&gt;il più simile possibile&lt;/strong&gt; a quello di produzione aiuta molto nel garantire un &lt;strong&gt;corretto funzionamento dopo il deploy&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;nessun tipo di isolamento tra progetti che usano gli stessi servizi (versione, configurazione, dati);&lt;/li&gt;
-&lt;li&gt;è difficile avere e mantenere in locale la stessa versione e la stessa configurazione dei servizi in produzione;&lt;/li&gt;
-&lt;li&gt;condividere l&amp;rsquo;ambiente di sviluppo con colleghi e collaboratori è difficile se non impossibile;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Tutto questo conduce ad una delle peggiori frasi che io abbia mai sentito in tutta la mia esperienza lavorativa:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;It works on my machine &lt;em&gt;(in locale funzionava)&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg&#34; alt=&#34;It works on my machine meme&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Potreste pensare che avrei potuto ottenere gli stessi risultati usando Vagrant o una classica macchina virtuale, ma questa soluzione non mi avrebbe dato i benefici di avere un layer di astrazione aggiuntivo senza dovermi preoccupare dell&amp;rsquo;overhead. Infatti posso avere molti più container che girano su una singola macchina di quelli che avrei avuto con la semplice virtualizzazione.&lt;/p&gt;
-
-&lt;h2 id=&#34;bookshelf-uno-scaffale-virtuale&#34;&gt;Bookshelf: uno scaffale virtuale&lt;/h2&gt;
-
-&lt;p&gt;Per snellire questo articolo ho preparato un&amp;rsquo;&lt;a href=&#34;https://github.com/pennyphp/bookshelf&#34;&gt;applicazione demo&lt;/a&gt; basata su &lt;a href=&#34;http://github.com/pennyphp/penny&#34;&gt;Penny PHP Framework&lt;/a&gt;: è una semplice applicazione per l&amp;rsquo;archiviazione di libri, che consente all&amp;rsquo;utente di creare e visualizzare una lista di libri.&lt;/p&gt;
-
-&lt;h4 id=&#34;download-e-dipendenze&#34;&gt;Download e dipendenze&lt;/h4&gt;
-
-&lt;p&gt;Per prima cosa, scarichiamo l&amp;rsquo;applicazione dal suo repository:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/pennyphp/bookshelf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Le dipendenze in PHP sono gestite attraverso &lt;a href=&#34;https://getcomposer.org/&#34;&gt;composer&lt;/a&gt;, e per soddisfarle basta digitare il comando:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;composer install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Gli assets del frontend sono gestiti attraverso &lt;a href=&#34;http://bower.io&#34;&gt;Bower&lt;/a&gt; + &lt;a href=&#34;http://gruntjs.com/&#34;&gt;Grunt&lt;/a&gt;; i due seguenti comandi scaricheranno e compileranno le dipendenze e produrranno gli assets direttamente nella cartella pubblica:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install
-grunt dev
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id=&#34;avviare-l-ambiente-di-sviluppo&#34;&gt;Avviare l&amp;rsquo;ambiente di sviluppo&lt;/h4&gt;
-
-&lt;p&gt;Come potete vedere l&amp;rsquo;applicazione demo è distribuita con un ambiente di sviluppo docker che potete trovare nella cartella &lt;a href=&#34;https://github.com/pennyphp/bookshelf/tree/master/docker/development&#34;&gt;docker/development&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Osservando il contenuto di &lt;code&gt;docker/development&lt;/code&gt; possiamo trovare altre due cartelle:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;nginx/&lt;/code&gt;: questa directory contiene un Dockerfile che eredita l&amp;rsquo;immagine da &lt;a href=&#34;https://github.com/fntlnz/dockerfiles/tree/master/nginx&#34;&gt;fntlnz/nginx&lt;/a&gt; per crearne una nuova con la configurazione nginx necessaria;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fpm/&lt;/code&gt;: questa directory contiene un Dockerfile che eredita l&amp;rsquo;immagine da &lt;a href=&#34;https://github.com/fntlnz/dockerfiles/tree/master/php&#34;&gt;fntlnz/php&lt;/a&gt; per crearne una nuova con la configurazione e le estensioni di php-fpm necessarie;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Dal momento che non abbiamo Elastic Beanstalk sulla nostra macchina locale (ne parleremo in seguito) e abbiamo bisogno di un modo per orchestrare i nostri container, lo faremo utilizzando &lt;strong&gt;docker-compose&lt;/strong&gt;. Ho deciso di usare Docker Compose al posto del comando &lt;a href=&#34;http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-local.html&#34;&gt;&lt;strong&gt;eb local&lt;/strong&gt;&lt;/a&gt; (che consente di far girare l&amp;rsquo;ambiente di elastic beanstalk in locale) perché allo stato dell&amp;rsquo;arte compose è più facile da usare e mantenere in locale.&lt;/p&gt;
-
-&lt;h6 id=&#34;il-file-docker-compose-yml&#34;&gt;Il file &lt;code&gt;docker-compose.yml&lt;/code&gt;&lt;/h6&gt;
-
-&lt;p&gt;Per farlo dobbiamo creare un file &lt;code&gt;docker-compose.yml&lt;/code&gt; nella nostra root di progetto.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cp docker/docker-compose.yml.development docker-compose.yml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A questo punto, nel nostro &lt;code&gt;docker-compose.yml&lt;/code&gt; dovremmo avere quattro container da avviare:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;il container &lt;strong&gt;Nginx&lt;/strong&gt;, che contiene un paragrafo server in ascolto sulla porta 80.&lt;/li&gt;
-&lt;li&gt;il container &lt;strong&gt;fpm&lt;/strong&gt;, che condivide un volume con la macchina host in modo da poter modificare il codice senza bisogno di ricostruire il container; inoltre, il container è collegato al container mysql per consentire agli script php di connettervisi;&lt;/li&gt;
-&lt;li&gt;il container &lt;strong&gt;mysql&lt;/strong&gt;, che conterrà i nostri dati di sviluppo;&lt;/li&gt;
-&lt;li&gt;il container &lt;strong&gt;redis&lt;/strong&gt;, usato come cache, principalmente da Doctrine;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Si noti come, dal momento che &lt;a href=&#34;https://docs.docker.com/userguide/dockerlinks/&#34;&gt;i container sono collegati&lt;/a&gt; è possibile accedere ad un servizio esposto usando il nome assegnato al container collegato; ad esempio, nel nostro caso il container fpm è &lt;a href=&#34;https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/docker/docker-compose.yml.development#L19-L20&#34;&gt;collegato al container mysql&lt;/a&gt;: è per questo che l&amp;rsquo;host configurato nella &lt;a href=&#34;https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/config/doctrine.local.php.dist#L13&#34;&gt;configurazione di doctrine locale&lt;/a&gt; è &lt;code&gt;mysql&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Se non l&amp;rsquo;avete ancora fatto, dovrete buildare l&amp;rsquo;immagine &lt;code&gt;fpm&lt;/code&gt; e scaricare le immagini &lt;code&gt;nginx&lt;/code&gt;, &lt;code&gt;mysql&lt;/code&gt; e &lt;code&gt;redis&lt;/code&gt;; per farlo, digitate il comando:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ docker-compose build
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ora che avete tutto ciò che vi serve potete avviare i container con:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ docker-compose up
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A questo punto i quattro container dovrebbero essere in esecuzione: potete verificare che tutto sia a posto con il comando &lt;code&gt;docker ps&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Per proseguire, abbiamo bisogno di conoscere l&amp;rsquo;indirizzo ip del container nginx. Il port forwarding del container nginx è configurato come &lt;code&gt;80:80&lt;/code&gt;, perciò è disponibile su &lt;strong&gt;linux&lt;/strong&gt; agli indirizzi &lt;code&gt;127.0.0.1:80&lt;/code&gt; e &lt;code&gt;localhost:80&lt;/code&gt;, mentre su &lt;strong&gt;OS X&lt;/strong&gt; all&amp;rsquo;indirizzo associato alla docker-machine; per identificarlo, usare il comando:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;docker-machine env &amp;lt;yourmachinename&amp;gt; | grep DOCKER_HOST
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;È ora di collegarci all&amp;rsquo;ip del nostro container nginx!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/books.png&#34; alt=&#34;Bookshelf screenshot&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Yay! Il nostro ambiente di sviluppo è in esecuzione!&lt;/p&gt;
-
-&lt;h4 id=&#34;configurare-e-attivare-l-ambiente-di-produzione&#34;&gt;Configurare e attivare l&amp;rsquo;ambiente di produzione&lt;/h4&gt;
-
-&lt;p&gt;A questo punto ci serve un modo per rilasciare la nostra applicazione in produzione che possa: eseguire container Docker, scalare senza intoppi e possibilmente aver già installato altri interessanti componenti come, ad esempio, per il monitoring.&lt;/p&gt;
-
-&lt;p&gt;La scelta è caduta su &lt;a href=&#34;https://aws.amazon.com/elasticbeanstalk&#34;&gt;AWS Elastic Beanstalk&lt;/a&gt; ha tutto ciò che abbiamo elencato ed ha inoltre una tariffazione più competitiva con un &lt;a href=&#34;https://aws.amazon.com/free/&#34;&gt;Free Tier&lt;/a&gt; iniziale, sufficiente per far girare questa demo.&lt;/p&gt;
-
-&lt;p&gt;Prima di iniziare abbiamo bisogno di un account &lt;strong&gt;Amazon Web Services&lt;/strong&gt;; se non ne avete ancora uno, potete crearlo &lt;a href=&#34;https://aws.amazon.com/account&#34;&gt;qui&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Per configurare, rilasciare e gestire la nostra infrastruttura avremo bisogno del &lt;a href=&#34;http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html&#34;&gt;comando eb&lt;/a&gt;; per installarlo, digitare:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;pip install awsebcli
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Per avere accesso alla piattaforma dalla vostra riga di comando usando il comando &lt;strong&gt;eb&lt;/strong&gt; dovrete configurare uno &lt;a href=&#34;http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.roles.aeb.html&#34;&gt;&lt;strong&gt;IAM ROLE&lt;/strong&gt;&lt;/a&gt; ed associarlo ad uno &lt;a href=&#34;http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html&#34;&gt;&lt;strong&gt;IAM User&lt;/strong&gt;&lt;/a&gt;. La creazione assistita di uno IAM User vi &lt;strong&gt;darà due chiavi&lt;/strong&gt;, chiamate &lt;em&gt;AWS Access Key ID&lt;/em&gt; e &lt;em&gt;AWS Secret Access Key&lt;/em&gt;. Ci serviranno durante il prossimo passaggio.&lt;/p&gt;
-
-&lt;p&gt;A questo punto possiamo &lt;strong&gt;initialize&lt;/strong&gt; il nostro progetto Bookshelf. Questo comando ci chiederà le due Access keys, oltre che alcune domande durante l&amp;rsquo;installazione.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;eb init
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ora che il progetto è inizializzato dobbiamo &lt;strong&gt;creare un nuovo ambiente&lt;/strong&gt;. Questo comando creerà effettivamente un&amp;rsquo;istanza &lt;strong&gt;t2.micro EC2&lt;/strong&gt;, i gruppi di sicurezza, il load balancer, le notifiche cloudwatch ecc..&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;eb create bookshelf-production
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Prima di rilasciare l&amp;rsquo;applicazione in produzione dobbiamo generare un &lt;a href=&#34;https://github.com/settings/tokens/new&#34;&gt;Token Github per composer&lt;/a&gt;.
-Questo è necessario per scaricare tutte le dipendenze senza intoppi.
-Per aggiungere il token all&amp;rsquo;ambiente:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;eb setenv COMPOSER_TOKEN=&amp;lt;your-token-here&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ora potete verificare che il sistema sia pronto digitando:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;eb status
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Quando lo stato dell&amp;rsquo;applicazione diventa &lt;strong&gt;Ready&lt;/strong&gt; potete a tutti gli effetti pubblicare l&amp;rsquo;applicazione con:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;eb deploy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Il deployment creerà i container descritti in &lt;a href=&#34;https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/Dockerrun.aws.json&#34;&gt;Dockerrun.aws.json&lt;/a&gt; e i files descritti in &lt;a href=&#34;https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/.ebextensions/dependencies.config&#34;&gt;dependencies.config&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Se vi state chiedendo cosa sia realmente il file &lt;strong&gt;Dockerrun.aws.json&lt;/strong&gt;, basta dire che sta ad Elastic Beanstalk come &lt;code&gt;docker-compose.yml&lt;/code&gt; sta all&amp;rsquo;ambiente locale.&lt;/p&gt;
-
-&lt;p&gt;I file contenuti in &lt;a href=&#34;https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/.ebextensions/&#34;&gt;.ebextensions&lt;/a&gt; consentono di personalizzare e configurare il software da cui la vostra applicazione dipende. Il file &lt;strong&gt;dependencies.config&lt;/strong&gt; è uno di questi. È proprio lui a risolvere le dipendenze di composer, a compilare gli asset del frontend con grunt e bower e a creare l&amp;rsquo;immagine PHP FPM usata nel &lt;a href=&#34;https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/docker/production/fpm/Dockerfile&#34;&gt;Dockerfile&lt;/a&gt; di produzione. È importante notare che l&amp;rsquo;immagine viene nuovamente costruita solo se il Dockerfile viene modificato.&lt;/p&gt;
-
-&lt;p&gt;Come avrete notato, [Dockerrun.aws.json](&lt;a href=&#34;https://github.com&#34;&gt;https://github.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;La configurazione di default dell&amp;rsquo;applicazione Bookshelf riceve i parametri di connessione a Mysql e Redis &lt;a href=&#34;https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/config/doctrine.global.php&#34;&gt;dalle variabili d&amp;rsquo;ambiente&lt;/a&gt; che sono:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;MYSQL_HOST
-MYSQL_PORT
-MYSQL_USERNAME
-MYSQL_PASSWORD
-MYSQL_DATABASE
-REDIS_HOST
-REDIS_PORT
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ognuna di queste variabili d&amp;rsquo;ambiente può essere impostata usando il comando che abbiamo precedentemente usato per &lt;code&gt;COMPOSER_TOKEN&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Potete ottenere i parametri di connessione per Mysql e Redis dopo aver creato &lt;a href=&#34;http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateInstance.html&#34;&gt;un&amp;rsquo;istanza RDS Mysql DB&lt;/a&gt; e un &lt;a href=&#34;http://docs.aws.amazon.com/opsworks/latest/userguide/other-services-redis-cluster.html&#34;&gt;Cluster ElastiCache Redis&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;A questo punto, con i container nginx e fpm in esecuzione e i database configurati, potete digitare &lt;code&gt;eb open&lt;/code&gt; per aprire l&amp;rsquo;applicazione in produzione e verificare se tutto è ok!&lt;/p&gt;
-
-&lt;p&gt;La vostra infrastruttura, così com&amp;rsquo;è, è anche già pronta per scalare automaticamente; per muovere i primi passi in questa direzione potete dare un&amp;rsquo;occhiata al comando &lt;a href=&#34;http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-scale.html&#34;&gt;&lt;code&gt;eb scale&lt;/code&gt;&lt;/a&gt; e alla &lt;a href=&#34;http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.managing.as.html&#34;&gt;documentazione di AWS&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Troubleshooting&lt;/strong&gt;: Se qualcosa dovesse andare storto potete accedere via ssh nella macchina Elastic Beanstalk EC2 con &lt;code&gt;eb ssh&lt;/code&gt; e analizzare lo stato dei container usando strumenti che già conoscete come &lt;code&gt;docker logs&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;è-fatta&#34;&gt;È fatta!&lt;/h4&gt;
-
-&lt;p&gt;Ora potete risparmiare un sacco di tempo automatizzando il vostro workflow con docker ed ottenere un ambiente di sviluppo funzionante, auto-contenuto e condivisibile, pur mantenendolo molto simile alla vostra stabile ed efficiente infrastruttura in esecuzione nell&amp;rsquo;ambiente di produzione, sulle cui risorse avete pieno controllo.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg&#34; alt=&#34;congratulations&#34; /&gt;&lt;/p&gt;
-</description>
+      <description>In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.
+Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy.
+In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:</description>
     </item>
     
     <item>
@@ -219,77 +38,8 @@ REDIS_PORT
       <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</guid>
-      <description>
-
-&lt;p&gt;Di guide per l&amp;rsquo;installazione di Docker su OS X è pieno il web, ma &lt;strong&gt;le soluzioni sono molte&lt;/strong&gt; e spesso scegliere non è facile.
-In questo articolo vi mostrerò quello che è stato il mio personale percorso, nella speranza che possa essere utile a chiarirvi le idee e magari evitare qualche buco nell&amp;rsquo;acqua.&lt;/p&gt;
-
-&lt;p&gt;Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco. Nulla di complicato, quindi sono partito dalla cosa più semplice.&lt;/p&gt;
-
-&lt;h2 id=&#34;boot2docker&#34;&gt;boot2docker&lt;/h2&gt;
-
-&lt;p&gt;Probabilmente la soluzione più nota e diffusa, &lt;a href=&#34;https://docs.docker.com/installation/mac/&#34;&gt;boot2docker&lt;/a&gt; è stata la mia prima scelta. Si installa con &lt;code&gt;homebrew&lt;/code&gt; o &lt;code&gt;curl&lt;/code&gt; e viene distribuita con una propria ISO, molto leggera e progettata appositamente per Docker, che gira su VirtualBox.
-L&amp;rsquo;unica vera pecca è proprio il protocollo di condivisione nativo di VirtualBox, &lt;code&gt;vboxsf&lt;/code&gt;, che risulta &lt;strong&gt;molto lento&lt;/strong&gt; per progetti di medie dimensioni e rende il caricamento delle pagine lunghissimo.&lt;/p&gt;
-
-&lt;h2 id=&#34;docker-osx&#34;&gt;docker-osx&lt;/h2&gt;
-
-&lt;p&gt;Decido di &lt;a href=&#34;https://github.com/noplay/docker-osx&#34;&gt;provarlo&lt;/a&gt; incuriosito da un collega che ne aveva creato una versione modificata per supportare la &lt;strong&gt;condivisione NFS&lt;/strong&gt;, ma nonostante questo non lo trovo migliore di boot2docker. Inoltre il suo sviluppo è precedente, e il progetto è stato abbandonato quando Docker ha iniziato a supportare ufficialmente boot2docker: è in effetti lo stesso sviluppatore a sconsigliarne l&amp;rsquo;utilizzo da parte di nuovi utenti.&lt;/p&gt;
-
-&lt;h2 id=&#34;vagrant-e-parallels-boot2docker-https-github-com-parallels-boot2docker-vagrant-box&#34;&gt;Vagrant e &lt;a href=&#34;https://github.com/Parallels/boot2docker-vagrant-box&#34;&gt;parallels/boot2docker&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;Leggo su un blog che è possibile avere prestazioni migliori utilizzando un sistema di virtualizzazione alternativo a VirtualBox, come ad esempio Parallels o VMWare Fusion. Per entrambi esistono delle ISO modificate di boot2docker e la macchina dev&amp;rsquo;essere configurata usando Vagrant. La mia scelta cade su &lt;strong&gt;Parallels&lt;/strong&gt;, e finalmente riesco a creare &lt;strong&gt;una macchina performante&lt;/strong&gt; con condivisione NFS.
-Purtroppo il mantenimento della ISO sembra non stare al passo con la frequenza di rilascio di Docker (ero fermo alla versione 1.4.1 quando la 1.5 era disponibile da diverse settimane), quindi decido di cambiare nuovamente soluzione.&lt;/p&gt;
-
-&lt;h2 id=&#34;vagrant-e-ubuntu&#34;&gt;Vagrant e Ubuntu&lt;/h2&gt;
-
-&lt;p&gt;Dati i precedenti limiti e relativi fallimenti, tento una strada alternativa e &lt;a href=&#34;https://github.com/ildanno/parallels-docker-vagrantfile&#34;&gt;preparo un Vagrantfile&lt;/a&gt; contenente tutto quello che mi serve: una macchina Ubuntu che gira su Parallels, repository di Docker aggiornato, condivisione NFS e possibilità di eseguire comandi al boot.
-Ma ancora una volta ho un problema fastidioso, che si verificava già con la soluzione precedente ma che (sbagliando) attribuivo a boot2docker. Ad ogni avvio della macchina, infatti, si crea &lt;strong&gt;un conflitto&lt;/strong&gt; con OS X per l&amp;rsquo;utilizzo di &lt;strong&gt;alcune risorse di rete&lt;/strong&gt; e devo risolverle manualmente riavviando il demone NAT di Parallels. Inoltre scopro che con vagrant+parallels lo spazio utilizzato dal disco virtuale non è più recuperabile una volta allocato e il mio SSD è ormai alle strette.&lt;/p&gt;
-
-&lt;h2 id=&#34;vm-custom&#34;&gt;VM custom&lt;/h2&gt;
-
-&lt;p&gt;Preso dallo sconforto scelgo di avere il &lt;strong&gt;controllo completo&lt;/strong&gt;: installo &lt;strong&gt;VMWare Fusion&lt;/strong&gt; per avere un sistema di virtualizzazione più performante di VirtualBox, ma senza gli inconvenienti di Parallels, e configuro una macchina con Ubuntu server. Posso montare share NFS e ridimensionare il disco virtuale. Mi sembra una soluzione molto artigianale, ma funziona esattamente come voglio io e credo finalmente di avere trovato la mia pace. Ma non è così.&lt;/p&gt;
-
-&lt;h2 id=&#34;docker-machine&#34;&gt;Docker Machine&lt;/h2&gt;
-
-&lt;p&gt;Da alcune settimane è uscita una novità sul mercato, direttamente da casa Docker, che ho inizialmente ignorato. Si chiama &lt;a href=&#34;https://docs.docker.com/machine/&#34;&gt;Docker Machine&lt;/a&gt; e ad una prima occhiata non sembra fare cose molto diverse da boot2docker, tant&amp;rsquo;è che ne utilizza la stessa ISO. Però il fatto che venga rilasciato direttamente dalla casa madre mi fa ben sperare, vista anche l&amp;rsquo;evoluzione avuta da altri tools come &lt;a href=&#34;https://docs.docker.com/compose/&#34;&gt;Docker Compose&lt;/a&gt;, e dopo qualche tempo decido di dargli una possibilità.&lt;/p&gt;
-
-&lt;p&gt;Mi rendo subito conto che in realtà Docker Machine ha &lt;strong&gt;potenzialità molto maggiori&lt;/strong&gt; di quelle di boot2docker: è in grado di gestire più di una macchina, locale o in cloud, supporta diversi drivers e ha addirittura la possibilità di collegarsi ad un generico server remoto.
-Creo quindi una macchina locale, utilizzando il driver di VMWare Fusion:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ docker-machine create --driver vmwarefusion \
-    --vmwarefusion-cpu-count 2 \
-    --vmwarefusion-disk-size 40000 \
-    --vmwarefusion-memory-size 4096 \
-    dev2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In pochi secondi la macchina è pronta all&amp;rsquo;uso. Anche se la cartella &lt;code&gt;/Users&lt;/code&gt; è già montata con il protocollo di condivisione file di VMWare (&lt;code&gt;vmhgfs&lt;/code&gt;), decido comunque di configurare una condivisione NFS personalizzata.&lt;/p&gt;
-
-&lt;p&gt;Per prima cosa configuro OS X in modo da accettare connessioni dalla macchina su cui gira Docker (in questo caso verso la mia cartella &lt;code&gt;~/Sites&lt;/code&gt;):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ echo &amp;quot;/Users/dcontini/Sites -mapall=dcontini:staff $(docker-machine ip dev2)&amp;quot; | sudo tee -a /etc/exports
-$ sudo nfsd restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Ora configuro la macchina virtuale, avviando i tools NFS e, se necessario, creando il mount point:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ docker-machine ssh dev2 -- sudo /usr/local/etc/init.d/nfs-client start
-&amp;gt; Starting nfs client utilities.
-$ docker-machine ssh dev2 -- sudo mkdir -p /var/www
-$ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/www
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A questo punto ho finalmente la mia condivisione NFS e, se voglio, posso configurarne diverse e smontare la cartella &lt;code&gt;/Users&lt;/code&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ docker-machine ssh dev2 -- mount
-.host:/Users on /Users type vmhgfs (rw,relatime)
-172.16.153.1:/Users/dcontini/Sites on /var/www type nfs (rw,relatime,...)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Purtroppo ad ogni riavvio della macchina virtuale è necessario &lt;strong&gt;rimontare manualmente la condivisione&lt;/strong&gt;, poiché Docker Machine esegue nuovamente il provisioning. Ma del resto, alla fine di questo viaggio, possiamo dire che si tratta del problema minore ;)&lt;/p&gt;
-
-&lt;p&gt;(Per i più pigri, invece, ho &lt;a href=&#34;https://github.com/ildanno/docker-machine-mount&#34;&gt;pubblicato&lt;/a&gt; &lt;strong&gt;uno script&lt;/strong&gt; che automatizza l&amp;rsquo;operazione)&lt;/p&gt;
-</description>
+      <description>Di guide per l&amp;rsquo;installazione di Docker su OS X è pieno il web, ma le soluzioni sono molte e spesso scegliere non è facile. In questo articolo vi mostrerò quello che è stato il mio personale percorso, nella speranza che possa essere utile a chiarirvi le idee e magari evitare qualche buco nell&amp;rsquo;acqua.
+Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco.</description>
     </item>
     
   </channel>

@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Mar 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/categories/php-internals/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/categories/php-internals/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>ZVALs refcount AKA come vengono memorizzate le nostre variabili</title>
@@ -15,47 +17,9 @@
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/zvals-refcount/</guid>
-      <description>&lt;p&gt;Assegnare valori alle variabili è sicuramente l&amp;rsquo;operazione più comune all&amp;rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&amp;rsquo;interprete? Vediamolo assieme!&lt;/p&gt;
-
-&lt;p&gt;L&amp;rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla &lt;a href=&#34;https://github.com/php/php-src/blob/ae15e636e2b213bf748fa0b94ca95ac96d6eae3a/Zend/zend.h#L334-L340&#34;&gt;linea 334 di &lt;code&gt;zend.h&lt;/code&gt;&lt;/a&gt;, la riporto qui di seguito per commentarne le proprietà.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;struct _zval_struct {
-	zvalue_value value;	 /* Il valore assegnato alla variabile */
-	zend_uint refcount__gc; /* Il conto delle referenze legato alla variabile */
-	zend_uchar type;	/* L&#39;identificativo del tipo di dato */
-	zend_uchar is_ref__gc; /* Flag che indica se la variabile è o meno una referenza */
-};
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Il tipo di dato &lt;code&gt;zvalue_value&lt;/code&gt; non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo &lt;strong&gt;ogni variabile&lt;/strong&gt; che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo &lt;strong&gt;stesso spazio in memoria&lt;/strong&gt; richiesto per il tipo di dato più grande.&lt;/p&gt;
-
-&lt;p&gt;Per mostrare come php gestisce l&amp;rsquo;allocazione delle variabili vediamo un semplice esempio:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$a = 1; // value=1, refcount=1
-$b = $a; // value=1, refcount=2
-$a++;    // value=2, refcount = 1
-$c = $b; // value=1, refcount=2
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Cosa succede qui?&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;$a&lt;/code&gt; viene allocata con valore &lt;code&gt;1&lt;/code&gt;, e quindi per la variabile &lt;code&gt;$a&lt;/code&gt; il refcount viene
-impostato a 1.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Il valore di &lt;code&gt;$a&lt;/code&gt; viene assegnato anche a &lt;code&gt;$b&lt;/code&gt;, quindi PHP per evitare di sprecare memoria assegna la stessa zval anche a &lt;code&gt;$b&lt;/code&gt;, aumentando di 1 il refcount.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;$a&lt;/code&gt; viene incrementato di &lt;code&gt;1&lt;/code&gt;,&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Essendo il valore della zval di &lt;code&gt;$a&lt;/code&gt; è cambiato, php crea una nuova zval per &lt;code&gt;$b&lt;/code&gt; e &lt;code&gt;$c&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Ora la zval di &lt;code&gt;$a&lt;/code&gt; appartiene solo ad &lt;code&gt;$a&lt;/code&gt; con valore &lt;code&gt;2&lt;/code&gt; e refcount &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;&lt;code&gt;$b&lt;/code&gt; ha una nuova zval con valore &lt;code&gt;1&lt;/code&gt; e refcount &lt;code&gt;1&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Essendo la zval di &lt;code&gt;$c&lt;/code&gt; è la stessa di &lt;code&gt;$b&lt;/code&gt; la zval di &lt;code&gt;$c&lt;/code&gt; ha valore &lt;code&gt;1&lt;/code&gt; e refcount &lt;code&gt;2&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
+      <description>Assegnare valori alle variabili è sicuramente l&amp;rsquo;operazione più comune all&amp;rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&amp;rsquo;interprete? Vediamolo assieme!
+L&amp;rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla linea 334 di zend.h, la riporto qui di seguito per commentarne le proprietà.
+struct _zval_struct { zvalue_value value;	/* Il valore assegnato alla variabile */ zend_uint refcount__gc; /* Il conto delle referenze legato alla variabile */ zend_uchar type;	/* L&#39;identificativo del tipo di dato */ zend_uchar is_ref__gc; /* Flag che indica se la variabile è o meno una referenza */ };  Il tipo di dato zvalue_value non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo ogni variabile che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo stesso spazio in memoria richiesto per il tipo di dato più grande.</description>
     </item>
     
     <item>
@@ -64,52 +28,10 @@ impostato a 1.&lt;/p&gt;&lt;/li&gt;
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</guid>
-      <description>&lt;p&gt;PHP, fin dalla versione 5.2.0, introduce gli oggetti &lt;code&gt;\DateTime&lt;/code&gt; per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali.&lt;/p&gt;
-
-&lt;p&gt;Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate &lt;code&gt;var_dump&lt;/code&gt;, &lt;code&gt;print_r&lt;/code&gt;, &lt;code&gt;var_export&lt;/code&gt; o &lt;code&gt;debug_zval_dump&lt;/code&gt; su un istanza di &lt;code&gt;\DateTime&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Considerando il seguente codice e il suo output:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$date = new \DateTime();
-var_dump(isset($date-&amp;gt;date)); // OUTPUT: bool(false)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ci rendiamo conto del fatto che non esiste alcuna proprietà &lt;code&gt;$date&lt;/code&gt; all&amp;rsquo;interno dell&amp;rsquo;istanza di &lt;code&gt;\DateTime&lt;/code&gt;.&lt;/p&gt;
-
-&lt;p&gt;Se più avanti nel codice scrivessimo&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var_dump($date);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;otterremmo come output:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;class DateTime#1 (3) {
-  public $date =&amp;gt;
-  string(26) &amp;quot;2015-03-01 23:18:42.000000&amp;quot;
-  public $timezone_type =&amp;gt;
-  int(3)
-  public $timezone =&amp;gt;
-  string(11) &amp;quot;Europe/Rome&amp;quot;
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;il che ci mostra chiaramente una proprietà pubblica &lt;code&gt;$date&lt;/code&gt;, contenente il timestamp attuale.&lt;/p&gt;
-
-&lt;p&gt;Controllando nuovamente l&amp;rsquo;esistenza della proprietà pubblica &lt;code&gt;$date&lt;/code&gt; scopriremmo infatti che ora è presente ed ha il valore settato:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var_dump(isset($date-&amp;gt;date)); // OUTPUT: bool(true)
-echo $date-&amp;gt;date; // OUTPUT: 2015-03-01 23:21:05.000000
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Questo comportamento è dovuto alla funzione interna &lt;code&gt;static HashTable *date_object_get_properties(zval *object)&lt;/code&gt; che alla &lt;a href=&#34;https://github.com/php/php-src/blob/968a9f48071bcc099b4e978fc99fd09b6f69d172/ext/date/php_date.c#L2176-L2177&#34;&gt;linea 2176&lt;/a&gt; di &lt;code&gt;php_date.c&lt;/code&gt; imposta la proprietà &lt;code&gt;$date&lt;/code&gt;. Dal momento che &lt;code&gt;var_dump&lt;/code&gt; e le altre funzioni citate sopra chiamano proprio quella funzione durante l&amp;rsquo;esecuzione, ci imbattiamo in questo comportamento.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;	/* first we add the date and time in ISO format */
-	ZVAL_STR(&amp;amp;zv, date_format(&amp;quot;Y-m-d H:i:s.u&amp;quot;, sizeof(&amp;quot;Y-m-d H:i:s.u&amp;quot;)-1, dateobj-&amp;gt;time, 1));
-	zend_hash_str_update(props, &amp;quot;date&amp;quot;, sizeof(&amp;quot;date&amp;quot;)-1, &amp;amp;zv);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;È importante perciò sapere e tenere a mente che alcune proprietà visibili con var_dump(), se non documentate, non dovrebbero essere utilizzate in quanto potrebbero risultare in comportamenti non attesi!&lt;/p&gt;
-</description>
+      <description>PHP, fin dalla versione 5.2.0, introduce gli oggetti \DateTime per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali.
+Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate var_dump, print_r, var_export o debug_zval_dump su un istanza di \DateTime.
+Considerando il seguente codice e il suo output:
+$date = new \DateTime(); var_dump(isset($date-&amp;gt;date)); // OUTPUT: bool(false)  ci rendiamo conto del fatto che non esiste alcuna proprietà $date all&amp;rsquo;interno dell&amp;rsquo;istanza di \DateTime.</description>
     </item>
     
   </channel>

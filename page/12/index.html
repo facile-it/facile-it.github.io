@@ -10,7 +10,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.16" />
+        <meta name="generator" content="Hugo 0.31.1" />
         
 
 
@@ -32,7 +32,9 @@
 <meta property="og:url" content="https://engineering.facile.it/" />
 
 
+
 <meta property="og:updated_time" content="2015-03-23T00:00:00&#43;00:00"/>
+
 
 
 
@@ -71,7 +73,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-22342495-1', 'auto');
 ga('send', 'pageview');
@@ -277,7 +279,9 @@ ga('send', 'pageview');
 
     
 
-    <p>Le specifiche PSR-7 descrivono una proposta di standardizzazione delle interfacce per i messaggi HTTP. Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, definisce una serie di regole di comunicazione che vengono implementate dalle applicazioni client e server che lo adottano. A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP.</p>
+    <p>Le specifiche PSR-7 descrivono una proposta di standardizzazione delle interfacce per i messaggi HTTP.
+Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, definisce una serie di regole di comunicazione che vengono implementate dalle applicazioni client e server che lo adottano.
+A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP.</p>
 
     <footer>
         <ul class="actions">
@@ -408,7 +412,9 @@ ga('send', 'pageview');
 
     
 
-    <p>Controllare il tasso di coverage dei test è un&rsquo;attività frequente tra gli sviluppatori. Numerosi sono i fattori che hanno reso il code coverage popolare: è una metrica facile da comprendere; si misura senza difficoltà; è oggettiva e imparziale; è universale (applicabile a tutti i paradigmi di programmazione). Ma al di là di questi vantaggi, possiamo affermare che una test suite con un&rsquo;alta percentuale di coverage sia realmente efficace? Quando un test è efficace?</p>
+    <p>Controllare il tasso di coverage dei test è un&rsquo;attività frequente tra gli sviluppatori.
+Numerosi sono i fattori che hanno reso il code coverage popolare:
+ è una metrica facile da comprendere; si misura senza difficoltà; è oggettiva e imparziale; è universale (applicabile a tutti i paradigmi di programmazione).  Ma al di là di questi vantaggi, possiamo affermare che una test suite con un&rsquo;alta percentuale di coverage sia realmente efficace?</p>
 
     <footer>
         <ul class="actions">
@@ -537,7 +543,8 @@ ga('send', 'pageview');
 
     
 
-    <p>A ben più di uno sviluppatore sarà capitato di incappare nel comune errore MySQL server has gone away!, magari seguito da un eccezione lanciata da una delle classi PDO, come ad esempio PDOStatement::execute(): Error reading result set&rsquo;s header. Nella maggior parte dei casi, quando questo avviene in ambiente PHP, siamo connessi in maniera persistente (per fortuna!) ed a causa di una esecuzione troppo lunga, la connessione col server MySQL va in timeout.</p>
+    <p>A ben più di uno sviluppatore sarà capitato di incappare nel comune errore MySQL server has gone away!, magari seguito da un eccezione lanciata da una delle classi PDO, come ad esempio PDOStatement::execute(): Error reading result set&rsquo;s header.
+Nella maggior parte dei casi, quando questo avviene in ambiente PHP, siamo connessi in maniera persistente (per fortuna!) ed a causa di una esecuzione troppo lunga, la connessione col server MySQL va in timeout.</p>
 
     <footer>
         <ul class="actions">
@@ -668,7 +675,10 @@ ga('send', 'pageview');
 
     
 
-    <p>Gli operatori ternari sono diffusi in molti linguaggi di programmazione e permettono di esprimire con una sintassi breve logiche condizionali. Per utilizzarli propriamente in PHP è però necessario conoscerne il comportamento. Vediamo un esempio var_dump(true ? &lsquo;a&rsquo; : &lsquo;b&rsquo; ? &lsquo;c&rsquo; : &rsquo;d&rsquo;); // OUTPUT: string(1) &quot;c&quot; Se state pensando che il risultato di questa espressione sia ovvio, vediamo cosa succede ad esempio in javascript console.log(true ? &lsquo;a&rsquo; : &lsquo;b&rsquo; ?</p>
+    <p>Gli operatori ternari sono diffusi in molti linguaggi di programmazione e permettono di esprimire con una sintassi breve logiche condizionali. Per utilizzarli propriamente in PHP è però necessario conoscerne il comportamento.
+Vediamo un esempio
+var_dump(true ? &lsquo;a&rsquo; : &lsquo;b&rsquo; ? &lsquo;c&rsquo; : &rsquo;d&rsquo;); // OUTPUT: string(1) &quot;c&quot;  Se state pensando che il risultato di questa espressione sia ovvio, vediamo cosa succede ad esempio in javascript
+console.log(true ? &lsquo;a&rsquo; : &lsquo;b&rsquo; ?</p>
 
     <footer>
         <ul class="actions">
@@ -793,7 +803,9 @@ ga('send', 'pageview');
 
     
 
-    <p>Assegnare valori alle variabili è sicuramente l&rsquo;operazione più comune all&rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&rsquo;interprete? Vediamolo assieme! L&rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla linea 334 di zend.h, la riporto qui di seguito per commentarne le proprietà. struct _zval_struct { zvalue_value value; /* Il valore assegnato alla variabile <em>/ zend_uint refcount__gc; /</em> Il conto delle referenze legato alla variabile <em>/ zend_uchar type; /</em> L&rsquo;identificativo del tipo di dato <em>/ zend_uchar is_ref__gc; /</em> Flag che indica se la variabile è o meno una referenza */ }; Il tipo di dato zvalue_value non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo ogni variabile che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo stesso spazio in memoria richiesto per il tipo di dato più grande.</p>
+    <p>Assegnare valori alle variabili è sicuramente l&rsquo;operazione più comune all&rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&rsquo;interprete? Vediamolo assieme!
+L&rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla linea 334 di zend.h, la riporto qui di seguito per commentarne le proprietà.
+struct _zval_struct { zvalue_value value;   /* Il valore assegnato alla variabile <em>/ zend_uint refcount__gc; /</em> Il conto delle referenze legato alla variabile <em>/ zend_uchar type;  /</em> L&rsquo;identificativo del tipo di dato <em>/ zend_uchar is_ref__gc; /</em> Flag che indica se la variabile è o meno una referenza */ };  Il tipo di dato zvalue_value non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo ogni variabile che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo stesso spazio in memoria richiesto per il tipo di dato più grande.</p>
 
     <footer>
         <ul class="actions">

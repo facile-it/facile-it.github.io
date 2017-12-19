@@ -10,7 +10,7 @@
 
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content="Hugo 0.16" />
+        <meta name="generator" content="Hugo 0.31.1" />
         
 
 
@@ -30,7 +30,9 @@
     
     
     <meta name="twitter:title" content="Da sviluppo a produzione con Docker e AWS Elastic Beanstalk"/>
-    <meta name="twitter:description" content="In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione. Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy. In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue: nessun tipo di isolamento tra progetti che usano gli stessi servizi (versione, configurazione, dati); è difficile avere e mantenere in locale la stessa versione e la stessa configurazione dei servizi in produzione; condividere l&rsquo;ambiente di sviluppo con colleghi e collaboratori è difficile se non impossibile; Tutto questo conduce ad una delle peggiori frasi che io abbia mai sentito in tutta la mia esperienza lavorativa: It works on my machine (in locale funzionava) Potreste pensare che avrei potuto ottenere gli stessi risultati usando Vagrant o una classica macchina virtuale, ma questa soluzione non mi avrebbe dato i benefici di avere un layer di astrazione aggiuntivo senza dovermi preoccupare dell&rsquo;overhead."/>
+    <meta name="twitter:description" content="In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.
+Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy.
+In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:"/>
     
         
             
@@ -46,12 +48,18 @@
 
 
         <meta property="og:title" content="Da sviluppo a produzione con Docker e AWS Elastic Beanstalk" />
-<meta property="og:description" content="In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione. Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy. In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue: nessun tipo di isolamento tra progetti che usano gli stessi servizi (versione, configurazione, dati); è difficile avere e mantenere in locale la stessa versione e la stessa configurazione dei servizi in produzione; condividere l&rsquo;ambiente di sviluppo con colleghi e collaboratori è difficile se non impossibile; Tutto questo conduce ad una delle peggiori frasi che io abbia mai sentito in tutta la mia esperienza lavorativa: It works on my machine (in locale funzionava) Potreste pensare che avrei potuto ottenere gli stessi risultati usando Vagrant o una classica macchina virtuale, ma questa soluzione non mi avrebbe dato i benefici di avere un layer di astrazione aggiuntivo senza dovermi preoccupare dell&rsquo;overhead." />
+<meta property="og:description" content="In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.
+Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy.
+In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/" />
 
 
-<meta property="og:updated_time" content="2015-10-19T00:00:00&#43;00:00"/>
+
+<meta property="article:published_time" content="2015-10-19T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2015-10-19T00:00:00&#43;00:00"/>
+
 
 
 
@@ -68,15 +76,18 @@
         <meta property="og:image:height" content="512">
         
 <meta itemprop="name" content="Da sviluppo a produzione con Docker e AWS Elastic Beanstalk">
-<meta itemprop="description" content="In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione. Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy. In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue: nessun tipo di isolamento tra progetti che usano gli stessi servizi (versione, configurazione, dati); è difficile avere e mantenere in locale la stessa versione e la stessa configurazione dei servizi in produzione; condividere l&rsquo;ambiente di sviluppo con colleghi e collaboratori è difficile se non impossibile; Tutto questo conduce ad una delle peggiori frasi che io abbia mai sentito in tutta la mia esperienza lavorativa: It works on my machine (in locale funzionava) Potreste pensare che avrei potuto ottenere gli stessi risultati usando Vagrant o una classica macchina virtuale, ma questa soluzione non mi avrebbe dato i benefici di avere un layer di astrazione aggiuntivo senza dovermi preoccupare dell&rsquo;overhead.">
+<meta itemprop="description" content="In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.
+Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy.
+In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:">
 
 
+<meta itemprop="datePublished" content="2015-10-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-10-19T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1332">
 
 
 
-<meta itemprop="keywords" content="algatux,daniele,elviro,engineering,francesco,giacomo,jean,lorenzo,luca,mario-maraone,matteo,michele,nicola,salvatore-cordiano,sergio,simone-lazzaroni,vito,AES,AWS,Agile,Algorithms,Android,Angular,Artificial intelligence,Blog,C,CMake,Code reuse,Codemotion,Conferences,Continuous integration,DSL,Database,Design patterns,Docker,Doctrine,Encryption,English,Event driven,FacileHack,Filesystem,Functional programming,Fuse,Git,GitHub,GraphQL,HTTP,Hackathon,Hugo,Italiano,JSON,JVM,JWT,Java,Javascript,Kanban,Kotlin,MessagePack,Monad,MySQL,Networking,NewRelic,Node.js,OOP,OPCache,OSX,Objective-C,Open Source,PHP,PHP Coding standards,PHP internals,PSR,Python,REST,RSA,Rjindael,SOLID,Scrum,Security,Semantic versioning,Serverless,Signal,Software Crisis,Software Testing,Software complexity,Software testing,Static site,Structured programming,Swift,Symfony,TDD,Test coverage,Type First Development,UI,WebComponent,Websocket,Xcode,realpath_cache," />
+<meta itemprop="keywords" content="" />
 
         
 
@@ -98,7 +109,7 @@
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-22342495-1', 'auto');
 ga('send', 'pageview');

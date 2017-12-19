@@ -7,7 +7,9 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 09 Oct 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Paraunit: test paralleli, Doctrine e le fixture</title>
@@ -15,143 +17,8 @@
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
-      <description>
-
-&lt;p&gt;&lt;em&gt;Questo articolo è la sintesi di un talk presentato al &lt;a href=&#34;http://2015.symfonyday.it/&#34;&gt;SymfonyDay 2015&lt;/a&gt;; potete trovare le slide &lt;a href=&#34;http://jean85.github.io/slides/2015-10-paraunit-symfonyday/index.html&#34;&gt;qui&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;i-test-e-la-loro-durata&#34;&gt;I test e la loro durata&lt;/h4&gt;
-
-&lt;p&gt;Sviluppare applicazioni scrivendo &lt;strong&gt;test&lt;/strong&gt; e facendo &lt;a href=&#34;https://it.wikipedia.org/wiki/Test_driven_development&#34;&gt;Test Driven Development&lt;/a&gt; è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa &lt;strong&gt;crescere la suite di test&lt;/strong&gt; del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.&lt;/p&gt;
-
-&lt;p&gt;L&amp;rsquo;aumento della quantità di test però porta alla crescita (direttamente proporzionale) del &lt;strong&gt;tempo necessario&lt;/strong&gt; ad eseguire i test stessi.
-Nel caso dei &lt;strong&gt;test unitari&lt;/strong&gt; questo aumento è spesso trascurabile, poiché &lt;strong&gt;si limitano a caricare una singola classe&lt;/strong&gt; e ad analizzarne il comportamento in completo isolamento, terminando la loro esecuzione nel giro di &lt;strong&gt;pochi millisecondi&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Quando invece parliamo di &lt;strong&gt;test funzionali&lt;/strong&gt;, il tempo di esecuzione non è più così limitato: vengono caricate &lt;strong&gt;molte più classi&lt;/strong&gt;, spesso viene coinvolto anche il &lt;strong&gt;database&lt;/strong&gt;, deve essere messa alla prova l&amp;rsquo;interazione tra molti elementi; il tutto porta a test la cui durata è talvolta di &lt;strong&gt;quasi un secondo&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Leggendo libri e blog sull&amp;rsquo;argomento, e con l&amp;rsquo;esperienza personale, ho imparato che c&amp;rsquo;è una &lt;strong&gt;soglia critica&lt;/strong&gt; che rappresenta il limite ideale oltre il quale una test suite diventa troppo lenta, e questa soglia è di &lt;strong&gt;circa dieci minuti&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Ma perché proprio dieci minuti? Il motivo è molto semplice, e pratico: in dieci minuti, il programmatore può fare una pausa, prendersi un caffè o decidere di discutere brevemente una questione tecnica con un collega, e al suo ritorno troverà la suite completata e potrà procedere col lavoro. In caso contrario, possono succedere due cose:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;il programmatore &lt;strong&gt;rimane a fissare lo schermo&lt;/strong&gt; mentre i test si eseguono, dando ragione ai detrattori dei test che affermano che fare TDD è una perdita di tempo;&lt;/li&gt;
-&lt;li&gt;si &lt;strong&gt;smette di eseguire la test suite&lt;/strong&gt;, o per lo meno di farla eseguire per intero.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;La seconda opzione può sembrare fattibile: si fanno girare solo i &lt;strong&gt;test strettamente necessari&lt;/strong&gt; mentre si sviluppa, quelli che vengono scritti in quel momento o che coprono la parte di codice che si sta modificando, per poi eseguire il commit del proprio codice senza far girare l&amp;rsquo;intera suite.&lt;/p&gt;
-
-&lt;p&gt;In realtà &lt;strong&gt;questo approccio fa perdere valore ai test&lt;/strong&gt; stessi, perché i test sono codice che non andrà mai in produzione, e che quindi può dare valore ai nostri progetti solo se viene eseguito ogni volta. Inoltre questo approccio nasconde &lt;strong&gt;una trappola&lt;/strong&gt;, dato che i test, per essere davvero efficaci, vanno eseguiti tutti ogni volta: la loro forza sta proprio nell&amp;rsquo;&lt;strong&gt;individuare gli effetti collaterali&lt;/strong&gt; imprevisti delle nostre modifiche, i bug che possono presentarsi in punti inaspettati e apparentemente lontani del nostro progetto.&lt;/p&gt;
-
-&lt;h4 id=&#34;esecuzione-parallela-dei-test&#34;&gt;Esecuzione parallela dei test&lt;/h4&gt;
-
-&lt;p&gt;In Facile.it lavoro in un progetto basato su Symfony2 e Doctrine e mi sono trovato proprio davanti a questa problematica: avevamo una &lt;strong&gt;suite di test che stava crescendo&lt;/strong&gt; a ritmo sostenuto e che a volte impiegava ad eseguirsi, tra build di preparazione ed esecuzione vera e propria, anche 25 minuti.&lt;/p&gt;
-
-&lt;p&gt;Dopo aver ottimizzato le prestazioni del nostro ambiente di sviluppo (passando da Vagrant a Docker, ma questa è un&amp;rsquo;altra storia), ci siamo resi conto di aver bisogno di una soluzione più drastica al nostro problema, e abbiamo pensato di &lt;strong&gt;eseguire in parallelo i nostri test&lt;/strong&gt; per sfruttare al meglio le risorse hardware e ridurre così i tempi di esecuzione.&lt;/p&gt;
-
-&lt;p&gt;Dopo un po&amp;rsquo; di ricerche, abbiamo individuato alcuni tool esistenti che permettevano questo approccio:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/brianium/paratest&#34;&gt;brianium/paratest&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/liuggio/fastest&#34;&gt;liuggio/fastest&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Entrambi i tool sono ben sviluppati e semplici da utilizzare e le prime prove sui &lt;strong&gt;test unitari&lt;/strong&gt; sono state molto promettenti: grazie alla ridotta dimensione, la loro parallelizzazione è estremamente semplice.&lt;/p&gt;
-
-&lt;h4 id=&#34;i-problemi-di-concorrenza-nei-test-funzionali&#34;&gt;I problemi di concorrenza nei test funzionali&lt;/h4&gt;
-
-&lt;p&gt;Quando siamo passati a provare Paratest sui &lt;strong&gt;test funzionali&lt;/strong&gt; abbiamo invece incontrato grossi problemi, che si concretizzavano in &lt;strong&gt;fallimenti casuali durante l&amp;rsquo;esecuzione parallela&lt;/strong&gt;. Questi fallimenti erano dati da un problema molto semplice: stavamo accedendo più volte e in parallelo al nostro database di test.&lt;/p&gt;
-
-&lt;p&gt;Ma perché il nostro codice, che è lo stesso che viene eseguito in produzione (dove elabora centinaia, migliaia di richieste al minuto) ha così tanti &lt;strong&gt;problemi di accesso concorrente&lt;/strong&gt; nell&amp;rsquo;ambiente di test? I motivi sono semplici:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;i dati di test sono pochi&lt;/strong&gt;, mentre in produzione abbiamo tabelle da milioni di righe;&lt;/li&gt;
-&lt;li&gt;per questo motivo &lt;strong&gt;i test tentano di accedere sempre alle stesse righe&lt;/strong&gt; del database;&lt;/li&gt;
-&lt;li&gt;la &lt;strong&gt;sequenza&lt;/strong&gt; di operazioni di ogni test in genere è &lt;strong&gt;lettura - elaborazione - scrittura&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;i test hanno una &lt;strong&gt;rapidità di esecuzione&lt;/strong&gt; superiore a quella di un utilizzatore umano.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Tutti questi motivi contribuiscono a creare situazioni in cui &lt;strong&gt;si verificano dei &lt;a href=&#34;https://it.wikipedia.org/wiki/Deadlock&#34;&gt;deadlock&lt;/a&gt;&lt;/strong&gt; e che il nostro database può risolvere solo bloccando uno dei due tentativi di accesso ai dati, facendo così fallire il test corrispondente.&lt;/p&gt;
-
-&lt;p&gt;Un altro problema che può verificarsi è l&amp;rsquo;&lt;strong&gt;alterazione dei dati&lt;/strong&gt;: quando due test vengono eseguiti in contemporanea, uno dei due può modificare il database e, così facendo, può far mancare i giusti dati di partenza ad un altro test che si sta avviando nello stesso istante.&lt;/p&gt;
-
-&lt;p&gt;Purtroppo &lt;strong&gt;Paratest non offre una soluzione&lt;/strong&gt; a questo genere di problemi, mentre Fastest propone come approccio la creazione di un database di test differente per ogni core del proprio processore, per poi eseguire tanti test in parallelo quanti sono i database a disposizione.&lt;/p&gt;
-
-&lt;p&gt;Sfortunatamente anche questo approccio non ci ha soddisfatto, in quanto la costruzione del nostro database di test era piuttosto lenta (avevamo molte migration da eseguire e altrettante fixture da caricare ogni volta) e rischiavamo di guadagnare tempo da una parte per perderlo dall&amp;rsquo;altra, inoltre, avevamo avuto &lt;strong&gt;un&amp;rsquo;idea nuova&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;facile-it-paraunit&#34;&gt;facile-it/paraunit&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://packagist.org/packages/facile-it/paraunit&#34;&gt;&lt;img src=&#34;https://poser.pugx.org/facile-it/paraunit/version.svg&#34; alt=&#34;Packagist&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;https://travis-ci.org/facile-it/paraunit&#34;&gt;&lt;img src=&#34;https://travis-ci.org/facile-it/paraunit.svg&#34; alt=&#34;Travis build&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;https://codeclimate.com/github/facile-it/paraunit&#34;&gt;&lt;img src=&#34;https://codeclimate.com/github/facile-it/paraunit/badges/gpa.svg&#34; alt=&#34;Codeclimate&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;https://coveralls.io/github/facile-it/paraunit?branch=master&#34;&gt;&lt;img src=&#34;https://coveralls.io/repos/facile-it/paraunit/badge.svg?branch=master&amp;amp;service=github&#34; alt=&#34;Coverage&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Abbiamo così deciso di sviluppare la nostra soluzione: &lt;strong&gt;&lt;a href=&#34;https://github.com/facile-it/paraunit&#34;&gt;facile-it/paraunit&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;è sviluppato con i &lt;strong&gt;componenti Symfony&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;sa leggere la configurazione XML di PHPUnit&lt;/strong&gt; per individuare le test suite;&lt;/li&gt;
-&lt;li&gt;esegue il &lt;strong&gt;parsing e l&amp;rsquo;aggregazione dei risultati&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;grazie ai processi separati, &lt;strong&gt;sa gestire i fatal error&lt;/strong&gt; senza far bloccare completamente l&amp;rsquo;esecuzione;&lt;/li&gt;
-&lt;li&gt;sempre grazie ai processi, riesce ad &lt;strong&gt;ottimizzare l&amp;rsquo;uso della memoria&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;risulta &lt;strong&gt;affidabile&lt;/strong&gt; grazie al fatto che basa il suo responso sugli exit code dei singoli processi PHPUnit.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;La maggior parte di questi vantaggi sono ovviamente comuni a tutti gli approcci di parallelizzazione dei test, inoltre, grazie al parsing dei risultati, &lt;strong&gt;Paraunit sa riconoscere i casi di fallimento dovuti a deadlock&lt;/strong&gt; e riesegue i test che falliscono per questo motivo.&lt;/p&gt;
-
-&lt;p&gt;Questo però era solo un primo passo e ovviamente ci siamo concentrati sull&amp;rsquo;implementare una &lt;strong&gt;soluzione radicale ai problemi di concorrenza&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;facile-it-paraunit-testcase&#34;&gt;facile-it/paraunit-testcase&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://packagist.org/packages/facile-it/paraunit-testcase&#34;&gt;&lt;img src=&#34;https://poser.pugx.org/facile-it/paraunit-testcase/version.svg&#34; alt=&#34;Packagist&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;La soluzione che abbiamo trovato è molto semplice: &lt;strong&gt;le transazioni&lt;/strong&gt;.
-Per realizzarla nella sua totalità, abbiamo sviluppato un test-case per PHPUnit, rilasciato col pacchetto &lt;strong&gt;&lt;a href=&#34;https://github.com/facile-it/paraunit-testcase&#34;&gt;facile-it/paraunit-testcase&lt;/a&gt;&lt;/strong&gt;; ovviamente il test-case è stato sviluppato in partenza per il nostro caso d&amp;rsquo;uso, ovvero per il &lt;strong&gt;test di un&amp;rsquo;applicazione basata su Symfony2 e Doctrine&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Grazie a questo test-case, ogni test può accedere al database solo dentro una transazione e questa transazione non riceve mai il &lt;em&gt;commit&lt;/em&gt;, ma sempre il &lt;strong&gt;rollback&lt;/strong&gt; al termine. Questo significa che &lt;strong&gt;nulla verrà mai realmente scritto&lt;/strong&gt; sul nostro database.&lt;/p&gt;
-
-&lt;p&gt;I vantaggi di questo approccio sono molteplici:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;nessun test può interferire&lt;/strong&gt; con gli altri, visto che non possono alterare i dati;&lt;/li&gt;
-&lt;li&gt;ogni test può permettersi di &lt;strong&gt;creare al volo un dato o di alterarne uno esistente&lt;/strong&gt;, senza doversi preoccupare di ripulire il database al termine, con grande risparmio di tempo nella scrittura dei test;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;il database di test rimane sempre pulito&lt;/strong&gt; e non dobbiamo più preoccuparci di prepararlo ogni volta che la suite deve essere eseguita, o che eseguiamo un test che può sporcare i dati;&lt;/li&gt;
-&lt;li&gt;anche se non viene mai realmente scritto nulla, &lt;strong&gt;il database esegue comunque le verifiche di integrità&lt;/strong&gt;, quali vincoli di unicità o di chiavi esterne;&lt;/li&gt;
-&lt;li&gt;diventa &lt;strong&gt;impossibile avere test interdipendenti&lt;/strong&gt;, ovvero test che possono funzionare solo se prima ne vengono eseguiti altri, che modificano in modo ideale i dati di fixture.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;L&amp;rsquo;unico limite di questo approccio è che le transazioni sono disponibili solo con alcuni database e all&amp;rsquo;interno di Doctrine quindi solo con l&amp;rsquo;&lt;code&gt;EntityManager&lt;/code&gt;.&lt;/p&gt;
-
-&lt;h4 id=&#34;la-rapidità-di-esecuzione&#34;&gt;La rapidità di esecuzione&lt;/h4&gt;
-
-&lt;p&gt;Per darvi un&amp;rsquo;idea di quanto possa essere veloce Paraunit rispetto alla normale esecuzione con PHPUnit, ho misurato il tempo di esecuzione della nostra test suite funzionale, che è sufficientemente ampia (261 classi, 1568 metodi):&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/paraunit/grafico.png&#34; alt=&#34;Grafico&#34; /&gt;&lt;/p&gt;
-
-&lt;p&gt;Come potete vedere, Paraunit esegue l&amp;rsquo;intera test suite in soli &lt;strong&gt;6 minuti e 6 secondi&lt;/strong&gt;, mentre PHPUnit ci metterebbe &lt;strong&gt;oltre 40 minuti!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Ho usato il condizionale per un motivo specifico: il tempo di esecuzione di PHPUnit è in realtà una stima (in proiezione lineare) perché, circa al 12% dell&amp;rsquo;esecuzione, il processo si è chiuso per &lt;strong&gt;esaurimento della memoria&lt;/strong&gt; a disposizione, a riprova di un altro dei vantaggi nell&amp;rsquo;uso di Paraunit.&lt;/p&gt;
-
-&lt;h4 id=&#34;test-coverage-in-parallelo&#34;&gt;Test coverage in parallelo&lt;/h4&gt;
-
-&lt;p&gt;Un&amp;rsquo;altra caratteristica di Paraunit, attualmente in sviluppo, è la possibilità di &lt;strong&gt;parallelizzare l&amp;rsquo;elaborazione della &lt;a href=&#34;https://phpunit.de/manual/current/en/code-coverage-analysis.html&#34;&gt;coverage&lt;/a&gt;&lt;/strong&gt; dei test.&lt;/p&gt;
-
-&lt;p&gt;Questo è possibile grazie all&amp;rsquo;opzione &lt;code&gt;--coverage-php&lt;/code&gt; di PHPUnit che salva in un file .php il risultato parziale ottenuto; dopo aver lanciato i singoli test come processi separati, Paraunit esegue l&amp;rsquo;unione di tutti questi risultati.&lt;/p&gt;
-
-&lt;h4 id=&#34;sviluppi-futuri&#34;&gt;Sviluppi futuri&lt;/h4&gt;
-
-&lt;p&gt;Ovviamente questo è solo l&amp;rsquo;inizio, il primo &lt;strong&gt;rilascio in open source&lt;/strong&gt; della nostra soluzione.
-Tra gli sviluppi futuri spero di poter realizzare:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;la &lt;strong&gt;prioritizzazione dei test lenti&lt;/strong&gt;, ovvero poter eseguire per primi i test noti per la loro lentezza, così da non rallentare l&amp;rsquo;esecuzione complessiva della test suite;&lt;/li&gt;
-&lt;li&gt;l&amp;rsquo;aggiunta di &lt;strong&gt;altre opzioni&lt;/strong&gt; di selezione test, come p.e. l&amp;rsquo;opzione &lt;code&gt;--group&lt;/code&gt; di PHPUnit;&lt;/li&gt;
-&lt;li&gt;il miglioramento delle &lt;strong&gt;prestazioni&lt;/strong&gt; all&amp;rsquo;avvio dei processi, cosa che pesa molto per i test unitari;&lt;/li&gt;
-&lt;li&gt;il &lt;strong&gt;supporto per altri framework e ORM&lt;/strong&gt; oltre a Symfony e Doctrine, creando altri test-case appositi;&lt;/li&gt;
-&lt;li&gt;il miglioramento della funzionalità di test coverage parallela;&lt;/li&gt;
-&lt;li&gt;una soluzione per i database non transazionali, come MongoDB.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Vi invito quindi a partecipare allo sviluppo di Paraunit su &lt;a href=&#34;https://github.com/facile-it/paraunit&#34;&gt;GitHub&lt;/a&gt;, proponendo pull request, aprendo issue per proporre nuove feature o anche semplicemente utilizzandolo per le vostre test suite, così da verificarne l&amp;rsquo;efficacia e la compatibilità!&lt;/p&gt;
-</description>
+      <description>Questo articolo è la sintesi di un talk presentato al SymfonyDay 2015; potete trovare le slide qui.
+I test e la loro durata Sviluppare applicazioni scrivendo test e facendo Test Driven Development è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa crescere la suite di test del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.</description>
     </item>
     
     <item>
@@ -160,75 +27,8 @@ Tra gli sviluppi futuri spero di poter realizzare:&lt;/p&gt;
       <pubDate>Mon, 09 Mar 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</guid>
-      <description>
-
-&lt;p&gt;A ben più di uno sviluppatore sarà capitato di incappare nel comune errore &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.5/en/gone-away.html&#34;&gt;&lt;em&gt;MySQL server has gone away!&lt;/em&gt;&lt;/a&gt;, magari seguito da un eccezione lanciata da una delle &lt;a href=&#34;http://php.net/manual/en/book.pdo.php&#34;&gt;&lt;strong&gt;classi PDO&lt;/strong&gt;&lt;/a&gt;, come ad esempio &lt;em&gt;PDOStatement::execute(): Error reading result set&amp;rsquo;s header&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Nella maggior parte dei casi, quando questo avviene in ambiente PHP, siamo connessi in maniera &lt;strong&gt;persistente&lt;/strong&gt; (per fortuna!) ed a causa di una esecuzione &lt;strong&gt;troppo lunga&lt;/strong&gt;, la connessione col server MySQL va in &lt;strong&gt;timeout&lt;/strong&gt;. Lunghi tasks in batch, chiamate a ws non particolarmente rapidi, carichi elevati del server, sono alcuni degli scenari possibili.&lt;/p&gt;
-
-&lt;p&gt;Qualora l&amp;rsquo;errore sia noto e prevedibile (ad esempio avvenga alla stessa linea di codice ad ogni esecuzione) è possibile chiudere la connessione in maniera esplicita ed evitarlo, ma questa logica oltre che risultare &lt;strong&gt;scomoda&lt;/strong&gt; e &lt;strong&gt;ripetitiva&lt;/strong&gt; non è sempre applicabile e richiede una esplicita precauzione dello sviluppatore.&lt;/p&gt;
-
-&lt;h3 id=&#34;ma-quanto-è-grave-il-problema&#34;&gt;Ma quanto è grave il problema?&lt;/h3&gt;
-
-&lt;p&gt;Come illustrato, un errore di tipo &lt;em&gt;MySQL server has gone away&lt;/em&gt; &lt;strong&gt;non&lt;/strong&gt; ha alterato le informazioni presenti nel database, &lt;strong&gt;non&lt;/strong&gt; implica un errore logico o di integrità e &lt;strong&gt;non&lt;/strong&gt; ci impedisce di tentare nuovamente la query da cui è scaturito. Perciò si potrebbe dire che, da un punto di vista applicativo l&amp;rsquo;errore, se correttamente &lt;strong&gt;intercettato e gestito&lt;/strong&gt;, non sia per nulla grave.&lt;/p&gt;
-
-&lt;h3 id=&#34;allora-potrei-ignorarlo&#34;&gt;Allora potrei ignorarlo?&lt;/h3&gt;
-
-&lt;p&gt;Ignorare deliberatamente degli errori non può essere considerata una strategia vincente, perciò per prima cosa bisogna assicurarsi di aver fatto tutto quanto suggerito nella &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.5/en/gone-away.html&#34;&gt;documentazione&lt;/a&gt; per &lt;strong&gt;rimuovere le cause del problema&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h3 id=&#34;e-se-non-dovesse-bastare&#34;&gt;E se non dovesse bastare?&lt;/h3&gt;
-
-&lt;p&gt;Ritentare la query dovrebbe essere sempre possibile nonchè piuttosto semplice, a patto di saper riconoscere con precisione le eccezioni del &lt;strong&gt;tipo corretto&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;A tal proposito è importante ricordare come la classe &lt;a href=&#34;http://php.net/manual/en/class.pdoexception.php&#34;&gt;&lt;em&gt;PDOException&lt;/em&gt;&lt;/a&gt; non fornisca attraverso il metodo pubblico &lt;em&gt;getCode()&lt;/em&gt; il &lt;strong&gt;codice di errore del DB vendor&lt;/strong&gt; (es. &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.5/en/error-messages-client.html#error_cr_server_gone_error&#34;&gt;2006&lt;/a&gt; per MySQL), ma lo inserisca piuttosto nel &lt;em&gt;message&lt;/em&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/** @var $e PDOException */
-echo $e-&amp;gt;getMessage(); // &#39;SQLSTATE[HY000]: General error: 2006 MySQL server has gone away&#39;`
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;come-funziona&#34;&gt;Come funziona?&lt;/h3&gt;
-
-&lt;p&gt;Chiariamoci le idee con del codice:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$sql = &#39;SELECT count(*) FROM `TABLE`&#39;;
-$retry = true;
-
-while ($retry) {
-
-    try {
-
-        $nb = $pdo-&amp;gt;query($sql)-&amp;gt;fetchColumn();
-
-    } catch (PDOException $e) {
-		
-        $retry = false;
-        
-        if($this-&amp;gt;isMySQLHasGoneAwayException($e)) {
-        
-        	$this-&amp;gt;reconectDB();
-            $retry = true;
-        }
-    }        
-}
-# CODICE DEMO, NON FUNZIONANTE!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Nell&amp;rsquo;esempio  sopra riportato, una volta accertata la natura dell&amp;rsquo;eccezione si procede &lt;strong&gt;riconnettendosi&lt;/strong&gt; al database (una &lt;strong&gt;nuova&lt;/strong&gt; connessione!) e &lt;strong&gt;ripetendo&lt;/strong&gt; la query, magari con un limite di tentativi per evitare ricursioni infinite!&lt;/p&gt;
-
-&lt;p&gt;Trattandosi di una &lt;strong&gt;nuova connessione&lt;/strong&gt;, non è possibile utilizzare questa procedura nel caso l&amp;rsquo;errore avvenga durante una &lt;a href=&#34;http://en.wikipedia.org/wiki/Database_transaction&#34;&gt;&lt;strong&gt;transazione&lt;/strong&gt;&lt;/a&gt; MySQL. Tutte le query inviate all&amp;rsquo;interno della connessione sarebbero ovviamente &lt;strong&gt;perdute&lt;/strong&gt; e non sarebbe possibile recuperarle!&lt;/p&gt;
-
-&lt;h3 id=&#34;ma-devo-farlo-ogni-volta-a-mano&#34;&gt;Ma devo farlo ogni volta a mano?&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;NO!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;In &lt;a href=&#34;http://www.facile.it/&#34;&gt;&lt;strong&gt;Facile.it&lt;/strong&gt;&lt;/a&gt;, utilizzando largamente l&amp;rsquo;ORM &lt;em&gt;Doctrine&lt;/em&gt;, abbiamo pensato allo sviluppo di una piccola estensione, &lt;a href=&#34;https://github.com/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;strong&gt;DoctrineMySQLComeBack&lt;/strong&gt;&lt;/a&gt; che riteniamo utile distribuire in maniera &lt;strong&gt;libera&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Compatibile dalla versione 2.3 fino alla stabile 2.5, si occupa di &lt;strong&gt;ritentare automaticamente&lt;/strong&gt; le SELECT in ambiente MySQL. Cosi non ci si dovrà più preoccupare del successo di ogni singola query per portare a termine le esecuzioni.&lt;/p&gt;
-
-&lt;p&gt;Le &lt;strong&gt;istruzioni&lt;/strong&gt; per l&amp;rsquo;installazione e l&amp;rsquo;uso sono disponibili su &lt;a href=&#34;https://github.com/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;strong&gt;&lt;em&gt;GitHub&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;, e chiunque è libero di &lt;strong&gt;contribuire&lt;/strong&gt; per migliorarne le funzionalità :)&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://packagist.org/packages/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;img src=&#34;https://poser.pugx.org/facile-it/doctrine-mysql-come-back/v/stable.svg&#34; alt=&#34;Latest Stable Version&#34; /&gt;&lt;/a&gt; &lt;a href=&#34;https://packagist.org/packages/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;img src=&#34;https://poser.pugx.org/facile-it/doctrine-mysql-come-back/downloads.svg&#34; alt=&#34;Total Downloads&#34; /&gt;&lt;/a&gt; &lt;a href=&#34;https://packagist.org/packages/facile-it/doctrine-mysql-come-back&#34;&gt;&lt;img src=&#34;https://poser.pugx.org/facile-it/doctrine-mysql-come-back/license.svg&#34; alt=&#34;License&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>A ben più di uno sviluppatore sarà capitato di incappare nel comune errore MySQL server has gone away!, magari seguito da un eccezione lanciata da una delle classi PDO, come ad esempio PDOStatement::execute(): Error reading result set&amp;rsquo;s header.
+Nella maggior parte dei casi, quando questo avviene in ambiente PHP, siamo connessi in maniera persistente (per fortuna!) ed a causa di una esecuzione troppo lunga, la connessione col server MySQL va in timeout.</description>
     </item>
     
   </channel>

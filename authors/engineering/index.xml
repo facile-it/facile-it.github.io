@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>engineering on Facile.it Engineering</title>
+    <title>Engineering on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/engineering/</link>
-    <description>Recent content in engineering on Facile.it Engineering</description>
+    <description>Recent content in Engineering on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 02 Dec 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://engineering.facile.it/authors/engineering/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://engineering.facile.it/authors/engineering/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Codemotion Milan 2016 in review</title>
@@ -15,106 +17,9 @@
       <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</guid>
-      <description>
-
-&lt;p&gt;&lt;em&gt;«Learn or die»&lt;/em&gt;. These are the words with which &lt;a href=&#34;http://milan2016.codemotionworld.com/&#34;&gt;&lt;strong&gt;Codemotion Milan 2016&lt;/strong&gt;&lt;/a&gt; started on the 25th of November. Most of our development team attended this tech conference like the &lt;a href=&#34;http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/&#34;&gt;previous year&lt;/a&gt;. Moreover &lt;a href=&#34;http://www.facile.it&#34;&gt;Facile.it&lt;/a&gt; was present at the event as a sponsor with his stand looking for new talent.&lt;/p&gt;
-
-&lt;p&gt;During the event we also officially &lt;strong&gt;announced the second &lt;a href=&#34;http://hackathon.facile.it/&#34;&gt;#FacileHack&lt;/a&gt; hackathon&lt;/strong&gt;, which is planned for &lt;strong&gt;march 2017&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;This post would be a short recap of some talks in chronological order. The choice of the talks is based on the personal taste of the various members of the editorial staff of Facile.it Engineering blog. Enjoy!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/codemotion-2016-in-review/codemotion_2016.jpg&#34; alt=&#34;A part of Facile Dev Team&#34; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&#34;day-1&#34;&gt;Day 1&lt;/h1&gt;
-
-&lt;h2 id=&#34;the-new-features-of-php-7&#34;&gt;The new features of PHP 7&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Enrico Zimuel (&lt;a href=&#34;https://twitter.com/ezimuel&#34;&gt;@ezimuel&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;11:30 – 12:10 #programming (&lt;a href=&#34;http://zimuel.it/slides/codemotion2016/&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Enrico Zimuel, Software Engineer at &lt;a href=&#34;http://www.zend.com/&#34;&gt;Zend Technologies&lt;/a&gt;, the company behind the PHP engine, talks about some of the new features of PHP 7: the scalar type and return type declarations, the spaceship and null coalescing operators, the anonymous classes, the consistent 64-bit support, etc. Furthermore he explains why PHP 7 is twice as fast compared to the previous version and it has 30% lower memory consumption.&lt;/p&gt;
-
-&lt;h2 id=&#34;kubernetes-and-lastminute-com-our-course-towards-better-scalability-and-processes&#34;&gt;Kubernetes and lastminute.com: our course towards better scalability and processes&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Michele Orsi (&lt;a href=&#34;https://twitter.com/micheleorsi&#34;&gt;@micheleorsi&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;11:30 – 12:10 #devops (&lt;a href=&#34;http://www.slideshare.net/micheleorsi/kubernetes-and-lastminutecom-our-course-towards-better-scalability-and-processes&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Lastminute.com recently started a migration from a monolithic app to a microservice approach, leveraging the power of Kubernetes, the open source project lead by Google for container orchestration. This was quite the effort, and it unveiled a great deal of advantages and challenges.&lt;/p&gt;
-
-&lt;h2 id=&#34;continuous-budgeting&#34;&gt;Continuous budgeting&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Francesco Fullone (&lt;a href=&#34;https://twitter.com/fullo&#34;&gt;@fullo&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;14:10 - 15:50 #inspirational&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;This talk is about being agile in the entrepeneur side of our profession: how to plan and adapt to change when deciding how and how much to spend in our coding ventures; re-evaluating is key, and the only way to success is a delicate balance between maintenance and improvement.&lt;/p&gt;
-
-&lt;h2 id=&#34;to-65k-and-beyond&#34;&gt;To ∞ (~65K) and beyond!&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Sebastiano Gottardo (&lt;a href=&#34;https://twitter.com/rotxed&#34;&gt;@rotxed&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;16:10 - 16:50 #mobile (&lt;a href=&#34;https://speakerdeck.com/dextor/to-65k-and-beyond&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;A lot of old -but still widely used- Android devices are natively limited to run apps with less than 65K method references (due to the Dalvik JVM). For many apps this could be a serious problem. During the talk Sebastiano, an Android engineer at Musixmatch, gave a very comprehensive and clear explanation of the problem and went through all the possible solutions showing some really useful tips to deal or better &lt;em&gt;avoid&lt;/em&gt; it.&lt;/p&gt;
-
-&lt;h2 id=&#34;functional-reactive-programming-with-kotlin-on-android&#34;&gt;Functional Reactive Programming with Kotlin on Android&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Giorgio Natili (&lt;a href=&#34;https://twitter.com/giorgionatili&#34;&gt;@giorgionatili&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;17:10 - 17:50 #mobile (&lt;a href=&#34;https://drive.google.com/file/d/0BxCm4NRlzb3PWjNNaG1KS0Utckk/view&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The title of this talk was very interesting considering the fact that both the functional paradigm and the Kotlin language are used within the Facile.it Android app. But actually I have to say that I found a 40 minutes talk not suitable as a format to address these two large topics together (72 slides!). I would have preferred two separate talks, but it was nevertheless an interesting presentation full of useful tips and advices about Kotlin and FRP.&lt;/p&gt;
-
-&lt;h1 id=&#34;day-2&#34;&gt;Day 2&lt;/h1&gt;
-
-&lt;h2 id=&#34;coding-culture&#34;&gt;Coding Culture&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Sven Peters (&lt;a href=&#34;https://twitter.com/svenpet&#34;&gt;@svenpet&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;10:30 - 11:10 #inspirational (&lt;a href=&#34;http://www.slideshare.net/svenpeters/coding-culture&#34;&gt;slides&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In his keynote Sven Peters, Evangelist for &lt;a href=&#34;https://www.atlassian.com/&#34;&gt;Atlassian&lt;/a&gt;, explains - in a very geek style - what is &lt;em&gt;company culture&lt;/em&gt;, referring in particular to his company. He says that when people work in a great coding culture they are motivated and they are mostly very productive, but also they will have more responsibility and investment in the features they are developing. Developers will have more freedom to change their roles and try out new stuff, this is the right way to make better products with happier developers. He concluded his speech with these words: &lt;em&gt;«Products may change, but never forget values, cultivate your culture!»&lt;/em&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;micromonolith-top-anti-patterns-of-adopting-distributed-system&#34;&gt;MicroMonolith - Top anti-patterns of adopting distributed system&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Michal Franc (&lt;a href=&#34;https://twitter.com/francmichal&#34;&gt;@francmichal&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;12:30 – 13:10 #architectures&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this talk, Michal reports his (and his team) experience in the infamous transistion from a monolithic app to a microservice oriented architecture. Michal works at &lt;a href=&#34;https://twitter.com/JustGiving&#34;&gt;@JustGiving&lt;/a&gt;, which mainly uses .NET, but he didn&amp;rsquo;t focus on the specific technology, but rather on the generic problems and pitfalls that this kind of transition brings to the table. During his tale, he laid to us a lot of useful suggestions and common issues to look for.&lt;/p&gt;
-
-&lt;h2 id=&#34;develop-applications-in-big-data-era-with-scala-and-spark&#34;&gt;Develop applications in Big Data Era with Scala and Spark&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Mario Cartia (&lt;a href=&#34;https://twitter.com/mariocartia&#34;&gt;@mariocartia&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;12:30 – 13:10 #cloud #bigdata&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Large amount of data are produced everyday and Big Data is a concept increasingly trendy. In his talk Mario Cartia presented Scala and Spark,two powerful tools suitable to Big Data Processing.  Scala is a General purpose programming language that combines the benefits of OOP and functional programming. Apache Spark is an open source framework and it&amp;rsquo;s a fast engine for big data processing, based on Scala language.&lt;/p&gt;
-
-&lt;h2 id=&#34;gang-of-four-patterns-in-a-functional-light&#34;&gt;Gang of Four Patterns in a Functional Light&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Mario Fusco (&lt;a href=&#34;https://twitter.com/mariofusco&#34;&gt;@mariofusco&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;14:10 – 14:50 #programming (&lt;a href=&#34;https://github.com/mariofusco/from-gof-to-lambda&#34;&gt;code&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this live-coding talk, Mario Fusco uses Java (and new Java 1.8 features) to translate the wide-known GoF design patterns into functional programming, making the code a lot less verbose, reducing the noise of boilerplate over the really important code.&lt;/p&gt;
-
-&lt;p&gt;Also, kittens:&lt;/p&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-cards=&#34;hidden&#34; data-lang=&#34;it&#34;&gt;&lt;p lang=&#34;it&#34; dir=&#34;ltr&#34;&gt;&amp;quot;In programmazione funzionale, quando lanci un&amp;#39;eccezione muore un gattino, se ritorni null muore la mamma&amp;quot; by &lt;a href=&#34;https://twitter.com/mariofusco&#34;&gt;@mariofusco&lt;/a&gt; &lt;a href=&#34;https://twitter.com/CodemotionIT&#34;&gt;@CodemotionIT&lt;/a&gt; &lt;a href=&#34;https://t.co/40XErlWFbX&#34;&gt;pic.twitter.com/40XErlWFbX&lt;/a&gt;&lt;/p&gt;&amp;mdash; Giulio Santoli (@gjuljo) &lt;a href=&#34;https://twitter.com/gjuljo/status/802507849494654976&#34;&gt;26 novembre 2016&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
+      <description>«Learn or die». These are the words with which Codemotion Milan 2016 started on the 25th of November. Most of our development team attended this tech conference like the previous year. Moreover Facile.it was present at the event as a sponsor with his stand looking for new talent.
+During the event we also officially announced the second #FacileHack hackathon, which is planned for march 2017.
+This post would be a short recap of some talks in chronological order.</description>
     </item>
     
   </channel>

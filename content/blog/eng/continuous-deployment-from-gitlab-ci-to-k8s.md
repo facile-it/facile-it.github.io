@@ -28,7 +28,7 @@ This is how my basic pipeline looks like when it's building a branch while I'm w
 
 Three simple stages:
 
-1. **Build**: a CI image is build with the code baked in;
+1. **Build CI**: a CI image is build with the code baked in;
 2. **Test**: multiple jobs to do various verification tasks in parallel (tests, static analysis, code style...);
 3. **Cleanup**: deletion of the CI image built in the first step, to avoid bloating the Docker registry.
 
@@ -163,7 +163,7 @@ The base image that I extend contains everything that doesn't change often: PHP 
  * repeat the `composer install` step, to dump the autoloader and run all the `post-install` scripts
  * warm up the Symfony cache, so we ship that with the image too
 
-In this way, I'm literally **caching my vendor folder inside a single Docker image layer**, and changing the Composer files will automatically invalidate that cache; also, copying all the other source files later allows me to not lose that layer when the vendor shouldn't change. Remember, that layer will change every time, since you've obviously just committed something new!
+In this way, I'm literally **caching my vendor folder inside a single Docker image layer**, and changing the Composer files will automatically invalidate that cache; also, copying all the other source files later allows me to not lose that layer when the vendor shouldn't change. Remember, that layer with the source code will change every time, since you've obviously just committed something new!
 
 ## The jobs definitions
 At this point we just need to define the jobs! The **build job** is defined like this:
@@ -347,3 +347,123 @@ We are issuing **a DELETE request** to the manifest endpoint, using the **SHA di
 ```
 https://gitlab.facile.it/v2/facile/my-project/php-ci/manifests/9170f905754579832799afb8e65c89441c794596eb1c4fe2ac88e4a8ff1dfec0
 ```
+
+# Doing continuous deployment
+Now that we have our CI pipeline in place, we can start doing **continuous deployment**! It's just a matter of adding a few new jobs to the pipeline, and some stages too (new one in **bold**):
+  * Build CI
+  * Test
+  * **Build prod**
+  * **Deploy**
+  * Cleanup
+
+## Building images for the deployment
+The new **build prod** stage will contain job(s) to build the container that will be shipped in production. I applied the same tricks as before, so I still write cache-friendly Dockerfiles, and I double-tag the images (with `prod` and `prod-$CI_COMMIT_SHA`) to use the previous one as cache, and to have a specific tag to use later, in the deploy job.
+
+So, my build job does this simple sequence:
+
+ * pull with `--parallel` all the needed images, as before
+ * build any needed artifact externaly (assets, in my case)
+ * build the prod image(s) with the specific `prod-$CI_COMMIT_SHA` commit tag
+ * push them back to the registry
+
+```
+build-prod-images:
+  stage: Build prod
+  cache:
+    paths:
+    - node_modules/
+  script:
+    - docker-compose pull --ignore-pull-failures fpm-prod
+    - docker-compose build fpm-prod
+    - docker-compose push fpm-prod
+  only: &depolyable-branches
+    - master
+    - an-other-deployable-branch
+```
+
+Note that **I'm not pushing the generic `prod` tag for now**, I'm waiting to have a successful deployment first. 
+
+The other interesting part of this job definition is the `only` directive. It's obviously needed to make the job [run only on certain branches](https://docs.gitlab.com/ce/ci/yaml/README.html#only-and-except-simplified), but the interesting part is the appended `&depolyable-branches` string: it's a **YAML anchor**. I'm basically bookmarking the array values for the `only` directive, so I can reuse them in the next CD jobs.
+
+## The deploy
+
+Finally, we can deploy our application to the Kubernetes cluster!
+
+```
+deploy:
+  stage: Deploy
+  environment:
+    name: prod
+    url: https://my-project.facile.it/
+  script:
+    - kubectl set image deployment/my-project php-container="${PROD_IMAGE_PHP_COMMIT_TAG}"
+    - kubectl rollout status deployment/my-project
+  only: *depolyable-branches
+```
+
+Using the `*depolyable-branches` (yes, they use a C-pointer-like syntax) I reuse the previous values marked by the YAML anchor, so if I decide to deploy a new, particular branch, I don't have to specify it in every deploy-related job, and risk forgetting one (yes, it happened).
+
+Here we are finally using `kubectl` to do the deploy: to authenticate into the cluster, you have to enable the **Kubernetes integration** [(see docs)](https://docs.gitlab.com/ee/user/project/integrations/kubernetes.html), so GitLab will have a [`serviceaccount`](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) (basically a login for bots) automatically available to issue commands, without having to add any configuration (it leverages environment variables). 
+
+The deployment with `kubectl` is pretty straightforward: using the `kubectl set image` command we set a new image in our [deployment configuration](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/); the cluster will detect that we specified a different image and it will automatically start a rolling deployment to substitute the available containers with the new, requested tag. Note here that using a commit-specific tag is critical, because otherwise the deployment will not be triggered; if you want to trigger a deploy without using specific tags, you will have to append the SHA digests of the image, with `image:tag@${SHA}`; this will obviously mean that you will have to retrieve it, which can be annoying.
+
+The next command, `kubectl rollout status`, watches the advancement of the rollout and exits with `0` if the deployment is completed, so it's perfect to be called in a build:
+
+```
+$ kubectl rollout status deployment/my-application
+Waiting for rollout to finish: 1 old replicas are pending termination...
+Waiting for rollout to finish: 1 old replicas are pending termination...
+deployment "my-application" successfully rolled out
+```
+
+The `environment` option enable the usage of the [GitLab Environments](https://docs.gitlab.com/ce/ci/environments.html), so my deploys are tracked.
+
+## The cleanup after the deploy
+As for the CI build, we will have to clean up older images after successfully deploying the application:
+
+```
+delete-old-prod-image:
+  stage: Cleanup
+  script:
+    - bin/docker-util/delete-old-prod-image.sh $PROD_IMAGE_PHP_GENERIC_TAG $PROD_IMAGE_PHP_COMMIT_TAG
+  only: *depolyable-branches
+```
+
+I use the `*depolyable-branches` here too, and a bash script to wrap everything in one file; the script will require two arguments (the generic and the commit-specific tag) and will execute this sequence of operations:
+
+ * retrieve a JWT token for the registry, as before;
+ * retrieve the SHA digest of the previous image, using the generic tag;
+ * pull the specific image
+ * re-tag and push it with the generic tag
+ * delete the previous image
+
+```
+#!/usr/bin/env bash
+
+OLD_IMAGE=$1
+NEW_IMAGE=$2
+
+echo "Retrieving manifests of previous image using generic tag..."
+TOKEN=$(bin/docker-util/get-registry-token.sh ${NEW_IMAGE})
+MANIFEST=$(bin/docker-util/get-manifest.sh ${OLD_IMAGE} ${TOKEN})
+
+if [ "$MANIFEST" = "$(bin/docker-util/get-manifest.sh ${NEW_IMAGE} ${TOKEN})" ]
+  then
+    echo "The new image is identical to the previous one, no deletion necessary"
+    exit 0
+fi
+
+docker pull ${NEW_IMAGE}
+docker tag ${NEW_IMAGE} ${OLD_IMAGE}
+docker push ${OLD_IMAGE}
+
+echo "Deleting the previous image, using the previously fetched manifest..."
+bin/docker-util/delete-image.sh ${OLD_IMAGE} ${MANIFEST} ${TOKEN}
+```
+
+The script executes a very important check before proceeding to the re-tag and deletion: it compares the SHA digest of the two images. This is needed because it's possible to produce two identical images in two different builds, so we could be in the situation where the two tags point to the same image, and so nothing should be done. If the next build will produce a different image, the fact that the tag points to the same image will mean that the cascade deletion will take care of any previous identical tag.
+
+The last thing that I could add to this deploy pipeline is the cleanup in case the deployment fails; it would be identical to the `delete-ci-image`, with the only exceptions that I would use the `prod` commit-specific tags, and I would set `when: failure` option. Since in GitLab CI each single job is retriable, I can retry the deploy without executing the whole pipeline from the start, so I decided to not implement it.
+
+# Conclusions
+I hope that this (long) blog post will help people with this list of tips and tricks, and help save some time; many of the things that I wrote about here are not properly documented, so I learned the by trial and error and exercising some google-fu. I just hope that the GitLab Registry will soon implement some easier way to do the cleanup, so all this hassle will be reduced to just a couple of YAML configuration lines.

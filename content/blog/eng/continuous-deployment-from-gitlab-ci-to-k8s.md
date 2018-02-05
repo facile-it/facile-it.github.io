@@ -10,7 +10,7 @@ languageCode: "en-EN"
 toc: true
 ---
 
-In the last month, I'm working on two different PHP projects here at Facile.it: the first one, which is new and still in development, I decided to adopt **GitLab CI** for the build, since we use GitLab CE for our Git repositories; I then created a continuous deployment pipeline for the staging environment, directly to a **Kubernetes cluster**; leveraging **Docker Compose** to make the configuration easier.
+In the last month, I'm working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt **GitLab CI** for the build, since we use GitLab CE for our Git repositories; I then created a **continuous deployment pipeline** for the staging environment, directly to a **Kubernetes cluster**, leveraging **Docker Compose** to make the configuration easier.
 
 After, I decided to start migrating a previous, internal project of mine to the same approach, since it's currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, **doing a rolling deployment with Kubernetes is surprisingly easy**!
 
@@ -35,7 +35,7 @@ Three simple stages:
 Let's dive into the configuration details! For now, in the code examples, I will omit any piece that is needed for the deployment part; we will see that later.
 
 ## The `.gitlab-ci.yml` configuration file
-The GitLab CI is configurable just by adding a `.gitlab-ci.yml` file to the root of your project. The first part of mine looks like this:
+The [GitLab CI](https://docs.gitlab.com/ee/ci/) is configurable just by adding a `.gitlab-ci.yml` file to the root of your project. The configuration for this first job looks like this:
 
 ```
 image: gitlab.facile.it/facile/my-project/docker-compose:1.2
@@ -53,7 +53,7 @@ variables:
 
 The `services` section allows me to declare a Docker container that will be spun up by GitLab CI each time and that will host the Docker daemon that I will use. Here resides **the main difference** between David's and my approach: in his case, he is using the host's machine Docker daemon, in my case I'm using an isolated daemon, **a real Docker-in-Docker approach**.
 
-The combination of the `alias: docker` setting and the `DOCKER_HOST` environment variable points our job to the DinD daemon socket; the `--registry-mirror` option let the daemon use our internal registry mirror to speed up pulling official images; last but not least, the `DOCKER_DRIVER` uses the `overlay2` filesystem for the Docker build like in David's post, which is **faster and less space consuming** (I suggest you to use that on your local Linux machines too!).
+The combination of the `alias: docker` setting and the `DOCKER_HOST` environment variable points our job to the DinD daemon socket; the `--registry-mirror` option let the daemon use our internal registry mirror to speed up pulling official images; last but not least, the `DOCKER_DRIVER` uses the `overlay2` filesystem for the Docker build, which is **faster and less space consuming** (I suggest you to use that on your local Linux machines too!).
 
 > David's approach may be a bit **faster**, because the daemon is always the same and retains some build and image cache between jobs and builds, but it requires to run **privileged jobs**, and it's not isolated, so it may incur in some issues or slowdowns if **multiple builds** run at the same time, messing up image tags.
 > 
@@ -79,23 +79,23 @@ RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.9.1/bin/li
 ## Pipeline setup and Docker Compose configuration
 The next part of my configuration looks like this:
 ```
-before_script:
-  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-  - cp docker-compose.yml.gitlab docker-compose.override.yml
-
 stages:
   - Build
   - Test
   - Cleanup
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  - cp docker-compose.yml.gitlab docker-compose.override.yml
 ```
-In here we define the consecutive **stages** of the pipeline, and we define a `before_script` section to be executed before each job. The first instruction let us **log into the private Docker registry** that GitLab gives us along any project (if enabled), in which I decided to store my Docker images.
+In here I configured the sequence of **stages** in the pipeline, and I configured a `before_script` section to be executed before each job. The first instruction **logs into the private Docker registry** that GitLab gives us along any project (if enabled), in which I decided to store my Docker images.
 
 > GitLab CI jobs automatically have the `$CI_JOB_TOKEN` and `$CI_REGISTRY` environment variables populated to easily do that: the first one is a fresh unique token, which is [generated for each job](https://docs.gitlab.com/ee/user/project/new_ci_build_permissions_model.html#job-token); the second one is the URL of the registry associated with the current project; see the [GitLab CI documentation](https://docs.gitlab.com/ce/ci/variables/README.html) for more details.
 
 The second instruction depends on **how I organized my Docker Compose files** to help me during development and in the pipeline too. I use 4 separated files:
 
  * `docker-compose.yml` is the base file, with the **basic configuration**.
- * `docker-compose.override.yml` that **overrides** stuff when needed; the name is [standard with the Docker Compose v3 configurations](https://docs.docker.com/compose/extends/#understanding-multiple-compose-files), so you don't have to specify it in the CLI, it's automatically picked up; this file is not commited and ignored by Git, because I use it to give each developer the freedom to customize the containers behavior, like port exposure or volume mounting.
+ * `docker-compose.override.yml` **overrides** stuff when needed; the name is [standard with the Docker Compose v3 configurations](https://docs.docker.com/compose/extends/#understanding-multiple-compose-files), so you don't have to specify it in the CLI, it's automatically picked up; this file is not committed and ignored by Git, because I use it to give each developer the freedom to customize the containers behavior, like ports or volumes.
  * `docker-compose.override.yml.dist` is a committed file with the **suggested override** configuration (default exposed ports, default mounts...).
  * `docker-compose.yml.gitlab` is an override file that I use **only during the build**, so that's why we need that `cp` instruction.
 
@@ -114,7 +114,8 @@ services:
   php-cache:
     image: ${CI_IMAGE_BRANCH_TAG}
 ```
-I declared in my `php` service both the `image` and `build` sections, so I'm able to use this definition in all my jobs, **both for building and executing**. I'm also able to move the `Dockerfile`s inside a dedicated directory, thanks to the usage of the `dockerfile` and `context` options.
+
+I declared in my `php` service both the `image` and `build` sections, so I'm able to use this definition in all my jobs, **both for building and executing**. I'm also able to move the `Dockerfile`s inside a dedicated directory, thanks to the usage of the `dockerfile` and `context` options with different paths.
 
 It's also very important to use `version: '3.2'`, because it's needed to use the `cache_from` option: since we do not have any cache in the daemon, I **tag the image twice**, once with the **commit hash** and once with the **branch name**; in this way I can pull the `php-cache` service with the branch tag as a cache from the previous build.
 
@@ -157,11 +158,11 @@ RUN composer install $COMPOSER_FLAGS \
 
 The base image that I extend contains everything that doesn't change often: PHP version, extensions, a non-root user. Then, I start adding stuff on top, using this sequence:
 
- * `composer.json` and `composer.lock` files
- * install the vendor, using `--no-scripts --no-autoloader` to skip anything else
- * copy everything else (I use the `.dockerignore` file to avoid considering garbage files here, [see docs](https://docs.docker.com/engine/reference/builder/#dockerignore-file))
- * repeat the `composer install` step, to dump the autoloader and run all the `post-install` scripts
- * warm up the Symfony cache, so we ship that with the image too
+ * copy the `composer.json` and `composer.lock` files;
+ * `composer install` to populate the vendor, using the `--no-scripts --no-autoloader` options to skip anything else;
+ * copy everything else (I use the `.dockerignore` file to avoid considering garbage files here, [see docs](https://docs.docker.com/engine/reference/builder/#dockerignore-file));
+ * repeat the `composer install` step, to dump the autoloader and run all the `post-install` scripts;
+ * warm up the Symfony cache, so we ship that with the image too.
 
 In this way, I'm literally **caching my vendor folder inside a single Docker image layer**, and changing the Composer files will automatically invalidate that cache; also, copying all the other source files later allows me to not lose that layer when the vendor shouldn't change. Remember, that layer with the source code will change every time, since you've obviously just committed something new!
 
@@ -170,7 +171,7 @@ At this point we just need to define the jobs! The **build job** is defined like
 
 ```
 build-image:
-  stage: Build
+  stage: Build CI
   script:
     - docker-compose pull --ignore-pull-failures php-cache
     - docker-compose build php
@@ -209,7 +210,7 @@ Up until now, it was all straightforward and easy; the difficult part comes with
 
 With the process that I have shown this far, I'm building an image for each build, since I'm **shipping my code inside the container**; this approach is the **most similar to what happens in production** (that's why I've chosen it), but it has a big downside: you may waste a lot of space with old images pushed to your Docker registry.
 
-This issue is particularly annoying because there's no automated feature in the GitLab's registry to clean up them, up to the point where there are multiple, long-standing issues still open on their tracker about this problem:
+This issue is particularly annoying because there's no automated feature in the GitLab's registry to clean them up, up to the point where there are multiple, long-standing issues still open on their tracker about this problem:
 
  * [#20176 - Provide a programmatic method to delete images/tags from the registry](https://gitlab.com/gitlab-org/gitlab-ce/issues/20176)
  * [#21608 - Container Registry API](https://gitlab.com/gitlab-org/gitlab-ce/issues/21608)
@@ -218,16 +219,14 @@ This issue is particularly annoying because there's no automated feature in the 
  * [#39490 - Allow to bulk delete docker images](https://gitlab.com/gitlab-org/gitlab-ce/issues/39490)
  * [#40096 - pipeline user $CI_REGISTRY_USER lacks permission to delete its own images](https://gitlab.com/gitlab-org/gitlab-ce/issues/40096)
 
-Last but not least, **Docker tags are not first class citizens** for the Docker registry API (see [docker/distribution/#1859-comment](https://github.com/docker/distribution/issues/1859#issuecomment-236013971) and related PR [docker/distribution/#173](https://github.com/docker/distribution/pull/173)). 
+Last but not least, **Docker tags are not first class citizens** for the Docker registry API (see [this GitHub issue](https://github.com/docker/distribution/issues/1859#issuecomment-236013971) and the [related PR](https://github.com/docker/distribution/pull/173)). 
 
-What does that mean? 
-
-Simply put, **a Docker image tag is not a resource** that you can easily delete using the Docker API, **it's a simple link**. This means that you delete images, not tags; hence, if your image had multiple tags attached to it, you're **cascade-invalidating all related tags** without knowing.
+What does that mean? Simply put, **a Docker image tag is not a resource** that you can easily delete using the Docker APIs, **it's a simple link**. This means that you delete images, not tags; hence, if your image had multiple tags attached to it, you're **cascade-deleting all related tags** without knowing.
 
 To overcome those issues, I've tinkered a lot to obtain a clear and easy way to delete my CI image after the build. After many trial & error attempts, I obtained this workflow:
 
  * **push a dummy image** to override the tag and point it elsewhere
- * obtain a JWT **token from the registry** (with proper permissions for deletion)
+ * obtain a **JWT token from the registry** (with proper permissions for deletion)
  * obtain the **SHA digest** of the dummy image
  * **delete** the image (finally!)
  
@@ -264,10 +263,10 @@ docker build -t $1 ${DIR}/
 docker push $1
 ```
 
-Using `FROM scratch` allows the creation of an empty image ([see docs](https://docs.docker.com/develop/develop-images/baseimages/)), so the **final result is ~100 bytes**, probably the smallest possible. I just store inside a single file with a randomized string, so the dummy image is different each time and I avoid issues with concurrent builds with concurrent push/delete actions on the registry.
+Using `FROM scratch` I'm able to create an empty image ([see docs](https://docs.docker.com/develop/develop-images/baseimages/)), so the **final result is ~100 bytes**, probably the smallest possible. I just store inside a single file with a randomized string, so the dummy image is different each time and I avoid issues with concurrent builds with concurrent push/delete actions on the registry.
 
 ### Obtaining a JWT token from the registry
-The script that obtains the token needs to know on which image we have to operate, because the permission are granted very specifically on that. Also, **you will need to have a [GitLab Personal Access Token](https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html)** available in an environment variable, because the normal token will not have enough permission to do what we need.
+The script that obtains the token needs to know **on which image** we have to operate, because the permission are granted very specifically on that. Also, **you will need to have a [GitLab Personal Access Token](https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html)** available in an environment variable, because the normal token will not have enough permission to do what we need (it would be privilege escalation!):
 
 ```
 #!/usr/bin/env bash
@@ -285,7 +284,7 @@ curl https://gitlab.facile.it/jwt/auth \
     --user alai:$PERSONAL_ACCESS_TOKEN \
     | sed -r "s/(\{\"token\":\"|\"\})//g"
 ```
-The script, like before, requires as a single argument the full image name; the `splitImageName` function (omitted) just splits that and exports that in 3 separate variable: `$REGISTRY`, `$IMAGE` and `$TAG`; we will need just `$IMAGE` for now.
+The script, like before, requires as a single argument the full image name; the `splitImageName` function (omitted) just splits it and exports the result in 3 separate variable: `$REGISTRY`, `$IMAGE` and `$TAG`; we will need just `$IMAGE` for now.
 
 So basically we issue **a GET request** to a GitLab API endpoint that looks like this:
 
@@ -293,10 +292,10 @@ So basically we issue **a GET request** to a GitLab API endpoint that looks like
 https://gitlab.facile.it/jwt/auth?client_id=docker&offline_token=true&service=container_registry&scope=repository:facile/my-project/php-ci:pull,*
 ```
 
-The last part, `pull,*` is really important: those are the permission that we are requiring, and the `*` is what will allow us to delete. Finally, the response will be in JSON, with a single `token` property, and `sed` will take care of stripping out all the JSON from the output.
+The last part, `pull,*` is really important: those are the permission that we are requiring, and the `*` is what will allow us to delete the image. Finally, the response will be in JSON, with a single `token` property, and `sed` will take care of stripping out all the JSON from the output.
 
 ### Getting the image manifest
-Now that we have the authorization part in place, we can start using the [Docker registry API](https://docs.docker.com/registry/spec/api/#detail), which has a resource called `manifest` that describes an image. The `get-manifest.sh` will require 2 arguments, the full image name (again) and the JTW token (that we just obtained):
+Now that we have the authorization part in place, we can start using the [Docker registry API](https://docs.docker.com/registry/spec/api/#detail), which has a resource called `manifest` that describes an image. The `get-manifest.sh` script will require 2 arguments, the full image name (again) and the JTW token (that we just obtained):
 
 ```
 #!/usr/bin/env bash
@@ -350,21 +349,21 @@ https://gitlab.facile.it/v2/facile/my-project/php-ci/manifests/9170f905754579832
 
 # Doing continuous deployment
 Now that we have our CI pipeline in place, we can start doing **continuous deployment**! It's just a matter of adding a few new jobs to the pipeline, and some stages too (new one in **bold**):
-  * Build CI
-  * Test
-  * **Build prod**
-  * **Deploy**
-  * Cleanup
+
+ * Build CI
+ * Test
+ * **Build prod**
+ * **Deploy**
+ * Cleanup (with a **new job**)
 
 ## Building images for the deployment
-The new **build prod** stage will contain job(s) to build the container that will be shipped in production. I applied the same tricks as before, so I still write cache-friendly Dockerfiles, and I double-tag the images (with `prod` and `prod-$CI_COMMIT_SHA`) to use the previous one as cache, and to have a specific tag to use later, in the deploy job.
+The new **build prod** stage will contain job(s) to build the container that will be shipped in production. I applied the same tricks as before, so I still write **cache-friendly Dockerfiles**, and I **double-tag the images** (with `prod` and `prod-$CI_COMMIT_SHA`) to use the previous one as cache, and to have a specific tag to use later, in the deploy job.
 
 So, my build job does this simple sequence:
 
- * pull with `--parallel` all the needed images, as before
- * build any needed artifact externaly (assets, in my case)
- * build the prod image(s) with the specific `prod-$CI_COMMIT_SHA` commit tag
- * push them back to the registry
+ * pull with `--ignore-pull-failures` the previous image, as before;
+ * build the prod image with the specific `prod-$CI_COMMIT_SHA` commit tag;
+ * push it back to the registry.
 
 ```
 build-prod-images:
@@ -376,14 +375,14 @@ build-prod-images:
     - docker-compose pull --ignore-pull-failures fpm-prod
     - docker-compose build fpm-prod
     - docker-compose push fpm-prod
-  only: &depolyable-branches
+  only: &deployable-branches
     - master
     - an-other-deployable-branch
 ```
 
-Note that **I'm not pushing the generic `prod` tag for now**, I'm waiting to have a successful deployment first. 
+Note that **I'm not pushing the generic `prod` tag for now**, I'm waiting to have a successful deployment first. This job can also be duplicated if you need to build multiple images with each deployment.
 
-The other interesting part of this job definition is the `only` directive. It's obviously needed to make the job [run only on certain branches](https://docs.gitlab.com/ce/ci/yaml/README.html#only-and-except-simplified), but the interesting part is the appended `&depolyable-branches` string: it's a **YAML anchor**. I'm basically bookmarking the array values for the `only` directive, so I can reuse them in the next CD jobs.
+The other notable part of this job definition is the `only` directive. It's obviously needed to make the job [run only on certain branches](https://docs.gitlab.com/ce/ci/yaml/README.html#only-and-except-simplified), but the interesting part is the appended `&deployable-branches` string: it's a **YAML anchor**. I'm basically bookmarking the array values for the `only` directive, so I can reuse them in the next CD jobs.
 
 ## The deploy
 
@@ -398,16 +397,20 @@ deploy:
   script:
     - kubectl set image deployment/my-project php-container="${PROD_IMAGE_PHP_COMMIT_TAG}"
     - kubectl rollout status deployment/my-project
-  only: *depolyable-branches
+  only: *deployable-branches
 ```
 
-Using the `*depolyable-branches` (yes, they use a C-pointer-like syntax) I reuse the previous values marked by the YAML anchor, so if I decide to deploy a new, particular branch, I don't have to specify it in every deploy-related job, and risk forgetting one (yes, it happened).
+Using the **YAML anchor reference** `*deployable-branches` (yes, they use a pointer-like syntax) I reuse the previous values, so if I decide to deploy a new, particular branch, I don't have to specify it in every deploy-related job, and risk forgetting one (yes, it happened to me).
 
-Here we are finally using `kubectl` to do the deploy: to authenticate into the cluster, you have to enable the **Kubernetes integration** [(see docs)](https://docs.gitlab.com/ee/user/project/integrations/kubernetes.html), so GitLab will have a [`serviceaccount`](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/) (basically a login for bots) automatically available to issue commands, without having to add any configuration (it leverages environment variables). 
+Here we are **finally using `kubectl` to do the deploy**!
 
-The deployment with `kubectl` is pretty straightforward: using the `kubectl set image` command we set a new image in our [deployment configuration](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/); the cluster will detect that we specified a different image and it will automatically start a rolling deployment to substitute the available containers with the new, requested tag. Note here that using a commit-specific tag is critical, because otherwise the deployment will not be triggered; if you want to trigger a deploy without using specific tags, you will have to append the SHA digests of the image, with `image:tag@${SHA}`; this will obviously mean that you will have to retrieve it, which can be annoying.
+> To authenticate into the cluster with `kubectl`, you normally have to create a YAML config in your home directory; luckily, in the GitLab CI you can take a shortcut enabling the **Kubernetes integration** [(see docs)](https://docs.gitlab.com/ee/user/project/integrations/kubernetes.html), so GitLab will login into the cluster using a `serviceaccount`, which is basically a [login for non-humans](https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/). The integration will leverage environment variables to feed the configuration to `kubectl` automatically, so you just have to issue commands with it, it will just work.
 
-The next command, `kubectl rollout status`, watches the advancement of the rollout and exits with `0` if the deployment is completed, so it's perfect to be called in a build:
+The deployment with `kubectl` is pretty straightforward: using the `kubectl set image` command we set a new image in our [deployment configuration](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/); **the cluster will detect that we specified a different image** and it will automatically start a rolling deployment to substitute the available containers with the new, requested tag. 
+
+> Note that **using a commit-specific tag is critical** here, because otherwise the deployment will not be triggered; if you want to trigger a deploy without using specific tags, you will have to append the SHA digests of the image, with `image:tag@${SHA}`; this will obviously mean that you will have to retrieve it, which can be less practical.
+
+The next command, `kubectl rollout status`, watches the advancement of the deploy and exits with a status code that reflect the result of the rollout, so it's perfect to be called in a build:
 
 ```
 $ kubectl rollout status deployment/my-application
@@ -426,16 +429,16 @@ delete-old-prod-image:
   stage: Cleanup
   script:
     - bin/docker-util/delete-old-prod-image.sh $PROD_IMAGE_PHP_GENERIC_TAG $PROD_IMAGE_PHP_COMMIT_TAG
-  only: *depolyable-branches
+  only: *deployable-branches
 ```
 
-I use the `*depolyable-branches` here too, and a bash script to wrap everything in one file; the script will require two arguments (the generic and the commit-specific tag) and will execute this sequence of operations:
+I use the `*deployable-branches` here too, and a bash script to wrap everything in one file; the script will require two arguments (the generic and the commit-specific tag) and will execute this sequence of operations:
 
  * retrieve a JWT token for the registry, as before;
  * retrieve the SHA digest of the previous image, using the generic tag;
- * pull the specific image
- * re-tag and push it with the generic tag
- * delete the previous image
+ * pull the specific image;
+ * re-tag and push it with the generic tag;
+ * delete the previous image.
 
 ```
 #!/usr/bin/env bash
@@ -461,9 +464,9 @@ echo "Deleting the previous image, using the previously fetched manifest..."
 bin/docker-util/delete-image.sh ${OLD_IMAGE} ${MANIFEST} ${TOKEN}
 ```
 
-The script executes a very important check before proceeding to the re-tag and deletion: it compares the SHA digest of the two images. This is needed because it's possible to produce two identical images in two different builds, so we could be in the situation where the two tags point to the same image, and so nothing should be done. If the next build will produce a different image, the fact that the tag points to the same image will mean that the cascade deletion will take care of any previous identical tag.
+The script executes **a very important check** before proceeding to re-tag and delete: it compares the SHA digest of the two images. This is needed because **it's possible to produce two identical images** in two different builds, so we could be in the situation where the two tags point to the same image, and so nothing should be done. If the next build will produce a different image, the fact that the multiple previous tags point to the same image will mean that the cascade deletion will take care of all with a single action.
 
-The last thing that I could add to this deploy pipeline is the cleanup in case the deployment fails; it would be identical to the `delete-ci-image`, with the only exceptions that I would use the `prod` commit-specific tags, and I would set `when: failure` option. Since in GitLab CI each single job is retriable, I can retry the deploy without executing the whole pipeline from the start, so I decided to not implement it.
+The last thing that I could add to this deploy pipeline is the cleanup in case the deployment fails; it would be identical to the `delete-ci-image`, with the only exceptions that I would use the `prod` commit-specific tags, and I would set `when: failure` option. Since **in GitLab CI each single job is retriable**, I can retry the deploy without executing the whole pipeline from the start, so I decided to not implement it for now.
 
 # Conclusions
-I hope that this (long) blog post will help people with this list of tips and tricks, and help save some time; many of the things that I wrote about here are not properly documented, so I learned the by trial and error and exercising some google-fu. I just hope that the GitLab Registry will soon implement some easier way to do the cleanup, so all this hassle will be reduced to just a couple of YAML configuration lines.
+I hope that this (long) blog post will help people with this list of tips and tricks, and help save some time; many of the things that I wrote about here are not properly documented, so I learned them by trial and error and exercising some google-fu. I just hope that the GitLab registry will soon implement some easier and automatic way to do the cleanup, so all this hassle will be reduced to just a couple of YAML configuration lines.

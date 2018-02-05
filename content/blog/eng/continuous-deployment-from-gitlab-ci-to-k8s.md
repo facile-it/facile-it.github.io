@@ -37,7 +37,7 @@ Let's dive into the configuration details! For now, in the code examples, I will
 ## The `.gitlab-ci.yml` configuration file
 The GitLab CI is configurable just by adding a `.gitlab-ci.yml` file to the root of your project. The first part of mine looks like this:
 
-```yaml
+```
 image: gitlab.facile.it/facile/my-project/docker-compose:1.2
 
 services:
@@ -47,8 +47,8 @@ services:
 
 variables:
   GIT_DEPTH: "1"
-  DOCKER_DRIVER: overlay2
-  DOCKER_HOST: tcp://docker:2375
+  DOCKER_DRIVER: "overlay2"
+  DOCKER_HOST: "tcp://docker:2375"
 ```
 
 The `services` section allows me to declare a Docker container that will be spun up by GitLab CI each time and that will host the Docker daemon that I will use. Here resides **the main difference** between David's and my approach: in his case, he is using the host's machine Docker daemon, in my case I'm using an isolated daemon, **a real Docker-in-Docker approach**.
@@ -63,7 +63,7 @@ The `GIT_DEPTH` option makes the project clone process in each job a bit faster,
 
 The `image` option allows you to require a different base image in which to execute each job of the pipeline. In my case the image is pretty simple, because it's created from the base Docker image, and has in addition Docker Compose and `kubectl`, the [command line interface for Kubernetes](https://kubernetes.io/docs/reference/kubectl/overview/). My Dockerfile looks like this:
 
-```dockerfile
+```
 FROM docker:17.12.0-ce
 
 ARG DOCKER_COMPOSE_VERSION=1.18.0
@@ -78,7 +78,7 @@ RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.9.1/bin/li
 
 ## Pipeline setup and Docker Compose configuration
 The next part of my configuration looks like this:
-```yaml
+```
 before_script:
   - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   - cp docker-compose.yml.gitlab docker-compose.override.yml
@@ -100,7 +100,7 @@ The second instruction depends on **how I organized my Docker Compose files** to
  * `docker-compose.yml.gitlab` is an override file that I use **only during the build**, so that's why we need that `cp` instruction.
 
 I will show you just the last file, which looks like this:
-```yaml
+```
 version: '3.2'
 
 services:
@@ -120,7 +120,7 @@ It's also very important to use `version: '3.2'`, because it's needed to use the
 
 As you can see I'm using **environment variables** to define the image names. I do that in the GitLab CI configuration so I can **define them only once** and use them everywhere:
 
-```yaml
+```
 variables:
     # ...
     CI_IMAGE_NAME: facile/my-project/php-ci
@@ -138,7 +138,7 @@ Just remember to use `$CI_COMMIT_REF_SLUG` for the second tag, because it has sl
 ## The jobs definitions
 At this point we just need to define the jobs! The **build job** is defined like this:
 
-```yaml
+```
 build-image:
   stage: Build
   script:
@@ -147,13 +147,13 @@ build-image:
     - docker tag $CI_IMAGE_COMMIT_TAG $CI_IMAGE_BRANCH_TAG
     - docker-compose push php php-cache
 ```
- * I **pull** the branch image as **cache** (with the `--ignore-pull-failures` to avoid failures on the first commit of a branch);
- * I **build** the image with the commit tag;
- * I **re-tag** the freshly built image with the branch tag;
- * I **push** both back into the registry.
+ * **pull** the branch image as **cache** (`--ignore-pull-failures` avoids failures on the first commit of a branch);
+ * **build** the image with the commit tag;
+ * **re-tag** the freshly built image with the branch tag;
+ * **push** both back into the registry.
 
 Then we can pass onto the **test stage**. If I need multiple services, like for functional tests, I do it like this:
-```yaml
+```
 test-coverage:
   stage: Test
   coverage: '/^\s*Lines:\s*\d+.\d+\%/'
@@ -161,15 +161,159 @@ test-coverage:
     - docker-compose pull --parallel php mysql
     - docker-compose run --rm php vendor/bin/phing ci
 ```
- * I **pull** all the needed images with the `--parallel` option to speed up;
- * I **run** the needed task; in my case I use `phing` (a [PHP porting of Ant](https://packagist.org/packages/phing/phing)) inside the container to call everything with a single command;
+ * **pull** all the needed images with the `--parallel` option to speed up;
+ * **run** the needed task; in my case I use `phing` (a [PHP porting of Ant](https://packagist.org/packages/phing/phing)) inside the container to call everything with a single command;
  * The `coverage` options contains a regex that picks up the coverage percentage from PHPUnit's `--coverage-text` option.
 
 If instead I need to execute just simple tasks, without external services, I can skip the `pull` command completely:
-```yaml
+```
 phpstan:
   stage: Test
   script:
     - docker-compose run --rm --no-deps php phing phpstan_check
 ```
 This is possible because I need just one image which will be pulled implicitly by Docker Compose, so the `--parallel` option is useless here; I also have to remember to use `--no-deps` to avoid pulling linked services, if for example my base configuration defines a dependency to other containers (like the database).
+
+## The scary part: deleting Docker images
+Up until now, it was all straightforward and easy; the difficult part comes with the last stage, the **cleanup**.
+
+With the process that I have shown this far, I'm building an image for each build, since I'm **shipping my code inside the container**; this approach is the **most similar to what happens in production** (that's why I've chosen it), but it has a big downside: you may waste a lot of space with old images pushed to your Docker registry.
+
+This issue is particularly annoying because there's no automated feature in the GitLab's registry to clean up them, up to the point where there are multiple, long-standing issues still open on their tracker about this problem:
+
+ * [#20176 - Provide a programmatic method to delete images/tags from the registry](https://gitlab.com/gitlab-org/gitlab-ce/issues/20176)
+ * [#21608 - Container Registry API](https://gitlab.com/gitlab-org/gitlab-ce/issues/21608)
+ * [#25322 - Create a mechanism to clean up old container image revisions](https://gitlab.com/gitlab-org/gitlab-ce/issues/25322)
+ * [#28970 - Delete from registry images for merged branches](https://gitlab.com/gitlab-org/gitlab-ce/issues/28970)
+ * [#39490 - Allow to bulk delete docker images](https://gitlab.com/gitlab-org/gitlab-ce/issues/39490)
+ * [#40096 - pipeline user $CI_REGISTRY_USER lacks permission to delete its own images](https://gitlab.com/gitlab-org/gitlab-ce/issues/40096)
+
+Last but not least, **Docker tags are not first class citizens** for the Docker registry API (see [docker/distribution/#1859-comment](https://github.com/docker/distribution/issues/1859#issuecomment-236013971) and related PR [docker/distribution/#173](https://github.com/docker/distribution/pull/173)). 
+
+What does that mean? 
+
+Simply put, **a Docker image tag is not a resource** that you can easily delete using the Docker API, **it's a simple link**. This means that you delete images, not tags; hence, if your image had multiple tags attached to it, you're **cascade-invalidating all related tags** without knowing.
+
+To overcome those issues, I've tinkered a lot to obtain a clear and easy way to delete my CI image after the build. After many trial & error attempts, I obtained this workflow:
+
+ * **push a dummy image** to override the tag and point it elsewhere
+ * obtain a JWT **token from the registry** (with proper permissions for deletion)
+ * obtain the **SHA digest** of the dummy image
+ * **delete** the image (finally!)
+ 
+The GitLab CI job is defined like this:
+```
+delete-ci-image:
+  stage: Cleanup
+  when: always
+  script:
+    - bin/docker-util/dummy-tag.sh $IMAGE
+    - TOKEN=$(bin/docker-util/get-registry-token.sh $IMAGE)
+    - MANIFEST=$(bin/docker-util/get-manifest.sh $IMAGE $TOKEN)
+    - bin/docker-util/delete-image.sh $IMAGE $MANIFEST $TOKEN
+```
+
+`when: always` is needed to run the job even if the build fails. The other steps are conveniently stored inside bash scripts, for reusability.
+
+### Pushing a dummy image
+The script that pushes the dummy image, `dummy-tag.sh`, accepts as a single argument the full Docker image name complete with tag:
+
+```
+#!/usr/bin/env bash
+
+DIR='/tmp/docker-dummy'
+mkdir -p $DIR
+
+# generate a file containing a random string
+head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '' > ${DIR}/dummyfile 
+# generate the dummy image with only that one file 
+echo "FROM scratch" > ${DIR}/Dockerfile
+echo "ADD dummyfile ." >> ${DIR}/Dockerfile
+# build and push it
+docker build -t $1 ${DIR}/
+docker push $1
+```
+
+Using `FROM scratch` allows the creation of an empty image ([see docs](https://docs.docker.com/develop/develop-images/baseimages/)), so the final result is ~100 bytes, probably the smallest possible. I just store inside a single file with a randomized string, so the dummy image is different each time and I avoid issues with concurrent builds with concurrent push/delete actions on the registry.
+
+### Obtaining a JWT token from the registry
+The script that obtains the token needs to know on which image we have to operate, because the permission are granted very specifically on that. Also, you will need to have a [GitLab Personal Access Token](https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html) available in an environment variable, because the normal token will not have enough permission to require what we need.
+
+```
+#!/usr/bin/env bash
+
+splitImageName $1
+
+curl https://gitlab.facile.it/jwt/auth \
+    --get \
+    --silent --show-error \
+    -d client_id=docker \
+    -d offline_token=true \
+    -d service=container_registry \
+    -d "scope=repository:$IMAGE:pull,*" \
+    --fail \
+    --user alai:$PERSONAL_ACCESS_TOKEN \
+    | sed -r "s/(\{\"token\":\"|\"\})//g"
+```
+The script, like before, requires as a single argument the full image name; the `splitImageName` function just splits that and exports that in 3 separate variable: `$REGISTRY`, `$IMAGE` and `$TAG`; we will need just `$IMAGE` for now.
+
+So basically we issuing a GET to a GitLab API endpoint that looks like this:
+
+```
+https://gitlab.facile.it/jwt/auth?client_id=docker&offline_token=true&service=container_registry&scope=repository:facile/my-project/php-ci:pull,*
+```
+
+The last part, `pull,*` is really important: those are the permission that we are requiring, and the `*` is what will allow us to delete. Finally, the response will be in JSON, with a single `token` property, and `sed` will take care of stripping out all the JSON from the output.
+
+### Getting the image manifest
+Now that we have the authorization part in place, we can start using the [Docker registry API](https://docs.docker.com/registry/spec/api/#detail), which has a resource called `manifest` that represents an image. The `get-manifest.sh` will require 2 arguments, the full image name (again) and the JTW token (that we just obtained):
+
+```
+#!/usr/bin/env bash
+
+splitImageName $1
+
+curl https://$REGISTRY/v2/$IMAGE/manifests/$TAG \
+    --head \
+    --fail \
+    --silent --show-error \
+    -H "accept: application/vnd.docker.distribution.manifest.v2+json" \
+    -H "authorization: Bearer $REGISTRY_TOKEN" \
+    | grep -i "Docker-Content-Digest" \
+    | grep -oi "sha256:\w\+"
+
+```
+This time we are using all the 3 variables from the `splitImageName` function, and we are issuing a HEAD request, because what we need is a header of the response: `Docker-Content-Digest`. This header contains the SHA digest of the manifest, that we will use to reference what we want to delete in the next (and last) step. I used grep to select the line of the output containing the header, and then a second time to strip out everything out except the digest.
+
+The API endpoint looks like this:
+
+```
+https://gitlab.facile.it/v2/facile/my-project/php-ci/manifests/my-tag-that-i-want-to-delete
+```
+
+### Deleting the image
+Now that we have everything that we need, we can finally use the `delete-image.sh`; it requires three arguments:
+
+ * the full image name (again)
+ * the SHA digest of the manifest
+ * the token (again)
+
+```
+#!/usr/bin/env bash
+
+splitImageName $1
+echo "Deleting image..."
+
+curl "https://$REGISTRY/v2/$IMAGE/manifests/$2" \
+    -X DELETE \
+    --fail \
+    --silent --show-error \
+    -H "accept: application/vnd.docker.distribution.manifest.v2+json" \
+    -H "authorization: Bearer $REGISTRY_TOKEN"
+```
+
+We are issuing a DELETE to the manifest endpoint, using the SHA digest as an identifier for the specific resource that we want to delete; this last API endpoint looks like this:
+
+```
+https://gitlab.facile.it/v2/facile/my-project/php-ci/manifests/9170f905754579832799afb8e65c89441c794596eb1c4fe2ac88e4a8ff1dfec0
+```

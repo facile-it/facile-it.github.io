@@ -135,6 +135,34 @@ I still leverage GitLab's `$CI_REGISTRY` variable to compose the names, so basic
 
 Just remember to use `$CI_COMMIT_REF_SLUG` for the second tag, because it has slashes and other invalid chars stripped out automatically.
 
+### A small trick: cache-friendly Docker images
+To make this process work smoothly, you should write your **Dockerfile in a cache-friendly manner**. To obtain that, we must leverage the layer-based structure of the images, and **put the stuff that changes more often in the latter layers**, and vice versa the stuff that never changes up in the first ones. In this specific case we're talking about a PHP/Symfony application and, starting from some advice that I got from my colleague [Thomas](https://twitter.com/thomasvargiu), I wrote down this Dockerfile:
+
+```
+FROM gitlab.facile.it/facile/my-project/php-base
+
+MAINTAINER Alessandro Lai <alessandro.lai@facile.it>
+
+ARG COMPOSER_FLAGS="--no-interaction --no-suggest --no-progress --ansi --prefer-dist"
+ENV SYMFONY_ENV=test
+
+USER blaine
+
+COPY composer.* ./
+RUN composer install $COMPOSER_FLAGS --no-scripts --no-autoloader
+COPY . .
+RUN composer install $COMPOSER_FLAGS
+```
+
+The base image that I extend contains everything that doesn't change often: PHP version, extensions, a non-root user. Then, I start adding stuff on top, using this sequence:
+
+ * `composer.json` and `composer.lock` files
+ * install the vendor, using `--no-scripts --no-autoloader` to skip anything else
+ * copy everything else (I use the `.dockerignore` to avoid considering garbage files here, [see docs](https://docs.docker.com/engine/reference/builder/#dockerignore-file))
+ * repeat the `composer install` step, to dump the autoloader and run all the `post-install` scripts
+
+In this way, I'm literally **caching my vendor folder inside a single Docker image layer**, and changing the Composer files will automatically invalidate that cache; also, copying all the other source files later allows me to not lose that layer when the vendor shouldn't change. Remember, that layer will change everyy time, since you've obviously just committed something new!
+
 ## The jobs definitions
 At this point we just need to define the jobs! The **build job** is defined like this:
 

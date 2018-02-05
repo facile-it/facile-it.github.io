@@ -151,17 +151,19 @@ USER blaine
 COPY composer.* ./
 RUN composer install $COMPOSER_FLAGS --no-scripts --no-autoloader
 COPY . .
-RUN composer install $COMPOSER_FLAGS
+RUN composer install $COMPOSER_FLAGS \
+    && bin/console cache:warmup --ansi --env=$SYMFONY_ENV
 ```
 
 The base image that I extend contains everything that doesn't change often: PHP version, extensions, a non-root user. Then, I start adding stuff on top, using this sequence:
 
  * `composer.json` and `composer.lock` files
  * install the vendor, using `--no-scripts --no-autoloader` to skip anything else
- * copy everything else (I use the `.dockerignore` to avoid considering garbage files here, [see docs](https://docs.docker.com/engine/reference/builder/#dockerignore-file))
+ * copy everything else (I use the `.dockerignore` file to avoid considering garbage files here, [see docs](https://docs.docker.com/engine/reference/builder/#dockerignore-file))
  * repeat the `composer install` step, to dump the autoloader and run all the `post-install` scripts
+ * warm up the Symfony cache, so we ship that with the image too
 
-In this way, I'm literally **caching my vendor folder inside a single Docker image layer**, and changing the Composer files will automatically invalidate that cache; also, copying all the other source files later allows me to not lose that layer when the vendor shouldn't change. Remember, that layer will change everyy time, since you've obviously just committed something new!
+In this way, I'm literally **caching my vendor folder inside a single Docker image layer**, and changing the Composer files will automatically invalidate that cache; also, copying all the other source files later allows me to not lose that layer when the vendor shouldn't change. Remember, that layer will change every time, since you've obviously just committed something new!
 
 ## The jobs definitions
 At this point we just need to define the jobs! The **build job** is defined like this:
@@ -262,10 +264,10 @@ docker build -t $1 ${DIR}/
 docker push $1
 ```
 
-Using `FROM scratch` allows the creation of an empty image ([see docs](https://docs.docker.com/develop/develop-images/baseimages/)), so the final result is ~100 bytes, probably the smallest possible. I just store inside a single file with a randomized string, so the dummy image is different each time and I avoid issues with concurrent builds with concurrent push/delete actions on the registry.
+Using `FROM scratch` allows the creation of an empty image ([see docs](https://docs.docker.com/develop/develop-images/baseimages/)), so the **final result is ~100 bytes**, probably the smallest possible. I just store inside a single file with a randomized string, so the dummy image is different each time and I avoid issues with concurrent builds with concurrent push/delete actions on the registry.
 
 ### Obtaining a JWT token from the registry
-The script that obtains the token needs to know on which image we have to operate, because the permission are granted very specifically on that. Also, you will need to have a [GitLab Personal Access Token](https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html) available in an environment variable, because the normal token will not have enough permission to require what we need.
+The script that obtains the token needs to know on which image we have to operate, because the permission are granted very specifically on that. Also, **you will need to have a [GitLab Personal Access Token](https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html)** available in an environment variable, because the normal token will not have enough permission to do what we need.
 
 ```
 #!/usr/bin/env bash
@@ -283,9 +285,9 @@ curl https://gitlab.facile.it/jwt/auth \
     --user alai:$PERSONAL_ACCESS_TOKEN \
     | sed -r "s/(\{\"token\":\"|\"\})//g"
 ```
-The script, like before, requires as a single argument the full image name; the `splitImageName` function just splits that and exports that in 3 separate variable: `$REGISTRY`, `$IMAGE` and `$TAG`; we will need just `$IMAGE` for now.
+The script, like before, requires as a single argument the full image name; the `splitImageName` function (omitted) just splits that and exports that in 3 separate variable: `$REGISTRY`, `$IMAGE` and `$TAG`; we will need just `$IMAGE` for now.
 
-So basically we issuing a GET to a GitLab API endpoint that looks like this:
+So basically we issue **a GET request** to a GitLab API endpoint that looks like this:
 
 ```
 https://gitlab.facile.it/jwt/auth?client_id=docker&offline_token=true&service=container_registry&scope=repository:facile/my-project/php-ci:pull,*
@@ -294,7 +296,7 @@ https://gitlab.facile.it/jwt/auth?client_id=docker&offline_token=true&service=co
 The last part, `pull,*` is really important: those are the permission that we are requiring, and the `*` is what will allow us to delete. Finally, the response will be in JSON, with a single `token` property, and `sed` will take care of stripping out all the JSON from the output.
 
 ### Getting the image manifest
-Now that we have the authorization part in place, we can start using the [Docker registry API](https://docs.docker.com/registry/spec/api/#detail), which has a resource called `manifest` that represents an image. The `get-manifest.sh` will require 2 arguments, the full image name (again) and the JTW token (that we just obtained):
+Now that we have the authorization part in place, we can start using the [Docker registry API](https://docs.docker.com/registry/spec/api/#detail), which has a resource called `manifest` that describes an image. The `get-manifest.sh` will require 2 arguments, the full image name (again) and the JTW token (that we just obtained):
 
 ```
 #!/usr/bin/env bash
@@ -311,7 +313,7 @@ curl https://$REGISTRY/v2/$IMAGE/manifests/$TAG \
     | grep -oi "sha256:\w\+"
 
 ```
-This time we are using all the 3 variables from the `splitImageName` function, and we are issuing a HEAD request, because what we need is a header of the response: `Docker-Content-Digest`. This header contains the SHA digest of the manifest, that we will use to reference what we want to delete in the next (and last) step. I used grep to select the line of the output containing the header, and then a second time to strip out everything out except the digest.
+This time we are using all the 3 variables from the `splitImageName` function, and we are issuing **a HEAD request**, because what we need is **a header of the response**: `Docker-Content-Digest`. This header contains the **SHA digest of the manifest**, that we will use to reference what we want to delete in the next (and last) step. I then used `grep` twice: first to select the line of the output containing the header, and then to strip everything out except the digest.
 
 The API endpoint looks like this:
 
@@ -320,7 +322,7 @@ https://gitlab.facile.it/v2/facile/my-project/php-ci/manifests/my-tag-that-i-wan
 ```
 
 ### Deleting the image
-Now that we have everything that we need, we can finally use the `delete-image.sh`; it requires three arguments:
+Now that we have everything that we need, we can finally use the `delete-image.sh` script; it requires three arguments:
 
  * the full image name (again)
  * the SHA digest of the manifest
@@ -340,7 +342,7 @@ curl "https://$REGISTRY/v2/$IMAGE/manifests/$2" \
     -H "authorization: Bearer $REGISTRY_TOKEN"
 ```
 
-We are issuing a DELETE to the manifest endpoint, using the SHA digest as an identifier for the specific resource that we want to delete; this last API endpoint looks like this:
+We are issuing **a DELETE request** to the manifest endpoint, using the **SHA digest as an identifier** for the specific resource that we want to delete; this last API endpoint looks like the previous one:
 
 ```
 https://gitlab.facile.it/v2/facile/my-project/php-ci/manifests/9170f905754579832799afb8e65c89441c794596eb1c4fe2ac88e4a8ff1dfec0

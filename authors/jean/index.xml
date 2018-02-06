@@ -6,10 +6,20 @@
     <description>Recent content in Jean on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 12 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/authors/jean/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</title>
+      <link>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</guid>
+      <description>In the last month, I&amp;rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt GitLab CI for the build, since we use GitLab CE for our Git repositories; I then created a continuous deployment pipeline for the staging environment, directly to a Kubernetes cluster, leveraging Docker Compose to make the configuration easier.
+After, I decided to start migrating a previous, internal project of mine to the same approach, since it&amp;rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, doing a rolling deployment with Kubernetes is surprisingly easy!</description>
+    </item>
     
     <item>
       <title>How to gradually upgrade toward PHPUnit 6 with namespaced classes</title>

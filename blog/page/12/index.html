@@ -41,7 +41,7 @@
 
 
 
-<meta property="og:updated_time" content="2015-03-23T00:00:00&#43;00:00"/>
+<meta property="og:updated_time" content="2015-04-01T00:00:00&#43;00:00"/>
 
 
 
@@ -224,15 +224,15 @@ ga('send', 'pageview');
 
                 
                     <li>
+                        <a href="https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/"><p>Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</p></a>
+                    </li>
+                
+                    <li>
                         <a href="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/"><p>Is it all PHP OPCache&#39;s fault?</p></a>
                     </li>
                 
                     <li>
                         <a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/"><p>How to gradually upgrade toward PHPUnit 6 with namespaced classes</p></a>
-                    </li>
-                
-                    <li>
-                        <a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/"><p>Why type hints and interfaces are not visual debt</p></a>
                     </li>
                 
             </ul>
@@ -247,6 +247,81 @@ ga('send', 'pageview');
         
             
         
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/">Gestione di ACL su insiemi di records</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published" datetime='2015-04-01'>
+            1 April 2015
+        </time>
+
+        
+            <a href="/authors/matteo/" class="author">
+            
+                <span class="name">Matteo Galli</span>
+                <img src="/images/avatar-matteo.jpg" alt="Matteo Galli avatar" />
+            
+            </a>
+        
+
+        
+            <p>4 minute read</p>
+        
+    </div>
+</header>
+
+    
+
+    <p>Le ACL (Access Control List) sono un strumento molto potente per poter definire l&rsquo;accesso a risorse con una granularità molto fine. Nel quotidiano abbiamo già modo di utilizzarle per definire i permessi per accedere a file su Unix o quali pacchetti far passare attraverso un firewall o ancora l&rsquo;accesso a database.
+In Symfony le ACL sono disponibili out-of-the-box nel caso di installazione completa e permettono la definizione delle regole di accesso a risorse tramite ruoli e maschere.</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+
+    
+        
+            <li>
+                
+                    <i class="fa fa-folder-open-o">&nbsp;</i>
+                
+        
+
+                
+                    Categories
+                
+            </li>
+    
+
+    
+        <li><a href="/categories/italiano/">Italiano</a></li>
+    
+        <li><a href="/categories/php/">PHP</a></li>
+    
+        <li><a href="/categories/symfony/">Symfony</a></li>
+    
+        <li><a href="/categories/database/">Database</a></li>
+    
+</ul>
+
+    </footer>
+</article>
 
         
             <article class="post">
@@ -553,80 +628,6 @@ console.log(true ? &lsquo;a&rsquo; : &lsquo;b&rsquo; ?</p>
 </article>
 
         
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="https://engineering.facile.it/blog/ita/zvals-refcount/">ZVALs refcount AKA come vengono memorizzate le nostre variabili</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published" datetime='2015-03-02'>
-            2 March 2015
-        </time>
-
-        
-            <a href="/authors/lorenzo/" class="author">
-            
-                <span class="name">Lorenzo Fontana</span>
-                <img src="https://www.gravatar.com/avatar/575f040cd9e5e28e807ecf0d73c8a938?d=404&amp;s=250" alt="Lorenzo Fontana avatar" />
-            
-            </a>
-        
-
-        
-            <p>2 minute read</p>
-        
-    </div>
-</header>
-
-    
-
-    <p>Assegnare valori alle variabili è sicuramente l&rsquo;operazione più comune all&rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&rsquo;interprete? Vediamolo assieme!
-L&rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla linea 334 di zend.h, la riporto qui di seguito per commentarne le proprietà.
-struct _zval_struct { zvalue_value value;   /* Il valore assegnato alla variabile <em>/ zend_uint refcount__gc; /</em> Il conto delle referenze legato alla variabile <em>/ zend_uchar type;  /</em> L&rsquo;identificativo del tipo di dato <em>/ zend_uchar is_ref__gc; /</em> Flag che indica se la variabile è o meno una referenza */ };  Il tipo di dato zvalue_value non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo ogni variabile che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo stesso spazio in memoria richiesto per il tipo di dato più grande.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="https://engineering.facile.it/blog/ita/zvals-refcount/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-
-    
-        
-            <li>
-                
-                    <i class="fa fa-folder-open-o">&nbsp;</i>
-                
-        
-
-                
-                    Categories
-                
-            </li>
-    
-
-    
-        <li><a href="/categories/italiano/">Italiano</a></li>
-    
-        <li><a href="/categories/php/">PHP</a></li>
-    
-        <li><a href="/categories/php-internals/">PHP internals</a></li>
-    
-</ul>
-
-    </footer>
-</article>
-
-        
 
         
 <ul class="actions pagination">
@@ -751,6 +752,27 @@ struct _zval_struct { zvalue_value value;   /* Il valore assegnato alla variabil
                             <header>
                                     
                                         
+                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
+                                    <h3><a href="https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/">Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2018-02-06'>
+                                        6 February 2018
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
                                             <img src="https://www.gravatar.com/avatar/84febdc35f5438ae1d2500482e2228fa" alt="Salvatore Cordiano avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
                                         
                                     
@@ -783,27 +805,6 @@ struct _zval_struct { zvalue_value value;   /* Il valore assegnato alla variabil
                                     
                                     <time class="published" datetime='2017-09-12'>
                                         12 September 2017
-                                    </time>
-                            </header>
-                        </article>
-                    </li>
-                
-                    <li>
-                        <article>
-                            <header>
-                                    
-                                        
-                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
-                                        
-                                    
-
-                                    <h3><a href="https://engineering.facile.it/blog/eng/visual-debt-typehints/">Why type hints and interfaces are not visual debt</a></h3>
-
-                                    
-                                        
-                                    
-                                    <time class="published" datetime='2017-05-31'>
-                                        31 May 2017
                                     </time>
                             </header>
                         </article>
@@ -853,7 +854,7 @@ struct _zval_struct { zvalue_value value;   /* Il valore assegnato alla variabil
                         <article>
                             <header>
                                 <a href="/categories/english/">English</a>
-                                <span style="float:right;">27</span>
+                                <span style="float:right;">28</span>
                             </header>
                         </article>
                     </li>
@@ -907,6 +908,17 @@ struct _zval_struct { zvalue_value value;   /* Il valore assegnato alla variabil
                     <li>
                         <article>
                             <header>
+                                <a href="/categories/docker/">Docker</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
                                 <a href="/categories/open-source/">Open Source</a>
                                 <span style="float:right;">5</span>
                             </header>
@@ -923,6 +935,10 @@ struct _zval_struct { zvalue_value value;   /* Il valore assegnato alla variabil
                             </header>
                         </article>
                     </li>
+                    
+                
+                    
+                
                     
                 
                     

@@ -129,9 +129,18 @@
     </item>
     
     <item>
+      <title>Continuous deployment</title>
+      <link>https://engineering.facile.it/categories/continuous-deployment/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/continuous-deployment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Continuous integration</title>
       <link>https://engineering.facile.it/categories/continuous-integration/</link>
-      <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/continuous-integration/</guid>
       <description></description>
@@ -167,7 +176,7 @@
     <item>
       <title>Docker</title>
       <link>https://engineering.facile.it/categories/docker/</link>
-      <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/docker/</guid>
       <description></description>
@@ -194,7 +203,7 @@
     <item>
       <title>English</title>
       <link>https://engineering.facile.it/categories/english/</link>
-      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/english/</guid>
       <description></description>
@@ -260,6 +269,15 @@
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitLab</title>
+      <link>https://engineering.facile.it/categories/gitlab/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/gitlab/</guid>
       <description></description>
     </item>
     
@@ -368,6 +386,15 @@
       <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/kotlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://engineering.facile.it/categories/kubernetes/</link>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/kubernetes/</guid>
       <description></description>
     </item>
     

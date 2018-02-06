@@ -1,0 +1,1589 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.31.1" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+            
+        
+
+        
+    
+        <meta name="twitter:card" content="summary"/>
+        
+            <meta name="twitter:image:src" content="https://engineering.facile.it/images/social/twitter-card-logo.png"/>
+        
+    
+    
+    <meta name="twitter:title" content="Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker"/>
+    <meta name="twitter:description" content="In the last month, I&rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt GitLab CI for the build, since we use GitLab CE for our Git repositories; I then created a continuous deployment pipeline for the staging environment, directly to a Kubernetes cluster, leveraging Docker Compose to make the configuration easier.
+After, I decided to start migrating a previous, internal project of mine to the same approach, since it&rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, doing a rolling deployment with Kubernetes is surprisingly easy!"/>
+    
+        
+            <meta name="twitter:creator" content="@AlessandroLai"/>
+        
+    
+
+
+<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+
+        <meta property="og:title" content="Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker" />
+<meta property="og:description" content="In the last month, I&rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt GitLab CI for the build, since we use GitLab CE for our Git repositories; I then created a continuous deployment pipeline for the staging environment, directly to a Kubernetes cluster, leveraging Docker Compose to make the configuration easier.
+After, I decided to start migrating a previous, internal project of mine to the same approach, since it&rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, doing a rolling deployment with Kubernetes is surprisingly easy!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/" />
+
+
+
+<meta property="article:published_time" content="2018-02-06T00:00:00&#43;00:00"/>
+
+<meta property="article:modified_time" content="2018-02-06T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker">
+<meta itemprop="description" content="In the last month, I&rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt GitLab CI for the build, since we use GitLab CE for our Git repositories; I then created a continuous deployment pipeline for the staging environment, directly to a Kubernetes cluster, leveraging Docker Compose to make the configuration easier.
+After, I decided to start migrating a previous, internal project of mine to the same approach, since it&rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, doing a rolling deployment with Kubernetes is surprisingly easy!">
+
+
+<meta itemprop="datePublished" content="2018-02-06T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2018-02-06T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="3795">
+
+
+
+<meta itemprop="keywords" content="" />
+
+        
+
+        
+        
+
+        
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/monokai-sublime.css">
+        
+        
+        
+        
+            
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-22342495-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">Facile.it Engineering</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/categories/">
+                        
+                            <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/authors/">
+                        
+                            <i class="fa fa-pencil">&nbsp;</i>Authors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/ita/careers/">
+                        
+                            <i class="fa fa-briefcase">&nbsp;</i>Careers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/eng/who-we-are/">
+                        
+                            <i class="fa fa-users">&nbsp;</i>Who we are
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:https://engineering.facile.it">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                
+                                    <i class="fa fa-folder-open-o">&nbsp;</i>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/authors/">
+                            <h3>
+                                
+                                    <i class="fa fa-pencil">&nbsp;</i>
+                                
+                                Authors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/ita/careers/">
+                            <h3>
+                                
+                                    <i class="fa fa-briefcase">&nbsp;</i>
+                                
+                                Careers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/eng/who-we-are/">
+                            <h3>
+                                
+                                    <i class="fa fa-users">&nbsp;</i>
+                                
+                                Who we are
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/"><p>Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/"><p>Is it all PHP OPCache&#39;s fault?</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/"><p>How to gradually upgrade toward PHPUnit 6 with namespaced classes</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&text=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&title=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&title=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&title=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/">Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</a></h1>
+            
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published" datetime='2018-02-06'>
+            6 February 2018
+        </time>
+
+        
+            <a href="/authors/jean/" class="author">
+            
+                <span class="name">Alessandro Lai</span>
+                <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" />
+            
+            </a>
+        
+
+        
+            <p>18 minute read</p>
+        
+    </div>
+</header>
+
+
+    
+
+
+    
+        <nav id="TableOfContents">
+<ul>
+<li><a href="#the-basic-ci-pipeline">The basic CI pipeline</a>
+<ul>
+<li><a href="#the-gitlab-ci-yml-configuration-file">The <code>.gitlab-ci.yml</code> configuration file</a></li>
+<li><a href="#pipeline-setup-and-docker-compose-configuration">Pipeline setup and Docker Compose configuration</a>
+<ul>
+<li><a href="#a-small-trick-cache-friendly-docker-images">A small trick: cache-friendly Docker images</a></li>
+</ul></li>
+<li><a href="#the-jobs-definitions">The jobs definitions</a></li>
+<li><a href="#the-scary-part-deleting-docker-images">The scary part: deleting Docker images</a>
+<ul>
+<li><a href="#pushing-a-dummy-image">Pushing a dummy image</a></li>
+<li><a href="#obtaining-a-jwt-token-from-the-registry">Obtaining a JWT token from the registry</a></li>
+<li><a href="#getting-the-image-manifest">Getting the image manifest</a></li>
+<li><a href="#deleting-the-image">Deleting the image</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#doing-continuous-deployment">Doing continuous deployment</a>
+<ul>
+<li><a href="#building-images-for-the-deployment">Building images for the deployment</a></li>
+<li><a href="#the-deploy">The deploy</a></li>
+<li><a href="#the-cleanup-after-the-deploy">The cleanup after the deploy</a></li>
+</ul></li>
+<li><a href="#conclusions">Conclusions</a></li>
+</ul>
+</nav>
+    
+
+    
+
+<p>In the last month, I&rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt <strong>GitLab CI</strong> for the build, since we use GitLab CE for our Git repositories; I then created a <strong>continuous deployment pipeline</strong> for the staging environment, directly to a <strong>Kubernetes cluster</strong>, leveraging <strong>Docker Compose</strong> to make the configuration easier.</p>
+
+<p>After, I decided to start migrating a previous, internal project of mine to the same approach, since it&rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, <strong>doing a rolling deployment with Kubernetes is surprisingly easy</strong>!</p>
+
+<p>A few days ago David Négrier‏ (<a href="https://twitter.com/david_negrier">@david_negrier</a>) published a blog posts about his way of doing continuous deployment from GitLab CI:</p>
+
+<p><blockquote class="twitter-tweet" data-lang="it"><p lang="en" dir="ltr">Just blogged: &quot;Continuous Delivery of a PHP application with <a href="https://twitter.com/gitlab?ref_src=twsrc%5Etfw">@gitlab</a>, <a href="https://twitter.com/Docker?ref_src=twsrc%5Etfw">@Docker</a> and <a href="https://twitter.com/traefikproxy?ref_src=twsrc%5Etfw">@traefikproxy</a> on a dedicated server&quot;<br>                 <br> <a href="https://t.co/6piVuNBa7x">https://t.co/6piVuNBa7x</a><br><br>// <a href="https://twitter.com/coding_machine?ref_src=twsrc%5Etfw">@coding_machine</a></p>&mdash; David Négrier (@david_negrier) <a href="https://twitter.com/david_negrier/status/954306019655593984?ref_src=twsrc%5Etfw">19 gennaio 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<p>This post immediately captured my attention, due to my current work: David in his post avoided the usage of Kubernetes to not add too much cognitive load, and wrote a very straightforward piece. On the other hand, in my case I wrote a kinda complicated pipeline, learning a few tricks and pitfalls in the process, so I decided to write this down and share my experience.</p>
+
+<h1 id="the-basic-ci-pipeline">The basic CI pipeline</h1>
+
+<p>This is how my basic pipeline looks like when it&rsquo;s building a branch while I&rsquo;m working on it:</p>
+
+<p><img src="/images/continuous-deployment-from-gitlab-ci-to-k8s/basic-pipeline.png" alt="The basic pipeline" /></p>
+
+<p>Three simple stages:</p>
+
+<ol>
+<li><strong>Build CI</strong>: a CI image is built with the code baked in;</li>
+<li><strong>Test</strong>: multiple jobs to do various verification tasks in parallel (tests, static analysis, code style&hellip;);</li>
+<li><strong>Cleanup</strong>: deletion of the CI image built in the first step, to avoid bloating the Docker registry.</li>
+</ol>
+
+<p>Let&rsquo;s dive into the configuration details! For now, in the code examples, I will omit any piece that is needed for the deployment part; we will see that later.</p>
+
+<h2 id="the-gitlab-ci-yml-configuration-file">The <code>.gitlab-ci.yml</code> configuration file</h2>
+
+<p>The <a href="https://docs.gitlab.com/ee/ci/">GitLab CI</a> is configurable just by adding a <code>.gitlab-ci.yml</code> file to the root of your project. The configuration for this first part looks like this:</p>
+
+<pre><code>image: gitlab.facile.it/facile/my-project/docker-compose:1.2
+
+services:
+- name: docker:17.12.0-dind
+  alias: docker
+  command: [&quot;--registry-mirror&quot;, &quot;https://registry-mirror.facile.it&quot;]
+
+variables:
+  GIT_DEPTH: &quot;1&quot;
+  DOCKER_DRIVER: &quot;overlay2&quot;
+  DOCKER_HOST: &quot;tcp://docker:2375&quot;
+</code></pre>
+
+<p>The <code>services</code> section allows me to declare a Docker container that will be spun up by GitLab CI each time and that will host the Docker daemon that I will use. Here resides <strong>the main difference</strong> between David&rsquo;s and my approach: in his case, he is using the host&rsquo;s machine Docker daemon, in my case I&rsquo;m using an isolated daemon, <strong>a real Docker-in-Docker approach</strong>.</p>
+
+<p>The combination of the <code>alias: docker</code> setting and the <code>DOCKER_HOST</code> environment variable points our job to the D-in-D daemon socket; the <code>--registry-mirror</code> option let the daemon use our internal registry mirror to speed up pulling official images; last but not least, the <code>DOCKER_DRIVER</code> uses the <code>overlay2</code> filesystem for the Docker build, which is <strong>faster and less space consuming</strong> (I suggest you to use that on your local Linux machines too!).</p>
+
+<blockquote>
+<p>David&rsquo;s approach may be a bit <strong>faster</strong>, because the daemon is always the same and retains some build and image cache between jobs and builds, but it requires to run <strong>privileged jobs</strong>, and it&rsquo;s not isolated, so it may incur in some issues or slowdowns if <strong>multiple builds</strong> run at the same time, messing up image tags.</p>
+
+<p>My approach is a bit more <strong>robust</strong>, but it&rsquo;s overall <strong>slower</strong>, because each job is <strong>totally isolated</strong> (which is good), but on the downside it has no memory of previous builds, so no cache is available: we will have to <strong>pull from the registry each time</strong>.</p>
+</blockquote>
+
+<p>The <code>GIT_DEPTH</code> option makes the project clone process in each job a bit faster, pulling only the current commit, not the whole Git history.</p>
+
+<p>The <code>image</code> option allows you to require a different base image in which to execute each job of the pipeline. In my case the image is pretty simple, because it&rsquo;s created from the base Docker image, and has in addition Docker Compose and <code>kubectl</code>, the <a href="https://kubernetes.io/docs/reference/kubectl/overview/">command line interface for Kubernetes</a>. My Dockerfile looks like this:</p>
+
+<pre><code>FROM docker:17.12.0-ce
+
+ARG DOCKER_COMPOSE_VERSION=1.18.0
+ # install Docker Compose
+RUN apk add --no-cache curl py-pip bash \
+    &amp;&amp; pip install docker-compose
+ # install kubectl
+RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.9.1/bin/linux/amd64/kubectl \
+    -O /usr/local/bin/kubectl \
+    &amp;&amp; chmod +x /usr/local/bin/kubectl
+</code></pre>
+
+<h2 id="pipeline-setup-and-docker-compose-configuration">Pipeline setup and Docker Compose configuration</h2>
+
+<p>The next part of my configuration looks like this:</p>
+
+<pre><code>stages:
+  - Build
+  - Test
+  - Cleanup
+
+before_script:
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  - cp docker-compose.yml.gitlab docker-compose.override.yml
+</code></pre>
+
+<p>In here I configured the sequence of <strong>stages</strong> in the pipeline, and I configured a <code>before_script</code> section to be executed before each job. The first instruction <strong>logs into the private Docker registry</strong> that GitLab gives us along any project (if enabled), in which I decided to store my Docker images.</p>
+
+<blockquote>
+<p>GitLab CI jobs automatically have the <code>$CI_JOB_TOKEN</code> and <code>$CI_REGISTRY</code> environment variables populated to easily do that: the first one is a fresh unique token, which is <a href="https://docs.gitlab.com/ee/user/project/new_ci_build_permissions_model.html#job-token">generated for each job</a>; the second one is the URL of the registry associated with the current project; see the <a href="https://docs.gitlab.com/ce/ci/variables/README.html">GitLab CI documentation</a> for more details.</p>
+</blockquote>
+
+<p>The second instruction depends on <strong>how I organized my Docker Compose files</strong> to help me during development and in the pipeline too. I use 4 separated files:</p>
+
+<ul>
+<li><code>docker-compose.yml</code> is the base file, with the <strong>basic configuration</strong>.</li>
+<li><code>docker-compose.override.yml</code> <strong>overrides</strong> stuff when needed; the name is <a href="https://docs.docker.com/compose/extends/#understanding-multiple-compose-files">standard with the Docker Compose v3 configurations</a>, so you don&rsquo;t have to specify it in the CLI, it&rsquo;s automatically picked up; this file is not committed and ignored by Git, because I use it to give each developer the freedom to customize the containers behavior, like ports or volumes.</li>
+<li><code>docker-compose.override.yml.dist</code> is a committed file with the <strong>suggested override</strong> configuration (default exposed ports, default mounts&hellip;).</li>
+<li><code>docker-compose.yml.gitlab</code> is an override file that I use <strong>only during the build</strong>, so that&rsquo;s why we need that <code>cp</code> instruction.</li>
+</ul>
+
+<p>I will show you just the last file, which looks like this:</p>
+
+<pre><code>version: '3.2'
+
+services:
+  php:
+    image: ${CI_IMAGE_COMMIT_TAG}
+    build:
+      dockerfile: docker/development/php-ci/Dockerfile
+      context: .
+      cache_from:
+        - ${CI_IMAGE_BRANCH_TAG}
+  php-cache:
+    image: ${CI_IMAGE_BRANCH_TAG}
+</code></pre>
+
+<p>I declared in my <code>php</code> service both the <code>image</code> and <code>build</code> sections, so I&rsquo;m able to use this definition in all my jobs, <strong>both for building and executing</strong>. I&rsquo;m also able to move the <code>Dockerfile</code>s inside a dedicated directory, thanks to the usage of the <code>dockerfile</code> and <code>context</code> options with different paths.</p>
+
+<p>It&rsquo;s also very important to use <code>version: '3.2'</code>, because it&rsquo;s needed to use the <code>cache_from</code> option: since we do not have any cache in the daemon, I <strong>tag the image twice</strong>, once with the <strong>commit hash</strong> and once with the <strong>branch name</strong>; in this way I can pull the <code>php-cache</code> service with the branch tag as a cache from the previous build.</p>
+
+<p>As you can see I&rsquo;m using <strong>environment variables</strong> to define the image names. I do that in the GitLab CI configuration so I can <strong>define them only once</strong> and use them everywhere:</p>
+
+<pre><code>variables:
+    # ...
+    CI_IMAGE_NAME: facile/my-project/php-ci
+    CI_IMAGE_COMMIT_TAG: $CI_REGISTRY/$CI_IMAGE_NAME:$CI_COMMIT_SHA
+    CI_IMAGE_BRANCH_TAG: $CI_REGISTRY/$CI_IMAGE_NAME:$CI_COMMIT_REF_SLUG
+</code></pre>
+
+<p>I still leverage GitLab&rsquo;s <code>$CI_REGISTRY</code> variable to compose the names, so basically my image names will be:</p>
+
+<ul>
+<li><code>gitlab.facile.it/facile/my-project/php-ci:79aef00e3893a39102ffc394bf96782e57adb956</code></li>
+<li><code>gitlab.facile.it/facile/my-project/php-ci:branch-name</code></li>
+</ul>
+
+<p>Just remember to use <code>$CI_COMMIT_REF_SLUG</code> for the second tag, because it has slashes and other invalid chars stripped out automatically.</p>
+
+<h3 id="a-small-trick-cache-friendly-docker-images">A small trick: cache-friendly Docker images</h3>
+
+<p>To make this process work smoothly, you should write your <strong>Dockerfile in a cache-friendly manner</strong>. To obtain that, we must leverage the layer-based structure of the images, and <strong>put the stuff that changes more often in the latter layers</strong>, and vice versa the stuff that never changes up in the first ones. In this specific case we&rsquo;re talking about a PHP/Symfony application and, starting from some advice that I got from my colleague <a href="https://twitter.com/thomasvargiu">Thomas</a>, I wrote down this Dockerfile:</p>
+
+<pre><code>FROM gitlab.facile.it/facile/my-project/php-base
+
+MAINTAINER Alessandro Lai &lt;alessandro.lai@facile.it&gt;
+
+ARG COMPOSER_FLAGS=&quot;--no-interaction --no-suggest --no-progress --ansi --prefer-dist&quot;
+ENV SYMFONY_ENV=test
+
+USER blaine
+
+COPY composer.* ./
+RUN composer install $COMPOSER_FLAGS --no-scripts --no-autoloader
+COPY . .
+RUN composer install $COMPOSER_FLAGS \
+    &amp;&amp; bin/console cache:warmup --ansi --env=$SYMFONY_ENV
+</code></pre>
+
+<p>The base image that I extend contains everything that doesn&rsquo;t change often: PHP version, extensions, a non-root user. Then, I start adding stuff on top, using this sequence:</p>
+
+<ul>
+<li>copy the <code>composer.json</code> and <code>composer.lock</code> files;</li>
+<li><code>composer install</code> to populate the vendor, using the <code>--no-scripts --no-autoloader</code> options to skip anything else;</li>
+<li>copy everything else (I use the <code>.dockerignore</code> file to avoid considering garbage files here, <a href="https://docs.docker.com/engine/reference/builder/#dockerignore-file">see docs</a>);</li>
+<li>repeat the <code>composer install</code> step, to dump the autoloader and run all the <code>post-install</code> scripts;</li>
+<li>warm up the Symfony cache, so we ship that with the image too.</li>
+</ul>
+
+<p>In this way, I&rsquo;m literally <strong>caching my vendor folder inside a single Docker image layer</strong>, and changing the Composer files will automatically invalidate that cache; also, copying all the other source files later allows me to not lose that layer when the vendor shouldn&rsquo;t change.</p>
+
+<p>Remember, <strong>that layer with the source code will change every time</strong>, since you&rsquo;ve obviously just committed something new!</p>
+
+<h2 id="the-jobs-definitions">The jobs definitions</h2>
+
+<p>At this point we just need to define the jobs! The <strong>build job</strong> is defined like this:</p>
+
+<pre><code>build-image:
+  stage: Build CI
+  script:
+    - docker-compose pull --ignore-pull-failures php-cache
+    - docker-compose build php
+    - docker tag $CI_IMAGE_COMMIT_TAG $CI_IMAGE_BRANCH_TAG
+    - docker-compose push php php-cache
+</code></pre>
+
+<ul>
+<li><strong>pull</strong> the branch image as <strong>cache</strong> (<code>--ignore-pull-failures</code> avoids failures on the first commit of a branch);</li>
+<li><strong>build</strong> the image with the commit tag;</li>
+<li><strong>re-tag</strong> the freshly built image with the branch tag;</li>
+<li><strong>push</strong> both back into the registry.</li>
+</ul>
+
+<p>Then we can pass onto the <strong>test stage</strong>. If I need multiple services, like for functional tests, I do it like this:</p>
+
+<pre><code>test-coverage:
+  stage: Test
+  coverage: '/^\s*Lines:\s*\d+.\d+\%/'
+  script:
+    - docker-compose pull --parallel php mysql
+    - docker-compose run --rm php vendor/bin/phing ci
+</code></pre>
+
+<ul>
+<li><strong>pull</strong> all the needed images with the <code>--parallel</code> option to speed up;</li>
+<li><strong>run</strong> the needed task; in my case I use <code>phing</code> (a <a href="https://packagist.org/packages/phing/phing">PHP porting of Ant</a>) inside the container to call everything with a single command;</li>
+<li>The <code>coverage</code> options contains a regex that picks up the coverage percentage from PHPUnit&rsquo;s <code>--coverage-text</code> option.</li>
+</ul>
+
+<p>If instead I need to execute just simple tasks, without external services, I can skip the <code>pull</code> command completely:</p>
+
+<pre><code>phpstan:
+  stage: Test
+  script:
+    - docker-compose run --rm --no-deps php phing phpstan_check
+</code></pre>
+
+<p>This is possible because I need just one image which will be pulled implicitly by Docker Compose, so the <code>--parallel</code> option is useless here; I also have to remember to use <code>--no-deps</code> to avoid pulling linked services, if for example my base configuration defines a dependency to other containers (like the database).</p>
+
+<h2 id="the-scary-part-deleting-docker-images">The scary part: deleting Docker images</h2>
+
+<p>Up until now, it was all straightforward and easy; the difficult part comes with the last stage, the <strong>cleanup</strong>.</p>
+
+<p>With the process that I have shown this far, I&rsquo;m building an image for each build, since I&rsquo;m <strong>shipping my code inside the container</strong>; this approach is the <strong>most similar to what happens in production</strong> (that&rsquo;s why I&rsquo;ve chosen it), but it has a big downside: you may waste a lot of space with old images pushed to your Docker registry.</p>
+
+<p>This issue is particularly annoying because there&rsquo;s no automated feature in the GitLab&rsquo;s registry to clean them up, up to the point where there are multiple, long-standing issues still open on their tracker about this problem:</p>
+
+<ul>
+<li><a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/20176">#20176 - Provide a programmatic method to delete images/tags from the registry</a></li>
+<li><a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/21608">#21608 - Container Registry API</a></li>
+<li><a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/25322">#25322 - Create a mechanism to clean up old container image revisions</a></li>
+<li><a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/28970">#28970 - Delete from registry images for merged branches</a></li>
+<li><a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/39490">#39490 - Allow to bulk delete docker images</a></li>
+<li><a href="https://gitlab.com/gitlab-org/gitlab-ce/issues/40096">#40096 - pipeline user $CI_REGISTRY_USER lacks permission to delete its own images</a></li>
+</ul>
+
+<p>Last but not least, <strong>Docker tags are not first class citizens</strong> for the Docker registry API (see <a href="https://github.com/docker/distribution/issues/1859#issuecomment-236013971">this GitHub issue</a> and the <a href="https://github.com/docker/distribution/pull/173">related PR</a>).</p>
+
+<p>What does that mean? Simply put, <strong>a Docker image tag is not a resource</strong> that you can easily delete using the Docker APIs, <strong>it&rsquo;s a simple link</strong>. This means that you delete images, not tags; hence, if your image had multiple tags attached to it, you&rsquo;re <strong>cascade-deleting all related tags</strong> without knowing.</p>
+
+<p>To overcome those issues, I&rsquo;ve tinkered a lot to obtain a clear and easy way to delete my CI image after the build. After many trial &amp; error attempts, I obtained this workflow:</p>
+
+<ul>
+<li><strong>push a dummy image</strong> to override the tag and point it elsewhere</li>
+<li>obtain a <strong>JWT token from the registry</strong> (with proper permissions for deletion)</li>
+<li>obtain the <strong>SHA digest</strong> of the dummy image</li>
+<li><strong>delete</strong> the image (finally!)</li>
+</ul>
+
+<p>The GitLab CI job is defined like this:</p>
+
+<pre><code>delete-ci-image:
+  stage: Cleanup
+  when: always
+  script:
+    - bin/docker-util/dummy-tag.sh $IMAGE
+    - TOKEN=$(bin/docker-util/get-registry-token.sh $IMAGE)
+    - MANIFEST=$(bin/docker-util/get-manifest.sh $IMAGE $TOKEN)
+    - bin/docker-util/delete-image.sh $IMAGE $MANIFEST $TOKEN
+</code></pre>
+
+<p><code>when: always</code> is needed to run the job even if the build fails. The other steps are conveniently stored inside bash scripts, for reusability.</p>
+
+<h3 id="pushing-a-dummy-image">Pushing a dummy image</h3>
+
+<p>The script that pushes the dummy image, <code>dummy-tag.sh</code>, accepts as a single argument the full Docker image name complete with tag:</p>
+
+<pre><code>#!/usr/bin/env bash
+
+DIR='/tmp/docker-dummy'
+mkdir -p $DIR
+
+# generate a file containing a random string
+head /dev/urandom | tr -dc A-Za-z0-9 | head -c 13 ; echo '' &gt; ${DIR}/dummyfile 
+# generate the dummy image with only that one file 
+echo &quot;FROM scratch&quot; &gt; ${DIR}/Dockerfile
+echo &quot;ADD dummyfile .&quot; &gt;&gt; ${DIR}/Dockerfile
+# build and push it
+docker build -t $1 ${DIR}/
+docker push $1
+</code></pre>
+
+<p>Using <code>FROM scratch</code> I&rsquo;m able to create an empty image (<a href="https://docs.docker.com/develop/develop-images/baseimages/">see docs</a>), so the <strong>final result is ~100 bytes</strong>, probably the smallest possible. I just store inside a single file with a randomized string, so the dummy image is different each time and I avoid issues with concurrent builds with concurrent push/delete actions on the registry.</p>
+
+<h3 id="obtaining-a-jwt-token-from-the-registry">Obtaining a JWT token from the registry</h3>
+
+<p>The script that obtains the token needs to know <strong>on which image</strong> we have to operate, because the permission are granted very specifically on that. Also, <strong>you will need to have a <a href="https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html">GitLab Personal Access Token</a></strong> available in an environment variable, because the normal token will not have enough permission to do what we need (it would be privilege escalation!):</p>
+
+<pre><code>#!/usr/bin/env bash
+
+splitImageName $1
+
+curl https://gitlab.facile.it/jwt/auth \
+    --get \
+    --silent --show-error \
+    -d client_id=docker \
+    -d offline_token=true \
+    -d service=container_registry \
+    -d &quot;scope=repository:$IMAGE:pull,*&quot; \
+    --fail \
+    --user alai:$PERSONAL_ACCESS_TOKEN \
+    | sed -r &quot;s/(\{\&quot;token\&quot;:\&quot;|\&quot;\})//g&quot;
+</code></pre>
+
+<p>The script, like before, requires as a single argument the full image name; the <code>splitImageName</code> function (omitted) just splits it and exports the result in 3 separated variables: <code>$REGISTRY</code>, <code>$IMAGE</code> and <code>$TAG</code>; we will need just <code>$IMAGE</code> for now.</p>
+
+<p>So basically we issue <strong>a GET request</strong> to a GitLab API endpoint that looks like this:</p>
+
+<pre><code>https://gitlab.facile.it/jwt/auth?client_id=docker&amp;offline_token=true&amp;service=container_registry&amp;scope=repository:facile/my-project/php-ci:pull,*
+</code></pre>
+
+<p>The last part, <code>pull,*</code> is really important: those are the permission that we are requiring, and the <code>*</code> is what will allow us to delete the image. Finally, the response will be in JSON, with a single <code>token</code> property, and <code>sed</code> will take care of stripping out all the JSON from the output.</p>
+
+<h3 id="getting-the-image-manifest">Getting the image manifest</h3>
+
+<p>Now that we have the authorization part in place, we can start using the <a href="https://docs.docker.com/registry/spec/api/#detail">Docker registry API</a>, which has a resource called <code>manifest</code> that describes an image. The <code>get-manifest.sh</code> script will require 2 arguments, the full image name (again) and the JWT token (that we just obtained):</p>
+
+<pre><code>#!/usr/bin/env bash
+
+splitImageName $1
+
+curl https://$REGISTRY/v2/$IMAGE/manifests/$TAG \
+    --head \
+    --fail \
+    --silent --show-error \
+    -H &quot;accept: application/vnd.docker.distribution.manifest.v2+json&quot; \
+    -H &quot;authorization: Bearer $REGISTRY_TOKEN&quot; \
+    | grep -i &quot;Docker-Content-Digest&quot; \
+    | grep -oi &quot;sha256:\w\+&quot;
+
+</code></pre>
+
+<p>This time we are using all the 3 variables from the <code>splitImageName</code> function, and we are issuing <strong>a HEAD request</strong>, because what we need is <strong>a header of the response</strong>: <code>Docker-Content-Digest</code>. This header contains the <strong>SHA digest of the manifest</strong>, that we will use to reference what we want to delete in the next (and last) step. I then used <code>grep</code> twice: first to select the line of the output containing the header, and then to strip everything out except the digest.</p>
+
+<p>The API endpoint looks like this:</p>
+
+<pre><code>https://gitlab.facile.it/v2/facile/my-project/php-ci/manifests/my-tag-that-i-want-to-delete
+</code></pre>
+
+<h3 id="deleting-the-image">Deleting the image</h3>
+
+<p>Now that we have everything that we need, we can finally use the <code>delete-image.sh</code> script; it requires three arguments:</p>
+
+<ul>
+<li>the full image name (again)</li>
+<li>the SHA digest of the manifest</li>
+<li>the token (again)</li>
+</ul>
+
+<pre><code>#!/usr/bin/env bash
+
+splitImageName $1
+echo &quot;Deleting image...&quot;
+
+curl &quot;https://$REGISTRY/v2/$IMAGE/manifests/$2&quot; \
+    -X DELETE \
+    --fail \
+    --silent --show-error \
+    -H &quot;accept: application/vnd.docker.distribution.manifest.v2+json&quot; \
+    -H &quot;authorization: Bearer $REGISTRY_TOKEN&quot;
+</code></pre>
+
+<p>We are issuing <strong>a DELETE request</strong> to the manifest endpoint, using the <strong>SHA digest as an identifier</strong> for the specific resource that we want to delete; this last API endpoint looks like the previous one:</p>
+
+<pre><code>https://gitlab.facile.it/v2/facile/my-project/php-ci/manifests/9170f905754579832799afb8e65c89441c794596eb1c4fe2ac88e4a8ff1dfec0
+</code></pre>
+
+<h1 id="doing-continuous-deployment">Doing continuous deployment</h1>
+
+<p>Now that we have our CI pipeline in place, we can start doing <strong>continuous deployment</strong>! It&rsquo;s just a matter of adding a few new jobs to the pipeline, and some stages too (new one in <strong>bold</strong>):</p>
+
+<ul>
+<li>Build CI</li>
+<li>Test</li>
+<li><strong>Build prod</strong></li>
+<li><strong>Deploy</strong></li>
+<li>Cleanup (with a <strong>new job</strong>)</li>
+</ul>
+
+<h2 id="building-images-for-the-deployment">Building images for the deployment</h2>
+
+<p>The new <strong>build prod</strong> stage will contain job(s) to build the container that will be shipped in production. I applied the same tricks as before, so I still write <strong>cache-friendly Dockerfiles</strong>, and I <strong>double-tag the images</strong> (with <code>prod</code> and <code>prod-$CI_COMMIT_SHA</code>) to use the previous one as cache, and to have a specific tag to use later, in the deploy job.</p>
+
+<p>So, my build job does this simple sequence:</p>
+
+<ul>
+<li>pull with <code>--ignore-pull-failures</code> the previous image, as before;</li>
+<li>build the prod image with the specific <code>prod-$CI_COMMIT_SHA</code> commit tag;</li>
+<li>push it back to the registry.</li>
+</ul>
+
+<pre><code>build-prod-images:
+  stage: Build prod
+  cache:
+    paths:
+    - node_modules/
+  script:
+    - docker-compose pull --ignore-pull-failures fpm-prod
+    - docker-compose build fpm-prod
+    - docker-compose push fpm-prod
+  only: &amp;deployable-branches
+    - master
+    - an-other-deployable-branch
+</code></pre>
+
+<p>Note that <strong>I&rsquo;m not pushing the generic <code>prod</code> tag for now</strong>, I&rsquo;m waiting to have a successful deployment first. This job can also be duplicated if you need to build multiple images with each deployment.</p>
+
+<p>The other notable part of this job definition is the <code>only</code> directive. It&rsquo;s obviously needed to make the job <a href="https://docs.gitlab.com/ce/ci/yaml/README.html#only-and-except-simplified">run only on certain branches</a>, but the interesting part is the appended <code>&amp;deployable-branches</code> string: it&rsquo;s a <strong>YAML anchor</strong>. I&rsquo;m basically bookmarking the array values for the <code>only</code> directive, so I can reuse them in the next CD jobs.</p>
+
+<h2 id="the-deploy">The deploy</h2>
+
+<p>Finally, we can deploy our application to the Kubernetes cluster!</p>
+
+<pre><code>deploy:
+  stage: Deploy
+  environment:
+    name: prod
+    url: https://my-project.facile.it/
+  script:
+    - kubectl set image deployment/my-project php-container=&quot;${PROD_IMAGE_PHP_COMMIT_TAG}&quot;
+    - kubectl rollout status deployment/my-project
+  only: *deployable-branches
+</code></pre>
+
+<p>Using the <strong>YAML anchor reference</strong> <code>*deployable-branches</code> (yes, they use a pointer-like syntax) I reuse the previous values, so if I decide to deploy a new, particular branch, I don&rsquo;t have to specify it in every deploy-related job, and risk forgetting one (yes, it happened to me).</p>
+
+<p>Here we are <strong>finally using <code>kubectl</code> to do the deploy</strong>!</p>
+
+<blockquote>
+<p>To authenticate into the cluster with <code>kubectl</code>, you normally have to create a YAML config in your home directory; luckily, in the GitLab CI you can take a shortcut enabling the <strong>Kubernetes integration</strong> <a href="https://docs.gitlab.com/ee/user/project/integrations/kubernetes.html">(see docs)</a>, so GitLab will login into the cluster using a <code>serviceaccount</code>, which is basically a <a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/">login for non-humans</a>. The integration will leverage environment variables to feed the configuration to <code>kubectl</code> automatically, so you just have to issue commands with it, it will just work.</p>
+</blockquote>
+
+<p>The deployment with <code>kubectl</code> is pretty straightforward: using the <code>kubectl set image</code> command we set a new image in our <a href="https://kubernetes.io/docs/concepts/workloads/controllers/deployment/">deployment configuration</a>; <strong>the cluster will detect that we specified a different image</strong> and it will automatically start a rolling deployment to substitute the available containers with the new, requested tag.</p>
+
+<blockquote>
+<p>Note that <strong>using a commit-specific tag is critical</strong> here, because otherwise the deployment will not be triggered; if you want to trigger a deploy without using specific tags, you will have to append the SHA digests of the image, with <code>image:tag@${SHA}</code>; this will obviously mean that you will have to retrieve it, which can be less practical.</p>
+</blockquote>
+
+<p>The next command, <code>kubectl rollout status</code>, watches the advancement of the deploy and exits with a status code that reflect the result of the rollout, so it&rsquo;s perfect to be called in a build:</p>
+
+<pre><code>$ kubectl rollout status deployment/my-application
+Waiting for rollout to finish: 1 old replicas are pending termination...
+Waiting for rollout to finish: 1 old replicas are pending termination...
+deployment &quot;my-application&quot; successfully rolled out
+</code></pre>
+
+<p>The <code>environment</code> option enable the usage of the <a href="https://docs.gitlab.com/ce/ci/environments.html">GitLab Environments</a>, so my deploys are tracked.</p>
+
+<h2 id="the-cleanup-after-the-deploy">The cleanup after the deploy</h2>
+
+<p>As for the CI build, we will have to clean up older images after successfully deploying the application:</p>
+
+<pre><code>delete-old-prod-image:
+  stage: Cleanup
+  script:
+    - bin/docker-util/delete-old-prod-image.sh $PROD_IMAGE_PHP_GENERIC_TAG $PROD_IMAGE_PHP_COMMIT_TAG
+  only: *deployable-branches
+</code></pre>
+
+<p>I use the <code>*deployable-branches</code> here too, and a bash script to wrap everything in one file; the script will require two arguments (the generic and the commit-specific tag) and will execute this sequence of operations:</p>
+
+<ul>
+<li>retrieve a JWT token for the registry, as before;</li>
+<li>retrieve the SHA digest of the previous image, using the generic tag;</li>
+<li>pull the specific image;</li>
+<li>re-tag and push it with the generic tag;</li>
+<li>delete the previous image.</li>
+</ul>
+
+<pre><code>#!/usr/bin/env bash
+
+OLD_IMAGE=$1
+NEW_IMAGE=$2
+
+echo &quot;Retrieving manifests of previous image using generic tag...&quot;
+TOKEN=$(bin/docker-util/get-registry-token.sh ${NEW_IMAGE})
+MANIFEST=$(bin/docker-util/get-manifest.sh ${OLD_IMAGE} ${TOKEN})
+
+if [ &quot;$MANIFEST&quot; = &quot;$(bin/docker-util/get-manifest.sh ${NEW_IMAGE} ${TOKEN})&quot; ]
+  then
+    echo &quot;The new image is identical to the previous one, no deletion necessary&quot;
+    exit 0
+fi
+
+docker pull ${NEW_IMAGE}
+docker tag ${NEW_IMAGE} ${OLD_IMAGE}
+docker push ${OLD_IMAGE}
+
+echo &quot;Deleting the previous image, using the previously fetched manifest...&quot;
+bin/docker-util/delete-image.sh ${OLD_IMAGE} ${MANIFEST} ${TOKEN}
+</code></pre>
+
+<p>The script executes <strong>a very important check</strong> before proceeding to re-tag and delete: it compares the SHA digest of the two images. This is needed because <strong>it&rsquo;s possible to produce two identical images</strong> in two different builds, so we could be in the situation where the two tags point to the same image, and so nothing should be done. If the next build will produce a different image, the fact that the multiple previous tags point to the same image will mean that the cascade deletion will take care of all with a single action.</p>
+
+<p>The last thing that I could add to this deploy pipeline is the cleanup in case the deployment fails; it would be identical to the <code>delete-ci-image</code>, with the only exceptions that I would use the <code>prod</code> commit-specific tags and I would set <code>when: failure</code> option. Since <strong>in GitLab CI each single job is retriable</strong>, I can retry the deploy without executing the whole pipeline from the start, so I decided to not implement it for now.</p>
+
+<h1 id="conclusions">Conclusions</h1>
+
+<p>I hope that this (long) blog post will help people with this list of tips and tricks, and help save some time; many of the things that I wrote about here are not properly documented, so I learned them by trial and error and exercising some google-fu. I just hope that the GitLab registry will soon implement some easier and automatic way to do the cleanup, so all this hassle will be reduced to just a couple of YAML configuration lines.</p>
+
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&text=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker&via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&title=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&title=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&title=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by &body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    <footer>
+        <ul class="stats">
+    
+
+    
+        
+            <li>
+                
+                    <i class="fa fa-folder-open-o">&nbsp;</i>
+                
+        
+
+                
+                    Categories
+                
+            </li>
+    
+
+    
+        <li><a href="/categories/english/">English</a></li>
+    
+        <li><a href="/categories/continuous-integration/">Continuous integration</a></li>
+    
+        <li><a href="/categories/continuous-deployment/">Continuous deployment</a></li>
+    
+        <li><a href="/categories/docker/">Docker</a></li>
+    
+        <li><a href="/categories/gitlab/">GitLab</a></li>
+    
+        <li><a href="/categories/kubernetes/">Kubernetes</a></li>
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/"
+                class="button big previous">Is it all PHP OPCache&#39;s fault?</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            
+
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = "https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/";
+        this.page.identifier = "https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/";
+        this.page.title = "Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker";
+    };
+
+    (function () {
+        var d = document, s = d.createElement('script');
+
+        s.src = '//facile-it.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <a href="/" style="border-bottom: none"><img src="/images/logo_engineering.png" width="100%" alt="Facile.it Engineering" /></a>
+                
+            
+            
+                <header>
+                    <h2></h2>
+                    <p>News, repos, tips & trends from the Facile.it Engineering team!</p>
+                </header>
+            
+            
+                <ul class="icons">
+                    
+<li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+<li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+<li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+<li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
+            
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
+                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
+                                    <h3><a href="https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/">Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2018-02-06'>
+                                        6 February 2018
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
+                                            <img src="https://www.gravatar.com/avatar/84febdc35f5438ae1d2500482e2228fa" alt="Salvatore Cordiano avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
+                                    <h3><a href="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/">Is it all PHP OPCache&#39;s fault?</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2017-10-04'>
+                                        4 October 2017
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                    
+                                        
+                                            <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
+                                        
+                                    
+
+                                    <h3><a href="https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/">How to gradually upgrade toward PHPUnit 6 with namespaced classes</a></h3>
+
+                                    
+                                        
+                                    
+                                    <time class="published" datetime='2017-09-12'>
+                                        12 September 2017
+                                    </time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                /blog/
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Top categories</a></h3>
+                </header>
+
+                
+
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/italiano/">Italiano</a>
+                                <span style="float:right;">34</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/english/">English</a>
+                                <span style="float:right;">28</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/php/">PHP</a>
+                                <span style="float:right;">19</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/conferences/">Conferences</a>
+                                <span style="float:right;">10</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/functional-programming/">Functional programming</a>
+                                <span style="float:right;">10</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/swift/">Swift</a>
+                                <span style="float:right;">8</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/docker/">Docker</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/open-source/">Open Source</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/software-testing/">Software testing</a>
+                                <span style="float:right;">5</span>
+                            </header>
+                        </article>
+                    </li>
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                    
+                
+                <li>
+                    <ul class="actions">
+                        <li><a href="/categories/"
+                            class="button">View more categories</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    
+
+    
+        
+
+    
+        <section id="footer">
+            
+                <ul class="icons">
+                    
+<li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+<li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+<li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+<li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+<li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </ul>
+            
+
+            <p class="copyright">
+                &copy; <a href="http://www.facile.it/" target="_blank">Facile.it</a> Engineering, leggi <a href="/ita/chi-siamo/" target="_blank">chi siamo</a><br>
+                <a href="/ita/disclaimer/" rel="nofollow">Disclaimer</a><br>
+                Design <a href="http://html5up.net" rel="nofollow" target="_blank">HTML5 UP</a><br>
+                Ported by <a href="//github.com/jpescador" rel="nofollow" target="_blank">Julio Pescador</a><br>
+                Modified by <a href="//github.com/Jean85" rel="nofollow" target="_blank">Alessandro Lai</a><br>
+                Powered by <a href="//gohugo.io" rel="nofollow" target="_blank">Hugo</a>
+            </p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+        
+
+        
+            <script type="text/javascript" src="/js/jquery.min.js"></script>
+            <script type="text/javascript" src="/js/skel.min.js"></script>
+            <script type="text/javascript" src="/js/util.js"></script>
+            <script type="text/javascript" src="/js/main.js"></script>
+            <script type="text/javascript" src="/js/backToTop.js"></script>
+            <script type="text/javascript" src="/js/highlight.pack.js"></script>
+            <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
+        
+            
+            <script type="text/javascript">
+                hljs.initHighlightingOnLoad();
+                $(function() {
+                    $('.lazy').Lazy();
+                });
+            </script>
+            
+    </body>
+</html>
+

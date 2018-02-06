@@ -4,7 +4,7 @@ date: "2018-01-31"
 draft: true
 share: true
 categories: [English, Continuous integration, Continuous deployment, Docker, GitLab, Kubernetes]
-title: "A continuous deployment pipeline from GitLab CI to Kubernetes"
+title: "Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker"
 type: "post"
 languageCode: "en-EN"
 toc: true
@@ -28,14 +28,14 @@ This is how my basic pipeline looks like when it's building a branch while I'm w
 
 Three simple stages:
 
-1. **Build CI**: a CI image is build with the code baked in;
+1. **Build CI**: a CI image is built with the code baked in;
 2. **Test**: multiple jobs to do various verification tasks in parallel (tests, static analysis, code style...);
 3. **Cleanup**: deletion of the CI image built in the first step, to avoid bloating the Docker registry.
 
 Let's dive into the configuration details! For now, in the code examples, I will omit any piece that is needed for the deployment part; we will see that later.
 
 ## The `.gitlab-ci.yml` configuration file
-The [GitLab CI](https://docs.gitlab.com/ee/ci/) is configurable just by adding a `.gitlab-ci.yml` file to the root of your project. The configuration for this first job looks like this:
+The [GitLab CI](https://docs.gitlab.com/ee/ci/) is configurable just by adding a `.gitlab-ci.yml` file to the root of your project. The configuration for this first part looks like this:
 
 ```
 image: gitlab.facile.it/facile/my-project/docker-compose:1.2
@@ -53,7 +53,7 @@ variables:
 
 The `services` section allows me to declare a Docker container that will be spun up by GitLab CI each time and that will host the Docker daemon that I will use. Here resides **the main difference** between David's and my approach: in his case, he is using the host's machine Docker daemon, in my case I'm using an isolated daemon, **a real Docker-in-Docker approach**.
 
-The combination of the `alias: docker` setting and the `DOCKER_HOST` environment variable points our job to the DinD daemon socket; the `--registry-mirror` option let the daemon use our internal registry mirror to speed up pulling official images; last but not least, the `DOCKER_DRIVER` uses the `overlay2` filesystem for the Docker build, which is **faster and less space consuming** (I suggest you to use that on your local Linux machines too!).
+The combination of the `alias: docker` setting and the `DOCKER_HOST` environment variable points our job to the D-in-D daemon socket; the `--registry-mirror` option let the daemon use our internal registry mirror to speed up pulling official images; last but not least, the `DOCKER_DRIVER` uses the `overlay2` filesystem for the Docker build, which is **faster and less space consuming** (I suggest you to use that on your local Linux machines too!).
 
 > David's approach may be a bit **faster**, because the daemon is always the same and retains some build and image cache between jobs and builds, but it requires to run **privileged jobs**, and it's not isolated, so it may incur in some issues or slowdowns if **multiple builds** run at the same time, messing up image tags.
 > 
@@ -164,7 +164,9 @@ The base image that I extend contains everything that doesn't change often: PHP 
  * repeat the `composer install` step, to dump the autoloader and run all the `post-install` scripts;
  * warm up the Symfony cache, so we ship that with the image too.
 
-In this way, I'm literally **caching my vendor folder inside a single Docker image layer**, and changing the Composer files will automatically invalidate that cache; also, copying all the other source files later allows me to not lose that layer when the vendor shouldn't change. Remember, that layer with the source code will change every time, since you've obviously just committed something new!
+In this way, I'm literally **caching my vendor folder inside a single Docker image layer**, and changing the Composer files will automatically invalidate that cache; also, copying all the other source files later allows me to not lose that layer when the vendor shouldn't change. 
+
+Remember, **that layer with the source code will change every time**, since you've obviously just committed something new!
 
 ## The jobs definitions
 At this point we just need to define the jobs! The **build job** is defined like this:
@@ -284,7 +286,7 @@ curl https://gitlab.facile.it/jwt/auth \
     --user alai:$PERSONAL_ACCESS_TOKEN \
     | sed -r "s/(\{\"token\":\"|\"\})//g"
 ```
-The script, like before, requires as a single argument the full image name; the `splitImageName` function (omitted) just splits it and exports the result in 3 separate variable: `$REGISTRY`, `$IMAGE` and `$TAG`; we will need just `$IMAGE` for now.
+The script, like before, requires as a single argument the full image name; the `splitImageName` function (omitted) just splits it and exports the result in 3 separated variables: `$REGISTRY`, `$IMAGE` and `$TAG`; we will need just `$IMAGE` for now.
 
 So basically we issue **a GET request** to a GitLab API endpoint that looks like this:
 
@@ -295,7 +297,7 @@ https://gitlab.facile.it/jwt/auth?client_id=docker&offline_token=true&service=co
 The last part, `pull,*` is really important: those are the permission that we are requiring, and the `*` is what will allow us to delete the image. Finally, the response will be in JSON, with a single `token` property, and `sed` will take care of stripping out all the JSON from the output.
 
 ### Getting the image manifest
-Now that we have the authorization part in place, we can start using the [Docker registry API](https://docs.docker.com/registry/spec/api/#detail), which has a resource called `manifest` that describes an image. The `get-manifest.sh` script will require 2 arguments, the full image name (again) and the JTW token (that we just obtained):
+Now that we have the authorization part in place, we can start using the [Docker registry API](https://docs.docker.com/registry/spec/api/#detail), which has a resource called `manifest` that describes an image. The `get-manifest.sh` script will require 2 arguments, the full image name (again) and the JWT token (that we just obtained):
 
 ```
 #!/usr/bin/env bash
@@ -466,7 +468,7 @@ bin/docker-util/delete-image.sh ${OLD_IMAGE} ${MANIFEST} ${TOKEN}
 
 The script executes **a very important check** before proceeding to re-tag and delete: it compares the SHA digest of the two images. This is needed because **it's possible to produce two identical images** in two different builds, so we could be in the situation where the two tags point to the same image, and so nothing should be done. If the next build will produce a different image, the fact that the multiple previous tags point to the same image will mean that the cascade deletion will take care of all with a single action.
 
-The last thing that I could add to this deploy pipeline is the cleanup in case the deployment fails; it would be identical to the `delete-ci-image`, with the only exceptions that I would use the `prod` commit-specific tags, and I would set `when: failure` option. Since **in GitLab CI each single job is retriable**, I can retry the deploy without executing the whole pipeline from the start, so I decided to not implement it for now.
+The last thing that I could add to this deploy pipeline is the cleanup in case the deployment fails; it would be identical to the `delete-ci-image`, with the only exceptions that I would use the `prod` commit-specific tags and I would set `when: failure` option. Since **in GitLab CI each single job is retriable**, I can retry the deploy without executing the whole pipeline from the start, so I decided to not implement it for now.
 
 # Conclusions
 I hope that this (long) blog post will help people with this list of tips and tricks, and help save some time; many of the things that I wrote about here are not properly documented, so I learned them by trial and error and exercising some google-fu. I just hope that the GitLab registry will soon implement some easier and automatic way to do the cleanup, so all this hassle will be reduced to just a couple of YAML configuration lines.

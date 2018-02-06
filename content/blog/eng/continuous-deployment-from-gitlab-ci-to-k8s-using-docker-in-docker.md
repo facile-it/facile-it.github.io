@@ -55,9 +55,12 @@ The `services` section allows me to declare a Docker container that will be spun
 
 The combination of the `alias: docker` setting and the `DOCKER_HOST` environment variable points our job to the D-in-D daemon socket; the `--registry-mirror` option let the daemon use our internal registry mirror to speed up pulling official images; last but not least, the `DOCKER_DRIVER` uses the `overlay2` filesystem for the Docker build, which is **faster and less space consuming** (I suggest you to use that on your local Linux machines too!).
 
-> David's approach may be a bit **faster**, because the daemon is always the same and retains some build and image cache between jobs and builds, but it requires to run **privileged jobs**, and it's not isolated, so it may incur in some issues or slowdowns if **multiple builds** run at the same time, messing up image tags.
+> David's approach may be a bit **faster**, because the daemon is always the same and retains some build and image cache between jobs and builds, but ~~it requires to run **privileged jobs**, and~~ it's not isolated, so it may incur in some issues or slowdowns if **multiple builds** run at the same time, messing up image tags.
 > 
 > My approach is a bit more **robust**, but it's overall **slower**, because each job is **totally isolated** (which is good), but on the downside it has no memory of previous builds, so no cache is available: we will have to **pull from the registry each time**.
+<br/>
+<br/>
+> **2018-02-07 ERRATA**: [Stefano Torresi](https://twitter.com/storresi) (privately) and [/u/veloxlector](https://www.reddit.com/r/kubernetes/comments/7vomn5/continuous_deployment_from_gitlab_ci_to/dttzc28/) (on Reddit) made me realize that my approach still requires a privileged runner, so that doesn't change with my approach; the privileged execution is [always required when doing Docker-in-Docker](https://github.com/docker-library/docs/blob/master/docker/README.md#start-a-daemon-instance). This reduces my security claims, but my main aim was isolation.
 
 The `GIT_DEPTH` option makes the project clone process in each job a bit faster, pulling only the current commit, not the whole Git history.
 

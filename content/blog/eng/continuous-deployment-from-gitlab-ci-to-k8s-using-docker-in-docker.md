@@ -1,7 +1,7 @@
 ---
 authors: ["jean"]
-date: "2018-01-31"
-draft: true
+date: "2018-02-06"
+draft: false
 share: true
 categories: [English, Continuous integration, Continuous deployment, Docker, GitLab, Kubernetes]
 title: "Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker"

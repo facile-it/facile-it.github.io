@@ -23,14 +23,15 @@
 			$sidebar = $('#sidebar'),
 			$main = $('#main');
 
+		// TODO: Fix this, or implement lazy load.
 		// Disable animations/transitions until the page has loaded.
-			$body.addClass('is-loading');
+		//	$body.addClass('is-loading');
 
-			$window.on('load', function() {
-				window.setTimeout(function() {
-					$body.removeClass('is-loading');
-				}, 100);
-			});
+		//	$window.on('load', function() {
+		//		window.setTimeout(function() {
+		//			$body.removeClass('is-loading');
+		//		}, 100);
+		//	});
 
 		// Fix: Placeholder polyfill.
 			$('form').placeholder();
@@ -131,10 +132,10 @@
 
 			// Move to main on <=large, back to sidebar on >large.
 				skel
-					.on('+large', function() {
+					.on('+medium', function() {
 						$intro.prependTo($main);
 					})
-					.on('-large', function() {
+					.on('-medium', function() {
 						$intro.prependTo($sidebar);
 					});
 

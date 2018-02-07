@@ -51,7 +51,7 @@ params:
   highlightjsLang:
     - "dockerfile"
     - "kotlin"
-    - "objectiveC"
+    - "objectivec"
     - "python"
     - "swift"
     - "yaml"

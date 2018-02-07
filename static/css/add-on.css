@@ -1,0 +1,148 @@
+#sidebar ul.icons li > a {
+    font-size: 1.8em;
+}
+
+.post > footer .stats {
+    margin-left: 24px;
+}
+
+/*
+    this change was not applicable
+    @media screen and (max-width: 520px) {
+*/
+
+@media screen and (min-width: 981px) {
+    #header .main .menu {
+        display: none;
+    }
+}
+
+/** VARIOUS FIXES **/
+
+p + ol,
+p + ul {
+    margin-top: -1.2em;
+}
+
+.post img {
+    max-width: 100%;
+}
+
+div.gist tr {
+    border: none;
+}
+
+pre, .gist {
+    display: table;
+    table-layout: fixed;
+    width: 100%
+}
+
+.post > p a,
+.post > ul a,
+.post > ol a,
+#content p a,
+#content ul li a,
+#TableOfContents a {
+    border-style: dotted;
+}
+
+.post p a:hover,
+#TableOfContents a:hover {
+    border-bottom-color: rgba(46, 186, 174, 0.25)
+}
+
+.post > header .meta {
+    padding: 1.75em 3em 1.75em 3em;
+    top: 0;
+}
+
+#main h1,
+#main h2,
+#main h3,
+#main h4,
+#main h5,
+#main h6,
+#sidebar article h1,
+#sidebar article h2,
+#sidebar article h3,
+#sidebar article h4,
+#sidebar article h5,
+#sidebar article h6
+{
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+ul.posts h1,
+ul.posts h2,
+ul.posts h3,
+ul.posts h4,
+ul.posts h5,
+ul.posts h6 {
+    text-transform: capitalize;
+}
+
+article h1 {
+    font-size: 1.4em;
+}
+
+article h2 {
+    font-size: 1.3em;
+}
+
+article h3 {
+    font-size: 1.2em;
+}
+
+article h4 {
+    font-size: 1.1em;
+}
+
+article h5 {
+    font-size: 1.0em;
+}
+
+article h6 {
+    font-size: 1.0em;
+}
+
+#sidebar ul > header h3 {
+    text-transform: uppercase;
+}
+
+#sidebar article h3 a {
+    font-size: larger;
+}
+
+@media screen and (max-width: 640px) {
+    .post > header .meta .author .name {
+        display: block;
+        margin: 0 2.5em 0 1.5em;
+    }
+}
+
+#TableOfContents {
+    font-size: smaller;
+}
+
+#TableOfContents ul {
+    padding: 0 0 0 1em;
+    list-style: square;
+}
+
+#TableOfContents > ul {
+    margin-left: 1em;
+}
+
+#TableOfContents ul li ul {
+    margin: 0;
+}
+
+#sidebar #intro a {
+    border: none;
+}
+
+.mini-post > header {
+    padding-right: 1.25em;
+}

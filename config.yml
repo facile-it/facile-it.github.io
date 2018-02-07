@@ -21,10 +21,14 @@ params:
   # Social media buttons that appear on the sidebar
   socialAppearAtTop   : true
   socialAppearAtBottom: true
+  # Sets RSS icons to appear on the sidebar with the social media buttons
+  rssAppearAtTop: true
+  rssAppearAtBottom: true
   # set this to the section name if section is not post
   viewMorePostLink    : "/blog/"
 
 # Optional Params
+  showSidebarCategories: true
   categoriesByCount   : false
   authorsByCount      : true
   includeReadingTime  : true
@@ -40,12 +44,25 @@ params:
   #minifiedFilesCSS    : ["/css/main.min.css"]
   #minifiedFilesJS     : ["/js/main.min.js"]
 
+  # options for highlight.js (version, additional languages, and theme)
+  disable_highlight: false # set to true to disable Highlight
+  highlightjsVersion: "9.12.0"
+  highlightjsCDN: "//cdn.bootcss.com"
+  highlightjsLang:
+    - "dockerfile"
+    - "kotlin"
+    - "objectiveC"
+    - "python"
+    - "swift"
+    - "yaml"
+  highlightjsTheme: "monokai-sublime"
+
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
   intro:
     #header   : "Facile Engineering"
     paragraph: "News, repos, tips & trends from the Facile.it Engineering team!"
-    #about    : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
+    about    : 'Facile.it relies on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. This blog allows our developers to share tips and direct experiences with new technologies.'
     pic:
       src      : "/images/logo_engineering.png"
       # modify your picture in the shape of a circle or
@@ -90,7 +107,7 @@ menu:
 # The social media icons will appear on the sidebar
 social:
   github:   "facile-it"
-  linkedincompany: "facile-it"
+  linkedin_company: "facile-it"
   facebook: "facile.it"
   twitter:  "FacileIt_Engr"
   youtube:  "user/Facileit"

@@ -41,7 +41,7 @@ pre, .gist {
 .post > p a,
 .post > ul a,
 .post > ol a,
-#content p a, 
+#content p a,
 #content ul li a,
 #TableOfContents a {
     border-style: dotted;

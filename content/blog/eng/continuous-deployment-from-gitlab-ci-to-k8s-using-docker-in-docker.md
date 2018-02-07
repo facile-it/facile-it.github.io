@@ -37,7 +37,7 @@ Let's dive into the configuration details! For now, in the code examples, I will
 ## The `.gitlab-ci.yml` configuration file
 The [GitLab CI](https://docs.gitlab.com/ee/ci/) is configurable just by adding a `.gitlab-ci.yml` file to the root of your project. The configuration for this first part looks like this:
 
-```
+```yaml
 image: gitlab.facile.it/facile/my-project/docker-compose:1.2
 
 services:
@@ -66,7 +66,7 @@ The `GIT_DEPTH` option makes the project clone process in each job a bit faster,
 
 The `image` option allows you to require a different base image in which to execute each job of the pipeline. In my case the image is pretty simple, because it's created from the base Docker image, and has in addition Docker Compose and `kubectl`, the [command line interface for Kubernetes](https://kubernetes.io/docs/reference/kubectl/overview/). My Dockerfile looks like this:
 
-```
+```dockerfile
 FROM docker:17.12.0-ce
 
 ARG DOCKER_COMPOSE_VERSION=1.18.0
@@ -81,7 +81,7 @@ RUN wget https://storage.googleapis.com/kubernetes-release/release/v1.9.1/bin/li
 
 ## Pipeline setup and Docker Compose configuration
 The next part of my configuration looks like this:
-```
+```yaml
 stages:
   - Build
   - Test
@@ -103,7 +103,7 @@ The second instruction depends on **how I organized my Docker Compose files** to
  * `docker-compose.yml.gitlab` is an override file that I use **only during the build**, so that's why we need that `cp` instruction.
 
 I will show you just the last file, which looks like this:
-```
+```yaml
 version: '3.2'
 
 services:
@@ -124,7 +124,7 @@ It's also very important to use `version: '3.2'`, because it's needed to use the
 
 As you can see I'm using **environment variables** to define the image names. I do that in the GitLab CI configuration so I can **define them only once** and use them everywhere:
 
-```
+```yaml
 variables:
     # ...
     CI_IMAGE_NAME: facile/my-project/php-ci
@@ -142,7 +142,7 @@ Just remember to use `$CI_COMMIT_REF_SLUG` for the second tag, because it has sl
 ### A small trick: cache-friendly Docker images
 To make this process work smoothly, you should write your **Dockerfile in a cache-friendly manner**. To obtain that, we must leverage the layer-based structure of the images, and **put the stuff that changes more often in the latter layers**, and vice versa the stuff that never changes up in the first ones. In this specific case we're talking about a PHP/Symfony application and, starting from some advice that I got from my colleague [Thomas](https://twitter.com/thomasvargiu), I wrote down this Dockerfile:
 
-```
+```dockerfile
 FROM gitlab.facile.it/facile/my-project/php-base
 
 MAINTAINER Alessandro Lai <alessandro.lai@facile.it>
@@ -174,7 +174,7 @@ Remember, **that layer with the source code will change every time**, since you'
 ## The jobs definitions
 At this point we just need to define the jobs! The **build job** is defined like this:
 
-```
+```yaml
 build-image:
   stage: Build CI
   script:
@@ -189,7 +189,7 @@ build-image:
  * **push** both back into the registry.
 
 Then we can pass onto the **test stage**. If I need multiple services, like for functional tests, I do it like this:
-```
+```yaml
 test-coverage:
   stage: Test
   coverage: '/^\s*Lines:\s*\d+.\d+\%/'
@@ -202,7 +202,7 @@ test-coverage:
  * The `coverage` options contains a regex that picks up the coverage percentage from PHPUnit's `--coverage-text` option.
 
 If instead I need to execute just simple tasks, without external services, I can skip the `pull` command completely:
-```
+```yaml
 phpstan:
   stage: Test
   script:
@@ -236,7 +236,7 @@ To overcome those issues, I've tinkered a lot to obtain a clear and easy way to 
  * **delete** the image (finally!)
  
 The GitLab CI job is defined like this:
-```
+```yaml
 delete-ci-image:
   stage: Cleanup
   when: always
@@ -252,7 +252,7 @@ delete-ci-image:
 ### Pushing a dummy image
 The script that pushes the dummy image, `dummy-tag.sh`, accepts as a single argument the full Docker image name complete with tag:
 
-```
+```bash
 #!/usr/bin/env bash
 
 DIR='/tmp/docker-dummy'
@@ -273,7 +273,7 @@ Using `FROM scratch` I'm able to create an empty image ([see docs](https://docs.
 ### Obtaining a JWT token from the registry
 The script that obtains the token needs to know **on which image** we have to operate, because the permission are granted very specifically on that. Also, **you will need to have a [GitLab Personal Access Token](https://docs.gitlab.com/ce/user/profile/personal_access_tokens.html)** available in an environment variable, because the normal token will not have enough permission to do what we need (it would be privilege escalation!):
 
-```
+```bash
 #!/usr/bin/env bash
 
 splitImageName $1
@@ -302,7 +302,7 @@ The last part, `pull,*` is really important: those are the permission that we ar
 ### Getting the image manifest
 Now that we have the authorization part in place, we can start using the [Docker registry API](https://docs.docker.com/registry/spec/api/#detail), which has a resource called `manifest` that describes an image. The `get-manifest.sh` script will require 2 arguments, the full image name (again) and the JWT token (that we just obtained):
 
-```
+```bash
 #!/usr/bin/env bash
 
 splitImageName $1
@@ -332,7 +332,7 @@ Now that we have everything that we need, we can finally use the `delete-image.s
  * the SHA digest of the manifest
  * the token (again)
 
-```
+```bash
 #!/usr/bin/env bash
 
 splitImageName $1
@@ -370,7 +370,7 @@ So, my build job does this simple sequence:
  * build the prod image with the specific `prod-$CI_COMMIT_SHA` commit tag;
  * push it back to the registry.
 
-```
+```yaml
 build-prod-images:
   stage: Build prod
   cache:
@@ -393,7 +393,7 @@ The other notable part of this job definition is the `only` directive. It's obvi
 
 Finally, we can deploy our application to the Kubernetes cluster!
 
-```
+```yaml
 deploy:
   stage: Deploy
   environment:
@@ -429,7 +429,7 @@ The `environment` option enable the usage of the [GitLab Environments](https://d
 ## The cleanup after the deploy
 As for the CI build, we will have to clean up older images after successfully deploying the application:
 
-```
+```yaml
 delete-old-prod-image:
   stage: Cleanup
   script:
@@ -445,7 +445,7 @@ I use the `*deployable-branches` here too, and a bash script to wrap everything 
  * re-tag and push it with the generic tag;
  * delete the previous image.
 
-```
+```bash
 #!/usr/bin/env bash
 
 OLD_IMAGE=$1

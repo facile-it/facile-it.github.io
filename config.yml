@@ -21,6 +21,9 @@ params:
   # Social media buttons that appear on the sidebar
   socialAppearAtTop   : true
   socialAppearAtBottom: true
+  # Sets RSS icons to appear on the sidebar with the social media buttons
+  rssAppearAtTop: true
+  rssAppearAtBottom: true
   # set this to the section name if section is not post
   viewMorePostLink    : "/blog/"
 
@@ -40,6 +43,19 @@ params:
   # This is just an additional option if you wish to use this
   #minifiedFilesCSS    : ["/css/main.min.css"]
   #minifiedFilesJS     : ["/js/main.min.js"]
+
+  # options for highlight.js (version, additional languages, and theme)
+  disable_highlight: false # set to true to disable Highlight
+  highlightjsVersion: "9.12.0"
+  highlightjsCDN: "//cdn.bootcss.com"
+  highlightjsLang:
+    - "dockerfile"
+    - "kotlin"
+    - "objectiveC"
+    - "python"
+    - "swift"
+    - "yaml"
+  highlightjsTheme: "monokai-sublime"
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use

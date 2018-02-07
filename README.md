@@ -4,27 +4,37 @@ This is the repo behind [https://engineering.facile.it/](https://engineering.fac
 
 ## Cloning instructions
 
+```bash
+git clone --recursive git@github.com:facile-it/facile-it.github.io.git
 ```
-git clone git@github.com:facile-it/facile-it.github.io.git
-```
+
+The `--recursive` option is due to the fact that [the theme is forked](https://github.com/facile-it/hugo-future-imperfect) and included as a Git submodule.
 
 ## Usage
 
  * No need to install anything, Hugo binaries are committed in the repo (for Linux and OSX, both x64)
  * To serve the site locally (with drafts enabled):
 
-```
+```bash
 ./hugo server -D
 ```
 or, if you are on Windows:
 
-```
+```bash
 bin\hugo.exe server -D
 ```
 
- * To deploy the blog:
+ * To update the theme 
  
+```bash
+git submodule update
+git add themes
+git commit [...] # to save it it
 ```
+
+ * To deploy your current workspace to the blog:
+ 
+```bash
 ./deploy
 ```
 

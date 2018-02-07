@@ -1,0 +1,3 @@
+[submodule "themes/hugo-future-imperfect"]
+	path = themes/hugo-future-imperfect
+	url = git@github.com:facile-it/hugo-future-imperfect.git

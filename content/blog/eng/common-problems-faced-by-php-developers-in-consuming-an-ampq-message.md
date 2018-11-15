@@ -1,6 +1,6 @@
 ---
 authors: ["emulator000"]
-date: "2018-11-05"
+date: "2018-11-15"
 draft: true
 share: true
 categories: [English, RabbitMQ, AMQP, Consumer, PHP, Rust, Go]
@@ -12,39 +12,39 @@ toc: true
 
 When we use RabbitMQ and our project is in PHP, we have to run a Consumer and we could encounter some common and still unresolved problems.
 
-In order to implement RabbitMQ in the project, there are different ready to use packages, especially when we use a framework like Symfony or Laravel, usually these packages provides the full needed integration for the AMQP protocol so we can easily configure it and create a Producer, a Consumer and then, we create a little script that will supervisor the PHP process in order to make sure that all our consumers are running. 
+In order to implement RabbitMQ in the project, there are different ready to use packages, especially when we use a framework like Symfony or Laravel. Usually these packages provides the full needed integration for the AMQP protocol so, we can easily configure it and create a Producer, a Consumer and then, we have to create a little script that will supervisor the PHP process in order to make sure that all our consumers are running. 
 
 # Consumer
 
-In order to consume a message, we have to run a daemon that will listen for new messages and then process each message executing some logic, this is a normal flow in case of blocking requests, we don't want to block the user request nor loose it.
+In order to consume a message, we have to run a demon that will listen for new messages and then, process each message executing some logic; this is a normal flow in case of blocking requests, we don't want to block the user request nor loose it.
 
 We want also to keep track of all requests and if one fails, we could retry to process again or just ignore it if some blocking error occurs.
 
 ## The memory problem
 
-A normal PHP script serves a single request, then, the script "dies" naturally as it ended the execution of provided instructions and frees the allocated memory. In a PHP consumer we have to run a long running PHP process so we have to face the memory problem, yes, because as PHP is not properly designed to achieve this scope, this can cause troubles for sure if we don't pay attention to the script's code.
+A normal PHP script serves a single request, then, the script "dies" naturally as it ended the execution of provided instructions and frees the allocated memory. In a PHP consumer, we have to run a long running PHP process so we have to face the memory problem, yes, because as PHP is not properly designed to achieve this scope, this can cause troubles for sure if we don't pay attention to the script's code.
 
-Normally you don't notice any memory issue due to fact that the script runs for few seconds, also in a long running PHP proccess if you try a simple script and make it run for few minutes, maybe they will not use any additional memory at all but if you use some framework, an ORM or you are in a complex application with many dependencies, the application will eventually allocate some memory (eg. for caching results) and you can notice that the PHP process will increase their memory hour by hour due to some memory leaks.
+Normally, you don't notice any memory issue due to fact that the script runs for few seconds, also, in a long running PHP proccess, if you try a simple script and make it run for few minutes, maybe they will not use any additional memory at all but if you use some framework, an ORM or you are in a complex application with many dependencies, the application will eventually allocate some memory (eg. for caching results) and you can notice that the PHP process will increase their memory hour by hour due to some memory leaks.
 
-That's not a problem at all in a normal case, the script ends and the memory is freed normally, this is something that is not so obvious in a long running process like how it would be a PHP consumer. They will break, leak and in some cases corrupt the memory and this will make the process crash or more drastically, they will fail to run some instruction as the opcode cache gets changed while the process is running.
+That's not a problem at all in a normal case, the script ends and the memory is freed normally, this is something that is not so obvious in a long running process like how it would be a PHP consumer. They will break, leak and in some cases, corrupts the memory and this will make the process crash or more drastically, they will fail to run some instruction as the opcode cache gets changed while the process is running.
 
-If you are interested in more accurate details and information, I suggest [this article](http://notjam.es/blog/2014/06/18/the-problems-with-long-running-php.html), is pretty old but explains this problem very well and accurate mode.
+If you are interested in more accurate details and information, I suggest [this article](http://notjam.es/blog/2014/06/18/the-problems-with-long-running-php.html), is pretty old but explains this issue in a very well and accurate way.
 
 ## Multiple consumers
 
-If you are running a PHP consumer is very hard to process multiple messages at time because PHP runs in a single thread and also, a proper async/await interface is not well supported. One more time, PHP is not well designed for this scope and this could be a limit in some circumstances, scaling is very hard.
+If you are running a PHP consumer, is very hard to process multiple messages at time because PHP runs in a single thread and also, a proper async/await interface is not well supported or mature. One more time, PHP is not well designed for this scope and this could be a limit in some circumstances, scaling is very hard.
 
-Running multiple PHP consumers is not a good idea, supposing a framework based application, this can use an huge amount of memory and could reach easily GBs of RAM used. If in the "waiting" time there are no messages, this is a very waste of memory that instead, could be used for some other resources or requests. 
+Running multiple PHP consumers is not a good idea as well, supposing a framework based application, this could use an huge amount of memory and could reach easily GBs of RAM used. If in the "waiting" time there are no messages, this is a very waste of memory that instead, could be used for some other resources or requests. 
 
 ## Updating the codebase
 
 Another common problem when we have PHP consumers is when we have to update the codebase: if we deploy something that change the code and some service used by the consumer, we can easily break the integrity of the entire long running process execution.
 
-We have to close all the consumers and sometimes we have to force kill processes because they hangs due to some memory corruption, so, we have to start them again and obviously we have to provide a script that will do this automatically for us during the deploy or in the pipeline.
+We have to close all the consumers and sometimes we have to force kill processes, because, they hangs due to some memory corruption, so, we have to start them again and obviously, we have to provide a script that will do this automatically for us during the deploy or in the pipeline.
 
 ## The network problem
 
-When we work with a network based service, we have to expect failures and we must have some reconnection policies, a common problem when we have a long running PHP process is a broken pipe (in a very popular bundle this is still an issue due to PHP nature, [see here](https://github.com/php-amqplib/RabbitMqBundle/issues/301)) because we can't use a feature that is exactly made for this sort of issues resolution, the Heartbeat. In a consumer connection, normally we have to implement a sort "ping" mechanism, this is a mention of the [official RabbitMQ documentation](https://www.rabbitmq.com/heartbeats.html):
+When we work with a network based service, we have to expect failures and we must have some reconnection policies. A common problem when we have a long running PHP process is a broken pipe (in a very popular bundle this is still an issue due to PHP nature, [see here](https://github.com/php-amqplib/RabbitMqBundle/issues/301)) because we can't use a feature that is exactly made for this sort of issues resolution, the Heartbeat. In a consumer connection, normally we have to implement a sort "ping" mechanism, this is a mention of the [official RabbitMQ documentation](https://www.rabbitmq.com/heartbeats.html):
 
 > Network can fail in many ways, sometimes pretty subtle (e.g. high ratio packet loss). Disrupted TCP connections take a moderately long time (about 11 minutes with default configuration on Linux, for example) to be detected by the operating system. AMQP 0-9-1 offers a heartbeat feature to ensure that the application layer promptly finds out about disrupted connections (and also completely unresponsive peers). Heartbeats also defend against certain network equipment which may terminate "idle" TCP connections.
 
@@ -72,6 +72,8 @@ Anyway, scaling with this consumer was a bit tedious because we have to attach m
 
 I decided to write something internally here in Facile.it because our need was a bit different, we wanted a stable, scalable, connections optimized and memory usage consumer.
 
+Another our need was to enable or disable a certain queue remotely, for example, with a MySQL database that allows changing of some parameters without restarting the consumer and we wanted just to enable or disable it with a click.
+
 I could write this consumer in many languages, for example Go, Java or why not C++ but as I'm a Rust addicted, I decided to write this consumer in [Rust](https://www.rust-lang.org/en-US/).
 
 Our RabbitMQ consumer is open-source and you can compile it for any OS compatible with Rust. You can found it on GitHub: https://github.com/facile-it/rabbitmq-consumer
@@ -98,7 +100,7 @@ Main features are:
 
 Isn't this something that we would like to found in a RabbitMQ consumer? In fact, I looked for reliability, stability and memory safety first.
 
-When I was looking for a good AMQP protocol integration library, I discovered [Lapin](https://github.com/sozu-proxy/lapin) that uses the asynchronous interface thanks to Tokio and Futures.
+When I was looking for a good AMQP protocol integration library, I discovered [Lapin](https://github.com/sozu-proxy/lapin) that uses the asynchronous interface thanks to [Tokio](https://github.com/tokio-rs/tokio) and [Futures](https://github.com/rust-lang-nursery/futures-rs).
 
 ### Using the consumer
 
@@ -114,7 +116,7 @@ Attach an environment like `dev`, `prod` or any other preferred name in this way
 rabbitmq-consumer --env dev
 ```
 
-Please make sure that the binary has the "execute" permission, when the process starts, will print a log like this:
+Please make sure that the binary has the "execute" permission, when the process starts, it will print a log like this:
 ```log
 2018-10-19 14:02:53 - config/config.toml loaded correctly.
 2018-10-19 14:02:53 - Connection to: V4(127.0.0.1:5672)
@@ -172,6 +174,8 @@ php ../bin/console message:processor --option 1
 I put `../bin` here because usually I create a folder specific for the consumer binary content, so you have to go back by just one directory for the script path.
 
 Using a relative path anyway is a bit discouraged, it's always better to put an absolute path as command path in order to avoid old code execution in case you deploy the consumer with the entire PHP application.
+
+All the message content is parsed as arguments for our command, don't worry, this will can't execute any malicious command because every parameter is splits automatically by a space and can't be an executable (like grep or other commands).
 
 You can found some details on how configure the consumer properly in the repository README, precisely in [this section](https://github.com/facile-it/rabbitmq-consumer#configuration).
 
@@ -233,6 +237,13 @@ class MessageProcessorCommand extends ContainerAwareCommand
      */
     public function run(InputInterface $input, OutputInterface $output)
     {
+        // We put this code here because we want to have the certainty of the
+        // "exit code" returned if an unhandled exception occurs in a non-"ignored"
+        // consumer "retry_mode" configuration
+        //
+        // For example: if you pass an invalid option to the Symfony command, this will
+        // throw an exception that you can't handle in the "execute" method and the
+        // default "exit code" is 0 and this means "Acknowledgement" for our consumer.
         try {
             return parent::run($input, $output);
         } catch (\Throwable $t) {
@@ -272,11 +283,11 @@ As you can see, I defined some constants like `CODE_SUCCESS`, `CODE_ERROR` and `
 
 # Conclusions
 
-Of course the external RabbitMQ consumer is a good compromise because we can avoid common PHP problems and use a fully separated consumer. By the way, this solution also have a contraindication: you have to pay the command bootstrap time for each message.
+Of course, the external RabbitMQ consumer is a good compromise because we can avoid common PHP problems and use a fully separated consumer. By the way, this solution also have a contraindication: you have to pay the command bootstrap time for each message.
 
-If you run a simple application, this is not a big issue, the command calls a simple script and simply execute it but, if you use a framework, this could be a problem and slow down the application or use a bit more resources while a single command is executed.
+If you run a simple application, this is not a big issue, the command calls a simple script and simply execute it but, if you use a framework, this could be a problem and slow down the application or use a bit more resources when the single command is executed each time.
 
-As you can see, there isn't a perfect solution for this problem or anyway I didn't found it yet: you can just marginalize it.
+As you can see, there isn't a perfect solution for this problem or anyway I didn't found it yet.
 
 # References
 

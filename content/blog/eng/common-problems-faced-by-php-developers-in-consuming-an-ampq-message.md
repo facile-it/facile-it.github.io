@@ -22,7 +22,7 @@ We want also to keep track of all requests and if one fails, we could retry to p
 
 ## The memory problem
 
-A normal PHP script serves a single request, then, the script "dies" naturally as it ended the execution of provided instructions and frees the allocated memory. In a PHP consumer, we have to run a long running PHP process so we have to face the memory problem, yes, because as PHP is not properly designed to achieve this scope, this can cause troubles for sure if we don't pay attention to the script's code.
+A normal PHP script serves a single request, then the script _dies_ naturally as the execution of provided instructions is completed, and the allocated memory is freed. In a PHP consumer we have to execute a long running PHP process: this will cause us to face a memory problem, because PHP is not properly designed to achieve this goal, and this will cause trouble for sure if we don't pay attention to the script code.
 
 Normally, you don't notice any memory issue due to fact that the script runs for few seconds, also, in a long running PHP proccess, if you try a simple script and make it run for few minutes, maybe they will not use any additional memory at all but if you use some framework, an ORM or you are in a complex application with many dependencies, the application will eventually allocate some memory (eg. for caching results) and you can notice that the PHP process will increase their memory hour by hour due to some memory leaks.
 

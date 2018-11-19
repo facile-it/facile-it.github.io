@@ -26,7 +26,7 @@ A normal PHP script serves a single request, then the script _dies_ naturally as
 
 Normally, you don't notice any memory issue due to fact that the script runs for few seconds; also, in a long running PHP process, if you try and run a simple script for few minutes it could not use any additional memory at all, but if you use some framework, an ORM or you are in a complex application with many dependencies, the application will eventually allocate some memory (e.g. for caching results), and you could even notice a progressive increase of the memory used by the PHP process due to some memory leaks.
 
-That's not a problem at all in a normal case, the script ends and the memory is freed normally, this is something that is not so obvious in a long running process like how it would be a PHP consumer. They will break, leak and in some cases, corrupts the memory and this will make the process crash or more drastically, they will fail to run some instruction as the opcode cache gets changed while the process is running.
+That's not a problem at all in a normal case, where the script ends and the memory is freed normally, but the case is not that obvious for a long running process like the one required by a PHP consumer. It will break, leak and, in some cases, corrupt the memory, and this will make the process crash or, more drastically, fail to run some instructions, as the opcode cache gets changed while the process is running.
 
 If you are interested in more accurate details and information, I suggest [this article](http://notjam.es/blog/2014/06/18/the-problems-with-long-running-php.html), is pretty old but explains this issue in a very well and accurate way.
 

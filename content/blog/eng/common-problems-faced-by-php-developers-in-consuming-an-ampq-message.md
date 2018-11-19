@@ -18,7 +18,7 @@ In order to implement RabbitMQ in the project, there are different ready to use 
 
 In order to consume a message, we have to run a demon that will listen for new messages, then process each message executing some logic: this is a normal flow in case of blocking requests, and we don't want to block the user request nor loose it.
 
-We want also to keep track of all requests and if one fails, we could retry to process again or just ignore it if some blocking error occurs.
+We want also to keep track of all requests and if one fails, we could retry to process it again or just ignore it if some blocking error occurs.
 
 ## The memory problem
 

@@ -16,7 +16,7 @@ In order to implement RabbitMQ in the project, there are different ready to use 
 
 # Consumer
 
-In order to consume a message, we have to run a demon that will listen for new messages and then, process each message executing some logic; this is a normal flow in case of blocking requests, we don't want to block the user request nor loose it.
+In order to consume a message, we have to run a demon that will listen for new messages, then process each message executing some logic: this is a normal flow in case of blocking requests, and we don't want to block the user request nor loose it.
 
 We want also to keep track of all requests and if one fails, we could retry to process again or just ignore it if some blocking error occurs.
 

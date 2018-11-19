@@ -28,7 +28,7 @@ Normally, you don't notice any memory issue due to fact that the script runs for
 
 That's not a problem at all in a normal case, where the script ends and the memory is freed normally, but the case is not that obvious for a long running process like the one required by a PHP consumer. It will break, leak and, in some cases, corrupt the memory, and this will make the process crash or, more drastically, fail to run some instructions, as the opcode cache gets changed while the process is running.
 
-If you are interested in more accurate details and information, I suggest [this article](http://notjam.es/blog/2014/06/18/the-problems-with-long-running-php.html), is pretty old but explains this issue in a very well and accurate way.
+If you are interested in more accurate details and information, I suggest reading [this article](http://notjam.es/blog/2014/06/18/the-problems-with-long-running-php.html): it's pretty old, but explains this issue very well.
 
 ## Multiple consumers
 

@@ -12,7 +12,7 @@ toc: true
 
 When we use RabbitMQ and our project is in PHP, we have to run a Consumer and we could encounter some common and still unresolved problems.
 
-In order to implement RabbitMQ in the project, there are different ready to use packages, especially when we use a framework like Symfony or Laravel. Usually these packages provides the full needed integration for the AMQP protocol so, we can easily configure it and create a Producer, a Consumer and then, we have to create a little script that will supervisor the PHP process in order to make sure that all our consumers are running. 
+In order to implement RabbitMQ in the project, there are different ready to use packages, especially when we use a framework like Symfony or Laravel. Usually these packages provide the full integration needed for the AMQP protocol, so we can easily configure it and create a Producer and a Consumer; then, we have to create a little script that will supervise the PHP process in order to make sure that all our consumers are running. 
 
 # Consumer
 

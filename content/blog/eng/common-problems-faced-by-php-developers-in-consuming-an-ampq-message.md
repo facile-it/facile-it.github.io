@@ -34,7 +34,7 @@ If you are interested in more accurate details and information, I suggest readin
 
 For a PHP consumer it's very hard to process multiple messages at the same time, because PHP runs in a single thread, and a proper async/await interface is not well supported or mature. Again, PHP is not designed for this scope and this could be a limit in some circumstances: scaling is really hard.
 
-Running multiple PHP consumers is not a good idea as well, supposing a framework based application, this could use an huge amount of memory and could reach easily GBs of RAM used. If in the "waiting" time there are no messages, this is a very waste of memory that instead, could be used for some other resources or requests. 
+Running multiple PHP consumers is not a good idea as well: given a framework-based application, it could use a huge amounts of RAM, easily GBs. If during the "waiting" time there are no messages, it's going to be a serious waste of memory that could be used instead for some other resources or requests. 
 
 ## Updating the codebase
 

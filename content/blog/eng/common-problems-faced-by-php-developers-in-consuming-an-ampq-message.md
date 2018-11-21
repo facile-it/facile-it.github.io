@@ -40,7 +40,7 @@ Running multiple PHP consumers is not a good idea as well, supposing a framework
 
 Another common problem with PHP consumers is when we need to update the codebase: if we deploy something that changes the code and some service used by the consumer, we can easily break the integrity of the entire long running process execution.
 
-We have to close all the consumers and sometimes we have to force kill processes, because, they hangs due to some memory corruption, so, we have to start them again and obviously, we have to provide a script that will do this automatically for us during the deploy or in the pipeline.
+We have to close all the consumers and sometimes we must force kill processes: they could hang due to memory corruption, so we have to start them again with a script (obviously) that will trigger automatically during the deploy or within the pipeline.
 
 ## The network problem
 

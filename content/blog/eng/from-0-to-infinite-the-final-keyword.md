@@ -184,17 +184,17 @@ class SomeImmutableObject {
 
 class BreakImmutableObject extends SomeImmutableObject {
     
-    public function __construct(string $value) {
+   public function __construct(string $value) {
      $this->someString = $value; 
-    }
+   }
   
    public function getValue(): string {
       return 'the value is:'. $this->someString.' - '; 
    }
   
-  public function change() {
+   public function change() {
      $this->someString .= ' and Minny';
-  }
+   }
 }
 
 $one = new BreakImmutableObject('Pippo');
@@ -213,13 +213,15 @@ protected $someString;
 private $flagCreate = false; 
 
   public function __construct(string $value) {
-     var_dump($this->flagCreate);
+     
      if ($this->flagCreate === true) {
          throw new \BadMethodCallException('This is an immutable object has already create.');
      }
+     
      $this->someString = $value; 
      $this->flagCreate = true;
   }
+  
   public function getValue(): string {
       return 'the value is:'. $this->someString.' - '; 
   }
@@ -259,13 +261,15 @@ protected $someString;
 private $flagCreate = false; 
 
   public function __construct(string $value) {
-     var_dump($this->flagCreate);
+  
      if ($this->flagCreate === true) {
          throw new \BadMethodCallException('This is an immutable object has already create.');
      }
+     
      $this->someString = $value; 
      $this->flagCreate = true;
   }
+  
   public function getValue(): string {
       return 'the value is:'. $this->someString.' - '; 
   }
@@ -274,17 +278,17 @@ private $flagCreate = false;
 class TryToBreakImmutableObject extends SomeImmutableObject {
    public $someString;
 
-    public function __construct(string $value) {
+   public function __construct(string $value) {
      $this->someString = $value; 
-    }
+   }
   
    public function getValue(): string {
       return 'the value is:'. $this->someString.' - '; 
    }
   
-  public function change() {
-           $this->someString .= ' and always with Minny';
-  }
+   public function change() {
+      $this->someString .= ' and always with Minny';
+   }
 }
 
 $one = new TryToBreakImmutableObject('Pippo'); 

@@ -114,7 +114,7 @@ Let's go see some code.
 class SomeImmutableObject {
 private $someString; 
   public function __construct(string $value) {
-     $this->someString = $value; 
+      $this->someString = $value; 
   }
   public function getValue(): string {
       return 'the value is:'. $this->someString.' - '; 
@@ -133,21 +133,25 @@ echo $two->getValue();
 try it! **[break the immutable object] (https://paiza.io/projects/esxFsmZDajfHtqGTwdolCg)**
 
 
-this problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. let's do it!
+this problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. 
+Another way to fix, is to create a `name constuctor` and make the `__constructor` private. 
+let's do it!
 
 # The concrete example, break the immutable object the second way
 
 ```php
 class SomeImmutableObject {
-private $someString; 
-private $flagCreate = false; 
+
+   private $someString; 
+   private $flagCreate = false; 
 
   public function __construct(string $value) {
-     if ($this->flagCreate === true) {
+      if ($this->flagCreate === true) {
          throw new \BadMethodCallException('This is an immutable object has already create.');
-     }
-     $this->someString = $value; 
-     $this->flagCreate = true;
+      }
+
+      $this->someString = $value; 
+      $this->flagCreate = true;
   }
   public function getValue(): string {
       return 'the value is:'. $this->someString.' - '; 

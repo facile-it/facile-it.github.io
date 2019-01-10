@@ -111,14 +111,19 @@ Since in PHP it is not possible to create a pure, immutable object, using the **
 Let's go see some code.
 
 ```php
-class SomeImmutableObject {
-private $someString; 
-  public function __construct(string $value) {
-      $this->someString = $value; 
-  }
-  public function getValue(): string {
-      return 'the value is:'. $this->someString.' - '; 
-  }
+class SomeImmutableObject
+{
+    private $someString;
+
+    public function __construct(string $value)
+    {
+        $this->someString = $value;
+    }
+
+    public function getValue(): string
+    {
+        return 'the value is:' . $this->someString . ' - ';
+    }
 }
 ```
 
@@ -126,8 +131,8 @@ Let's concentrate, can we modify this object after it has been created? …. Yes
 ```php
 $one = new SomeImmutableObject('Pippo');
 echo $one->getValue(); //Pippo
-$one->__construct('Pluto'); //Pluto
-echo $two->getValue(); 
+$one->__construct('Pluto'); 
+echo $one->getValue(); //Pluto
 ```
 
 try it! **[break the immutable object] (https://paiza.io/projects/esxFsmZDajfHtqGTwdolCg)**
@@ -135,85 +140,98 @@ try it! **[break the immutable object] (https://paiza.io/projects/esxFsmZDajfHtq
 
 this problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. 
 Another way to fix, is to create a `name constuctor` and make the `__constructor` private. 
-let's do it!
+let's do it with the first solution!
 
-# The concrete example, break the immutable object the second way
+# The concrete example, break the immutable object first fix
 
 ```php
-class SomeImmutableObject {
+class SomeImmutableObject
+{
+    private $someString;
+    private $flagCreate = false;
 
-   private $someString; 
-   private $flagCreate = false; 
+    public function __construct(string $value)
+    {
+        if (true === $this->flagCreate) {
+            throw new \BadMethodCallException('This is an immutable object has already create.');
+        }
 
-  public function __construct(string $value) {
-      if ($this->flagCreate === true) {
-         throw new \BadMethodCallException('This is an immutable object has already create.');
-      }
+        $this->someString = $value;
+        $this->flagCreate = true;
+    }
 
-      $this->someString = $value; 
-      $this->flagCreate = true;
-  }
-  public function getValue(): string {
-      return 'the value is:'. $this->someString.' - '; 
-  }
+    public function getValue(): string
+    {
+        return 'the value is:' . $this->someString . ' - ';
+    }
 }
 
 $one = new SomeImmutableObject('Pippo');
 echo $one->getValue(); //Pippo
-$one->__construct('Pluto'); //Pluto
-echo $two->getValue(); 
+$one->__construct('Pluto'); // \BadMethodCallException 
+echo $one->getValue();
 ```
 
 Now we are happy and we have our immutable object, are we sure?, mmm no… look here! 
+
+# The concrete example, break the immutable object the second way
+
+```php
+class SomeImmutableObject
+{
+    protected $someString;
+    private $flagCreate = false;
+
+    public function __construct(string $value)
+    {
+
+        if ($this->flagCreate === true) {
+            throw new \BadMethodCallException('This is an immutable object has already create.');
+        }
+
+        $this->someString = $value;
+        $this->flagCreate = true;
+    }
+
+    public function getValue(): string
+    {
+        return 'the value is:' . $this->someString . ' - ';
+    }
+}
+
+class AnotherClassToBreakImmutableObject extends SomeImmutableObject
+{
+    public $someString;
+
+    public function __construct(string $value)
+    {
+        $this->someString = $value;
+    }
+
+    public function getValue(): string
+    {
+        return 'the value is:' . $this->someString . ' - ';
+    }
+
+    public function change(): void
+    {
+        $this->someString .= ' and always with Minny';
+    }
+}
+
+$one = new AnotherClassToBreakImmutableObject('Pippo');
+echo $one->getValue(); //Pippo
+echo $one->change();
+echo $one->getValue(); //the value is: Pippo and always with Minny -
+```
+
+There is still something wrong, the problem is that `$someString` variable is protected, let's change it! 
 
 # The concrete example, break the immutable object the third way
 
 ```php
 class SomeImmutableObject {
-
-    protected $someString; 
-    private $flagCreate = false; 
-
-  public function __construct(string $value) {
-     if ($this->flagCreate === true) {
-         throw new \BadMethodCallException('This is an immutable object has already create.');
-     }
-     $this->someString = $value; 
-     $this->flagCreate = true;
-  }
-  public function getValue(): string {
-      return 'the value is:'. $this->someString.' - '; 
-  }
-}
-
-class BreakImmutableObject extends SomeImmutableObject {
-    
-   public function __construct(string $value) {
-     $this->someString = $value; 
-   }
-  
-   public function getValue(): string {
-      return 'the value is:'. $this->someString.' - '; 
-   }
-  
-   public function change() {
-     $this->someString .= ' and Minny';
-   }
-}
-
-$one = new BreakImmutableObject('Pippo');
-echo $one->getValue(); //Pippo
-echo $one->change();  
-echo $one->getValue(); //the value is:Pippo - the value is:Pippo and Minny -
-```
-
-There is still something wrong, the problem is that `$someString` variable is protected, let's change it! 
-
-# The concrete example, break the immutable object the four way
-
-```php
-class SomeImmutableObject {
-protected $someString; 
+private $someString; 
 private $flagCreate = false; 
 
   public function __construct(string $value) {
@@ -257,47 +275,54 @@ It still does not work, ok now we definitely correct promised!
 The problem is that inheritance breaks the encapsulation so a good solution in this case is to use **final**!.
 **the definitive version**
 
-# The concrete example definitive fix with final 
+# The concrete example definitive fix with final keyword
 
 ```php
-final class SomeImmutableObject {
-protected $someString; 
-private $flagCreate = false; 
+final class SomeImmutableObject
+{
+    protected $someString;
+    private $flagCreate = false;
 
-  public function __construct(string $value) {
-  
-     if ($this->flagCreate === true) {
-         throw new \BadMethodCallException('This is an immutable object has already create.');
-     }
-     
-     $this->someString = $value; 
-     $this->flagCreate = true;
-  }
-  
-  public function getValue(): string {
-      return 'the value is:'. $this->someString.' - '; 
-  }
+    public function __construct(string $value)
+    {
+
+        if ($this->flagCreate === true) {
+            throw new \BadMethodCallException('This is an immutable object has already create.');
+        }
+
+        $this->someString = $value;
+        $this->flagCreate = true;
+    }
+
+    public function getValue(): string
+    {
+        return 'the value is:' . $this->someString . ' - ';
+    }
 }
 
-class TryToBreakImmutableObject extends SomeImmutableObject {
-   public $someString;
+class TryToBreakImmutableObject extends SomeImmutableObject
+{
+    public $someString;
 
-   public function __construct(string $value) {
-     $this->someString = $value; 
-   }
-  
-   public function getValue(): string {
-      return 'the value is:'. $this->someString.' - '; 
-   }
-  
-   public function change() {
-      $this->someString .= ' and always with Minny';
-   }
+    public function __construct(string $value)
+    {
+        $this->someString = $value;
+    }
+
+    public function getValue(): string
+    {
+        return 'the value is:' . $this->someString . ' - ';
+    }
+
+    public function change(): void
+    {
+        $this->someString .= ' and always with Minny';
+    }
 }
 
-$one = new TryToBreakImmutableObject('Pippo'); 
+$one = new TryToBreakImmutableObject('Pippo');
 echo $one->getValue(); //Pippo
-echo $one->change(); 
+echo $one->change();
 echo $one->getValue();
 ```
 

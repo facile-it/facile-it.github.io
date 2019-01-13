@@ -17,7 +17,7 @@ I apply a technique invented by me named: **"Google from zero to infinite"**.
 
 # The concept behind final
  
-Basically i use one or more search keywords, then i literally follow all the links of all the pages. It is a very long and laborious activity. 
+Basically I use one or more search keywords, then I literally follow all the links of all the pages. It is a very long and laborious activity. 
 But most of the times I find very interesting documents, otherwise difficult to reach. This time I decided to read up on the keyword final and how this is managed by php. 
 
 The keyword final was introduced in version 5 of php. 
@@ -47,7 +47,7 @@ As it is clearly visible from the image below,
 in this case (even being a well-made library) the use of inheritance has been used a lot.
 
 When we meet a class with the keyword final, who designed the class is telling us that we can not derive from it, if we want to extend some behavior we must do it by composition or other mechanisms (like events, o plugins). I find this way of common sense. In fact in relation to the time used for the analysis of the class design, through final, 
-i provide important information on how it should be used and how its use was thought. 
+provides important information on how it should be used and how its use was thought. 
 
 # S.O.L.I.D and Liskov
 

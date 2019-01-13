@@ -135,7 +135,7 @@ $one->__construct('Pluto');
 echo $one->getValue(); //Pluto
 ```
 
-try it! **[break the immutable object] (https://paiza.io/projects/esxFsmZDajfHtqGTwdolCg)**
+try it! **[break the immutable object] (https://paiza.io/projects/18HkiJsPd782ZY8u9-nTIg?language=php)**
 
 
 this problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. 
@@ -177,6 +177,7 @@ Now we are happy and we have our immutable object, are we sure?, mmm no… look 
 # The concrete example, break the immutable object the second way
 
 ```php
+<?php
 class SomeImmutableObject
 {
     protected $someString;
@@ -201,7 +202,6 @@ class SomeImmutableObject
 
 class AnotherClassToBreakImmutableObject extends SomeImmutableObject
 {
-    public $someString;
 
     public function __construct(string $value)
     {
@@ -222,7 +222,7 @@ class AnotherClassToBreakImmutableObject extends SomeImmutableObject
 $one = new AnotherClassToBreakImmutableObject('Pippo');
 echo $one->getValue(); //Pippo
 echo $one->change();
-echo $one->getValue(); //the value is: Pippo and always with Minny -
+echo $one->getValue(); //the value is: Pippo and with Minny -
 ```
 
 There is still something wrong, the problem is that `$someString` variable is protected, let's change it! 

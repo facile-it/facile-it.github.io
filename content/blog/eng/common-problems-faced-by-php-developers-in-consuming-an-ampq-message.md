@@ -40,11 +40,11 @@ Running multiple PHP consumers is not a good idea as well: given a framework-bas
 
 Another common problem with PHP consumers is when we need to update the codebase: if we deploy something that changes the code and some service used by the consumer, we can easily break the integrity of the entire long running process execution.
 
-We have to close all the consumers and sometimes we must force kill processes: they could hang due to memory corruption, so we have to start them again with a script (obviously) that will trigger automatically during the deploy or within the pipeline.
+We have to shutdown all consumers and sometimes we must force kill processes: they could hang due to memory corruption, so we have to start them again with a script (obviously) that will trigger automatically during the deploy or within the pipeline.
 
 ## The network problem
 
-When we work with a network based service, we have to expect failures and we must have some reconnection policies. A common problem when we have a long running PHP process is a broken pipe (in a very popular bundle this is still an issue due to PHP nature, [see here](https://github.com/php-amqplib/RabbitMqBundle/issues/301)) because we can't use a feature that is exactly made for this sort of issues resolution, the Heartbeat. In a consumer connection, normally we have to implement a sort "ping" mechanism, this is a mention of the [official RabbitMQ documentation](https://www.rabbitmq.com/heartbeats.html):
+When we work with a network based service, we have to expect failures and we must have some reconnection policies. A common problem when we have a long running PHP process is a broken pipe (in a very popular bundle this is still an issue due to PHP nature, [see here](https://github.com/php-amqplib/RabbitMqBundle/issues/301)) because we can't use a feature that is exactly made for this sort of issues resolution, the Heartbeat. In a AMPQ server connection, normally we have to implement a sort "ping" mechanism, this is a mention of the [official RabbitMQ documentation](https://www.rabbitmq.com/heartbeats.html):
 
 > Network can fail in many ways, sometimes pretty subtle (e.g. high ratio packet loss). Disrupted TCP connections take a moderately long time (about 11 minutes with default configuration on Linux, for example) to be detected by the operating system. AMQP 0-9-1 offers a heartbeat feature to ensure that the application layer promptly finds out about disrupted connections (and also completely unresponsive peers). Heartbeats also defend against certain network equipment which may terminate "idle" TCP connections.
 
@@ -54,7 +54,7 @@ This is something that is still not possible in PHP and obviously cause troubles
 
 We ran this configuration for some time and we experienced ALL of these problems randomly during the normal application flows. We decided to find a good solution and we ended up with an external CLI command processor written in another language and designed for the scope.
 
-The pros of having an external consumer like this is that we haven't to care of the supervision of the process nor the worries in case of changes on the codebase.
+The pros of having an external consumer like this is that we haven't to care of the supervision of the process nor worries in case of changes on the codebase.
 
 ## RabbitMQ cli consumer
 
@@ -72,11 +72,11 @@ Anyway, scaling with this consumer was a bit tedious because we have to attach m
 
 I decided to write something internally here in Facile.it because our need was a bit different, we wanted a stable, scalable, connections optimized and memory usage consumer.
 
-Another our need was to enable or disable a certain queue remotely, for example, with a MySQL database that allows changing of some parameters without restarting the consumer and we wanted just to enable or disable it with a click.
+Another necessity was to enable or disable a certain queue remotely, for example, with a MySQL database that allows the changing of some parameters without restarting the consumer so we could just enable or disable it with a click.
 
 I could write this consumer in many languages, for example Go, Java or why not C++ but as I'm a Rust addicted, I decided to write this consumer in [Rust](https://www.rust-lang.org/en-US/).
 
-Our RabbitMQ consumer is open-source and you can compile it for any OS compatible with Rust. You can found it on GitHub: https://github.com/facile-it/rabbitmq-consumer
+Our RabbitMQ consumer is open-source and you can compile it for any OS compatible with Rust. You can find it on GitHub: https://github.com/facile-it/rabbitmq-consumer
 
 If you want a ready to use binary, just go in [Releases](https://github.com/facile-it/rabbitmq-consumer/releases) and download a pre-compiled binary.
 
@@ -107,13 +107,13 @@ When I was looking for a good AMQP protocol integration library, I discovered [L
 Place the downloaded binary and the configuration in a separated folder with the `config` folder and in order to start/stop the consumer process, you could create a little PHP script that will do this or manage it with supervisor in production.
 
 You can start the process running:
-```bash
-rabbitmq-consumer
+```
+$ rabbitmq-consumer
 ```
 
 Attach an environment like `dev`, `prod` or any other preferred name in this way:
-```bash
-rabbitmq-consumer --env dev
+```
+$ rabbitmq-consumer --env=dev
 ```
 
 Please make sure that the binary has the "execute" permission, when the process starts, it will print a log like this:
@@ -139,6 +139,7 @@ username = "guest"
 password = "guest"
 vhost = "/"
 queue_prefix = "queue_"
+reconnections = 0
 
 [[rabbit.queues]]
 id = 1
@@ -175,9 +176,9 @@ I put `../bin` here because usually I create a folder specific for the consumer 
 
 Using a relative path anyway is a bit discouraged, it's always better to put an absolute path as command path in order to avoid old code execution in case you deploy the consumer with the entire PHP application.
 
-All the message content is parsed as arguments for our command, don't worry, this will can't execute any malicious command because every parameter is splits automatically by a space and can't be an executable (like grep or other commands).
+All the message content is parsed as arguments for our command, don't worry, this will can't execute any malicious command because every parameter is splitted automatically by a space and can't be an executed (like `| grep` or other commands).
 
-You can found some details on how configure the consumer properly in the repository README, precisely in [this section](https://github.com/facile-it/rabbitmq-consumer#configuration).
+You can find some details on how configure the consumer properly in the repository README, precisely in [this section](https://github.com/facile-it/rabbitmq-consumer#configuration).
 
 ### Queues in a MySQL database
 
@@ -193,7 +194,7 @@ db_name = "example"
 retries = 3
 ```
 
-This configuration will allow the consumer to fetch a `queues` table directly from the database, you can found the needed DDL [here](https://github.com/facile-it/rabbitmq-consumer#queues-and-consumers).
+This configuration will allow the consumer to fetch a `queues` table directly from the database, you can find the needed DDL [here](https://github.com/facile-it/rabbitmq-consumer#queues-and-consumers).
 
 The `retries` parameter defines the number of retry when the MySQL connection is lost, if all `3` retries fails, the process ends and you will have to restart it manually.
 
@@ -281,9 +282,11 @@ As you can see, I defined some constants like `CODE_SUCCESS`, `CODE_ERROR` and `
 | 1         | Negative acknowledgement and re-queue |
 | 2         | Negative acknowledgement              |
 
+Please note that these return codes will be ignored and the message always skipped if you set the queue with `retry_mode` as `ignored`.
+
 # Conclusions
 
-Of course, the external RabbitMQ consumer is a good compromise because we can avoid common PHP problems and use a fully separated consumer. By the way, this solution also have a contraindication: you have to pay the command bootstrap time for each message.
+Of course, the external RabbitMQ consumer is a good compromise because we can avoid common PHP problems and use a fully separated consumer. By the way, this solution also have a contraindication: you have to pay the command bootstrap time for each message if you use a PHP application using a framework (like Symfony or Laravel).
 
 If you run a simple application, this is not a big issue, the command calls a simple script and simply execute it but, if you use a framework, this could be a problem and slow down the application or use a bit more resources when the single command is executed each time.
 

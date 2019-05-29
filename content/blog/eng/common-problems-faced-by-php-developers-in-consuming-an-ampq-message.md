@@ -1,7 +1,7 @@
 ---
 authors: ["emulator000"]
-date: "2018-11-15"
-draft: true
+date: "2019-05-29"
+draft: false
 share: true
 categories: [English, RabbitMQ, AMQP, Consumer, PHP, Rust, Go]
 title: "Common problems faced by PHP developers in consuming an AMQP message"

@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>AMQP</title>
+      <link>https://engineering.facile.it/categories/amqp/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/amqp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>AWS</title>
       <link>https://engineering.facile.it/categories/aws/</link>
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
@@ -129,6 +138,15 @@
     </item>
     
     <item>
+      <title>Consumer</title>
+      <link>https://engineering.facile.it/categories/consumer/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/consumer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Continuous deployment</title>
       <link>https://engineering.facile.it/categories/continuous-deployment/</link>
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
@@ -203,7 +221,7 @@
     <item>
       <title>English</title>
       <link>https://engineering.facile.it/categories/english/</link>
-      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/english/</guid>
       <description></description>
@@ -278,6 +296,15 @@
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/gitlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://engineering.facile.it/categories/go/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/go/</guid>
       <description></description>
     </item>
     
@@ -500,7 +527,7 @@
     <item>
       <title>PHP</title>
       <link>https://engineering.facile.it/categories/php/</link>
-      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/php/</guid>
       <description></description>
@@ -561,6 +588,15 @@
     </item>
     
     <item>
+      <title>RabbitMQ</title>
+      <link>https://engineering.facile.it/categories/rabbitmq/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/rabbitmq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Realpath_cache</title>
       <link>https://engineering.facile.it/categories/realpath_cache/</link>
       <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
@@ -575,6 +611,15 @@
       <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/rjindael/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://engineering.facile.it/categories/rust/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/rust/</guid>
       <description></description>
     </item>
     

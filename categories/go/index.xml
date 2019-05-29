@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on Facile.it Engineering</title>
+    <link>https://engineering.facile.it/categories/go/</link>
+    <description>Recent content in Go on Facile.it Engineering</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.facile.it/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Common problems faced by PHP developers in consuming an AMQP message</title>
+      <link>https://engineering.facile.it/blog/eng/common-problems-faced-by-php-developers-in-consuming-an-ampq-message/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/common-problems-faced-by-php-developers-in-consuming-an-ampq-message/</guid>
+      <description>When we use RabbitMQ and our project is in PHP, we have to run a Consumer and we could encounter some common and still unresolved problems.
+In order to implement RabbitMQ in the project, there are different ready to use packages, especially when we use a framework like Symfony or Laravel. Usually these packages provide the full integration needed for the AMQP protocol, so we can easily configure it and create a Producer and a Consumer; then, we have to create a little script that will supervise the PHP process in order to make sure that all our consumers are running.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -4,7 +4,7 @@ date: "2018-12-04"
 draft: true
 share: false
 categories: [English, php, oop]
-title: "From 0 to infinite the final keyword"
+title: "From 0 to infinite the Final keyword"
 type: "post"
 languageCode: "en-EN"
 toc: true
@@ -31,13 +31,16 @@ To prevent a class from being inherited (in our case we will see only this type 
 
 First of all we will try to understand what it is for, then we will try to do some additional reasoning, and finally we will talk about the comments on the net.
 
-The concept that expresses the keyword final is that a class can not be extended, the decision must be taken by the programmer in the design stage.
-There are situations in which extension by inheritance is a good solution, others where it is not possible and others where it is wrong. The keyword final is a tool given to the programmer to express this decision.  
+The concept that expresses the keyword final is that a class can not be extended, the decision must be taken by the programmer in the design stage utilizing just the final keyword. 
 
-So when the consumer of the class will meet the keyword final, it will have to use different solutions from inheritance, solutions conveyed by the design of the base class. 
+There are situations in which extension by inheritance is a good solution, others where it is not possible and others where it is wrong. The keyword final is a tool given to the programmer to express this decision.
 
-Why should you set such a strong constraint? The answers are many, all with the aim of having a robust, more manageable and more maintainable code-base.  
+So when the consumer of the class will meet the keyword final, it will have to use different solutions from the inheritance. And this decision is imposed from the class designer.
 
+Why someone should set such a strong constraint?. The answers are many, all aim of having a robust,  and more manageable code-base.
+
+
+XXXXXXXXX
 One reason is to avoid the proliferation of infinite hierarchies of classes such as VCL (Visual Component Library), which are difficult to extend and maintain.
 As it is clearly visible from the image below, 
 

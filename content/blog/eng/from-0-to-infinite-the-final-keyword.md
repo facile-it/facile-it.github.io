@@ -15,10 +15,9 @@ toc: true
 Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc. 
 I apply a technique invented by me named: **"Google from zero to infinite"**.
 
-# The concept behind final
+# The concept behind final keyword
  
-Basically I use one or more search keywords, then I literally follow all the links of all the pages. It is a very long and laborious activity. 
-But most of the times I find very interesting documents, otherwise difficult to reach. This time I decided to read up on the keyword final and how this is managed by php. 
+Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. But most of the time I find very interesting documents, otherwise difficult to reach. This time I decided to use the keyword final of PHP.
 
 The keyword final was introduced in version 5 of php. 
 
@@ -27,9 +26,10 @@ The manual says:
 > Final Keyword. PHP 5 introduces the final keyword, which prevents child classes from overriding a method by prefixing the definition with final. 
 > If the class itself is being defined final then it cannot be extended. Note: Properties cannot be declared final, only classes and methods may be declared as final.
 
-Java has the same keyword, in c# it is called sealed instead of final, but both have the same behavior, to prevent a class from being inherited (in our case we will see only this type of use, languages like java support further behavior but in different contexts). 
+Java has the same keyword, c# too but it is called "sealed" instead of "final", but more or less have the same behavior.
+To prevent a class from being inherited (in our case we will see only this type of use, languages like java support further behavior but in different contexts).
 
-First of all we will try to understand what it is for, then we will try to do some additional reasoning, and finally  we will talk about the comments on the net.
+First of all we will try to understand what it is for, then we will try to do some additional reasoning, and finally we will talk about the comments on the net.
 
 The concept that expresses the keyword final is that a class can not be extended, the decision must be taken by the programmer in the design stage.
 There are situations in which extension by inheritance is a good solution, others where it is not possible and others where it is wrong. The keyword final is a tool given to the programmer to express this decision.  

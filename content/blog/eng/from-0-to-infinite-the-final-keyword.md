@@ -68,9 +68,9 @@ The canonical statement says the following:
 
 I have used it like as example because is specifically for the design of hierarchies.
 
-I do not want to write an article on how to respect the development according to **Liskov** on the internet there is a lot of literature. In this case I would just like to emphasize that building a hierarchy of objects is not easy, that more the hierarchy is deep then more we are faced with design problems and **final** us help to prevent this. 
+I do not want to write an article on how to respect the development according to **Liskov** on the internet there is a lot of literature. In this case I would just like to emphasize that building a hierarchy of objects is not easy, that more the hierarchy is deep then more we are faced with design problems and **final** helps use to prevent this. 
 
-For this reason, before creating subclasses we should ask ourselves questions such as these similar this is only a suggestion: 
+For this reason, before creating subclasses we should ask ourselves questions such as these or similar this is only a suggestion:
 
 - is my derived class of the same type as the base class?
 - can my derived class be exchanged with the base class without having "strange" behaviors in the code at runtime?

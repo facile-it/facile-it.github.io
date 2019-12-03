@@ -48,13 +48,12 @@ When we meet a class with the keyword final, who designed the class not allow us
 
 I think that this is a good method. In fact, in relation to the time used for the analysis of the design class, through final we provide important information on how she should be useds, simplifying the effort of the developer
 
---- qui 
 # S.O.L.I.D and Liskov
 
-Unfortunately, many programmers use inheritance as a solution to all problems, without thinking that other methods exist, without knowing that there are principles that regulate object oriented design, principles 
-like **S.O.L.I.D** but but also others, come to help us. Such as the principle of Liskov. 
+Unfortunately, many programmers use inheritance as a solution to all problems, without thinking that other methods exist, without knowing or trying other principles that regulate or support to develop in object oriented design. Principles like **S.O.L.I.D** or others.
 
-Let's see what he says in more detail. 
+-- qui 
+Let's see fowhat he says in more detail. 
 The canonical statement says the following:
 
 > "you should always be able to substitute the parent class with its derived class without any undesirable behaviour"

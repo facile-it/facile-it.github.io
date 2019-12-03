@@ -66,20 +66,20 @@ The canonical statement says the following:
 > - Objects should be replaceable with instances of their subtypes without altering the correctness of that program
 > - In general: If you need to add some restriction in an overridden method and that restriction doesn't exist in baseline implementation, you probably violates Liskov Substitution Principle.
 
-xxxxxxxxxxxxxxxxxxxxx
+I have used it like as example because is specifically for the design of hierarchies.
 
-I do not want to write an article on how to respect the development according to **Liskov** on the internet there is a lot of literature. 
-In this case I would just like to emphasize that building a hierarchy of objects is not easy, that more the hierarchy is deep then more we are faced with design problems. 
+I do not want to write an article on how to respect the development according to **Liskov** on the internet there is a lot of literature. In this case I would just like to emphasize that building a hierarchy of objects is not easy, that more the hierarchy is deep then more we are faced with design problems and **final** us help to prevent this. 
 
-For this reason, before creating subclasses we should ask ourselves questions such as these: 
+For this reason, before creating subclasses we should ask ourselves questions such as these similar this is only a suggestion: 
 
 - is my derived class of the same type as the base class?
 - can my derived class be exchanged with the base class without having "strange" behaviors in the code at runtime?
 - is my base class prepared to be derived?
 - the enhancements made by the subclass are primarily additive?
 
-If the answers to these questions are negative, using inheritance in this use case, we will get hierarchies of wrong classes, so little maintenance. 
-Now some example of wrong use of inheritance:
+If the answers to these questions are negative, using inheritance in this use case it could lead us to create complex and unmanageable hierarchies. 
+
+Now some basic example of wrong use of inheritance:
 ```php
 use App\Domain\Model;
 class Stack extends ArrayList {
@@ -88,8 +88,13 @@ class Stack extends ArrayList {
 }
 ```
 
-Why ? the Stack class inheriting from ArrayList will have a lot of additional methods not related to the concept of Stack (push or pop). 
-To make the Stack work, you would have to remap the behavior of the extra methods, but this only because a design error was made. 
+Why ? the Stack class inheriting from ArrayList will have a lot of additional methods not related to the concept of Stack (push or pop). To make the Stack work, you would have to remap the behavior of the extra methods, but this only because a design error was made. 
+
+
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxx WIP 
+
+
 
 You are probably thinking that the OOP is not keeping its promise. 
 However, let us remember that we are programming in OOP (Object Oriented Programming) not in OOI (Object Oriented Inheritance). 

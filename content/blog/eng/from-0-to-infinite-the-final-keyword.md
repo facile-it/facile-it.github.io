@@ -50,7 +50,7 @@ I think that this is a good method. In fact, in relation to the time used for th
 
 # S.O.L.I.D and Liskov
 
-Unfortunately, many programmers use inheritance as a solution to all problems, without thinking that other methods exist, without knowing or trying other principles that regulate or support to develop in object oriented design. Principles like **S.O.L.I.D** or others.
+Unfortunately, many programmers use inheritance as a solution to all problems, without knowing or trying other principles that regulate or support to develop in object oriented design. Principles like **S.O.L.I.D** or others.
 
 -- qui 
 Let's see fowhat he says in more detail. 

@@ -44,14 +44,11 @@ As it is clearly visible from the image below
 
 in this case (even being a well-made library) the use of inheritance has been used a lot.
 
-xxxxxx -- rivedere 
+When we meet a class with the keyword final, who designed the class not allow us inherit from it, if we want to extend some behavior we must do it by composition or other mechanisms (like events, o plugins). 
 
-When we meet a class with the keyword final, who designed the class is telling us that we can not derive from it, if we want to extend some behavior we must do it by composition or other mechanisms (like events, o plugins). I find this way of common sense. In fact in relation to the time used for the analysis of the class design, through final, 
-provides important information on how it should be used and how its use was thought. 
+I think that this is a good method. In fact, in relation to the time used for the analysis of the design class, through final we provide important information on how she should be useds, simplifying the effort of the developer
 
-xxxxxx -- rivedere 
-
-
+--- qui 
 # S.O.L.I.D and Liskov
 
 Unfortunately, many programmers use inheritance as a solution to all problems, without thinking that other methods exist, without knowing that there are principles that regulate object oriented design, principles 

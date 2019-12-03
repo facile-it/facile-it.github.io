@@ -52,8 +52,7 @@ I think that this is a good method. In fact, in relation to the time used for th
 
 Unfortunately, many programmers use inheritance as a solution to all problems, without knowing or trying other principles that regulate or support to develop in object oriented design. Principles like **S.O.L.I.D** or others.
 
--- qui 
-Let's see fowhat he says in more detail. 
+Let's see for example what **Liskov principle** says in more detail. 
 The canonical statement says the following:
 
 > "you should always be able to substitute the parent class with its derived class without any undesirable behaviour"
@@ -67,8 +66,11 @@ The canonical statement says the following:
 > - Objects should be replaceable with instances of their subtypes without altering the correctness of that program
 > - In general: If you need to add some restriction in an overridden method and that restriction doesn't exist in baseline implementation, you probably violates Liskov Substitution Principle.
 
+xxxxxxxxxxxxxxxxxxxxx
+
 I do not want to write an article on how to respect the development according to **Liskov** on the internet there is a lot of literature. 
-I would just like to emphasize that building a hierarchy of objects is not easy, that the more the hierarchy is deep the more we are faced with design problems. 
+In this case I would just like to emphasize that building a hierarchy of objects is not easy, that more the hierarchy is deep then more we are faced with design problems. 
+
 For this reason, before creating subclasses we should ask ourselves questions such as these: 
 
 - is my derived class of the same type as the base class?

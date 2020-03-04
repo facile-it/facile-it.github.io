@@ -141,7 +141,7 @@ $one->__construct('Pluto');
 echo $one->getValue(); //Pluto
 ```
 
-try it! **[break the immutable object] (https://paiza.io/projects/18HkiJsPd782ZY8u9-nTIg?language=php)**
+try it! **[break the immutable object] (https://3v4l.org/CiHPG)**
 
 
 this problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. 

@@ -241,9 +241,11 @@ The problem is that inheritance breaks the encapsulation so a good solution in t
 # The concrete example definitive fix with final keyword
 
 ```php
+<?php
+
 final class SomeImmutableObject
 {
-    protected $someString;
+    private $someString;
     private $flagCreate = false;
 
     public function __construct(string $value)
@@ -279,19 +281,19 @@ class TryToBreakImmutableObject extends SomeImmutableObject
 
     public function change(): void
     {
-        $this->someString .= ' and always with Minny';
+        $this->someString .= ' and Minny';
     }
 }
 
-$one = new TryToBreakImmutableObject('Pippo');
-echo $one->getValue(); //Pippo
-echo $one->change();
-echo $one->getValue();
+$four = new TryToBreakImmutableObject('Pippo');
+echo $four->getValue(); //Pippo
+echo $four->change();
+echo $four->getValue();
 ```
 
 ```PHP Fatal error:  Class BreakImmutableObject may not inherit from final class (SomeImmutableObject)```
 
-try it! **[immutable object] (https://paiza.io/projects/_uGKRlArzu3OdX5748pq6w?language=php)**
+try it! **[immutable object] (https://3v4l.org/OsOoW)**
 
 
 … Some links in-depth study

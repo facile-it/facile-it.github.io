@@ -151,6 +151,8 @@ let's do it with the first solution!
 # The concrete example, break the immutable object first fix
 
 ```php
+<?php declare(strict_types=1);
+
 class SomeImmutableObject
 {
     private $someString;
@@ -172,10 +174,10 @@ class SomeImmutableObject
     }
 }
 
-$one = new SomeImmutableObject('Pippo');
-echo $one->getValue(); //Pippo
-$one->__construct('Pluto'); // \BadMethodCallException 
-echo $one->getValue();
+$two = new SomeImmutableObject('Pippo');
+echo $two->getValue(); //Pippo
+$two->__construct('Pluto'); // \BadMethodCallException 
+echo $two->getValue();
 ```
 
 Now we are happy and we have our immutable object, are we sure?, mmm no… look here! 
@@ -186,7 +188,7 @@ Now we are happy and we have our immutable object, are we sure?, mmm no… look 
 <?php
 class SomeImmutableObject
 {
-    protected $someString;
+    private $someString;
     private $flagCreate = false;
 
     public function __construct(string $value)
@@ -221,61 +223,16 @@ class AnotherClassToBreakImmutableObject extends SomeImmutableObject
 
     public function change(): void
     {
-        $this->someString .= ' and always with Minny';
+        $this->someString .= ' and Minny';
     }
 }
 
-$one = new AnotherClassToBreakImmutableObject('Pippo');
-echo $one->getValue(); //Pippo
-echo $one->change();
-echo $one->getValue(); //the value is: Pippo and with Minny -
+$three = new AnotherClassToBreakImmutableObject('Pippo');
+echo $three->getValue(); //Pippo
+echo $three->change();
+echo $three->getValue(); //the value is: Pippo and Minny -
 ```
-
-There is still something wrong, the problem is that `$someString` variable is protected, let's change it! 
-
-# The concrete example, break the immutable object the third way
-
-```php
-class SomeImmutableObject {
-private $someString; 
-private $flagCreate = false; 
-
-  public function __construct(string $value) {
-     
-     if ($this->flagCreate === true) {
-         throw new \BadMethodCallException('This is an immutable object has already create.');
-     }
-     
-     $this->someString = $value; 
-     $this->flagCreate = true;
-  }
-  
-  public function getValue(): string {
-      return 'the value is:'. $this->someString.' - '; 
-  }
-}
-
-class AnotherClassToBreakImmutableObject extends SomeImmutableObject {
-   public $someString;
-
-    public function __construct(string $value) {
-     $this->someString = $value; 
-    }
-  
-   public function getValue(): string {
-      return 'the value is:'. $this->someString.' - '; 
-   }
-  
-  public function change() {
-           $this->someString .= ' and always with Minny';
-  }
-}
-
-$one = new AnotherClassToBreakImmutableObject('Pippo');
-echo $one->getValue(); //Pippo
-echo $one->change(); 
-echo $one->getValue(); //the value is:Pippo - the value is:Pippo and always with Minny -
-```
+try it! **[break the immutable object] (https://3v4l.org/KpnfR)**
 
 It still does not work, ok now we definitely correct promised!
 The problem is that inheritance breaks the encapsulation so a good solution in this case is to use **final**!.

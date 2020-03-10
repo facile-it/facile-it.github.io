@@ -90,12 +90,6 @@ class Stack extends ArrayList {
 
 Why ? the Stack class inheriting from ArrayList will have a lot of additional methods not related to the concept of Stack (push or pop). To make the Stack work, you would have to remap the behavior of the extra methods, but this only because a design error was made. 
 
-
-
-xxxxxxxxxxxxxxxxxxxxxxxxxxxx WIP 
-
-
-
 You are probably thinking that the OOP is not keeping its promise. 
 However, let us remember that we are programming in OOP (Object Oriented Programming) not in OOI (Object Oriented Inheritance). 
 There is always a trade off between code reuse and good design. 
@@ -106,7 +100,7 @@ is the cross-domain inheritance relationship.
 Simply, our domain classes must use implementations not to inherit them, in our example, stack was a concept of domain (Focusing only on reusing code can be a problem). 
 
 Last example. A **"person"** relationship, **"employee"**. how would you design a relationship between a person entity and an employee entity? 
-Would you go with inheritance or composition? ... it is a case of temporary relationship, so it should be modeled with the composition (employ is a role not a person). 
+Would you go with inheritance or composition? ... it is a case of temporary relationship, so it should be modeled with the composition (employ is a role not a person), then obviously it always goes a depends. 
 
 I invite you, however, to do some tests with your classes, to see if they adhere to these good practices and try to get a better design, avoiding inheritance.
 
@@ -306,14 +300,15 @@ try it! **[immutable object] (https://3v4l.org/OsOoW)**
 Obviously it is not always all pink and flowers, not always literature especially in our work, it is perfectly suited to all needs. 
 What I want to point out is that in some cases **final** can be a good ally and can help us to simplify the design.  
 Using **final** keyword leads programmers to make a round of additional reasoning, to pay more attention to the use of the class. 
-For example, during review a diff with the removal of **final**, it could lead to useful comments to find different solutions. 
+For example, during review a diff with the removal of **final** keyword, it could lead to useful comments to find different solutions. 
 
 There are also some points against **final**. Testing becomes more complex as classes with **final** can not be mocked. 
 A solution to this problem is partially solved in php, using the annotation **@final**, even if it does not have the same validity as a language keyword.
-Moreover using the interfaces solved this, is a huge advantage brought indirectly by the use of the this keyword.
+However using the interfaces is a huge advantage brought indirectly by the use of the this keyword.
 
 Another point to disadvantage is that it is considered an instrument too coarse to be effective. 
-A developer can simply to remove the keyword **final** and then do wrong things!.
+A developer can simply to remove the **final** keyword and then do wrong things!. 
+I not agree with this. Too many times I saw to use wrong the inheritance, so I think that this is useful for beginner but also a more senior developer.
 
 To support the last topics I add some links on discussions against the use of **final**.
 

@@ -23,12 +23,14 @@ Parameters that we pass to the operators are called **operands**.
 
 There are three different types of operators:
 * **Unary**: takes a single parameter placed before (prefix) or after (postfix) it.
-* **Binary**: takes two parameters, it is palced between them. It’s also called infix operator.
+* **Binary**: takes two parameters, it is placed between them. It’s also called infix operator.
 * **Ternary**: takes three parameters, the first operand is a predicate and based on its result evaluate the first operand or the second.
 
 # User defined operators
-Some programming languages, like (Haskell, F#, Swift, ...), allow to define custom operators with special symbols, some other language allows to define literal operators (Kotlin, Pascal, ...), in both cases we have to define a function that will be executed when we use some operator.
-Some programming languages allow operator overloading, this operation is identified like ad hoc polymorphism. An overloaded declaration is a declaration that is declared with the same name in the same scope, except that both declarations have different arguments and different implementation.
+Some programming languages (e.g.: Haskell, F#, Swift, ...), allow to define custom operators with special symbols, some other languages (Kotlin, Pascal, ...) allows to define literal operators, in both cases we have to define a function that will be executed when we use some operator.
+Other kind of programming languages allow operator overloading, this operation is identified like ad hoc polymorphism.
+
+Operator overloading is to declare with the same name in the same scope, except that both declarations have different arguments type and different implementation.
 
 # Operator syntax
 Syntactically the declaration of an operator is like a function definition.  We can think of function as a prefix operator whose operands are the parameters passed in the parentheses or we can think about an operator as a function that takes one or two parameters as input.
@@ -41,17 +43,17 @@ There are some operators with an explicit semantic, like + or ==, than based on 
 
 # Operator Properties
 
-# Associativity
+## Associativity
 The associativity of an operator is a property that determines how operators of the same precedence are grouped in absence of parentheeses. The choice of which operations to apply to the operand, is determinated by the associativity of the operators. An operator could have an operator can have the left or right associativity property.
 An operator is left associative if its application in an expression can be grouped tighter from left to right without affection the expression's meaning, while it is said to be right associative if its application in an expression can be grouped together from right to left it is right-associative.
 An operator can be full associative if it is both left and right associative, in other words, it doesn't matter where you place the parentheses, the expression's evaluation always results in the same value.
 Also, an operator could be non-associative this means that the operator cannot be chained with other operators, often because the output type is incompatible with the input types.
 
 
-# Precedence
-The Operator precedence (aka operator binding) is a collection of rules that reflect conventions about which procedures perform first in order to evaluate a given expression. This conventions are very useful to eliminate ambiguity while we perform an expression with a group of operators.
+## Precedence
+The operator precedence (aka operator binding) is a collection of rules that reflect conventions about which procedures perform first in order to evaluate a given expression. This conventions are very useful to eliminate ambiguity while we perform an expression with a group of operators.
 
-# Operand coercion
+## Operand coercion
 Some languages also allow to the operands of an operator to be implicitly converted, or coerced, to suitable data types for the operation to occur.
 For example, in Perl coercion rules lead into 12 + "3.14" producing the result of 15.14. The text "3.14" is converted to the number 3.14 before addition can takes place. Further, 12 is an integer and 3.14 is either a floating or fixed-point number (a number that has a decimal place in it) so the integer is then converted to a floating point or fixed-point number respectively.
 JavaScript follows opposite rules—finding the same expression above, it will convert the integer 12 into a string "12", then concatenate the two operands to form "123.14".
@@ -60,26 +62,26 @@ In the presence of coercions in a language, the programmer must be aware of the 
 
 # Common operators
 
-# Access operator
-Access operator . is used for to access a member of a namespace or a type (a.b). For example we can use access operator to access a nested namespace  String.Indices or to access type members static and non-static.
+## Access operator
+Access operator . is used for to access a member of a namespace or a type (type.member). For example we can use access operator to access a nested namespace  String.Indices or to access type members static and non-static.
 
-# Scope resolution operator
+## Scope resolution operator
 The scope resolution operator ::, helps to identify and specify the context which an identifier refers.
 
-# Indexer operator
+## Indexer operator
 The indexer operator [ ] is typically used to access a variable in a sequence or in a pointer element access.
 
-# Null-conditional operators
+## Null-conditional operators
 Null-conditional operators ?. or ?[ ]  allow access to a member only if that operand evaluates to non-null; otherwise, it returns null.
 
-# Compound Assignment Operators
+## Compound Assignment Operators
 Compound Assignment operators provide a shorter syntax for assigning the result for an arithmetic and bitwise operator. They perform the operation on the two operands before assigning the result to the first operand.
 For example  x += 2  is a shortcut for  x = x + 2.
 
-# Invocation operator
+## Invocation operator
 The invocation operator () call a method or invoke a delegate.
 
-# Relational operator
+## Relational operator
 The relational operator are constructs that define a type of relationship between two entities, this definition includes both equality and inequality.
 An expression built with relational operators is called conditional expression and expressions of this type are defined predicates. If the language support the Boolean type (es. Java, PHP) the relational operator returns a true/false value, instead in other languages like C the relational operator returns 0 or 1, where the 0 correspond to false value and 1 to the true value.
 In some dynamically typed languages, equality can also be done at the type level, for example:
@@ -87,7 +89,7 @@ In some dynamically typed languages, equality can also be done at the type level
 • 4 == “4” is true because the both operands are 4
 
 
-# Logical operator
+## Logical operator
 Conditional logical operators modify or combine true or false boolean logical values.
 The main conditional logic are:
 • AND (a && b)
@@ -113,23 +115,25 @@ The logical NOT operator is a prefix operator that reverse the boolean value of 
 
 All the operators can be composed tighter to compose more complex expressions. This composition is possible because all the operators have the left associativity property. Otherwise we should use the parentheses.
 
-# Ternary operator (Elvis operator)
+## Ternary operator (Elvis operator)
 In some programming languages the Elvis operator is declared like ?: or ||. It is a conditional operator with three operands, the first operand is a predicate, the other two operands are expressions.
 If the predicate return true the operator performs the first expression, otherwise it performs the second expression.
+```
 condition ? firstExpression : secondExpression
+```
 
-# Null - Coalescing Operator
+## Null - Coalescing Operator
 The null-coalescing operator (a ?? b)  return the wrapped value in the optional type if it exists, otherwise the operator returns the right operand. The wrapped type on the left and the type of the right operands are the same.
 This operator is a shortcut to avoid the if and the force cast when we try to unwrap an Optional type, for example the expression a != null ? A! : b with coalescing operator becomes a ?? b.
 If the value is non-null, the b value is not evaluated, this is also know as short-circuit evaluation.
 
-# Range operators
+## Range operators
 Some programming languages support the range operators, this operators are a shortcut to work with the range values. The main types are:
 • Closed range (a...b): define a range from a to b, both a and b are included into the range
 • half-open range (a..<b): define a range from a to b, the b value is not included into the range
 • one-side ranges elementList[...2]:  this prefix operator work with array indices and when we used it, the output is an ArraySlice with all the elements in the elementList until the third value.
 
-# Identity operator
+## Identity operator
 The identity operator  (=== and !==) compares directly the memory reference of two objects, it returns true if the two objects have the same memory address, false otherwise.
 
 # Conclusion

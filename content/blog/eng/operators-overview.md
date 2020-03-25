@@ -12,6 +12,7 @@ toc: true
 
 # Operators overview
 Operators are useful constructors and they are present in most programming languages. They are fundamental for much operations and in this article we will make an overview to better understand their properties.
+
 This article is the first in a series of two about operators. Here we will do an overview of the main operators properties and in the next one we will discuss about some custom operators that we use in our production code.
 
 # Definition
@@ -34,10 +35,12 @@ Operator overloading is to declare with the same name in the same scope, except 
 
 # Operator syntax
 Syntactically the declaration of an operator is like a function definition.  We can think of function as a prefix operator whose operands are the parameters passed in the parentheses or we can think about an operator as a function that takes one or two parameters as input.
+
 As seen before we have three types of operators and their type depends on the position (prefix, postfix and infix), on their airiness (unary, binary and ternary), on their precedence and associativity.
 
 # Operator semantic
 The semantic of an operator depends by its value, implementation and arity. An expression can involve an operator and simply return the result of an evaluation or may be an object allowing assignment.
+
 There are some operators with an explicit semantic, like + or ==, than based on the context, perform an evaluation and return. However the semantics can be significantly different for example the assignment operator (var a = b), does not perform an evaluation, but it is used to store a value in a location address.
 
 
@@ -45,8 +48,10 @@ There are some operators with an explicit semantic, like + or ==, than based on 
 
 ## Associativity
 The associativity of an operator is a property that determines how operators of the same precedence are grouped in absence of parentheeses. The choice of which operations to apply to the operand, is determinated by the associativity of the operators. An operator could have an operator can have the left or right associativity property.
+
 An operator is left associative if its application in an expression can be grouped tighter from left to right without affection the expression's meaning, while it is said to be right associative if its application in an expression can be grouped together from right to left it is right-associative.
 An operator can be full associative if it is both left and right associative, in other words, it doesn't matter where you place the parentheses, the expression's evaluation always results in the same value.
+
 Also, an operator could be non-associative this means that the operator cannot be chained with other operators, often because the output type is incompatible with the input types.
 
 
@@ -55,8 +60,10 @@ The operator precedence (aka operator binding) is a collection of rules that ref
 
 ## Operand coercion
 Some languages also allow to the operands of an operator to be implicitly converted, or coerced, to suitable data types for the operation to occur.
+
 For example, in Perl coercion rules lead into 12 + "3.14" producing the result of 15.14. The text "3.14" is converted to the number 3.14 before addition can takes place. Further, 12 is an integer and 3.14 is either a floating or fixed-point number (a number that has a decimal place in it) so the integer is then converted to a floating point or fixed-point number respectively.
 JavaScript follows opposite rules—finding the same expression above, it will convert the integer 12 into a string "12", then concatenate the two operands to form "123.14".
+
 In the presence of coercions in a language, the programmer must be aware of the specific rules regarding operand types and the operation result type to avoid subtle programming mistakes.
 
 

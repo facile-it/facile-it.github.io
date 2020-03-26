@@ -62,13 +62,18 @@ let right = 7 - (1 - 3) //9
 ```
 
 ## Precedence
-The operator precedence (aka operator binding) is a collection of rules that reflect conventions about which procedures perform first in order to evaluate a given expression. This conventions are very useful to eliminate ambiguity while we perform an expression with a group of operators.
+The operator **precedence** (aka operator binding) is a collection of rules that reflect conventions about which procedures perform first in order to evaluate a given expression. This conventions are very useful to eliminate ambiguity while we perform an expression with a group of operators.
 
 ## Operand coercion
 Some languages also allow to the operands of an operator to be implicitly converted, or coerced, to suitable data types for the operation to occur.
 
 For example, in Perl coercion rules lead into 12 + "3.14" producing the result of 15.14. The text "3.14" is converted to the number 3.14 before addition can takes place. Further, 12 is an integer and 3.14 is either a floating or fixed-point number (a number that has a decimal place in it) so the integer is then converted to a floating point or fixed-point number respectively.
-
+```
+12 + "3.14" //Int + String
+12 + 3.14 //Int + Float
+12.0 + 3.14 // Float + Float
+15.14 //Float
+```
 JavaScript follows opposite rules—finding the same expression above, it will convert the integer 12 into a string "12", then concatenate the two operands to form "123.14".
 
 In the presence of coercions in a language, the programmer must be aware of the specific rules regarding operand types and the operation result type to avoid subtle programming mistakes.
@@ -77,19 +82,19 @@ In the presence of coercions in a language, the programmer must be aware of the 
 # Common operators
 
 ## Access operator
-Access operator . is used for to access a member of a namespace or a type (type.member). For example we can use access operator to access a nested namespace  String.Indices or to access type members static and non-static.
+**Access operator .** is used for to access a member of a namespace or a type (type.member). For example we can use access operator to access a nested namespace  String.Indices or to access type members static and non-static.
 
 ## Scope resolution operator
-The scope resolution operator ::, helps to identify and specify the context which an identifier refers.
+The **scope resolution operator ::**, helps to identify and specify the context which an identifier refers.
 
 ## Indexer operator
-The indexer operator [ ] is typically used to access a variable in a sequence or in a pointer element access.
+The **indexer operator [ ]** is typically used to access a variable in a sequence or in a pointer element access.
 
 ## Null-conditional operators
-Null-conditional operators ?. or ?[ ]  allow access to a member only if that operand evaluates to non-null; otherwise, it returns null.
+**Null-conditional** operators ?. or ?[ ]  allow access to a member only if that operand evaluates to non-null; otherwise, it returns null.
 
 ## Compound Assignment Operators
-Compound Assignment operators provide a shorter syntax for assigning the result for an arithmetic and bitwise operator. They perform the operation on the two operands before assigning the result to the first operand.
+**Compound assignment operators** provide a shorter syntax for assigning the result for an arithmetic and bitwise operator. They perform the operation on the two operands before assigning the result to the first operand.
 For example  x += 2  is a shortcut for  x = x + 2.
 
 ## Invocation operator
@@ -97,7 +102,9 @@ The invocation operator () call a method or invoke a delegate.
 
 ## Relational operator
 The relational operator are constructs that define a type of relationship between two entities, this definition includes both equality and inequality.
-An expression built with relational operators is called conditional expression and expressions of this type are defined predicates. If the language support the Boolean type (es. Java, PHP) the relational operator returns a true/false value, instead in other languages like C the relational operator returns 0 or 1, where the 0 correspond to false value and 1 to the true value.
+
+An expression built with relational operators is called conditional expression and expressions of this type are defined **predicates**. If the language support the Boolean type (es. Java, PHP) the relational operator returns a true/false value, instead in other languages like C the relational operator returns 0 or 1, where the 0 correspond to false value and 1 to the true value.
+
 In some dynamically typed languages, equality can also be done at the type level, for example:
 • 4 === “4” is false because the left operand is an integer and the second is a string
 • 4 == “4” is true because the both operands are 4
@@ -106,9 +113,9 @@ In some dynamically typed languages, equality can also be done at the type level
 ## Logical operator
 Conditional logical operators modify or combine true or false boolean logical values.
 The main conditional logic are:
-• AND (a && b)
-• OR (a || b)
-• NOT (!a)
+* AND (a && b)
+* OR (a || b)
+* NOT (!a)
 
 The AND operator creates a logical expression that returns a boolean, this expression return true if and only if both the left and right operands are true. During the evaluation of the result, on the first false operand encountered the AND operator return false without evaluate the rest of operands.
 true && true && true  //true
@@ -130,15 +137,22 @@ The logical NOT operator is a prefix operator that reverse the boolean value of 
 All the operators can be composed tighter to compose more complex expressions. This composition is possible because all the operators have the left associativity property. Otherwise we should use the parentheses.
 
 ## Ternary operator (Elvis operator)
-In some programming languages the Elvis operator is declared like ?: or ||. It is a conditional operator with three operands, the first operand is a predicate, the other two operands are expressions.
+In some programming languages the **Elvis operator** is declared like ?: or ||. It is a conditional operator with three operands, the first operand is a predicate, the other two operands are expressions.
 If the predicate return true the operator performs the first expression, otherwise it performs the second expression.
 ```
 condition ? firstExpression : secondExpression
 ```
 
 ## Null - Coalescing Operator
-The null-coalescing operator (a ?? b)  return the wrapped value in the optional type if it exists, otherwise the operator returns the right operand. The wrapped type on the left and the type of the right operands are the same.
-This operator is a shortcut to avoid the if and the force cast when we try to unwrap an Optional type, for example the expression a != null ? A! : b with coalescing operator becomes a ?? b.
+The **null-coalescing** operator (a ?? b) return the wrapped value in the optional type if it exists, otherwise the operator returns the right operand. The wrapped type on the left and the type of the right operands are the same.
+This operator is a shortcut to avoid the if and the force cast when we try to unwrap an Optional type, for example the expression:
+```
+a != null ? a! : b
+```
+ with coalescing operator becomes:
+```
+ a ?? b
+ ```
 If the value is non-null, the b value is not evaluated, this is also know as short-circuit evaluation.
 
 ## Range operators

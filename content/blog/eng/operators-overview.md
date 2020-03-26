@@ -82,22 +82,29 @@ In the presence of coercions in a language, the programmer must be aware of the 
 # Common operators
 
 ## Access operator
-**Access operator .** is used for to access a member of a namespace or a type (type.member). For example we can use access operator to access a nested namespace  String.Indices or to access type members static and non-static.
+#### Symbol -> .
+
+**Access operator** is used for to access a member of a namespace or a type (type.member). For example we can use access operator to access a nested namespace  String.Indices or to access type members static and non-static.
 
 ## Scope resolution operator
-The **scope resolution operator ::**, helps to identify and specify the context which an identifier refers.
+#### Symbol -> ::
+The **scope resolution operator**, helps to identify and specify the context which an identifier refers.
 
 ## Indexer operator
-The **indexer operator [ ]** is typically used to access a variable in a sequence or in a pointer element access.
+#### Symbol -> [ ]
+The **indexer operator** is typically used to access a variable in a sequence or in a pointer element access.
 
 ## Null-conditional operators
-**Null-conditional** operators ?. or ?[ ]  allow access to a member only if that operand evaluates to non-null; otherwise, it returns null.
+#### Symbols -> ?. , ?[ ]
+**Null-conditional** operators allow access to a member only if that operand evaluates to non-null; otherwise, it returns null.
 
 ## Compound Assignment Operators
+#### Symbols -> += , -=, *=, /=, %=, &=, |=, ^=, ...
 **Compound assignment operators** provide a shorter syntax for assigning the result for an arithmetic and bitwise operator. They perform the operation on the two operands before assigning the result to the first operand.
 For example  x += 2  is a shortcut for  x = x + 2.
 
 ## Invocation operator
+#### Symbol -> ()
 The invocation operator () call a method or invoke a delegate.
 
 ## Relational operator
@@ -111,6 +118,7 @@ In some dynamically typed languages, equality can also be done at the type level
 
 
 ## Logical operator
+#### Symbols -> && , || , !
 Conditional logical operators modify or combine true or false boolean logical values.
 The main conditional logic are:
 * AND (a && b)
@@ -137,6 +145,7 @@ The logical NOT operator is a prefix operator that reverse the boolean value of 
 All the operators can be composed tighter to compose more complex expressions. This composition is possible because all the operators have the left associativity property. Otherwise we should use the parentheses.
 
 ## Ternary operator (Elvis operator)
+#### Symbol -> ? :
 In some programming languages the **Elvis operator** is declared like ?: or ||. It is a conditional operator with three operands, the first operand is a predicate, the other two operands are expressions.
 If the predicate return true the operator performs the first expression, otherwise it performs the second expression.
 ```
@@ -144,6 +153,7 @@ condition ? firstExpression : secondExpression
 ```
 
 ## Null - Coalescing Operator
+#### Symbol -> ??
 The **null-coalescing** operator (a ?? b) return the wrapped value in the optional type if it exists, otherwise the operator returns the right operand. The wrapped type on the left and the type of the right operands are the same.
 This operator is a shortcut to avoid the if and the force cast when we try to unwrap an Optional type, for example the expression:
 ```
@@ -156,12 +166,14 @@ a != null ? a! : b
 If the value is non-null, the b value is not evaluated, this is also know as short-circuit evaluation.
 
 ## Range operators
+#### Symbols -> ... , ..<
 Some programming languages support the range operators, this operators are a shortcut to work with the range values. The main types are:
 • Closed range (a...b): define a range from a to b, both a and b are included into the range
 • half-open range (a..<b): define a range from a to b, the b value is not included into the range
 • one-side ranges elementList[...2]:  this prefix operator work with array indices and when we used it, the output is an ArraySlice with all the elements in the elementList until the third value.
 
 ## Identity operator
+#### Symbols -> === , !==
 The identity operator  (=== and !==) compares directly the memory reference of two objects, it returns true if the two objects have the same memory address, false otherwise.
 
 # Conclusion

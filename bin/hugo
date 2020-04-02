@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+
+set -o errexit
+
+os_type=$(uname -s)
+
+cd "$(dirname "$(cd "$(dirname "${0}")" && pwd)")"
+
+if test "$os_type" = 'Linux'; then
+  bin/hugo_linux_amd64 "$@"
+elif test "$os_type" = 'Darwin'; then
+  bin/hugo_macOS_amd64 "$@"
+else
+  echo 'ARCHITETTURA NON RICONOSCIUTA'
+  exit 126
+fi

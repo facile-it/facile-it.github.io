@@ -71,14 +71,17 @@ The operator **precedence** (aka operator binding) is a collection of rules that
 Some languages also allow to the operands of an operator to be implicitly converted, or coerced, to suitable data types for the operation to occur.
 
 For example, in Perl coercion rules lead into 12 + "3.14" producing the result of 15.14. The text "3.14" is converted to the number 3.14 before addition can takes place. Further, 12 is an integer and 3.14 is either a floating or fixed-point number (a number that has a decimal place in it) so the integer is then converted to a floating point or fixed-point number respectively.
-```
-12 + "3.14" //Int + String
-12 + 3.14 //Int + Float
-12.0 + 3.14 // Float + Float
-15.14 //Float
+```Perl
+$firstValue = 12;
+$secondValue = "3.14";
+print $firstValue + $secondValue; // 15.14
 ```
 JavaScript follows opposite rules—finding the same expression above, it will convert the integer 12 into a string "12", then concatenate the two operands to form "123.14".
-
+```JavaScript
+let firstValue = 12;
+let secondValue = "3.14";
+print(firstValue+secondValue); // "123.14"
+```
 In the presence of coercions in a language, the programmer must be aware of the specific rules regarding operand types and the operation result type to avoid subtle programming mistakes.
 
 

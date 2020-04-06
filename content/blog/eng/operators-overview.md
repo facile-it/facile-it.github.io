@@ -29,14 +29,17 @@ There are three different types of operators:
 
 # User defined operators
 Some programming languages (e.g.: Haskell, F#, Swift, ...), allow to define custom operators with special symbols, some other languages (Kotlin, Pascal, ...) allows to define literal operators, in both cases we have to define a function that will be executed when we use some operator.
-Other kind of programming languages allow operator overloading, this operation is identified like ad hoc polymorphism.
+Other kind of programming languages allow operator overloading, this operation is identified like ad hoc polymorphism. **Ad hoc polymorphism** is a kind of polymorphism in which an operator can be applied to arguments of different types because a polymorphic operator can denote a different implementations depending on the type of arguments.
 
 Operator overloading is to declare with the same name in the same scope, except that both declarations have different arguments type and different implementation.
 
 # Operator syntax
 Syntactically the declaration of an operator is like a function definition.  We can think of function as a prefix operator whose operands are the parameters passed in the parentheses or we can think about an operator as a function that takes one or two parameters as input.
 
-As seen before we have three types of operators and their type depends on the position (prefix, postfix and infix), on their airiness (unary, binary and ternary), on their precedence and associativity.
+As seen before we have three types of operators and their type depends on the position (prefix, postfix and infix), on their airiness (unary, binary and ternary), on their precedence and associativity. Let's see some examples:
+ - **prefix**: !condition
+ - **binary**: conditionA || conditionB
+ - **ternary**: condition ? firstExpression : secondExpression
 
 # Operator semantic
 The semantic of an operator depends by its value, implementation and arity. An expression can involve an operator and simply return the result of an evaluation or may be an object allowing assignment.

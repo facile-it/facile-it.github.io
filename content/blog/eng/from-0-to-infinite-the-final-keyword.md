@@ -15,10 +15,10 @@ toc: true
 Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc. 
 I apply a technique invented by me named: **"Google from zero to infinite"**.
 
-# The concept behind final keyword
- 
 Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. But most of the time I find very interesting documents, otherwise difficult to reach. This time I decided to use the keyword final of PHP.
 
+# The concept behind final keyword
+ 
 The keyword final was introduced in version 5 of php. 
 
 The manual says: 
@@ -27,30 +27,27 @@ The manual says:
 > If the class itself is being defined final then it cannot be extended. Note: Properties cannot be declared final, only classes and methods may be declared as final.
 
 Java has the same keyword, c# too but it is called "sealed" instead of "final", but more or less have the same behavior.
-To prevent a class from being inherited (in our case we will see only this type of use, languages like java support further behavior but in different contexts).
+To prevent a class from being inherited (in our case we will see only this type of use,for example languages like java support further behavior but in different contexts).
 
-First of all we will try to understand what it is for, then we will try to do some additional reasoning, and finally we will talk about the comments on the net.
+First of all we will try to understand what it is for, then we will try to do some additional reasoning, and finally we will talk about of comments on the net.
 
 The concept that expresses the keyword final is that a class can not be extended, the decision must be taken by the programmer in the design stage utilizing just the final keyword. 
 
-There are situations in which extension by inheritance is a good solution, others where it is not possible and others where it is wrong. The keyword final is a tool given to the programmer to express this decision.
+There are situations in which extension by inheritance is a good solution, others where it is not possible and others where it is wrong. The keyword final is a "tool" given to the programmer to express this decision.
 
 So when the consumer of the class will meet the keyword final, it will have to use different solutions from the inheritance. And this decision is imposed from the class designer.
 
-Why someone should set such a strong constraint?. The answers are many, all aim of having a robust,  and more manageable code-base. For example to avoid the proliferation of infinite hierarchies of classes such as VCL (Visual Component Library), which are difficult to extend and maintain.
-As it is clearly visible from the image below
+Why someone should set such a strong constraint?. The answers are many, all aim of having a robust,  and more manageable code-base. For example to avoid the proliferation of infinite hierarchies of classes such as VCL (see Visual Component Library), which are difficult to extend and maintain. In this case (even being a well-made library) the use of inheritance has been used a lot.
 
 ![big hierarchy](/images/from-0-to-infinite-the-final-keyword/big-hierarchy.png)
 
-in this case (even being a well-made library) the use of inheritance has been used a lot.
-
 When we meet a class with the keyword final, who designed the class not allow us inherit from it, if we want to extend some behavior we must do it by composition or other mechanisms (like events, o plugins). 
 
-I think that this is a good method. In fact, in relation to the time used for the analysis of the design class, through final we provide important information on how she should be useds, simplifying the effort of the developer
+I think that this is a good method. In fact, in relation to the time used for the analysis of the design class, through final we provide important information on how she should be useds, simplifying the effort of the developer.
 
 # S.O.L.I.D and Liskov
 
-Unfortunately, many programmers use inheritance as a solution to all problems, without knowing or trying other principles that regulate or support to develop in object oriented design. Principles like **S.O.L.I.D** or others.
+Develop architecture isn't a trivial task, many programmers use inheritance as a solution to all problems, without knowing or trying other principles that regulate or support to develop in object oriented design. Principles like **S.O.L.I.D** or others.
 
 Let's see for example what **Liskov principle** says in more detail. 
 The canonical statement says the following:

@@ -71,9 +71,9 @@ The canonical statement says the following:
 
 I have used it like as example because is specifically for the design of hierarchies.
 
-I do not want to write an article on how to respect the development according to **Liskov** on the internet there is a lot of literature. In this case I would just like to emphasize that building a hierarchy of objects is not easy, that more the hierarchy is deep then more we are faced with design problems and **final** helps use to prevent this. 
+I do not want to write an article on how to respect the development according to **Liskov** in the net there is a lot of literature. I would just like to emphasize that building a hierarchy of objects is not easy, that more the hierarchy is deep then more we are faced with design problems and **final** helps use to prevent this. 
 
-For this reason, before creating subclasses we should ask ourselves questions such as these or similar this is only a suggestion:
+For this reason, before creating subclasses we should ask ourselves questions such as these or similar (this is only a suggestion):
 
 - is my derived class of the same type as the base class?
 - can my derived class be exchanged with the base class without having "strange" behaviors in the code at runtime?
@@ -94,16 +94,13 @@ class Stack extends ArrayList {
 Why ? the Stack class inheriting from ArrayList will have a lot of additional methods not related to the concept of Stack (push or pop). To make the Stack work, you would have to remap the behavior of the extra methods, but this only because a design error was made. 
 
 You are probably thinking that the OOP is not keeping its promise. 
-However, let us remember that we are programming in OOP (Object Oriented Programming) not in OOI (Object Oriented Inheritance). 
-There is always a trade off between code reuse and good design. 
+However, let us remember that we are programming in OOP (Object Oriented Programming) not in OOI (Object Oriented Inheritance). There is always a trade off between code reuse and good design. 
 Inheritance should be mostly used for good design, for code reuse we go with composition.
 
-In the previous example two main errors have been made, first error a Stack IS NOT an Array!, second and the the biggest problem, 
-is the cross-domain inheritance relationship. 
-Simply, our domain classes must use implementations not to inherit them, in our example, stack was a concept of domain (Focusing only on reusing code can be a problem). 
+In the previous example two main errors have been made, first error a Stack IS NOT an Array!, second  problem, is the cross-domain inheritance relationship. Simply, our domain classes must use implementations not to inherit them, in our example, stack was a concept of domain (Focusing only on reusing code can be a problem). 
 
 Last example. A **"person"** relationship, **"employee"**. how would you design a relationship between a person entity and an employee entity? 
-Would you go with inheritance or composition? ... it is a case of temporary relationship, so it should be modeled with the composition (employ is a role not a person), then obviously it always goes a depends. 
+Would you go with inheritance or composition? ... it is a case of temporary relationship, so it should be modeled with the composition (employ is a role not a person), then obviously it always goes a depends of the domain and other aspect. 
 
 I invite you, however, to do some tests with your classes, to see if they adhere to these good practices and try to get a better design, avoiding inheritance.
 

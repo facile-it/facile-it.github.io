@@ -104,7 +104,7 @@ I invite you, however, to do some tests with your classes, to see if they adhere
 # The concrete example, break the immutable object 
 
 Let's see some example where the **final** keyword could be the right choice. 
-Since in PHP it is not trivial to create a pure immutable object without use **final**.
+Where the use **final** simply to create a immutable object with minimal effort.
 Let's go see some code.
 
 ```php

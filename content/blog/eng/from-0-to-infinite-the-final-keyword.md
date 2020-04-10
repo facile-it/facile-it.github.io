@@ -100,7 +100,7 @@ Inheritance should be mostly used for good design, for code reuse we go with com
 In the previous example two main errors have been made, first error a Stack IS NOT an Array!, second  problem, is the cross-domain inheritance relationship. Simply, our domain classes must use implementations not to inherit them, in our example, stack was a concept of domain (Focusing only on reusing code can be a problem). 
 
 Last example. A **"person"** relationship, **"employee"**. how would you design a relationship between a person entity and an employee entity? 
-Would you go with inheritance or composition? ... it is a case of temporary relationship, so it should be modeled with the composition (employ is a role not a person), then obviously it always goes a depends of the domain and other aspect. 
+Would you go with inheritance or composition? ... it is a case of temporary relationship, so it should be modeled with the composition (employ is a role not a person), however it depends of the domain and other aspect this is only an example. 
 
 I invite you, however, to do some tests with your classes, to see if they adhere to these good practices and try to get a better design, avoiding inheritance.
 

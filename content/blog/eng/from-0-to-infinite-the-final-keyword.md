@@ -45,7 +45,7 @@ When we meet a class with the keyword final, who designed the class not allow us
 
 I think that this is a good method. In fact, in relation to the time used for the analysis of the design class, through final we provide important information on how she should be useds, simplifying the effort of the developer.
 
-# S.O.L.I.D and Liskov
+# S.O.L.I.D, Liskov and final
 
 Develop architecture isn't a trivial task, many programmers use inheritance as solution to all problems.  
 
@@ -97,17 +97,14 @@ You are probably thinking that the OOP is not keeping its promise.
 However, let us remember that we are programming in OOP (Object Oriented Programming) not in OOI (Object Oriented Inheritance). There is always a trade off between code reuse and good design. 
 Inheritance should be mostly used for good design, for code reuse we go with composition.
 
-In the previous example two main errors have been made, first error a Stack IS NOT an Array!, second  problem, is the cross-domain inheritance relationship. Simply, our domain classes must use implementations not to inherit them, in our example, stack was a concept of domain (Focusing only on reusing code can be a problem). 
-
-Last example. A **"person"** relationship, **"employee"**. how would you design a relationship between a person entity and an employee entity? 
-Would you go with inheritance or composition? ... it is a case of temporary relationship, so it should be modeled with the composition (employ is a role not a person), however it depends of the domain and other aspect this is only an example. 
+In the previous example two main errors have been made, first error a Stack IS NOT an Array, second  problem, is the cross-domain inheritance relationship. Simply, our domain classes must use implementations not to inherit them, in our example, stack was a concept of domain (Focusing only on reusing code can be a problem). 
 
 I invite you, however, to do some tests with your classes, to see if they adhere to these good practices and try to get a better design, avoiding inheritance.
 
 # The concrete example, break the immutable object 
 
 Let's see some example where the **final** keyword could be the right choice. 
-Since in PHP it is not possible to create a pure, immutable object, using the **final** we can emulate the behavior. 
+Since in PHP it is not trivial to create a pure immutable object without use **final**.
 Let's go see some code.
 
 ```php
@@ -127,7 +124,7 @@ class SomeImmutableObject
 }
 ```
 
-Let's concentrate, can we modify this object after it has been created? …. Yes we can, This is php friend!
+Let's concentrate, can we modify this object after it has been created? …. Yes we can!
 ```php
 $one = new SomeImmutableObject('Pippo');
 echo $one->getValue(); //Pippo
@@ -137,8 +134,7 @@ echo $one->getValue(); //Pluto
 
 try it! **[break the immutable object] (https://3v4l.org/CiHPG)**
 
-
-this problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. 
+This problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. 
 Another way to fix, is to create a `name constuctor` and make the `__constructor` private. 
 let's do it with the first solution!
 

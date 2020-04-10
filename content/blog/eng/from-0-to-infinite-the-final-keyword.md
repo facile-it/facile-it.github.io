@@ -41,15 +41,21 @@ Why someone should set such a strong constraint?. The answers are many, all aim 
 
 ![big hierarchy](/images/from-0-to-infinite-the-final-keyword/big-hierarchy.png)
 
-When we meet a class with the keyword final, who designed the class not allow us inherit from it, if we want to extend some behavior we must do it by composition or other mechanisms (like events, o plugins). 
+When we meet a class with the keyword final, who designed the class not allow us inherit from it, if we want to extend some behavior we must do it by composition or other mechanisms (like events, or plugins). 
 
 I think that this is a good method. In fact, in relation to the time used for the analysis of the design class, through final we provide important information on how she should be useds, simplifying the effort of the developer.
 
 # S.O.L.I.D and Liskov
 
-Develop architecture isn't a trivial task, many programmers use inheritance as a solution to all problems, without knowing or trying other principles that regulate or support to develop in object oriented design. Principles like **S.O.L.I.D** or others.
+Develop architecture isn't a trivial task, many programmers use inheritance as solution to all problems.  
 
-Let's see for example what **Liskov principle** says in more detail. 
+There are many principles and guidelines to help to develop good design like S.O.L.I.D, design patterns, etc.
+But the problem is that these principles are difficult to apply, they almost always lead to writing more code. 
+Not always this is possible, not always this is accepted. 
+
+Regarding final, in my opinion, one of the principle that best represents it is LSP.
+
+Let's see what **Liskov principle** says in more detail. 
 The canonical statement says the following:
 
 > "you should always be able to substitute the parent class with its derived class without any undesirable behaviour"

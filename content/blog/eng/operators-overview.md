@@ -15,7 +15,7 @@ Operators are useful constructors and they are present in most programming langu
 
 This article is the first in a series of two about operators. Here we will do an overview of the main operators properties and in the next one we will discuss about some custom operators that we use in our production code.
 
-# Definition
+## Definition
 
 **An operator is a special symbol or expression that is used to check, change or combine values. Most programming languages support their construct and we can considered them like a functions but with a different syntax and semantic.**
 
@@ -27,13 +27,13 @@ There are three different types of operators:
 * **Binary**: takes two parameters, it is placed between them. It’s also called infix operator.
 * **Ternary**: takes three parameters, the first operand is a predicate and based on its result evaluate the first operand or the second.
 
-# User defined operators
+## User defined operators
 Some programming languages (e.g.: Haskell, F#, Swift, ...), allow to define custom operators with special symbols, some other languages (Kotlin, Pascal, ...) allows to define literal operators, in both cases we have to define a function that will be executed when we use some operator.
 Other kind of programming languages allow operator overloading, this operation is identified like ad hoc polymorphism. **Ad hoc polymorphism** is a kind of polymorphism in which an operator can be applied to arguments of different types because a polymorphic operator can denote a different implementations depending on the type of arguments.
 
 Operator overloading is to declare with the same name in the same scope, except that both declarations have different arguments type and different implementation.
 
-# Operator syntax
+## Operator syntax
 Syntactically the declaration of an operator is like a function definition.  We can think of function as a prefix operator whose operands are the parameters passed in the parentheses or we can think about an operator as a function that takes one or two parameters as input.
 
 As seen before we have three types of operators and their type depends on the position (prefix, postfix and infix), on their airiness (unary, binary and ternary), on their precedence and associativity. Let's see some examples:
@@ -41,13 +41,13 @@ As seen before we have three types of operators and their type depends on the po
  - **binary**: conditionA || conditionB
  - **ternary**: condition ? firstExpression : secondExpression
 
-# Operator semantic
+## Operator semantic
 The semantic of an operator depends by its value, implementation and arity. An expression can involve an operator and simply return the result of an evaluation or may be an object allowing assignment.
 
 There are some operators with an explicit semantic, like + or ==, than based on the context, perform an evaluation and return. However the semantics can be significantly different for example the assignment operator (var a = b), does not perform an evaluation, but it is used to store a value in a location address.
 
 
-# Operator Properties
+## Operator Properties
 
 ## Associativity
 The associativity of an operator is a property that determines how operators of the same precedence are grouped in absence of parentheeses. The choice of which operations to apply to the operand, is determinated by the associativity of the operators. An operator can have the association property left, right, full or non-associative.
@@ -85,7 +85,7 @@ print(firstValue+secondValue); // "123.14"
 In the presence of coercions in a language, the programmer must be aware of the specific rules regarding operand types and the operation result type to avoid subtle programming mistakes.
 
 
-# Common operators
+## Common operators
 
 ## Access operator
 #### Symbol -> .
@@ -182,7 +182,7 @@ Some programming languages support the range operators, this operators are a sho
 #### Symbols -> === , !==
 The identity operator  (=== and !==) compares directly the memory reference of two objects, it returns true if the two objects have the same memory address, false otherwise.
 
-# Conclusion
+## Conclusion
 Operators are useful developer tools available to the developer, knowing their potential allows you to make complex assessments in a few lines of code. In the next article we will create custom operators by introducing new concepts and we will explore the potential of operators even more in detail.
 
 # References

@@ -13,7 +13,7 @@ toc: true
 # Introduction
 Operators are useful constructors and they are present in most programming languages. They are fundamental for many operations and in this article we will provide an overview to better understand their properties.
 
-This article is the first in a series of two about operators. Here we will make an overview of the main operators properties and in the next one we will discuss about some custom operators that we use in our production code.
+This article is the first in a series of two about operators. Here we will make an overview of the main operators' properties and in the next one we will discuss about some custom operators that we use in our production code.
 
 ## Definition
 
@@ -118,7 +118,7 @@ The relational operator are constructs that define a type of relationship betwee
 
 An expression built with relational operators is called conditional expression and expressions of this type are defined **predicates**. If the language support the Boolean type (es. Java, PHP) the relational operator returns a true/false value, instead in other languages like C the relational operator returns 0 or 1, where the 0 correspond to false value and 1 to the true value.
 
-In some dynamically typed languages, equality can also be done at the type level, for example:
+In some dynamic languages, we can match two values based on their types, for example:
 • 4 === “4” is false because the left operand is an integer and the second is a string
 • 4 == “4” is true because the both operands are 4
 
@@ -176,14 +176,14 @@ If the value is non-null, the b value is not evaluated, this is also know as sho
 Some programming languages support the range operators, this operators are a shortcut to work with the range values. The main types are:
 • Closed range (a...b): define a range from a to b, both a and b are included into the range
 • half-open range (a..<b): define a range from a to b, the b value is not included into the range
-• one-side ranges elementList[...2]:  this prefix operator work with array indices and when we used it, the output is an ArraySlice with all the elements in the elementList until the third value.
+• one-side ranges elementList[...2]: this prefix operator works with array indices and when we used it, the output is an ArraySlice with all the elements in the elementList until the third value.
 
 ## Identity operator
 #### Symbols -> === , !==
 The identity operator  (=== and !==) compares directly the memory reference of two objects, it returns true if the two objects have the same memory address, false otherwise.
 
 ## Conclusion
-Operators are useful developer tools available to the developer, knowing their potential allows you to make complex assessments in a few lines of code. In the next article we will create custom operators by introducing new concepts and we will explore the potential of operators even more in detail.
+Operators are useful development tools available to the developer, by knowing their potential allows you to make complex assessments in a few lines of code. In the next article we will create some custom operators by introducing new concepts and we will explore the potential of operators even more in detail.
 
 # References
 

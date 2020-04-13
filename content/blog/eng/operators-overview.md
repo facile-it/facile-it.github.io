@@ -4,16 +4,16 @@ date: "2020-03-24"
 draft: true
 share: true
 categories: [English, Operators]
-title: "Operators overview"
+title: "Operators: an overview"
 type: "post"
 languageCode: "en-EN"
 toc: true
 ---
 
-# Operators overview
-Operators are useful constructors and they are present in most programming languages. They are fundamental for much operations and in this article we will make an overview to better understand their properties.
+# Introduction
+Operators are useful constructors and they are present in most programming languages. They are fundamental for many operations and in this article we will provide an overview to better understand their properties.
 
-This article is the first in a series of two about operators. Here we will do an overview of the main operators properties and in the next one we will discuss about some custom operators that we use in our production code.
+This article is the first in a series of two about operators. Here we will make an overview of the main operators properties and in the next one we will discuss about some custom operators that we use in our production code.
 
 ## Definition
 

@@ -3,8 +3,8 @@
 os_type=`uname -s`;
 
 if [[ $os_type == 'Linux' ]]; then
-    ./bin/hugo_0.31.1_linux_amd64 "$@"
+    ./bin/hugo_0.69.0_linux64 "$@"
 elif [[ $os_type == 'Darwin' ]]; then
-    ./bin/hugo_0.36_macOS_amd64 "$@"
+    ./bin/hugo_0.69.0_osx64 "$@"
 else echo 'ARCHITETTURA NON RICONOSCIUTA';
 fi

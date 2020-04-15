@@ -111,3 +111,9 @@ social:
   facebook: "facile.it"
   twitter:  "FacileIt_Engr"
   youtube:  "user/Facileit"
+
+markup:
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 1

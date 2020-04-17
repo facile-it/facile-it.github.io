@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -48,41 +48,23 @@
  understanding the meaning of old code, written by others or ourselves; tracing the causes of bugs, i.e. errors, in code; making changes to a certain procedure; adding features to existing structures;  Even if we approach the development of new software with agile methodologies, we always have to deal with the existing code, and to do that we must at least be able to understand it without overexertion." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/no-country-for-if-else/" />
-
-
-
-<meta property="article:published_time" content="2015-09-15T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-09-15T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-09-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-09-15T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="No Country For If Else">
+        <meta itemprop="name" content="No Country For If Else">
 <meta itemprop="description" content="There is an unwanted guest with us as we write code and build software projects: it&rsquo;s the code that&rsquo;s already written, and we must take into account its complexity as the code base increases in size. High complexity of the existing code can make the following activities particularly difficult:
  understanding the meaning of old code, written by others or ourselves; tracing the causes of bugs, i.e. errors, in code; making changes to a certain procedure; adding features to existing structures;  Even if we approach the development of new software with agile methodologies, we always have to deal with the existing code, and to do that we must at least be able to understand it without overexertion.">
-
-
 <meta itemprop="datePublished" content="2015-09-15T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-09-15T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="4386">
+<meta itemprop="wordCount" content="4387">
 
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -111,14 +93,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -424,27 +409,19 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>There is an <strong>unwanted guest</strong> with us as we write code and build software projects: it&rsquo;s the code that&rsquo;s <strong>already written</strong>, and we must take into account its complexity as the code base increases in size. High complexity of the existing code can make the following activities particularly difficult:</p>
-
+    <p>There is an <strong>unwanted guest</strong> with us as we write code and build software projects: it&rsquo;s the code that&rsquo;s <strong>already written</strong>, and we must take into account its complexity as the code base increases in size. High complexity of the existing code can make the following activities particularly difficult:</p>
 <ul>
 <li>understanding the meaning of old code, written by others or ourselves;</li>
 <li>tracing the causes of bugs, i.e. errors, in code;</li>
 <li>making changes to a certain procedure;</li>
 <li>adding features to existing structures;</li>
 </ul>
-
 <p>Even if we approach the development of new software with <a href="https://en.wikipedia.org/wiki/Agile_software_development">agile methodologies</a>, we always have to deal with the existing code, and to do that we must at least be able to <strong>understand it without overexertion</strong>. So when I talk about <em>complexity</em> I am referring in particular to the difficulty with which a programmer can <em>reason about</em> the existing code: the preface of the well-known academic textbook <a href="http://deptinfo.unice.fr/~roy/sicp.pdf">Structure and Interpretation of Computer Programs</a> contains the following sentence:</p>
-
 <blockquote>
 <p>programs must be written for people to read, and only incidentally for machines to execute</p>
 </blockquote>
-
 <p>I couldn&rsquo;t agree more: the time spent by a programmer in writing new code is <strong>only a fraction</strong> of his/her total working time; much of it is spent reading the existing code, to correct, extend, modify or simply understand it. Generating more understandable code, about which it&rsquo;s easier to reason, we can more easily evaluate the <strong>correctness</strong> of what we wrote so far or, if the obtained behavior is not the one expected, find the error. Of course this shouldn&rsquo;t undo the techniques that we routinely use to test the correctness of software <em>a posteriori</em>: indeed, no technical or scientific discipline is exempt from empirical tests, and in fact the empirical approach to software engineering is accepted in the academic community, as evidenced by the <a href="http://static.springer.com/sgw/documents/1525357/application/pdf/10664_JournalMetrics_Flyer.pdf">existence</a> of the <a href="http://link.springer.com/journal/10664">Empirical Software Engineering</a> journal. My personal position is in the middle: software testing is important, but it&rsquo;s also important to think in advance about its correctness, to avoid causes of <strong>accidental complexity</strong>.</p>
-
 <h2 id="index">Index</h2>
-
 <ul>
 <li><a href="#the-importance-of-abstraction">The importance of abstraction</a></li>
 <li><a href="#measuring-complexity">Measuring complexity</a></li>
@@ -454,83 +431,64 @@ ga('send', 'pageview');
 <li><a href="#an-empirical-validation">An empirical validation</a></li>
 <li><a href="#conclusions">Conclusions</a></li>
 </ul>
-
-<p><a name="the-importance-of-abstraction"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="the-importance-of-abstraction">The importance of abstraction</h2>
-
-<p>As we&rsquo;ve seen in a <a href="http://engineering.facile.it/programmazione-funzionale-perche-preoccuparsi/">previous article</a>, rather than the inherent complexity related to the logic of our software, we must worry about the <a href="http://shaffner.us/cs/papers/tarpit.pdf">accidental complexity</a> we introduce in the code by adopting <strong>non-optimal, pointlessly complicated solutions</strong>: the excessive use of <em>if-else-for-switch</em> control structures tends to make the code hard to understand, maintain and test; see for example the well-known <a href="http://c2.com/cgi/wiki?ArrowAntiPattern">Arrow Anti-Pattern</a>. It should be noted that the introduction of <a href="https://en.wikipedia.org/wiki/Structured_programming">structured programming</a>, i.e. programming based on the aforementioned control structures, was a <strong>major step forward</strong> in software development between the &lsquo;60s and the &lsquo;70s: it allowed to program at a higher level of abstraction than the previous style, removing the need to manually manage code execution order with the <a href="https://www.cs.utexas.edu/users/EWD/ewd02xx/EWD215.PDF">infamous</a> <code>goto</code> statement.</p>
-
+<p>As we&rsquo;ve seen in a <a href="http://engineering.facile.it/programmazione-funzionale-perche-preoccuparsi/">previous article</a>, rather than the inherent complexity related to the logic of our software, we must worry about the <a href="http://shaffner.us/cs/papers/tarpit.pdf">accidental complexity</a> we introduce in the code by adopting <strong>non-optimal, pointlessly complicated solutions</strong>: the excessive use of <em>if-else-for-switch</em> control structures tends to make the code hard to understand, maintain and test; see for example the well-known <a href="http://c2.com/cgi/wiki?ArrowAntiPattern">Arrow Anti-Pattern</a>. It should be noted that the introduction of <a href="https://en.wikipedia.org/wiki/Structured_programming">structured programming</a>, i.e. programming based on the aforementioned control structures, was a <strong>major step forward</strong> in software development between the &rsquo;60s and the &rsquo;70s: it allowed to program at a higher level of abstraction than the previous style, removing the need to manually manage code execution order with the <a href="https://www.cs.utexas.edu/users/EWD/ewd02xx/EWD215.PDF">infamous</a> <code>goto</code> statement.</p>
 <p>Software development paradigms change when programmers find themselves managing larger and more complex projects: to avoid being entangled by the excessive complexity of our own code, or code written by others that we still maintain, we have to work at <strong>higher levels of abstraction</strong>. How much high? A good answer could be the following:</p>
-
 <blockquote>
 <p>at a high level of abstraction we can tell the system to do what we want, without specifying how to do it</p>
 </blockquote>
-
 <p>At an appropriate level of abstraction we can focus on the <em>what</em> and let the system decide the <em>how</em>. Obviously there&rsquo;s no &ldquo;maximum&rdquo; level of abstraction, and as programmers we always find ourselves working <strong>halfway</strong> between the moving electrical charges in a microprocessor, and the needs of our company&rsquo;s business: however, working at a low abstraction level will greatly increase the risk of introducing accidental complexity, and we must be able to identify those cases. For example, when we use a control structure such as <em>if-else</em> within a relatively large procedure, we are <em>manually</em> making a decision based on the current state of our system: it would be much better to develop a software component, for example an object, which is able to <strong>make that kind of decision for us</strong>; our role, at that point, will be to <em>declare</em> the required functionality. Mixing the <em>what</em> with the <em>how</em> will make it particularly hard to understand what a block of code is going to do, because it can lead to the obfuscation of a procedure&rsquo;s <strong>intent</strong> - connected to the business logic - with the <strong>implementation details</strong>, which are separate concepts, often completely independent (the same intention can be expressed with different lower level implementations).</p>
-
 <p>Here&rsquo;s a simple example. Suppose we have the following function:</p>
-
-<pre><code class="language-swift">func &lt;A&gt; optionalValue1 (value: A, cond1: Bool, cond2: Bool) -&gt; A? {
-	var x: A?
-	if cond1 == true {
-		if cond2 == true {
-			x = nil
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> &lt;A&gt; optionalValue1 (value: A, cond1: Bool, cond2: Bool) -&gt; A? {
+	<span style="color:#66d9ef">var</span> x: A?
+	<span style="color:#66d9ef">if</span> cond1 == <span style="color:#66d9ef">true</span> {
+		<span style="color:#66d9ef">if</span> cond2 == <span style="color:#66d9ef">true</span> {
+			x = <span style="color:#66d9ef">nil</span>
 		}
-		else {
+		<span style="color:#66d9ef">else</span> {
 			x = value
 		}
 	}
-	else {
-		if cond2 == true {
+	<span style="color:#66d9ef">else</span> {
+		<span style="color:#66d9ef">if</span> cond2 == <span style="color:#66d9ef">true</span> {
 			x = value
 		}
-		else {
-			x = nil
+		<span style="color:#66d9ef">else</span> {
+			x = <span style="color:#66d9ef">nil</span>
 		}
 	}
-	return x
+	<span style="color:#66d9ef">return</span> x
 }
-</code></pre>
-
-<p>Although the expressed intent is rather simple, what&rsquo;s really going on is not immediately obvious; let&rsquo;s analyze the function step-by-step:</p>
-
+</code></pre></div><p>Although the expressed intent is rather simple, what&rsquo;s really going on is not immediately obvious; let&rsquo;s analyze the function step-by-step:</p>
 <ul>
 <li>a variable <code>x</code> of type <code>A?</code> is declared;</li>
 <li>the first condition is checked:
-
 <ul>
 <li>if the first condition is true, then the second condition is checked:
-
 <ul>
 <li>if the second condition is true, then the variable is set to <code>nil</code>;</li>
 <li>if the second condition is false, then the variable is set to <code>value</code>;</li>
-</ul></li>
+</ul>
+</li>
 <li>if the first condition is false, the second condition is checked:
-
 <ul>
 <li>if the second condition is true, then the variable is set to <code>value</code>;</li>
 <li>if the second condition is false, then the variable is set to <code>nil</code>;</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>the variable <code>x</code> is returned;</li>
 </ul>
-
 <p>To think about it, the intent is the following: return <code>value</code> if the conditions are different from each other, otherwise return <code>nil</code>:</p>
-
-<pre><code class="language-swift">func &lt;A&gt; optionalValue2 (value: A, cond1: Bool, cond2: Bool) -&gt; A? {
-	return cond1 != cond2 ? value : nil
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> &lt;A&gt; optionalValue2 (value: A, cond1: Bool, cond2: Bool) -&gt; A? {
+	<span style="color:#66d9ef">return</span> cond1 <span style="color:#f92672">!=</span> cond2 ? value : <span style="color:#66d9ef">nil</span>
 }
-</code></pre>
-
-<p>We have greatly simplified the function, making it easier to understand <strong>just by looking at it</strong> once. But in a more complex case, with many different conditions and possible code routes, it may not suffice to just try and simplify the conditions.</p>
-
-<p><a name="measuring-complexity"></a></p>
-
+</code></pre></div><p>We have greatly simplified the function, making it easier to understand <strong>just by looking at it</strong> once. But in a more complex case, with many different conditions and possible code routes, it may not suffice to just try and simplify the conditions.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="measuring-complexity">Measuring complexity</h2>
-
 <p>A unit of measure often taken into account in assessing the complexity of a method or function is the <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">cyclomatic complexity</a> (CC): it&rsquo;s defined as the degree of complexity generated by the use of multiple control structures in a procedure. You can calculate the number of CC for a structured procedure by representing it with a <a href="https://en.wikipedia.org/wiki/Directed_graph">directed graph</a> and counting the number of nodes and arcs. For example, we can represent the <code>optionalValue1</code> function with the following graph:</p>
-
 <pre><code>[(value,cond1,cond2)]
 |
 |-&gt; [var x] -&gt; [cond1 == true ?]
@@ -545,86 +503,61 @@ ga('send', 'pageview');
                      |-y-&gt; [x = value] ------|
                      |-n-&gt; [x = nil] --------|
                                              |-&gt; [return x]
-</code></pre>
-
-<p>For a single connected graph, the number of CC is calculated according to the following formula:</p>
-
+</code></pre><p>For a single connected graph, the number of CC is calculated according to the following formula:</p>
 <pre><code>CC = [number of arcs] - [number of nodes] + 2
-</code></pre>
-
-<p>For the <code>defaultValue1</code> you can see that CC = 4. Apparently the simplified version<code>defaulValue2</code> has a lower cyclomatic complexity, but in reality, as indicated in T.J.McCabe&rsquo;s <a href="http://www.literateprogramming.com/mccabe.pdf">original article</a>, CC can only be calculated for a <em>completely structured</em> procedure, that is a procedure with a single entry point and a single exit point; CC should also take into account <strong>all the possible cases</strong> for a condition, and <code>if cond1 != cond2</code> has precisely four possible cases. A dissertation of possible evolutions of CC, considering multiple entry/exit points for a module, is a available <a href="http://www.acis.pamplin.vt.edu/faculty/tegarden/wrk-pap/SQJ.PDF">here</a>. Thus, we won&rsquo;t keep account of CC in the rest of the article for the following reasons:</p>
-
+</code></pre><p>For the <code>defaultValue1</code> you can see that CC = 4. Apparently the simplified version<code> defaulValue2</code> has a lower cyclomatic complexity, but in reality, as indicated in T.J.McCabe&rsquo;s <a href="http://www.literateprogramming.com/mccabe.pdf">original article</a>, CC can only be calculated for a <em>completely structured</em> procedure, that is a procedure with a single entry point and a single exit point; CC should also take into account <strong>all the possible cases</strong> for a condition, and <code>if cond1 != cond2</code> has precisely four possible cases. A dissertation of possible evolutions of CC, considering multiple entry/exit points for a module, is a available <a href="http://www.acis.pamplin.vt.edu/faculty/tegarden/wrk-pap/SQJ.PDF">here</a>. Thus, we won&rsquo;t keep account of CC in the rest of the article for the following reasons:</p>
 <ul>
 <li>the complexity that interests us is the one related to the &ldquo;understandability&rdquo; of a function, and unstructured patterns (such as <code>guard clause</code>, early <code>return</code> or conditional expressions like the one generated by the ternary operator <code>?:</code>) can often make a function or method easier to understand;</li>
 <li>the goal is to write a program by composing many small functions whose complexity is the <strong>minimum possible</strong>, e.g. no control structures, so it will have little value to measure the number of CC for each function;</li>
 </ul>
-
 <p>However, it seemed important to mention cyclomatic complexity in this article, but rather than <em>measuring</em> accidental complexity, we are interested in <strong>removing it completely</strong> by replacing conditional statements, often used of structured programming, with something else. Notice that a conditional <em>expression</em> is a <strong>simpler</strong> concept than a conditional <em>statement</em>: in the former, the entire expression simply returns something based on one or more conditions; in the latter, based on some state, the code could contain various statements, i.e., commands that could be executed or not.</p>
-
 <p>Say you have a function like this:</p>
-
-<pre><code class="language-swift">func getCorrectValueConsideringConditions &lt;A&gt; (cond1: Condition&lt;A&gt;, cond2: Condition&lt;A&gt;, cond3: Condition&lt;A&gt; ...) -&gt; A? {
-	/// do stuff
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">getCorrectValueConsideringConditions</span> &lt;A&gt; (cond1: Condition&lt;A&gt;, cond2: Condition&lt;A&gt;, cond3: Condition&lt;A&gt; ...) -&gt; A? {
+	<span style="color:#75715e">/// do stuff</span>
 }
-</code></pre>
-
-<p>In this case we have a large number of conditions attached to a value of type <code>A</code>, and we might need to evaluate each of these conditions with several <em>if-else</em> and/or nested <em>switch</em> statements. One way to simplify this problem could consist in <em>abstracting</em> the concept of <em>condition</em>, turning it into a <em>static relationship</em> between a few parameters and a value of type <code>A</code>: we should therefore create a system that is able to <em>solve</em> any number of relations, possibly in <strong>any order</strong>, and according to them deduce the resulting value.</p>
-
+</code></pre></div><p>In this case we have a large number of conditions attached to a value of type <code>A</code>, and we might need to evaluate each of these conditions with several <em>if-else</em> and/or nested <em>switch</em> statements. One way to simplify this problem could consist in <em>abstracting</em> the concept of <em>condition</em>, turning it into a <em>static relationship</em> between a few parameters and a value of type <code>A</code>: we should therefore create a system that is able to <em>solve</em> any number of relations, possibly in <strong>any order</strong>, and according to them deduce the resulting value.</p>
 <p>Let&rsquo;s see a practical example.</p>
-
-<p><a name="example-structured-solution"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="example-structured-solution">Example: structured solution</h2>
-
 <p>A person goes to the employment office to find a job: according to certain attributes (job preferences, young/old, number of children younger than 18) the person could be sent to a certain desk to choose a job, or outside in case no job is available for a person with those attributes. Here is the complete procedure (the realism is not important, it&rsquo;s just an example):</p>
-
 <p>A person <strong>p1</strong> comes to the desk <strong>d1</strong> to seek employment; <strong>p1</strong> has a list of job preferences, but could also accept other jobs outside the list; <strong>p1</strong> also has a list of jobs that would certainly never accept;</p>
-
 <ul>
 <li>if <strong>p1</strong> is young you get from <strong>p1</strong> a list <strong>l1</strong> of preferences;
-
 <ul>
 <li>if <strong>l1</strong> is too small, you ask <strong>p1</strong> to enlarge the list with secondary preferences;</li>
 <li>you match the preferences with the available jobs and get list <strong>l2</strong> of jobs to choose;</li>
 <li>if <strong>l2</strong> is empty, you ask <strong>p1</strong> if they want the full list of the positions;</li>
 <li>if <strong>p1</strong> chooses a job, they&rsquo;re sent to desk <strong>d2</strong> to continue the procedure;</li>
-</ul></li>
+</ul>
+</li>
 <li>if <strong>p1</strong> is elderly, you ask <strong>p1</strong> to choose from the list <strong>l3</strong> of suitable jobs for older people;
-
 <ul>
 <li>if <strong>p1</strong> chooses a job, they&rsquo;re sent to desk <strong>d3</strong> to continue the procedure;</li>
-</ul></li>
+</ul>
+</li>
 <li>if <strong>p1</strong> has children, in any case the list of available jobs will be affected by the number of children:
-
 <ul>
 <li>if <strong>p1</strong> has one child younger than 18, they will choose a job from the list <strong>l4</strong>;</li>
 <li>if <strong>p1</strong> has two children younger than 18, they will choose a job from the list <strong>l5</strong>;</li>
 <li>in the two previous cases, if <strong>p1</strong> chooses a job, <strong>p1</strong> is sent to desk <strong>d4</strong> to continue with the procedure;</li>
 <li>if <strong>p1</strong> has three or more children younger than 18, <strong>p1</strong> is sent to desk <strong>d5</strong> to continue the procedure;</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <p>A &ldquo;structured&rdquo; approach to the problem could consist in writing a function in which the entire procedure is expressed with a series of <em>if-else</em> statements, or <em>switch</em> in the case of the number of children.</p>
-
 <p>The project related to this article is available on <a href="https://github.com/broomburgo/NoCountryForIfElse">github</a>: I strongly recommend to check the code as the article goes on; <code>.swift</code> files are just text files, and can be opened with any text editor. In the file <code>common.swift</code> you&rsquo;ll find common structures and functions to all the proposed solutions. In particular, we will represent a &ldquo;person&rdquo; with <code>struct Person</code>, basically a immutable <em>value object</em> that collects the various attributes considered in the problem:</p>
-
-<pre><code class="language-swift">struct Person {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Person</span> {
     
-    let name: String
-    let isYoung: Bool
-    let childrenCount: Int
-    let likedJobsMain: [String]
-    let likedJobsSecondary: [String]
-    let dislikedJobs: [String]
+    <span style="color:#66d9ef">let</span> name: String
+    <span style="color:#66d9ef">let</span> isYoung: Bool
+    <span style="color:#66d9ef">let</span> childrenCount: Int
+    <span style="color:#66d9ef">let</span> likedJobsMain: [String]
+    <span style="color:#66d9ef">let</span> likedJobsSecondary: [String]
+    <span style="color:#66d9ef">let</span> dislikedJobs: [String]
 }
-</code></pre>
-
-<p>The idea is to write a function called <code>placeNameForPerson</code>, returning the next destination&rsquo;s name for the input person: the destination could be another desk <code>d2, d3, d4, d5</code>, or <code>outside</code> in case the person leaves the employment agency without a job. <code>placeNameForPerson_structured</code> returns the name of the destination considering the input <code>Person</code> and also requires a second input, a <code>DeskWithJobs</code>, i.e. a desk with several lists of available jobs, considering the various cases. In the structured solution, the entire execution logic is written in the function <code>placeNameForPerson_structured</code>, and is in fact based upon nested conditional tests.</p>
-
+</code></pre></div><p>The idea is to write a function called <code>placeNameForPerson</code>, returning the next destination&rsquo;s name for the input person: the destination could be another desk <code>d2, d3, d4, d5</code>, or <code>outside</code> in case the person leaves the employment agency without a job. <code>placeNameForPerson_structured</code> returns the name of the destination considering the input <code>Person</code> and also requires a second input, a <code>DeskWithJobs</code>, i.e. a desk with several lists of available jobs, considering the various cases. In the structured solution, the entire execution logic is written in the function <code>placeNameForPerson_structured</code>, and is in fact based upon nested conditional tests.</p>
 <p>We can immediately see that it is rather hard to understand what happens in the function just by reading it once: probably, in a &ldquo;real&rdquo; software, a function like this would probably be annotated with <strong>several comments</strong>. In addition, it can be easily seen that to trace a bug in a function like this would require a step-by-step debugging procedure, because the large number of conditions makes the function basically not testable in an efficient way. Finally, changing conditions or introducing more of them would probably be really hard.</p>
-
 <p>The underlying problem is actually due to the fact that, with a structured approach, we&rsquo;re <strong>mixing the intent with the implementation</strong>: in this case the intent is to associate groups of conditions to specific results, but these relations are &ldquo;hidden&rdquo; within the code and must be deduced from it; for example, if we are asked what is the door for an elderly person with two children, we&rsquo;d be forced to follow the flow of code:</p>
-
 <ul>
 <li>because the first condition is related to the number of children, we immediately enter the branch <code>childrenCount != 0</code>;</li>
 <li>at this point we enter the <code>case 2</code> for the number of children;</li>
@@ -632,145 +565,92 @@ ga('send', 'pageview');
 <li>a positive choice would lead to the &ldquo;d4&rdquo; desk;</li>
 <li>where&rsquo;s the &ldquo;young/old&rdquo; condition? Is there a bug? By analyzing the branch <code>childrenCount == 0</code> we can verify that this condition is actually checked, but it&rsquo;s simply irrelevant for the other branch;</li>
 </ul>
-
 <p>It is a relatively long way to understand one simple thing, and it is noteworthy that if we wanted to make changes to the procedure, we should always run the entirety of it to make sure we covered all possible cases and there are no conflicts or ambiguities.</p>
-
 <p>We can do better.</p>
-
-<p><a name="example-oo-solution"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="example-oo-solution">Example: OO solution</h2>
-
 <p>OO design is a often a work of <strong>both reason and creativity</strong>: frequently, a same problem can be solved with multiple OO approaches. As said before, our intent is to <em>abstract</em> the concept of <em>condition</em>; considering this approach, let&rsquo;s try and establish some foundation, in order to identify the responsibilities and behaviors to be assigned to each class:</p>
-
 <ul>
 <li>we want to represent each condition as if it were a single <em>check</em> separated from the others, e.g. with a <code>Check</code> type characterized by methods that verify whether a given person passes a step or not;</li>
 <li>we want to represent separately the checks related to a person&rsquo;s attribute, like the number of children, to those related to the list of jobs to choose from;</li>
 <li>we want to build objects that are able to combine multiple checks into a single check;</li>
 <li>we want to create an object that represents a list of checks, and is able to assess whether the person is going to pass one and only one of those checks, or no check;</li>
 </ul>
-
 <p>The file <code>oo.swift</code> contains the complete implementation of the OO solution. We define a <code>protocol PersonCheckType</code>, i.e., an interface that declares a <code>personIsValid</code> method that returns <code>true</code> if a certain <code>Person</code> passes the check:</p>
-
-<pre><code class="language-swift">protocol PersonCheckType {
-    func personIsValid(person: Person) -&gt; Bool
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">protocol</span> <span style="color:#a6e22e">PersonCheckType</span> {
+    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">personIsValid</span>(person: Person) -&gt; Bool
 }
-</code></pre>
-
-<p>Then some classes implementing the <code>PersonCheckType</code> protocol are declared, which individually test the various inherent attributes of a <code>Person</code>.</p>
-
+</code></pre></div><p>Then some classes implementing the <code>PersonCheckType</code> protocol are declared, which individually test the various inherent attributes of a <code>Person</code>.</p>
 <p>The type <code>JobsType</code> simply declares a <code>availableJobs</code> property to collect the available jobs: from it more <em>checks</em> are derived, also of type <code>PersonCheckType</code>, that verify whether a person is valid from the point of view of preferred jobs.</p>
-
 <p>Finally, the type <code>NextDeskType</code> declares a <code>nextDeskNameForPerson</code> method by which you can define what the name of the next desk for a person will be; the method returns <code>String?</code> because maybe there&rsquo;s no desk for a certain person:</p>
-
-<pre><code class="language-swift">protocol NextDeskType {
-    func nextDeskNameForPerson(person: Person) -&gt; String?
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">protocol</span> <span style="color:#a6e22e">NextDeskType</span> {
+    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">nextDeskNameForPerson</span>(person: Person) -&gt; String?
 }
-</code></pre>
-
-<p>From <code>NextDeskType</code> we derive the following classes:</p>
-
+</code></pre></div><p>From <code>NextDeskType</code> we derive the following classes:</p>
 <ul>
 <li><code>CheckNode</code>, which represents a node in the decision-making structure of the software;</li>
 <li><code>CheckStructure</code>, which represents the entire tree of nodes;</li>
 </ul>
-
 <p>In fact, the implementation of <code>nextDeskNameForPerson</code> in <code>CheckStructure</code> corresponds exactly to the solution of the problem: find the name of destination desk.</p>
-
 <p>The idea is to create some simple <strong>unit checks</strong>, using various classes of type <code>PersonCheckType</code>, and combine those into concrete objects of the class <code>CheckNode</code>, thus defining our <code>CheckStructure</code>. In &ldquo;pure&rdquo; OO style, we defined classes called <code>ComposedCheck</code> and <code>MultipleCheck</code> to compose more checks into one, and <code>FailingCheck</code> to encapsulate a check that is required to fail. None of the implemented methods has conditional structures related to the <em>business logic</em>.</p>
-
 <p>As an example, here&rsquo;s the implementation for the class <code>ChildrenCountCheck</code>, which validates a person considering the number of children:</p>
-
-<pre><code class="language-swift">class ChildrenCountCheck: PersonCheckType {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ChildrenCountCheck</span>: PersonCheckType {
     
-    let childrenCount: Int
-    init(_ childrenCount: Int) {
-        self.childrenCount = childrenCount
+    <span style="color:#66d9ef">let</span> childrenCount: Int
+    <span style="color:#66d9ef">init</span>(<span style="color:#66d9ef">_</span> childrenCount: Int) {
+        <span style="color:#66d9ef">self</span>.childrenCount = childrenCount
     }
     
-    func personIsValid(person: Person) -&gt; Bool {
-        return person.childrenCount == childrenCount
+    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">personIsValid</span>(person: Person) -&gt; Bool {
+        <span style="color:#66d9ef">return</span> person.childrenCount == childrenCount
     }
 }
-</code></pre>
-
-<p>The <code>structure</code> object defined in <code>main.swift</code> contains the list of conditions, in the form of properly configured objects; as you can see, the list is easily readable and the conditions are clear: thus, we can <em>declare</em> the intent, separated from the implementation details.</p>
-
-<p><a name="example-functional-solution"> </a></p>
-
+</code></pre></div><p>The <code>structure</code> object defined in <code>main.swift</code> contains the list of conditions, in the form of properly configured objects; as you can see, the list is easily readable and the conditions are clear: thus, we can <em>declare</em> the intent, separated from the implementation details.</p>
+<p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
 <h2 id="example-functional-solution">Example: functional solution</h2>
-
 <p>In structuring the OO solution we have adopted a <strong>composition principle</strong>: atomic objects with simple behavior, properly prepared, composed with each other in order to obtain more complex structures. In particular, each of our objects represents a specific <em>atomic behavior</em>, that&rsquo;s combined with others to obtain a <em>compound behavior</em>. <strong>The abstraction holds</strong>, and we can accept the fact that the objects we&rsquo;re using are black boxes that encapsulate a single decision on a person: by creating a larger box with smaller boxes inside, we can define a more complex condition. However there are two problems specific to the OO approach:</p>
-
 <ul>
 <li>each class requires a lot of code just to build the &ldquo;decision-in-the-box&rdquo; abstraction;</li>
 <li>objects&rsquo; composition is based on the methods of the objects themselves, that results, again, in writing a lot of code, which could obfuscate the intent;</li>
 </ul>
-
 <p>You can get the same result, namely to create a complex decision-making structure from simple components, more clearly by using <strong>functional programming</strong>. The functional code is described in <code>functional.swift</code>. We always start by the immutable <code>struct Person</code> and create, for convenience, another simple data container, <code>struct DeskNode</code>, which simply pairs the name of a node to the name of a optional destination desk. For the rest, we will exclusively define functions, by modeling the entire problem as a series of data transformations.</p>
-
 <p>In this case <code>PersonCheck</code> is a <strong>type of function</strong>, which associates a <code>Person</code> to a <code>Bool</code>. We also define the type of function <code>PersonNode</code>, which associates a certain <code>DeskNode</code> to a <code>Person</code>, and that has basically the purpose that the <code>nextDeskNameForPerson</code> method had in the OO solution.</p>
-
 <p>Finally, we represent the various &ldquo;nodes&rdquo; with a function of type <code>JobsNode</code>, which constructs a <code>PersonNode</code> based on a certain <code>PersonCheck</code>: in this way, to build a list of <code>PersonNode</code> we&rsquo;ll just need to apply the various checks (<code>PersonCheck</code>) to the respective nodes (<code>JobsNode</code>).</p>
-
 <p>The method most frequently adopted in functional programming to compose functions is to use custom operators. We want, for example, compose the various <code>PersonCheck</code> as if we were composing simple <code>Bool</code> values, by defining <strong>AND</strong> and <strong>OR</strong> operators. By association with the classic <code>&amp;&amp;</code> and <code>||</code> we define respectively the operators <code>&lt;&amp;&gt;</code> is <code>&lt;|&gt;</code>, also copying <a href="https://en.wikipedia.org/wiki/Operator_associativity">precedence and associativity</a> rules from the standard library. To improve readability and clarity of functions&rsquo; composition, we also declare a <em>function application</em> operator, defined as:</p>
-
-<pre><code class="language-swift">infix operator &lt;*&gt; {
-    associativity left
-    precedence 100
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">infix</span> <span style="color:#66d9ef">operator</span> <span style="color:#f92672">&lt;*&gt;</span> {
+    <span style="color:#66d9ef">associativity</span> <span style="color:#66d9ef">left</span>
+    <span style="color:#66d9ef">precedence</span> <span style="color:#ae81ff">100</span>
 }
-func &lt;*&gt; &lt;A, B&gt; (left: A -&gt; B, right: A) -&gt; B {
-    return left(right)
+<span style="color:#66d9ef">func</span> <span style="color:#f92672">&lt;*&gt;</span> &lt;A, B&gt; (<span style="color:#66d9ef">left</span>: A -&gt; B, <span style="color:#66d9ef">right</span>: A) -&gt; B {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">left</span>(<span style="color:#66d9ef">right</span>)
 }
-</code></pre>
-
-<p>We can see from the definition that the operator <code>&lt;*&gt;</code> basically applies an argument (positioned to the right of the operator) to a certain function (positioned to the left of the operator): thus, it represents an alternative way to apply a function other than writing its arguments in <strong>parentheses</strong>, and is particularly suitable for improving the readability of the code when we use <a href="https://en.wikipedia.org/wiki/Higher-order_function">higher-order functions</a>. We can see these operators at work in <code>main.swift</code>, when we define our nodes, for example:</p>
-
-<pre><code class="language-swift">node(&quot;old&quot;, nextDeskName: &quot;d3&quot;)
-    &lt;*&gt; oldCheck
-    &lt;&amp;&gt; mustFail(childrenChecks)
-    &lt;&amp;&gt; checkExtendedJobs(availableJobsElderly)
-</code></pre>
-
-<p>The above-mentioned function builds a <code>PersonNode</code> named &ldquo;old&rdquo; that returns the desk &ldquo;d3&rdquo; if the input <code>Person</code> complies with following conditions:</p>
-
+</code></pre></div><p>We can see from the definition that the operator <code>&lt;*&gt;</code> basically applies an argument (positioned to the right of the operator) to a certain function (positioned to the left of the operator): thus, it represents an alternative way to apply a function other than writing its arguments in <strong>parentheses</strong>, and is particularly suitable for improving the readability of the code when we use <a href="https://en.wikipedia.org/wiki/Higher-order_function">higher-order functions</a>. We can see these operators at work in <code>main.swift</code>, when we define our nodes, for example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift">node(<span style="color:#e6db74">&#34;old&#34;</span>, nextDeskName: <span style="color:#e6db74">&#34;d3&#34;</span>)
+    <span style="color:#f92672">&lt;*&gt;</span> oldCheck
+    <span style="color:#f92672">&lt;&amp;&gt;</span> mustFail(childrenChecks)
+    <span style="color:#f92672">&lt;&amp;&gt;</span> checkExtendedJobs(availableJobsElderly)
+</code></pre></div><p>The above-mentioned function builds a <code>PersonNode</code> named &ldquo;old&rdquo; that returns the desk &ldquo;d3&rdquo; if the input <code>Person</code> complies with following conditions:</p>
 <ul>
 <li><code>oldCheck</code>: the person is elderly;</li>
 <li><code>mustFail(childrenChecks)</code>: the person must not have children;</li>
 <li><code>checkExtendedJobs(availableJobsElderly)</code>: the senior citizens jobs set and the person&rsquo;s favorite jobs set must have some intersection;</li>
 </ul>
-
 <p>At first glance it may seem difficult to understand, but you just need to get the basic abstractions on which functional composition is based in order to appreciate its <strong>power and expressiveness</strong>. The array <code>nodes</code>, in <code>main.swift</code>, contains all the nodes of the problem, represented as functions: compared to the OO solution contained in <code>structure</code>, the functional one is more clear and readable.</p>
-
-<p><a name="an-empirical-validation"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="an-empirical-validation">An empirical validation</h2>
-
 <p>In designing the &ldquo;OO&rdquo; and &ldquo;functional&rdquo; solutions it was made the specific choice that the order in which the checks occur should be irrelevant: in this way we can remove a known cause of accidental complexity, the one of &ldquo;control&rdquo;, i.e, the <strong>order</strong> in which the operations are carried out (we talked about it <a href="http://engineering.facile.it/programmazione-funzionale-perche-preoccuparsi/#cause-di-complessita">here</a>). To do this, you must have <strong>non-ambiguous</strong> checks: at most one check must pass for a certain person. It&rsquo;d be probably possible to write a formal method to prove that a given set of conditions is non-ambiguous, and then write a unit test based on such proof, but in this case an <em>empirical approach</em> seems more suitable and <strong>easier</strong> to implement.</p>
-
 <p>It was therefore choosen to use a <a href="https://hackage.haskell.org/package/QuickCheck">QuickCheck</a> approach: QuickCheck is a library for the <a href="https://www.haskell.org">Haskell</a> language, that allows you to automatically test that certain functions satisfy certain properties. The idea is to verify that a particular function always behaves in the same way, testing it with <strong>a large number of random inputs</strong>: in our case, the function is just the list of checks, and the input is a value of type <code>Person</code>. To verify that the checks are not ambiguous we can just try them with a large number of randomly generated persons: if for a certain value of <code>Person</code> two or more checks are positive, the test stops and the ambiguous checks&rsquo; names are logged. In the case of two ambiguous checks, to solve the problem it will suffice to make one of them more specific, for example by requiring that the other fails. We will use here the term <em>QuickCheck</em> to indicate the empirical test implemented, but in fact the original library does much more: please refer to the <a href="https://hackage.haskell.org/package/QuickCheck">linked</a> page for all the information.</p>
-
 <p>The functions <code>quickCheck_functional</code> and <code>quickCheck_oo</code>  implement the required feature: they generate a large number of random <code>Person</code>, and verify that the number of passed checks for each person is either 0 or 1. We can try this test by adding a new node. For example, suppose that at some point, after some time that the code was successfully used to solve the problem, you choose to add a new condition: there&rsquo;s a special desk for older people with only one child. Notice that modifying the code of the function <code>placeNameForPerson_structured</code> would be rather complicated: we should probably <strong>change more than one decision branch</strong>, adding the same condition at different points, and the likelyhood of error would be high. On the other side, with the other two solutions we just need to add a new node. However, after adding the node, by executing the program we will see that QuickCheck fails, printing the following message:</p>
-
 <pre><code>ambiguous nodes: [1 child, 1 child old]
-</code></pre>
-
-<p>QuickCheck is informing us that the nodes called &ldquo;one child&rdquo; and &ldquo;one child old&rdquo; are <strong>ambiguous</strong>: in fact, if the <code>Person</code> has one child and is old, the check for both nodes will pass. To solve the problem it will suffice to introduce another condition in the &ldquo;one child&rdquo; node: the seniority check must fail.</p>
-
+</code></pre><p>QuickCheck is informing us that the nodes called &ldquo;one child&rdquo; and &ldquo;one child old&rdquo; are <strong>ambiguous</strong>: in fact, if the <code>Person</code> has one child and is old, the check for both nodes will pass. To solve the problem it will suffice to introduce another condition in the &ldquo;one child&rdquo; node: the seniority check must fail.</p>
 <p>In the project you&rsquo;ll also find a <code>quickCheck_consistency</code> function, which performs a <em>sanity check</em>: it verifies that the target desk for a large number of randomly generated <code>Person</code> remains the same in the 3 cases: structured, oo and functional.</p>
-
-<p><a name="conclusions"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="conclusions">Conclusions</h2>
-
 <p>We have seen three ways to solve the same relatively complex problem, and in two of them we were able to get a <strong>more manageable</strong>, extensible and modifiable code by working at a <strong>higher level of abstraction</strong>. In particular, the &ldquo;functional&rdquo; way allowed us to write more compact code, characterized by a more evident intent, at the (low) cost of an initial step of abstraction, represented by custom operators. But the key to the whole process is once again to be found in the aforementioned phrase in <em>Structure and Interpretation of Computer Programs</em>, which I quote again:</p>
-
 <blockquote>
 <p>programs must be written for people to read, and only incidentally for machines to execute</p>
 </blockquote>
-
 <p>Adopting a more <strong>declarative</strong> style, where the <em>business logic</em> code &ldquo;declares the intent&rdquo;, describing the &ldquo;what&rdquo; and not the &ldquo;how&rdquo;, you can write more clear and readable software. This software will probably also be more <em>testable</em> because it is based on lower level <strong>atomic components</strong>, easy to test individually, which are combined through patterns of composition, also easily testable and provable. The ultimate goal is to build software architectures that are able to <strong>automatically solve problems</strong>, which are described in code by using <strong>basic building blocks</strong>. Finally, we have seen how a mixed &ldquo;reasoned&rdquo; and &ldquo;empirical&rdquo; approach can give excellent results; <em>a priori</em> reasoning and <em>a posteriori</em> verification are both useful tools, but their union is particularly powerful: indeed, every scientific discipline requires both the logical-mathematical reasoning for the definition of the theories, and the experimental verification to test their validity.</p>
-
 <p>The tools are there, we just need to <strong>start using them</strong>.</p>
 
   </div>
@@ -818,7 +698,7 @@ func &lt;*&gt; &lt;A, B&gt; (left: A -&gt; B, right: A) -&gt; B {
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -1114,7 +994,7 @@ func &lt;*&gt; &lt;A, B&gt; (left: A -&gt; B, right: A) -&gt; B {
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1133,13 +1013,11 @@ func &lt;*&gt; &lt;A, B&gt; (left: A -&gt; B, right: A) -&gt; B {
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1152,11 +1030,13 @@ func &lt;*&gt; &lt;A, B&gt; (left: A -&gt; B, right: A) -&gt; B {
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1175,7 +1055,7 @@ func &lt;*&gt; &lt;A, B&gt; (left: A -&gt; B, right: A) -&gt; B {
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1206,7 +1086,7 @@ func &lt;*&gt; &lt;A, B&gt; (left: A -&gt; B, right: A) -&gt; B {
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1249,13 +1129,11 @@ func &lt;*&gt; &lt;A, B&gt; (left: A -&gt; B, right: A) -&gt; B {
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1264,11 +1142,13 @@ func &lt;*&gt; &lt;A, B&gt; (left: A -&gt; B, right: A) -&gt; B {
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1311,14 +1191,12 @@ func &lt;*&gt; &lt;A, B&gt; (left: A -&gt; B, right: A) -&gt; B {
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1330,19 +1208,19 @@ func &lt;*&gt; &lt;A, B&gt; (left: A -&gt; B, right: A) -&gt; B {
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

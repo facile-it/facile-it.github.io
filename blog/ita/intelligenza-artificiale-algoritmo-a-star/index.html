@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -52,43 +52,25 @@ In generale, A* può risolvere efficacemente i problemi che soddisfano i requisi
  La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/" />
-
-
-
-<meta property="article:published_time" content="2015-05-12T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-05-12T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-05-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-05-12T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Intelligenza artificiale: algoritmo A*">
+        <meta itemprop="name" content="Intelligenza artificiale: algoritmo A*">
 <meta itemprop="description" content="Introduzione A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&rsquo;intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati.
 L&rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: gioco del 15, percorso minimo, Sudoku, cubo di Rubik, ecc.
 In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:
  La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti.">
-
-
 <meta itemprop="datePublished" content="2015-05-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-05-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="868">
+<meta itemprop="wordCount" content="793">
 
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -117,14 +99,17 @@ In generale, A* può risolvere efficacemente i problemi che soddisfano i requisi
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -413,7 +398,7 @@ ga('send', 'pageview');
         
 
         
-            <p>5 minute read</p>
+            <p>4 minute read</p>
         
     </div>
 </header>
@@ -425,81 +410,46 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<h1 id="introduzione">Introduzione</h1>
-
+    <h1 id="introduzione">Introduzione</h1>
 <p>A* è un <a href="https://it.wikipedia.org/wiki/Algoritmo_di_ricerca">algoritmo di ricerca</a> e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&rsquo;<a href="https://it.wikipedia.org/wiki/Intelligenza_artificiale">intelligenza artificiale</a> perché in grado di gestire grafi ampi e
 indeterminati.</p>
-
 <p>L&rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: <a href="https://it.wikipedia.org/wiki/Gioco_del_quindici">gioco del 15</a>, percorso minimo, <a href="https://it.wikipedia.org/wiki/Sudoku">Sudoku</a>, <a href="https://it.wikipedia.org/wiki/Cubo_di_Rubik">cubo di Rubik</a>, ecc.</p>
-
 <p>In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:</p>
-
 <ul>
 <li>La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi;</li>
 <li>Il nodo iniziale e il nodo finale devono essere noti. Talvolta è sufficiente conoscere solo le regole che compongono la soluzione (vedi Sudoku);</li>
 <li>Deve essere noto un <strong>algoritmo euristico</strong> che <strong>stima</strong> il costo del percorso tra un nodo qualsiasi e la soluzione.</li>
 <li>Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario).</li>
 </ul>
-
-<h1 id="l-euristica">L&rsquo;euristica</h1>
-
+<h1 id="leuristica">L&rsquo;euristica</h1>
 <p>L&rsquo;<a href="https://it.wikipedia.org/wiki/Algoritmo_euristico">algoritmo euristico</a> ha il compito di stimare la distanza tra qualsiasi nodo e la soluzione.
 L&rsquo;euristica influenza fortemente i risultati conseguiti da A*. Esso, in particolare, ne determina il tempo complessivo di esecuzione.
 Un algoritmo euristico molto efficace consente ad A* di trovare velocemente la soluzione.
 Nel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ricerca molto simile a <a href="https://it.wikipedia.org/wiki/Algoritmo_di_Dijkstra">Dijkstra</a>.</p>
-
 <p>L&rsquo;euristica determina anche la qualità della soluzione finale.
-Con un&rsquo;<a href="http://www.okpedia.it/euristica_ammissibile">euristica ammissibile</a> A* è in grado di identificare la soluzione ottima (e.g. percorso con il minor costo possibile).
+Con un'<!-- raw HTML omitted -->euristica ammissibile<!-- raw HTML omitted --> A* è in grado di identificare la soluzione ottima (e.g. percorso con il minor costo possibile).
 Un&rsquo;euristica è ammissibile quando l&rsquo;errore di stima non è mai in eccesso. Un esempio è la distanza in linea d&rsquo;aria tra due punti su una mappa.
-In termini matematici una funzione euristica h è ammissibile se:
-<div style="text-align: center; margin: 0 0 2em 0;">
-    <img src="/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif" alt="" />
-    <!-- \forall x \in V : h(s, x) \leq g(s, x) -->
-</div>
-Dove V è l&rsquo;insieme dei nodi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.</p>
-
-<p>La funzione euristica si dice monotòna o consistente se:
-<div style="text-align: center; margin: 0 0 2em 0;">
-    <img src="/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif" alt="" />
-    <!-- \forall (x, y) \in E : h(s, x) \leq g(x, y) + h(s, y) -->
-</div>
-Dove E è l&rsquo;insieme degli archi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.</p>
-
+In termini matematici una funzione euristica h è ammissibile se:</p>
+<!-- raw HTML omitted -->
+<p>La funzione euristica si dice monotòna o consistente se:</p>
+<!-- raw HTML omitted -->
 <p>Una funzione euristica monotona semplifica ulteriormente la struttura di A* in quanto la lista dei nodi già visitati diviene superflua. In questi casi, la sola coda a priorità è sufficiente.
 Una funzione euristica monotona è sempre ammissibile.</p>
-
-<h1 id="struttura-dell-algoritmo">Struttura dell&rsquo;algoritmo</h1>
-
-<p>A* rientra nella categoria degli algoritmi di <strong><a href="https://it.wikipedia.org/wiki/Best-first_search">ricerca best-first</a></strong>. Esso infatti esamina, passo dopo passo, i nodi che hanno il punteggio migliore.
-Esso tuttavia non è <em><a href="https://it.wikipedia.org/wiki/Algoritmo_greedy">greedy</a></em> in quanto il punteggio non è determinato esclusivamente dall&rsquo;euristica.</p>
-
+<h1 id="struttura-dellalgoritmo">Struttura dell&rsquo;algoritmo</h1>
+<p>A* rientra nella categoria degli algoritmi di **<a href="https://it.wikipedia.org/wiki/Best-first_search">ricerca best-first</a>**. Esso infatti esamina, passo dopo passo, i nodi che hanno il punteggio migliore.
+Esso tuttavia non è *<a href="https://it.wikipedia.org/wiki/Algoritmo_greedy">greedy</a>* in quanto il punteggio non è determinato esclusivamente dall&rsquo;euristica.</p>
 <p>A* usa le seguenti strutture dati per mantenere traccia dello stato d&rsquo;esecuzione:</p>
-
 <ul>
 <li>Una lista di nodi già visitati;</li>
 <li>Una <a href="https://it.wikipedia.org/wiki/Coda_di_priorit%C3%A0">coda a priorità</a> contentente i nodi da visitare.</li>
 </ul>
-
 <p>Nel corso dell&rsquo;esecuzione, ad ogni nodo vengono associati più valori: <em>gScore, hScore, fScore.</em>
-In termini matematici, dato il nodo corrente n, il nodo di partenza p e il nodo soluzione s, si deifiniscono i valori:
-<div style="text-align: center;">
-    <img src="/images/intelligenza-artificiale-algoritmo-a-star/g-score.gif" alt="" />
-</div>
-<div style="text-align: center;">
-    <img src="/images/intelligenza-artificiale-algoritmo-a-star/h-score.gif" alt="" />
-</div>
-<div style="text-align: center; margin: 0 0 2em 0;">
-    <img src="/images/intelligenza-artificiale-algoritmo-a-star/f-score.gif" alt="" />
-</div></p>
-
+In termini matematici, dato il nodo corrente n, il nodo di partenza p e il nodo soluzione s, si deifiniscono i valori:</p>
+<!-- raw HTML omitted -->
 <p>La <strong>funzione g</strong> calcola il <strong>costo effettivo</strong> del percorso che separa i nodi p (partenza) e n (attuale).
 La <strong>funzione h</strong> calcola una <strong>stima</strong> del costo del percorso tra i nodi s (soluzione) e n (attuale).
 La funzione h corrisponde alla definizione dell&rsquo;algoritmo euristico enunciato in precedenza. Essa è infatti chiamata spesso <em>funzione euristica</em>.</p>
-
 <p>La struttura dell&rsquo;algoritmo A* è molto semplice. Esso, ad alto livello, può essere schematizzato in 8 passi:</p>
-
 <ol>
 <li>Inserimento nella coda del nodo di partenza con priorità pari al fScore;</li>
 <li>Se la coda è vuota, l&rsquo;algoritmo termina: <em>soluzione non trovata</em>;</li>
@@ -510,9 +460,7 @@ La funzione h corrisponde alla definizione dell&rsquo;algoritmo euristico enunci
 <li>Inserimento dei nodi rimanenti nella coda con priorità pari al fScore;</li>
 <li>Tornare al punto 2.</li>
 </ol>
-
 <p>In pseudo-codice:</p>
-
 <pre><code>begin function aStar(startNode)
     queue := buildPriorityQueue()
     visited := buildList()
@@ -533,39 +481,24 @@ La funzione h corrisponde alla definizione dell&rsquo;algoritmo euristico enunci
     end while
     return 'No solution found'
 end function
-</code></pre>
-
-<h1 id="esempio-d-implementazione">Esempio d&rsquo;implementazione</h1>
-
+</code></pre><h1 id="esempio-dimplementazione">Esempio d&rsquo;implementazione</h1>
 <p>Si analizza un&rsquo;implementazione dell&rsquo;algoritmo A* che consente di risolvere il problema del <a href="https://it.wikipedia.org/wiki/Gioco_del_quindici">gioco del 15</a>.</p>
-
 <p>Il software è disponibile su GitHub all&rsquo;indirizzo <a href="https://github.com/taueres/a-star-15-puzzle-solver">https://github.com/taueres/a-star-15-puzzle-solver</a></p>
-
-<p>La funzione euristica utilizzata è la <a href="http://it.wikipedia.org/wiki/Geometria_del_taxi">Distanza di Manhattan</a>, definita nel modo seguente:
-<div style="text-align: center; margin: 0 0 2em 0;">
-    <img src="/images/intelligenza-artificiale-algoritmo-a-star/distanza-di-manhattan.gif" alt="" />
-    <!-- man(p, p') = \sum_{i=1}^{15} |x_i - x'_i| + |y_i - y'_i| -->
-</div>
-Essa calcola, per ogni casella, la quantità minima di spostamenti necessari per arrivare dalla posizione p alla posizione p&rsquo;.
-È dimostrabile che la Distanza di Manhattan è <em>ammissibile</em> e <em>monotona</em>.</p>
-
+<p>La funzione euristica utilizzata è la <!-- raw HTML omitted -->Distanza di Manhattan<!-- raw HTML omitted -->, definita nel modo seguente:</p>
+<!-- raw HTML omitted -->
 <p>L&rsquo;implementazione ha diverse componenti:</p>
-
 <ul>
-<li><strong>Main.py</strong>:  Stabilisce la posizione di partenza, avvia l&rsquo;algoritmo e mostra la soluzione;</li>
-<li><strong>Node.py</strong>:  Struttura dati rappresentante ciascun nodo del grafo;</li>
-<li><strong>NodeBuilder.py</strong>:   Costruisce i nodi figli a partire dal nodo in ingresso;</li>
-<li><strong>NodePool.py</strong>:  Coda a priorità con i nodi da visitare. Esso memorizza anche i nodi già visitati con il solo scopo di non inserirli nuovamente nella coda;</li>
+<li><strong>Main.py</strong>: 	Stabilisce la posizione di partenza, avvia l&rsquo;algoritmo e mostra la soluzione;</li>
+<li><strong>Node.py</strong>: 	Struttura dati rappresentante ciascun nodo del grafo;</li>
+<li><strong>NodeBuilder.py</strong>: 	Costruisce i nodi figli a partire dal nodo in ingresso;</li>
+<li><strong>NodePool.py</strong>: 	Coda a priorità con i nodi da visitare. Esso memorizza anche i nodi già visitati con il solo scopo di non inserirli nuovamente nella coda;</li>
 <li><strong>ManhattanDistance.py</strong>: Implementazione dell&rsquo;euristica. Esso determina anche la posizione risolutiva del problema;</li>
 <li><strong>AStar.py</strong>: Implementazione dell&rsquo;algoritmo A*.</li>
 </ul>
-
 <p>L&rsquo;algoritmo mostra in output la lista dei movimenti che la casella vuota deve compiere per risolvere il problema.</p>
-
 <h1 id="conclusioni">Conclusioni</h1>
-
 <p>A* è un algoritmo semplice ma dalle grandi potenzialità. Esso getta le basi per ulteriori metodologie di ricerca più complesse come <a href="https://en.wikipedia.org/wiki/Iterative_deepening_A*">IDA*</a> e <a href="https://en.wikipedia.org/wiki/D*">D*</a>.
-La sua principale limitazione è nell&rsquo;assenza di <em>vincoli sulla profondità di ricerca</em>.
+La sua principale limitazione è nell&rsquo;assenza di *vincoli sulla profondità di ricerca*.
 Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di dama e scacchi.</p>
 
   </div>
@@ -610,7 +543,7 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -906,7 +839,7 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -925,13 +858,11 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -944,11 +875,13 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -967,7 +900,7 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -998,7 +931,7 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1041,13 +974,11 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1056,11 +987,13 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1103,14 +1036,12 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1122,19 +1053,19 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

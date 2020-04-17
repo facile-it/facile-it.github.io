@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on Facile.it Engineering</title>
@@ -6,40 +6,13 @@
     <description>Recent content in Authors on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 08 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/authors/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Algatux</title>
-      <link>https://engineering.facile.it/authors/algatux/</link>
-      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/algatux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Daniele</title>
-      <link>https://engineering.facile.it/authors/daniele/</link>
-      <pubDate>Wed, 25 Nov 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/daniele/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Elviro</title>
-      <link>https://engineering.facile.it/authors/elviro/</link>
-      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/elviro/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Emulator000</title>
+      <title>emulator000</title>
       <link>https://engineering.facile.it/authors/emulator000/</link>
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
@@ -48,34 +21,7 @@
     </item>
     
     <item>
-      <title>Engineering</title>
-      <link>https://engineering.facile.it/authors/engineering/</link>
-      <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/engineering/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Francesco</title>
-      <link>https://engineering.facile.it/authors/francesco/</link>
-      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/francesco/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Giacomo</title>
-      <link>https://engineering.facile.it/authors/giacomo/</link>
-      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/giacomo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jean</title>
+      <title>jean</title>
       <link>https://engineering.facile.it/authors/jean/</link>
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
@@ -84,61 +30,7 @@
     </item>
     
     <item>
-      <title>Lorenzo</title>
-      <link>https://engineering.facile.it/authors/lorenzo/</link>
-      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/lorenzo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Luca</title>
-      <link>https://engineering.facile.it/authors/luca/</link>
-      <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/luca/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mario-maraone</title>
-      <link>https://engineering.facile.it/authors/mario-maraone/</link>
-      <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/mario-maraone/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Matteo</title>
-      <link>https://engineering.facile.it/authors/matteo/</link>
-      <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/matteo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Michele</title>
-      <link>https://engineering.facile.it/authors/michele/</link>
-      <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/michele/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nicola</title>
-      <link>https://engineering.facile.it/authors/nicola/</link>
-      <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/nicola/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Salvatore-cordiano</title>
+      <title>salvatore-cordiano</title>
       <link>https://engineering.facile.it/authors/salvatore-cordiano/</link>
       <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
       
@@ -147,16 +39,16 @@
     </item>
     
     <item>
-      <title>Sergio</title>
-      <link>https://engineering.facile.it/authors/sergio/</link>
-      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
+      <title>giacomo</title>
+      <link>https://engineering.facile.it/authors/giacomo/</link>
+      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://engineering.facile.it/authors/sergio/</guid>
+      <guid>https://engineering.facile.it/authors/giacomo/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Simone-lazzaroni</title>
+      <title>simone-lazzaroni</title>
       <link>https://engineering.facile.it/authors/simone-lazzaroni/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
@@ -165,11 +57,119 @@
     </item>
     
     <item>
-      <title>Vito</title>
+      <title>elviro</title>
+      <link>https://engineering.facile.it/authors/elviro/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/elviro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>engineering</title>
+      <link>https://engineering.facile.it/authors/engineering/</link>
+      <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mario-maraone</title>
+      <link>https://engineering.facile.it/authors/mario-maraone/</link>
+      <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/mario-maraone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sergio</title>
+      <link>https://engineering.facile.it/authors/sergio/</link>
+      <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/sergio/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>algatux</title>
+      <link>https://engineering.facile.it/authors/algatux/</link>
+      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/algatux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vito</title>
       <link>https://engineering.facile.it/authors/vito/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/authors/vito/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lorenzo</title>
+      <link>https://engineering.facile.it/authors/lorenzo/</link>
+      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/lorenzo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>daniele</title>
+      <link>https://engineering.facile.it/authors/daniele/</link>
+      <pubDate>Wed, 25 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/daniele/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>luca</title>
+      <link>https://engineering.facile.it/authors/luca/</link>
+      <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/luca/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nicola</title>
+      <link>https://engineering.facile.it/authors/nicola/</link>
+      <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/nicola/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>michele</title>
+      <link>https://engineering.facile.it/authors/michele/</link>
+      <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/michele/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>matteo</title>
+      <link>https://engineering.facile.it/authors/matteo/</link>
+      <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/matteo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>francesco</title>
+      <link>https://engineering.facile.it/authors/francesco/</link>
+      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/francesco/</guid>
       <description></description>
     </item>
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Facile.it Engineering</title>
@@ -58,9 +58,7 @@ This means that any usage of those classes in your project needs to be updated. 
       
       <guid>https://engineering.facile.it/blog/eng/visual-debt-typehints/</guid>
       <description>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
-Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is #PHP&amp;#39;s new spaces vs tabs
-&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017 
-After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading).</description>
+After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.</description>
     </item>
     
     <item>
@@ -159,7 +157,7 @@ This post would be a short recap of some talks in chronological order.</descript
       <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
-      <description>When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &amp;ldquo;JSONC&amp;rdquo;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.</description>
+      <description>When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &amp;ldquo;JSONC&amp;quot;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.</description>
     </item>
     
     <item>
@@ -188,7 +186,7 @@ Facile.it, inoltre, si riserva il diritto e la facoltà di rimuovere le informaz
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
-      <description>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &amp;ldquo;Lambda&amp;rdquo;, that allows us to focus on business logic and not on infrastructure.</description>
+      <description>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &amp;ldquo;Lambda&amp;quot;, that allows us to focus on business logic and not on infrastructure.</description>
     </item>
     
     <item>
@@ -198,7 +196,8 @@ Facile.it, inoltre, si riserva il diritto e la facoltà di rimuovere le informaz
       
       <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
       <description>The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
-Maybe we fear only one thing more than that: being interrupted.  While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.
+Maybe we fear only one thing more than that: being interrupted.
+While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.
 My experience On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5.</description>
     </item>
     
@@ -267,7 +266,7 @@ What we were searching for Before, we were using an hosted CMS to run the blog, 
       <guid>https://engineering.facile.it/ita/chi-siamo/</guid>
       <description>This page is also available in english.
 Facile.it ha un nutrito e appassionato gruppo di sviluppatori. I progetti del gruppo Facile.it si basano su PHP fin dal 2008, più il tempo passa più nuove tecnologie entrano a far parte del Know How aziendale. Questo Blog permette ai nostri sviluppatori di condividere consigli ed esperienze dirette con le tecnologie che usano quotidianamente.
-Facile.it è il sito leader nella comparazione online, il gruppo comprende anche i domini Assicurazione.</description>
+Facile.itè il sito leader nella comparazione online, il gruppo comprende anche i domini Assicurazione.</description>
     </item>
     
     <item>
@@ -354,7 +353,7 @@ Nonostante Composer si sia evoluto molto, in alcuni contesti le sue funzionalit�
       
       <guid>https://engineering.facile.it/blog/ita/facilehack-2015/</guid>
       <description>Sono stati due giorni ricchi di emozioni quelli trascorsi con i partecipanti di #FacileHack, il primo hackathon organizzato da Facile.it. Abbiamo visto impegno nella competizione, talenti diversi e complementari tra loro, passione per la tecnologia, serietà e molto caffè&amp;hellip; momenti che vogliamo rivivere insieme a voi con questo video.
-  Grazie a tutti!</description>
+Grazie a tutti!</description>
     </item>
     
     <item>
@@ -437,7 +436,7 @@ Prima di arrivare alla soluzione di questo problema però, è doveroso suddivide
       
       <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
       <description>Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno scambio dati in due direzioni, efficiente e a bassa latenza, ha determinato l’ascesa negli ultimi anni di soluzioni basate su WebSocket.
-Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.</description>
+Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex(tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.</description>
     </item>
     
     <item>
@@ -456,7 +455,7 @@ Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno de
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/no-country-for-if-else/</guid>
-      <description>C&amp;rsquo;è un ospite indesiderato che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del codice già esistente, e dobbiamo tener conto della sua complessità man mano che la code base aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:
+      <description>C&#39;è un ospite indesiderato che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del codice già esistente, e dobbiamo tener conto della sua complessità man mano che la code base aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:
  comprendere il significato di codice vecchio, scritto da altri o da se stessi; tracciare le cause di bug, cioè errori, nel codice; eseguire modifiche a una certa procedura; aggiungere funzionalità a strutture già esistenti;  Anche approcciando lo sviluppo di nuovo software con metodologie agili, dobbiamo comunque fare i conti con il codice esistente, e per farlo dobbiamo almeno essere in grado di comprenderlo senza sforzi eccessivi.</description>
     </item>
     
@@ -496,7 +495,7 @@ Anche in occasione di questo evento Facile.it si è presentata con una piccola d
       <pubDate>Mon, 13 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</guid>
-      <description>Nel suo discorso di accettazione del Premio Turing 1972, dal titolo &amp;ldquo;The humble programmer&amp;rdquo;, Edsger Wybe Dijkstra, uno dei più celebri computing scientists del 20° secolo (morto nel 2002), affrontò le cause della nota Software Crisis, cioè la crisi che colpì l&amp;rsquo;industria del software nella seconda metà degli anni sessanta: la potenza e la capacità di elaborazione dei computer stavano crescendo esponenzialmente, molto più rapidamente dell&amp;rsquo;abilità dei programmatori di gestire la complessità e scrivere software funzionante.</description>
+      <description>Nel suo discorso di accettazione del Premio Turing 1972, dal titolo &amp;ldquo;The humble programmer&amp;quot;, Edsger Wybe Dijkstra, uno dei più celebri computing scientists del 20° secolo (morto nel 2002), affrontò le cause della nota Software Crisis, cioè la crisi che colpì l&amp;rsquo;industria del software nella seconda metà degli anni sessanta: la potenza e la capacità di elaborazione dei computer stavano crescendo esponenzialmente, molto più rapidamente dell&amp;rsquo;abilità dei programmatori di gestire la complessità e scrivere software funzionante.</description>
     </item>
     
     <item>
@@ -662,19 +661,8 @@ Nella maggior parte dei casi, quando questo avviene in ambiente PHP, siamo conne
       <guid>https://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</guid>
       <description>Gli operatori ternari sono diffusi in molti linguaggi di programmazione e permettono di esprimire con una sintassi breve logiche condizionali. Per utilizzarli propriamente in PHP è però necessario conoscerne il comportamento.
 Vediamo un esempio
-var_dump(true ? &#39;a&#39; : &#39;b&#39; ? &#39;c&#39; : &#39;d&#39;); // OUTPUT: string(1) &amp;quot;c&amp;quot;  Se state pensando che il risultato di questa espressione sia ovvio, vediamo cosa succede ad esempio in javascript
-console.log(true ? &#39;a&#39; : &#39;b&#39; ?</description>
-    </item>
-    
-    <item>
-      <title>ZVALs refcount AKA come vengono memorizzate le nostre variabili</title>
-      <link>https://engineering.facile.it/blog/ita/zvals-refcount/</link>
-      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/ita/zvals-refcount/</guid>
-      <description>Assegnare valori alle variabili è sicuramente l&amp;rsquo;operazione più comune all&amp;rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&amp;rsquo;interprete? Vediamolo assieme!
-L&amp;rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla linea 334 di zend.h, la riporto qui di seguito per commentarne le proprietà.
-struct _zval_struct { zvalue_value value;	/* Il valore assegnato alla variabile */ zend_uint refcount__gc; /* Il conto delle referenze legato alla variabile */ zend_uchar type;	/* L&#39;identificativo del tipo di dato */ zend_uchar is_ref__gc; /* Flag che indica se la variabile è o meno una referenza */ };  Il tipo di dato zvalue_value non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo ogni variabile che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo stesso spazio in memoria richiesto per il tipo di dato più grande.</description>
+var_dump(true ? &amp;#39;a&amp;#39; : &amp;#39;b&amp;#39; ? &amp;#39;c&amp;#39; : &amp;#39;d&amp;#39;); // OUTPUT: string(1) &amp;#34;c&amp;#34; Se state pensando che il risultato di questa espressione sia ovvio, vediamo cosa succede ad esempio in javascript
+console.log(true ? &amp;#39;a&amp;#39; : &amp;#39;b&amp;#39; ?</description>
     </item>
     
     <item>
@@ -686,7 +674,18 @@ struct _zval_struct { zvalue_value value;	/* Il valore assegnato alla variabile 
       <description>PHP, fin dalla versione 5.2.0, introduce gli oggetti \DateTime per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali.
 Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate var_dump, print_r, var_export o debug_zval_dump su un istanza di \DateTime.
 Considerando il seguente codice e il suo output:
-$date = new \DateTime(); var_dump(isset($date-&amp;gt;date)); // OUTPUT: bool(false)  ci rendiamo conto del fatto che non esiste alcuna proprietà $date all&amp;rsquo;interno dell&amp;rsquo;istanza di \DateTime.</description>
+$date = new \DateTime(); var_dump(isset($date-&amp;gt;date)); // OUTPUT: bool(false) ci rendiamo conto del fatto che non esiste alcuna proprietà $date all&amp;rsquo;interno dell&amp;rsquo;istanza di \DateTime.</description>
+    </item>
+    
+    <item>
+      <title>ZVALs refcount AKA come vengono memorizzate le nostre variabili</title>
+      <link>https://engineering.facile.it/blog/ita/zvals-refcount/</link>
+      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/ita/zvals-refcount/</guid>
+      <description>Assegnare valori alle variabili è sicuramente l&amp;rsquo;operazione più comune all&amp;rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&amp;rsquo;interprete? Vediamolo assieme!
+L&amp;rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla linea 334 di zend.h, la riporto qui di seguito per commentarne le proprietà.
+struct _zval_struct { zvalue_value value;	/* Il valore assegnato alla variabile */ zend_uint refcount__gc; /* Il conto delle referenze legato alla variabile */ zend_uchar type;	/* L&#39;identificativo del tipo di dato */ zend_uchar is_ref__gc; /* Flag che indica se la variabile è o meno una referenza */ }; Il tipo di dato zvalue_value non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo ogni variabile che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo stesso spazio in memoria richiesto per il tipo di dato più grande.</description>
     </item>
     
   </channel>

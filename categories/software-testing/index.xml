@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Software testing on Facile.it Engineering</title>
@@ -28,9 +28,17 @@ This means that any usage of those classes in your project needs to be updated. 
       
       <guid>https://engineering.facile.it/blog/eng/visual-debt-typehints/</guid>
       <description>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
-Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is #PHP&amp;#39;s new spaces vs tabs
-&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017 
-After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading).</description>
+After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.</description>
+    </item>
+    
+    <item>
+      <title>Paraunit: test paralleli, Doctrine e le fixture</title>
+      <link>https://engineering.facile.it/blog/ita/paraunit/</link>
+      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
+      <description>Questo articolo è la sintesi di un talk presentato al SymfonyDay 2015; potete trovare le slide qui.
+I test e la loro durata Sviluppare applicazioni scrivendo test e facendo Test Driven Development è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa crescere la suite di test del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.</description>
     </item>
     
     <item>

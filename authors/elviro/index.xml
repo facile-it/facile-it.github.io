@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Elviro on Facile.it Engineering</title>
+    <title>elviro on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/elviro/</link>
-    <description>Recent content in Elviro on Facile.it Engineering</description>
+    <description>Recent content in elviro on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 12 Dec 2016 00:00:00 +0000</lastBuildDate>
@@ -92,7 +92,7 @@
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/no-country-for-if-else/</guid>
-      <description>C&amp;rsquo;è un ospite indesiderato che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del codice già esistente, e dobbiamo tener conto della sua complessità man mano che la code base aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:
+      <description>C&#39;è un ospite indesiderato che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del codice già esistente, e dobbiamo tener conto della sua complessità man mano che la code base aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:
  comprendere il significato di codice vecchio, scritto da altri o da se stessi; tracciare le cause di bug, cioè errori, nel codice; eseguire modifiche a una certa procedura; aggiungere funzionalità a strutture già esistenti;  Anche approcciando lo sviluppo di nuovo software con metodologie agili, dobbiamo comunque fare i conti con il codice esistente, e per farlo dobbiamo almeno essere in grado di comprenderlo senza sforzi eccessivi.</description>
     </item>
     
@@ -102,7 +102,7 @@
       <pubDate>Mon, 13 Jul 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</guid>
-      <description>Nel suo discorso di accettazione del Premio Turing 1972, dal titolo &amp;ldquo;The humble programmer&amp;rdquo;, Edsger Wybe Dijkstra, uno dei più celebri computing scientists del 20° secolo (morto nel 2002), affrontò le cause della nota Software Crisis, cioè la crisi che colpì l&amp;rsquo;industria del software nella seconda metà degli anni sessanta: la potenza e la capacità di elaborazione dei computer stavano crescendo esponenzialmente, molto più rapidamente dell&amp;rsquo;abilità dei programmatori di gestire la complessità e scrivere software funzionante.</description>
+      <description>Nel suo discorso di accettazione del Premio Turing 1972, dal titolo &amp;ldquo;The humble programmer&amp;quot;, Edsger Wybe Dijkstra, uno dei più celebri computing scientists del 20° secolo (morto nel 2002), affrontò le cause della nota Software Crisis, cioè la crisi che colpì l&amp;rsquo;industria del software nella seconda metà degli anni sessanta: la potenza e la capacità di elaborazione dei computer stavano crescendo esponenzialmente, molto più rapidamente dell&amp;rsquo;abilità dei programmatori di gestire la complessità e scrivere software funzionante.</description>
     </item>
     
     <item>

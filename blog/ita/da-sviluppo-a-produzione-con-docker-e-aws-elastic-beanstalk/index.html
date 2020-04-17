@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -54,42 +54,24 @@ Avere un ambiente di sviluppo/test il più simile possibile a quello di produzio
 In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/" />
-
-
-
-<meta property="article:published_time" content="2015-10-19T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-10-19T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-10-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-10-19T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Da sviluppo a produzione con Docker e AWS Elastic Beanstalk">
+        <meta itemprop="name" content="Da sviluppo a produzione con Docker e AWS Elastic Beanstalk">
 <meta itemprop="description" content="In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.
 Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy.
 In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:">
-
-
 <meta itemprop="datePublished" content="2015-10-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-10-19T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1332">
+<meta itemprop="wordCount" content="1333">
 
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -118,14 +100,17 @@ In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina loc
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -438,160 +423,84 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<h2 id="in-locale-funzionava">In locale funzionava</h2>
-
+    <h2 id="in-locale-funzionava">In locale funzionava</h2>
 <p>Questo articolo si rivolge a chi ha già una <a href="https://docs.docker.com/articles/basics">conoscenza base di docker</a> e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.</p>
-
 <p>Avere un ambiente di sviluppo/test <strong>il più simile possibile</strong> a quello di produzione aiuta molto nel garantire un <strong>corretto funzionamento dopo il deploy</strong>.</p>
-
 <p>In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:</p>
-
 <ul>
 <li>nessun tipo di isolamento tra progetti che usano gli stessi servizi (versione, configurazione, dati);</li>
 <li>è difficile avere e mantenere in locale la stessa versione e la stessa configurazione dei servizi in produzione;</li>
 <li>condividere l&rsquo;ambiente di sviluppo con colleghi e collaboratori è difficile se non impossibile;</li>
 </ul>
-
 <p>Tutto questo conduce ad una delle peggiori frasi che io abbia mai sentito in tutta la mia esperienza lavorativa:</p>
-
 <blockquote>
 <p>It works on my machine <em>(in locale funzionava)</em></p>
 </blockquote>
-
-<p><img src="/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg" alt="It works on my machine meme" /></p>
-
+<p><img src="/images/from-development-to-production-with-docker-and-amazon-ecs/wmm.jpg" alt="It works on my machine meme"></p>
 <p>Potreste pensare che avrei potuto ottenere gli stessi risultati usando Vagrant o una classica macchina virtuale, ma questa soluzione non mi avrebbe dato i benefici di avere un layer di astrazione aggiuntivo senza dovermi preoccupare dell&rsquo;overhead. Infatti posso avere molti più container che girano su una singola macchina di quelli che avrei avuto con la semplice virtualizzazione.</p>
-
 <h2 id="bookshelf-uno-scaffale-virtuale">Bookshelf: uno scaffale virtuale</h2>
-
 <p>Per snellire questo articolo ho preparato un&rsquo;<a href="https://github.com/pennyphp/bookshelf">applicazione demo</a> basata su <a href="http://github.com/pennyphp/penny">Penny PHP Framework</a>: è una semplice applicazione per l&rsquo;archiviazione di libri, che consente all&rsquo;utente di creare e visualizzare una lista di libri.</p>
-
 <h4 id="download-e-dipendenze">Download e dipendenze</h4>
-
 <p>Per prima cosa, scarichiamo l&rsquo;applicazione dal suo repository:</p>
-
 <pre><code>git clone https://github.com/pennyphp/bookshelf
-</code></pre>
-
-<p>Le dipendenze in PHP sono gestite attraverso <a href="https://getcomposer.org/">composer</a>, e per soddisfarle basta digitare il comando:</p>
-
+</code></pre><p>Le dipendenze in PHP sono gestite attraverso <a href="https://getcomposer.org/">composer</a>, e per soddisfarle basta digitare il comando:</p>
 <pre><code>composer install
-</code></pre>
-
-<p>Gli assets del frontend sono gestiti attraverso <a href="http://bower.io">Bower</a> + <a href="http://gruntjs.com/">Grunt</a>; i due seguenti comandi scaricheranno e compileranno le dipendenze e produrranno gli assets direttamente nella cartella pubblica:</p>
-
+</code></pre><p>Gli assets del frontend sono gestiti attraverso <a href="http://bower.io">Bower</a> + <a href="http://gruntjs.com/">Grunt</a>; i due seguenti comandi scaricheranno e compileranno le dipendenze e produrranno gli assets direttamente nella cartella pubblica:</p>
 <pre><code>npm install
 grunt dev
-</code></pre>
-
-<h4 id="avviare-l-ambiente-di-sviluppo">Avviare l&rsquo;ambiente di sviluppo</h4>
-
+</code></pre><h4 id="avviare-lambiente-di-sviluppo">Avviare l&rsquo;ambiente di sviluppo</h4>
 <p>Come potete vedere l&rsquo;applicazione demo è distribuita con un ambiente di sviluppo docker che potete trovare nella cartella <a href="https://github.com/pennyphp/bookshelf/tree/master/docker/development">docker/development</a>.</p>
-
 <p>Osservando il contenuto di <code>docker/development</code> possiamo trovare altre due cartelle:</p>
-
 <ul>
 <li><code>nginx/</code>: questa directory contiene un Dockerfile che eredita l&rsquo;immagine da <a href="https://github.com/fntlnz/dockerfiles/tree/master/nginx">fntlnz/nginx</a> per crearne una nuova con la configurazione nginx necessaria;</li>
 <li><code>fpm/</code>: questa directory contiene un Dockerfile che eredita l&rsquo;immagine da <a href="https://github.com/fntlnz/dockerfiles/tree/master/php">fntlnz/php</a> per crearne una nuova con la configurazione e le estensioni di php-fpm necessarie;</li>
 </ul>
-
 <p>Dal momento che non abbiamo Elastic Beanstalk sulla nostra macchina locale (ne parleremo in seguito) e abbiamo bisogno di un modo per orchestrare i nostri container, lo faremo utilizzando <strong>docker-compose</strong>. Ho deciso di usare Docker Compose al posto del comando <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-local.html"><strong>eb local</strong></a> (che consente di far girare l&rsquo;ambiente di elastic beanstalk in locale) perché allo stato dell&rsquo;arte compose è più facile da usare e mantenere in locale.</p>
-
-<h6 id="il-file-docker-compose-yml">Il file <code>docker-compose.yml</code></h6>
-
+<h6 id="il-file-docker-composeyml">Il file <code>docker-compose.yml</code></h6>
 <p>Per farlo dobbiamo creare un file <code>docker-compose.yml</code> nella nostra root di progetto.</p>
-
 <pre><code>cp docker/docker-compose.yml.development docker-compose.yml
-</code></pre>
-
-<p>A questo punto, nel nostro <code>docker-compose.yml</code> dovremmo avere quattro container da avviare:</p>
-
+</code></pre><p>A questo punto, nel nostro <code>docker-compose.yml</code> dovremmo avere quattro container da avviare:</p>
 <ul>
 <li>il container <strong>Nginx</strong>, che contiene un paragrafo server in ascolto sulla porta 80.</li>
 <li>il container <strong>fpm</strong>, che condivide un volume con la macchina host in modo da poter modificare il codice senza bisogno di ricostruire il container; inoltre, il container è collegato al container mysql per consentire agli script php di connettervisi;</li>
 <li>il container <strong>mysql</strong>, che conterrà i nostri dati di sviluppo;</li>
 <li>il container <strong>redis</strong>, usato come cache, principalmente da Doctrine;</li>
 </ul>
-
-<p>Si noti come, dal momento che <a href="https://docs.docker.com/userguide/dockerlinks/">i container sono collegati</a> è possibile accedere ad un servizio esposto usando il nome assegnato al container collegato; ad esempio, nel nostro caso il container fpm è <a href="https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/docker/docker-compose.yml.development#L19-L20">collegato al container mysql</a>: è per questo che l&rsquo;host configurato nella <a href="https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/config/doctrine.local.php.dist#L13">configurazione di doctrine locale</a> è <code>mysql</code>.</p>
-
+<p>Si noti come, dal momento che <a href="https://docs.docker.com/userguide/dockerlinks/">i container sono collegati</a> è possibile accedere ad un servizio esposto usando il nome assegnato al container collegato; ad esempio, nel nostro caso il container fpm è <a href="https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/docker/docker-compose.yml.development#L19-L20">collegato al container mysql</a>: è per questo che l&rsquo;host configurato nella [configurazione di doctrine locale] (<a href="https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/config/doctrine.local.php.dist#L13">https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/config/doctrine.local.php.dist#L13</a>) è <code>mysql</code>.</p>
 <p>Se non l&rsquo;avete ancora fatto, dovrete buildare l&rsquo;immagine <code>fpm</code> e scaricare le immagini <code>nginx</code>, <code>mysql</code> e <code>redis</code>; per farlo, digitate il comando:</p>
-
 <pre><code>$ docker-compose build
-</code></pre>
-
-<p>Ora che avete tutto ciò che vi serve potete avviare i container con:</p>
-
+</code></pre><p>Ora che avete tutto ciò che vi serve potete avviare i container con:</p>
 <pre><code>$ docker-compose up
-</code></pre>
-
-<p>A questo punto i quattro container dovrebbero essere in esecuzione: potete verificare che tutto sia a posto con il comando <code>docker ps</code>.</p>
-
+</code></pre><p>A questo punto i quattro container dovrebbero essere in esecuzione: potete verificare che tutto sia a posto con il comando <code>docker ps</code>.</p>
 <p>Per proseguire, abbiamo bisogno di conoscere l&rsquo;indirizzo ip del container nginx. Il port forwarding del container nginx è configurato come <code>80:80</code>, perciò è disponibile su <strong>linux</strong> agli indirizzi <code>127.0.0.1:80</code> e <code>localhost:80</code>, mentre su <strong>OS X</strong> all&rsquo;indirizzo associato alla docker-machine; per identificarlo, usare il comando:</p>
-
 <pre><code>docker-machine env &lt;yourmachinename&gt; | grep DOCKER_HOST
-</code></pre>
-
-<p>È ora di collegarci all&rsquo;ip del nostro container nginx!</p>
-
-<p><img src="/images/from-development-to-production-with-docker-and-amazon-ecs/books.png" alt="Bookshelf screenshot" /></p>
-
+</code></pre><p>È ora di collegarci all&rsquo;ip del nostro container nginx!</p>
+<p><img src="/images/from-development-to-production-with-docker-and-amazon-ecs/books.png" alt="Bookshelf screenshot"></p>
 <p>Yay! Il nostro ambiente di sviluppo è in esecuzione!</p>
-
-<h4 id="configurare-e-attivare-l-ambiente-di-produzione">Configurare e attivare l&rsquo;ambiente di produzione</h4>
-
+<h4 id="configurare-e-attivare-lambiente-di-produzione">Configurare e attivare l&rsquo;ambiente di produzione</h4>
 <p>A questo punto ci serve un modo per rilasciare la nostra applicazione in produzione che possa: eseguire container Docker, scalare senza intoppi e possibilmente aver già installato altri interessanti componenti come, ad esempio, per il monitoring.</p>
-
 <p>La scelta è caduta su <a href="https://aws.amazon.com/elasticbeanstalk">AWS Elastic Beanstalk</a> ha tutto ciò che abbiamo elencato ed ha inoltre una tariffazione più competitiva con un <a href="https://aws.amazon.com/free/">Free Tier</a> iniziale, sufficiente per far girare questa demo.</p>
-
 <p>Prima di iniziare abbiamo bisogno di un account <strong>Amazon Web Services</strong>; se non ne avete ancora uno, potete crearlo <a href="https://aws.amazon.com/account">qui</a></p>
-
 <p>Per configurare, rilasciare e gestire la nostra infrastruttura avremo bisogno del <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install.html">comando eb</a>; per installarlo, digitare:</p>
-
 <pre><code>pip install awsebcli
-</code></pre>
-
-<p>Per avere accesso alla piattaforma dalla vostra riga di comando usando il comando <strong>eb</strong> dovrete configurare uno <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.roles.aeb.html"><strong>IAM ROLE</strong></a> ed associarlo ad uno <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html"><strong>IAM User</strong></a>. La creazione assistita di uno IAM User vi <strong>darà due chiavi</strong>, chiamate <em>AWS Access Key ID</em> e <em>AWS Secret Access Key</em>. Ci serviranno durante il prossimo passaggio.</p>
-
+</code></pre><p>Per avere accesso alla piattaforma dalla vostra riga di comando usando il comando <strong>eb</strong> dovrete configurare uno <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.roles.aeb.html"><strong>IAM ROLE</strong></a> ed associarlo ad uno <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html"><strong>IAM User</strong></a>. La creazione assistita di uno IAM User vi <strong>darà due chiavi</strong>, chiamate <em>AWS Access Key ID</em> e <em>AWS Secret Access Key</em>. Ci serviranno durante il prossimo passaggio.</p>
 <p>A questo punto possiamo <strong>initialize</strong> il nostro progetto Bookshelf. Questo comando ci chiederà le due Access keys, oltre che alcune domande durante l&rsquo;installazione.</p>
-
 <pre><code>eb init
-</code></pre>
-
-<p>Ora che il progetto è inizializzato dobbiamo <strong>creare un nuovo ambiente</strong>. Questo comando creerà effettivamente un&rsquo;istanza <strong>t2.micro EC2</strong>, i gruppi di sicurezza, il load balancer, le notifiche cloudwatch ecc..</p>
-
+</code></pre><p>Ora che il progetto è inizializzato dobbiamo <strong>creare un nuovo ambiente</strong>. Questo comando creerà effettivamente un&rsquo;istanza <strong>t2.micro EC2</strong>, i gruppi di sicurezza, il load balancer, le notifiche cloudwatch ecc..</p>
 <pre><code>eb create bookshelf-production
-</code></pre>
-
-<p>Prima di rilasciare l&rsquo;applicazione in produzione dobbiamo generare un <a href="https://github.com/settings/tokens/new">Token Github per composer</a>.
+</code></pre><p>Prima di rilasciare l&rsquo;applicazione in produzione dobbiamo generare un <a href="https://github.com/settings/tokens/new">Token Github per composer</a>.
 Questo è necessario per scaricare tutte le dipendenze senza intoppi.
 Per aggiungere il token all&rsquo;ambiente:</p>
-
 <pre><code>eb setenv COMPOSER_TOKEN=&lt;your-token-here&gt;
-</code></pre>
-
-<p>Ora potete verificare che il sistema sia pronto digitando:</p>
-
+</code></pre><p>Ora potete verificare che il sistema sia pronto digitando:</p>
 <pre><code>eb status
-</code></pre>
-
-<p>Quando lo stato dell&rsquo;applicazione diventa <strong>Ready</strong> potete a tutti gli effetti pubblicare l&rsquo;applicazione con:</p>
-
+</code></pre><p>Quando lo stato dell&rsquo;applicazione diventa <strong>Ready</strong> potete a tutti gli effetti pubblicare l&rsquo;applicazione con:</p>
 <pre><code>eb deploy
-</code></pre>
-
-<p>Il deployment creerà i container descritti in <a href="https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/Dockerrun.aws.json">Dockerrun.aws.json</a> e i files descritti in <a href="https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/.ebextensions/dependencies.config">dependencies.config</a>.</p>
-
+</code></pre><p>Il deployment creerà i container descritti in <a href="https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/Dockerrun.aws.json">Dockerrun.aws.json</a> e i files descritti in <a href="https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/.ebextensions/dependencies.config">dependencies.config</a>.</p>
 <p>Se vi state chiedendo cosa sia realmente il file <strong>Dockerrun.aws.json</strong>, basta dire che sta ad Elastic Beanstalk come <code>docker-compose.yml</code> sta all&rsquo;ambiente locale.</p>
-
 <p>I file contenuti in <a href="https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/.ebextensions/">.ebextensions</a> consentono di personalizzare e configurare il software da cui la vostra applicazione dipende. Il file <strong>dependencies.config</strong> è uno di questi. È proprio lui a risolvere le dipendenze di composer, a compilare gli asset del frontend con grunt e bower e a creare l&rsquo;immagine PHP FPM usata nel <a href="https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/docker/production/fpm/Dockerfile">Dockerfile</a> di produzione. È importante notare che l&rsquo;immagine viene nuovamente costruita solo se il Dockerfile viene modificato.</p>
-
 <p>Come avrete notato, [Dockerrun.aws.json](<a href="https://github.com">https://github.com</a></p>
-
 <p>La configurazione di default dell&rsquo;applicazione Bookshelf riceve i parametri di connessione a Mysql e Redis <a href="https://github.com/pennyphp/bookshelf/blob/2e55738da9ff9e45fa44add9d97280635e95399d/config/doctrine.global.php">dalle variabili d&rsquo;ambiente</a> che sono:</p>
-
 <pre><code>MYSQL_HOST
 MYSQL_PORT
 MYSQL_USERNAME
@@ -599,23 +508,14 @@ MYSQL_PASSWORD
 MYSQL_DATABASE
 REDIS_HOST
 REDIS_PORT
-</code></pre>
-
-<p>Ognuna di queste variabili d&rsquo;ambiente può essere impostata usando il comando che abbiamo precedentemente usato per <code>COMPOSER_TOKEN</code>.</p>
-
+</code></pre><p>Ognuna di queste variabili d&rsquo;ambiente può essere impostata usando il comando che abbiamo precedentemente usato per <code>COMPOSER_TOKEN</code>.</p>
 <p>Potete ottenere i parametri di connessione per Mysql e Redis dopo aver creato <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateInstance.html">un&rsquo;istanza RDS Mysql DB</a> e un <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/other-services-redis-cluster.html">Cluster ElastiCache Redis</a></p>
-
 <p>A questo punto, con i container nginx e fpm in esecuzione e i database configurati, potete digitare <code>eb open</code> per aprire l&rsquo;applicazione in produzione e verificare se tutto è ok!</p>
-
-<p>La vostra infrastruttura, così com&rsquo;è, è anche già pronta per scalare automaticamente; per muovere i primi passi in questa direzione potete dare un&rsquo;occhiata al comando <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-scale.html"><code>eb scale</code></a> e alla <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.managing.as.html">documentazione di AWS</a>.</p>
-
+<p>La vostra infrastruttura, così com'è, è anche già pronta per scalare automaticamente; per muovere i primi passi in questa direzione potete dare un&rsquo;occhiata al comando <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-scale.html"><code>eb scale</code></a> e alla <a href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.managing.as.html">documentazione di AWS</a>.</p>
 <p><strong>Troubleshooting</strong>: Se qualcosa dovesse andare storto potete accedere via ssh nella macchina Elastic Beanstalk EC2 con <code>eb ssh</code> e analizzare lo stato dei container usando strumenti che già conoscete come <code>docker logs</code>.</p>
-
 <h4 id="è-fatta">È fatta!</h4>
-
 <p>Ora potete risparmiare un sacco di tempo automatizzando il vostro workflow con docker ed ottenere un ambiente di sviluppo funzionante, auto-contenuto e condivisibile, pur mantenendolo molto simile alla vostra stabile ed efficiente infrastruttura in esecuzione nell&rsquo;ambiente di produzione, sulle cui risorse avete pieno controllo.</p>
-
-<p><img src="/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg" alt="congratulations" /></p>
+<p><img src="/images/from-development-to-production-with-docker-and-amazon-ecs/good-job.jpg" alt="congratulations"></p>
 
   </div>
 
@@ -656,7 +556,7 @@ REDIS_PORT
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -952,7 +852,7 @@ REDIS_PORT
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -971,13 +871,11 @@ REDIS_PORT
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -990,11 +888,13 @@ REDIS_PORT
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1013,7 +913,7 @@ REDIS_PORT
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1044,7 +944,7 @@ REDIS_PORT
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1087,13 +987,11 @@ REDIS_PORT
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1102,11 +1000,13 @@ REDIS_PORT
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1149,14 +1049,12 @@ REDIS_PORT
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1168,19 +1066,19 @@ REDIS_PORT
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

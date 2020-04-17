@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -50,32 +50,15 @@
 <meta property="og:description" content="Every year the GrUSP, in cooperation with one of the italian PHP user groups, organizes the italian Symfony conference. This year the event was organized in the Capital on 28th October with the help of PHP User Group Roma, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/" />
-
-
-
-<meta property="article:published_time" content="2016-11-07T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2016-11-07T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2016-11-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-11-07T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Looking back at Symfony Day Rome 2016">
+        <meta itemprop="name" content="Looking back at Symfony Day Rome 2016">
 <meta itemprop="description" content="Every year the GrUSP, in cooperation with one of the italian PHP user groups, organizes the italian Symfony conference. This year the event was organized in the Capital on 28th October with the help of PHP User Group Roma, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.">
-
-
 <meta itemprop="datePublished" content="2016-11-07T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-11-07T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="644">
@@ -83,7 +66,6 @@
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -112,14 +94,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -427,88 +412,50 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>Every year the <a href="http://www.grusp.org/">GrUSP</a>, in cooperation with one of the italian PHP user groups, organizes the italian <strong><a href="http://symfony.com/">Symfony</a></strong> conference. This year the <a href="http://2016.symfonyday.it/">event</a> was organized in the Capital on 28th October with the help of <a href="http://roma.grusp.org/">PHP User Group Roma</a>, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.</p>
-
+    <p>Every year the <a href="http://www.grusp.org/">GrUSP</a>, in cooperation with one of the italian PHP user groups, organizes the italian <strong><a href="http://symfony.com/">Symfony</a></strong> conference. This year the <a href="http://2016.symfonyday.it/">event</a> was organized in the Capital on 28th October with the help of <a href="http://roma.grusp.org/">PHP User Group Roma</a>, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.</p>
 <p>This post would be a short recap of all the talks.</p>
-
-<p><img src="/images/looking-back-at-symfony-day-rome-2016/faciledev_symfonyday_2016.jpg" alt="A part of Facile Dev Team" /></p>
-
+<p><img src="/images/looking-back-at-symfony-day-rome-2016/faciledev_symfonyday_2016.jpg" alt="A part of Facile Dev Team"></p>
 <h1 id="schedule">Schedule</h1>
-
 <h2 id="symfony-and-micro-not-so-much-service">Symfony and micro (not so much) service</h2>
-
 <p>Talk by: <strong><a href="https://twitter.com/_orso_">Michele Orselli</a></strong>
-<br/>Duration: 30 minutes</p>
-
+<!-- raw HTML omitted -->Duration: 30 minutes</p>
 <p>Michele Orselli presented a case study of a <a href="https://en.wikipedia.org/wiki/Monolithic_application">monolithic application</a> broken down into many smaller microservices. How many ways can we split a webapp? Why smaller is better? How services can interact each other? In his talk Michele answered all those questions focusing on all the advantages of the proposed architecture and a few common pitfalls.</p>
-
 <p><em>View slides <a href="http://www.slideshare.net/MicheleOrselli/symfony-e-micro-non-cosi-tanto-services">here</a></em></p>
-
 <h2 id="scaling-symfony-apps">Scaling Symfony apps</h2>
-
 <p>Talk by: <strong><a href="https://twitter.com/mat_teo8">Matteo Moretti</a></strong>
-<br/>Duration: 45 minutes</p>
-
+<!-- raw HTML omitted -->Duration: 45 minutes</p>
 <p>A scalable application must support an increasing amount of data or a growing number of users. In his talk, Matteo Moretti described the architecture needed to scale. He divided the overall architecture into 4 main components: web server, sessions, database and the filesystem. He explained the right configuration to his main purpose: improving performance of a webapp.</p>
-
 <p><em>View slides <a href="http://www.slideshare.net/matteomoro8/scaling-symfony-apps">here</a></em></p>
-
 <h2 id="e-commerce-with-symfony-from-case-study-to-reality">E-commerce with Symfony: from case study to reality</h2>
-
 <p>Talk by: <strong><a href="https://twitter.com/dymissy">Simone D&rsquo;Amico</a></strong>
-<br/>Duration: 30 minutes</p>
-
+<!-- raw HTML omitted -->Duration: 30 minutes</p>
 <p>Sylius, Elcodi, Thelia, Sonata Project, Well Commerce, Shop Plus, Aimeos: these are the most popular results you can find if you google  &ldquo;e-commerce solution with Symfony&rdquo;. But which one is the final winner? Why choosing one or another? Simone D&rsquo;Amico reviewed all of these frameworks and libraries comparing strengths and drawbacks. Moreover he clarified the stack he used to build an e-commerce platform.</p>
-
 <p><em>View slides <a href="http://www.slideshare.net/dymissy/ecommerce-con-sf-dal-case-study-alla-realt">here</a></em></p>
-
 <h2 id="a-journey-into-symfony-form-component">A journey into Symfony form component</h2>
-
 <p>Talk by: <strong><a href="https://twitter.com/SamueleLilli">Samuele Lilli</a></strong>
-<br/>Duration: 45 minutes</p>
-
+<!-- raw HTML omitted -->Duration: 45 minutes</p>
 <p><a href="http://symfony.com/doc/current/forms.html">Symfony form component</a> is the main obstacle for beginners and newbies in the Symfony world. Samuele Lilli gave a talk with the purpose to clarify this hot topic with a lot of examples and code snippets. He started from the simplest form examples to more advanced ones. He revealed a lot of tips and explanations for several scenarios in order to make this powerful component understandable and manageable by everyone.</p>
-
 <p><em>View slides <a href="http://www.slideshare.net/SamueleLilli/symfony-day-2016">here</a></em></p>
-
-<p><img src="/images/looking-back-at-symfony-day-rome-2016/symfonyday_collage.jpg" alt="Symfony Day 2016" /></p>
-
+<p><img src="/images/looking-back-at-symfony-day-rome-2016/symfonyday_collage.jpg" alt="Symfony Day 2016"></p>
 <h2 id="php7-and-rich-domain-model">PHP7 and Rich Domain Model</h2>
-
 <p>Talk by: <strong><a href="https://twitter.com/garakkio">Massimiliano Arione</a></strong>
-<br/>Duration: 30 minutes</p>
-
+<!-- raw HTML omitted -->Duration: 30 minutes</p>
 <p>In this talk Massimiliano Arione told about his experience in the migration to PHP7 of a Symfony based project. Particularly he focused on the usage of type hinting and return types and the issues encountered with an <a href="https://en.wikipedia.org/wiki/Anemic_domain_model">Anemic Domain Model</a> approach suggested by the framework official documentation. He showed how to combine a Rich Domain Model without giving up new language features.</p>
-
 <p><em>View slides <a href="http://www.slideshare.net/garak/php7-e-rich-domain-model">here</a></em></p>
-
 <h2 id="relevance-sorting-with-elasticsearch-and-a-bit-of-maths">Relevance sorting with Elasticsearch &amp; a bit of maths</h2>
-
 <p>Talk by: <strong><a href="https://twitter.com/mattbit_">Matteo Dora</a></strong>
-<br/>Duration: 45 minutes</p>
-
+<!-- raw HTML omitted -->Duration: 45 minutes</p>
 <p>The main topic of the talk was <a href="https://www.elastic.co/products/elasticsearch">Elasticsearch</a>. Elasticsearch is a distributed, RESTful search and analytics engine with a great Symfony integration. Matteo Dora, the speaker of this talk, explained how to deal when the sorting by relevance becomes hard using the right amount of math and <a href="https://github.com/FriendsOfSymfony/FOSElasticaBundle">FOSElasticaBundle</a>.</p>
-
 <p><em>View slides <a href="https://speakerdeck.com/mattbit/elasticsearch-and-a-bit-of-maths">here</a></em></p>
-
 <h2 id="command-the-easy-way">Command: the easy way</h2>
-
 <p>Talk by: <strong><a href="https://twitter.com/aczepod">Antonio Carella</a></strong>
-<br/>Duration: 30 minutes</p>
-
+<!-- raw HTML omitted -->Duration: 30 minutes</p>
 <p>Antonio Carella illustrated a real case how to create command-line commands using the <a href="https://symfony.com/doc/current/console.html">Symfony console component</a>. He showed how console commands can be used for any recurring task, such as cronjobs, imports, or other batch jobs.</p>
-
 <p><em>View slides <a href="http://www.slideshare.net/antoninocarella1/command-the-easy-way">here</a></em></p>
-
 <h2 id="orm-hero">ORM hero</h2>
-
 <p>Talk by: <strong><a href="https://twitter.com/toretto460">Simone Di Maulo</a></strong>
-<br/>Duration: 45 minutes</p>
-
+<!-- raw HTML omitted -->Duration: 45 minutes</p>
 <p>This talk was a journey in the <em>magical world</em> of <a href="http://www.doctrine-project.org/">Doctrine</a>, the most known ORM for Symfony and not only. Simone Di Maulo described how Doctrine works under the hood to better understand when and why to use its features.</p>
-
 <p><em>View slides <a href="http://www.slideshare.net/SimoneDiMaulo/orm-hero">here</a></em></p>
 
   </div>
@@ -550,7 +497,7 @@ ga('send', 'pageview');
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -846,7 +793,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -865,13 +812,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -884,11 +829,13 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -907,7 +854,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -938,7 +885,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -981,13 +928,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -996,11 +941,13 @@ ga('send', 'pageview');
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1043,14 +990,12 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1062,19 +1007,19 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

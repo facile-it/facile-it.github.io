@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -31,7 +31,7 @@
     
     
     <meta name="twitter:title" content="Event-driven serverless applications"/>
-    <meta name="twitter:description" content="If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &ldquo;Lambda&rdquo;, that allows us to focus on business logic and not on infrastructure."/>
+    <meta name="twitter:description" content="If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &ldquo;Lambda&quot;, that allows us to focus on business logic and not on infrastructure."/>
     
         
             <meta name="twitter:creator" content="@parallelit"/>
@@ -43,35 +43,18 @@
 
 
         <meta property="og:title" content="Event-driven serverless applications" />
-<meta property="og:description" content="If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &ldquo;Lambda&rdquo;, that allows us to focus on business logic and not on infrastructure." />
+<meta property="og:description" content="If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &ldquo;Lambda&quot;, that allows us to focus on business logic and not on infrastructure." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/event-driven-serverless-applications/" />
-
-
-
-<meta property="article:published_time" content="2016-09-20T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2016-09-20T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2016-09-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-09-20T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Event-driven serverless applications">
-<meta itemprop="description" content="If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &ldquo;Lambda&rdquo;, that allows us to focus on business logic and not on infrastructure.">
-
-
+        <meta itemprop="name" content="Event-driven serverless applications">
+<meta itemprop="description" content="If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &ldquo;Lambda&quot;, that allows us to focus on business logic and not on infrastructure.">
 <meta itemprop="datePublished" content="2016-09-20T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-09-20T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1012">
@@ -79,7 +62,6 @@
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -108,14 +90,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -416,80 +401,49 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 <strong>Amazon Web Services</strong> (AWS) announced a new service called &ldquo;<strong><a href="https://aws.amazon.com/lambda/">Lambda</a></strong>&rdquo;, that allows us to focus on business logic and not on infrastructure.</p>
-
+    <p>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 <strong>Amazon Web Services</strong> (AWS) announced a new service called &ldquo;<strong><a href="https://aws.amazon.com/lambda/">Lambda</a></strong>&quot;, that allows us to focus on business logic and not on infrastructure.</p>
 <h1 id="what-is-lambda">What is Lambda?</h1>
-
 <p>As reported on their website: « <em>AWS Lambda is a serverless compute service that runs your code highly-available in the cloud in response to events and it automatically performs all the administration of the compute resources for you</em> ». In the previous sentence is condensed all the power of Lambda, that we can summarize with the following key concepts: <strong><a href="#serverless-architecture">serverless architecture</a></strong>, <strong><a href="#high-availability">high-availability</a></strong>, <strong><a href="#event-driven">event-driven</a></strong> and <strong><a href="#zero-administration">zero administration</a></strong>.</p>
-
-<p><img src="/images/event-driven-serverless-applications/aws-lambda-key-concepts.png" alt="AWS Lambda key concepts" /></p>
-
+<p><img src="/images/event-driven-serverless-applications/aws-lambda-key-concepts.png" alt="AWS Lambda key concepts"></p>
 <h2 id="serverless-architecture">Serverless architecture</h2>
-
 <p>Lambda is completely &ldquo;serverless&rdquo;, a term that can be considered misleading: obviously Lambda uses physical servers to run your code, but we, as the service&rsquo;s users, don’t take care of everything required to do it. We just need to upload our code on AWS console and it handles capacity, scaling, monitoring, logging and security without any server to manage.
 Strictly speaking, functions are executed in containers, and kernel-based virtualization is very useful in this context, because it allows to build multiple isolated environments in short time.
 A more detailed explanation of serverless architectures can be found <a href="http://www.martinfowler.com/articles/serverless.html">here</a>.</p>
-
 <h2 id="high-availability">High-availability</h2>
-
 <p>AWS Lambda maintains compute capacity across multiple availability zones in each region - at the moment there are 8 regions distributed among Americas, EMEA and Asia Pacific - in this way Lambda is able to protect your code against data center failures.</p>
-
 <h2 id="event-driven">Event-driven</h2>
-
 <p>&ldquo;Event-driven&rdquo; means that a Lambda function is triggered when an event occurs, so the flow of the application is mainly driven by events. In this kind of architecture all Lambda functions are event consumers, because they are invoked by an event and they have the responsibility to process it.
 An event comes to life, for example, whenever:</p>
-
 <ul>
 <li>a new item is created on an Amazon DynamoDB table;</li>
 <li>a file is deleted on an Amazon S3 bucket;</li>
 <li>an Amazon API Gateway is called;</li>
 <li>et cetera&hellip;</li>
 </ul>
-
 <p>but we can also use AWS SDK to invoke a function directly on a mobile or web app back-end.
 This is a good way to write application logic without designing and maintaining a centralized workflow.
 More about event-driven programming <a href="https://en.wikipedia.org/wiki/Event-driven_programming">here</a>.</p>
-
 <h2 id="zero-administration">Zero administration</h2>
-
 <p>All the work you usually need to do in order to assure that your application works in a scalable, reliable and durable way is taken care by the service itself.  Behind the scenes the system performs all the needed administration for the compute resources, including server and operating system maintenance, code and security patch deployment, code monitoring and logging, and automatically matches the incoming rate of functions invocation for us, to assure capacity provisioning and automatic scaling.</p>
-
 <h1 id="lambda-functions">Lambda functions</h1>
-
-<p>The code we run on AWS Lambda is called a &ldquo;<strong>lambda function</strong>&rdquo;. The name &ldquo;lambda&rdquo; derives from the 11th letter of the Greek alphabet. In general a <em>lambda</em>, also called <em>anonymous function</em>, is a function that&rsquo;s defined inline (sometimes called <em>closure</em>) and passed to some other function, method or procedure, to be stored or executed: the <em>anonymity</em> is given by the fact that we don&rsquo;t give a name to the function, but we just define it at the moment of need.</p>
-
+<p>The code we run on AWS Lambda is called a &ldquo;<strong>lambda function</strong>&quot;. The name &ldquo;lambda&rdquo; derives from the 11th letter of the Greek alphabet. In general a <em>lambda</em>, also called <em>anonymous function</em>, is a function that&rsquo;s defined inline (sometimes called <em>closure</em>) and passed to some other function, method or procedure, to be stored or executed: the <em>anonymity</em> is given by the fact that we don&rsquo;t give a name to the function, but we just define it at the moment of need.</p>
 <h2 id="supported-languages">Supported languages</h2>
-
 <p>Right now Lambda functions natively support code written in <strong>Java</strong>, <strong>Node.js</strong> and <strong>Python</strong>, but we can run C, Go and PHP using a Node.js wrapper. Hopefully Amazon will add official support for other languages such as PHP, Go, C, Swift and many more. We can also include libraries, even native ones.</p>
-
 <h2 id="stateless-code">Stateless code</h2>
-
 <p>When we write a function our code must be <strong>stateless</strong>, thus everything begins and ends in the same request, and any persistent state is stored in a storage service (not necessarily within Amazon world). Keeping functions stateless is the keystone to enable the system to instantly launch new instances when needed, to serve the incoming events.</p>
-
 <p>In addition to the code, each Lambda function has many configuration informations, such as name, description, runtime, handler, memory, max execution time and execution role. A detailed explanation is available <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction-function.html">here</a>.</p>
-
 <h2 id="invocation-types">Invocation types</h2>
-
 <p>We can invoke a Lambda function directly, for example using the Invoke API, or indirectly, for example using the Amazon API Gateway. A function invocation needs to specify the <code>InvocationType</code>. There are three invocation types allowed: <code>RequestResponse</code>, <code>Event</code> and <code>DryRun</code>. Each one of them has different purposes:</p>
-
 <ul>
 <li><code>RequestResponse</code>: in this case we expect a <strong>synchronous</strong> behavior. The function receives input parameters as an event, and returns a result;</li>
 <li><code>Event</code>: in this case we expect an <strong>asynchronous</strong> behavior. The function receives input parameters as an event, returns immediately no value, but continues its execution asynchronously;</li>
 <li><code>DryRun</code>: it&rsquo;s used to verify the access to a function without running it.</li>
 </ul>
-
-<p><img src="/images/event-driven-serverless-applications/synchronous-vs-asynchronous-behaviour.png" alt="Synchronous vs asynchronous behaviour" /></p>
-
+<p><img src="/images/event-driven-serverless-applications/synchronous-vs-asynchronous-behaviour.png" alt="Synchronous vs asynchronous behaviour"></p>
 <h1 id="lambda-alternatives">Lambda alternatives</h1>
-
 <p>Serverless is a new cloud computing trend, and accordingly many cloud providers – in addition to Amazon - started offering their own <em>Function as a Service</em> (FaaS), for example <strong>Google</strong> with its <a href="https://cloud.google.com/functions/">Cloud Functions</a>, <strong>IBM</strong> with its <a href="https://developer.ibm.com/openwhisk/">OpenWhisk</a>, <strong>Auth0</strong> with its <a href="https://webtask.io/">WebTasks</a> and <strong>Microsoft</strong> with its <a href="https://functions.azure.com/">Azure Functions</a>.</p>
-
 <h1 id="conclusions">Conclusions</h1>
-
 <p>Functions are very useful when we want to build lightweight applications based on <em>microservices</em> with no server. Their approach could be considered a way to achieve fine-grained microservices, in which there is a relation one-to-one between functions and endpoints instead of one service per one resource: for this reason they are often referred to as <em>nanoservices</em>.</p>
-
 <p>They could help developers in focusing on the code, while only charging for code really running in an infrastructure that&rsquo;s able to autonomously grow upon demand, without lots of efforts in managing it. With functions, we can see our code as a series of small and independent building blocks, that can be easily replaced or connected with other blocks using events. Also, Lamba could help small team in reusing existing skills while adopting different languages, in order to develop software that better matches business&rsquo; requirements.</p>
 
   </div>
@@ -534,7 +488,7 @@ More about event-driven programming <a href="https://en.wikipedia.org/wiki/Event
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -830,7 +784,7 @@ More about event-driven programming <a href="https://en.wikipedia.org/wiki/Event
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -849,13 +803,11 @@ More about event-driven programming <a href="https://en.wikipedia.org/wiki/Event
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -868,11 +820,13 @@ More about event-driven programming <a href="https://en.wikipedia.org/wiki/Event
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -891,7 +845,7 @@ More about event-driven programming <a href="https://en.wikipedia.org/wiki/Event
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -922,7 +876,7 @@ More about event-driven programming <a href="https://en.wikipedia.org/wiki/Event
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -965,13 +919,11 @@ More about event-driven programming <a href="https://en.wikipedia.org/wiki/Event
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -980,11 +932,13 @@ More about event-driven programming <a href="https://en.wikipedia.org/wiki/Event
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1027,14 +981,12 @@ More about event-driven programming <a href="https://en.wikipedia.org/wiki/Event
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1046,19 +998,19 @@ More about event-driven programming <a href="https://en.wikipedia.org/wiki/Event
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

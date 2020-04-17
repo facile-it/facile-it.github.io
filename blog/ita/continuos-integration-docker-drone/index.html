@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -52,33 +52,16 @@ Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione Object Orie
 Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione Object Oriented Design: With Applications, la pratica è stata estesa e sviluppata all&rsquo;interno dell&rsquo;extreme programming, fino a sostenere la necessità di allineare le copie di lavoro diverse volte al giorno." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/" />
-
-
-
-<meta property="article:published_time" content="2015-06-12T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-06-12T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-06-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-06-12T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Continuous Integration con Docker e Drone">
+        <meta itemprop="name" content="Continuous Integration con Docker e Drone">
 <meta itemprop="description" content="La continuous integration è una pratica che consiste nel frequente allineamento, su di una base comune definita mainline, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto.
 Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione Object Oriented Design: With Applications, la pratica è stata estesa e sviluppata all&rsquo;interno dell&rsquo;extreme programming, fino a sostenere la necessità di allineare le copie di lavoro diverse volte al giorno.">
-
-
 <meta itemprop="datePublished" content="2015-06-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-06-12T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1290">
@@ -86,7 +69,6 @@ Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione Object Orie
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -115,14 +97,17 @@ Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione Object Orie
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -430,18 +415,11 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>La <strong>continuous integration</strong> è una pratica che consiste nel <strong>frequente allineamento</strong>, su di una base comune definita <em>mainline</em>, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto.</p>
-
+    <p>La <strong>continuous integration</strong> è una pratica che consiste nel <strong>frequente allineamento</strong>, su di una base comune definita <em>mainline</em>, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto.</p>
 <p>Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione <a href="http://books.google.com/books?id=w5VQAAAAMAAJ&amp;q=continuous+integration+inauthor:grady+inauthor:booch&amp;dq=continuous+integration+inauthor:grady+inauthor:booch&amp;hl=en&amp;sa=X&amp;ei=0_TxU6TqIMOZyASJ3ICYCQ&amp;ved=0CEQQ6AEwAg">Object Oriented Design: With Applications</a>, la pratica è stata estesa e sviluppata all&rsquo;interno dell&rsquo;<strong>extreme programming</strong>, fino a sostenere la necessità di <strong>allineare</strong> le copie di lavoro <strong>diverse volte al giorno</strong>.</p>
-
 <p>Il vantaggio principale nell&rsquo;adottare la pratica è quello di <strong>evitare l&rsquo;integration hell</strong> (o merge hell) <strong>minimizzando il rischio</strong> legato a copie di lavoro divergenti di difficile integrazione.</p>
-
 <p>Il <a href="http://engineering.facile.it/tag/software-testing/">software testing</a>, pur non essendo indispensabile ai fini della <strong>continuous integration</strong>, ne è perfettamente complementare, dando allo sviluppatore garanzia di <strong>integrità del funzionamento del software</strong> prima e dopo l&rsquo;integrazione sulla <em>mainline</em>.</p>
-
 <p>Risale al 2000 un importante <a href="http://martinfowler.com/articles/continuousIntegration.html">articolo</a> di <a href="http://martinfowler.com/">Martin Fowler</a> che indica i <strong>principi fondamentali</strong> della CI:</p>
-
 <ul>
 <li>Mantieni un repository del codice sorgente</li>
 <li>Automatizza la build</li>
@@ -455,13 +433,9 @@ ga('send', 'pageview');
 <li>Tutti possono vedere lo stato delle build</li>
 <li>Automatizza il deploy</li>
 </ul>
-
 <h2 id="soluzioni-per-la-ci-ed-il-testing-automatico">Soluzioni per la CI ed il testing automatico</h2>
-
 <p>Negli ultimi anni si sono diffuse molte <strong>soluzioni software</strong> che permettono di automatizzare il processo di <strong>build e testing</strong> a partire da un semplice <em>push</em> sulla mainline di sviluppo. Ognuno di queste ha le sue peculiari caratteristiche che la rendono diverso dagli altri.</p>
-
 <p>In Facile.it abbiamo stilato una lista di <strong>requisiti</strong> per trovare il sistema di CI più adatto al nostro <strong>caso d&rsquo;uso</strong>:</p>
-
 <ul>
 <li>Possibilità di effettuare build in <strong>ambienti molto diversi</strong> (per sistema operativo, versioni software..) <strong>identici a quelli di produzione</strong></li>
 <li>Possibilità di effettuare <strong>contemporaneamente</strong> build multiple, anche appartenenti allo <strong>stesso progetto</strong></li>
@@ -471,99 +445,56 @@ ga('send', 'pageview');
 <li>Sistema di CI <strong>estendibile via API</strong></li>
 <li><strong>Dashboard</strong> che mostri lo stato delle build, per tenere gli <strong>sviluppatori informati</strong> riguardo lo stato delle proprie build e della mainline</li>
 </ul>
-
 <p>Utilizzando in maniera intensiva <a href="https://www.docker.com/">Docker</a> per lo sviluppo locale con ambienti <strong>simili alla produzione</strong>, una caratteristica interessante da avere consiste proprio nella possibilità di effettuare <strong>build all&rsquo;interno di container</strong>.</p>
-
 <p>La nostra scelta è ricaduta su <a href="https://github.com/drone/drone">Drone</a>, una piattaforma di continuous integration piuttosto giovane, ma sufficientemente stabile per un utilizzo in produzione.</p>
-
 <h2 id="drone-build-attraverso-container-docker">Drone: build attraverso container Docker</h2>
-
 <p><a href="https://github.com/drone/drone">Drone</a>, rilasciato con licenza Apache 2.0, è una piattaforma di CI che automatizza le build <strong>all&rsquo;interno di container Docker</strong>: la soluzione ideale in un ambiente dove <strong>numerosi gruppi di lavoro</strong> utilizzano <strong>ambienti molto diversi</strong> (per sistema operativo, versioni di interpreti di linguaggio, sistemi di database o caching) ma vogliono centralizzare i processi di Continuous Integration.</p>
-
 <p>Come altre piattaforme di CI, Drone supporta diversi sistemi Git (GitHub, GitLab, BitBucket, Gogs et al.), diversi sistemi di <a href="https://github.com/drone/drone/blob/v0.2.1/README.md#deployments">deploy</a> (Aws S3, SSH, Heroku, Swift et al.) e diversi sistemi di <a href="https://github.com/drone/drone/blob/v0.2.1/README.md#notifications">notifica</a> (Webhook, Hipchat, Email et al.).</p>
-
 <p>I container di build possono essere avviati in locale o <strong>remoto</strong>, dal momento che la <a href="https://github.com/drone/drone#setup">configurazione</a> permette di indicare i <strong>socket Docker</strong> (UNIX, ma anche TCP) da utilizzare.</p>
-
 <p>Drone supporta un <a href="https://github.com/drone/drone-plugin-go"><strong>sistema di plugin</strong></a> estremamente <strong>flessibile</strong>: un plugin riceve via riga di comando o input dal terminale un JSON contenente le <strong>informazioni sulla build</strong> corrente e pubblica il risultato in output.</p>
-
 <p>I plugin vengono distribuiti a loro volta come <strong>container Docker</strong>, così possono condividere attraverso un volume-mount la <strong>stessa copia del repository</strong> su cui avviene la build.
 L&rsquo;<em>ENTRYPOINT</em> per il plugin nel Dockerfile <strong>consiste nell&rsquo;eseguibile</strong> vero e proprio:
 in questo modo è possibile scrivere <strong>plugin in qualsiasi linguaggio</strong> per fare qualsiasi tipo di operazione!</p>
-
 <p>Per ultimo, ma comunque non di poco conto, il <strong>monitor stato build</strong> viene rilasciato in un progetto separato: <a href="https://github.com/drone/drone-wall">Drone Wall</a> è semplicemente fantastico!</p>
-
-<p><img src="/images/continuos-integration-docker-drone/drone-wall.jpg" alt="Drone wall screenshot" /></p>
-
+<p><img src="/images/continuos-integration-docker-drone/drone-wall.jpg" alt="Drone wall screenshot"></p>
 <p>Quella che segue, è una guida per <strong>l&rsquo;installazione di Drone</strong> (a sua volta in un container!), molto simile a quella  utilizzata in Facile.it.</p>
-
 <h2 id="prerequisiti">Prerequisiti</h2>
-
 <p>Per testare questa guida abbiamo utilizzato Docker 1.6.2 e <a href="https://docs.docker.com/compose/install/">docker-compose 1.2.0</a>.
 Per chi non conoscesse Compose, basti sapere che è un <strong>tool per definire convenientemente una configurazione complessa</strong> (di solito multi-container) in un singolo file <em>yaml</em>, potendo poi lanciare tutti i container in essa definiti con un singolo conveniente comando anzichè con molti tediosi <code>docker run</code>.</p>
-
 <p>Come prima cosa è necessario clonare il gist, embeddato qui sotto per riferimento, lanciando il seguente comando:</p>
-
 <pre><code>git clone https://gist.github.com/de5d5861fa4d86f9598c.git
-</code></pre>
-
-<script src="https://gist.github.com/fntlnz/de5d5861fa4d86f9598c.js"></script>
-
+</code></pre><!-- raw HTML omitted -->
 <p>Una volta entrati nella cartella del gist, troviamo due file, <em>docker-compose.yml</em> e <em>nginx.conf</em>,  descritti in dettaglio di seguito:</p>
-
-<h2 id="docker-compose-yml">docker-compose.yml</h2>
-
+<h2 id="docker-composeyml">docker-compose.yml</h2>
 <p>Questo file contiene la configurazione dei container che ci permetterà di mettere insieme il nostro ambiente.</p>
-
 <p>Al suo interno abbiamo <strong>tre nodi</strong> principali: <em>drone</em>, <em>nginx</em> e <em>wall</em>; analizziamoli singolarmente:</p>
-
 <h3 id="drone">DRONE</h3>
-
 <p>Come abbiamo detto in precedenza Drone supporta i vari servizi di hosting repository git, sia open source che PaaS. Per questa guida abbiamo scelto l&rsquo;integrazione più semplice e immediata, quella con <strong>GitHub</strong>.</p>
-
 <p>Nel nodo di configurazione di drone ci sono diverse variabili d&rsquo;ambiente: due di queste ci serviranno a configurare l&rsquo;<strong>autenticazione tramite OAuth2</strong> di GitHub (allo stato attuale, Drone non ha un sistema interno di gestione degli utenti).</p>
-
 <p>Le variabili d&rsquo;ambiente per GitHub sono <code>DRONE_GITHUB_CLIENT</code> e <code>DRONE_GITHUB_SECRET</code>; le chiavi necessarie vengono rilasciate da GitHub a seguito della <a href="https://github.com/settings/applications/new">registrazione di una nuova applicazione</a>.</p>
-
 <p>La variabile d&rsquo;ambiente <code>DRONE_REGISTRATION_OPEN</code> va settata a <code>false</code> quando si deciderà di non permettere la <strong>registrazione di nuovi utenti</strong>, ma è attualmente settata a <code>true</code> per permettere la registrazione del primo utente, che sarà anche il master dell&rsquo;installazione.</p>
-
 <p>Un&rsquo;altra variabile d&rsquo;ambiente molto importante è <code>DRONE_WORKER_NODES</code>: la sua importanza è data dal fatto che contiene il <strong>path del socket di Docker</strong> che permette la comunicazione con i container. Ogni ripetizione separata da virgola di <code>unix:///var/run/docker.sock</code> mette a disposizione delle build un nuovo worker per eseguire più build in parallelo.</p>
-
 <p>Infine, l&rsquo;ultima ma non meno importante variabile d&rsquo;ambiente da impostare è <code>DRONE_SESSION_SECRET</code>, la chiave che servirà a codificare le sessioni. Una chiave generata <a href="https://www.random.org/strings/?num=20&amp;len=20&amp;digits=on&amp;upperalpha=on&amp;loweralpha=on&amp;unique=on&amp;format=html&amp;rnd=new">su Random.org</a> è perfetta per questo scopo.</p>
-
 <p>In questo nodo ci sono inoltre <strong>due volumi condivisi</strong> che sono rispettivamente:</p>
-
 <ul>
 <li><code>/data/drone:/var/lib/drone</code>: il path dove verrà scritto il database SQLite di Drone; eventualmente si può sostituire con un path più adeguato</li>
 <li><code>/var/run/docker.sock:/var/run/docker.sock</code>: il path del socket di docker per permettere a Drone di lanciare nuovi container, poiché si trova anche lui all&rsquo;interno di un container</li>
 </ul>
-
 <p>Un&rsquo;altra riga di questo nodo che è degna di nota è <code>privileged: true</code>: è infatti <strong>necessario che il container contenente Drone giri in modalità privilegiata</strong>, per disattivare quei controlli di sicurezza che altrimenti non permetterebbero al container di operare alla creazione, distruzione e modifica di altri container.</p>
-
 <h3 id="wall">WALL</h3>
-
 <p>In questo nodo è necessario impostare la variabile d&rsquo;ambiente <code>API_TOKEN</code>, necessaria ad autorizzare la dashboard di visualizzazione delle build: il token si trova nel proprio profilo utente di Drone una volta avviato. Questa configurazione può essere quindi completata solo dopo aver avviato Drone per la prima volta.</p>
-
 <h3 id="nginx">NGINX</h3>
-
 <p>Questo nodo fa il binding della porta 80 dell&rsquo;host verso la porta 80 del container e condivide due volumi, rispettivamente:</p>
-
 <ul>
 <li><code>nignx.conf</code>: condivide la configurazione del file <code>nginx.conf</code></li>
 <li><code>/var/log/nginx:/var/log/nginx</code>: condivide la cartella contenente i log di NGINX</li>
 </ul>
-
 <p><code>nginx.conf</code> va configurato per usare NGINX come proxy di Drone e Drone Wall, utilizzando <a href="http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass">proxy_pass</a>.</p>
-
 <p>Al suo interno contiene già due <em>server blocks</em>, i quali a loro volta contengono le direttive <code>server_name</code>, rispettivamente <code>drone.local</code> per Drone e <code>wall.drone.local</code> per il Drone Wall.</p>
-
 <h2 id="up-and-running">Up And Running</h2>
-
 <p>Ora che abbiamo completato la configurazione, possiamo semplicemente avviare i nostri container con questo comando, che va eseguito nella cartella contentente il clone del gist di sopra:</p>
-
 <pre><code>docker-compose up
-</code></pre>
-
-<p>Ora possiamo finalmente utilizzare drone puntando il nostro browser all&rsquo;indirizzo <a href="http://drone.local">http://drone.local</a> (o all&rsquo;indirizzo configurato nel file <code>nginx.conf</code>)</p>
+</code></pre><p>Ora possiamo finalmente utilizzare drone puntando il nostro browser all&rsquo;indirizzo <a href="http://drone.local">http://drone.local</a> (o all&rsquo;indirizzo configurato nel file <code>nginx.conf</code>)</p>
 
   </div>
 
@@ -604,7 +535,7 @@ Per chi non conoscesse Compose, basti sapere che è un <strong>tool per definire
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -900,7 +831,7 @@ Per chi non conoscesse Compose, basti sapere che è un <strong>tool per definire
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -919,13 +850,11 @@ Per chi non conoscesse Compose, basti sapere che è un <strong>tool per definire
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -938,11 +867,13 @@ Per chi non conoscesse Compose, basti sapere che è un <strong>tool per definire
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -961,7 +892,7 @@ Per chi non conoscesse Compose, basti sapere che è un <strong>tool per definire
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -992,7 +923,7 @@ Per chi non conoscesse Compose, basti sapere che è un <strong>tool per definire
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1035,13 +966,11 @@ Per chi non conoscesse Compose, basti sapere che è un <strong>tool per definire
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1050,11 +979,13 @@ Per chi non conoscesse Compose, basti sapere che è un <strong>tool per definire
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1097,14 +1028,12 @@ Per chi non conoscesse Compose, basti sapere che è un <strong>tool per definire
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1116,19 +1045,19 @@ Per chi non conoscesse Compose, basti sapere che è un <strong>tool per definire
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

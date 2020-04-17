@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>English on Facile.it Engineering</title>
@@ -58,9 +58,7 @@ This means that any usage of those classes in your project needs to be updated. 
       
       <guid>https://engineering.facile.it/blog/eng/visual-debt-typehints/</guid>
       <description>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
-Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is #PHP&amp;#39;s new spaces vs tabs
-&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017 
-After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading).</description>
+After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.</description>
     </item>
     
     <item>
@@ -138,7 +136,7 @@ This post would be a short recap of some talks in chronological order.</descript
       <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
-      <description>When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &amp;ldquo;JSONC&amp;rdquo;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.</description>
+      <description>When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &amp;ldquo;JSONC&amp;quot;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.</description>
     </item>
     
     <item>
@@ -156,7 +154,7 @@ This post would be a short recap of some talks in chronological order.</descript
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
-      <description>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &amp;ldquo;Lambda&amp;rdquo;, that allows us to focus on business logic and not on infrastructure.</description>
+      <description>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &amp;ldquo;Lambda&amp;quot;, that allows us to focus on business logic and not on infrastructure.</description>
     </item>
     
     <item>
@@ -166,7 +164,8 @@ This post would be a short recap of some talks in chronological order.</descript
       
       <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
       <description>The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
-Maybe we fear only one thing more than that: being interrupted.  While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.
+Maybe we fear only one thing more than that: being interrupted.
+While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.
 My experience On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5.</description>
     </item>
     

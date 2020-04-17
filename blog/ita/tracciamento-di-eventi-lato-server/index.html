@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -46,32 +46,15 @@
 <meta property="og:description" content="L’adozione di strategie DevOps ha portato negli ultimi anni ad incrementare le aree coperte da tool di monitoring in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei server o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le applicazioni stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/" />
-
-
-
-<meta property="article:published_time" content="2015-04-21T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-04-21T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-04-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-04-21T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Introduzione al tracciamento di eventi lato server">
+        <meta itemprop="name" content="Introduzione al tracciamento di eventi lato server">
 <meta itemprop="description" content="L’adozione di strategie DevOps ha portato negli ultimi anni ad incrementare le aree coperte da tool di monitoring in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei server o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le applicazioni stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc.">
-
-
 <meta itemprop="datePublished" content="2015-04-21T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-04-21T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="647">
@@ -79,7 +62,6 @@
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -108,14 +90,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -416,37 +401,22 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>L’adozione di strategie <em>DevOps</em> ha portato negli ultimi anni ad incrementare le aree coperte da <strong>tool di monitoring</strong> in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei <strong>server</strong> o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le <strong>applicazioni</strong> stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc. ecc.).</p>
-
+    <p>L’adozione di strategie <em>DevOps</em> ha portato negli ultimi anni ad incrementare le aree coperte da <strong>tool di monitoring</strong> in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei <strong>server</strong> o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le <strong>applicazioni</strong> stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc. ecc.).</p>
 <p>Per entrambi i casi lo sviluppatore ha a disposizione sia soluzioni <strong>open source</strong> che soluzioni <strong>SaaS</strong>: la differenza sostanziale, a parità di feature principali, rimane la gestione dell’infrastruttura aggiuntiva, necessaria a supportare le operazioni per la raccolta dei dati inviati dai sensori predisposti a monitorare le metriche che interessano. Nonostante gli strumenti si facciano sempre più abbondanti (basti pensare a tutte le soluzioni recenti per il salvataggio di time series) e user-friendly, volersi affidare a provider terzi può essere un modo per concentrarsi maggiormente sul valore aggiunto che si vuole dare all’utente finale con la propria applicazione, senza doversi preoccupare di questioni di contorno.</p>
-
 <p>Tra i principali prodotti SaaS presenti sul mercato troviamo <em><a href="http://newrelic.com/">NewRelic</a></em>, <em><a href="http://www.appdynamics.com/">AppDynamics</a></em>, <em><a href="https://www.serverdensity.com">ServerDensity</a></em> e <em><a href="https://www.ruxit.com">Ruxit</a></em>, ciascuno con i propri prezzi e le proprie peculiarità, ma tutti che permettono di avere un costante monitoraggio della propria applicazione, dal browser dell’utente fino alla query per salvare i dati, gratis o con costi mensili contenuti e proporzionali alla dimensione della propria infrastruttura.</p>
-
 <p>A <strong>Facile.it</strong> viene utilizzato <strong>NewRelic</strong> non solo per il monitoraggio base dei servizi che compongono il sito ma, grazie a <strong>NewRelic Insights</strong>, perché viene data la possibilità di salvare eventi personalizzati che possono dare maggiori informazioni sia agli sviluppatori che ai business analysts. Per poter accedere a <strong>NewRelic Insights</strong> bisogna avere un account a pagamento, ma è comunque possibile sperimentare l’eventuale utilità per le proprie esigenze grazie al periodo di prova di 14 giorni.</p>
-
 <p>La raccolta dei dati può avvenire in due modi:</p>
-
 <ul>
-<li>tramite <strong><em>custom attributes</em></strong></li>
-<li>tramite <strong><em>eventi personalizzati</em></strong></li>
+<li>tramite <em><strong>custom attributes</strong></em></li>
+<li>tramite <em><strong>eventi personalizzati</strong></em></li>
 </ul>
-
 <h4 id="custom-attributes">Custom Attributes</h4>
-
 <p>I <em>custom attributes</em> sono delle coppie di chiave-valore da aggiungere alla transazione corrente (Web e Non-Web) già tracciata dagli strumenti di <em>NewRelic</em> per i principali linguaggi di programmazione (<strong>PHP</strong>, <strong>NodeJs</strong>, <strong>Ruby</strong>, <strong>Python</strong>, <em>Java</em>, <em>.NET</em>). Possiamo aggiungere ad esempio l’utente attualmente collegato che sta effettuando tale transazione, il numero di oggetti presenti nel carrello o ancora il loro valore.</p>
-
 <p>Ad esempio, tramite l&rsquo;estensione di <em>NewRelic</em> disponibile per <strong>PHP</strong>, è possibile aggiungere i dettagli dell&rsquo;utente attualmente collegato chiamando la funzione <code>newrelic_add_custom_parameter ('userID', $userId)</code>.</p>
-
 <h4 id="eventi-personalizzati">Eventi personalizzati</h4>
-
 <p>Gli <em>eventi personalizzati</em> vanno inviati ad un <strong>webservice REST</strong> in formato <strong>JSON</strong>. Ci mettono in grado di tracciare un qualsiasi evento all’interno di una normale transazione già tracciata da NewRelic, come ad esempio i tempi di risposta di un servizio esterno utilizzato dall’applicazione.</p>
-
 <p>Gli eventi personalizzati possono essere registrati richiamando la relativa funzione <code>newrelic_record_custom_event('DNDServiceCall',['business' =&gt; 'telefonia', 'responseTime' =&gt; 1500])</code> disponibile nelle ultime versioni dell&rsquo;estensione <strong>PHP</strong> oppure tramite una semplice chiamata cURL come indicato dalla <a href="https://docs.newrelic.com/docs/insights/new-relic-insights/adding-querying-data/inserting-custom-events-insights-api">documentazione</a> sui <em>custom events</em>.</p>
-
 <p>Una volta che i dati vengono raccolti da <em>NewRelic</em> è possibile analizzarli tramite delle semplici query in un linguaggio simil-<em>SQL</em>, in questo caso chiamato <strong>NRQL</strong> (<em>NewRelic Query Language</em>). La sintassi base di una SELECT in SQL viene mantenuta, ma vengono forniti strumenti per meglio gestire le serie temporali, tramite <strong>TIMESERIES</strong>, <strong>SINCE</strong>, <strong>UNTIL</strong>: una trattazione più approfondita è disponibile alla relativa pagina della <a href="https://docs.newrelic.com/docs/insights/new-relic-insights/using-new-relic-query-language/nrql-reference">documentazione</a>.</p>
-
 <p>I risultati delle <em>query</em> vengono resi disponibili in formato <strong>JSON</strong>, oppure come widget da poter integrare poi in una dashboard, in maniera da tenere sempre sotto controllo le metriche più importanti per la conduzione del proprio business. Inoltre tramite <a href="https://docs.newrelic.com/docs/insights/new-relic-insights/using-insights-interface/exploring-your-data">Data Explorer</a> è possibile consultare un campione degli eventi recentemente inviati dalla nostra applicazione a <em>NewRelic</em>, così da poter eventualmente raffinare le strutture dati con cui vengono raccolti.</p>
 
   </div>
@@ -488,7 +458,7 @@ ga('send', 'pageview');
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -784,7 +754,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -803,13 +773,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -822,11 +790,13 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -845,7 +815,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -876,7 +846,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -919,13 +889,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -934,11 +902,13 @@ ga('send', 'pageview');
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -981,14 +951,12 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1000,19 +968,19 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

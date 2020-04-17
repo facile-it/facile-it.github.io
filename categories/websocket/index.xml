@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Websocket on Facile.it Engineering</title>
@@ -18,7 +18,7 @@
       
       <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
       <description>Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno scambio dati in due direzioni, efficiente e a bassa latenza, ha determinato l’ascesa negli ultimi anni di soluzioni basate su WebSocket.
-Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.</description>
+Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex(tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.</description>
     </item>
     
   </channel>

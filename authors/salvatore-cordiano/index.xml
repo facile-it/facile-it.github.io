@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Salvatore-cordiano on Facile.it Engineering</title>
+    <title>salvatore-cordiano on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/salvatore-cordiano/</link>
-    <description>Recent content in Salvatore-cordiano on Facile.it Engineering</description>
+    <description>Recent content in salvatore-cordiano on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 04 Oct 2017 00:00:00 +0000</lastBuildDate>
@@ -47,7 +47,7 @@ In meno di 24 ore gli hackers partecipanti dovranno confrontarsi, mettendo a dur
       <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
-      <description>When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &amp;ldquo;JSONC&amp;rdquo;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.</description>
+      <description>When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &amp;ldquo;JSONC&amp;quot;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.</description>
     </item>
     
     <item>
@@ -56,7 +56,7 @@ In meno di 24 ore gli hackers partecipanti dovranno confrontarsi, mettendo a dur
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
-      <description>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &amp;ldquo;Lambda&amp;rdquo;, that allows us to focus on business logic and not on infrastructure.</description>
+      <description>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &amp;ldquo;Lambda&amp;quot;, that allows us to focus on business logic and not on infrastructure.</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AWS on Facile.it Engineering</title>
@@ -17,7 +17,7 @@
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
-      <description>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &amp;ldquo;Lambda&amp;rdquo;, that allows us to focus on business logic and not on infrastructure.</description>
+      <description>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &amp;ldquo;Lambda&amp;quot;, that allows us to focus on business logic and not on infrastructure.</description>
     </item>
     
     <item>

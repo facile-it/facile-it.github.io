@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TDD on Facile.it Engineering</title>
@@ -18,7 +18,8 @@
       
       <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
       <description>The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
-Maybe we fear only one thing more than that: being interrupted.  While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.
+Maybe we fear only one thing more than that: being interrupted.
+While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.
 My experience On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5.</description>
     </item>
     

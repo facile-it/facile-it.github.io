@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -48,33 +48,16 @@ In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a crear
 In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a creare un target per il binario principale crea automaticamente anche un target di test, cioè un bundle aggiuntivo che può essere caricato nel bundle principale per poter fisicamente eseguire i test una volta avviata l&rsquo;app." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/xcode-testing-in-pratica/" />
-
-
-
-<meta property="article:published_time" content="2015-04-09T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-04-09T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-04-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-04-09T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Xcode Testing in pratica">
+        <meta itemprop="name" content="Xcode Testing in pratica">
 <meta itemprop="description" content="Tra i molti strumenti utili presenti in Xcode, il testing framework XCTest è certamente uno dei più rilevanti, non solo per l&rsquo;importanza intrinseca dello Unit Testing in generale, ma soprattutto per la facilità con la quale è possibile scrivere ed eseguire test direttamente dall&rsquo;IDE out-of-the-box, senza la necessità di installare componenti di terze parti o impostare una particolare configurazione per i progetti.
 In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a creare un target per il binario principale crea automaticamente anche un target di test, cioè un bundle aggiuntivo che può essere caricato nel bundle principale per poter fisicamente eseguire i test una volta avviata l&rsquo;app.">
-
-
 <meta itemprop="datePublished" content="2015-04-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-04-09T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1700">
@@ -82,7 +65,6 @@ In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a crear
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -111,14 +93,17 @@ In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a crear
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -419,20 +404,12 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>Tra i molti strumenti utili presenti in Xcode, il testing framework <strong>XCTest</strong> è certamente uno dei più rilevanti, non solo per l&rsquo;importanza intrinseca dello Unit Testing in generale, ma soprattutto per la facilità con la quale è possibile scrivere ed eseguire test direttamente dall&rsquo;IDE <em>out-of-the-box</em>, <strong>senza la necessità di installare componenti di terze parti</strong> o impostare una particolare configurazione per i progetti.</p>
-
+    <p>Tra i molti strumenti utili presenti in Xcode, il testing framework <strong>XCTest</strong> è certamente uno dei più rilevanti, non solo per l&rsquo;importanza intrinseca dello Unit Testing in generale, ma soprattutto per la facilità con la quale è possibile scrivere ed eseguire test direttamente dall&rsquo;IDE <em>out-of-the-box</em>, <strong>senza la necessità di installare componenti di terze parti</strong> o impostare una particolare configurazione per i progetti.</p>
 <p>In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a creare un target per il binario principale crea automaticamente anche un <strong>target di test</strong>, cioè un bundle aggiuntivo che può essere caricato nel bundle principale per poter fisicamente eseguire i test una volta avviata l&rsquo;app. Nell&rsquo;immagine seguente è possibile vedere come, in un progetto appena creato, sia già presente il test bundle, in questo caso chiamato <em>AwesomeAppTests.xctest</em>:</p>
-
-<p><img src="/images/xcode-testing-in-pratica/image_1.jpg" alt="" /></p>
-
+<p><img src="/images/xcode-testing-in-pratica/image_1.jpg" alt=""></p>
 <p>Come mostrato nell&rsquo;immagine, Xcode ha anche creato automaticamente il file <em>AwesomeAppTests.swift</em>, all&rsquo;interno del quale potremo iniziare a scrivere i nostri test.</p>
-
-<h2 id="setup-dell-ambiente-di-test">Setup dell&rsquo;ambiente di test</h2>
-
-<p>Al di là del meccanismo con il quale il testing avviene, è importante capire che il codice con il quale i test sono stati scritti è compilato in un bundle diverso, e per far sì che i test &ldquo;vedano&rdquo; il resto dell&rsquo;app, è necessario seguire le <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AccessControl.html">regole di access control tra i moduli in Swift</a>; quindi classi, struct, funzioni, costanti e così via che abbiamo dichiarato e implementato nella nostra app, o libreria che sia, <strong>dovranno essere marcati con la keyword *public</strong>*:</p>
-
+<h2 id="setup-dellambiente-di-test">Setup dell&rsquo;ambiente di test</h2>
+<p>Al di là del meccanismo con il quale il testing avviene, è importante capire che il codice con il quale i test sono stati scritti è compilato in un bundle diverso, e per far sì che i test &ldquo;vedano&rdquo; il resto dell&rsquo;app, è necessario seguire le <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/AccessControl.html">regole di access control tra i moduli in Swift</a>; quindi classi, struct, funzioni, costanti e così via che abbiamo dichiarato e implementato nella nostra app, o libreria che sia, <strong>dovranno essere marcati con la keyword <em>public</em></strong>:</p>
 <pre><code>public func sumOfInts (x: Int, y: Int) -&gt; Int {
     return x + y
 }
@@ -440,12 +417,8 @@ ga('send', 'pageview');
 public class AwesomeItem {
     var name: String? = nil
 }
-</code></pre>
-
-<p>In questo modo, qualsiasi modulo esterno che importerà il modulo costituito dalla nostra app potrà vedere la firma della funzione <code>sumOfInts</code> e della classe <code>AwesomeItem</code>. Per importare nei file di testing nel modulo dell&rsquo;app sarà sufficiente scrivere <code>import AwesomeApp</code> all&rsquo;inizio del file. Aggiungiamo al progetto un file .swift, inserendo il codice appena visto: useremo questo file per scrivere tutto il codice da testare.</p>
-
+</code></pre><p>In questo modo, qualsiasi modulo esterno che importerà il modulo costituito dalla nostra app potrà vedere la firma della funzione <code>sumOfInts</code> e della classe <code>AwesomeItem</code>. Per importare nei file di testing nel modulo dell&rsquo;app sarà sufficiente scrivere <code>import AwesomeApp</code> all&rsquo;inizio del file. Aggiungiamo al progetto un file .swift, inserendo il codice appena visto: useremo questo file per scrivere tutto il codice da testare.</p>
 <p>Apriamo quindi il file <em>AwesomeAppTests.swift</em>, importiamo il modulo <code>AwesomeApp</code>, eliminiamo le due funzioni di test di esempio, che hanno il solo scopo di presentare la sintassi di base dei test all&rsquo;utente, e scriviamo un test banale per la funzione <code>sumOfInts</code>; avremo quindi qualcosa del genere:</p>
-
 <pre><code>class AwesomeAppTests: XCTestCase {
     
     override func setUp() {
@@ -462,26 +435,15 @@ public class AwesomeItem {
         /// test the sumOfIntsFunction
     }
 }
-</code></pre>
-
-<p>Xcode ha identificato la funzione <code>testSumOfInts</code> come <strong>una funzione di test</strong> perché il suo nome inizia con &ldquo;test&rdquo;, e ha posizionato un pulsante di avvio test proprio di fianco alla sua dichiarazione:</p>
-
-<p><img src="/images/xcode-testing-in-pratica/image_2.jpg" alt="" /></p>
-
+</code></pre><p>Xcode ha identificato la funzione <code>testSumOfInts</code> come <strong>una funzione di test</strong> perché il suo nome inizia con &ldquo;test&rdquo;, e ha posizionato un pulsante di avvio test proprio di fianco alla sua dichiarazione:</p>
+<p><img src="/images/xcode-testing-in-pratica/image_2.jpg" alt=""></p>
 <p>Per far eseguire a Xcode questo test, e solo questo, sarà sufficiente cliccare su quel pulsante. In alternativa sarà possibile selezione &ldquo;Test&rdquo; dal menu &ldquo;Product&rdquo; per far eseguire a Xcode tutti i test che l&rsquo;IDE ha riconosciuto. Xcode offre anche un <strong>Test Navigator</strong>, che mostra il nome di tutti i test implementati, raggruppati per <em>Test Case</em>: spostando il puntatore del mouse su un test apparirà un pulsante a forma di freccia che permetterà di avviare singolarmente i test, oppure tutti i test relativi a un particolare <em>Test Case</em>, o anche tutti i test scritti.</p>
-
-<p><img src="/images/xcode-testing-in-pratica/image_3.jpg" alt="" /></p>
-
+<p><img src="/images/xcode-testing-in-pratica/image_3.jpg" alt=""></p>
 <p>Per poter eseguire i test, Xcode deve effettivamente avviare l&rsquo;app: selezioniamo uno dei simulatori disponibili in modo che a ogni avvio di test Xcode apra automaticamente il simulatore scelto.</p>
-
-<p><img src="/images/xcode-testing-in-pratica/image_4.jpg" alt="" /></p>
-
+<p><img src="/images/xcode-testing-in-pratica/image_4.jpg" alt=""></p>
 <h2 id="xctestcase-e-xctassert">XCTestCase e XCTAssert</h2>
-
 <p>Nel framework <strong>XCTest</strong> un <em>Test Case</em> è rappresentato da una sottoclasse della classe <code>XCTestCase</code>: al momento dell&rsquo;avvio dei test viene automaticamente generata un&rsquo;istanza di ciascun Test Case che abbiamo implementato, e vengono eseguiti uno a uno tutti i test dichiarati, avviando le funzioni <code>testSomething()</code> che li implementano. Anche i metodi <code>setUp()</code> e <code>tearDown()</code> sono chiamati automaticamente nel corso dei test: come indicano i commenti inseriti da Xcode, il metodo <code>setUp()</code> è chiamato immediatamente prima di ogni test, e permette di inizializzare eventuali attributi d&rsquo;istanza, o variabili globali; come è intuibile, il metodo <code>tearDown()</code> permette di ripristinare eventualmente lo stato iniziale dopo ciascun test. L&rsquo;implementazione di questi due metodi è comunque del tutto opzionale: essi rappresentano semplicemente degli strumenti in più.</p>
-
 <p>Poiché <strong>i nostri Test Case sono effettivamente delle classi</strong>, possiamo implementare anche altri metodi e attributi per ciascuna classe, che possono facilmente essere richiamati nei singoli test, come nel seguente esempio:</p>
-
 <pre><code>class AwesomeAppTests: XCTestCase {
     
 		var firstInt = 0
@@ -508,20 +470,14 @@ public class AwesomeItem {
         XCTAssert(sum == self.expectedSum)
     }
 }
-</code></pre>
-
-<p>Come si vede dall&rsquo;esempio, per testare la funzione <code>sumOfInts</code> si è impiegata la funzione <code>XCTAssert</code>: tale funzione rappresenta il blocco costruttivo di base per poter scrivere i nostri unit test, e prende in ingresso da 1 a 4 parametri: il primo parametro, l&rsquo;unico obbligatorio, deve essere un&rsquo;espressione la cui valutazione restituisce un valore Booleano true/false, mentre gli altri parametri, del tutto opzionali poiché caratterizzati da valori di default, rappresentano rispettivamente:</p>
-
+</code></pre><p>Come si vede dall&rsquo;esempio, per testare la funzione <code>sumOfInts</code> si è impiegata la funzione <code>XCTAssert</code>: tale funzione rappresenta il blocco costruttivo di base per poter scrivere i nostri unit test, e prende in ingresso da 1 a 4 parametri: il primo parametro, l&rsquo;unico obbligatorio, deve essere un&rsquo;espressione la cui valutazione restituisce un valore Booleano true/false, mentre gli altri parametri, del tutto opzionali poiché caratterizzati da valori di default, rappresentano rispettivamente:</p>
 <ul>
 <li>un messaggio testuale che verrà mostrato in console nel caso in cui il test fallisca;</li>
 <li>il file all&rsquo;interno del quale è presente il test fallito;</li>
 <li>la linea di codice in corrispondenza della quale è presente la funzione XCTAssert relativa al test fallito;</li>
 </ul>
-
 <p>La libreria <code>XCTest</code> dichiara molte diverse funzioni del tipo <code>XCTAssert</code>, <strong>i cui casi di utilizzo sono chiaramente dedotti dal nome delle funzioni</strong>: ad esempio la funzione <code>XCTAssertNil</code> verifica che l&rsquo;argomento, cioè il primo parametro, sia <code>nil</code>; la funzione <code>XCTAssertGreaterThan</code> prende due espressioni invece di una, la cui valutazione deve restituire un valore di tipo <code>Comparable</code> - cioè che può essere confrontato con altri valori tramite gli operatori maggiore/minore e derivati - e verifica che il risultato della prima espressione sia maggiore del risultato della seconda.</p>
-
 <p>Sfruttando le altre funzioni <code>XCTAssert</code>, possiamo estendere <code>testSumOfInts</code> per includere altre verifiche su <code>sumOfInts</code>:</p>
-
 <pre><code>func testSumOfInts() {
         
         XCTAssertEqual(sumOfInts(self.firstInt, self.secondInt), sumOfInts(self.secondInt, self.firstInt))
@@ -546,19 +502,13 @@ public class AwesomeItem {
         }
     }
 }
-</code></pre>
-
-<h2 id="test-asincroni">Test asincroni</h2>
-
+</code></pre><h2 id="test-asincroni">Test asincroni</h2>
 <p>La libreria XCTest include alcuni strumenti per eseguire <strong>test su computazioni asincrone</strong>, cioè eseguite da funzioni che non ritornano immediatamente un valore ma che potrebbero chiamare una funzione di callback a un certo punto nel futuro. Per testare una funzione asincrona è necessario:</p>
-
 <ol>
 <li>creare un&rsquo;istanza di <code>XCTestExpectation</code>, un oggetto che rappresenta l&rsquo;<strong>aspettativa</strong> che ad un certo punto nel futuro accada qualcosa;</li>
 <li>informare l&rsquo;istanza del <code>XCTestCase</code>, generata automaticamente all&rsquo;avvio dei test, che nel corso di un certo test è necessario che le <em>aspettative</em> vengano <em>soddisfatte</em>.</li>
 </ol>
-
 <p>Per fare un esempio, aggiungiamo una semplice funzione pubblica a <em>AwesomeItem.swift</em> che permette di scaricare un&rsquo;immagine presente a un certo URL, e chiama una funzione callback restituendo appunto una <code>UIImage</code> che rappresenti l&rsquo;immagine scaricata: per semplicità non gestiremo gli errori, e nel caso in cui qualcosa vada storto otterremo semplicemente <code>nil</code> al posto dell&rsquo;immagine (quindi l&rsquo;oggetto effettivamente ottenuto sarà di tipo <code>UIImage?</code>, cioè un oggetto opzionale). Per poter manipolare <code>UIImage</code> dobbiamo importare <code>UIKit</code> in <em>AwesomeItem.swift</em>.</p>
-
 <pre><code>import Foundation
 import UIKit
 
@@ -582,10 +532,7 @@ public func downloadImage (imageURL: NSURL, callback: (UIImage?) -&gt; ()) {
 public class AwesomeItem {
     var name: String? = nil
 }
-</code></pre>
-
-<p>Che si riesca a meno a scaricare l&rsquo;immagine, la funzione di callback deve comunque essere chiamata in un tempo ragionevole, e l&rsquo;obbiettivo del test asincrono sarà proprio quello di verificare che la tale funzione venga chiamata, ignorando  l&rsquo;oggetto ottenuto per l&rsquo;immagine. Segue una possibile implementazione per questo test, nella quale creiamo una <code>XCTestExpectation</code> e impostiamo un&rsquo;attesa di 5 secondi: è ovviamente possibile sincronizzare il tempo di attesa con il tempo di timeout della sessione di download creata, ma per semplicità imposteremo un tempo forfettario.</p>
-
+</code></pre><p>Che si riesca a meno a scaricare l&rsquo;immagine, la funzione di callback deve comunque essere chiamata in un tempo ragionevole, e l&rsquo;obbiettivo del test asincrono sarà proprio quello di verificare che la tale funzione venga chiamata, ignorando  l&rsquo;oggetto ottenuto per l&rsquo;immagine. Segue una possibile implementazione per questo test, nella quale creiamo una <code>XCTestExpectation</code> e impostiamo un&rsquo;attesa di 5 secondi: è ovviamente possibile sincronizzare il tempo di attesa con il tempo di timeout della sessione di download creata, ma per semplicità imposteremo un tempo forfettario.</p>
 <pre><code>func testDownloadImageCallback() {
         
         let downloadImageCallbackExpectation = self.expectationWithDescription(&quot;downloadImageCallbackExpectation&quot;)
@@ -598,10 +545,7 @@ public class AwesomeItem {
         
         self.waitForExpectationsWithTimeout(5.0, handler: nil)
     }
-</code></pre>
-
-<p>Se proviamo ad avviare il test cliccando sull&rsquo;icona di avvio apparsa in Xcode proprio a sinistra della riga di dichiarazione della funzione, analogamente a quando mostrato prima, vedremo che Xcode rimarrà bloccato per 5 secondi prima di mostrare il messaggio <code>Asynchronous wait failed: Exceeded timeout of 5 seconds, with unfulfilled expectations: &quot;downloadImageCallbackExpectation&quot;.</code>: come mai? Il fallimento del test ci informa subito del fatto che la funzione di download dell&rsquo;immagine che abbiamo scritto ha qualche problema: è facile vedere che esso è dovuto al fatto che non abbiamo chiamato <code>resume()</code> sulla task di download creata. Correggiamo quindi la nostra funzione <code>downloadImage</code> nel seguente modo:</p>
-
+</code></pre><p>Se proviamo ad avviare il test cliccando sull&rsquo;icona di avvio apparsa in Xcode proprio a sinistra della riga di dichiarazione della funzione, analogamente a quando mostrato prima, vedremo che Xcode rimarrà bloccato per 5 secondi prima di mostrare il messaggio <code>Asynchronous wait failed: Exceeded timeout of 5 seconds, with unfulfilled expectations: &quot;downloadImageCallbackExpectation&quot;.</code>: come mai? Il fallimento del test ci informa subito del fatto che la funzione di download dell&rsquo;immagine che abbiamo scritto ha qualche problema: è facile vedere che esso è dovuto al fatto che non abbiamo chiamato <code>resume()</code> sulla task di download creata. Correggiamo quindi la nostra funzione <code>downloadImage</code> nel seguente modo:</p>
 <pre><code>public func downloadImage (imageURL: NSURL, callback: (UIImage?) -&gt; ()) {
     let task = NSURLSession.sharedSession().downloadTaskWithRequest(NSURLRequest(URL: imageURL), completionHandler: { (tempLocalURL: NSURL!, response: NSURLResponse!, error: NSError!) -&gt; Void in
         if let path = tempLocalURL?.path {
@@ -615,10 +559,7 @@ public class AwesomeItem {
     })
     task.resume()
 }
-</code></pre>
-
-<p><strong>Il test ci ha immediatamente informati dell&rsquo;errore</strong>, e ci ha permesso di evitare una possibile sorgente di bug nel nostro codice, e diversi mal di testa. Grazie al modo <em>seamless</em> nel quale il framework XCTest è integrato in Xcode, risulta facile e veloce scrivere test che permettano di verificare immediatamente se il nostro codice funziona come dovrebbe, ed <strong>è Xcode stesso a incoraggiare la scrittura di test</strong> nel corso della realizzazione di un&rsquo;app o di una libreria generando automaticamente un target di test ogni volta in cui si crea un nuovo progetto: non ci sono più scuse quindi per non iniziare a scrivere test completi ed efficienti che permettano di <strong>realizzare software migliore</strong>.</p>
-
+</code></pre><p><strong>Il test ci ha immediatamente informati dell&rsquo;errore</strong>, e ci ha permesso di evitare una possibile sorgente di bug nel nostro codice, e diversi mal di testa. Grazie al modo <em>seamless</em> nel quale il framework XCTest è integrato in Xcode, risulta facile e veloce scrivere test che permettano di verificare immediatamente se il nostro codice funziona come dovrebbe, ed <strong>è Xcode stesso a incoraggiare la scrittura di test</strong> nel corso della realizzazione di un&rsquo;app o di una libreria generando automaticamente un target di test ogni volta in cui si crea un nuovo progetto: non ci sono più scuse quindi per non iniziare a scrivere test completi ed efficienti che permettano di <strong>realizzare software migliore</strong>.</p>
 <p>Il progetto Xcode contenente tutto il codice mostrato nell&rsquo;articolo è disponibile su <a href="https://github.com/broomburgo/xcode-testing-in-pratica">GitHub</a></p>
 
   </div>
@@ -663,7 +604,7 @@ public class AwesomeItem {
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -959,7 +900,7 @@ public class AwesomeItem {
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -978,13 +919,11 @@ public class AwesomeItem {
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -997,11 +936,13 @@ public class AwesomeItem {
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1020,7 +961,7 @@ public class AwesomeItem {
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1051,7 +992,7 @@ public class AwesomeItem {
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1094,13 +1035,11 @@ public class AwesomeItem {
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1109,11 +1048,13 @@ public class AwesomeItem {
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1156,14 +1097,12 @@ public class AwesomeItem {
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1175,19 +1114,19 @@ public class AwesomeItem {
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

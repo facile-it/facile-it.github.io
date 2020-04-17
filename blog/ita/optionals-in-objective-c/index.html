@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -48,33 +48,16 @@
  progetti esistenti basati su Objective-C richiedono ancora mantenimento e probabile aggiunta di nuove funzionalità, e anche se è tecnicamente possibile mescolare i linguaggi, la cosa può risultare poco conveniente per via della natura molto dinamica di Objective-C; Swift sta cambiando rapidamente, presenta ancora alcuni bug e problemi di performance, e il suo workflow manca ancora di alcune feature fondamentali per i professionisti, mentre Objective-C è un linguaggio maturo, con una community molto vivace; alcuni possono preferire un linguaggio più dinamico, e il supporto di Apple su Objective-C è ancora forte;  Personalmente ho la tendenza a preferire linguaggi più statici, e un approccio type-first alla programmazione, ma di tanto in tanto mi piace lavorare in un ambiente più dinamico, quindi, sia per preferenza personale che per esigenze di business, non ho ancora messo Objective-C da parte." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/optionals-in-objective-c/" />
-
-
-
-<meta property="article:published_time" content="2015-11-09T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-11-09T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-11-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-11-09T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Optionals in Objective-C">
+        <meta itemprop="name" content="Optionals in Objective-C">
 <meta itemprop="description" content="Objective-C vivrà ancora per molto. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&rsquo;:
  progetti esistenti basati su Objective-C richiedono ancora mantenimento e probabile aggiunta di nuove funzionalità, e anche se è tecnicamente possibile mescolare i linguaggi, la cosa può risultare poco conveniente per via della natura molto dinamica di Objective-C; Swift sta cambiando rapidamente, presenta ancora alcuni bug e problemi di performance, e il suo workflow manca ancora di alcune feature fondamentali per i professionisti, mentre Objective-C è un linguaggio maturo, con una community molto vivace; alcuni possono preferire un linguaggio più dinamico, e il supporto di Apple su Objective-C è ancora forte;  Personalmente ho la tendenza a preferire linguaggi più statici, e un approccio type-first alla programmazione, ma di tanto in tanto mi piace lavorare in un ambiente più dinamico, quindi, sia per preferenza personale che per esigenze di business, non ho ancora messo Objective-C da parte.">
-
-
 <meta itemprop="datePublished" content="2015-11-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-11-09T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="2826">
@@ -82,7 +65,6 @@
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -111,14 +93,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -424,20 +409,14 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p><strong>Objective-C vivrà ancora per molto</strong>. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&rsquo;:</p>
-
+    <p><strong>Objective-C vivrà ancora per molto</strong>. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&rsquo;:</p>
 <ul>
 <li>progetti esistenti basati su Objective-C richiedono ancora mantenimento e probabile aggiunta di nuove funzionalità, e anche se è tecnicamente possibile mescolare i linguaggi, la cosa può risultare <strong>poco conveniente</strong> per via della natura molto dinamica di Objective-C;</li>
 <li>Swift sta cambiando rapidamente, presenta ancora alcuni bug e <strong>problemi di performance</strong>, e il suo workflow manca ancora di alcune feature fondamentali per i professionisti, mentre Objective-C è un linguaggio maturo, con una community molto vivace;</li>
 <li>alcuni possono <strong>preferire un linguaggio più dinamico</strong>, e il supporto di Apple su Objective-C è <a href="https://netguru.co/blog/objective-c-generics">ancora forte</a>;</li>
 </ul>
-
 <p>Personalmente ho la tendenza a preferire linguaggi più statici, e un approccio <a href="http://engineering.facile.it/type-first-development-in-swift/">type-first</a> alla programmazione, ma di tanto in tanto mi piace lavorare in un ambiente più <em>dinamico</em>, quindi, sia per preferenza personale che per esigenze di business, non ho ancora messo Objective-C da parte. Ma dopo poche settimane di Swift, mi è mancata subito una delle sue funzionalità più potenti: gli <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330">Optionals</a>.</p>
-
 <h2 id="indice">Indice</h2>
-
 <ul>
 <li><a href="#il-tipo-optional">Il tipo <code>Optional</code></a></li>
 <li><a href="#optionals-in-swift">Optionals in Swift</a></li>
@@ -445,494 +424,405 @@ ga('send', 'pageview');
 <li><a href="#esempio-un-parser-json">Esempio: un parser JSON</a></li>
 <li><a href="#conclusione">Conclusione</a></li>
 </ul>
-
-<p><a name="il-tipo-optional"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="il-tipo-optional">Il tipo <code>Optional</code></h2>
-
-<p>Il tipo <code>Optional</code> è un tipo <em>generico</em> (o, più propriamente, <em>parametrico</em>), dipendente da un <strong>tipo secondario</strong>: è possibile ad esempio definire un <code>Optional&lt;String&gt;</code> oppure un <code>Optional&lt;Int&gt;</code>: la sintassi di Swift permette di scrivere i tipi appena indicati con <code>String?</code> e <code>Int?</code>. Ma cos&rsquo;è esattamente un <code>Optional</code>?. È un tipo particolare che serve a rappresentare un dato che <em>potrebbe</em> esistere, ed essere quindi di un certo tipo secondario, o potrebbe non esistere, ed essere quindi <strong>nil</strong>: <em>inscatolando</em> il valore opzionale in un <code>Optional</code>, il compilatore di Swift saprà che quel valore potrà essere nil, e emettere un errore nei casi in cui stiamo usando un <code>Optional</code> dove ci si aspetta un valore <strong>sempre</strong> presente. Questa semplice funzionalità ci garantisce notevole rigore nella definizione dei nostri tipi di dato e funzione: ad esempio, in Swift non possiamo inizializzare un valore non opzionale con nil, e considerando che, per il compilatore, un valore non può essere usato prima di essere istanziato, se assegniamo il tipo <code>String</code> a un valore, siamo sicuri al 100% che quel valore sarà <strong>sempre a comunque</strong> una stringa.</p>
-
+<p>Il tipo <code>Optional</code> è un tipo <em>generico</em> (o, più propriamente, <em>parametrico</em>), dipendente da un <strong>tipo secondario</strong>: è possibile ad esempio definire un <code>Optional&lt;String&gt;</code> oppure un <code>Optional&lt;Int&gt;</code>: la sintassi di Swift permette di scrivere i tipi appena indicati con <code>String?</code> e <code>Int?</code>. Ma cos'è esattamente un <code>Optional</code>?. È un tipo particolare che serve a rappresentare un dato che <em>potrebbe</em> esistere, ed essere quindi di un certo tipo secondario, o potrebbe non esistere, ed essere quindi <strong>nil</strong>: <em>inscatolando</em> il valore opzionale in un <code>Optional</code>, il compilatore di Swift saprà che quel valore potrà essere nil, e emettere un errore nei casi in cui stiamo usando un <code>Optional</code> dove ci si aspetta un valore <strong>sempre</strong> presente. Questa semplice funzionalità ci garantisce notevole rigore nella definizione dei nostri tipi di dato e funzione: ad esempio, in Swift non possiamo inizializzare un valore non opzionale con nil, e considerando che, per il compilatore, un valore non può essere usato prima di essere istanziato, se assegniamo il tipo <code>String</code> a un valore, siamo sicuri al 100% che quel valore sarà <strong>sempre a comunque</strong> una stringa.</p>
 <p>Al contrario, in Objective-C un oggetto può essere sempre nil, e spesso siamo costretti a controllare l&rsquo;effettiva presenza di un oggetto ogni volta in cui abbiamo bisogno di un&rsquo;istanza che non sia nil. In realtà non si tratta di un grosso problema: è un classico <strong>compromesso</strong> dei linguaggi dinamici, e il fatto che posso sempre inviare un messaggio a un riferimento nil può essere anche considerato una <em>feature</em>: usando un linguaggio dinamico, ci si aspetta che progettiamo le nostre API tenendo sempre in considerazione il concetto di <a href="https://en.wikipedia.org/wiki/Late_binding">late-binding</a>. Inoltre, i nuovi <a href="https://developer.apple.com/swift/blog/?id=25"><em>nullability specifiers</em></a> di Objective-C aiutano il compilatore a emettere avvisi quando stiamo passando nil a un metodo o una <em>property</em> che richiedono invece che il parametro sia <code>nonnull</code>. Ma il problema rimane: abbiamo bisogno di molto <em>boilerplate</em> per verificare se qualcosa è nil, e ciò può portare a codice poco leggibile e comprensibile, soggetto ad errori. Swift non ha tipicamente bisogno di questo <em>boilerplate</em> grazie alla natura stessa del tipo <code>Optional</code>: esso ha le stesse caratteristiche del tipo <code>Maybe</code> in Haskell, o del tipo <code>Option</code> in Scala, cioè <code>Optional</code> è in realtà un <strong>monad</strong>.</p>
-
-<p>Il concetto di <em>monad</em> è ereditato, in programmazione funzionale, dalla <a href="https://it.wikipedia.org/wiki/Teoria_delle_categorie">teoria delle categorie</a>, ed è facile trovare <a href="https://wiki.haskell.org/Monad">molti</a> <a href="https://www.haskell.org/tutorial/monads.html">testi</a> <a href="http://learnyouahaskell.com/a-fistful-of-monads">introduttivi</a> sul tema, quindi non approfondirò ulteriormente: dirò solo che un <em>monad</em> è un <em>contesto computazionale</em>, quindi una <em>specifica</em> per il modo in cui una espressione deve essere valutata. Applicare una certa trasformazione a un <em>monad</em> avrà come risultato un&rsquo;altra istanza dello stesso <em>monad</em> differente dalla prima, a seconda dello specifico tipo di <em>monad</em>. Ad esempio, applicare una trasformazione a un <code>Optional</code> risulterà nell&rsquo;applicazione della stessa trasformazione al valore <em>contenuto</em>, se presente, o assolutamente niente se l&rsquo;<code>Optional</code> contiene nil: in entrambi i casi, il risultato della trasformazione sarà un nuovo <code>Optional</code>, possibilmente con un tipo secondario diverso.</p>
-
-<p><a name="optionals-in-swift"></a></p>
-
+<p>Il concetto di <em>monad</em> è ereditato, in programmazione funzionale, dalla <a href="https://it.wikipedia.org/wiki/Teoria_delle_categorie">teoria delle categorie</a>, ed è facile trovare <a href="https://wiki.haskell.org/Monad">molti</a> <a href="https://www.haskell.org/tutorial/monads.html">testi</a> <a href="http://learnyouahaskell.com/a-fistful-of-monads">introduttivi</a> sul tema, quindi non approfondirò ulteriormente: dirò solo che un <em>monad</em> è un <em>contesto computazionale</em>, quindi una <em>specifica</em> per il modo in cui una espressione deve essere valutata. Applicare una certa trasformazione a un <em>monad</em> avrà come risultato un&rsquo;altra istanza dello stesso <em>monad</em> differente dalla prima, a seconda dello specifico tipo di <em>monad</em>. Ad esempio, applicare una trasformazione a un <code>Optional</code> risulterà nell&rsquo;applicazione della stessa trasformazione al valore <em>contenuto</em>, se presente, o assolutamente niente se l'<code>Optional</code> contiene nil: in entrambi i casi, il risultato della trasformazione sarà un nuovo <code>Optional</code>, possibilmente con un tipo secondario diverso.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="optionals-in-swift">Optionals in Swift</h2>
-
 <p>Consideriamo il seguente codice Swift:</p>
-
-<pre><code class="language-Swift">func makeOptionalIntFrom(value: Int, ifTrue: Bool) -&gt; Int?  
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Swift" data-lang="Swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeOptionalIntFrom</span>(value: Int, ifTrue: Bool) -&gt; Int?  
 {
-  return ifTrue ? value : nil
+  <span style="color:#66d9ef">return</span> ifTrue ? value : <span style="color:#66d9ef">nil</span>
 }
 
-let optionalInt = makeOptionalIntFrom(3, ifTrue: true)  
-print(optionalInt.dynamicType) /// prints 'Optional&lt;Int&gt;'
+<span style="color:#66d9ef">let</span> optionalInt = makeOptionalIntFrom(<span style="color:#ae81ff">3</span>, ifTrue: <span style="color:#66d9ef">true</span>)  
+print(optionalInt.<span style="color:#66d9ef">dynamicType</span>) <span style="color:#75715e">/// prints &#39;Optional&lt;Int&gt;&#39;</span>
 
-let toString: Int -&gt; String = { &quot;\($0)&quot; }
+<span style="color:#66d9ef">let</span> toString: Int -&gt; String = { <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>$0<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span> }
 
-let optionalString = optionalInt.map(toString)  
-print(optionalString.dynamicType) /// prints 'Optional&lt;String&gt;'
-</code></pre>
-
-<p>Nell&rsquo;esempio, <code>optionalInt</code> è un <code>Int</code> <em>contenuto</em> in un <code>Optional</code>, che quindi ha tipo <code>Optional&lt;Int&gt;</code> (in Swift è possibile abbreviarlo in <code>Int?</code>), e applicando ad esso la funzione <code>toString</code> otteniamo un&rsquo;istanza di <code>Optional&lt;String&gt;</code>. Possiamo vedere che, per applicare effettivamente la funzione <code>toString</code>, abbiamo passato la funzione come argomento al metodo <code>map</code> del <code>Optional</code>: questa operazione è solitamente chiamata <em>lifting</em> di una funzione, perché la funzione <code>toString</code>, di tipo <code>Int -&gt; String</code>, è <em>sollevata</em> (<em>lifted</em>) fino a diventare di tipo <code>Optional&lt;Int&gt; -&gt; Optional&lt;String&gt;</code>.</p>
-
+<span style="color:#66d9ef">let</span> optionalString = optionalInt.map(toString)  
+print(optionalString.<span style="color:#66d9ef">dynamicType</span>) <span style="color:#75715e">/// prints &#39;Optional&lt;String&gt;&#39;</span>
+</code></pre></div><p>Nell&rsquo;esempio, <code>optionalInt</code> è un <code>Int</code> <em>contenuto</em> in un <code>Optional</code>, che quindi ha tipo <code>Optional&lt;Int&gt;</code> (in Swift è possibile abbreviarlo in <code>Int?</code>), e applicando ad esso la funzione <code>toString</code> otteniamo un&rsquo;istanza di <code>Optional&lt;String&gt;</code>. Possiamo vedere che, per applicare effettivamente la funzione <code>toString</code>, abbiamo passato la funzione come argomento al metodo <code>map</code> del <code>Optional</code>: questa operazione è solitamente chiamata <em>lifting</em> di una funzione, perché la funzione <code>toString</code>, di tipo <code>Int -&gt; String</code>, è <em>sollevata</em> (<em>lifted</em>) fino a diventare di tipo <code>Optional&lt;Int&gt; -&gt; Optional&lt;String&gt;</code>.</p>
 <p>Come possiamo vedere, non sono state usate istruzioni condizionali nel manipolare il valore intero <em>opzionale</em>: <em>sollevando</em> le trasformazioni con il metodo <code>map</code>, possiamo applicarle direttamente alle istanze di <code>Optional</code>, e possiamo anche concatenarle molto facilmente, ad esempio:</p>
-
-<pre><code class="language-Swift">func makeOptionalIntFrom(value: Int, ifTrue: Bool) -&gt; Int?  
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Swift" data-lang="Swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeOptionalIntFrom</span>(value: Int, ifTrue: Bool) -&gt; Int?  
 {
-  return ifTrue ? value : nil
+  <span style="color:#66d9ef">return</span> ifTrue ? value : <span style="color:#66d9ef">nil</span>
 }
 
-let optionalInt = makeOptionalIntFrom(3, ifTrue: true)  
-print(optionalInt.dynamicType) /// prints 'Optional&lt;Int&gt;'
+<span style="color:#66d9ef">let</span> optionalInt = makeOptionalIntFrom(<span style="color:#ae81ff">3</span>, ifTrue: <span style="color:#66d9ef">true</span>)  
+print(optionalInt.<span style="color:#66d9ef">dynamicType</span>) <span style="color:#75715e">/// prints &#39;Optional&lt;Int&gt;&#39;</span>
 
-let doubled: Int -&gt; Int = { $0*2 }
+<span style="color:#66d9ef">let</span> doubled: Int -&gt; Int = { $0<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> }
 
-let toString: Int -&gt; String = { &quot;\($0)&quot; }
+<span style="color:#66d9ef">let</span> toString: Int -&gt; String = { <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">\(</span>$0<span style="color:#e6db74">)</span><span style="color:#e6db74">&#34;</span> }
 
-let optionalDoubledString = optionalInt.map(doubled).map(toString)  
-print(optionalDoubledString.dynamicType) /// prints 'Optional&lt;String&gt;'
-</code></pre>
-
-<p>Volendo esprimere l&rsquo;operazione opposta, avremmo un problema: trasformare una stringa in un intero non è sempre possibile in Swift (ad esempio se non c&rsquo;è alcun numero nella stringa), quindi l&rsquo;operazione stessa risulterebbe in un <code>Optional</code>. Infatti:</p>
-
-<pre><code class="language-Swift">func makeOptionalStringFrom(value: String, ifTrue: Bool) -&gt; String?  
+<span style="color:#66d9ef">let</span> optionalDoubledString = optionalInt.map(doubled).map(toString)  
+print(optionalDoubledString.<span style="color:#66d9ef">dynamicType</span>) <span style="color:#75715e">/// prints &#39;Optional&lt;String&gt;&#39;</span>
+</code></pre></div><p>Volendo esprimere l&rsquo;operazione opposta, avremmo un problema: trasformare una stringa in un intero non è sempre possibile in Swift (ad esempio se non c'è alcun numero nella stringa), quindi l&rsquo;operazione stessa risulterebbe in un <code>Optional</code>. Infatti:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Swift" data-lang="Swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeOptionalStringFrom</span>(value: String, ifTrue: Bool) -&gt; String?  
 {
-  return ifTrue ? value : nil
+  <span style="color:#66d9ef">return</span> ifTrue ? value : <span style="color:#66d9ef">nil</span>
 }
 
-let toInt: String -&gt; Int? = { Int($0) }
+<span style="color:#66d9ef">let</span> toInt: String -&gt; Int? = { Int($0) }
 
-let anotherOptionalString = makeOptionalStringFrom(&quot;3&quot;, ifTrue: true)
+<span style="color:#66d9ef">let</span> anotherOptionalString = makeOptionalStringFrom(<span style="color:#e6db74">&#34;3&#34;</span>, ifTrue: <span style="color:#66d9ef">true</span>)
 
-let anotherOptionalInt = anotherOptionalString.map(toInt).map(doubled)
-/// errore di compilazione!
-</code></pre>
-
-<p>Il problema qui è che la funzione <code>toInt</code> è di tipo <code>String -&gt; Optional&lt;Int&gt;</code>, e il <em>lifting</em> della funzione verso il <em>mondo opzionale</em> la trasformerebbe in una funzione del tipo <code>Optional&lt;String&gt; -&gt; Optional&lt;Optional&lt;Int&gt;&gt;</code>, quindi un intero opzionale contenuto in un altro <code>Optional</code>; in base alla terminologia accettata, abbiamo bisogno di un&rsquo;operazione di <code>flatMap</code>:</p>
-
-<pre><code class="language-Swift">let anotherOptionalInt = anotherOptionalString.flatMap(toInt).map(doubled)  
-/// funziona
-</code></pre>
-
-<p>Quindi, per quanto riguarda il tipo <code>Optional</code>, <code>flatMap</code> è simile a <code>map</code>, ma deve essere usato per il <em>lifting</em> di funzioni che generano altri valori opzionali. Nel leggere il codice, <code>map</code> e <code>flatMap</code> possono sostanzialmente essere letti nello stesso modo: indicano entrambi una trasformazione, e il fatto che le funzioni passate a <code>flatMap</code> abbiano un tipo diverso può essere considerato un dettaglio di implementazione.</p>
-
-<p>In realtà Swift tratta questi tipi di dato <strong>in maniera differente</strong> rispetto ad altri linguaggi: ad esempio, nei linguaggi <em>funzionali</em> <code>map</code> e <code>flatMap</code> sono di norma <em>funzioni libere</em>, mentre in Swift sono <strong>metodi</strong>. In generale, Swift incoraggia l&rsquo;uso dei metodi, e del loro <strong>concatenamento</strong>, invece di funzioni libere, composte con operatori speciali: si tratta, più che altro, di una questione filosofica, ma nel trasportare queste feature in Objective-C l&rsquo;approccio basato sui metodi tornerà utile poiché non c&rsquo;è un modo semplice di rappresentare funzioni libere nel linguaggio, mentre i metodi hanno la classica sintassi alla quale siamo abituati.</p>
-
-<p><a name="torniamo-a-objective-c"></a></p>
-
+<span style="color:#66d9ef">let</span> anotherOptionalInt = anotherOptionalString.map(toInt).map(doubled)
+<span style="color:#75715e">/// errore di compilazione!</span>
+</code></pre></div><p>Il problema qui è che la funzione <code>toInt</code> è di tipo <code>String -&gt; Optional&lt;Int&gt;</code>, e il <em>lifting</em> della funzione verso il <em>mondo opzionale</em> la trasformerebbe in una funzione del tipo <code>Optional&lt;String&gt; -&gt; Optional&lt;Optional&lt;Int&gt;&gt;</code>, quindi un intero opzionale contenuto in un altro <code>Optional</code>; in base alla terminologia accettata, abbiamo bisogno di un&rsquo;operazione di <code>flatMap</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Swift" data-lang="Swift"><span style="color:#66d9ef">let</span> anotherOptionalInt = anotherOptionalString.flatMap(toInt).map(doubled)  
+<span style="color:#75715e">/// funziona</span>
+</code></pre></div><p>Quindi, per quanto riguarda il tipo <code>Optional</code>, <code>flatMap</code> è simile a <code>map</code>, ma deve essere usato per il <em>lifting</em> di funzioni che generano altri valori opzionali. Nel leggere il codice, <code>map</code> e <code>flatMap</code> possono sostanzialmente essere letti nello stesso modo: indicano entrambi una trasformazione, e il fatto che le funzioni passate a <code>flatMap</code> abbiano un tipo diverso può essere considerato un dettaglio di implementazione.</p>
+<p>In realtà Swift tratta questi tipi di dato <strong>in maniera differente</strong> rispetto ad altri linguaggi: ad esempio, nei linguaggi <em>funzionali</em> <code>map</code> e <code>flatMap</code> sono di norma <em>funzioni libere</em>, mentre in Swift sono <strong>metodi</strong>. In generale, Swift incoraggia l&rsquo;uso dei metodi, e del loro <strong>concatenamento</strong>, invece di funzioni libere, composte con operatori speciali: si tratta, più che altro, di una questione filosofica, ma nel trasportare queste feature in Objective-C l&rsquo;approccio basato sui metodi tornerà utile poiché non c'è un modo semplice di rappresentare funzioni libere nel linguaggio, mentre i metodi hanno la classica sintassi alla quale siamo abituati.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="torniamo-a-objective-c">Torniamo a Objective-C</h2>
-
 <p>Implementiamo la classe <code>Optional</code> in Objective-C:</p>
-
-<pre><code class="language-ObjectiveC">///Optional.h
-
-#import &lt;Foundation/Foundation.h&gt;
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Optional.h
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#import &lt;Foundation/Foundation.h&gt;
+</span><span style="color:#75715e"></span>
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Optional : NSObject
+<span style="color:#66d9ef">@interface</span> <span style="color:#a6e22e">Optional</span> : <span style="color:#a6e22e">NSObject</span>
 
-+ (Optional*)with:(id _Nullable)value;
++ (Optional<span style="color:#f92672">*</span>)<span style="color:#a6e22e">with:</span>(<span style="color:#66d9ef">id</span> _Nullable)value;
 
-- (Optional*)map:(id(^)(id))mapBlock;
-- (Optional*)flatMap:(Optional*(^)(id))flatMapBlock;
+- (Optional<span style="color:#f92672">*</span>)<span style="color:#a6e22e">map:</span>(<span style="color:#66d9ef">id</span>(<span style="color:#f92672">^</span>)(<span style="color:#66d9ef">id</span>))mapBlock;
+- (Optional<span style="color:#f92672">*</span>)<span style="color:#a6e22e">flatMap:</span>(Optional<span style="color:#f92672">*</span>(<span style="color:#f92672">^</span>)(<span style="color:#66d9ef">id</span>))flatMapBlock;
 
-@end
+<span style="color:#66d9ef">@end</span>
 
 NS_ASSUME_NONNULL_END 
-</code></pre>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Optional.m
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#import &#34;Optional.h&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">@interface</span> <span style="color:#a6e22e">Optional</span> ()
 
-<pre><code class="language-ObjectiveC">///Optional.m
+<span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">strong</span>, <span style="color:#66d9ef">nonatomic</span>, nullable) <span style="color:#66d9ef">id</span> value;
 
-#import &quot;Optional.h&quot;
+<span style="color:#66d9ef">@end</span>
 
-@interface Optional ()
+<span style="color:#66d9ef">@implementation</span> <span style="color:#a6e22e">Optional</span>
 
-@property (strong, nonatomic, nullable) id value;
-
-@end
-
-@implementation Optional
-
-+ (Optional*)with:(id _Nullable)value
++ (Optional<span style="color:#f92672">*</span>)<span style="color:#a6e22e">with:</span>(<span style="color:#66d9ef">id</span> _Nullable)value
 {
-  Optional* optional = [Optional new];
-  optional.value = value;
-  return optional;
+  Optional<span style="color:#f92672">*</span> optional <span style="color:#f92672">=</span> [Optional new];
+  optional.value <span style="color:#f92672">=</span> value;
+  <span style="color:#66d9ef">return</span> optional;
 }
 
-- (Optional *)map:(id  _Nonnull (^)(id _Nonnull))mapBlock
+- (Optional <span style="color:#f92672">*</span>)<span style="color:#a6e22e">map:</span>(<span style="color:#66d9ef">id</span>  _Nonnull (<span style="color:#f92672">^</span>)(<span style="color:#66d9ef">id</span> _Nonnull))mapBlock
 {
-  if (self.value != nil)
+  <span style="color:#66d9ef">if</span> (self.value <span style="color:#f92672">!=</span> nil)
   {
-    return [Optional with:mapBlock(self.value)];
+    <span style="color:#66d9ef">return</span> [Optional with:mapBlock(self.value)];
   }
-  return self;
+  <span style="color:#66d9ef">return</span> self;
 }
 
-- (Optional *)flatMap:(Optional* _Nonnull (^)(id _Nonnull))flatMapBlock
+- (Optional <span style="color:#f92672">*</span>)<span style="color:#a6e22e">flatMap:</span>(Optional<span style="color:#f92672">*</span> _Nonnull (<span style="color:#f92672">^</span>)(<span style="color:#66d9ef">id</span> _Nonnull))flatMapBlock
 {
-  if (self.value != nil)
+  <span style="color:#66d9ef">if</span> (self.value <span style="color:#f92672">!=</span> nil)
   {
-    return flatMapBlock(self.value);
+    <span style="color:#66d9ef">return</span> flatMapBlock(self.value);
   }
-  return self;
+  <span style="color:#66d9ef">return</span> self;
 }
 
-@end
-</code></pre>
-
-<p>Come possiamo vedere, il metodo di classe <code>with:</code> crea un oggetto <code>Optional</code> inscatolando un altro oggetto, di tipo non specificato: poiché non esiste un vero concetto di <em>generic</em> in Objective-C, non sarà possibile realizzare un tipo <code>Optional</code> sicuro, dal punto di vista dei tipi, come in Swift, ma non sarà un grosso problema, e saremo comunque in grado di ereditare da Swift <strong>potenti features</strong>. Il metodo <code>map:</code> verifica se l&rsquo;oggetto contenuto non sia nil, e in tal caso applica la trasformazione espressa con <code>mapBlock</code>: in questo caso i <em>nullability specifiers</em> di Objective-C ci hanno aiutato nello scrivere la firma dei metodi, infatti abbiamo chiaramente specificato che <code>mapBlock</code> accetta e ritorna oggetti che non siano nil; <code>flatMapBlock</code> ritorna invece un altro <code>Optional</code>.</p>
-
+<span style="color:#66d9ef">@end</span>
+</code></pre></div><p>Come possiamo vedere, il metodo di classe <code>with:</code> crea un oggetto <code>Optional</code> inscatolando un altro oggetto, di tipo non specificato: poiché non esiste un vero concetto di <em>generic</em> in Objective-C, non sarà possibile realizzare un tipo <code>Optional</code> sicuro, dal punto di vista dei tipi, come in Swift, ma non sarà un grosso problema, e saremo comunque in grado di ereditare da Swift <strong>potenti features</strong>. Il metodo <code>map:</code> verifica se l&rsquo;oggetto contenuto non sia nil, e in tal caso applica la trasformazione espressa con <code>mapBlock</code>: in questo caso i <em>nullability specifiers</em> di Objective-C ci hanno aiutato nello scrivere la firma dei metodi, infatti abbiamo chiaramente specificato che <code>mapBlock</code> accetta e ritorna oggetti che non siano nil; <code>flatMapBlock</code> ritorna invece un altro <code>Optional</code>.</p>
 <p>Possiamo testare la cosa riscrivendo lo stesso esempio visto per Swift:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Test.h
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#import &lt;Foundation/Foundation.h&gt;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">@interface</span> <span style="color:#a6e22e">Test</span> : <span style="color:#a6e22e">NSObject</span>
 
-<pre><code class="language-ObjectiveC">///Test.h
++ (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">testOptional</span>;
 
-#import &lt;Foundation/Foundation.h&gt;
+<span style="color:#66d9ef">@end</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Test.m
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#import &#34;Test.h&#34;
+</span><span style="color:#75715e">#import &#34;Optional.h&#34;
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">@implementation</span> <span style="color:#a6e22e">Test</span>
 
-@interface Test : NSObject
-
-+ (void)testOptional;
-
-@end
-</code></pre>
-
-<pre><code class="language-ObjectiveC">///Test.m
-
-#import &quot;Test.h&quot;
-#import &quot;Optional.h&quot;
-
-@implementation Test
-
-+ (void)testOptional
++ (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">testOptional</span>
 {
-  Optional* optionalInt = [self makeOptionalIntFrom:@3 ifTrue:YES];
-  Optional* optionalDoubledString = [[optionalInt
+  Optional<span style="color:#f92672">*</span> optionalInt <span style="color:#f92672">=</span> [self makeOptionalIntFrom:<span style="color:#ae81ff">@3</span> ifTrue:YES];
+  Optional<span style="color:#f92672">*</span> optionalDoubledString <span style="color:#f92672">=</span> [[optionalInt
                                       map:[self doubled]]
                                      map:[self toString]];
-  NSLog(@&quot;%@&quot;, optionalDoubledString);
+  NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, optionalDoubledString);
 }
 
-+ (Optional*)makeOptionalIntFrom:(NSNumber*)fromInt ifTrue:(BOOL)ifTrue
++ (Optional<span style="color:#f92672">*</span>)<span style="color:#a6e22e">makeOptionalIntFrom:</span>(NSNumber<span style="color:#f92672">*</span>)fromInt <span style="color:#a6e22e">ifTrue:</span>(<span style="color:#66d9ef">BOOL</span>)ifTrue
 {
-  return [Optional with:ifTrue ? fromInt : nil];
+  <span style="color:#66d9ef">return</span> [Optional with:ifTrue <span style="color:#f92672">?</span> fromInt : nil];
 }
 
 
-+ (NSNumber*(^)(NSNumber*))doubled
++ (NSNumber<span style="color:#f92672">*</span>(<span style="color:#f92672">^</span>)(NSNumber<span style="color:#f92672">*</span>))<span style="color:#a6e22e">doubled</span>
 {
-  return ^NSNumber*(NSNumber* value)  {
-    return @(value.integerValue*2);
+  <span style="color:#66d9ef">return</span> <span style="color:#f92672">^</span>NSNumber<span style="color:#f92672">*</span>(NSNumber<span style="color:#f92672">*</span> value)  {
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">@(</span>value.integerValue<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#ae81ff">)</span>;
   };
 }
 
-+ (NSString*(^)(NSNumber*))toString
++ (NSString<span style="color:#f92672">*</span>(<span style="color:#f92672">^</span>)(NSNumber<span style="color:#f92672">*</span>))<span style="color:#a6e22e">toString</span>
 {
-  return ^NSString*(NSNumber* value)  {
-    return [NSString stringWithFormat:@&quot;%@&quot;, value];
+  <span style="color:#66d9ef">return</span> <span style="color:#f92672">^</span>NSString<span style="color:#f92672">*</span>(NSNumber<span style="color:#f92672">*</span> value)  {
+    <span style="color:#66d9ef">return</span> [NSString stringWithFormat:<span style="color:#e6db74">@&#34;%@&#34;</span>, value];
   };
 }
 
-@end
-</code></pre>
-
-<p>Un volta applicate le trasformazioni, abbiamo bisogno di un metodo per &ldquo;estrarre&rdquo; l&rsquo;oggetto all&rsquo;interno del <code>Optional</code>: Swift permette questa operazione a livello di sintassi, mentre in Objective-C possiamo seguire le convenzioni standard in programmazione funzionale, e cioè definire un metodo <code>get</code>.</p>
-
-<pre><code class="language-ObjectiveC">///Optional.h
-
-- (id _Nullable)get;
-</code></pre>
-
-<pre><code class="language-ObjectiveC">///Optional.m
-
-- (id)get
+<span style="color:#66d9ef">@end</span>
+</code></pre></div><p>Un volta applicate le trasformazioni, abbiamo bisogno di un metodo per &ldquo;estrarre&rdquo; l&rsquo;oggetto all&rsquo;interno del <code>Optional</code>: Swift permette questa operazione a livello di sintassi, mentre in Objective-C possiamo seguire le convenzioni standard in programmazione funzionale, e cioè definire un metodo <code>get</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Optional.h
+</span><span style="color:#75715e"></span>
+- (<span style="color:#66d9ef">id</span> _Nullable)<span style="color:#a6e22e">get</span>;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Optional.m
+</span><span style="color:#75715e"></span>
+- (<span style="color:#66d9ef">id</span>)<span style="color:#a6e22e">get</span>
 {
-  return self.value;
+  <span style="color:#66d9ef">return</span> self.value;
 }
-</code></pre>
-
-<p>Il metodo <code>get</code> ritorna un <code>id _Nullable</code>: ciò vuol dire che l&rsquo;oggetto ritornato può (ovviamente) essere nil. Un pattern frequente quando si ha a che fare con oggetti nil consiste nel sostituirli con versioni di &ldquo;default&rdquo;: può essere utile quando non ci interessano tanto i dati contenuti in un oggetto, ma non vogliamo correre i rischi associati al lavorare riferimenti <em>null</em>. Ancora una volta, con la classe <code>Optional</code> possiamo evitare istruzioni condizionali ed esprimere il meccanismo di &ldquo;defaulting&rdquo; in un modo più dichiarativo: dobbiamo semplicemente aggiungere un metodo <code>getOrElse:</code>, che ritorni l&rsquo;oggetto contenuto se presente, o un oggetto di default passato al metodo stesso:</p>
-
-<pre><code class="language-ObjectiveC">///Optional.h
-
-- (id)getOrElse:(id(^)())elseBlock;
-</code></pre>
-
-<pre><code class="language-ObjectiveC">///Optional.m
-
-- (id)getOrElse:(id  _Nonnull (^)())elseBlock
+</code></pre></div><p>Il metodo <code>get</code> ritorna un <code>id _Nullable</code>: ciò vuol dire che l&rsquo;oggetto ritornato può (ovviamente) essere nil. Un pattern frequente quando si ha a che fare con oggetti nil consiste nel sostituirli con versioni di &ldquo;default&rdquo;: può essere utile quando non ci interessano tanto i dati contenuti in un oggetto, ma non vogliamo correre i rischi associati al lavorare riferimenti <em>null</em>. Ancora una volta, con la classe <code>Optional</code> possiamo evitare istruzioni condizionali ed esprimere il meccanismo di &ldquo;defaulting&rdquo; in un modo più dichiarativo: dobbiamo semplicemente aggiungere un metodo <code>getOrElse:</code>, che ritorni l&rsquo;oggetto contenuto se presente, o un oggetto di default passato al metodo stesso:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Optional.h
+</span><span style="color:#75715e"></span>
+- (<span style="color:#66d9ef">id</span>)<span style="color:#a6e22e">getOrElse:</span>(<span style="color:#66d9ef">id</span>(<span style="color:#f92672">^</span>)())elseBlock;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Optional.m
+</span><span style="color:#75715e"></span>
+- (<span style="color:#66d9ef">id</span>)<span style="color:#a6e22e">getOrElse:</span>(<span style="color:#66d9ef">id</span>  _Nonnull (<span style="color:#f92672">^</span>)())elseBlock
 {
-  if (self.value != nil)
+  <span style="color:#66d9ef">if</span> (self.value <span style="color:#f92672">!=</span> nil)
   {
-    return self.value;
+    <span style="color:#66d9ef">return</span> self.value;
   }
-  return elseBlock();
+  <span style="color:#66d9ef">return</span> elseBlock();
 }
-</code></pre>
-
-<p>Come si può vedere, il metodo <code>getOrElse:</code> <strong>non</strong> ritorna un oggetto <code>_Nullable</code>: in effetti non stiamo passando l&rsquo;oggetto, ma un block che &ldquo;produrrà&rdquo; l&rsquo;oggetto una volta invocato; in questo modo riusciamo a ottenere l&rsquo;oggetto di default in maniera <strong>lazy</strong>, perché se l&rsquo;oggetto contenuto è presente, non è necessario generare l&rsquo;oggetto di default.</p>
-
+</code></pre></div><p>Come si può vedere, il metodo <code>getOrElse:</code> <strong>non</strong> ritorna un oggetto <code>_Nullable</code>: in effetti non stiamo passando l&rsquo;oggetto, ma un block che &ldquo;produrrà&rdquo; l&rsquo;oggetto una volta invocato; in questo modo riusciamo a ottenere l&rsquo;oggetto di default in maniera <strong>lazy</strong>, perché se l&rsquo;oggetto contenuto è presente, non è necessario generare l&rsquo;oggetto di default.</p>
 <p>Per il resto dell&rsquo;articolo lavoreremo su un esempio più concreto, e implementeremo diverse funzionalità per la classe <code>Optional</code>, rendendola via via più utile e potente.</p>
-
-<p><a name="esempio-un-parser-json"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="esempio-un-parser-json">Esempio: un parser JSON</h2>
-
 <p>Supponiamo di voler realizzare un&rsquo;app che mostra informazioni sui film: possiamo ottenerle in formato JSON da un sito come <a href="http://api.myapifilms.com/index.do">myapifilms</a>. La rappresentazione JSON di ogni film è del tipo seguente:</p>
-
-<pre><code class="language-JSON">{
-    &quot;countries&quot;: [
-        &quot;USA&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
+    <span style="color:#f92672">&#34;countries&#34;</span>: [
+        <span style="color:#e6db74">&#34;USA&#34;</span>
     ],
-    &quot;directors&quot;: [
+    <span style="color:#f92672">&#34;directors&#34;</span>: [
         {
-            &quot;name&quot;: &quot;Frank Darabont&quot;,
-            &quot;nameId&quot;: &quot;nm0001104&quot;
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Frank Darabont&#34;</span>,
+            <span style="color:#f92672">&#34;nameId&#34;</span>: <span style="color:#e6db74">&#34;nm0001104&#34;</span>
         }
     ],
-    &quot;filmingLocations&quot;: [
-        &quot;St. Croix&quot;,
-        &quot;U.S. Virgin Islands&quot;
+    <span style="color:#f92672">&#34;filmingLocations&#34;</span>: [
+        <span style="color:#e6db74">&#34;St. Croix&#34;</span>,
+        <span style="color:#e6db74">&#34;U.S. Virgin Islands&#34;</span>
     ],
-    &quot;genres&quot;: [
-        &quot;Crime&quot;,
-        &quot;Drama&quot;
+    <span style="color:#f92672">&#34;genres&#34;</span>: [
+        <span style="color:#e6db74">&#34;Crime&#34;</span>,
+        <span style="color:#e6db74">&#34;Drama&#34;</span>
     ],
-    &quot;idIMDB&quot;: &quot;tt0111161&quot;,
-    &quot;languages&quot;: [
-        &quot;English&quot;
+    <span style="color:#f92672">&#34;idIMDB&#34;</span>: <span style="color:#e6db74">&#34;tt0111161&#34;</span>,
+    <span style="color:#f92672">&#34;languages&#34;</span>: [
+        <span style="color:#e6db74">&#34;English&#34;</span>
     ],
-    &quot;metascore&quot;: &quot;80/100&quot;,
-    &quot;originalTitle&quot;: &quot;&quot;,
-    &quot;plot&quot;: &quot;Andy Dufresne is a young and successful banker whose life changes drastically when he is convicted and sentenced to life imprisonment for the murder of his wife and her lover. Set in the 1940s, the film shows how Andy, with the help of his friend Red, the prison entrepreneur, turns out to be a most unconventional prisoner.&quot;,
-    &quot;ranking&quot;: 1,
-    &quot;rated&quot;: &quot;R&quot;,
-    &quot;rating&quot;: &quot;9.3&quot;,
-    &quot;releaseDate&quot;: &quot;19941014&quot;,
-    &quot;runtime&quot;: [
-        &quot;142 min&quot;
+    <span style="color:#f92672">&#34;metascore&#34;</span>: <span style="color:#e6db74">&#34;80/100&#34;</span>,
+    <span style="color:#f92672">&#34;originalTitle&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+    <span style="color:#f92672">&#34;plot&#34;</span>: <span style="color:#e6db74">&#34;Andy Dufresne is a young and successful banker whose life changes drastically when he is convicted and sentenced to life imprisonment for the murder of his wife and her lover. Set in the 1940s, the film shows how Andy, with the help of his friend Red, the prison entrepreneur, turns out to be a most unconventional prisoner.&#34;</span>,
+    <span style="color:#f92672">&#34;ranking&#34;</span>: <span style="color:#ae81ff">1</span>,
+    <span style="color:#f92672">&#34;rated&#34;</span>: <span style="color:#e6db74">&#34;R&#34;</span>,
+    <span style="color:#f92672">&#34;rating&#34;</span>: <span style="color:#e6db74">&#34;9.3&#34;</span>,
+    <span style="color:#f92672">&#34;releaseDate&#34;</span>: <span style="color:#e6db74">&#34;19941014&#34;</span>,
+    <span style="color:#f92672">&#34;runtime&#34;</span>: [
+        <span style="color:#e6db74">&#34;142 min&#34;</span>
     ],
-    &quot;simplePlot&quot;: &quot;Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.&quot;,
-    &quot;title&quot;: &quot;The Shawshank Redemption&quot;,
-    &quot;type&quot;: &quot;Movie&quot;,
-    &quot;urlIMDB&quot;: &quot;http://www.imdb.com/title/tt0111161&quot;,
-    &quot;urlPoster&quot;: &quot;http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX214_AL_.jpg&quot;,
-    &quot;votes&quot;: &quot;1,533,914&quot;,
-    &quot;writers&quot;: [
+    <span style="color:#f92672">&#34;simplePlot&#34;</span>: <span style="color:#e6db74">&#34;Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.&#34;</span>,
+    <span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#e6db74">&#34;The Shawshank Redemption&#34;</span>,
+    <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;Movie&#34;</span>,
+    <span style="color:#f92672">&#34;urlIMDB&#34;</span>: <span style="color:#e6db74">&#34;http://www.imdb.com/title/tt0111161&#34;</span>,
+    <span style="color:#f92672">&#34;urlPoster&#34;</span>: <span style="color:#e6db74">&#34;http://ia.media-imdb.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX214_AL_.jpg&#34;</span>,
+    <span style="color:#f92672">&#34;votes&#34;</span>: <span style="color:#e6db74">&#34;1,533,914&#34;</span>,
+    <span style="color:#f92672">&#34;writers&#34;</span>: [
         {
-            &quot;name&quot;: &quot;Stephen King&quot;,
-            &quot;nameId&quot;: &quot;nm0000175&quot;
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Stephen King&#34;</span>,
+            <span style="color:#f92672">&#34;nameId&#34;</span>: <span style="color:#e6db74">&#34;nm0000175&#34;</span>
         },
         {
-            &quot;name&quot;: &quot;Frank Darabont&quot;,
-            &quot;nameId&quot;: &quot;nm0001104&quot;
+            <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Frank Darabont&#34;</span>,
+            <span style="color:#f92672">&#34;nameId&#34;</span>: <span style="color:#e6db74">&#34;nm0001104&#34;</span>
         }
     ],
-    &quot;year&quot;: &quot;1994&quot;
+    <span style="color:#f92672">&#34;year&#34;</span>: <span style="color:#e6db74">&#34;1994&#34;</span>
 }
-</code></pre>
+</code></pre></div><p>Vogliamo definire la nostra rappresentazione interna del film con un <em>value object</em>, modificare in parte la struttura e magari ignorare alcuni elementi che non consideriamo rilevanti. Ecco un&rsquo;interfaccia possibile per la classe <code>Movie</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC">NS_ASSUME_NONNULL_BEGIN
 
-<p>Vogliamo definire la nostra rappresentazione interna del film con un <em>value object</em>, modificare in parte la struttura e magari ignorare alcuni elementi che non consideriamo rilevanti. Ecco un&rsquo;interfaccia possibile per la classe <code>Movie</code>:</p>
+<span style="color:#66d9ef">@interface</span> <span style="color:#a6e22e">Movie</span> : <span style="color:#a6e22e">NSObject</span>
 
-<pre><code class="language-ObjectiveC">NS_ASSUME_NONNULL_BEGIN
+<span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">copy</span>, <span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">readonly</span>) NSString<span style="color:#f92672">*</span> title;
+<span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">copy</span>, <span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">readonly</span>) NSNumber<span style="color:#f92672">*</span> rating;
+<span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">copy</span>, <span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">readonly</span>) NSNumber<span style="color:#f92672">*</span> year;
+<span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">copy</span>, <span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">readonly</span>) NSNumber<span style="color:#f92672">*</span> lengthInMinutes;
 
-@interface Movie : NSObject
++ (Movie<span style="color:#f92672">*</span>)<span style="color:#a6e22e">withJSONDict:</span>(NSDictionary<span style="color:#f92672">*</span>)dict;
 
-@property (copy, nonatomic, readonly) NSString* title;
-@property (copy, nonatomic, readonly) NSNumber* rating;
-@property (copy, nonatomic, readonly) NSNumber* year;
-@property (copy, nonatomic, readonly) NSNumber* lengthInMinutes;
-
-+ (Movie*)withJSONDict:(NSDictionary*)dict;
-
-@end
+<span style="color:#66d9ef">@end</span>
 
 NS_ASSUME_NONNULL_END
-</code></pre>
-
-<p>Il metodo di classe <code>withJSONDict:</code> crea un&rsquo;istanza di <code>Movie</code> da un dizionario JSON come quello appena mostrato: come si può vedere dall&rsquo;interfaccia dichiarata, abbiamo deciso di non permettere valori nil per le varie <em>property</em>; ma quando abbiamo a che fare con JSON <strong>tutto può succedere</strong>, come chiavi mancanti, valori null o di tipo diverso. Useremo il tipo <code>Optional</code> per parsare il dizionario JSON in modo chiaro, dichiarativo e a prova di errore.</p>
-
+</code></pre></div><p>Il metodo di classe <code>withJSONDict:</code> crea un&rsquo;istanza di <code>Movie</code> da un dizionario JSON come quello appena mostrato: come si può vedere dall&rsquo;interfaccia dichiarata, abbiamo deciso di non permettere valori nil per le varie <em>property</em>; ma quando abbiamo a che fare con JSON <strong>tutto può succedere</strong>, come chiavi mancanti, valori null o di tipo diverso. Useremo il tipo <code>Optional</code> per parsare il dizionario JSON in modo chiaro, dichiarativo e a prova di errore.</p>
 <p>Iniziamo con i titolo. Dal JSON vediamo che il titolo si trova in corrispondenza della chiave &ldquo;title&rdquo;, e dovrebbe essere una stringa (<code>NSString</code> in Objective-C), quindi possiamo ottenere il titolo così:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC">NSString<span style="color:#f92672">*</span> title <span style="color:#f92672">=</span> [[[[Optional
+                        with:[dict objectForKey:<span style="color:#e6db74">@&#34;title&#34;</span>]]
 
-<pre><code class="language-ObjectiveC">NSString* title = [[[[Optional
-                        with:[dict objectForKey:@&quot;title&quot;]]
-
-                       flatMap:^Optional*(id title) {
-                         return [Optional with:[title isKindOfClass:[NSString class]] ? title : nil];
+                       flatMap:<span style="color:#f92672">^</span>Optional<span style="color:#f92672">*</span>(<span style="color:#66d9ef">id</span> title) {
+                         <span style="color:#66d9ef">return</span> [Optional with:[title isKindOfClass:[NSString <span style="color:#66d9ef">class</span>]] <span style="color:#f92672">?</span> title : nil];
                        }]
 
-                      flatMap:^Optional*(NSString* title) {
-                        return [Optional with:title.length &gt; 0 ? title : nil];
+                      flatMap:<span style="color:#f92672">^</span>Optional<span style="color:#f92672">*</span>(NSString<span style="color:#f92672">*</span> title) {
+                        <span style="color:#66d9ef">return</span> [Optional with:title.length <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> title : nil];
                       }]
 
-                     getOrElse:^NSString*{
-                       return @&quot;NO TITLE&quot;;
+                     getOrElse:<span style="color:#f92672">^</span>NSString<span style="color:#f92672">*</span>{
+                       <span style="color:#66d9ef">return</span> <span style="color:#e6db74">@&#34;NO TITLE&#34;</span>;
                      }];
-</code></pre>
-
-<p>Il primo <code>flatMap</code> indica che l&rsquo;oggetto &ldquo;titolo&rdquo; deve appartenere alla classe <code>NSString</code>. Conviene astrarre questa operazione inserendola direttamente nel costruttore, perché l&rsquo;applicheremo ogni volta per tutti i dati:</p>
-
-<pre><code class="language-ObjectiveC">+ (Optional *)with:(id)value as:(Class)valueClass
+</code></pre></div><p>Il primo <code>flatMap</code> indica che l&rsquo;oggetto &ldquo;titolo&rdquo; deve appartenere alla classe <code>NSString</code>. Conviene astrarre questa operazione inserendola direttamente nel costruttore, perché l&rsquo;applicheremo ogni volta per tutti i dati:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC">+ (Optional <span style="color:#f92672">*</span>)<span style="color:#a6e22e">with:</span>(<span style="color:#66d9ef">id</span>)value <span style="color:#a6e22e">as:</span>(<span style="color:#66d9ef">Class</span>)valueClass
 {
-  if ([value isKindOfClass:valueClass])
+  <span style="color:#66d9ef">if</span> ([value isKindOfClass:valueClass])
   {
-    return [Optional with:value];
+    <span style="color:#66d9ef">return</span> [Optional with:value];
   }
-  return [Optional with:nil];
+  <span style="color:#66d9ef">return</span> [Optional with:nil];
 }
-</code></pre>
-
-<p>Il secondo <code>flatMap:</code> indica che se la stringa trovata ha lunghezza 0, considereremo il titolo come &ldquo;sconosciuto&rdquo;. In effetti questo step avrà l&rsquo;effetto di &ldquo;filtro&rdquo;, perché lascerà &ldquo;passare&rdquo; solo le stringhe non vuote; considerando ciò, aggiungiamo un metodo <code>filter:</code> alla classe <code>Optional</code>:</p>
-
-<pre><code class="language-ObjectiveC">///Optional.h
-
-- (Optional*)filter:(BOOL(^)(id))filterBlock;
-</code></pre>
-
-<pre><code class="language-ObjectiveC">///Optional.m
-
-- (Optional*)filter:(BOOL (^)(id _Nonnull))filterBlock
+</code></pre></div><p>Il secondo <code>flatMap:</code> indica che se la stringa trovata ha lunghezza 0, considereremo il titolo come &ldquo;sconosciuto&rdquo;. In effetti questo step avrà l&rsquo;effetto di &ldquo;filtro&rdquo;, perché lascerà &ldquo;passare&rdquo; solo le stringhe non vuote; considerando ciò, aggiungiamo un metodo <code>filter:</code> alla classe <code>Optional</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Optional.h
+</span><span style="color:#75715e"></span>
+- (Optional<span style="color:#f92672">*</span>)<span style="color:#a6e22e">filter:</span>(<span style="color:#66d9ef">BOOL</span>(<span style="color:#f92672">^</span>)(<span style="color:#66d9ef">id</span>))filterBlock;
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Optional.m
+</span><span style="color:#75715e"></span>
+- (Optional<span style="color:#f92672">*</span>)<span style="color:#a6e22e">filter:</span>(<span style="color:#66d9ef">BOOL</span> (<span style="color:#f92672">^</span>)(<span style="color:#66d9ef">id</span> _Nonnull))filterBlock
 {
-  return [self flatMap:^Optional*(id value) {
-    if (filterBlock(value))
+  <span style="color:#66d9ef">return</span> [self flatMap:<span style="color:#f92672">^</span>Optional<span style="color:#f92672">*</span>(<span style="color:#66d9ef">id</span> value) {
+    <span style="color:#66d9ef">if</span> (filterBlock(value))
     {
-      return self;
+      <span style="color:#66d9ef">return</span> self;
     }
-    else
+    <span style="color:#66d9ef">else</span>
     {
-      return [Optional with:nil];
+      <span style="color:#66d9ef">return</span> [Optional with:nil];
     }
   }];
 }
-</code></pre>
-
-<p>Il metodo <code>filter:</code> accetta come parametro un block che ritorna un <code>BOOL</code> basato sul valore contenuto: internamente, <code>filter:</code> chiamerà comunque <code>flatMap:</code>, con un&rsquo;espressione condizionale che verifichi se <code>filterBlock</code> riesce o fallisce.</p>
-
+</code></pre></div><p>Il metodo <code>filter:</code> accetta come parametro un block che ritorna un <code>BOOL</code> basato sul valore contenuto: internamente, <code>filter:</code> chiamerà comunque <code>flatMap:</code>, con un&rsquo;espressione condizionale che verifichi se <code>filterBlock</code> riesce o fallisce.</p>
 <p>Infine:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC">NSString<span style="color:#f92672">*</span> title <span style="color:#f92672">=</span> [[[Optional  
+                       with:[dict objectForKey:<span style="color:#e6db74">@&#34;title&#34;</span>]
+                       as:[NSString <span style="color:#66d9ef">class</span>]]
 
-<pre><code class="language-ObjectiveC">NSString* title = [[[Optional  
-                       with:[dict objectForKey:@&quot;title&quot;]
-                       as:[NSString class]]
-
-                      filter:^BOOL(NSString* string) {
-                        return string.length &gt; 0;
+                      filter:<span style="color:#f92672">^</span><span style="color:#66d9ef">BOOL</span>(NSString<span style="color:#f92672">*</span> string) {
+                        <span style="color:#66d9ef">return</span> string.length <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>;
                       }]
 
-                     getOrElse:^NSString*{ return @&quot;NO TITLE&quot;; }];
-</code></pre>
-
-<p>Quindi, nessuna espressione condizionale, e poche linee di codice, completamente dichiarative.</p>
-
+                     getOrElse:<span style="color:#f92672">^</span>NSString<span style="color:#f92672">*</span>{ <span style="color:#66d9ef">return</span> <span style="color:#e6db74">@&#34;NO TITLE&#34;</span>; }];
+</code></pre></div><p>Quindi, nessuna espressione condizionale, e poche linee di codice, completamente dichiarative.</p>
 <p>Per quanto riguarda i parametri <code>rating</code> e <code>year</code> abbiamo bisogno di un <code>map</code> che converta <code>NSString</code> in <code>NSNumber</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC">NSNumber<span style="color:#f92672">*</span> rating <span style="color:#f92672">=</span> [[[[Optional  
+                         with:[dict objectForKey:<span style="color:#e6db74">@&#34;rating&#34;</span>]
+                         as:[NSString <span style="color:#66d9ef">class</span>]]
 
-<pre><code class="language-ObjectiveC">NSNumber* rating = [[[[Optional  
-                         with:[dict objectForKey:@&quot;rating&quot;]
-                         as:[NSString class]]
-
-                        filter:^BOOL(NSString* string) {
-                          return string.length &gt; 0;
+                        filter:<span style="color:#f92672">^</span><span style="color:#66d9ef">BOOL</span>(NSString<span style="color:#f92672">*</span> string) {
+                          <span style="color:#66d9ef">return</span> string.length <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>;
                         }]
 
-                       map:^NSNumber*(NSString* stringValue) {
-                         return [NSDecimalNumber decimalNumberWithString:stringValue];
+                       map:<span style="color:#f92672">^</span>NSNumber<span style="color:#f92672">*</span>(NSString<span style="color:#f92672">*</span> stringValue) {
+                         <span style="color:#66d9ef">return</span> [NSDecimalNumber decimalNumberWithString:stringValue];
                        }]
 
-                      getOrElse:^NSNumber*{ return @0; }];
-  movie.rating = rating;
+                      getOrElse:<span style="color:#f92672">^</span>NSNumber<span style="color:#f92672">*</span>{ <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">@0</span>; }];
+  movie.rating <span style="color:#f92672">=</span> rating;
 
-  NSNumber* year = [[[[Optional
-                       with:[dict objectForKey:@&quot;year&quot;]
-                       as:[NSString class]]
+  NSNumber<span style="color:#f92672">*</span> year <span style="color:#f92672">=</span> [[[[Optional
+                       with:[dict objectForKey:<span style="color:#e6db74">@&#34;year&#34;</span>]
+                       as:[NSString <span style="color:#66d9ef">class</span>]]
 
-                      filter:^BOOL(NSString* string) {
-                        return string.length &gt; 0;
+                      filter:<span style="color:#f92672">^</span><span style="color:#66d9ef">BOOL</span>(NSString<span style="color:#f92672">*</span> string) {
+                        <span style="color:#66d9ef">return</span> string.length <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>;
                       }]
 
-                     map:^NSNumber*(NSString* stringValue) {
-                       return [NSDecimalNumber decimalNumberWithString:stringValue];
+                     map:<span style="color:#f92672">^</span>NSNumber<span style="color:#f92672">*</span>(NSString<span style="color:#f92672">*</span> stringValue) {
+                       <span style="color:#66d9ef">return</span> [NSDecimalNumber decimalNumberWithString:stringValue];
                      }]
 
-                    getOrElse:^NSNumber*{ return @0; }];
-</code></pre>
-
-<p>Il parametro <code>lengthInMinutes</code> è un po&rsquo; complicato; dal JSON possiamo vedere che la sua rappresentazione è la seguente:</p>
-
-<pre><code class="language-JSON">&quot;runtime&quot;: [ 
-    &quot;142 min&quot; 
+                    getOrElse:<span style="color:#f92672">^</span>NSNumber<span style="color:#f92672">*</span>{ <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">@0</span>; }];
+</code></pre></div><p>Il parametro <code>lengthInMinutes</code> è un po&rsquo; complicato; dal JSON possiamo vedere che la sua rappresentazione è la seguente:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON"><span style="color:#e6db74">&#34;runtime&#34;</span><span style="color:#960050;background-color:#1e0010">:</span> [ 
+    <span style="color:#e6db74">&#34;142 min&#34;</span> 
 ]
-</code></pre>
-
-<p>Quindi ci aspettiamo un array, del quale siamo interessati solo al primo elemento (quindi l&rsquo;array non deve essere vuoto), che deve essere una stringa; di questa stringa abbiamo bisogno solo della prima parte, rimuovendo <code>min</code>. Fortunatamente abbiamo già tutti gli strumenti necessari per procedere:</p>
-
-<pre><code class="language-ObjectiveC">NSNumber* lengthInMinutes =
+</code></pre></div><p>Quindi ci aspettiamo un array, del quale siamo interessati solo al primo elemento (quindi l&rsquo;array non deve essere vuoto), che deve essere una stringa; di questa stringa abbiamo bisogno solo della prima parte, rimuovendo <code> min</code>. Fortunatamente abbiamo già tutti gli strumenti necessari per procedere:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC">NSNumber<span style="color:#f92672">*</span> lengthInMinutes <span style="color:#f92672">=</span>
   [[[[[[Optional
-        with:[dict objectForKey:@&quot;runtime&quot;]
-        as:[NSArray class]]
+        with:[dict objectForKey:<span style="color:#e6db74">@&#34;runtime&#34;</span>]
+        as:[NSArray <span style="color:#66d9ef">class</span>]]
 
-       flatMap:^Optional*(NSArray* array) {
-         return [Optional with:[array firstObject]];
+       flatMap:<span style="color:#f92672">^</span>Optional<span style="color:#f92672">*</span>(NSArray<span style="color:#f92672">*</span> array) {
+         <span style="color:#66d9ef">return</span> [Optional with:[array firstObject]];
        }]
 
-      map:^NSString*(NSString* string) {
-        return [string
-                stringByReplacingOccurrencesOfString:@&quot; min&quot;
-                withString:@&quot;&quot;];
+      map:<span style="color:#f92672">^</span>NSString<span style="color:#f92672">*</span>(NSString<span style="color:#f92672">*</span> string) {
+        <span style="color:#66d9ef">return</span> [string
+                stringByReplacingOccurrencesOfString:<span style="color:#e6db74">@&#34; min&#34;</span>
+                withString:<span style="color:#e6db74">@&#34;&#34;</span>];
       }]
 
-     filter:^BOOL(NSString* string) {
-       return string.length &gt; 0;
+     filter:<span style="color:#f92672">^</span><span style="color:#66d9ef">BOOL</span>(NSString<span style="color:#f92672">*</span> string) {
+       <span style="color:#66d9ef">return</span> string.length <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>;
      }]
 
-    map:^NSNumber*(NSString* stringValue) {
-      return @([stringValue integerValue]);
+    map:<span style="color:#f92672">^</span>NSNumber<span style="color:#f92672">*</span>(NSString<span style="color:#f92672">*</span> stringValue) {
+      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">@(</span>[stringValue integerValue]<span style="color:#ae81ff">)</span>;
     }]
 
-   getOrElse:^NSNumber*{ return @0; }];
-</code></pre>
-
-<p>In realtà manca qualcosa: il metodo <code>[array firstObject]</code> ritorna il primo oggetto dell&rsquo;array se questo ha almeno un elemento, oppure ritorna nil se l&rsquo;array è vuoto: non c&rsquo;è alcuna indicazione sul fatto che vogliamo che il primo elemento sia di tipo <code>NSString</code>, quindi dobbiamo aggiungere uno step <code>filter</code> per assicurarci che la classe dell&rsquo;istanza trovata sia corretta. Quindi:</p>
-
-<pre><code class="language-ObjectiveC">NSNumber* lengthInMinutes =
+   getOrElse:<span style="color:#f92672">^</span>NSNumber<span style="color:#f92672">*</span>{ <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">@0</span>; }];
+</code></pre></div><p>In realtà manca qualcosa: il metodo <code>[array firstObject]</code> ritorna il primo oggetto dell&rsquo;array se questo ha almeno un elemento, oppure ritorna nil se l&rsquo;array è vuoto: non c'è alcuna indicazione sul fatto che vogliamo che il primo elemento sia di tipo <code>NSString</code>, quindi dobbiamo aggiungere uno step <code>filter</code> per assicurarci che la classe dell&rsquo;istanza trovata sia corretta. Quindi:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC">NSNumber<span style="color:#f92672">*</span> lengthInMinutes <span style="color:#f92672">=</span>
   [[[[[[[Optional
-         with:[dict objectForKey:@&quot;runtime&quot;]
-         as:[NSArray class]]
+         with:[dict objectForKey:<span style="color:#e6db74">@&#34;runtime&#34;</span>]
+         as:[NSArray <span style="color:#66d9ef">class</span>]]
 
-        flatMap:^id(NSArray* array) {
-          return [Optional with:[array firstObject]];
+        flatMap:<span style="color:#f92672">^</span><span style="color:#66d9ef">id</span>(NSArray<span style="color:#f92672">*</span> array) {
+          <span style="color:#66d9ef">return</span> [Optional with:[array firstObject]];
         }]
 
-       filter:^BOOL(id value) {
-         return [value isKindOfClass:[NSString class]];
+       filter:<span style="color:#f92672">^</span><span style="color:#66d9ef">BOOL</span>(<span style="color:#66d9ef">id</span> value) {
+         <span style="color:#66d9ef">return</span> [value isKindOfClass:[NSString <span style="color:#66d9ef">class</span>]];
        }]
 
-      map:^NSString*(NSString* string) {
-        return [string
-                stringByReplacingOccurrencesOfString:@&quot; min&quot;
-                withString:@&quot;&quot;];
+      map:<span style="color:#f92672">^</span>NSString<span style="color:#f92672">*</span>(NSString<span style="color:#f92672">*</span> string) {
+        <span style="color:#66d9ef">return</span> [string
+                stringByReplacingOccurrencesOfString:<span style="color:#e6db74">@&#34; min&#34;</span>
+                withString:<span style="color:#e6db74">@&#34;&#34;</span>];
       }]
 
-     filter:^BOOL(NSString* string) {
-       return string.length &gt; 0;
+     filter:<span style="color:#f92672">^</span><span style="color:#66d9ef">BOOL</span>(NSString<span style="color:#f92672">*</span> string) {
+       <span style="color:#66d9ef">return</span> string.length <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>;
      }]
 
-    map:^NSNumber*(NSString* stringValue) {
-      return @([stringValue integerValue]);
+    map:<span style="color:#f92672">^</span>NSNumber<span style="color:#f92672">*</span>(NSString<span style="color:#f92672">*</span> stringValue) {
+      <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">@(</span>[stringValue integerValue]<span style="color:#ae81ff">)</span>;
     }]
 
-   getOrElse:^NSNumber*{ return @0; }];
-</code></pre>
-
-<p>Come possiamo vedere, lavorando con la classe <code>Optional</code>, aggiungere una condizione significa semplicemente <strong>aggiungere uno step</strong> nella sequenza lineare di espressioni.</p>
-
-<p><a name="conclusione"></a></p>
-
+   getOrElse:<span style="color:#f92672">^</span>NSNumber<span style="color:#f92672">*</span>{ <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">@0</span>; }];
+</code></pre></div><p>Come possiamo vedere, lavorando con la classe <code>Optional</code>, aggiungere una condizione significa semplicemente <strong>aggiungere uno step</strong> nella sequenza lineare di espressioni.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="conclusione">Conclusione</h2>
-
 <p>Implementare la classe <code>Optional</code> in Objective-C ci ha permesso di parsare un JSON, cosa spesso difficile da mantenere e soggetta a errori, in un modo semplice e lineare. In realtà ci sono <strong>molti casi</strong> in cui lavorare con gli <em>optionals</em> ci può dare gli stessi vantaggi: componendo operazioni di tipo <code>map</code>, <code>flatMap</code> e <code>filter</code> possiamo esprimere il nostro intento in maniera chiara e leggibile. Ma tutto questo non riguarda solo il tipo <code>Optional</code>: alcuni lettori avranno probabilmente notato che molti linguaggi (incluso Swift) permettono operazioni dell stesso tipo su liste e array, e il loro significato è identico: <code>map</code> e <code>flatMap</code>, in particolare, sono <strong>concetti generici</strong> legati ai <em>monad</em> (in effetti, anche il tipo <code>Array</code> è un <em>monad</em>), e riguarda la composizione dichiarativa di trasformazioni. Questo concetto è alla base della <strong>programmazione funzionale</strong>, e penso ci siano molti motivi per applicare concetti simili ad ambienti più <em>object-oriented</em>, perché aiuterebbero il programmatore a ragionare sul codice ed esprimere l&rsquo;intento in maniera più dichiarativa.</p>
-
 <p>Il codice per la classe <code>Optional</code> mostrata nell&rsquo;articolo è reperibile su <a href="https://gist.github.com/broomburgo/e318228a5f7d6a605e82">GitHub Gist</a>.</p>
 
   </div>
@@ -980,7 +870,7 @@ NS_ASSUME_NONNULL_END
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -1276,7 +1166,7 @@ NS_ASSUME_NONNULL_END
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1295,13 +1185,11 @@ NS_ASSUME_NONNULL_END
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1314,11 +1202,13 @@ NS_ASSUME_NONNULL_END
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1337,7 +1227,7 @@ NS_ASSUME_NONNULL_END
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1368,7 +1258,7 @@ NS_ASSUME_NONNULL_END
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1411,13 +1301,11 @@ NS_ASSUME_NONNULL_END
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1426,11 +1314,13 @@ NS_ASSUME_NONNULL_END
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1473,14 +1363,12 @@ NS_ASSUME_NONNULL_END
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1492,19 +1380,19 @@ NS_ASSUME_NONNULL_END
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

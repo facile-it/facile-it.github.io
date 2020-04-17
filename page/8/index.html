@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -31,29 +31,14 @@
 <meta property="og:description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://engineering.facile.it/" />
-
-
-
-<meta property="og:updated_time" content="2015-10-09T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
+<meta property="og:updated_time" content="2019-05-29T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Facile.it Engineering">
+        <meta itemprop="name" content="Facile.it Engineering">
 <meta itemprop="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
-
-
         
 
         
@@ -82,14 +67,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -277,6 +265,645 @@ ga('send', 'pageview');
   <header>
     <div class="title">
         
+            <h2><a href="/blog/eng/optionals-in-objective-c/">Optionals in Objective-C</a></h2>
+        
+        
+        
+            <p class="translated-article">
+                Questo articolo è disponibile anche
+                <a href="/blog/ita/optionals-in-objective-c/">in italiano</a>
+            </p>
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-11-09'>
+            9 November 2015
+        </time>
+
+        
+            <a href="/authors/elviro/" class="author">
+            
+                <span class="name">Elviro Rocca</span>
+                <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" />
+            
+            </a>
+        
+
+        
+            <p>14 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  
+  <p><strong>Objective-C is not going anywhere</strong>. While Swift is most certainly the new hotness for iOS and OS X programming, there are some concrete reasons to stick with Objective-C for a while:</p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/eng/optionals-in-objective-c/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/swift">Swift</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/objective-c">Objective-C</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/functional-programming">Functional programming</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/monad">Monad</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f&amp;text=Optionals%20in%20Objective-C&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f&amp;description=Optionals%20in%20Objective-C" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/ita/optionals-in-objective-c/">Optionals in Objective-C</a></h2>
+        
+        
+        
+        
+            <p class="translated-article">
+                This article is also available
+                <a href="/blog/eng/optionals-in-objective-c/">in english</a>
+            </p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-11-09'>
+            9 November 2015
+        </time>
+
+        
+            <a href="/authors/elviro/" class="author">
+            
+                <span class="name">Elviro Rocca</span>
+                <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" />
+            
+            </a>
+        
+
+        
+            <p>14 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  
+  <p><strong>Objective-C vivrà ancora per molto</strong>. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&rsquo;:</p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/ita/optionals-in-objective-c/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/swift">Swift</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/objective-c">Objective-C</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/functional-programming">Functional programming</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/monad">Monad</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f&amp;text=Optionals%20in%20Objective-C&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f&amp;description=Optionals%20in%20Objective-C" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/">Da sviluppo a produzione con Docker e AWS Elastic Beanstalk</a></h2>
+        
+        
+        
+        
+            <p class="translated-article">
+                This article is also available
+                <a href="/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/">in english</a>
+            </p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-10-19'>
+            19 October 2015
+        </time>
+
+        
+            <a href="/authors/lorenzo/" class="author">
+            
+                <span class="name">Lorenzo Fontana</span>
+                <img src="https://www.gravatar.com/avatar/3460c18dc12b30037f8937bce6641c4b" alt="Lorenzo Fontana avatar" />
+            
+            </a>
+        
+            <a href="/authors/daniele/" class="author">
+            
+                <span class="name">Daniele Contini</span>
+                <img src="/images/avatar-daniele.jpg" alt="Daniele Contini avatar" />
+            
+            </a>
+        
+
+        
+            <p>7 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  
+  <p>Questo articolo si rivolge a chi ha già una <a href="https://docs.docker.com/articles/basics">conoscenza base di docker</a> e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.</p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/docker">Docker</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/aws">AWS</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&amp;text=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&amp;title=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&amp;title=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&amp;title=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&amp;description=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/">From development to production with Docker and AWS Elastic Beanstalk</a></h2>
+        
+        
+        
+            <p class="translated-article">
+                Questo articolo è disponibile anche
+                <a href="/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/">in italiano</a>
+            </p>
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-10-19'>
+            19 October 2015
+        </time>
+
+        
+            <a href="/authors/lorenzo/" class="author">
+            
+                <span class="name">Lorenzo Fontana</span>
+                <img src="https://www.gravatar.com/avatar/3460c18dc12b30037f8937bce6641c4b" alt="Lorenzo Fontana avatar" />
+            
+            </a>
+        
+
+        
+            <p>7 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  
+  <p>This post is addressed to people who already have <a href="https://docs.docker.com/articles/basics">basic knowledge about docker</a>, about how it works and are looking for a way to move to the next step with the goal of using it in development and production day by day.</p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/docker">Docker</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/aws">AWS</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffrom-development-to-production-with-docker-and-amazon-ecs%2f&amp;text=From%20development%20to%20production%20with%20Docker%20and%20AWS%20Elastic%20Beanstalk&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffrom-development-to-production-with-docker-and-amazon-ecs%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffrom-development-to-production-with-docker-and-amazon-ecs%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffrom-development-to-production-with-docker-and-amazon-ecs%2f&amp;title=From%20development%20to%20production%20with%20Docker%20and%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffrom-development-to-production-with-docker-and-amazon-ecs%2f&amp;title=From%20development%20to%20production%20with%20Docker%20and%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffrom-development-to-production-with-docker-and-amazon-ecs%2f&amp;title=From%20development%20to%20production%20with%20Docker%20and%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffrom-development-to-production-with-docker-and-amazon-ecs%2f&amp;description=From%20development%20to%20production%20with%20Docker%20and%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffrom-development-to-production-with-docker-and-amazon-ecs%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
             <h2><a href="/blog/ita/paraunit/">Paraunit: test paralleli, Doctrine e le fixture</a></h2>
         
         
@@ -441,647 +1068,6 @@ ga('send', 'pageview');
 </section>
 
         
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/eng/protection-of-sensitive-data-using-encryption/">Protection of sensitive data using encryption</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2015-10-05'>
-            5 October 2015
-        </time>
-
-        
-            <a href="/authors/algatux/" class="author">
-            
-                <span class="name">Alessandro Galli</span>
-                <img src="https://www.gravatar.com/avatar/d9b386ec082da4173b8b03a2585478b0" alt="Alessandro Galli avatar" />
-            
-            </a>
-        
-
-        
-            <p>6 minute read</p>
-        
-    </div>
-</header>
-
-  
-
-  
-  <p>Data protection is one of the major and recurrent problems in recent years: whether it is private information of users, or the company for which we work, the problem is always the same.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/blog/eng/protection-of-sensitive-data-using-encryption/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/security">Security</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/encryption">Encryption</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/rsa">RSA</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/aes">AES</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/rjindael">Rjindael</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-<li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fprotection-of-sensitive-data-using-encryption%2f&amp;text=Protection%20of%20sensitive%20data%20using%20encryption&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fprotection-of-sensitive-data-using-encryption%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fprotection-of-sensitive-data-using-encryption%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fprotection-of-sensitive-data-using-encryption%2f&amp;title=Protection%20of%20sensitive%20data%20using%20encryption" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fprotection-of-sensitive-data-using-encryption%2f&amp;title=Protection%20of%20sensitive%20data%20using%20encryption" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fprotection-of-sensitive-data-using-encryption%2f&amp;title=Protection%20of%20sensitive%20data%20using%20encryption" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fprotection-of-sensitive-data-using-encryption%2f&amp;description=Protection%20of%20sensitive%20data%20using%20encryption" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fprotection-of-sensitive-data-using-encryption%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-        </ul>
-    </section>
-</section>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/">Protezione di dati sensibili usando la crittografia</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2015-10-05'>
-            5 October 2015
-        </time>
-
-        
-            <a href="/authors/algatux/" class="author">
-            
-                <span class="name">Alessandro Galli</span>
-                <img src="https://www.gravatar.com/avatar/d9b386ec082da4173b8b03a2585478b0" alt="Alessandro Galli avatar" />
-            
-            </a>
-        
-
-        
-            <p>6 minute read</p>
-        
-    </div>
-</header>
-
-  
-
-  
-  <p>La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/security">Security</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/encryption">Encryption</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/rsa">RSA</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/aes">AES</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/rjindael">Rjindael</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-<li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fprotezione-di-dati-sensibili-usando-la-crittografia%2f&amp;text=Protezione%20di%20dati%20sensibili%20usando%20la%20crittografia&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fprotezione-di-dati-sensibili-usando-la-crittografia%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fprotezione-di-dati-sensibili-usando-la-crittografia%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fprotezione-di-dati-sensibili-usando-la-crittografia%2f&amp;title=Protezione%20di%20dati%20sensibili%20usando%20la%20crittografia" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fprotezione-di-dati-sensibili-usando-la-crittografia%2f&amp;title=Protezione%20di%20dati%20sensibili%20usando%20la%20crittografia" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fprotezione-di-dati-sensibili-usando-la-crittografia%2f&amp;title=Protezione%20di%20dati%20sensibili%20usando%20la%20crittografia" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fprotezione-di-dati-sensibili-usando-la-crittografia%2f&amp;description=Protezione%20di%20dati%20sensibili%20usando%20la%20crittografia" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fprotezione-di-dati-sensibili-usando-la-crittografia%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-        </ul>
-    </section>
-</section>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/ita/wamp-web-application-messaging-protocol-e-php/">WAMP, Web Application Messaging Protocol.. e PHP!</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2015-09-28'>
-            28 September 2015
-        </time>
-
-        
-            <a href="/authors/luca/" class="author">
-            
-                <span class="name">Luca Boeri</span>
-                <img src="/images/avatar-luca.jpg" alt="Luca Boeri avatar" />
-            
-            </a>
-        
-
-        
-            <p>5 minute read</p>
-        
-    </div>
-</header>
-
-  
-
-  
-  <p>Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno <strong>scambio dati</strong> in <strong>due direzioni</strong>, <strong>efficiente</strong> e a <strong>bassa latenza</strong>, ha determinato l’ascesa negli ultimi anni di <strong>soluzioni basate su <a href="https://www.websocket.org/" target="_blank">WebSocket</a></strong>.</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/blog/ita/wamp-web-application-messaging-protocol-e-php/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/php">PHP</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/open-source">Open Source</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/python">Python</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/networking">Networking</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/websocket">Websocket</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/symfony">Symfony</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-<li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f&amp;text=WAMP%2c%20Web%20Application%20Messaging%20Protocol..%20e%20PHP%21&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f&amp;title=WAMP%2c%20Web%20Application%20Messaging%20Protocol..%20e%20PHP%21" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f&amp;title=WAMP%2c%20Web%20Application%20Messaging%20Protocol..%20e%20PHP%21" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f&amp;title=WAMP%2c%20Web%20Application%20Messaging%20Protocol..%20e%20PHP%21" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f&amp;description=WAMP%2c%20Web%20Application%20Messaging%20Protocol..%20e%20PHP%21" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fwamp-web-application-messaging-protocol-e-php%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-        </ul>
-    </section>
-</section>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/eng/no-country-for-if-else/">No Country For If Else</a></h2>
-        
-        
-        
-            <p class="translated-article">
-                Questo articolo è disponibile anche
-                <a href="/blog/ita/no-country-for-if-else/">in italiano</a>
-            </p>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2015-09-15'>
-            15 September 2015
-        </time>
-
-        
-            <a href="/authors/elviro/" class="author">
-            
-                <span class="name">Elviro Rocca</span>
-                <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" />
-            
-            </a>
-        
-
-        
-            <p>21 minute read</p>
-        
-    </div>
-</header>
-
-  
-
-  
-  <p>There is an <strong>unwanted guest</strong> with us as we write code and build software projects: it&rsquo;s the code that&rsquo;s <strong>already written</strong>, and we must take into account its complexity as the code base increases in size. High complexity of the existing code can make the following activities particularly difficult:</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/blog/eng/no-country-for-if-else/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/software-complexity">Software complexity</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/functional-programming">Functional programming</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/oop">OOP</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/structured-programming">Structured programming</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
-            </header>
-            
-
-
-<li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fno-country-for-if-else%2f&amp;text=No%20Country%20For%20If%20Else&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
-    <p>Twitter</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fno-country-for-if-else%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fno-country-for-if-else%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fno-country-for-if-else%2f&amp;title=No%20Country%20For%20If%20Else" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fno-country-for-if-else%2f&amp;title=No%20Country%20For%20If%20Else" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fno-country-for-if-else%2f&amp;title=No%20Country%20For%20If%20Else" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fno-country-for-if-else%2f&amp;description=No%20Country%20For%20If%20Else" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fno-country-for-if-else%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-        </ul>
-    </section>
-</section>
-
-        
 		
         
 <ul class="actions pagination">
@@ -1119,7 +1105,7 @@ ga('send', 'pageview');
       <ul class="icons">
         
           <li>
-            <a href="https://engineering.facile.it/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
           </li>
         
         
@@ -1358,7 +1344,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1377,13 +1363,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1396,11 +1380,13 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1419,7 +1405,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1450,7 +1436,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1493,13 +1479,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1508,11 +1492,13 @@ ga('send', 'pageview');
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1555,14 +1541,12 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1574,19 +1558,19 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     
@@ -1626,7 +1610,7 @@ ga('send', 'pageview');
       <ul class="icons">
         
           <li>
-            <a href="https://engineering.facile.it/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
           </li>
         
         

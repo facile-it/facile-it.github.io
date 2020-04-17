@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -48,33 +48,16 @@
  Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/graphql-an-introduction/" />
-
-
-
-<meta property="article:published_time" content="2016-01-18T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2016-01-18T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2016-01-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-01-18T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="GraphQL: an introduction">
+        <meta itemprop="name" content="GraphQL: an introduction">
 <meta itemprop="description" content="The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let&rsquo;s see some of the consequences and benefits of choosing REST:
  Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.">
-
-
 <meta itemprop="datePublished" content="2016-01-18T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-01-18T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1880">
@@ -82,7 +65,6 @@
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -111,14 +93,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -419,45 +404,31 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<h2 id="the-lesson-we-learned-with-rest">The lesson we learned with REST</h2>
-
+    <h2 id="the-lesson-we-learned-with-rest">The lesson we learned with REST</h2>
 <p>For many developers, nowadays, building an <strong>API</strong> for their applications essentially means mapping the <em>resources</em> of the domain to <em>URIs</em>, with the <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> principles in mind.
-Usually creating a <strong><em>RESTful</em></strong> system is not difficult, and the simplicity of the idea makes the task easier.
+Usually creating a <em><strong>RESTful</strong></em> system is not difficult, and the simplicity of the idea makes the task easier.
 Let&rsquo;s see some of the consequences and benefits of choosing REST:</p>
-
 <ul>
 <li>Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.</li>
 <li>Often the same URI can be used with multiple verbs to accomplish different tasks (e.g. &ldquo;example.com/tag/123&rdquo; refers to a particular tag that you can retrieve, update or delete).</li>
 <li>Controllers in many server-side frameworks can be created with a RESTful approach, each one of them representing one or more resources.</li>
 </ul>
-
 <p>However, unfortunately, it&rsquo;s often easy to come across some problems:</p>
-
 <ul>
 <li>Complex URIs can be difficult to write or understand and sometimes they are subject to arbitrary interpretations.</li>
 <li>In order to filter collections you may need to use one or more ids embedded in the URL, but also <em>query parameters</em>, e.g. when you want to sort the results of a GET by one particular field or retrieve resources by some field other than the id.</li>
 <li>There is no standard or easy way for the client to specify the list of fields that it needs, and the server will usually return all the data related to the requested resource.</li>
 <li>More importantly, there is no standard way for the client to decide which resources related to the one requested should be returned, resulting in a lot of noise in the response content (unless the server application offers multiple endpoints to access the same resource but with different subsets of data&hellip; but this could lead to API design problems).</li>
 </ul>
-
 <p>You can&rsquo;t really blame REST for these and other cons. Its power comes from simplicity and developers are thankful for this breath of fresh air. You have just one transport layer, i.e. HTTP, with its features and rules.</p>
-
 <p>Now let&rsquo;s see how we can take a step forward and add some salt to our APIs, to make them even more powerful and expressive.</p>
-
 <h2 id="a-new-way-to-design-api-graphql">A new way to design API: GraphQL</h2>
-
 <p><strong>GraphQL</strong> maintains all the advantages of REST (relies on HTTP, very small overhead on requests, stateless and cacheable) and adds some very useful enhancements.
 One of the main reasons why <strong>Facebook</strong> created it back in 2012 was the need to find a way to access data on their server that allowed any type of client and device (especially mobile site and app) to decide exactly what fields they need, reducing the payload and then minimizing the traffic.</p>
-
 <p>Instead of explaining all the features, which can be read in the <a href="http://graphql.org/docs/getting-started/">official guide</a>, in this post we&rsquo;ll focus on what makes GraphQL interesting.
 In the next section we&rsquo;ll use types and queries presented in our example project, that you can clone from <a href="https://github.com/poetcyborg/graphql-node-starter-kit">this repository</a>.</p>
-
 <h3 id="types-and-fields-driven-queries">Types and fields driven queries</h3>
-
 <p><strong>Example #1</strong></p>
-
 <pre><code>query {
 	games {
         id
@@ -465,12 +436,9 @@ In the next section we&rsquo;ll use types and queries presented in our example p
 	}
 }
 
-</code></pre>
-
-<p>The previous snippet describes a query issued by the client when it just needs to retrieve <em>id</em> and <em>title</em> of a <strong><em>game</em></strong>.
+</code></pre><p>The previous snippet describes a query issued by the client when it just needs to retrieve <em>id</em> and <em>title</em> of a <em><strong>game</strong></em>.
 Since no argument has been passed to filter the data of the specified type (<em>game</em>), all the games will be retrieved.
 The output for this query is:</p>
-
 <pre><code>{
   &quot;data&quot;: {
     &quot;games&quot;: [{
@@ -489,17 +457,10 @@ The output for this query is:</p>
     ]
   }
 }
-</code></pre>
-
-<p>With REST, the same task could be accomplished with the following url:</p>
-
+</code></pre><p>With REST, the same task could be accomplished with the following url:</p>
 <pre><code>GET /game?fields=id,title
-</code></pre>
-
-<p>Unless the server applications is taking care of field filtering based on query params, all the information about every game will be returned.</p>
-
+</code></pre><p>Unless the server applications is taking care of field filtering based on query params, all the information about every game will be returned.</p>
 <p><strong>Example #2</strong></p>
-
 <pre><code>query {
 	games(id:2) {
         id
@@ -507,10 +468,7 @@ The output for this query is:</p>
         year
 	}
 }
-</code></pre>
-
-<p><strong>Example #3</strong></p>
-
+</code></pre><p><strong>Example #3</strong></p>
 <pre><code>query {
 	games(title:&quot;Frogger&quot;) {
 		id
@@ -518,25 +476,14 @@ The output for this query is:</p>
         year
 	}
 }
-</code></pre>
-
-<p>Examples #2 and #3 show a way to filter games by their <em>id</em> and <em>title</em> respectively.
+</code></pre><p>Examples #2 and #3 show a way to filter games by their <em>id</em> and <em>title</em> respectively.
 As you can see, the id has no semantic meaning like in REST, so you can describe the filter criterion in the same manner (<em>fieldname: &ldquo;value&rdquo;</em>).</p>
-
 <p>The REST equivalent (selected fields are omitted) for Example #2:</p>
-
 <pre><code>GET /game/2
-</code></pre>
-
-<p>and #3:</p>
-
+</code></pre><p>and #3:</p>
 <pre><code>GET /game?title=Frogger
-</code></pre>
-
-<h3 id="relations-between-entities-graph-representation">Relations between entities: graph representation</h3>
-
+</code></pre><h3 id="relations-between-entities-graph-representation">Relations between entities: graph representation</h3>
 <p><strong>Example #4</strong></p>
-
 <pre><code>query {
     games(id:2) {
         title
@@ -546,15 +493,10 @@ As you can see, the id has no semantic meaning like in REST, so you can describe
         }
     }
 }
-</code></pre>
-
-<p>The <strong>types</strong> called <em>Game</em> and <em>Company</em> are related to each other; in our example, for the sake of simplicity, a game can only have one company as developer and one as publisher, while any company can have multiple developed or published games.
+</code></pre><p>The <strong>types</strong> called <em>Game</em> and <em>Company</em> are related to each other; in our example, for the sake of simplicity, a game can only have one company as developer and one as publisher, while any company can have multiple developed or published games.
 In Example #4, you can notice the complex field <em>developer</em>; we want to know the name and the nation of the company that developed the game with id = 2.</p>
-
 <p>The same two types can be reused to express the opposite of the relation described in the previous example:</p>
-
 <p><strong>Example #5:</strong></p>
-
 <pre><code>query {
     companies(name:&quot;Game Freak&quot;) {
         name
@@ -563,35 +505,22 @@ In Example #4, you can notice the complex field <em>developer</em>; we want to k
         }
     }
 }
-</code></pre>
-
-<p>Let&rsquo;s see briefly how you can describe these relations in the <strong>Javascript</strong> implementation.</p>
-
+</code></pre><p>Let&rsquo;s see briefly how you can describe these relations in the <strong>Javascript</strong> implementation.</p>
 <p>In the &lsquo;<em>Game</em>&rsquo; type definition:</p>
-
 <pre><code>developer: {
 	type: Company,
     description: 'The developer of the game',
 }
-</code></pre>
-
-<p>And in the &lsquo;<em>Company</em>&rsquo; type:</p>
-
+</code></pre><p>And in the &lsquo;<em>Company</em>&rsquo; type:</p>
 <pre><code>gamesAsDeveloper: {
     type: new GraphQLList(Game),
     description: 'The games created as a developer',
 }
-</code></pre>
-
-<p>The field <em>developer</em> is defined as type <em>Company</em>, while the field <em>gamesAsDeveloper</em> is a list of <em>Game</em>.
+</code></pre><p>The field <em>developer</em> is defined as type <em>Company</em>, while the field <em>gamesAsDeveloper</em> is a list of <em>Game</em>.
 Please refer to the <a href="https://github.com/poetcyborg/graphql-node-starter-kit">demo project</a> for the full implementation of this example.</p>
-
 <h3 id="minimizing-the-number-of-requests-to-the-server">Minimizing the number of requests to the server</h3>
-
 <p>This time we need the list of the <em>Japanese companies</em> and some information about the games they worked on, but only for the <em>NES</em> (Nintendo Entertainment System) platform.</p>
-
 <p><strong>Example #6:</strong></p>
-
 <pre><code>query {
     companies(nation:&quot;Japan&quot;) {
 	    name
@@ -605,10 +534,7 @@ Please refer to the <a href="https://github.com/poetcyborg/graphql-node-starter-
         }
     }
 }
-</code></pre>
-
-<p>This query&rsquo;s output:</p>
-
+</code></pre><p>This query&rsquo;s output:</p>
 <pre><code>{
   &quot;data&quot;: {
     &quot;companies&quot;: [{
@@ -640,43 +566,28 @@ Please refer to the <a href="https://github.com/poetcyborg/graphql-node-starter-
     ]
   }
 }
-</code></pre>
-
-<p>In the REST world, the same response could be obtained in several ways:</p>
-
+</code></pre><p>In the REST world, the same response could be obtained in several ways:</p>
 <ul>
 <li>by sending a request to an endpoint that was built exactly for the purpose of filtering companies and games by some fields, e.g.:</li>
 </ul>
-
 <pre><code>GET /companyWithGames?companyNation=Japan&amp;gamePlatform=NES&amp;fields=...
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li>by sending several requests to more generic endpoints, e.g.:</li>
 </ul>
-
 <pre><code>GET /company?nation=Japan&amp;fields=...
 GET /game?developerName=[developer 1 name]&amp;gamePlatform=NES&amp;fields=...
 GET /game?developerName=[developer 2 name]&amp;gamePlatform=NES&amp;fields=...
 GET ...
-</code></pre>
-
-<p>There&rsquo;s a couple of notable things here:</p>
-
+</code></pre><p>There&rsquo;s a couple of notable things here:</p>
 <ul>
 <li>the expressivity of the query language becomes more evident when things start becoming more interesting; filtering subsets of data feels natural and easy as you can just specify the criteria for the filters directly on the subtree root (companies -&gt; nation, gamesAsDeveloper -&gt; platform, gamesAsPublisher -&gt; platform);</li>
 <li>on server side, the developer can write the code to retrieve the data for every subset of data independently, considering that, when a request is sent, every subtree receives the data returned by the upper levels (in this case, filtering <em>games</em> with the given <em>platform</em> is performed only on companies with the selected <em>nation</em>).</li>
 </ul>
-
 <h3 id="api-documentation">API Documentation</h3>
-
 <p>When you design a REST WebService, for every endpoint you&rsquo;re mostly going to take care of its URI and the structure of the request and the response body.
 Unfortunately, there is no standard way to document this information and make it available to the client developers.</p>
-
-<p>With GraphQL, using <strong><em>introspection</em></strong> you can ask the server information about the available types and their fields.</p>
-
+<p>With GraphQL, using <em><strong>introspection</strong></em> you can ask the server information about the available types and their fields.</p>
 <p><strong>Example #7</strong>:</p>
-
 <pre><code>query {
     __schema {
         types {
@@ -686,10 +597,7 @@ Unfortunately, there is no standard way to document this information and make it
         }
     }
 }
-</code></pre>
-
-<p>A query with the query root <strong><em>__schema</em></strong> returns the list of types with their descriptions and fields:</p>
-
+</code></pre><p>A query with the query root <em><strong>__schema</strong></em> returns the list of types with their descriptions and fields:</p>
 <pre><code>{
   &quot;data&quot;: {
     &quot;__schema&quot;: {
@@ -708,12 +616,8 @@ Unfortunately, there is no standard way to document this information and make it
         },
         ...
 }
-</code></pre>
-
-<p>Another way to get the information about the types is using the query root <strong><em>__type</em></strong>, passing a specific type name:</p>
-
+</code></pre><p>Another way to get the information about the types is using the query root <em><strong>__type</strong></em>, passing a specific type name:</p>
 <p><strong>Example #8</strong></p>
-
 <pre><code>query {
     __type(name:&quot;Game&quot;) {
         fields {
@@ -725,10 +629,7 @@ Unfortunately, there is no standard way to document this information and make it
         }
     }
 }
-</code></pre>
-
-<p>Output:</p>
-
+</code></pre><p>Output:</p>
 <pre><code>{
     &quot;data&quot;: {
         &quot;__type&quot;: {
@@ -747,14 +648,9 @@ Unfortunately, there is no standard way to document this information and make it
             },
             ...
 }
-</code></pre>
-
-<h2 id="mutations">Mutations</h2>
-
+</code></pre><h2 id="mutations">Mutations</h2>
 <p>We&rsquo;ve already talked about queries, but a few words need to be spent about the other important operation that you can perform on a GraphQL server: <strong>mutations</strong>.</p>
-
 <p><strong>Example #9</strong></p>
-
 <pre><code>mutation {
 	updateGameRating(id:2, rating:7) {
 		id
@@ -762,12 +658,9 @@ Unfortunately, there is no standard way to document this information and make it
 		rating
 	}
 }
-</code></pre>
-
-<p>The syntax is no different from the previous ones, except for the <strong><em>mutation</em></strong> root.
+</code></pre><p>The syntax is no different from the previous ones, except for the <em><strong>mutation</strong></em> root.
 It is the equivalent of a POST or a PATCH in REST, and lets us change the value of some fields in a resource.
 In this example we are assigning a value (7) to the <em>rating</em> field of the <em>Game</em> types; this mutation could be defined in the following way:</p>
-
 <pre><code>{
 	name: 'UpdateGameRating',
 	type: Game,
@@ -775,30 +668,20 @@ In this example we are assigning a value (7) to the <em>rating</em> field of the
 	    rating: { type: new GraphQLNonNull(GraphQLInt) },
     }
 }
-</code></pre>
-
-<p>As you can see, the specified type for the mutation is <em>Game</em>; this means not only that the update should be performed on games, but also that the <em>Game</em> field included in the request (id, title and rating) should be returned, just like a normal query.</p>
-
+</code></pre><p>As you can see, the specified type for the mutation is <em>Game</em>; this means not only that the update should be performed on games, but also that the <em>Game</em> field included in the request (id, title and rating) should be returned, just like a normal query.</p>
 <h2 id="implementations">Implementations</h2>
-
 <p>In the present article we sometimes referred to the official <strong>Javascript</strong> library for GraphQL, but as you can see in <a href="https://github.com/chentsulin/awesome-graphql">this project</a> there are many different implementations for the most popular languages.</p>
-
 <h2 id="the-future-of-graphql">The future of GraphQL</h2>
-
 <p>It&rsquo;s difficult to say what will become of GraphQL in the next year.
 Sure there&rsquo;s a lot of hype around it, and for some very solid reasons.
 It&rsquo;s not going to replace REST in developers&rsquo; hearts anytime soon, but if they&rsquo;re brave enough, they can add a <strong>GraphQL layer</strong> over an existing REST API in their application.
-In fact, in my opinion, another good point of interest regarding GraphQL is the ability to aggregate multiple endpoints that reference various resources. Its nature is very domain-centric and it&rsquo;s more  focused on <strong><em>what</em></strong> data needs to be precisely retrieved, rather than on <strong><em>how to</em></strong> get it.</p>
-
+In fact, in my opinion, another good point of interest regarding GraphQL is the ability to aggregate multiple endpoints that reference various resources. Its nature is very domain-centric and it&rsquo;s more  focused on <em><strong>what</strong></em> data needs to be precisely retrieved, rather than on <em><strong>how to</strong></em> get it.</p>
 <p>Some questions arise when you think about GraphQL in a more vast spectrum:</p>
-
 <ul>
 <li>how to <strong>cache</strong> resources on server-side, even if they were originally fetched using different queries? (Facebook is trying to give some answers with <a href="https://facebook.github.io/relay/docs/thinking-in-relay.html">Relay</a>);</li>
 <li>how to <strong>limit the access</strong> to the resources (or the introspection on them) only to some users? GraphQL is authorization-agnostic, but as you can read in <a href="https://github.com/graphql/graphql-js/issues/113">this Github issue</a> its a common problem that needs to be at least faced.</li>
 </ul>
-
 <p>The entire Facebook ecosystem of open source projects is worth of attention (don&rsquo;t forget about React, Flux and the other Flux-like architectures) and, even if it&rsquo;s very young, it has become very popular and used by many little and big companies around the world.</p>
-
 <p>My personal hope is that every lesson that can be learned while working with these projects, especially GraphQL, might lead to a better World Wide Web and a better developing experience, maybe with more standard and free implementations than the Facebook (or Google, or Microsoft, or Apple) ones.</p>
 
   </div>
@@ -846,7 +729,7 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -1142,7 +1025,7 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1161,13 +1044,11 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1180,11 +1061,13 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1203,7 +1086,7 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1234,7 +1117,7 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1277,13 +1160,11 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1292,11 +1173,13 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1339,14 +1222,12 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1358,19 +1239,19 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

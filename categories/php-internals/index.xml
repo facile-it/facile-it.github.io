@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PHP internals on Facile.it Engineering</title>
@@ -12,17 +12,6 @@
     
     
     <item>
-      <title>ZVALs refcount AKA come vengono memorizzate le nostre variabili</title>
-      <link>https://engineering.facile.it/blog/ita/zvals-refcount/</link>
-      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/ita/zvals-refcount/</guid>
-      <description>Assegnare valori alle variabili è sicuramente l&amp;rsquo;operazione più comune all&amp;rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&amp;rsquo;interprete? Vediamolo assieme!
-L&amp;rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla linea 334 di zend.h, la riporto qui di seguito per commentarne le proprietà.
-struct _zval_struct { zvalue_value value;	/* Il valore assegnato alla variabile */ zend_uint refcount__gc; /* Il conto delle referenze legato alla variabile */ zend_uchar type;	/* L&#39;identificativo del tipo di dato */ zend_uchar is_ref__gc; /* Flag che indica se la variabile è o meno una referenza */ };  Il tipo di dato zvalue_value non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo ogni variabile che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo stesso spazio in memoria richiesto per il tipo di dato più grande.</description>
-    </item>
-    
-    <item>
       <title>var_dump() aggiunge proprietà pubbliche a DateTime</title>
       <link>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
@@ -31,7 +20,18 @@ struct _zval_struct { zvalue_value value;	/* Il valore assegnato alla variabile 
       <description>PHP, fin dalla versione 5.2.0, introduce gli oggetti \DateTime per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali.
 Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate var_dump, print_r, var_export o debug_zval_dump su un istanza di \DateTime.
 Considerando il seguente codice e il suo output:
-$date = new \DateTime(); var_dump(isset($date-&amp;gt;date)); // OUTPUT: bool(false)  ci rendiamo conto del fatto che non esiste alcuna proprietà $date all&amp;rsquo;interno dell&amp;rsquo;istanza di \DateTime.</description>
+$date = new \DateTime(); var_dump(isset($date-&amp;gt;date)); // OUTPUT: bool(false) ci rendiamo conto del fatto che non esiste alcuna proprietà $date all&amp;rsquo;interno dell&amp;rsquo;istanza di \DateTime.</description>
+    </item>
+    
+    <item>
+      <title>ZVALs refcount AKA come vengono memorizzate le nostre variabili</title>
+      <link>https://engineering.facile.it/blog/ita/zvals-refcount/</link>
+      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/ita/zvals-refcount/</guid>
+      <description>Assegnare valori alle variabili è sicuramente l&amp;rsquo;operazione più comune all&amp;rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&amp;rsquo;interprete? Vediamolo assieme!
+L&amp;rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla linea 334 di zend.h, la riporto qui di seguito per commentarne le proprietà.
+struct _zval_struct { zvalue_value value;	/* Il valore assegnato alla variabile */ zend_uint refcount__gc; /* Il conto delle referenze legato alla variabile */ zend_uchar type;	/* L&#39;identificativo del tipo di dato */ zend_uchar is_ref__gc; /* Flag che indica se la variabile è o meno una referenza */ }; Il tipo di dato zvalue_value non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo ogni variabile che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo stesso spazio in memoria richiesto per il tipo di dato più grande.</description>
     </item>
     
   </channel>

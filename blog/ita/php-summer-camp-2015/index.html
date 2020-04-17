@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -48,41 +48,23 @@ L&rsquo;evento è costituito da numerosi workshop orientati allo sviluppo di app
 L&rsquo;evento è costituito da numerosi workshop orientati allo sviluppo di applicazioni con il framework PHP Symfony. Le mattine e le prime metà del pomeriggio erano interamente dedicati ai workshop." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/php-summer-camp-2015/" />
-
-
-
-<meta property="article:published_time" content="2015-09-08T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-09-08T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-09-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-09-08T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Php Summer Camp 2015">
+        <meta itemprop="name" content="Php Summer Camp 2015">
 <meta itemprop="description" content="Introduzione Dal 26 al 29 agosto 2015 ho avuto l&rsquo;occasione di partecipare al PhpSummerCamp in Rovigno (Croazia). Negli stessi giorni e nello stesso luogo si è svolto anche il SummerCamp EzPublish. Ciò ha consentito di accrescere ulteriormente la platea di partecipanti con cui è stato possibile condividere idee e soluzioni.
 L&rsquo;evento è costituito da numerosi workshop orientati allo sviluppo di applicazioni con il framework PHP Symfony. Le mattine e le prime metà del pomeriggio erano interamente dedicati ai workshop.">
-
-
 <meta itemprop="datePublished" content="2015-09-08T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-09-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2039">
+<meta itemprop="wordCount" content="1113">
 
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -111,14 +93,17 @@ L&rsquo;evento è costituito da numerosi workshop orientati allo sviluppo di app
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -407,7 +392,7 @@ ga('send', 'pageview');
         
 
         
-            <p>10 minute read</p>
+            <p>6 minute read</p>
         
     </div>
 </header>
@@ -419,58 +404,45 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<h1 id="introduzione">Introduzione</h1>
-
+    <h1 id="introduzione">Introduzione</h1>
 <p>Dal 26 al 29 agosto 2015 ho avuto l&rsquo;occasione di partecipare al <a href="http://2015.phpsummercamp.com/"><strong>PhpSummerCamp</strong></a> in Rovigno (Croazia).
 Negli stessi giorni e nello stesso luogo si è svolto anche il <a href="http://2015.ezsummercamp.com/"><strong>SummerCamp EzPublish</strong></a>.
 Ciò ha consentito di accrescere ulteriormente la platea di partecipanti con cui è stato possibile condividere idee e soluzioni.</p>
-
 <p>L&rsquo;evento è costituito da numerosi <strong>workshop</strong> orientati allo sviluppo di applicazioni con il <a href="http://symfony.com">framework PHP Symfony</a>.
 Le mattine e le prime metà del pomeriggio erano interamente dedicati ai workshop.
 Nel tempo rimanente venivano condotte varie attività dedicate alla community e al confronto tra i partecipanti.</p>
-
 <p>In questo articolo descriverò gli eventi a cui ho partecipato e gli argomenti trattati, con particolare riguardo a ciò che mi ha personalmente colpito di più.</p>
-
 <h1 id="indice">Indice</h1>
-
 <ul>
 <li><a href="#mercoledi">Mercoledì 26 agosto</a>
-
 <ul>
 <li><a href="#ci">Continuous integration with PHP</a></li>
 <li><a href="#modernising">Modernising the legacy</a></li>
 <li><a href="#frontend">Frontend as design to backend middleware or some JS concepts that any good PHP dev should know</a></li>
 <li><a href="#debate">Celebrity debate</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="#giovedi">Giovedì 27 agosto</a>
-
 <ul>
 <li><a href="#coupling">Loose coupling in practice</a></li>
 <li><a href="#puli">Next-gen package development with Puli</a></li>
 <li><a href="#unconference">Unconference</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="#venerdi">Venerdì 28 agosto</a>
-
 <ul>
 <li><a href="#profiling">Profiling PHP Apps</a></li>
 <li><a href="#symfony3">Migrating to Symfony 3</a></li>
 <li><a href="#experts">Meet the experts</a></li>
-</ul></li>
+</ul>
+</li>
 <li><a href="#conclusione">Conclusione</a></li>
 </ul>
-
-<p><a name="mercoledi"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h1 id="mercoledì-26-agosto">Mercoledì 26 agosto</h1>
-
 <p>Un brevissimo keynote di apertura ha illustrato la storia del SummerCamp. Esso inizialmente ospitava soltanto la sezione EzPublish; solo negli ultimi anni è stata aggiunta la parte più generica relativa a Symfony e PHP.</p>
-
-<p><a name="ci"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="continuous-integration-with-php-michele-orselli">Continuous integration with PHP (Michele Orselli)</h3>
-
 <p>Il primo workshop ha illustrato come configurare e utilizzare <a href="https://jenkins-ci.org/"><strong>Jenkins</strong></a>.
 L&rsquo;obiettivo della sessione è stato abilitare un <strong>sistema di continuous integration</strong> su un piccolo progetto Symfony che già aveva alcune test suite.
 È stato interessante notare la semplicità d&rsquo;uso e di configurazione del sistema Jenkins.
@@ -478,108 +450,50 @@ Si è visto come installare e configurare il <a href="https://wiki.jenkins-ci.or
 È stato dedicato anche dello spazio per parlare di <a href="https://www.phing.info/"><strong>Phing</strong></a>, tool molto utile per realizzare build automatiche.
 Sono state approfondite alcune configurazioni particolari di PhpUnit che consentono di dividere correttamente i test negli insiemi: test unitari, test d&rsquo;integrazione e test funzionali.
 È stato interessante veder utilizzare <a href="https://phpunit.de/manual/current/en/database.html"><strong>l&rsquo;estenzione di PHPUnit Database</strong></a> per gestire automaticamente la connessione al database, la creazione dello schema e il caricamento/reset delle fixtures per ogni test case.</p>
-
-<p><a name="modernising"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="modernising-the-legacy-marek-matulka">Modernising the legacy (Marek Matulka)</h3>
-
 <p>Il presentatore ha illustrato le feature implementate da un&rsquo;applicazione PHP legacy. Il codice era molto disordinato e praticamente impossibile da testare.
-Logica di business, data retrieval e viste erano mescolate in un&rsquo;applicazione che non era dotata nemmeno di un singolo <a href="https://it.wikipedia.org/wiki/Front_Controller_pattern">front-controller</a>.
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Modernising legacy w/ <a href="https://twitter.com/super_marek">@super_marek</a> is kicking off at <a href="https://twitter.com/hashtag/phpsummer?src=hash">#phpsummer</a> <a href="http://t.co/aOIt1CWhNb">pic.twitter.com/aOIt1CWhNb</a></p>&mdash; Jakub Zalas (@jakub_zalas) <a href="https://twitter.com/jakub_zalas/status/636506399288201216">August 26, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-L&rsquo;applicazione era un semplice sito di e-commerce per la vendita di articoli e comprendeva una sezione di checkout.
-Nel dover aggiungere un nuova funzionalità - il calcolo real-time delle spese di spedizione - si è voluto introdurre alcune componenti di Symfony per migliorare la qualità del sistema.
-È stato illustrato come introdurre e configurare le seguenti componenti: <a href="http://symfony.com/it/doc/current/components/dependency_injection/introduction.html"><strong>DependencyInjection</strong></a>, <a href="http://twig.sensiolabs.org/"><strong>Twig</strong></a> e <a href="http://symfony.com/it/doc/current/components/http_foundation/index.html"><strong>HttpFoundation</strong></a>.
-È stato interessante notare come i componenti di Symfony fossero altamente disaccoppiati e, per questo, introducibili sequenzialmente e senza grandi difficoltà.
-Il miglioramento del design ha permesso di implementare alcuni test unitari per la nuova funzionalità. Si è visto quindi come configurare l&rsquo;ambiente e i tool per il testing.
-La struttura del workshop era particolare: ciascun macro-task era diviso in molti sotto-task. Il repository Git del progetto già conteneva, in branch diversi, tutte le soluzioni. Ciò ha consentito di evitare ritardi causati dai partecipanti che non riuscivano, per vari problemi, a seguire l&rsquo;avanzamento della sessione.</p>
-
-<p><a name="frontend"></a></p>
-
+Logica di business, data retrieval e viste erano mescolate in un&rsquo;applicazione che non era dotata nemmeno di un singolo <a href="https://it.wikipedia.org/wiki/Front_Controller_pattern">front-controller</a>.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="frontend-as-design-to-backend-middleware-or-some-js-concepts-that-any-good-php-dev-should-know-damir-brekalo">Frontend as design to backend middleware or some JS concepts that any good PHP dev should know (Damir Brekalo)</h3>
-
 <p>Purtroppo, data la scarsa presenza di partecipanti con competenze avanzate di JavaScript, la presentazione ha trattato argomenti abbastanza basilari rispetto a quelli pianificati.
 Si è visto come applicare il <a href="https://it.wikipedia.org/wiki/Programmazione_orientata_agli_oggetti">paradigma object oriented</a> in JavaScript con numerosi confronti di funzionalità e sintassi tra JS e PHP che hanno consentito a tutti di comprendere l&rsquo;argomento.
 La seconda parte del workshop ha analizzato e proposto soluzioni al problema dell&rsquo;import di librerie di terze parti in applicazioni complesse.
 È stato analizzato un progetto che implementava una <a href="https://en.wikipedia.org/wiki/Single-page_application">single page application</a> senza alcun uso di framework. Essa era soltanto una composizione di più componenti eterogenei tra di loro.
 Ciò ha permesso di apprendere che <strong>la scelta affrettata di framework complessi non è sempre la migliore</strong>. Talvolta può essere più produttivo ricorrere a componenti specifici per il problema da risolvere.
 In generale il workshop è stato interessante ma, rispetto agli altri, conteneva molto meno lavoro pratico.</p>
-
-<p><a name="debate"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="celebrity-debate">Celebrity debate</h3>
-
 <p>È stata una gara scherzosa tra i due partecipanti Ryan Weaver e Bernhard Schussek nel sostenere le loro opinioni su molteplici domande, alcune delle quali anche stabilite dal pubblico.
 Alcuni esempi di domande: Mac vs Linux, <a href="http://engineering.facile.it/programmazione-funzionale-perche-preoccuparsi/">Functional programming</a> vs <a href="https://it.wikipedia.org/wiki/Programmazione_orientata_agli_oggetti">OOP</a>, Tea vs Coffee, USA vs Europe
 Il vincitore Ryan Weaver è stato selezionato dal pubblico in base ad un conteggio di consensi.
-È stato un momento divertente con argomenti molto vari anche al di fuori dell&rsquo;ambito informatico.
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/symfony">@symfony</a> vs <a href="https://twitter.com/laravelphp">@laravelphp</a> debate on <a href="https://twitter.com/hashtag/ezsummer?src=hash">#ezsummer</a> <a href="https://twitter.com/hashtag/phpsummer?src=hash">#phpsummer</a> wanna bet on the winner? :-) <a href="http://t.co/f7HXqkoLXU">pic.twitter.com/f7HXqkoLXU</a></p>&mdash; Igor Vrdoljak (@ivrdoljak) <a href="https://twitter.com/ivrdoljak/status/636571466104967168">August 26, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
-
-<p><a name="giovedi"></a></p>
-
+È stato un momento divertente con argomenti molto vari anche al di fuori dell&rsquo;ambito informatico.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h1 id="giovedì-27-agosto">Giovedì 27 agosto</h1>
-
-<p><a name="coupling"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="loose-coupling-in-practice-jakub-zalas">Loose coupling in practice (Jakub Zalas)</h3>
-
-<p>L&rsquo;obiettivo della sessione era disaccoppiare l&rsquo;applicazione <a href="http://symfony.com/blog/introducing-the-symfony-demo-application">Symfony Demo</a> da <a href="http://www.doctrine-project.org/">Doctrine ORM/DBAL</a> e di consentire lo switch ad altre strategie di storage.
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Quite a crowd at <a href="https://twitter.com/jakub_zalas">@jakub_zalas</a> workshop on loose coupling with <a href="https://twitter.com/symfony">@Symfony</a>! <a href="https://twitter.com/PHPSummerCamp">@PHPSummerCamp</a> <a href="http://t.co/KnvqaafRfG">pic.twitter.com/KnvqaafRfG</a></p>&mdash; Marek ✈ (@super_marek) <a href="https://twitter.com/super_marek/status/636805256987455488">August 27, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-Nonostante il sistema fosse un semplice gestionale per articoli di blog, il lavoro si è subito rilevato molto più lungo e complesso del previsto.
-È stato interessante notare come Symfony full-stack abbia numerosi legami &ldquo;nascosti&rdquo; con Doctrine. Esempi sono il componente <a href="http://symfony.com/it/doc/current/book/security.html">Security</a> e il <a href="http://symfony.com/it/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html">ParamConverter</a>.
-Si è iniziato nel creare i <strong>repository as services</strong> in modo da consentire la rimozione di qualsiasi riferimento a Doctrine nei controller.
-Successivamente sono stati realizzate delle classi ad hoc per i componenti: Security (definizione esplicita dallo UserProvider) e ParamConverter.
-In seguito è stato richiesto di implementare una nuova strategia di storage utilizzando <a href="http://php.net/manual/en/book.pdo.php">PDO</a> e <a href="https://it.wikipedia.org/wiki/Structured_Query_Language">SQL</a>.
-Per questo task è stato interessante notare l&rsquo;uso frequente del design pattern <a href="https://it.wikipedia.org/wiki/Adapter_pattern">Adapter</a> nonché la definizione di <strong>alias di servizi</strong> per consentire di spostarsi da una modalità di storage all&rsquo;altra senza troppe modifiche.
-L&rsquo;applicazione comprendeva già numerosi test che consentivano di verificare il corretto funzionamento dell&rsquo;applicazione anche su differenti driver di persistenza.
-Successivamente è stato richiesto di utilizzare il <a href="http://doctrine-orm.readthedocs.org/en/latest/reference/caching.html">componente cache di Doctrine</a> per introdurre un layer di ottimizzazione tra applicazione e persistenza PDO.
-A causa del poco tempo rimasto non è stato possibile affrontare l&rsquo;ultimo task: implementare una nuova astrazione di storage su <a href="https://www.elastic.co/">elastic-search</a>.
-Anche in questo workshop le soluzioni ai problemi erano già presenti nel repository Git. Ciò ha consentito di continuare e approfondire l&rsquo;argomento anche dopo il termine della sessione.</p>
-
-<p><a name="puli"></a></p>
-
+<p>L&rsquo;obiettivo della sessione era disaccoppiare l&rsquo;applicazione <a href="http://symfony.com/blog/introducing-the-symfony-demo-application">Symfony Demo</a> da <a href="http://www.doctrine-project.org/">Doctrine ORM/DBAL</a> e di consentire lo switch ad altre strategie di storage.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="next-gen-package-development-with-puli-bernhard-schussek">Next-gen package development with Puli (Bernhard Schussek)</h3>
-
 <p>Questa sessione è stata divisa in due parti. La prima è una presentazione del <strong>progetto <a href="http://docs.puli.io/en/latest/">Puli</a></strong>. Sono state illustrate le funzionalità dell&rsquo;applicazione e i problemi che essa risolve.
-Puli è un gestore della configurazione di pacchetti che mira a rendere <strong>le librerie PHP più omogenee e più semplici da configurare</strong>. Esso, per funzionare, usa <a href="https://getcomposer.org/">Composer</a> che continua a gestire il package retrieval e l&rsquo;autoloading.
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Finally learning about <a href="https://twitter.com/hashtag/Puli?src=hash">#Puli</a> from <a href="https://twitter.com/webmozart">@webmozart</a>. Great stuff! <a href="https://twitter.com/hashtag/phpsummer?src=hash">#phpsummer</a> <a href="http://t.co/l72oOuwtjY">pic.twitter.com/l72oOuwtjY</a></p>&mdash; Paweł Jędrzejewski (@pjedrzejewski) <a href="https://twitter.com/pjedrzejewski/status/636889138252357632">August 27, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-Puli consente l&rsquo;accesso alle risorse di un pacchetto in modo semplice e veloce. Le risorse qualitativamente possono essere molto varie: immagini, template, file per la localizzazione, fogli di stile, basi di dati, ecc.
-Puli introduce il concetto di <strong>percorso virtuale</strong>, un nuovo standard per l&rsquo;accesso alle risorse condivise da uno o più pacchetti.
-Ciascun componente Puli definisce dei mappings che consentono di tradurre un percorso virtuale in percorso reale.
-Questo significa che è possibile richiedere a Puli una risorsa locata virtualmente in <code>/vendorName/projectName/config/file.xml</code> senza conoscere esattamente dove tale risorsa sarà collocata nel file system.
-Puli offre inoltre la possibilità di modificare alcune risorse tramite il meccanismo dell&rsquo;<strong>overriding</strong>.
-Similmente al composer.json, la configurazione di Puli risiede nel file puli.json.
-Puli è integrabile con altre applicazioni per l&rsquo;installazione e l&rsquo;aggiornamento degli assets.
-La seconda parte della presentazione è stata dedicata alla pratica.
-L&rsquo;obbiettivo era usare alcuni pacchetti Puli compatibili su un&rsquo;applicazione <a href="http://silex.sensiolabs.org/">Silex</a> per concludere lo sviluppo varie funzionalità.
-È stato possibile vedere come Puli sia integrabile con altri tool per la gestione degli assets (nell&rsquo;esercitazione è stato usato <a href="http://gulpjs.com/">Gulp</a>).
-Il format del workshop è stato diverso dal solito: ogni partecipante aveva a disposizione l&rsquo;elenco dei problemi da risolvere con i relativi tutorial.
-Ciò a consentito ai partecipanti di proseguire in autonomia senza ritardi collettivi.</p>
-
-<p><a name="unconference"></a></p>
-
+Puli è un gestore della configurazione di pacchetti che mira a rendere <strong>le librerie PHP più omogenee e più semplici da configurare</strong>. Esso, per funzionare, usa <a href="https://getcomposer.org/">Composer</a> che continua a gestire il package retrieval e l&rsquo;autoloading.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="unconference">Unconference</h3>
-
 <p>A fine giornata si è svolta la sessione &ldquo;unconference&rdquo;.
 Sono stati trattati diversi argomenti interessanti, tra cui:</p>
-
 <ul>
 <li><a href="https://it.wikipedia.org/wiki/HTTP/2"><strong>HTTP 2</strong></a> e gestione migliorata della rete;</li>
 <li>analisi delle strategie per consumer di <a href="https://en.wikipedia.org/wiki/Message_queue"><strong>code di messaggi</strong></a>;</li>
 <li><a href="https://www.docker.com/"><strong>Docker</strong></a> per eseguire applicazioni desktop dotate di GUI.</li>
 </ul>
-
-<p><a name="venerdi"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h1 id="venerdì-28-agosto">Venerdì 28 agosto</h1>
-
-<p><a name="profiling"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="profiling-php-apps-nicolas-grekas">Profiling PHP Apps (Nicolas Grekas)</h3>
-
 <p>Una prima presentazione ha illustrato i concetti fondamentali della <a href="https://en.wikipedia.org/wiki/Profiling_(computer_programming)"><strong>profilazione</strong></a>.
 Sono state esaminate le tecniche principali di collezione delle informazioni: <a href="https://en.wikipedia.org/wiki/Hooking"><strong>function hooks</strong></a> e <strong>sampling</strong>, così come diversi tool per la profilazione: <a href="http://xdebug.org/">XDebug</a>, <a href="http://xhprof.io/">Xhprof</a> e <a href="http://newrelic.com/">New Relic</a>.
 Prove pratiche con questi tool hanno consentito di evidenziare le loro peculiarità e differenze. È stato interessante notare, ad esempio, l&rsquo;accuratezza e la semplicità delle informazioni fornite dalla libreria Xhprof rispetto ai concorrenti.
@@ -591,40 +505,16 @@ In seguito si è discusso su come individuare i punti critici dell&rsquo;applica
 Ad esempio si è visto che un <strong>autoloader non correttamente ottimizzato</strong> rallenta significamente l&rsquo;applicazione (sia pensi alla generazione dell&rsquo;autoload non ottimizzato di Composer).
 Le attività di Input/Output superflue causano rallentamenti, esempi sono le scritture sui <strong>log troppo verbosi</strong>.
 È stato un workshop davvero completo facilmente comprensibile anche dai principianti della profilazione.</p>
-
-<p><a name="symfony3"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="migrating-to-symfony-3-nicolas-grekas">Migrating to Symfony 3 (Nicolas Grekas)</h3>
-
-<p>Questo workshop ha consentito di apprendere la <strong>roadmap a lungo termine del framework Symfony</strong>.
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">on the way to symfony 3 at <a href="https://twitter.com/hashtag/phpsummer?src=hash">#phpsummer</a> with <a href="https://twitter.com/nicolasgrekas">@nicolasgrekas</a> <a href="http://t.co/vijn5ttzPG">pic.twitter.com/vijn5ttzPG</a></p>&mdash; dbu (@dbu) <a href="https://twitter.com/dbu/status/637233201635835904">August 28, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-È stato annunciato che l&rsquo;ultima versione LTS di Symfony 2 sarà <strong>la versione 2.8 completamente compatibile, quanto a funzionalità, con la versione 3.0</strong>.
-È interessante notare che non ci saranno cambiamenti stravolgenti per Symfony vesione 3.0: essa infatti rimuove soltanto le funzionalità deprecate nelle versioni precedenti.
-Sono stati alresì spiegati i concetti di <a href="http://engineering.facile.it/git-flow-semantic-versioning/">versionamento semantico</a> adottati dal framework a partire dalla versione 2.3.
-L&rsquo;obiettivo della sessione pratica è stato migrare l&rsquo;applicazione <em>Symfony Demo</em> alla versione Symfony 3.
-Sono state esaminate diverse strategie per rilevare le deprecation: debug toolbar, file di log, fallimenti di test.
-È stato inoltre annunciato che sarà presto possibile <strong>definire un servizio come deprecato nel service container</strong>.
-Ciò consente all&rsquo;utente di rilevare subito eventuali utilizzi non corretti già durante la compilazione del container.</p>
-
-<p><a name="experts"></a></p>
-
+<p>Questo workshop ha consentito di apprendere la <strong>roadmap a lungo termine del framework Symfony</strong>.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h3 id="meet-the-experts">Meet the experts</h3>
-
-<p>Diversi gruppi di persone si sono riunite per parlare di molteplici argomenti.
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Ecommerce on Symfony roundtable at <a href="https://twitter.com/PHPSummerCamp">@PHPSummerCamp</a> <a href="http://t.co/RD8ueJX7Nj">pic.twitter.com/RD8ueJX7Nj</a></p>&mdash; Ivo Lukač (@ilukac) <a href="https://twitter.com/ilukac/status/637288188231450625">August 28, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-Ciascun gruppo comprendeva, tra gli altri partecipanti, un paio di persone esperte dell&rsquo;argomento per moderare la discussione.
-Io ho partecipato alla discussione di: <a href="https://it.wikipedia.org/wiki/Commercio_elettronico"><strong>E-commerce</strong></a> su Symfony (con particolare riguardo a <a href="http://sylius.org/">Sylius</a>), <a href="https://it.wikipedia.org/wiki/Collaudo_del_software"><strong>software testing</strong></a> e <strong><a href="https://it.wikipedia.org/wiki/Application_programming_interface">API</a> design</strong>.
-È stato interessante discutere su come progettare architetture orientate a microservizi cercando di definire API stabili e solide.
-È emerso anche che le <strong>applicazioni monolitiche</strong> evolvono, a lungo termine, verso <strong>design complessi</strong> che hanno frequenti <strong>problemi di manutenibilità</strong>.
-A tal proposito si parlava di build CI lente, deploy lento e isolamento delle responsabilità alquanto complessa.
-Un confronto tra esperti, il miglior modo per chiudere la giornata.</p>
-
-<p><a name="conclusione"></a></p>
-
+<p>Diversi gruppi di persone si sono riunite per parlare di molteplici argomenti.</p>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h1 id="conclusione">Conclusione</h1>
-
 <p>Il PhpSummerCamp è un evento particolare: presentazioni, discussioni, workshop e attività extra lo hanno reso interessante e divertente allo stesso tempo.
 Tesi rafforzata dalla continua affluenza di sviluppatori che ogni anno non vogliono perdersi tale evento.
 Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Php e EzPublish.</p>
@@ -668,7 +558,7 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -964,7 +854,7 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -983,13 +873,11 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1002,11 +890,13 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1025,7 +915,7 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1056,7 +946,7 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1099,13 +989,11 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1114,11 +1002,13 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1161,14 +1051,12 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1180,19 +1068,19 @@ Il SummerCamp è il luogo ideale per chi vuole sentirsi parte delle comunità Ph
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

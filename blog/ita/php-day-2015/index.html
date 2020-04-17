@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -48,33 +48,16 @@ In questo breve articolo vorremmo citare quelli che in qualche maniera ci hanno 
 In questo breve articolo vorremmo citare quelli che in qualche maniera ci hanno colpito, per motivi tecnici e non, per dare l&rsquo;opportunità a chi non ha potuto partecipare di sapere qualcosa di più, o per dare un assaggio della conferenza a chi non ha mai partecipato a qualcosa del genere e, speriamo, invogliarlo a far parte della community!" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/php-day-2015/" />
-
-
-
-<meta property="article:published_time" content="2015-05-19T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-05-19T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-05-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-05-19T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Facile.it devs @ PHP Day 2015">
+        <meta itemprop="name" content="Facile.it devs @ PHP Day 2015">
 <meta itemprop="description" content="Anche quest&rsquo;anno si è svolto il PHP Day a Verona, il 15 e 16 maggio. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.
 In questo breve articolo vorremmo citare quelli che in qualche maniera ci hanno colpito, per motivi tecnici e non, per dare l&rsquo;opportunità a chi non ha potuto partecipare di sapere qualcosa di più, o per dare un assaggio della conferenza a chi non ha mai partecipato a qualcosa del genere e, speriamo, invogliarlo a far parte della community!">
-
-
 <meta itemprop="datePublished" content="2015-05-19T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-05-19T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1174">
@@ -82,7 +65,6 @@ In questo breve articolo vorremmo citare quelli che in qualche maniera ci hanno 
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -111,14 +93,17 @@ In questo breve articolo vorremmo citare quelli che in qualche maniera ci hanno 
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -419,18 +404,11 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>Anche quest&rsquo;anno si è svolto il <strong><a href="http://2015.phpday.it/">PHP Day</a> a Verona, il 15 e 16 maggio</strong>. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.</p>
-
+    <p>Anche quest&rsquo;anno si è svolto il <strong><a href="http://2015.phpday.it/">PHP Day</a> a Verona, il 15 e 16 maggio</strong>. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.</p>
 <p>In questo breve articolo vorremmo citare quelli che in qualche maniera <strong>ci hanno colpito</strong>, per motivi tecnici e non, per dare l&rsquo;opportunità a chi non ha potuto partecipare di sapere qualcosa di più, o per dare <strong>un assaggio della conferenza</strong> a chi non ha mai partecipato a qualcosa del genere e, speriamo, invogliarlo a far parte della community!</p>
-
 <p>Ovviamente non pretendiamo di fare una recensione, né quanto meno una classifica&hellip; I talk che abbiamo scelto di citare sono stati scelti per puro <strong>gusto personale</strong>, o ci hanno semplicemente colpito perché si avvicinavano di più alla nostra esperienza di sviluppatori, o perché toccavano più da vicino lo <strong>stack tecnologico</strong> da noi utilizzato.</p>
-
 <p>I talk sono in ordine cronologico. Buona lettura!</p>
-
 <h4 id="indice">Indice</h4>
-
 <ul>
 <li><a href="#prophecy">PHP object mocking framework world: let&rsquo;s compare Prophecy and PHPUnit</a></li>
 <li><a href="#containerize">Containerize your PHP</a></li>
@@ -439,145 +417,92 @@ ga('send', 'pageview');
 <li><a href="#php7-data-structures">PHP Data Structures (and the impact of PHP 7 on them)</a></li>
 <li><a href="#doctrine">Doctrine ORM Good Practices and Tricks</a></li>
 </ul>
-
 <h6 id="keynotes">Keynotes</h6>
-
 <ul>
 <li><a href="#coderabbi">Talmudic Maxims to Maximize Your Growth as a Developer</a></li>
 <li><a href="#calevans">Down the Rabbit Hole: Lessons Learned combining Career and Community</a></li>
 <li><a href="#seldaek">Behind the Scenes of Maintaining an Open Source Project</a></li>
 </ul>
-
 <h1 id="talk-tecnici">Talk tecnici</h1>
-
-<p><a name="prophecy"></a></p>
-
-<h4 id="php-object-mocking-framework-world-let-s-compare-prophecy-and-phpunit">PHP object mocking framework world: let&rsquo;s compare Prophecy and PHPUnit</h4>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h4 id="php-object-mocking-framework-world-lets-compare-prophecy-and-phpunit">PHP object mocking framework world: let&rsquo;s compare Prophecy and PHPUnit</h4>
 <ul>
 <li>Sarah Khalil (<a href="http://twitter.com/saro0h">@saro0h</a>)</li>
 <li>Day 1 - 14:30 – 15:30 - track 1 (<a href="https://speakerdeck.com/saro0h/php-day-verona-2015-php-object-mocking-framework-world">slides</a>)</li>
 </ul>
-
-<iframe src="https://player.vimeo.com/video/134728681" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+<!-- raw HTML omitted -->
 <p>Una buona esposizione su <a href="https://github.com/phpspec/prophecy-phpunit">prophecy</a> la nuova tecnologia per effetuare mocking e stubbing. In questo talk sono state illustrate le API di prophecy e si è parlato di come questo strumento sarà sempre più integrato con phpunit (è già presente nella nuova versione 4.6) sino ad arrivare ad un completo rimpiazzo dei metodi nativi del famoso testing framework.</p>
-
 <p>Ricordatevi di aggiungere qualche altra parola (oltre a prophecy) chiave nelle vostre ricerche su google per evitare riferimenti biblici.</p>
-
-<p><a name="containerize"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="containerize-your-php">Containerize your PHP</h4>
-
 <ul>
 <li>Marek Jelen (<a href="http://twitter.com/marek_jelen">@marek_jelen</a>)</li>
 <li>Day 1 - 15:30 – 16:30 - track 2</li>
 </ul>
-
-<iframe src="https://player.vimeo.com/video/134728683" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+<!-- raw HTML omitted -->
 <p>Si è parlato tanto nelle Conferences dell&rsquo;ultimo anno di <strong>Docker e i container</strong> come strumento di sviluppo, ma questo talk si è rivelato interessante, spiegando come fosse possibile utilizzare i container <strong>come strumento di deploy</strong> e di creazione di immagini, in modo tale da contenere anche il sorgente del proprio progetto; abbiamo scoperto il tool <a href="http://github.com/openshift/source-to-image">Source to Image</a>, che permette di creare queste immagini in maniera personalizzata e automatizzata partendo dal proprio codice (e dal <code>composer.json</code>), e il progetto <a href="http://www.openshift.com/">Openshift</a>, portato avanti da RedHat.</p>
-
-<p><a name="varnish"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="going-crazy-with-symfony2-and-varnish">Going crazy with Symfony2 and Varnish</h4>
-
 <ul>
 <li>David De Boer</li>
 <li>Day 1 - 17:30 – 18:00 - track 1</li>
 </ul>
-
-<iframe src="https://player.vimeo.com/video/134814726" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+<!-- raw HTML omitted -->
 <p>Prima di ascoltare questo talk, pensavamo che la <strong>cache HTTP</strong> (e Varnish) fossero praticamente inutilizzabili in un <strong>ambito di sito non-pubblico</strong>, dove i contenuti vanno serviti (e variano in base) ad utenti sempre autenticati.</p>
-
 <p>Abbiamo scoperto il <a href="http://github.com/FriendsOfSymfony/FOSHttpCacheBundle">FOSHttpCacheBundle</a>, e il trucco che permette di fare caching anche di questo tipo di contenuti: Varnish prende il cookie e controlla la cache non in base a quello, ma in base ad un hash che viene fornito dall&rsquo;applicazione stessa tramite un altra chiamata; questo permette di <strong>mappare i contenuti cachati</strong> non sui singoli utenti, ma <strong>con logiche più ottimizzate</strong> (gruppi di utenti? set di permessi?) ed eventualmente più legate alla business logic dell&rsquo;applicazione stessa.</p>
-
-<p><a name="psr-7"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="hello-psr-7">Hello, PSR-7</h4>
-
 <ul>
 <li>Beau Simensen (<a href="http://www.twitter.com/beausimensen">@beausimensen</a>)</li>
 <li>Day 2 - 11:00 – 12:00 - track 2 (<a href="https://beau.io/talks/2015/05/16/hello-psr-7-phpday-2015/">slides</a>)</li>
 </ul>
-
-<iframe src="https://player.vimeo.com/video/134281520" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+<!-- raw HTML omitted -->
 <p>In questo talk abbiamo potuto conoscere da vicino la genesi dello <strong>standard PSR-7</strong> (di cui abbiamo già scritto in un <a href="http://engineering.facile.it/php-fig-standard-psr-7-http-message-interfaces/">altro articolo</a>), raccontata da una delle persone che hanno seguito da vicino e contribuito alla scrittura della proposta stessa.</p>
-
 <p>Lo standard sarà approvato a brevissimo (solo 3 giorni dopo il talk!) e molti aspettano di vedere cosa comporterà a livello di framework PHP.</p>
-
-<p><a name="php7-data-structures"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="php-data-structures-and-the-impact-of-php-7-on-them">PHP Data Structures (and the impact of PHP 7 on them)</h4>
-
 <ul>
 <li>Patrick Allaert (<a href="http://www.twitter.com/patrick_allaert">@patrick_allaert</a>)</li>
 <li>Day 2 - 12:00 – 13:00 - track 1 (<a href="http://www.slideshare.net/patrick.allaert/php-data-structures-and-the-impact-of-php-7-on-them-php-days-2015">slides</a>)</li>
 </ul>
-
-<iframe src="https://player.vimeo.com/video/134070469" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+<!-- raw HTML omitted -->
 <p>Questo talk, dal sapore molto tecnico, ci ha fatto addentrare negli internals degli <strong>array PHP</strong>, e in quanto siano talmente specializzati a far tutto, da essere <strong>inefficienti</strong> in moltissimi casi; abbiamo visto numerose <strong>alternative più specialistiche</strong> per i vari casi d&rsquo;uso (<a href="http://php.net/manual/en/class.splfixedarray.php">SplFixedArray</a>, <a href="http://php.net/manual/en/class.splqueue.php">SplQueue</a>, <a href="http://php.net/manual/en/class.splstack.php">SplStack</a>&hellip;); sfruttare gli uni piuttosto che gli altri impatta fortemente sulle <strong>prestazioni</strong> nei tempi e nell&rsquo;uso della memoria, e abbiamo visto nel dettaglio alcuni benchmark che mostrano come questi costi diminuiscono (spesso di gran lunga) <strong>tra PHP 5.6 e PHP 7</strong>.</p>
-
-<p><a name="doctrine"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="doctrine-orm-good-practices-and-tricks">Doctrine ORM Good Practices and Tricks</h4>
-
 <ul>
 <li>Marco Pivetta (<a href="http://www.twitter.com/Ocramius">@Ocramius</a>)</li>
 <li>Day 2 - 15:30 – 16:30 - track 1</li>
 </ul>
-
-<iframe src="https://player.vimeo.com/video/134178140" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-
+<!-- raw HTML omitted -->
 <p>Usiamo <strong>Doctrine</strong> tutti i giorni, ma questo talk, sebbene marcato come di livello <strong>beginner</strong>, si è rivelato molto interessante e fonte di numerose discussioni e <strong>riflessioni</strong> tra colleghi. Lo speaker è uno dei principali contributors al progetto <a href="https://github.com/doctrine/doctrine2">doctrine-orm</a>, e ci ha elencato una serie di <strong>best practices</strong>, partendo dal chiedersi se e quando è il caso di usare un ORM, passando poi a problemi quali l&rsquo;uso e l&rsquo;implementazione di entità, la loro consistenza, l&rsquo;evitare di usare setter brutali o di esporre le ArrayCollection che rappresentano le nostre relazioni.</p>
-
 <h1 id="keynotes-1">Keynotes</h1>
-
 <p>Abbiamo voluto citare in questo articolo anche i <strong>3 keynote</strong> della conferenza: sono stati tutti piuttosto interessanti, profondamente motivazionali e coinvolgenti.</p>
-
-<p><a name="coderabbi"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="talmudic-maxims-to-maximize-your-growth-as-a-developer">Talmudic Maxims to Maximize Your Growth as a Developer</h4>
-
 <ul>
 <li>Yitzchok Willroth (<a href="http://www.twitter.com/coderabbi">@coderabbi</a>)</li>
 <li>Day 1 - keynote di apertura</li>
 </ul>
-
 <p>Yitz, studente rabbinico poi passato alla programmazione, molto famoso nella community PHP, ci ha spinto a considerare alcuni suoi consigli su come poterci <strong>migliorare come sviluppatori</strong> e come membri della community stessa: cercare e coltivare un mentore, essere pazienti ed accettare i consigli, aiutare gli altri per ripagare tutto questo, partecipare nell&rsquo;open source&hellip;</p>
-
 <p>Personalmente, mi ha anche fatto scoprire tre siti piuttosto interessanti:</p>
-
 <ul>
 <li><a href="http://phpmentoring.org/">PHP Mentoring</a> e <a href="http://hackpledge.org">Hackpledge</a>, per chi è in cerca di un <strong>mentore</strong> o vuole diventarlo per aiutare altri a diventare programmatori migliori</li>
-<li><a href="http://up-for-grabs.net/">Up for grabs</a>, un sito raccoglitore di <strong>issue su GitHub *semplici</strong>*, un ottimo punto di inizio per chi vorrebbe partecipare a progetti open source, ma non sa da dove cominciare</li>
+<li><a href="http://up-for-grabs.net/">Up for grabs</a>, un sito raccoglitore di <strong>issue su GitHub <em>semplici</em></strong>, un ottimo punto di inizio per chi vorrebbe partecipare a progetti open source, ma non sa da dove cominciare</li>
 </ul>
-
-<p><a name="calevans"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="down-the-rabbit-hole-lessons-learned-combining-career-and-community">Down the Rabbit Hole: Lessons Learned combining Career and Community</h4>
-
 <ul>
 <li>Cal Evans (<a href="http://www.twitter.com/calevans">@CalEvans</a>)</li>
-<li>Day 2 - keynote di apertura<br /></li>
+<li>Day 2 - keynote di apertura</li>
 </ul>
-
 <p>Cal è il community manager (ma non chiamatelo così!) per Zend, e ci ha raccontato con estrema passione, qualche lacrima e in maniera molto divertente la sua storia, come è nata la sua carriera di programmatore e come il suo percorso si è intrecciato con la community PHP e il mondo dell&rsquo;open source.</p>
-
 <p>Tutto questo per spiegarci come <strong>far parte della community è un valore</strong> importante per tutti ma soprattutto per noi stessi, e come la nostra sia così grande, forte e basata su uno <strong>spirito positivo</strong>.</p>
-
-<p><a name="seldaek"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h4 id="behind-the-scenes-of-maintaining-an-open-source-project">Behind the Scenes of Maintaining an Open Source Project</h4>
-
 <ul>
 <li>Jordi Boggiano (<a href="http://twitter.com/seldaek">@seldaek</a>)</li>
 <li>Day 2 - keynote di chiusura</li>
 </ul>
-
 <p>Jordi è il creatore e mantainer di <a href="https://getcomposer.org/">Composer</a>, uno dei principali tool per un programmatore PHP. Nel suo keynote ci ha raccontato con franchezza la sua esperienza in prima persona nel <strong>gestire un progetto open source</strong> così vasto e popolare, come spesso sia difficile accontentare tutti, e alcuni retroscena e dettagli di qualche curiosa pull request.</p>
 
   </div>
@@ -619,7 +544,7 @@ ga('send', 'pageview');
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -915,7 +840,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -934,13 +859,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -953,11 +876,13 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -976,7 +901,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1007,7 +932,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1050,13 +975,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1065,11 +988,13 @@ ga('send', 'pageview');
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1112,14 +1037,12 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1131,19 +1054,19 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

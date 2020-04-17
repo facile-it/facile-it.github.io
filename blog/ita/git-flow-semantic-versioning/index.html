@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -50,34 +50,17 @@ Questo flusso è concepito per sfruttare al meglio le potenzialità del software
 Il flusso descritto in GIT flow è finalizzato a mantenere una storia implementativa pulita, dove un rilascio comunica a tutti gli utilizzatori la presenza di una nuova versione del prodotto, definita da un determinato changelog composto da nuove caratteristiche e correzioni." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/git-flow-semantic-versioning/" />
-
-
-
-<meta property="article:published_time" content="2015-06-16T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-06-16T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-06-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-06-16T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="GIT flow e versionamento semantico">
+        <meta itemprop="name" content="GIT flow e versionamento semantico">
 <meta itemprop="description" content="GIT flow è un flusso di sviluppo, ideato da Vincent Driessen, che descrive un modello di diramazione, (branching), ben preciso costruito intorno al concetto di release software.
 Questo flusso è concepito per sfruttare al meglio le potenzialità del software di versionamento GIT, ma affinità concettuali possono essere utili anche per la gestione del lavoro con altri software dediti alla medesima funzionalità.
 Il flusso descritto in GIT flow è finalizzato a mantenere una storia implementativa pulita, dove un rilascio comunica a tutti gli utilizzatori la presenza di una nuova versione del prodotto, definita da un determinato changelog composto da nuove caratteristiche e correzioni.">
-
-
 <meta itemprop="datePublished" content="2015-06-16T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-06-16T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1521">
@@ -85,7 +68,6 @@ Il flusso descritto in GIT flow è finalizzato a mantenere una storia implementa
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -114,14 +96,17 @@ Il flusso descritto in GIT flow è finalizzato a mantenere una storia implementa
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -422,144 +407,85 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>GIT flow è un <strong>flusso di sviluppo</strong>, ideato da <a href="http://nvie.com/about/">Vincent Driessen</a>, che descrive un modello di diramazione, (<a href="http://git-scm.com/docs/git-branch">branching</a>), ben preciso costruito intorno al concetto di release software.</p>
-
+    <p>GIT flow è un <strong>flusso di sviluppo</strong>, ideato da <a href="http://nvie.com/about/">Vincent Driessen</a>, che descrive un modello di diramazione, (<a href="http://git-scm.com/docs/git-branch">branching</a>), ben preciso costruito intorno al concetto di release software.</p>
 <p>Questo flusso è concepito per sfruttare al meglio le potenzialità del software di versionamento <a href="https://git-scm.com/">GIT</a>, ma affinità concettuali possono essere utili anche per la gestione del lavoro con altri software dediti alla medesima funzionalità.</p>
-
 <p>Il flusso descritto in GIT flow è finalizzato a mantenere una storia implementativa pulita, dove un rilascio comunica a tutti gli utilizzatori la presenza di una <strong>nuova versione</strong> del prodotto, definita da un determinato <em>changelog</em> composto da nuove caratteristiche e correzioni.</p>
-
 <p>I <strong>vantaggi</strong> derivanti da questo approccio al versionamento (<a href="https://en.wikipedia.org/wiki/Software_versioning">software versioning</a>), sono anzitutto quello di <strong>tenere una storia pulita</strong> e leggibile, il che faciliterà la vita a chi decide di usare il nostro software, ma anche quello di poter <strong>concentrare e diversificare gli sforzi</strong> del team di sviluppo sulle particolari fasi: implementazione, correzione, pulizia, rilascio, concedendo a ciascuna di esse determinati spazi all&rsquo;interno del repository e determinate tempistiche all&rsquo;interno del flusso.</p>
-
 <p>In questo articolo descriveremo git flow e uniremo l&rsquo;adozione di questo flusso a quello di una strategia di versionamento semantico (semantic versioning) così come proposto e descritta da <a href="http://tom.preston-werner.com/">Tom Preston-Werner</a>.</p>
-
 <p>Come vedremo in seguito il punto di incontro fra git e il versionamento semantico ha la sua chiave di volta nella creazione di tag appropriate sulle commit dei nostri rami o <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">tagging</a>.</p>
-
 <p>Inoltre è bene tenere a mente che diversi software di gestione delle dipendenze basano il proprio flusso operativo sul presupposto una strategia di versionamento semantico simile a quella che andremo a descrivere, come ad esempio <a href="https://getcomposer.org">composer</a>.</p>
-
 <h3 id="branch-storici">Branch storici</h3>
-
 <p>Anzitutto questo modello di workflow prevede la presenza di ben due master branch, <strong>&ldquo;dev&rdquo;</strong> (o &ldquo;develop&rdquo;) utilizzato per lo sviluppo, ed il buon vecchio <strong>&ldquo;master&rdquo;</strong> per i rilasci ufficiali.</p>
-
 <p>Questi due branch assolvono il compito di &ldquo;historical branch&rdquo;, cioè essi devono detenere la storia pulita del progetto, a prescindere dagli sviluppi di nuove feature e hotfix, che altrimenti confluirebbero senza filtri sul ramo principale, rendendo meno comprensibile la storia del progetto e quindi più difficoltose operazioni di reversione (<a href="https://en.wikipedia.org/wiki/Reversion_%28software_development%29">revert</a>) a stati precedenti.</p>
-
 <h3 id="branch-di-funzionalità">Branch di funzionalità</h3>
-
 <p>Un branch di funzionalità, ovvero un <strong>&ldquo;feature branch&rdquo;</strong>, aggiunge una nuova funzionalità (<a href="https://en.wikipedia.org/wiki/Software_feature">feature</a>) al software.
 Nel modello proposto dal GIT flow, questi branch <strong>devono sempre essere derivati dal branch &ldquo;develop&rdquo;</strong> e rappresentano una <strong>feature</strong>, ovvero una nuova funzionalità che si intende aggiungere al software.</p>
-
-<p><img src="/images/git-flow-semantic-versioning/feature.png" alt="Git Flow - Feature branch" /></p>
-
+<p><img src="/images/git-flow-semantic-versioning/feature.png" alt="Git Flow - Feature branch"></p>
 <p>Questo branch conterrà tutti i pezzi di storia, le commit, relative alla funzionalità implementata.</p>
-
 <p>Durante lo sviluppo di questi rami non è strettamente necessario mantenere una storia delle versioni pulite o usare particolari nomenclature per le varie commit (pratica che comunque potrebbe avere i suoi vantaggi come vedremo nell&rsquo;ultimo paragrafo), in quanto prima di riportare il branch su develop, &ldquo;appiattiremo&rdquo; la storia del branch attraverso un&rsquo;operazione di <strong><a href="http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html">squash</a> delle commit</strong>.</p>
-
 <p>In questo modo la storia del branch di sviluppo risulterà pulita, con <strong>una sola commit</strong>, che conterrà solo l&rsquo;informazione relativa all&rsquo;aggiunta della nuova funzionalità.</p>
-
 <p>Dopo averlo riportato su develop, è possibile rimuovere il feature branch dal repository:</p>
-
 <p><code>$&gt; git branch -D feat-nomedelfeaturebranch</code></p>
-
 <p>In base alle dimensioni del team è possibile mantenere <strong>più feature branch contemporaneamente</strong>, a patto di riportarli correttamente e in tempi auspicabilmente brevi sul branch di sviluppo.
 Di norma un singolo sviluppatore si concentra sul rilascio di una feature per volta.</p>
-
 <h3 id="branch-di-rilascio">Branch di rilascio</h3>
-
 <p>Quando il ramo di sviluppo (develop) contiene abbastanza feature per un <strong>rilascio</strong> (o in base a qualsiasi altro tipo di scadenza prefissata), da questi viene derivato un nuovo branch detto di rilascio, o <strong><a href="http://producingoss.com/en/release-branches.html">release branch</a></strong>.</p>
-
-<p>È buona norma distinguere questi rami con un nome significativo e consistente, ad esempio possono tutti iniziare con il prefisso &ldquo;release-&rdquo;.</p>
-
+<p>È buona norma distinguere questi rami con un nome significativo e consistente, ad esempio possono tutti iniziare con il prefisso &ldquo;release-&quot;.</p>
 <p>A questo punto dello sviluppo non possono essere più aggiunte feature e le uniche aggiunte possibili possono essere quelle di bug fixing e documentazione.</p>
-
-<p><img src="/images/git-flow-semantic-versioning/release-1.png" alt="" /></p>
-
+<p><img src="/images/git-flow-semantic-versioning/release-1.png" alt=""></p>
 <p>Il team si concentrerà sull&rsquo;obiettivo di riportare su master la prossima release
 quindi non verranno creati altri branch di funzionalità in quanto in questa fase l&rsquo;obiettivo principale è quello di rilasciare.</p>
-
 <p>Quando il ramo di rilascio sarà maturo e testato, a questo punto verrà eseguita  l’operazione di merge sul branch “master”, contrassegnandola con un’opportuna <a href="https://git-scm.com/book/en/v2/Git-Basics-Tagging">tag</a>, che ne indichi il versionamento.</p>
-
 <p>Come per il feature branch, la storia completa dalla nascita alla maturazione di questo ramo dovrebbe essere trasparente per i branch storici, quindi anche qui andremo ad operare un&rsquo;operazione di squash.</p>
-
 <p>Anche durante il ciclo di vita di questi rami, è buona pratica usare nomenclature particolari per i tag delle commit, ma non indispensabile: vedremo questo concetto più avanti nell&rsquo;ultimo paragrafo.</p>
-
 <p>Allo stesso modo il branch di rilascio verrà eseguita indietro anche sul branch “develop”, tralasciando l&rsquo;aggiunta dei tag di versione.</p>
-
 <p>Una volta mergiato con i branch storici, il branch di release non ha più motivo di esistere e sarebbe opportuno cancellarlo.</p>
-
 <h3 id="branch-di-manutenzione">Branch di manutenzione</h3>
-
 <p>Una migliore organizzazione dei rilasci non scongiura sicuramente l’occorrenza di problemi da risolvere con estrema urgenza.
 In questo caso, e solo in questo caso, è possibile derivare (avviare un fork) direttamente da master un branch di manutenzione, contenente la fix necessaria a risolvere il problema insorto.</p>
-
-<p><img src="/images/git-flow-semantic-versioning/hotfix-2.png" alt="Mantainance branch" /></p>
-
+<p><img src="/images/git-flow-semantic-versioning/hotfix-2.png" alt="Mantainance branch"></p>
 <p>È buona norma inoltre distinguere questi branch con un nome significativo e consistente, ad esempio possono tutti iniziare con il prefisso “hotfix-”.</p>
-
 <p>Tale branch sarà ovviamente riportato su “master” il più presto possibile, ed in seguito anche su “develop” per mantenere la situazione dei due branch storici allineata.</p>
-
 <p>Come nel caso dei branch di rilascio, qundo un branch di manutenzione viene riportato su master, il tag di master verrà contrassegnato appropriatamente.</p>
-
 <h3 id="versionamento-semantico">Versionamento semantico</h3>
-
 <p>Il versionamento semantico (semantic versioning) è un semplice schema di denominazione dei rilasci che ruota attorno a tre numeri: major, minor e patch.</p>
-
-<p><img src="/images/git-flow-semantic-versioning/alltogheter.png" alt="" /></p>
-
+<p><img src="/images/git-flow-semantic-versioning/alltogheter.png" alt=""></p>
 <p>Il formato prevede la concatenazione di questi tre numeri attraverso la notazione punto.
 Ad es: 1.1.2, indica major version: 1, minor version: 1 e patch: 2.</p>
-
 <p>Riportato sullo schema prima descritto nel GIT flow, i tre numeri di versionamento  saranno le tag dei branch.</p>
-
 <p>In pratica:</p>
-
 <ul>
 <li>Se abbiamo rilasciato una hotfix, che sostanzialmente non va ad intaccare le modalità di utilizzo del codice, dovremmo andare a incrementare il numero di <strong>patch</strong>.</li>
 <li>Se abbiamo implementato una modifica minore, spesso l&rsquo;aggiunta di una feature che non pregiudica la retrocompatibilità del codice, andremo a incrementare il numero di <strong>minor</strong> versioning.</li>
 <li>Rilasci più consistenti che cambiano in maniera apprezzabile il funzionamento del codice andranno a incrementare il numero di <strong>major</strong> versioning</li>
 </ul>
-
 <p>Può essere inoltre indicato un <strong>suffisso di build</strong>, ad esempio una sequenza alfabetica in linguaggio naturale, seguita da un numero incrementale.</p>
-
 <p>Ad es:</p>
-
 <ul>
 <li>1.1.2-snapshot20150602, indica una snapshot di un feature branch di 1.1.2, ovvero una &ldquo;fotografia&rdquo; specifica dello sviluppo di una feature</li>
 <li>1.1.2-rc1, indica una release candidate, ovvero una versione del software &ldquo;papabile&rdquo; per il rilascio</li>
 </ul>
-
 <p>Un suffisso di build come quello indicato nel primo esempio potrebbe essere relativo ad un feature branch, derivato dal tag 1.1.2 del branch di sviluppo e in parole povere indica che quella messa a disposizione è semplicemente un&rsquo;anteprima del codice, in cui è ammissibile una certa instabilità.</p>
-
 <p>Questo tipo di tag dovrebbero essere provati e installati <strong>solo su ambienti di test</strong>.</p>
-
 <p>Quello nel secondo esempio invece potrebbe essere il suffisso di un tag su un branch di release che indica una versione del codice, matura al punto da poter essere inclusa in una prossima release, detta <a href="https://it.wikipedia.org/wiki/Release_candidate">release candidate</a>, a patto di minime correzioni.
 Tali modifiche modifiche e correzioni dovrebbero susseguirsi andando a incrementare il suffisso numerico dopo rc delle prossime tag sul ramo di rilascio.</p>
-
 <p>Questo tipo di tag indicano le versioni del software che generalmente verranno installate sugli ambienti di <a href="https://en.wikipedia.org/wiki/Deployment_environment#Staging">staging</a>, per poterle testare prima di essere riportate su master e andare quindi in <a href="https://en.wikipedia.org/wiki/Deployment_environment#Production">produzione</a>.</p>
-
 <h3 id="conclusioni">Conclusioni</h3>
-
 <p>Alla fine di questa analisi non possiamo affermare che git flow e il versionamento semantico possano essere gli strumenti definitivi per ogni team o progetto, e sicuramente la loro adozione porta vantaggi e svantaggi.
 Valutare un trade-off relativo all&rsquo;impiego di git flow sta al buonsenso personale, ci limiteremo perciò ad elencare una serie di pro e contro che potrebbero aiutare nella decisione.</p>
-
 <h4 id="a-cosa-non-serve-git-flow">A cosa non serve git flow?</h4>
-
 <ul>
 <li>Git flow non pone rimedio ad errori tecnici nella gestione del repository e nemmeno prescinde da una conoscenza approfondita di git.</li>
 <li>Git flow de facto <strong>non semplifica il flusso di lavoro</strong> con git, imponendo una strategia di diramazione complessa.</li>
 </ul>
-
 <h4 id="a-cosa-serve-git-flow">A cosa serve git flow?</h4>
-
 <ul>
 <li>Git flow aiuta i vari elementi del team ad avere a colpo d&rsquo;occhio <strong>una visione precisa dello stato degli sviluppi applicativi</strong> a fronte di una convenzione essenziale e immediata di tagging.</li>
 <li>Il versionamento semantico aiuta gli utilizzatori del software a capire esattamente lo stato di sviluppo del software e cosa aspettarsi, riportandosi a diverse versioni di rilascio.</li>
 <li>Git flow coaudiva la <a href="https://en.wikipedia.org/wiki/Velocity_(software_development)">velocity</a> del team di sviluppo permettendo l&rsquo;attuazione di un piano di <a href="http://guide.agilealliance.org/guide/cd.html">continuous deploy</a> e quindi di poter rilasciare nuove feature e fix in sicurezza.</li>
 <li>Git flow è ottimo per la <a href="https://en.wikipedia.org/wiki/Continuous_integration">continuous integration</a>, permettendo de facto di poter differenziare i rami dedicati ai vari ambienti: sviluppo, staging e produzione</li>
 </ul>
-
 <h3 id="risorse-consultabili-online">Risorse consultabili online</h3>
-
 <ul>
 <li><a href="http://nvie.com/posts/a-successful-git-branching-model/">http://nvie.com/posts/a-successful-git-branching-model/</a> Vincent Driessen espone GIT Flow</li>
 <li><a href="http://semver.org/">http://semver.org/</a> Semantic Versioning 2.0.0 proposto da Tom Preston-Werner</li>
@@ -609,7 +535,7 @@ Valutare un trade-off relativo all&rsquo;impiego di git flow sta al buonsenso pe
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -905,7 +831,7 @@ Valutare un trade-off relativo all&rsquo;impiego di git flow sta al buonsenso pe
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -924,13 +850,11 @@ Valutare un trade-off relativo all&rsquo;impiego di git flow sta al buonsenso pe
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -943,11 +867,13 @@ Valutare un trade-off relativo all&rsquo;impiego di git flow sta al buonsenso pe
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -966,7 +892,7 @@ Valutare un trade-off relativo all&rsquo;impiego di git flow sta al buonsenso pe
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -997,7 +923,7 @@ Valutare un trade-off relativo all&rsquo;impiego di git flow sta al buonsenso pe
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1040,13 +966,11 @@ Valutare un trade-off relativo all&rsquo;impiego di git flow sta al buonsenso pe
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1055,11 +979,13 @@ Valutare un trade-off relativo all&rsquo;impiego di git flow sta al buonsenso pe
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1102,14 +1028,12 @@ Valutare un trade-off relativo all&rsquo;impiego di git flow sta al buonsenso pe
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1121,19 +1045,19 @@ Valutare un trade-off relativo all&rsquo;impiego di git flow sta al buonsenso pe
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -50,34 +50,17 @@ Secondo la timeline ufficiale PHP 7 sarà rilasciato intorno al 15 Ottobre 2015:
 La release 7 costituisce una delle più importanti per PHP, sia in termini di funzionalità che di performance." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/php-7-overview/" />
-
-
-
-<meta property="article:published_time" content="2015-07-06T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-07-06T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-07-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-07-06T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="PHP 7 Overview">
+        <meta itemprop="name" content="PHP 7 Overview">
 <meta itemprop="description" content="Il linguaggio che ha contribuito alla nascita e alla crescita di più del 80% dei siti web oggi online, tra i quali alcuni dei più famosi al mondo, è prossimo a una svolta.
 Secondo la timeline ufficiale PHP 7 sarà rilasciato intorno al 15 Ottobre 2015: chi volesse provarlo in anteprima, tuttavia, può trovare binari, rpm, deb, dockerfiles e quant&rsquo;altro su php7.zend.com.
 La release 7 costituisce una delle più importanti per PHP, sia in termini di funzionalità che di performance.">
-
-
 <meta itemprop="datePublished" content="2015-07-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-07-06T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1304">
@@ -85,7 +68,6 @@ La release 7 costituisce una delle più importanti per PHP, sia in termini di fu
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -114,14 +96,17 @@ La release 7 costituisce una delle più importanti per PHP, sia in termini di fu
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -422,58 +407,36 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>Il linguaggio che ha contribuito alla nascita e alla crescita di più del 80% dei siti web oggi online, tra i quali alcuni dei più famosi al mondo, è prossimo a una svolta.</p>
-
+    <p>Il linguaggio che ha contribuito alla nascita e alla crescita di più del 80% dei siti web oggi online, tra i quali alcuni dei più famosi al mondo, è prossimo a una svolta.</p>
 <p>Secondo la <a href="https://wiki.php.net/rfc/php7timeline">timeline ufficiale</a> PHP 7 sarà rilasciato intorno al <strong>15 Ottobre 2015</strong>: chi volesse provarlo in anteprima, tuttavia, può trovare binari, rpm, deb, dockerfiles e quant&rsquo;altro su <a href="http://php7.zend.com/">php7.zend.com</a>.</p>
-
 <p>La release 7 costituisce una delle più importanti per PHP, sia in termini di funzionalità che di performance.</p>
-
 <p>Nell&rsquo;ultimo anno il team degli internals ha affrontato innumerevoli sfide, tra cui:</p>
-
 <ul>
 <li>Implementazione dell&rsquo;<a href="http://c2.com/cgi/wiki?AbstractSyntaxTree">Abstract Syntax Tree</a>;</li>
 <li>Riscrittura di grosse porzioni dello <strong>Zend Engine</strong> che ora può beneficiare di nuove strutture dati e gestione delle risorse ottimizzata;</li>
 <li>Disposizione di solide basi per aprire il linguaggio a futuri miglioramenti come la <a href="https://en.wikipedia.org/wiki/Just-in-time_compilation">Just in Time Compilation</a>;</li>
 <li>Implementazione di un corposo set di nuove feature, come vedremo a breve.</li>
 </ul>
-
 <h2 id="performance">Performance</h2>
-
 <p>Sull&rsquo;onda degli ottimi risultati ottenuti dal team di HHVM, anche il team degli internals ha iniziato a lavorare estensivamente al miglioramento delle performance dell&rsquo;implementazione originale di PHP. Gli impressionanti risultati (si parla di un miglioramento di circa il 100%) sono stati dimostrati da vari benchmark fatti sui vari CMS/Framework esistenti. Eccone di seguito due tra i più significativi:</p>
-
 <ul>
 <li><a href="http://talks.php.net/oz15#/boxspecs">Benchmark di Rasmus Lerdorf, 12 Marzo 2015, Sydney, Australia</a> - Benchmark su vari CMS/Applicativi scritti in PHP in esecuzione sulle varie versioni di PHP e HHVM</li>
 <li><a href="https://pages.zend.com/rs/zendtechnologies/images/PHP7-Performance%20Infographic.pdf">Infografica Zend</a> - Benchmark di vari CMS/Framework (Magento 1.9, Wordpress, Drupal, Zend Framework 2, Laravel) su PHP 5.6 PHP 7 e HHVM 3.7. Contiene inoltre una comparazione tra PHP e altri linguaggi di scripting.</li>
 </ul>
-
 <h2 id="features">Features</h2>
-
 <p>Qui di seguito riportiamo alcune delle feature che ci hanno colpito maggiormente; l&rsquo;elenco seguente non è da considerarsi esaustivo rispetto a tutte le feature di PHP 7: una lista completa di tutte le RFC può essere trovata <a href="https://wiki.php.net/rfc#php_70">qui</a>.</p>
-
 <h3 id="null-coalesce-operator">Null Coalesce operator</h3>
-
 <p>PHP RFC: <a href="https://wiki.php.net/rfc/isset_ternary">Null Coalesce Operator</a></p>
-
 <p>Il Null Coalesce operator (<code>??</code>) ritorna l&rsquo;operando di sinistra se questo non è <code>null</code>, altrimenti ritorna l&rsquo;operando di destra. Esso di fatto rappresenta un&rsquo;abbreviazione dell&rsquo;utilizzo di <code>isset()</code> in un operatore ternario.</p>
-
 <pre><code>&lt;?php
 $name = $_GET[’name’] ?? &quot;Name&quot;;
 // equivalente a
 $name = isset($_GET[’name’]) ? $_GET[’name’] : &quot;Name&quot;;
-</code></pre>
-
-<p><a href="http://3v4l.org/SnCQY">▶ Demo</a></p>
-
+</code></pre><p><a href="http://3v4l.org/SnCQY">▶ Demo</a></p>
 <h3 id="uniform-variable-syntax">Uniform Variable Syntax</h3>
-
 <p>PHP RFC: <a href="https://wiki.php.net/rfc/uniform_variable_syntax">Uniform Variable Syntax</a></p>
-
 <p>PHP 7 Introduce una nuova e più consistente sintassi delle variabili, che apre le porte ad alcuni nuovi modi di costruire le espressioni, come mostrato nei due esempi di seguito. Una lista più completa di esempi può essere trovata al link del RFC.</p>
-
 <p><strong>Annidare chiamate di funzione</strong></p>
-
 <pre><code>&lt;?php
 $sum = function($l) {
     return function($r) use ($l) {
@@ -482,12 +445,8 @@ $sum = function($l) {
 };
 
 echo $sum(4)(2); // 6
-</code></pre>
-
-<p><a href="http://3v4l.org/mZHt3">▶ Demo</a></p>
-
+</code></pre><p><a href="http://3v4l.org/mZHt3">▶ Demo</a></p>
 <p><strong>Effettuare una chiamata a metodo su un array contenente una coppia di oggetto: nome metodo.</strong></p>
-
 <pre><code>&lt;?php
 
 class Person
@@ -500,72 +459,45 @@ class Person
 
 $p = new Person();
 echo [$p, 'getName']();
-</code></pre>
-
-<p><a href="http://3v4l.org/bEU7t">▶ Demo</a></p>
-
+</code></pre><p><a href="http://3v4l.org/bEU7t">▶ Demo</a></p>
 <h3 id="group-use-declarations">Group use declarations</h3>
-
 <p>PHP RFC: <a href="https://wiki.php.net/rfc/group_use_declarations">Group Use Declarations</a></p>
-
 <pre><code>&lt;?php
 use Zend\ModuleManager\ModuleEvent;
 use Zend\ModuleManager\ModuleManagerInterface;
-</code></pre>
-
-<p>Equivale a</p>
-
+</code></pre><p>Equivale a</p>
 <pre><code>&lt;?php
 use Zend\ModuleManager\{
     ModuleEvent,
     ModuleManagerInterface
 }
-</code></pre>
-
-<h3 id="combined-comparison-operator">Combined Comparison operator</h3>
-
+</code></pre><h3 id="combined-comparison-operator">Combined Comparison operator</h3>
 <p>PHP RFC: <a href="https://wiki.php.net/rfc/combined-comparison-operator">Combined Comparison (Spaceship) Operator</a></p>
-
 <p>Il Combined Comparison operator (aka <em>Spaceship Operator</em>) è il nuovo operatore che mette in relazione i due operandi restituendo:</p>
-
 <ul>
 <li><code>-1</code> se l&rsquo;operando di sinistra è minore dell&rsquo;operando di destra</li>
 <li><code>1</code> se l&rsquo;operando di sinistra è maggiore dell&rsquo;operando di destra</li>
 <li><code>0</code> se gli operandi sono uguali</li>
 </ul>
-
 <pre><code>&lt;?php
 echo 100 &lt;=&gt; 200; // -1
 echo 200 &lt;=&gt; 100; // 1
 echo 200 &lt;=&gt; 200; // 0
-</code></pre>
-
-<p><a href="http://3v4l.org/PV5kq">▶ Demo</a></p>
-
+</code></pre><p><a href="http://3v4l.org/PV5kq">▶ Demo</a></p>
 <h3 id="context-sensitive-lexer">Context sensitive lexer</h3>
-
 <p>PHP RFC: <a href="https://wiki.php.net/rfc/context_sensitive_lexer">Context Sensitive Lexer</a></p>
-
 <p>Allo stato attuale PHP ha circa 64 keyword riservate globalmente.
 In PHP 7 questo comportamento è stato cambiato rendendo alcune keyword <strong>riservate solo in maniera parziale.</strong></p>
-
 <p>Nell&rsquo;esempio vediamo come sia possibile dichiarare due metodi chiamati <code>list</code> e <code>forEach</code>. Questo non è possibile in PHP&lt;7.0.0 per via del fatto che queste due keyword sono riservate globalmente e non parzialmente.</p>
-
 <pre><code>&lt;?php
 class Collection {
     public function forEach(callable $callback) {}
     public function list() {}
 }
-</code></pre>
-
-<h3 id="anonymous-classes">Anonymous classes</h3>
-
+</code></pre><h3 id="anonymous-classes">Anonymous classes</h3>
 <p>PHP RFC: <a href="https://wiki.php.net/rfc/anonymous_classes">Anonymous Classes</a></p>
-
 <p>PHP 7 introduce la possibilità di creare classi anonime che sono particolarmente utili, ad esempio nel caso in cui si abbia la necessità di implementare un&rsquo;interfaccia per l&rsquo;utilizzo immediato della classe stessa come dipendenza di un&rsquo;altra classe.</p>
-
 <p>Vediamo due esempi contrapposti, uno con named class e uno con classe anonima, assumendo di avere una classe <code>PersonNamePrinter</code>che accetta nel proprio costruttore instanze di<code>PersonInterface</code>. <code>PersonInterface</code> richiede di implementare il solo metodo <code>getName()</code>.</p>
-
 <pre><code>&lt;?php
 class SpecificPerson implements PersonInterface
 {
@@ -575,14 +507,9 @@ class SpecificPerson implements PersonInterface
    }
 }
 
-</code></pre>
-
-<pre><code>$person = new SpecificPerson()
+</code></pre><pre><code>$person = new SpecificPerson()
 echo new PersonPrinter($person);
-</code></pre>
-
-<p>equivale a</p>
-
+</code></pre><p>equivale a</p>
 <pre><code>&lt;?php
 echo new PersonPrinter(new class implements PersonInterface {
     public function getName()
@@ -590,22 +517,13 @@ echo new PersonPrinter(new class implements PersonInterface {
         return &quot;Lorenzo&quot;;
     }
 });
-</code></pre>
-
-<h3 id="scalar-type-hints">Scalar type hints</h3>
-
+</code></pre><h3 id="scalar-type-hints">Scalar type hints</h3>
 <p>PHP RFC: <a href="https://wiki.php.net/rfc/scalar_type_hints">Scalar Type Hints</a></p>
-
 <p>Questa feature introduce la possiblità di dichiarare il tipo di dato del parametro di una funzione utilizzando anche i nuovi tipi di dato scalari <code>int</code>, <code>float</code>, <code>string</code> e <code>bool</code>.</p>
-
 <p>È possibile rendere i parametri rigorosi (strict) facendo <strong>iniziare lo script con lo statement preposto a mutare questo comportamento</strong>:</p>
-
 <pre><code>&lt;?php
 declare(strict_types=1)
-</code></pre>
-
-<p>Vediamo un esempio:</p>
-
+</code></pre><p>Vediamo un esempio:</p>
 <pre><code>&lt;?php
 
 function printIntValue(int $value)
@@ -614,26 +532,18 @@ function printIntValue(int $value)
 }
 
 printIntValue(5.9); // int(5)
-</code></pre>
-
-<p><a href="http://3v4l.org/bp1Xt">▶ Demo</a></p>
-
+</code></pre><p><a href="http://3v4l.org/bp1Xt">▶ Demo</a></p>
 <p>Nell&rsquo;esempio precedente stiamo dichiarando una funzione <code>printIntValue</code> la quale richiede che <code>$value</code> sia di tipo <code>int</code>; quindi andiamo a chiamare la funzione stessa passando invece <code>$value</code> come <code>float(5.9)</code>.
 Siccome al primo statement non abbiamo dichiarato i tipi come rigorosi, PHP costringerà il casting del valore passato a <code>int</code>, troncando la parte dopo la virgola e convertendolo in <code>int(5)</code>. Se invece avessimo dichiarato i tipi come rigorosi avremmo ottenuto un <code>TypeError</code>.</p>
-
 <h3 id="return-type-declarations">Return Type Declarations</h3>
-
 <p>PHP RFC: <a href="https://wiki.php.net/rfc/return_types">Return Type Declarations</a>
 In PHP 7 è stata introdotta la possiblità di dichiarare il tipo di ritorno di una funzione.
 Alcuni vantaggi di questa feature sono:</p>
-
 <ul>
 <li>Previene valori di ritorno non intenzionali;</li>
 <li>Documenta i tipi di ritorno in maniera strict, diversamente da come è oggi con i commenti e phpdoc.</li>
 </ul>
-
 <p>Vediamo un esempio:</p>
-
 <pre><code>&lt;?php
 class DateTimeGenerator
 {
@@ -642,19 +552,12 @@ class DateTimeGenerator
         return new \DateTime();
     }
 }
-</code></pre>
-
-<p><a href="http://3v4l.org/3QXVK">▶ Demo</a></p>
-
+</code></pre><p><a href="http://3v4l.org/3QXVK">▶ Demo</a></p>
 <p>Nell&rsquo;esempio precedente abbiamo dichiarato una classe <code>DateTimeGenerator</code> che contiene un metodo <code>getDateTime()</code> che deve ritornare necessariamente un&rsquo;instanza di <code>\DateTime</code>. Nel caso questo non avvenisse otterremmo ancora una volta un <code>TypeError</code>.</p>
-
 <h3 id="bind-closure-on-call">Bind Closure on Call</h3>
-
 <p>PHP RFC: <a href="https://wiki.php.net/rfc/closure_apply">Closure::call</a></p>
-
 <p>In PHP 5.4 era già possibile fare il binding dello scope di una classe all&rsquo;interno di una closure utilizzando <a href="http://php.net/manual/en/closure.bindto.php">Closure-&gt;bindTo()</a> e <a href="http://php.net/manual/en/closure.bind.php">Closure::bind()</a>. Questo metodo richiedeva però la creazione di una closure intermedia che facesse da <em>collante</em> tra l&rsquo;invocazione della closure e il binding dello scope dell&rsquo;oggetto.
 Questo non è più richiesto in PHP 7, dove è stato introdotto il metodo <code>Closure::call</code> che permette di eseguire insieme i due step rendendo il tutto molto più compatto ed elegante.</p>
-
 <pre><code>&lt;?php
 
 class DummyClass {private $value = 1;}
@@ -667,33 +570,20 @@ echo $getValue();
 // From PHP 7
 $getvalue = function() {return $this-&gt;value;};
 echo $getValue-&gt;call(new DummyClass);
-</code></pre>
-
-<p><a href="http://3v4l.org/YKtPC">▶ Demo</a></p>
-
+</code></pre><p><a href="http://3v4l.org/YKtPC">▶ Demo</a></p>
 <h3 id="filtered-unserialize">Filtered Unserialize</h3>
-
 <p>PHP RFC: <a href="https://wiki.php.net/rfc/secure_unserialize">Filtered Unserialize</a></p>
-
 <p>Questa feature permette di prevenire eventuali injection abilitando l&rsquo;opzione di impostare una lista di classi per le quali è possibile fare l&rsquo;unserialize.
 Tutte le classi non presenti nella lista saranno convertite nell&rsquo;oggetto incompleto <code>__PHP_Incomplete_Class</code>.</p>
-
 <p>Nell&rsquo;esempio seguente il contenuto di <code>$foo</code> verrà deserializzato solo se <code>$foo</code> sarà instanza di <code>OnePossibleClass</code> o di <code>AnotherPossibileClass</code>, altrimenti verrà convertito in <code>__PHP_Incomplete_Class</code></p>
-
 <pre><code>$data = unserialize($foo, [&quot;allowed_classes&quot; =&gt; [&quot;OnePossibleClass&quot;, &quot;AnotherPossibileClass&quot;]);
-</code></pre>
-
-<h2 id="conclusioni">Conclusioni</h2>
-
+</code></pre><h2 id="conclusioni">Conclusioni</h2>
 <p>Ora andate! Testate le vostre applicazioni su PHP 7 e, se potete, aiutate a migrare le estensioni. Non sapete come fare? No problem, chiunque può iniziare a fare qualcosa con i giusti punti di partenza.</p>
-
 <p>Ecco alcune risorse utili:</p>
-
 <ul>
 <li><a href="http://gophp7.org/gophp7-ext/">GoPHP7-ext</a> Progetto che supporta la migrazione delle estensioni verso PHP 7, raccogliendo risorse e consigli utili ad ottenere questo scopo.</li>
 <li><a href="http://spaghetti.io/cont/article/getting-started-with-php-extensions-development/52/1.html">Getting started with PHP Extensions development</a> - Un mio breve articolo (in inglese) su come scrivere la propria prima estensione PHP.</li>
 </ul>
-
 <p>Se il post vi è piaciuto non dimenticate di condividerlo e di commentarlo qui sotto o su twitter menzionando <a href="https://twitter.com/FacileIt_Engr">@FacileIt_Engr</a>.</p>
 
   </div>
@@ -732,7 +622,7 @@ Tutte le classi non presenti nella lista saranno convertite nell&rsquo;oggetto i
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -1028,7 +918,7 @@ Tutte le classi non presenti nella lista saranno convertite nell&rsquo;oggetto i
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1047,13 +937,11 @@ Tutte le classi non presenti nella lista saranno convertite nell&rsquo;oggetto i
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1066,11 +954,13 @@ Tutte le classi non presenti nella lista saranno convertite nell&rsquo;oggetto i
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1089,7 +979,7 @@ Tutte le classi non presenti nella lista saranno convertite nell&rsquo;oggetto i
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1120,7 +1010,7 @@ Tutte le classi non presenti nella lista saranno convertite nell&rsquo;oggetto i
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1163,13 +1053,11 @@ Tutte le classi non presenti nella lista saranno convertite nell&rsquo;oggetto i
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1178,11 +1066,13 @@ Tutte le classi non presenti nella lista saranno convertite nell&rsquo;oggetto i
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1225,14 +1115,12 @@ Tutte le classi non presenti nella lista saranno convertite nell&rsquo;oggetto i
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1244,19 +1132,19 @@ Tutte le classi non presenti nella lista saranno convertite nell&rsquo;oggetto i
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

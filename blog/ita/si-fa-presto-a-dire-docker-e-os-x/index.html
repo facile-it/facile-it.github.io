@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -48,33 +48,16 @@ Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina 
 Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/" />
-
-
-
-<meta property="article:published_time" content="2015-07-22T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-07-22T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-07-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-07-22T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Si fa presto a dire Docker (e OS X)">
+        <meta itemprop="name" content="Si fa presto a dire Docker (e OS X)">
 <meta itemprop="description" content="Di guide per l&rsquo;installazione di Docker su OS X è pieno il web, ma le soluzioni sono molte e spesso scegliere non è facile. In questo articolo vi mostrerò quello che è stato il mio personale percorso, nella speranza che possa essere utile a chiarirvi le idee e magari evitare qualche buco nell&rsquo;acqua.
 Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco.">
-
-
 <meta itemprop="datePublished" content="2015-07-22T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-07-22T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="881">
@@ -82,7 +65,6 @@ Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina 
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -111,14 +93,17 @@ Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina 
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -419,75 +404,45 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>Di guide per l&rsquo;installazione di Docker su OS X è pieno il web, ma <strong>le soluzioni sono molte</strong> e spesso scegliere non è facile.
+    <p>Di guide per l&rsquo;installazione di Docker su OS X è pieno il web, ma <strong>le soluzioni sono molte</strong> e spesso scegliere non è facile.
 In questo articolo vi mostrerò quello che è stato il mio personale percorso, nella speranza che possa essere utile a chiarirvi le idee e magari evitare qualche buco nell&rsquo;acqua.</p>
-
 <p>Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco. Nulla di complicato, quindi sono partito dalla cosa più semplice.</p>
-
 <h2 id="boot2docker">boot2docker</h2>
-
 <p>Probabilmente la soluzione più nota e diffusa, <a href="https://docs.docker.com/installation/mac/">boot2docker</a> è stata la mia prima scelta. Si installa con <code>homebrew</code> o <code>curl</code> e viene distribuita con una propria ISO, molto leggera e progettata appositamente per Docker, che gira su VirtualBox.
 L&rsquo;unica vera pecca è proprio il protocollo di condivisione nativo di VirtualBox, <code>vboxsf</code>, che risulta <strong>molto lento</strong> per progetti di medie dimensioni e rende il caricamento delle pagine lunghissimo.</p>
-
 <h2 id="docker-osx">docker-osx</h2>
-
 <p>Decido di <a href="https://github.com/noplay/docker-osx">provarlo</a> incuriosito da un collega che ne aveva creato una versione modificata per supportare la <strong>condivisione NFS</strong>, ma nonostante questo non lo trovo migliore di boot2docker. Inoltre il suo sviluppo è precedente, e il progetto è stato abbandonato quando Docker ha iniziato a supportare ufficialmente boot2docker: è in effetti lo stesso sviluppatore a sconsigliarne l&rsquo;utilizzo da parte di nuovi utenti.</p>
-
-<h2 id="vagrant-e-parallels-boot2docker-https-github-com-parallels-boot2docker-vagrant-box">Vagrant e <a href="https://github.com/Parallels/boot2docker-vagrant-box">parallels/boot2docker</a></h2>
-
+<h2 id="vagrant-e-parallelsboot2dockerhttpsgithubcomparallelsboot2docker-vagrant-box">Vagrant e <a href="https://github.com/Parallels/boot2docker-vagrant-box">parallels/boot2docker</a></h2>
 <p>Leggo su un blog che è possibile avere prestazioni migliori utilizzando un sistema di virtualizzazione alternativo a VirtualBox, come ad esempio Parallels o VMWare Fusion. Per entrambi esistono delle ISO modificate di boot2docker e la macchina dev&rsquo;essere configurata usando Vagrant. La mia scelta cade su <strong>Parallels</strong>, e finalmente riesco a creare <strong>una macchina performante</strong> con condivisione NFS.
 Purtroppo il mantenimento della ISO sembra non stare al passo con la frequenza di rilascio di Docker (ero fermo alla versione 1.4.1 quando la 1.5 era disponibile da diverse settimane), quindi decido di cambiare nuovamente soluzione.</p>
-
 <h2 id="vagrant-e-ubuntu">Vagrant e Ubuntu</h2>
-
 <p>Dati i precedenti limiti e relativi fallimenti, tento una strada alternativa e <a href="https://github.com/ildanno/parallels-docker-vagrantfile">preparo un Vagrantfile</a> contenente tutto quello che mi serve: una macchina Ubuntu che gira su Parallels, repository di Docker aggiornato, condivisione NFS e possibilità di eseguire comandi al boot.
 Ma ancora una volta ho un problema fastidioso, che si verificava già con la soluzione precedente ma che (sbagliando) attribuivo a boot2docker. Ad ogni avvio della macchina, infatti, si crea <strong>un conflitto</strong> con OS X per l&rsquo;utilizzo di <strong>alcune risorse di rete</strong> e devo risolverle manualmente riavviando il demone NAT di Parallels. Inoltre scopro che con vagrant+parallels lo spazio utilizzato dal disco virtuale non è più recuperabile una volta allocato e il mio SSD è ormai alle strette.</p>
-
 <h2 id="vm-custom">VM custom</h2>
-
 <p>Preso dallo sconforto scelgo di avere il <strong>controllo completo</strong>: installo <strong>VMWare Fusion</strong> per avere un sistema di virtualizzazione più performante di VirtualBox, ma senza gli inconvenienti di Parallels, e configuro una macchina con Ubuntu server. Posso montare share NFS e ridimensionare il disco virtuale. Mi sembra una soluzione molto artigianale, ma funziona esattamente come voglio io e credo finalmente di avere trovato la mia pace. Ma non è così.</p>
-
 <h2 id="docker-machine">Docker Machine</h2>
-
-<p>Da alcune settimane è uscita una novità sul mercato, direttamente da casa Docker, che ho inizialmente ignorato. Si chiama <a href="https://docs.docker.com/machine/">Docker Machine</a> e ad una prima occhiata non sembra fare cose molto diverse da boot2docker, tant&rsquo;è che ne utilizza la stessa ISO. Però il fatto che venga rilasciato direttamente dalla casa madre mi fa ben sperare, vista anche l&rsquo;evoluzione avuta da altri tools come <a href="https://docs.docker.com/compose/">Docker Compose</a>, e dopo qualche tempo decido di dargli una possibilità.</p>
-
+<p>Da alcune settimane è uscita una novità sul mercato, direttamente da casa Docker, che ho inizialmente ignorato. Si chiama <a href="https://docs.docker.com/machine/">Docker Machine</a> e ad una prima occhiata non sembra fare cose molto diverse da boot2docker, tant'è che ne utilizza la stessa ISO. Però il fatto che venga rilasciato direttamente dalla casa madre mi fa ben sperare, vista anche l&rsquo;evoluzione avuta da altri tools come <a href="https://docs.docker.com/compose/">Docker Compose</a>, e dopo qualche tempo decido di dargli una possibilità.</p>
 <p>Mi rendo subito conto che in realtà Docker Machine ha <strong>potenzialità molto maggiori</strong> di quelle di boot2docker: è in grado di gestire più di una macchina, locale o in cloud, supporta diversi drivers e ha addirittura la possibilità di collegarsi ad un generico server remoto.
 Creo quindi una macchina locale, utilizzando il driver di VMWare Fusion:</p>
-
 <pre><code>$ docker-machine create --driver vmwarefusion \
     --vmwarefusion-cpu-count 2 \
     --vmwarefusion-disk-size 40000 \
     --vmwarefusion-memory-size 4096 \
     dev2
-</code></pre>
-
-<p>In pochi secondi la macchina è pronta all&rsquo;uso. Anche se la cartella <code>/Users</code> è già montata con il protocollo di condivisione file di VMWare (<code>vmhgfs</code>), decido comunque di configurare una condivisione NFS personalizzata.</p>
-
+</code></pre><p>In pochi secondi la macchina è pronta all&rsquo;uso. Anche se la cartella <code>/Users</code> è già montata con il protocollo di condivisione file di VMWare (<code>vmhgfs</code>), decido comunque di configurare una condivisione NFS personalizzata.</p>
 <p>Per prima cosa configuro OS X in modo da accettare connessioni dalla macchina su cui gira Docker (in questo caso verso la mia cartella <code>~/Sites</code>):</p>
-
 <pre><code>$ echo &quot;/Users/dcontini/Sites -mapall=dcontini:staff $(docker-machine ip dev2)&quot; | sudo tee -a /etc/exports
 $ sudo nfsd restart
-</code></pre>
-
-<p>Ora configuro la macchina virtuale, avviando i tools NFS e, se necessario, creando il mount point:</p>
-
+</code></pre><p>Ora configuro la macchina virtuale, avviando i tools NFS e, se necessario, creando il mount point:</p>
 <pre><code>$ docker-machine ssh dev2 -- sudo /usr/local/etc/init.d/nfs-client start
 &gt; Starting nfs client utilities.
 $ docker-machine ssh dev2 -- sudo mkdir -p /var/www
 $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/www
-</code></pre>
-
-<p>A questo punto ho finalmente la mia condivisione NFS e, se voglio, posso configurarne diverse e smontare la cartella <code>/Users</code>:</p>
-
+</code></pre><p>A questo punto ho finalmente la mia condivisione NFS e, se voglio, posso configurarne diverse e smontare la cartella <code>/Users</code>:</p>
 <pre><code>$ docker-machine ssh dev2 -- mount
 .host:/Users on /Users type vmhgfs (rw,relatime)
 172.16.153.1:/Users/dcontini/Sites on /var/www type nfs (rw,relatime,...)
-</code></pre>
-
-<p>Purtroppo ad ogni riavvio della macchina virtuale è necessario <strong>rimontare manualmente la condivisione</strong>, poiché Docker Machine esegue nuovamente il provisioning. Ma del resto, alla fine di questo viaggio, possiamo dire che si tratta del problema minore ;)</p>
-
+</code></pre><p>Purtroppo ad ogni riavvio della macchina virtuale è necessario <strong>rimontare manualmente la condivisione</strong>, poiché Docker Machine esegue nuovamente il provisioning. Ma del resto, alla fine di questo viaggio, possiamo dire che si tratta del problema minore ;)</p>
 <p>(Per i più pigri, invece, ho <a href="https://github.com/ildanno/docker-machine-mount">pubblicato</a> <strong>uno script</strong> che automatizza l&rsquo;operazione)</p>
 
   </div>
@@ -529,7 +484,7 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -825,7 +780,7 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -844,13 +799,11 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -863,11 +816,13 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -886,7 +841,7 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -917,7 +872,7 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -960,13 +915,11 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -975,11 +928,13 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1022,14 +977,12 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1041,19 +994,19 @@ $ docker-machine ssh dev2 -- sudo mount 172.16.153.1:/Users/dcontini/Sites /var/
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

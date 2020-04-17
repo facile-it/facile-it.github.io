@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -50,42 +50,24 @@ During the event we also officially announced the second #FacileHack hackathon, 
 This post would be a short recap of some talks in chronological order." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/" />
-
-
-
-<meta property="article:published_time" content="2016-12-02T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2016-12-02T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2016-12-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-12-02T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Codemotion Milan 2016 in review">
+        <meta itemprop="name" content="Codemotion Milan 2016 in review">
 <meta itemprop="description" content="«Learn or die». These are the words with which Codemotion Milan 2016 started on the 25th of November. Most of our development team attended this tech conference like the previous year. Moreover Facile.it was present at the event as a sponsor with his stand looking for new talent.
 During the event we also officially announced the second #FacileHack hackathon, which is planned for march 2017.
 This post would be a short recap of some talks in chronological order.">
-
-
 <meta itemprop="datePublished" content="2016-12-02T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-12-02T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="856">
+<meta itemprop="wordCount" content="830">
 
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -114,14 +96,17 @@ This post would be a short recap of some talks in chronological order.">
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -410,7 +395,7 @@ ga('send', 'pageview');
         
 
         
-            <p>5 minute read</p>
+            <p>4 minute read</p>
         
     </div>
 </header>
@@ -421,126 +406,91 @@ ga('send', 'pageview');
 
   
     <nav id="TableOfContents">
-<ul>
-<li><a href="#day-1">Day 1</a>
-<ul>
-<li><a href="#the-new-features-of-php-7">The new features of PHP 7</a></li>
-<li><a href="#kubernetes-and-lastminute-com-our-course-towards-better-scalability-and-processes">Kubernetes and lastminute.com: our course towards better scalability and processes</a></li>
-<li><a href="#continuous-budgeting">Continuous budgeting</a></li>
-<li><a href="#to-65k-and-beyond">To ∞ (~65K) and beyond!</a></li>
-<li><a href="#functional-reactive-programming-with-kotlin-on-android">Functional Reactive Programming with Kotlin on Android</a></li>
-</ul></li>
-<li><a href="#day-2">Day 2</a>
-<ul>
-<li><a href="#coding-culture">Coding Culture</a></li>
-<li><a href="#micromonolith-top-anti-patterns-of-adopting-distributed-system">MicroMonolith - Top anti-patterns of adopting distributed system</a></li>
-<li><a href="#develop-applications-in-big-data-era-with-scala-and-spark">Develop applications in Big Data Era with Scala and Spark</a></li>
-<li><a href="#gang-of-four-patterns-in-a-functional-light">Gang of Four Patterns in a Functional Light</a></li>
-</ul></li>
-</ul>
+  <ul>
+    <li><a href="#day-1">Day 1</a>
+      <ul>
+        <li><a href="#the-new-features-of-php-7">The new features of PHP 7</a></li>
+        <li><a href="#kubernetes-and-lastminutecom-our-course-towards-better-scalability-and-processes">Kubernetes and lastminute.com: our course towards better scalability and processes</a></li>
+        <li><a href="#continuous-budgeting">Continuous budgeting</a></li>
+        <li><a href="#to--65k-and-beyond">To ∞ (~65K) and beyond!</a></li>
+        <li><a href="#functional-reactive-programming-with-kotlin-on-android">Functional Reactive Programming with Kotlin on Android</a></li>
+      </ul>
+    </li>
+    <li><a href="#day-2">Day 2</a>
+      <ul>
+        <li><a href="#coding-culture">Coding Culture</a></li>
+        <li><a href="#micromonolith---top-anti-patterns-of-adopting-distributed-system">MicroMonolith - Top anti-patterns of adopting distributed system</a></li>
+        <li><a href="#develop-applications-in-big-data-era-with-scala-and-spark">Develop applications in Big Data Era with Scala and Spark</a></li>
+        <li><a href="#gang-of-four-patterns-in-a-functional-light">Gang of Four Patterns in a Functional Light</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   
 
   <div id="content">
-    
-
-<p><em>«Learn or die»</em>. These are the words with which <a href="http://milan2016.codemotionworld.com/"><strong>Codemotion Milan 2016</strong></a> started on the 25th of November. Most of our development team attended this tech conference like the <a href="http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/">previous year</a>. Moreover <a href="http://www.facile.it">Facile.it</a> was present at the event as a sponsor with his stand looking for new talent.</p>
-
+    <p><em>«Learn or die»</em>. These are the words with which <a href="http://milan2016.codemotionworld.com/"><strong>Codemotion Milan 2016</strong></a> started on the 25th of November. Most of our development team attended this tech conference like the <a href="http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/">previous year</a>. Moreover <a href="http://www.facile.it">Facile.it</a> was present at the event as a sponsor with his stand looking for new talent.</p>
 <p>During the event we also officially <strong>announced the second <a href="http://hackathon.facile.it/">#FacileHack</a> hackathon</strong>, which is planned for <strong>march 2017</strong>.</p>
-
 <p>This post would be a short recap of some talks in chronological order. The choice of the talks is based on the personal taste of the various members of the editorial staff of Facile.it Engineering blog. Enjoy!</p>
-
-<p><img src="/images/codemotion-2016-in-review/codemotion_2016.jpg" alt="A part of Facile Dev Team" /></p>
-
+<p><img src="/images/codemotion-2016-in-review/codemotion_2016.jpg" alt="A part of Facile Dev Team"></p>
 <h1 id="day-1">Day 1</h1>
-
 <h2 id="the-new-features-of-php-7">The new features of PHP 7</h2>
-
 <ul>
 <li>Enrico Zimuel (<a href="https://twitter.com/ezimuel">@ezimuel</a>)</li>
 <li>11:30 – 12:10 #programming (<a href="http://zimuel.it/slides/codemotion2016/">slides</a>)</li>
 </ul>
-
 <p>Enrico Zimuel, Software Engineer at <a href="http://www.zend.com/">Zend Technologies</a>, the company behind the PHP engine, talks about some of the new features of PHP 7: the scalar type and return type declarations, the spaceship and null coalescing operators, the anonymous classes, the consistent 64-bit support, etc. Furthermore he explains why PHP 7 is twice as fast compared to the previous version and it has 30% lower memory consumption.</p>
-
-<h2 id="kubernetes-and-lastminute-com-our-course-towards-better-scalability-and-processes">Kubernetes and lastminute.com: our course towards better scalability and processes</h2>
-
+<h2 id="kubernetes-and-lastminutecom-our-course-towards-better-scalability-and-processes">Kubernetes and lastminute.com: our course towards better scalability and processes</h2>
 <ul>
 <li>Michele Orsi (<a href="https://twitter.com/micheleorsi">@micheleorsi</a>)</li>
 <li>11:30 – 12:10 #devops (<a href="http://www.slideshare.net/micheleorsi/kubernetes-and-lastminutecom-our-course-towards-better-scalability-and-processes">slides</a>)</li>
 </ul>
-
 <p>Lastminute.com recently started a migration from a monolithic app to a microservice approach, leveraging the power of Kubernetes, the open source project lead by Google for container orchestration. This was quite the effort, and it unveiled a great deal of advantages and challenges.</p>
-
 <h2 id="continuous-budgeting">Continuous budgeting</h2>
-
 <ul>
 <li>Francesco Fullone (<a href="https://twitter.com/fullo">@fullo</a>)</li>
 <li>14:10 - 15:50 #inspirational</li>
 </ul>
-
 <p>This talk is about being agile in the entrepeneur side of our profession: how to plan and adapt to change when deciding how and how much to spend in our coding ventures; re-evaluating is key, and the only way to success is a delicate balance between maintenance and improvement.</p>
-
-<h2 id="to-65k-and-beyond">To ∞ (~65K) and beyond!</h2>
-
+<h2 id="to--65k-and-beyond">To ∞ (~65K) and beyond!</h2>
 <ul>
 <li>Sebastiano Gottardo (<a href="https://twitter.com/rotxed">@rotxed</a>)</li>
 <li>16:10 - 16:50 #mobile (<a href="https://speakerdeck.com/dextor/to-65k-and-beyond">slides</a>)</li>
 </ul>
-
 <p>A lot of old -but still widely used- Android devices are natively limited to run apps with less than 65K method references (due to the Dalvik JVM). For many apps this could be a serious problem. During the talk Sebastiano, an Android engineer at Musixmatch, gave a very comprehensive and clear explanation of the problem and went through all the possible solutions showing some really useful tips to deal or better <em>avoid</em> it.</p>
-
 <h2 id="functional-reactive-programming-with-kotlin-on-android">Functional Reactive Programming with Kotlin on Android</h2>
-
 <ul>
 <li>Giorgio Natili (<a href="https://twitter.com/giorgionatili">@giorgionatili</a>)</li>
 <li>17:10 - 17:50 #mobile (<a href="https://drive.google.com/file/d/0BxCm4NRlzb3PWjNNaG1KS0Utckk/view">slides</a>)</li>
 </ul>
-
 <p>The title of this talk was very interesting considering the fact that both the functional paradigm and the Kotlin language are used within the Facile.it Android app. But actually I have to say that I found a 40 minutes talk not suitable as a format to address these two large topics together (72 slides!). I would have preferred two separate talks, but it was nevertheless an interesting presentation full of useful tips and advices about Kotlin and FRP.</p>
-
 <h1 id="day-2">Day 2</h1>
-
 <h2 id="coding-culture">Coding Culture</h2>
-
 <ul>
 <li>Sven Peters (<a href="https://twitter.com/svenpet">@svenpet</a>)</li>
 <li>10:30 - 11:10 #inspirational (<a href="http://www.slideshare.net/svenpeters/coding-culture">slides</a>)</li>
 </ul>
-
 <p>In his keynote Sven Peters, Evangelist for <a href="https://www.atlassian.com/">Atlassian</a>, explains - in a very geek style - what is <em>company culture</em>, referring in particular to his company. He says that when people work in a great coding culture they are motivated and they are mostly very productive, but also they will have more responsibility and investment in the features they are developing. Developers will have more freedom to change their roles and try out new stuff, this is the right way to make better products with happier developers. He concluded his speech with these words: <em>«Products may change, but never forget values, cultivate your culture!»</em>.</p>
-
-<h2 id="micromonolith-top-anti-patterns-of-adopting-distributed-system">MicroMonolith - Top anti-patterns of adopting distributed system</h2>
-
+<h2 id="micromonolith---top-anti-patterns-of-adopting-distributed-system">MicroMonolith - Top anti-patterns of adopting distributed system</h2>
 <ul>
 <li>Michal Franc (<a href="https://twitter.com/francmichal">@francmichal</a>)</li>
 <li>12:30 – 13:10 #architectures</li>
 </ul>
-
 <p>In this talk, Michal reports his (and his team) experience in the infamous transistion from a monolithic app to a microservice oriented architecture. Michal works at <a href="https://twitter.com/JustGiving">@JustGiving</a>, which mainly uses .NET, but he didn&rsquo;t focus on the specific technology, but rather on the generic problems and pitfalls that this kind of transition brings to the table. During his tale, he laid to us a lot of useful suggestions and common issues to look for.</p>
-
 <h2 id="develop-applications-in-big-data-era-with-scala-and-spark">Develop applications in Big Data Era with Scala and Spark</h2>
-
 <ul>
 <li>Mario Cartia (<a href="https://twitter.com/mariocartia">@mariocartia</a>)</li>
 <li>12:30 – 13:10 #cloud #bigdata</li>
 </ul>
-
 <p>Large amount of data are produced everyday and Big Data is a concept increasingly trendy. In his talk Mario Cartia presented Scala and Spark,two powerful tools suitable to Big Data Processing.  Scala is a General purpose programming language that combines the benefits of OOP and functional programming. Apache Spark is an open source framework and it&rsquo;s a fast engine for big data processing, based on Scala language.</p>
-
 <h2 id="gang-of-four-patterns-in-a-functional-light">Gang of Four Patterns in a Functional Light</h2>
-
 <ul>
 <li>Mario Fusco (<a href="https://twitter.com/mariofusco">@mariofusco</a>)</li>
 <li>14:10 – 14:50 #programming (<a href="https://github.com/mariofusco/from-gof-to-lambda">code</a>)</li>
 </ul>
-
 <p>In this live-coding talk, Mario Fusco uses Java (and new Java 1.8 features) to translate the wide-known GoF design patterns into functional programming, making the code a lot less verbose, reducing the noise of boilerplate over the really important code.</p>
-
 <p>Also, kittens:</p>
-
-<p><blockquote class="twitter-tweet" data-cards="hidden" data-lang="it"><p lang="it" dir="ltr">&quot;In programmazione funzionale, quando lanci un&#39;eccezione muore un gattino, se ritorni null muore la mamma&quot; by <a href="https://twitter.com/mariofusco">@mariofusco</a> <a href="https://twitter.com/CodemotionIT">@CodemotionIT</a> <a href="https://t.co/40XErlWFbX">pic.twitter.com/40XErlWFbX</a></p>&mdash; Giulio Santoli (@gjuljo) <a href="https://twitter.com/gjuljo/status/802507849494654976">26 novembre 2016</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<!-- raw HTML omitted -->
 
   </div>
 
@@ -578,7 +528,7 @@ ga('send', 'pageview');
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -874,7 +824,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -893,13 +843,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -912,11 +860,13 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -935,7 +885,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -966,7 +916,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1009,13 +959,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1024,11 +972,13 @@ ga('send', 'pageview');
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1071,14 +1021,12 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1090,19 +1038,19 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

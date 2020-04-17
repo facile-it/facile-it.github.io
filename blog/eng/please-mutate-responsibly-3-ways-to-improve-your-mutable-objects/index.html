@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -46,32 +46,15 @@
 <meta property="og:description" content="Maintaining state is the main cause of complexity and headaches in software development: without a careful consideration of state, our projects will inevitably become impossible to understand. In fact, various development techniques and programming styles are mainly there to handle state in a responsible way: for example, monads, as used in functional programming, are often employed for this very task. A good general way of managing state is trying to make it immutable, either through the use value types, that is, types which instances are passed around with deep copy semantics, or simple immutable objects, which have reference semantics but because they&rsquo;re immutable their state is fixed." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/" />
-
-
-
-<meta property="article:published_time" content="2016-12-12T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2016-12-12T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2016-12-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-12-12T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Please mutate responsibly: 3 ways to improve your mutable objects">
+        <meta itemprop="name" content="Please mutate responsibly: 3 ways to improve your mutable objects">
 <meta itemprop="description" content="Maintaining state is the main cause of complexity and headaches in software development: without a careful consideration of state, our projects will inevitably become impossible to understand. In fact, various development techniques and programming styles are mainly there to handle state in a responsible way: for example, monads, as used in functional programming, are often employed for this very task. A good general way of managing state is trying to make it immutable, either through the use value types, that is, types which instances are passed around with deep copy semantics, or simple immutable objects, which have reference semantics but because they&rsquo;re immutable their state is fixed.">
-
-
 <meta itemprop="datePublished" content="2016-12-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-12-12T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1995">
@@ -79,7 +62,6 @@
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -108,14 +90,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -416,55 +401,33 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>Maintaining <strong>state</strong> is the main cause of complexity and headaches in software development: without a careful consideration of state, our projects will inevitably become impossible to understand. In fact, various development techniques and programming styles are mainly there to handle state in a responsible way: for example, <a href="https://en.wikipedia.org/wiki/Monad_(functional_programming)"><strong>monads</strong></a>, as used in functional programming, are often employed for this very task. A good general way of managing state is trying to make it <strong>immutable</strong>, either through the use <a href="https://en.wikipedia.org/wiki/Value_type">value types</a>, that is, types which instances are passed around with <a href="https://en.wikipedia.org/wiki/Object_copying#Deep_copy">deep copy</a> semantics, or simple <em>immutable objects</em>, which have reference semantics but because they&rsquo;re immutable their state is fixed.</p>
-
+    <p>Maintaining <strong>state</strong> is the main cause of complexity and headaches in software development: without a careful consideration of state, our projects will inevitably become impossible to understand. In fact, various development techniques and programming styles are mainly there to handle state in a responsible way: for example, <a href="https://en.wikipedia.org/wiki/Monad_(functional_programming)"><strong>monads</strong></a>, as used in functional programming, are often employed for this very task. A good general way of managing state is trying to make it <strong>immutable</strong>, either through the use <a href="https://en.wikipedia.org/wiki/Value_type">value types</a>, that is, types which instances are passed around with <a href="https://en.wikipedia.org/wiki/Object_copying#Deep_copy">deep copy</a> semantics, or simple <em>immutable objects</em>, which have reference semantics but because they&rsquo;re immutable their state is fixed.</p>
 <p>Unfortunately the <em>processes</em> we usually represent in code are all but immutable: the state of any running software is probably going to change as time passes, as a result of <em>foreign interactions</em>, a.k.a., <em>side effects</em>. This means that something, somewhere has to mutate, and to be more precise we can say that the information stored in a certain object is going to change: actually, an <strong>information</strong> by itself is a <strong>constant</strong> value, but from time to time that object is going to store different pieces of information, some are going to be new, others are going to be outdated. So there&rsquo;s no escape from mutation: the point is to mutate <strong>responsibly</strong>, that is, to not be reckless with our mutable objects, and treat them in a special way so that we can still reason about our code and easily understand the state of our system at any given moment.</p>
-
 <p>The already cited techniques based on monads represent a good way to solve the problem, but monads only really work in a functional programming context, something that&rsquo;s not everyone&rsquo;s cup of tea, and to be really productive while using them you need to <em>think in terms of monads</em>, and treat them as primitive objects. I don&rsquo;t want to talk about monads or functional programming in general, my focus for this article is analyzing mutability in software, while identifying common techniques that can be leveraged in any programming language/paradigm to improve our code. In particular I want to talk about 3 specific problems that arise while working with mutable objects, and 3 solutions to address them. To quickly summarize, my suggestions will be the following:</p>
-
 <ul>
 <li>be idempotent;</li>
 <li>react to change;</li>
 <li>proceed one-way only.</li>
 </ul>
-
 <p>Let&rsquo;s see each one of them in detail by developing a concrete example: an object that represents a <em>payment process</em>, which at any moment can be in various states, like <em>possible</em>, <em>started</em>, <em>working</em>, <em>succeeded</em> and <em>failed</em>.</p>
-
 <h2 id="be-idempotent">Be idempotent</h2>
-
 <p>To mutate an object from the outside we usually <em>tell</em> the object to <em>do</em> something. If we truly want to respect the object-oriented paradigm, and in particular if we don&rsquo;t want to violate <strong>encapsulation</strong>, we shouldn&rsquo;t make assumptions about the internal state of a certain object after a certain method call; still, we cannot help but making assumptions about the way our entire <em>system</em> is going to work after a method call, otherwise it would be impossible to reason about code. But if our changes are <em>incremental</em>, it&rsquo;s going to be really hard to understand the system even after a simple method call. Not all changes are created equal: if the resulting system&rsquo;s state is affected by the previous one, before the change takes place, then it&rsquo;s going to be basically impossible to reason about the system after the change, because in our reasoning we should take into account all the possible conditions the system was in. An incremental change, for example a method call to <em>increase a counter</em>, will overload our mind of conditional paths and will cause bugs.</p>
-
 <p>For example, for our <code>PaymentProcess</code> we don&rsquo;t want to be able to generically <em>advance</em> the payment state: we want to advance it to a particular stage, with a clean method call that should be <a href="https://en.wikipedia.org/wiki/Idempotence"><em>idempotent</em></a>, that is, calling it 1 time, 2 times or 100 times <strong>has to be the same</strong>. This also means that if more objects call the same method, it will be like if only one object called it, and this will completely remove a running cause of bugs: multiple, uncoordinated interactions of the same type with an object. Idempotence is a simple concept, but it&rsquo;s extremely powerful: with it, we don&rsquo;t need to keep track if a particular operation has already occurred (thus saving some state), but to properly implement it we need the correct semantics: while <em>delta</em> operations are very frequent in real life (think about increasing the volume of a TV set) and are usually harmless, they can be dangerous in software development, an in general it&rsquo;s important to understand the what <em>feels</em> natural in real life is not necessarily a good thing in software engineering, or engineering in general.</p>
-
 <p>Also, notice that while an idempotent method call will always have the same result on a particular instance, it doesn&rsquo;t mean that will have the same result on <em>different</em> instances - more on this later.</p>
-
 <h2 id="react-to-change">React to change</h2>
-
 <p><a href="http://www.reactivemanifesto.org">Reactive programming</a> has been big the last few years, and that&rsquo;s mostly thanks both to the popularity achieved by functional programming in OOP circles, and to the diffusion of architectures based on microservices. But the idea of <em>being reactive</em> in software development has been around for much more than that: for example, the <a href="https://en.wikipedia.org/wiki/Observer_pattern"><strong>observer pattern</strong></a> has been there for decades, and the basic underlying idea is that of <em>connecting</em> objects by establishing relations between them in which a state change is automatically propagated to a collection of <em>observers</em>. It is responsibility of an observer to react to what just happened, while the <em>observable</em> object doesn&rsquo;t really care about what the others will do. This will allow us to achieve the following:</p>
-
 <ul>
 <li>a nice <em>decoupling</em> between a mutable object and other objects that for any reason are interested in its mutation; no custom interface will be needed, just a simple fixed method (like <code>next</code>) to pass around the new information;</li>
 <li>a more <em>declarative</em> code style, in which our method calls will only describe the intent of connecting one or more objects to a chain of reactions (and <a href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754">functional reactive programming</a> is particularly good a that).</li>
 </ul>
-
 <p>About our payment example, whatever object is interested in a change of state, like for example UI objects the will show different views to the user based on the current payment stage, should really subscribe to our payment object to receive <em>signals</em> about its mutation: the payment object itself should then send these changes to the observers. Notice that I used the  word <em>send</em> and not <em>broadcast</em>: the change of state of a particular object should usually not be treated as an all-encompassing <em>event</em>. Events are really about application wide changes (like a phone call during the execution of a mobile application): there are many ways to implement our observables and observers, the point is simply to have a clean, fixed API to <em>emit</em> an information, and <a href="http://reactivex.io">ReactiveX</a> could be a nice starting point to get an idea about the possible APIs.</p>
-
 <h2 id="proceed-one-way-only">Proceed one-way only</h2>
-
 <p>This might be controversial but it&rsquo;s extremely important. Consider the following case: our payment process object has idempotent methods and a reactive API, so a view controller object can keep a UI updated and send back user interactions to advance the process. But while the process is in &ldquo;working&rdquo; stage something goes wrong and the process fails: not a problem, we actually considered the &ldquo;failed&rdquo; stage, so the <code>PaymentProcess</code> is updated accordingly. But we would actually like to retry the payment, and of course update everything accordingly in our reactive chain. What should we do? Set our <code>PaymentProcess</code> back to &ldquo;working&rdquo;? That would be possible, but it&rsquo;s going to make everything more complex, because all the observers should in theory take into account the fact the this is not the first attempt to pay (the UI for example could show a &ldquo;retry&rdquo; message instead of the usual one).</p>
-
 <p>In general, we want to <em>solve</em> a state problem, we don&rsquo;t want to distribute it to multiple objects.</p>
-
 <p>Another case could be a complete stop of the payment process (the user could cancel it, for example, or the session could expire): we don&rsquo;t want to bring back the <code>PaymentProcess</code> instance, forcing all observer to do some kind of cleanup. In any case, a process that goes back and forth makes reasoning about code really hard, because <strong>it makes the future more complex</strong>: all the objects that depend on a mutable object are going to be easier to implement if we can assume that the mutability will only proceed in one direction. Of course this is not easy to implement, but in this case it&rsquo;s really natural to think about it: if the milk is running out in the evening, I cannot expect the bottle to magically refill for the morning, so I should start thinking about a different breakfast. Processes that are invertible usually require some form of external, high-level coordination, and from an architectural standpoint the idea of an object that mutates in any possible way might seem harmless: but at the implementation level this will cause problems, and bugs are in the implementation, not in the architecture. While implementing new features, refactoring, debugging or simply studying a codebase we reason about the code, not the architecture, and <em>coordinator</em> objects are classic jack-of-all-trades at the architecture level: but unfortunately, an implementation that requires external coordination is going to be more complex and error-prone, so it&rsquo;s better to be clear about the mutation path for an object.</p>
-
 <p>In our particular case, we could consider one or more &ldquo;retry&rdquo; stages, or a single &ldquo;retry&rdquo; stage with an associated object that represents the number of retries. And about the possibility of going back to the beginning, in that case we should really <strong>discard the whole process</strong>: the process owner, that would have likely activated the various accessory objects (like the ones for the UI) should <em>listen</em> for an &ldquo;abort&rdquo; stage, that would make it kill everything and start the process anew. There might be performance concerns: to mutate objects is usually faster than recreating them, but again, it can be managed and it&rsquo;s better to have cleaner, more understandable code from the beginning, so that it&rsquo;s going to be easier to make fine calibrations in later stages, than to create a mess in the name of early optimizations.</p>
-
 <p>One final question: if the process is one-way only, what happens if some object tries to set it to a previous stage with a method call? <strong>Absolutely nothing</strong>. The <em>ignore-if-impossible</em> semantics is actually clean and reasonable, and we don&rsquo;t need errors or exceptions to handle: even if this has to be taken into account at every method call, the important thing is to be <strong>clear</strong> about it, and the alternative is much worse. This whole article could be summarized in the phrase <strong>&ldquo;clear semantics are what makes mutability bearable&rdquo;</strong>. In this particular case, the fact that a method call is ignored or not doesn&rsquo;t change our reasoning: I&rsquo;m not going to make assumptions about the state of <code>PaymentProcess</code> after the call, because I&rsquo;m actually reacting to its changes in a separate context.</p>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>We considered a bunch of possible problems to think about when implementing mutable objects, and some options to confront them. Of course these ideas are purposely very general: every problem is different, every codebase is unique. But applying even just one of these techniques will most likely result in more clear and understandable code. I also didn&rsquo;t talk about application-wide mutation, because that&rsquo;s really an architectural thing; my goal is to raise awareness about the concept of mutation and variable instance properties in every single class. We should always <strong>avoid</strong> mutation when possible, and concentrate our variable state in a few, carefully controlled places; but if we&rsquo;re not careful, even a single mutating class in a multiple class project could wreak havoc, and force use to debug and fix a system that we thought was clean and well structured.</p>
 
   </div>
@@ -506,7 +469,7 @@ ga('send', 'pageview');
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -802,7 +765,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -821,13 +784,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -840,11 +801,13 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -863,7 +826,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -894,7 +857,7 @@ ga('send', 'pageview');
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -937,13 +900,11 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -952,11 +913,13 @@ ga('send', 'pageview');
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -999,14 +962,12 @@ ga('send', 'pageview');
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1018,19 +979,19 @@ ga('send', 'pageview');
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

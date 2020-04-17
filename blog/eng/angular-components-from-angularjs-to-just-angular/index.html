@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -48,33 +48,16 @@ Using Components with Angular today not only means writing code much more easily
 Using Components with Angular today not only means writing code much more easily upgradeable to future framework versions (especially using ES6), but it also allows you to modularize and reuse code more easily, in line with the modern frontend programming style that will be more and more modular." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/" />
-
-
-
-<meta property="article:published_time" content="2017-02-01T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2017-02-01T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2017-02-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-02-01T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Angular Components: from AngularJS to &#34;just Angular&#34;">
+        <meta itemprop="name" content="Angular Components: from AngularJS to &#34;just Angular&#34;">
 <meta itemprop="description" content="With version 1.5 and newer, AngularJS (which for clarity we&rsquo;ll call just Angular from now on, even though the naming convention was recently updated) introduced their own interpretation of Web Components, back-porting Components from Angular 2.
 Using Components with Angular today not only means writing code much more easily upgradeable to future framework versions (especially using ES6), but it also allows you to modularize and reuse code more easily, in line with the modern frontend programming style that will be more and more modular.">
-
-
 <meta itemprop="datePublished" content="2017-02-01T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2017-02-01T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1260">
@@ -82,7 +65,6 @@ Using Components with Angular today not only means writing code much more easily
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -111,14 +93,17 @@ Using Components with Angular today not only means writing code much more easily
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -419,37 +404,25 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p align="center"> <img src="/images/web-components-a-path-to-angular-2/angular.png"> </p>
-
+    <!-- raw HTML omitted -->
 <p>With version 1.5 and newer, AngularJS (which for clarity we&rsquo;ll call <a href="http://angularjs.blogspot.it/2016/12/ok-let-me-explain-its-going-to-be.html#Its_just_Angular_39"><em>just Angular</em></a> from now on, even though the naming convention was <a href="http://angularjs.blogspot.it/2017/01/branding-guidelines-for-angular-and.html">recently updated</a>) introduced their own interpretation of <a href="https://www.webcomponents.org/">Web Components</a>, back-porting <em>Components</em> from Angular 2.</p>
-
 <p>Using <em>Components</em> with Angular today not only means writing code much more easily upgradeable to future framework versions (especially using ES6), but it also allows you to modularize and reuse code more easily, in line with the modern frontend programming style that will be more and more modular.</p>
-
 <p>But, as with anything new, there are open questions:</p>
-
 <ul>
 <li>When should you use it?</li>
 <li>Why should you use it?</li>
 <li>What’s the difference between <code>.component()</code> and <code>.directive()</code> APIs?</li>
 </ul>
-
 <p>According to the official documentation, a <em>Component</em> is like a <em>Directive</em>&hellip; but easier to use!</p>
-
 <h2 id="directive-vs-component">Directive vs Component</h2>
-
 <p><strong>Directive:</strong></p>
-
 <ul>
 <li>was the main API to access the DOM in Angular 1.x;</li>
 <li>isolates parts of the DOM to create reusable building blocks;</li>
 <li>can be both a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">DOM element</a> <strong>and/or</strong> a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Attr">DOM attribute</a>;</li>
 <li>uses link and compile functions to operate on the DOM and the  model.</li>
 </ul>
-
 <p><strong>Component:</strong></p>
-
 <ul>
 <li>is an higher level abstraction of <em>directives</em></li>
 <li>can only be a DOM element (and aggregate others)</li>
@@ -458,49 +431,37 @@ ga('send', 'pageview');
 <li>uses controllers instead of link functions</li>
 <li>has <code>bindToController</code> option on by default</li>
 </ul>
-
 <h2 id="coding-comparison">Coding comparison</h2>
-
-<pre><code class="language-javascript">
-app.directive('list', function() {
-  return {
-    scope: {
-      items: '='
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">directive</span>(<span style="color:#e6db74">&#39;list&#39;</span>, <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">scope</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">items</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;=&#39;</span>
     },
-    restrict: “E”,
-    templateUrl: 'list.html',
-    controller: function ListCtrl() {},
-    controllerAs: '$ctrl',
-    bindToController: true
+    <span style="color:#a6e22e">restrict</span><span style="color:#f92672">:</span> <span style="color:#960050;background-color:#1e0010">“</span><span style="color:#a6e22e">E</span><span style="color:#960050;background-color:#1e0010">”</span>,
+    <span style="color:#a6e22e">templateUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;list.html&#39;</span>,
+    <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ListCtrl</span>() {},
+    <span style="color:#a6e22e">controllerAs</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;$ctrl&#39;</span>,
+    <span style="color:#a6e22e">bindToController</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
   }
 });
 
-</code></pre>
-
-<p>It’s a simple component directive, with an isolated scope, binding, and a controller.</p>
-
+</code></pre></div><p>It’s a simple component directive, with an isolated scope, binding, and a controller.</p>
 <p>Here’s how you’ll write it with <code>.component()</code>:</p>
-
-<pre><code class="language-javascript">
-app.component('list', {
-  bindings: {
-    items: '='
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">component</span>(<span style="color:#e6db74">&#39;list&#39;</span>, {
+  <span style="color:#a6e22e">bindings</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">items</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;=&#39;</span>
   },
-  templateUrl: 'list.html',
-  controller: function ListCtrl() {}
+  <span style="color:#a6e22e">templateUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;list.html&#39;</span>,
+  <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">ListCtrl</span>() {}
 });
 
-</code></pre>
-
-<p>As you can see not much has changed, but things are a little simpler:</p>
-
+</code></pre></div><p>As you can see not much has changed, but things are a little simpler:</p>
 <p><code>bindToController</code> is the default and with the <code>bindings</code> property the scope is always isolated; <code>controllerAs</code> is on and defaults set to <code>$ctrl</code>.</p>
-
 <p>Components so don’t manipulate the DOM or data that are outside their scope, but they receive inputs and produce outputs through the interaction with the view.
 Another nice point is that we don’t need to write a <strong>dumb</strong> function that always returns the same object, we just define that object right here.</p>
-
 <h2 id="comparison-between-directive-definition-and-component-definition">Comparison between Directive definition and Component definition</h2>
-
 <table>
 <thead>
 <tr>
@@ -509,92 +470,77 @@ Another nice point is that we don’t need to write a <strong>dumb</strong> func
 <th>Component</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td><code>bindings</code></td>
 <td>No</td>
 <td>Yes (binds to controller)</td>
 </tr>
-
 <tr>
 <td><code>bindToController</code></td>
 <td>Yes (default: <code>false</code>)</td>
 <td>No (use bindings instead)</td>
 </tr>
-
 <tr>
 <td><code>compile()</code></td>
 <td>Yes</td>
 <td>No</td>
 </tr>
-
 <tr>
 <td><code>controller</code></td>
 <td>Yes</td>
 <td>Yes (defaults to <code>function() {}</code>)</td>
 </tr>
-
 <tr>
 <td><code>controllerAs</code></td>
 <td>Yes (default: <code>false</code>)</td>
 <td>Yes (default <code>$ctrl</code>)</td>
 </tr>
-
 <tr>
 <td><code>link()</code></td>
 <td>Yes</td>
 <td>No</td>
 </tr>
-
 <tr>
 <td><code>multiElement</code></td>
 <td>Yes</td>
 <td>No</td>
 </tr>
-
 <tr>
 <td><code>priority</code></td>
 <td>Yes</td>
 <td>No</td>
 </tr>
-
 <tr>
 <td><code>require</code></td>
 <td>Yes</td>
 <td>No</td>
 </tr>
-
 <tr>
 <td><code>scope</code></td>
 <td>Yes (default: <code>false</code>)</td>
 <td>No (scope is always isolate)</td>
 </tr>
-
 <tr>
 <td><code>template</code></td>
 <td>Yes</td>
 <td>Yes, injectable</td>
 </tr>
-
 <tr>
 <td><code>templateNamespace</code></td>
 <td>Yes</td>
 <td>No</td>
 </tr>
-
 <tr>
 <td><code>templateUrl</code></td>
 <td>Yes</td>
 <td>Yes, injectable</td>
 </tr>
-
 <tr>
 <td><code>terminal</code></td>
 <td>Yes</td>
 <td>No</td>
 </tr>
-
 <tr>
 <td><code>transclude</code></td>
 <td>Yes (default: <code>false</code>)</td>
@@ -602,76 +548,55 @@ Another nice point is that we don’t need to write a <strong>dumb</strong> func
 </tr>
 </tbody>
 </table>
-
 <h2 id="new-other-goodies">New other goodies:</h2>
-
 <h4 id="one-way-data-bindings">One way data bindings</h4>
-
 <p>Previously, we could pass objects to child directives/components with the <code>=</code> binding:</p>
-
-<pre><code class="language-javascript">
-app.component('bar', {
-  templateUrl: 'bar.html',
-  bindings: {
-    foo: '='
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">component</span>(<span style="color:#e6db74">&#39;bar&#39;</span>, {
+  <span style="color:#a6e22e">templateUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bar.html&#39;</span>,
+  <span style="color:#a6e22e">bindings</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;=&#39;</span>
   },
-  controller: function() {}
+  <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {}
 });
 
-</code></pre>
-
-<p>This would have created a <strong>two-way data binding</strong> with the component’s parent. Whenever the parent would assign a new value to <code>foo</code>, or change the existing one, this would be propagated to the child too, and vice-versa; this is how two-way data binding operates by design.</p>
-
+</code></pre></div><p>This would have created a <strong>two-way data binding</strong> with the component’s parent. Whenever the parent would assign a new value to <code>foo</code>, or change the existing one, this would be propagated to the child too, and vice-versa; this is how two-way data binding operates by design.</p>
 <p>While helpful, this isn’t a very common scenario in my experience, because it has its drawbacks: mostly, in complex applications it may become more difficult to reason about, and it can have heavy performance implications.</p>
-
 <p>That’s why Angular has introduced one-way data bindings: these create just a single <em>watcher</em>, watching for changes on the parent and propagating them to the child. As a result we gain performance (by cutting in half the amount of watchers created) and things become less &ldquo;error friendly&rdquo;.</p>
-
 <p>The syntax is similar to the code below:</p>
-
-<pre><code class="language-javascript">
-app.component('bar', {
-  templateUrl: 'bar.html',
-  bindings: {
-    foo: '&lt;'
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">component</span>(<span style="color:#e6db74">&#39;bar&#39;</span>, {
+  <span style="color:#a6e22e">templateUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bar.html&#39;</span>,
+  <span style="color:#a6e22e">bindings</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;&#39;</span>
   },
-  controller: function() {}
+  <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {}
 });
 
-</code></pre>
-
-<p>Yeah, we just changed <code>=</code> to <code>&lt;</code>.</p>
-
+</code></pre></div><p>Yeah, we just changed <code>=</code> to <code>&lt;</code>.</p>
 <p>Other data binding parameters are:</p>
-
 <ul>
 <li><code>@</code>: interpolation bindings (input parameter), also used in the directives for values ​​coming from the DOM as strings;</li>
 <li><code>&amp;</code>: expression bindings, often used to pass a function to a component to provide a callback event (to generate an output) to the caller.</li>
 </ul>
-
 <h4 id="lifecycle-hook-oninit-onchanges-ondestroy-and-postlink">Lifecycle hook: <code>$onInit</code>, <code>$onChanges</code>, <code>$onDestroy</code> and <code>$postLink</code></h4>
-
 <p>Lifecycle hooks provides us with an easy way of invoking operation based on the lifecycle of our components. The usage of these hooks lets us provide our users with relevant information or action at the appropriate time.</p>
-
 <ul>
 <li><code>$onInit()</code> is executed when all controllers on the element have been constructed and after their bindings are initialized.
 This hook is meant to be used for any kind of initialization work for the controller.</li>
 </ul>
-
-<pre><code class="language-javascript">
-app.component('MyCtrlComp', {
-  templateUrl: 'user.html',
-  controller: function() {
-    this.$onInit = function() {
-        this.username = 'John.Doe';
-        console.log('User component initialized');
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">component</span>(<span style="color:#e6db74">&#39;MyCtrlComp&#39;</span>, {
+  <span style="color:#a6e22e">templateUrl</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;user.html&#39;</span>,
+  <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$onInit</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">username</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;John.Doe&#39;</span>;
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;User component initialized&#39;</span>);
     };
   }
 });
 
-</code></pre>
-
-<p>This is a very simple example, but imagine we’d need to do some HTTP requests during initialization of this component or controller: now we have a better place for these kind of things.</p>
-
+</code></pre></div><p>This is a very simple example, but imagine we’d need to do some HTTP requests during initialization of this component or controller: now we have a better place for these kind of things.</p>
 <ul>
 <li><code>$onDestroy()</code> is called when its containing scope is destroyed. We can use this hook to release external resources, watches and event handlers.
 In a scenario where you have attached non-native Angular event listeners or logic, we can use this hook to clean it up when the component is destroyed.</li>
@@ -679,62 +604,45 @@ In a scenario where you have attached non-native Angular event listeners or logi
 It gets called with an object that holds the changes of all one-way bindings with the current Value and the previous Value.
 With <code>$onChanges</code> we can react to this changes and update the child component data effectively.</li>
 </ul>
-
 <p>Suppose that we make the name property of our myUserCmp configurable from the outside using a one-way binding:</p>
-
-<pre><code class="language-javascript">
-mod.component('myUserCmp', {
-  template: '&lt;h1&gt;{{$ctrl.user}}&lt;/h1&gt;',
-  bindings: {
-    name: '&lt;'
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#a6e22e">mod</span>.<span style="color:#a6e22e">component</span>(<span style="color:#e6db74">&#39;myUserCmp&#39;</span>, {
+  <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;h1&gt;{{$ctrl.user}}&lt;/h1&gt;&#39;</span>,
+  <span style="color:#a6e22e">bindings</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;&#39;</span>
   },
-  controller: MyCtrlComp
+  <span style="color:#a6e22e">controller</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">MyCtrlComp</span>
 });
 
-</code></pre>
+</code></pre></div><p>in the markup we can now bind an expression to the component’s user property like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">my</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cmp</span> <span style="color:#a6e22e">user</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;JohnDoe&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/my-cmp&gt;</span>
 
-<p>in the markup we can now bind an expression to the component’s user property like this:</p>
-
-<pre><code class="language-javascript">
-&lt;my-cmp user=&quot;JohnDoe&quot;&gt;&lt;/my-cmp&gt;
-
-</code></pre>
-
-<p>Now we want to prepend the user with “Hi” when the user is JohnDoe and otherwise put “Hello”. We can do that using the <code>$onChanges()</code> lifecycle hook.
+</code></pre></div><p>Now we want to prepend the user with “Hi” when the user is JohnDoe and otherwise put “Hello”. We can do that using the <code>$onChanges()</code> lifecycle hook.
 It gets called with an object that holds the changes of all one-way bindings along with the currentValue and the previousValue.</p>
-
-<pre><code class="language-javascript">
-function MyCtrlComp() {
-  this.$onChanges = function (changesObj) {
-    if (changesObj.user) {
-      var prfx;
-      (changesObj.user.currentValue === 'JohnDoe') ?
-        prfx = 'Hi ' : prfx = 'Hello ';
-      this.user = prfx + this.user;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">MyCtrlComp</span>() {
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$onChanges</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">changesObj</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">changesObj</span>.<span style="color:#a6e22e">user</span>) {
+      <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">prfx</span>;
+      (<span style="color:#a6e22e">changesObj</span>.<span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">currentValue</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;JohnDoe&#39;</span>) <span style="color:#f92672">?</span>
+        <span style="color:#a6e22e">prfx</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Hi &#39;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">prfx</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Hello &#39;</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">user</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">prfx</span> <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">user</span>;
     }
   };
 }
 
-</code></pre>
-
-<ul>
-<li><code>$postLink()</code> is called after the controller&rsquo;s element and its children have been linked. When the component elements have been compiled and are ready to go, this hook will be fired;<br />
+</code></pre></div><ul>
+<li><code>$postLink()</code> is called after the controller&rsquo;s element and its children have been linked. When the component elements have been compiled and are ready to go, this hook will be fired;<br>
 It can help us to implement some functionality that depends on the component elements to be fully compiled.
 It’s important to note that this is not a complete replacement for DOM manipulation, this functionality should be handled by decorator directives.</li>
 </ul>
-
 <h2 id="conclusion">Conclusion</h2>
-
 <p>Adopting <em>Components</em> allows you to write code that is more easily portable to future Angular versions and introduces a modular architecture of the DOM that is more maintainable compared to the usual guidelines.</p>
-
 <p>In a <em>Component</em> based architecture, an application becomes a tree structure of elements, with well-defined inputs and outputs, a clear data-flow, and predictable behaviours.</p>
-
 <p>In this structure, the root elements are usually called &ldquo;smart components&rdquo; because these are the ones who manage the data, while those closest to the leaves are called &ldquo;dumb components&rdquo; instead, because they are more UI focused and are highly reusable.</p>
-
 <p>In conclusion, <code>.component()</code> is a great addition to Angular. It’s a real upgrade for code quality and helps you prepare for the future.</p>
-
 <p>So, upgrade to 1.5 and start using <code>.component()</code>: you have unlocked a new skill!</p>
-
 <p>For more details refer to understanding components <a href="https://docs.angularjs.org/guide/component">docs</a></p>
 
   </div>
@@ -782,7 +690,7 @@ It’s important to note that this is not a complete replacement for DOM manipul
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -1078,7 +986,7 @@ It’s important to note that this is not a complete replacement for DOM manipul
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1097,13 +1005,11 @@ It’s important to note that this is not a complete replacement for DOM manipul
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1116,11 +1022,13 @@ It’s important to note that this is not a complete replacement for DOM manipul
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1139,7 +1047,7 @@ It’s important to note that this is not a complete replacement for DOM manipul
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1170,7 +1078,7 @@ It’s important to note that this is not a complete replacement for DOM manipul
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1213,13 +1121,11 @@ It’s important to note that this is not a complete replacement for DOM manipul
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1228,11 +1134,13 @@ It’s important to note that this is not a complete replacement for DOM manipul
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1275,14 +1183,12 @@ It’s important to note that this is not a complete replacement for DOM manipul
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1294,19 +1200,19 @@ It’s important to note that this is not a complete replacement for DOM manipul
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

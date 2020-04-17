@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OOP on Facile.it Engineering</title>
@@ -18,9 +18,7 @@
       
       <guid>https://engineering.facile.it/blog/eng/visual-debt-typehints/</guid>
       <description>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
-Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is #PHP&amp;#39;s new spaces vs tabs
-&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017 
-After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading).</description>
+After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.</description>
     </item>
     
     <item>
@@ -48,7 +46,7 @@ After asking references about this, someone alluded to this very short video: &a
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/ita/no-country-for-if-else/</guid>
-      <description>C&amp;rsquo;è un ospite indesiderato che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del codice già esistente, e dobbiamo tener conto della sua complessità man mano che la code base aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:
+      <description>C&#39;è un ospite indesiderato che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del codice già esistente, e dobbiamo tener conto della sua complessità man mano che la code base aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:
  comprendere il significato di codice vecchio, scritto da altri o da se stessi; tracciare le cause di bug, cioè errori, nel codice; eseguire modifiche a una certa procedura; aggiungere funzionalità a strutture già esistenti;  Anche approcciando lo sviluppo di nuovo software con metodologie agili, dobbiamo comunque fare i conti con il codice esistente, e per farlo dobbiamo almeno essere in grado di comprenderlo senza sforzi eccessivi.</description>
     </item>
     

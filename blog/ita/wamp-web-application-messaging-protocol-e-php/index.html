@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -32,7 +32,7 @@
     
     <meta name="twitter:title" content="WAMP, Web Application Messaging Protocol.. e PHP!"/>
     <meta name="twitter:description" content="Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno scambio dati in due direzioni, efficiente e a bassa latenza, ha determinato l’ascesa negli ultimi anni di soluzioni basate su WebSocket.
-Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side."/>
+Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex(tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side."/>
     
         
             
@@ -45,44 +45,26 @@ Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno de
 
         <meta property="og:title" content="WAMP, Web Application Messaging Protocol.. e PHP!" />
 <meta property="og:description" content="Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno scambio dati in due direzioni, efficiente e a bassa latenza, ha determinato l’ascesa negli ultimi anni di soluzioni basate su WebSocket.
-Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side." />
+Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex(tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/" />
-
-
-
-<meta property="article:published_time" content="2015-09-28T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-09-28T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-09-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-09-28T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="WAMP, Web Application Messaging Protocol.. e PHP!">
+        <meta itemprop="name" content="WAMP, Web Application Messaging Protocol.. e PHP!">
 <meta itemprop="description" content="Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno scambio dati in due direzioni, efficiente e a bassa latenza, ha determinato l’ascesa negli ultimi anni di soluzioni basate su WebSocket.
-Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.">
-
-
+Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex(tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.">
 <meta itemprop="datePublished" content="2015-09-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-09-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1052">
+<meta itemprop="wordCount" content="948">
 
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -111,14 +93,17 @@ Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno de
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -419,220 +404,43 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno <strong>scambio dati</strong> in <strong>due direzioni</strong>, <strong>efficiente</strong> e a <strong>bassa latenza</strong>, ha determinato l’ascesa negli ultimi anni di <strong>soluzioni basate su <a href="https://www.websocket.org/" target="_blank">WebSocket</a></strong>.</p>
-
-<p>Internet delle cose e web 2.0 trovano oramai sempre <strong>meno spazio</strong> all’interno del protocollo <strong>HTTP/1</strong>. Le tecniche di <strong>polling e long polling</strong>, in voga fino a pochi anni fa, non permettevano di trasmettere in <a href="https://it.wikipedia.org/wiki/Duplex" target="_blank">full duplex</a> (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano <strong>diversi sforzi</strong> per simulare notifiche push server side.</p>
-
+    <p>Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno <strong>scambio dati</strong> in <strong>due direzioni</strong>, <strong>efficiente</strong> e a <strong>bassa latenza</strong>, ha determinato l’ascesa negli ultimi anni di <strong>soluzioni basate su <!-- raw HTML omitted -->WebSocket<!-- raw HTML omitted --></strong>.</p>
+<p>Internet delle cose e web 2.0 trovano oramai sempre <strong>meno spazio</strong> all’interno del protocollo <strong>HTTP/1</strong>. Le tecniche di <strong>polling e long polling</strong>, in voga fino a pochi anni fa, non permettevano di trasmettere in <!-- raw HTML omitted -->full duplex<!-- raw HTML omitted --> (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano <strong>diversi sforzi</strong> per simulare notifiche push server side.</p>
 <h2 id="il-protocollo-wamp">Il protocollo WAMP</h2>
-
-<p><a href="http://wamp.ws/" target="_blank"><strong>WAMP</strong></a> (Web Application Messaging Protocol e non Windows, Apache, etc.!) offre un moderno <strong>pattern di messaggistica</strong> <a href="https://en.wikipedia.org/wiki/Remote_procedure_call" target="_blank">RPC</a> e <a href="https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern" target="_blank">Pub/Sub</a> in maniera unificata. Registrato presso lo <a href="https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority" target="_blank">IANA</a> come sottoprotocollo WebSocket, definisce uno <strong>standard aperto</strong> per lo scambio di <strong>messaggi in tempo reale</strong> tra applicazioni e componenti, e permette la creazione di architetture <strong>debolmente accoppiate</strong> basate su <strong>microservizi</strong>. Utilizza canali full-duplex ordinati ed è quindi adatto ad implementazioni basate su WebSocket, ma supporta allo stesso modo socket Unix, socket raw o long polling HTTP.</p>
-
+<p><!-- raw HTML omitted --><strong>WAMP</strong><!-- raw HTML omitted --> (Web Application Messaging Protocol e non Windows, Apache, etc.!) offre un moderno <strong>pattern di messaggistica</strong> <!-- raw HTML omitted -->RPC<!-- raw HTML omitted --> e <!-- raw HTML omitted -->Pub/Sub<!-- raw HTML omitted --> in maniera unificata. Registrato presso lo <!-- raw HTML omitted -->IANA<!-- raw HTML omitted --> come sottoprotocollo WebSocket, definisce uno <strong>standard aperto</strong> per lo scambio di <strong>messaggi in tempo reale</strong> tra applicazioni e componenti, e permette la creazione di architetture <strong>debolmente accoppiate</strong> basate su <strong>microservizi</strong>. Utilizza canali full-duplex ordinati ed è quindi adatto ad implementazioni basate su WebSocket, ma supporta allo stesso modo socket Unix, socket raw o long polling HTTP.</p>
 <p>Il protocollo risulta piuttosto <strong>completo ed adeguato</strong> a diversi scenari di utilizzo se comparato ad altri sistemi di messaggistica ed RPC.</p>
-
-<p><table>
-<tbody>
-<tr>
-<th>Technology</th>
-<th>PubSub</th>
-<th>RPC</th>
-<th>Routed RPC</th>
-<th>Web native</th>
-<th>Cross Language</th>
-<th>Open Standard</th>
-</tr>
-<tr>
-<td>WAMP</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-</tr>
-<tr>
-<td>AJAX</td>
-<td></td>
-<td>✔</td>
-<td></td>
-<td>✔</td>
-<td>✔</td>
-<td></td>
-</tr>
-<tr>
-<td>AMQP</td>
-<td>✔</td>
-<td>✔</td>
-<td></td>
-<td></td>
-<td>✔</td>
-<td>✔</td>
-</tr>
-<tr>
-<td>REST</td>
-<td></td>
-<td>✔</td>
-<td></td>
-<td>✔</td>
-<td>✔</td>
-<td></td>
-</tr>
-<tr>
-<td>SOAP</td>
-<td></td>
-<td>✔</td>
-<td></td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-</tr>
-<tr>
-<td>Socket.io</td>
-<td>✔</td>
-<td></td>
-<td></td>
-<td>✔</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>SockJS</td>
-<td></td>
-<td></td>
-<td></td>
-<td>✔</td>
-<td>✔</td>
-<td></td>
-</tr>
-<tr>
-<td>XMPP</td>
-<td>✔</td>
-<td></td>
-<td></td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-</tr>
-<tr>
-<td>ZeroMQ</td>
-<td>✔</td>
-<td></td>
-<td></td>
-<td></td>
-<td>✔</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<em>fonte: Wikipedia</em></p>
-
+<!-- raw HTML omitted -->
 <p>Può essere utilizzato con profitto per sviluppare una piattaforma di gioco <strong>online multiplayer</strong>, strumenti di <strong>business intelligence</strong> real time e <strong>piattaforme collaborative</strong> per numerosi utenti.</p>
-
 <p>Una piattaforma web di help desk ad esempio, può beneficiare di notifiche, chat, strumenti di scrittura multi-utente ed analisi dell’andamento in tempo reale  <strong>sullo stesso protocollo WAMP</strong>.</p>
-
 <p>Per funzionare WAMP necessità di uno o più server di <strong>routing centralizzati</strong>, allo stesso modo di <strong>RabbitMQ per AMQP</strong>.
-Per quanto esistano diverse implementazioni di router, in diversi linguaggi, lo standard <em>de facto</em> è rappresentato da <a href="http://crossbar.io/" target="_blank"><strong>Crossbar</strong></a>, sviluppato da <a href="http://tavendo.com/" target="_blank">Tavendo</a>, alla quale si deve anche la <strong>definizione del protocollo</strong> stesso.</p>
-
+Per quanto esistano diverse implementazioni di router, in diversi linguaggi, lo standard <em>de facto</em> è rappresentato da <!-- raw HTML omitted --><strong>Crossbar</strong><!-- raw HTML omitted -->, sviluppato da <!-- raw HTML omitted -->Tavendo<!-- raw HTML omitted -->, alla quale si deve anche la <strong>definizione del protocollo</strong> stesso.</p>
 <h2 id="crossbar">Crossbar</h2>
-
-<p>Crossbar, scritto in python (<a href="https://github.com/crossbario/crossbar" target="_blank">open source</a>, licenza AGPL v3), supporta completamente le funzionalità descritte dal protocollo oltre a vantare <strong>configurazioni avanzate</strong> come ad esempio le subscriptions <a href="http://crossbar.io/docs/Pattern-Based-Subscriptions/" target="_blank">basate su pattern</a>, le <a href="http://crossbar.io/docs/Progressive-Call-Results/" target="_blank">progressive result</a> su RPC e profili di autenticazione ed <a href="http://crossbar.io/docs/Authorization/" target="_blank">autorizzazione</a> dinamici.</p>
-
+<p>Crossbar, scritto in python (<!-- raw HTML omitted -->open source<!-- raw HTML omitted -->, licenza AGPL v3), supporta completamente le funzionalità descritte dal protocollo oltre a vantare <strong>configurazioni avanzate</strong> come ad esempio le subscriptions <!-- raw HTML omitted -->basate su pattern<!-- raw HTML omitted -->, le <!-- raw HTML omitted -->progressive result<!-- raw HTML omitted --> su RPC e profili di autenticazione ed <!-- raw HTML omitted -->autorizzazione<!-- raw HTML omitted --> dinamici.</p>
 <p>Nessuna delle altre implementazioni è poi al momento in grado di vantare le stesse <strong>prestazioni</strong> e la <strong>stabilità</strong> di Crossbar: una istanza del router è in grado di servire 1000 messaggi/secondo su Pub/Sub, a 1000 client, con una <strong>latenza di 25ms</strong> su una <strong>RaspberryPi</strong>!</p>
-
-<p><table>
-<tbody><tr>
-<th>Router</th>
-<th>Broker</th>
-<th>Dealer</th>
-<th>Advanced Profile</th>
-<th>Language</th>
-</tr>
-<tr>
-<td>Crossbar</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-<td>Pyhton</td>
-</tr>
-<tr>
-<td>Thruway</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-<td>PHP</td>
-</tr>
-<tr>
-<td>wamp.rt</td>
-<td>✔</td>
-<td>✔</td>
-<td>✔</td>
-<td>NodeJS</td>
-</tr>
-<tr>
-<td>jawampa</td>
-<td>✔</td>
-<td>✔</td>
-<td></td>
-<td>Java</td>
-</tr>
-<tr>
-<td>WampSharp</td>
-<td>✔</td>
-<td>✔</td>
-<td></td>
-<td>C#</td>
-</tr>
-<tr>
-<td>Erwa</td>
-<td>✔</td>
-<td>✔</td>
-<td></td>
-<td>Erlang</td>
-</tr>
-</tbody>
-</table>
-<em>fonte: WAMP.ws</em></p>
-
+<!-- raw HTML omitted -->
 <h2 id="e-php">..e PHP?</h2>
-
 <p>Diverse applicazioni web di backend usate presso Facile.it permettono ad un gran numero di operatori di lavorare sulle stesse pratiche in maniera collaborativa in <strong>tempo reale</strong>.
 Il protocollo WAMP è una tecnologia sulla quale è possibile sviluppare in maniera efficiente <strong>dashboard collaborative</strong> e realtime.. ma sarà anche in grado di funzionare adeguatamente assieme alle soluzioni PHP (spesso in Symfony 2) sviluppate in casa e <strong>non precedentemente disegnate per l&rsquo;uso con WebSocket</strong>?</p>
-
-<p>Esistono diverse librerie (come <a href="https://github.com/voryx/Thruway" target="_blank">Thruway</a>) che permettono di operare come <strong>client PHP</strong> in ambiente WAMP, ma per <strong>semplificare</strong> l&rsquo;integrazione del protocollo con altri servizi, Crossbar supporta il <a href="http://crossbar.io/docs/HTTP-Bridge-Services/" target="_blank"><strong>bridge HTTP</strong></a> delle funzionalità Pub/Sub e RPC.</p>
-
+<p>Esistono diverse librerie (come <!-- raw HTML omitted -->Thruway<!-- raw HTML omitted -->) che permettono di operare come <strong>client PHP</strong> in ambiente WAMP, ma per <strong>semplificare</strong> l&rsquo;integrazione del protocollo con altri servizi, Crossbar supporta il <!-- raw HTML omitted --><strong>bridge HTTP</strong><!-- raw HTML omitted --> delle funzionalità Pub/Sub e RPC.</p>
 <p>In pratica, parlando ad esempio di Pub/Sub, è possibile <strong>pubblicare via HTTP</strong> (o HTTPS) su Crossbar messaggi che saranno inoltrati su topic ai <strong>client connessi via WebSocket</strong> in maniera trasparente. Altresì è possibile <strong>iscriversi ai topic</strong> fornendo un <strong>endpoint HTTP</strong> da chiamare per ricevere i messaggi pubblicati da client WebSocket.</p>
-
 <p>L&rsquo;esempio sottostante configura un router Crossbar in grado di accettare connessioni websocket, pubblicazioni via HTTP e che si occupa di forwardare alcuni messaggi ad un endpoint HTTPS:</p>
-
-<p><style type="text/css">
-  .gist-file
-  .gist-data {max-height: 500px;}
-</style>
-<script src="https://gist.github.com/peelandsee/51417b3c7c1dc400e85f.js"></script></p>
-
-<p>Il gist precedente può essere lanciato al volo con <a href="https://docs.docker.com/" target="_blank">docker</a>:
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Il gist precedente può essere lanciato al volo con <!-- raw HTML omitted -->docker<!-- raw HTML omitted -->:
 <code>docker run -p 80:80 -p 8080:8080 -v $PWD/crossbar-config.json:/.crossbar/config.json vinelab/crossbar</code>.</p>
-
 <p>Ovviamente l&rsquo;esempio non tiene conto di profili di configurazione più avanzati, come <strong>cifratura TLS</strong>, autenticazione, ruoli separati di pubblicazione e/o iscrizione, disponibili nella documentazione di Crossbar.</p>
-
 <p>Features come la firma delle richieste HTTP, richiedono più di qualche minuto di sviluppo, ma sono indispensabili in un <strong>ambiente di produzione</strong>.</p>
-
 <p>Per semplificare l&rsquo;adozione del bridge HTTP in <strong>ambito PHP</strong>, in Facile.it abbiamo sviluppato e rilasciato un <strong>bundle</strong> che permette la configurazione automatica di <strong>servizi di Publisher WAMP nel service container</strong> di Symfony 2.</p>
-
-<p>Il bundle, disponibile su <a href="https://packagist.org/packages/facile-it/crossbar-http-publisher-bundle" target="_blank">Packagist (composer)</a> può essere installato con
+<p>Il bundle, disponibile su <!-- raw HTML omitted -->Packagist (composer)<!-- raw HTML omitted --> può essere installato con
 <code>$ composer require facile-it/crossbar-http-publisher-bundle dev-master</code>
 e richiede una <strong>configurazione rapida</strong> ed intuitiva:</p>
-
 <pre><code>facile_crossbar_http_publisher:
   connections:
     foo_publisher_1:
         protocol: http
         host: 127.0.0.1
-</code></pre>
-
-<p>L&rsquo;uso è molto semplice:</p>
-
+</code></pre><p>L&rsquo;uso è molto semplice:</p>
 <pre><code>// recupero del servizio
 $fooPublisher = $container
                 -&gt;get('facile.crossbar.publisher.foo_publisher_1');
@@ -641,33 +449,19 @@ $topic = 'com.myapp.hello';
 
 // pubblicazione
 $firstPublisher-&gt;publish($topic, ['foo',1]);
-</code></pre>
-
-<p>Con le poche righe sopra riportate, attraverso il metodo <code>publish()</code> viene effettuata una <strong>chiamata HTTP POST</strong> verso il router WAMP, ed il messaggio <code>['foo',1]</code> raggiunge in tempo (quasi) reale tutti i client (ad esempio <strong>tutti i browser degli utenti</strong>) iscritti al topic <code>com.myapp.hello</code>.</p>
-
-<p>Anche in questo caso, la <a href="http://crossbar.io/docs/Processes/" target="_blank">configurazione</a> può supportare diversi host, porte, uso TLS, signed request, e attraverso GitHub è possibile trovare <a href="https://github.com/crossbario/crossbarexamples" target="_blank">diversi esempi</a> di <strong>possibili configurazioni</strong>.</p>
-
+</code></pre><p>Con le poche righe sopra riportate, attraverso il metodo <code>publish()</code> viene effettuata una <strong>chiamata HTTP POST</strong> verso il router WAMP, ed il messaggio <code>['foo',1]</code> raggiunge in tempo (quasi) reale tutti i client (ad esempio <strong>tutti i browser degli utenti</strong>) iscritti al topic <code>com.myapp.hello</code>.</p>
+<p>Anche in questo caso, la <!-- raw HTML omitted -->configurazione<!-- raw HTML omitted --> può supportare diversi host, porte, uso TLS, signed request, e attraverso GitHub è possibile trovare <!-- raw HTML omitted -->diversi esempi<!-- raw HTML omitted --> di <strong>possibili configurazioni</strong>.</p>
 <h2 id="ma-i-miei-utenti-lo-supporteranno">..ma i miei utenti lo supporteranno?</h2>
-
 <p>Lato browser, passare a WAMP è davvero <strong>semplice</strong>:
-la libreria <a href="http://autobahn.ws/js/" target="_blank"><strong>Autobahn|JS</strong></a> garantisce piena <strong>compatibilità</strong> anche per <a href="https://nodejs.org/en/" target="_blank">node.js</a>, supporta l&rsquo;autenticazione, ed è in grado di gestire in maniera <strong>asincronia</strong> sia RPC che Pub/Sub.</p>
-
-<p>Qualora il browser di un vostro utente non supportasse WebSocket (e <a href="http://caniuse.com/#feat=websockets" target="_blank">dovrebbe</a> oramai!), Autobahn|JS è in grado di fornire un <strong>fallback automatico</strong> a long polling.</p>
-
+la libreria <!-- raw HTML omitted --><strong>Autobahn|JS</strong><!-- raw HTML omitted --> garantisce piena <strong>compatibilità</strong> anche per <!-- raw HTML omitted -->node.js<!-- raw HTML omitted -->, supporta l&rsquo;autenticazione, ed è in grado di gestire in maniera <strong>asincronia</strong> sia RPC che Pub/Sub.</p>
+<p>Qualora il browser di un vostro utente non supportasse WebSocket (e <!-- raw HTML omitted -->dovrebbe<!-- raw HTML omitted --> oramai!), Autobahn|JS è in grado di fornire un <strong>fallback automatico</strong> a long polling.</p>
 <p>Iscriversi ad un topic o pubblicare un messaggio richiede poche linee:</p>
-
-<script src="https://gist.github.com/peelandsee/c853bc3fd3971e78527c.js"></script>
-
+<!-- raw HTML omitted -->
 <p>Nell&rsquo;esempio sopra riportato, il client JS <strong>si iscrive</strong> al topic <code>com.myapp.hello</code> e passa i messaggi ricevuti ad una semplice funzione <code>console.log()</code>; inoltre <strong>pubblica un messaggio</strong> sul topic <code>com.myapp.topic1</code>. Quest&rsquo;ultimo, sarà anche <strong>forwardato da Crossbar sul nostro endpoint HTTPS</strong> <code>https://hostname/subscriptions</code>.</p>
-
 <p>Grazie alle <strong>funzionalità HTTP bridge</strong> di Crossabar l&rsquo;utilizzo di WAMP in ambito PHP, senza connessioni persistenti o consumer sempre accesi, è <strong>semplice ed immediato</strong>!</p>
-
 <p>Per un ulteriore <strong>approfondimento su WAMP</strong>, saranno inoltre utili le slide che seguono:</p>
-
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/MEmo82CFgt1xND" width="700" height="550" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>
-
+<!-- raw HTML omitted -->
 <h2 id="riferimenti">Riferimenti</h2>
-
 <ul>
 <li><a href="http://wamp.ws/">WAMP Protocol</a></li>
 <li><a href="http://crossbar.io/docs/TOC/">Crossbar - Documentazione</a></li>
@@ -727,7 +521,7 @@ la libreria <a href="http://autobahn.ws/js/" target="_blank"><strong>Autobahn|JS
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -1023,7 +817,7 @@ la libreria <a href="http://autobahn.ws/js/" target="_blank"><strong>Autobahn|JS
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1042,13 +836,11 @@ la libreria <a href="http://autobahn.ws/js/" target="_blank"><strong>Autobahn|JS
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1061,11 +853,13 @@ la libreria <a href="http://autobahn.ws/js/" target="_blank"><strong>Autobahn|JS
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1084,7 +878,7 @@ la libreria <a href="http://autobahn.ws/js/" target="_blank"><strong>Autobahn|JS
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1115,7 +909,7 @@ la libreria <a href="http://autobahn.ws/js/" target="_blank"><strong>Autobahn|JS
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1158,13 +952,11 @@ la libreria <a href="http://autobahn.ws/js/" target="_blank"><strong>Autobahn|JS
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1173,11 +965,13 @@ la libreria <a href="http://autobahn.ws/js/" target="_blank"><strong>Autobahn|JS
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1220,14 +1014,12 @@ la libreria <a href="http://autobahn.ws/js/" target="_blank"><strong>Autobahn|JS
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1239,19 +1031,19 @@ la libreria <a href="http://autobahn.ws/js/" target="_blank"><strong>Autobahn|JS
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

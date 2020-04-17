@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -46,40 +46,22 @@
 <meta property="og:description" content="Con Type First Development può intendersi un approccio allo sviluppo di nuove funzionalità o moduli di un software partendo dai tipi di dati coinvolti: non si tratta quindi di un pattern o una pratica codificata, ma solo di un possibile punto di partenza per iniziare il ragionamento. Ragionando esclusivamente sui tipi, prima ancora di pensare alle singole specifiche implementazioni dei vari blocchi di codice, è possibile costruire più facilmente una mappa dei vari di flussi di dati che attraversano il nostro software, e verificare immediatamente se stiamo scrivendo qualcosa di sensato, solido ed adeguatamente estendibile." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/type-first-development-in-swift/" />
-
-
-
-<meta property="article:published_time" content="2015-05-05T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-05-05T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-05-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-05-05T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Type First Development in Swift">
+        <meta itemprop="name" content="Type First Development in Swift">
 <meta itemprop="description" content="Con Type First Development può intendersi un approccio allo sviluppo di nuove funzionalità o moduli di un software partendo dai tipi di dati coinvolti: non si tratta quindi di un pattern o una pratica codificata, ma solo di un possibile punto di partenza per iniziare il ragionamento. Ragionando esclusivamente sui tipi, prima ancora di pensare alle singole specifiche implementazioni dei vari blocchi di codice, è possibile costruire più facilmente una mappa dei vari di flussi di dati che attraversano il nostro software, e verificare immediatamente se stiamo scrivendo qualcosa di sensato, solido ed adeguatamente estendibile.">
-
-
 <meta itemprop="datePublished" content="2015-05-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-05-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3517">
+<meta itemprop="wordCount" content="3516">
 
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -108,14 +90,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -416,14 +401,9 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>Con <em>Type First Development</em> può intendersi un approccio allo sviluppo di nuove funzionalità o moduli di un software partendo dai <strong>tipi</strong> di dati coinvolti: non si tratta quindi di un pattern o una pratica codificata, ma solo di <strong>un possibile punto di partenza</strong> per iniziare il ragionamento. Ragionando esclusivamente sui tipi, prima ancora di pensare alle singole specifiche implementazioni dei vari blocchi di codice, è possibile costruire più facilmente una mappa dei vari di flussi di dati che attraversano il nostro software, e verificare immediatamente se stiamo scrivendo qualcosa di sensato, solido ed adeguatamente estendibile.</p>
-
+    <p>Con <em>Type First Development</em> può intendersi un approccio allo sviluppo di nuove funzionalità o moduli di un software partendo dai <strong>tipi</strong> di dati coinvolti: non si tratta quindi di un pattern o una pratica codificata, ma solo di <strong>un possibile punto di partenza</strong> per iniziare il ragionamento. Ragionando esclusivamente sui tipi, prima ancora di pensare alle singole specifiche implementazioni dei vari blocchi di codice, è possibile costruire più facilmente una mappa dei vari di flussi di dati che attraversano il nostro software, e verificare immediatamente se stiamo scrivendo qualcosa di sensato, solido ed adeguatamente estendibile.</p>
 <p>Ragionare sui tipi di dato è un classico approccio usato nel paradigma di programmazione noto come <a href="http://en.wikipedia.org/wiki/Functional_programming"><em>programmazione funzionale</em></a>, e il presente articolo adotta tale paradigma in maniera piuttosto pura.</p>
-
 <h2 id="indice">Indice</h2>
-
 <ul>
 <li><a href="#il-type-system-di-swift">Il <em>type system</em> di Swift</a></li>
 <li><a href="#costruiamo-un-form-il-tipo-field">Costruiamo un form: il tipo <em>Field</em></a></li>
@@ -433,53 +413,39 @@ ga('send', 'pageview');
 <li><a href="#modifica-di-un-form-e-ricerca-di-un-campo">Modifica di un form e ricerca di un campo</a></li>
 <li><a href="#conclusione">Conclusione</a></li>
 </ul>
-
-<p><a name="il-type-system-di-swift"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="il-type-system-di-swift">Il <em>type system</em> di Swift</h2>
-
 <p>Il linguaggio <strong>Swift</strong>, usato nello sviluppo di software per Mac OSX e iOS, si presta molto bene all&rsquo;approccio basato sui tipi illustrato in questo articolo, a causa di due particolari caratteristiche del linguaggio:</p>
-
 <ul>
-<li><p>Swift è <a href="http://en.wikipedia.org/wiki/Type_system#Static_type-checking">staticamente tipizzato</a>, cioè ogni parametro, costante o variabile che sia, è caratterizzato da uno specifico tipo, e se una funzione vuole in ingresso un valore di un certo tipo, chiamare la funzione con un valore di un altro tipo risulterà in un errore di compilazione;</p></li>
-
-<li><p>Swift è <a href="http://en.wikipedia.org/wiki/Strong_and_weak_typing">fortemente tipizzato</a>, cioè non esiste alcuna conversione implicita tra i tipi: ad esempio, in Swift <code>1</code> è diverso da <code>true</code> e i due valori non posso essere usati indifferentemente nello stesso contesto;</p></li>
+<li>
+<p>Swift è <a href="http://en.wikipedia.org/wiki/Type_system#Static_type-checking">staticamente tipizzato</a>, cioè ogni parametro, costante o variabile che sia, è caratterizzato da uno specifico tipo, e se una funzione vuole in ingresso un valore di un certo tipo, chiamare la funzione con un valore di un altro tipo risulterà in un errore di compilazione;</p>
+</li>
+<li>
+<p>Swift è <a href="http://en.wikipedia.org/wiki/Strong_and_weak_typing">fortemente tipizzato</a>, cioè non esiste alcuna conversione implicita tra i tipi: ad esempio, in Swift <code>1</code> è diverso da <code>true</code> e i due valori non posso essere usati indifferentemente nello stesso contesto;</p>
+</li>
 </ul>
-
 <p>Il <em>type system</em> di Swift è molto rigido, ma è in tale rigore che risiede la sua potenza: usare tipi errati provoca un errore di compilazione, e manipolando adeguatamente i tipi di dato nella costruzione di funzioni è possibile verificare gran parte della correttezza del proprio codice già nella fase di compilazione, evitando potenziali problemi in fase di esecuzione.</p>
-
 <p>Swift usa molti termini ereditati da C, come <code>struct</code> e <code>enum</code>, ma il loro significato è completamente diverso, ad esempio:</p>
-
 <ul>
 <li>una <code>struct</code> in Swift può dichiarare metodi ed essere estesa con interfacce;</li>
-<li><code>enum</code> in Swift è ciò che in altri linguaggi è spesso chiamato &ldquo;sum type&rdquo; o &ldquo;<a href="http://en.wikipedia.org/wiki/Tagged_union">tagged union</a>&rdquo;, e a ogni <code>case</code> possono essere assegnati dei valori associati, ad esempio <code>case Text(String)</code> rappresenta il caso <code>Text</code> e ha un valore <code>String</code> associato.</li>
+<li><code>enum</code> in Swift è ciò che in altri linguaggi è spesso chiamato &ldquo;sum type&rdquo; o &ldquo;<a href="http://en.wikipedia.org/wiki/Tagged_union">tagged union</a>&quot;, e a ogni <code>case</code> possono essere assegnati dei valori associati, ad esempio <code>case Text(String)</code> rappresenta il caso <code>Text</code> e ha un valore <code>String</code> associato.</li>
 </ul>
-
 <p>Per illustrare un modo per applicare l&rsquo;approccio <em>Type First</em> nello sviluppo in Swift inizieremo a scrivere una libreria per gestire <strong>form</strong>, quindi liste strutturate di campi valorizzati, utili per raccogliere dati degli utenti tramite moduli da compilare, per effettuare sondaggi o inserire i parametri di query a un server.</p>
-
-<p><a name="costruiamo-un-form-il-tipo-field"></a></p>
-
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="costruiamo-un-form-il-tipo-field">Costruiamo un form: il tipo <em>Field</em></h2>
-
 <p>Un possibile tipo di dato da cui partire è <strong>Field</strong>, il campo, cioè il mattone costruttivo di base di un form.</p>
-
 <pre><code>struct Field {
     let id: String
     let name: String
     let value: String
     let visible: Bool
 }
-</code></pre>
-
-<p>Questa definizione di Field è molto basilare, il ché non è un problema nelle prime fasi dello sviluppo, ma <strong>sembra poco estendibile</strong>, per i seguenti motivi:</p>
-
+</code></pre><p>Questa definizione di Field è molto basilare, il ché non è un problema nelle prime fasi dello sviluppo, ma <strong>sembra poco estendibile</strong>, per i seguenti motivi:</p>
 <ul>
 <li><code>value</code> è definito come <code>String</code> - ad esempio testo inserito dall&rsquo;utente - ma un campo potrebbe contenere altri tipi di valori, ad esempio un checkbox si/no, oppure un preciso valore selezionato da una lista;</li>
 <li><code>visibile</code> è definito come <code>Bool</code>, e vuole indicare se il campo è visibile oppure nascosto, ma se volessimo assegnare altri valori di visibilità, ad esempio &ldquo;evidenziato&rdquo; o &ldquo;oscurato&rdquo; dovremmo aggiungere altri parametri <code>Bool</code>, che alla fine potrebbero andare in contrasto l&rsquo;uno con l&rsquo;altro;</li>
 </ul>
-
 <p>Possiamo risolvere immediatamente il problema, <strong>senza cadere nell&rsquo;eccessiva ottimizzazione preventiva</strong>, semplicemente modificando il tipo di <code>value</code> e <code>visible</code> con degli <code>enum</code>:</p>
-
 <pre><code>enum FieldValue: Equatable {
     case Text(String)
     case Empty
@@ -509,26 +475,16 @@ func == (lhs: FieldVisibility, rhs: FieldVisibility) -&gt; Bool {
         return false
     }
 }
-</code></pre>
-
-<p>Abbiamo fatto adottare il protocollo <code>Equatable</code> a entrambi i tipi, in modo da poter confrontare <code>value</code> e <code>visibility</code> di due campi per verificare se sono uguali: il vantaggio degli <code>enum</code> è che <strong>possiamo facilmente aggiungere nuovi casi</strong> senza rompere il codice esistente, ci basterà gestire i nuovi <code>case</code> via via che vengono aggiunti.</p>
-
+</code></pre><p>Abbiamo fatto adottare il protocollo <code>Equatable</code> a entrambi i tipi, in modo da poter confrontare <code>value</code> e <code>visibility</code> di due campi per verificare se sono uguali: il vantaggio degli <code>enum</code> è che <strong>possiamo facilmente aggiungere nuovi casi</strong> senza rompere il codice esistente, ci basterà gestire i nuovi <code>case</code> via via che vengono aggiunti.</p>
 <p>Un&rsquo;altra piccola modifica utile corrisponde a ridefinire il tipo del parametro <code>id</code>: a tale parametro deve essere assegnata <strong>una chiave univoca</strong>, diversa per ogni campo, quindi può convenire definire un tipo <code>UniqueKey</code>:</p>
-
 <pre><code>typealias UniqueKey = String
-</code></pre>
-
-<p>In Swift, la keyword <code>typealias</code> ci permette di definire un <em>alias</em> di un tipo, cioè un termine che corrisponde esattamente a quel tipo, e permette di:</p>
-
+</code></pre><p>In Swift, la keyword <code>typealias</code> ci permette di definire un <em>alias</em> di un tipo, cioè un termine che corrisponde esattamente a quel tipo, e permette di:</p>
 <ul>
 <li><strong>migliorare la leggibilità</strong>, la chiarezza e la compattezza del codice;</li>
 <li><strong>facilitare la manipolazione dei tipi</strong>, come vedremo a breve;</li>
 </ul>
-
 <p>Ogni volta in cui una funzione richiederà <code>UniqueKey</code> sapremo che in quel campo sarà necessario inserire una stringa univoca, che identifica un particolare campo.</p>
-
 <p>Definiamo nuovamente <code>Field</code> incorporando i nuovi tipi:</p>
-
 <pre><code>struct Field {
     let id: UniqueKey    
     let name: String
@@ -541,25 +497,14 @@ func == (lhs: FieldVisibility, rhs: FieldVisibility) -&gt; Bool {
         self.visibility = visibility
     }
 }
-</code></pre>
-
-<p>Abbiamo aggiunto anche un costruttore di convenienza che ci permetterà di creare un <code>Field</code> semplicemente passando i 4 dati richiesti.</p>
-
-<p><a name="modificare-un-campo-tipi-di-funzione-come-tipi-di-dato"></a></p>
-
+</code></pre><p>Abbiamo aggiunto anche un costruttore di convenienza che ci permetterà di creare un <code>Field</code> semplicemente passando i 4 dati richiesti.</p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="modificare-un-campo-tipi-di-funzione-come-tipi-di-dato">Modificare un campo: tipi di funzione come tipi di dato</h2>
-
 <p>La prima e più semplice operazione che vogliamo poter effettuare su <code>Field</code> è quella di modificarlo in qualche modo: ogni operazione di questo tipo, in Swift, può essere indicata con <code>Field -&gt; Field</code>, cioè una trasformazione che prende un <code>Field</code> in ingresso e produce un <code>Field</code> in uscita:</p>
-
 <pre><code>typealias FieldChange = Field -&gt; Field
-</code></pre>
-
-<p>L&rsquo;operatore <code>-&gt;</code> ha lo stesso significato che ha già in <a href="http://en.wikipedia.org/wiki/Haskell_(programming_language)">Haskell</a>: definisce il tipo di una funzione che prende in ingresso un dato del tipo indicato a sinistra dell&rsquo;operatore, e ritorna un dato del tipo indicato a destra dell&rsquo;operatore (in questo caso entrambi i dati sono di tipo <code>Field</code>).</p>
-
-<p>È da evidenziare che <code>FieldChange</code> non rappresenta un tipo di &ldquo;dato&rdquo; in senso stretto, ma <strong>un tipo di &ldquo;funzione</strong>&ldquo;: in effetti, definendo <code>FieldChange</code>, possiamo trattare le funzioni di quel tipo come se fossero dati.</p>
-
+</code></pre><p>L&rsquo;operatore <code>-&gt;</code> ha lo stesso significato che ha già in <a href="http://en.wikipedia.org/wiki/Haskell_(programming_language)">Haskell</a>: definisce il tipo di una funzione che prende in ingresso un dato del tipo indicato a sinistra dell&rsquo;operatore, e ritorna un dato del tipo indicato a destra dell&rsquo;operatore (in questo caso entrambi i dati sono di tipo <code>Field</code>).</p>
+<p>È da evidenziare che <code>FieldChange</code> non rappresenta un tipo di &ldquo;dato&rdquo; in senso stretto, ma <strong>un tipo di &ldquo;funzione</strong>&quot;: in effetti, definendo <code>FieldChange</code>, possiamo trattare le funzioni di quel tipo come se fossero dati.</p>
 <p>Per fare un esempio potremmo definire la funzione <code>setVisibility</code>, che prende in ingresso un valore di <code>FieldVisibility</code> e ritorna, appunto, un <code>FieldChange</code>, cioè un&rsquo;altra funzione.</p>
-
 <pre><code>func setVisibility (visibility: FieldVisibility) -&gt; FieldChange {
     return { field in
         return Field (
@@ -577,22 +522,12 @@ let visibleField1 = Field (&quot;&quot;,&quot;&quot;, .Empty, .Visible)
 let isTrue1 = visibleField1.visibility == .Visible
 let hiddenField1 = setHidden(visibleField1)
 let isTrue2 = hiddenField1.visibility == .Hidden
-</code></pre>
-
-<p>Negli esempi mostrati, <code>setHidden</code> è una funzione ma dal punto di vista sintattico è indistinguibile da un qualsiasi altro valore, e il suo tipo (cioè <code>FieldChange</code>) è dedotto dal compilatore di Swift in base alla definizione della funzione.</p>
-
+</code></pre><p>Negli esempi mostrati, <code>setHidden</code> è una funzione ma dal punto di vista sintattico è indistinguibile da un qualsiasi altro valore, e il suo tipo (cioè <code>FieldChange</code>) è dedotto dal compilatore di Swift in base alla definizione della funzione.</p>
 <p>Una funzionalità che vogliamo certamente introdurre nella libreria corrisponde al poter operare una trasformazione su un campo in base a un qualche parametro definito in un altro campo: ad esempio, un particolare campo mostra un check che permette di mostrare/nascondere altri campi. Definiamo quindi un nuovo tipo:</p>
-
 <pre><code>typealias FieldChangeGenerator = Field -&gt; FieldChange
-</code></pre>
-
-<p><code>FieldChangeGenerator</code> è il tipo di una funzione dalla quale otteniamo, in base allo stato un certo campo origine, una certa trasformazione di tipo <code>FieldChange</code>, cioè qualcosa che prende un <code>Field</code> in ingresso e ritorna un <code>Field</code> in uscita: si tratta quindi di una funzione che ritorna un&rsquo;altra funzione, di tipo diverso. Vorremmo ad esempio poter scrivere una funzione del tipo <code>setVisibilityIfOrigin</code>, che imposta un valore di visibilità in base allo stato di un campo origine: ok, ma quale valore di visibilità? Dipende dal campo origine, e possiamo risolvere il problema definendo un nuovo tipo di funzione, che prende in ingresso un campo, e ritorna un valore di visibilità:</p>
-
+</code></pre><p><code>FieldChangeGenerator</code> è il tipo di una funzione dalla quale otteniamo, in base allo stato un certo campo origine, una certa trasformazione di tipo <code>FieldChange</code>, cioè qualcosa che prende un <code>Field</code> in ingresso e ritorna un <code>Field</code> in uscita: si tratta quindi di una funzione che ritorna un&rsquo;altra funzione, di tipo diverso. Vorremmo ad esempio poter scrivere una funzione del tipo <code>setVisibilityIfOrigin</code>, che imposta un valore di visibilità in base allo stato di un campo origine: ok, ma quale valore di visibilità? Dipende dal campo origine, e possiamo risolvere il problema definendo un nuovo tipo di funzione, che prende in ingresso un campo, e ritorna un valore di visibilità:</p>
 <pre><code>typealias FieldCondition = Field -&gt; FieldVisibility
-</code></pre>
-
-<p>La nostra funzione <code>setVisibilityIfOrigin</code> semplicemente prenderà ingresso un dato di tipo <code>FieldCondition</code>:</p>
-
+</code></pre><p>La nostra funzione <code>setVisibilityIfOrigin</code> semplicemente prenderà ingresso un dato di tipo <code>FieldCondition</code>:</p>
 <pre><code>func setVisibilityIfOrigin (condition: FieldCondition) -&gt; FieldChangeGenerator {
     return { origin in
         let newVisibility = condition(origin)
@@ -616,56 +551,36 @@ let nonEmptyField = Field (&quot;&quot;, &quot;&quot;, .Text(&quot;something&quo
 let anotherVisibleField = setVisibleIfNotEmpty(nonEmptyField)(invisibleField)
 
 let isTrue3 = anotherVisibleField.visibility == .Visible
-</code></pre>
-
-<p><a name="funzioni-generiche-e-composizione-funzionale"></a></p>
-
+</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="funzioni-generiche-e-composizione-funzionale">Funzioni generiche e composizione funzionale</h2>
-
 <p>In realtà la nostra <code>FieldCondition</code> sembra essere un po&rsquo; limitata: ritorna un valore di <code>FieldVisibility</code>, mentre una vera <em>condition</em> <strong>dovrebbe ritornare un valore generico</strong>, a seconda dei casi: ad esempio, potrebbe cambiare il <strong>valore</strong> di un campo bersaglio in base allo stato di un campo origine. L&rsquo;ideale sarebbe scrivere qualcosa del genere:</p>
-
 <pre><code>typealias FieldCondition&lt;T&gt; = Field -&gt; T
 /// errore di compilazione!
-</code></pre>
-
-<p>Sfortunatamente in Swift non è possibile scrivere dei <code>typealias</code> generici, ma possiamo facilmente aggirare l&rsquo;ostacolo costruendo una <code>struct</code> generica che contiene un solo parametro, al quale è assegnata una funzione di tipo <code>Field -&gt; T</code>:</p>
-
+</code></pre><p>Sfortunatamente in Swift non è possibile scrivere dei <code>typealias</code> generici, ma possiamo facilmente aggirare l&rsquo;ostacolo costruendo una <code>struct</code> generica che contiene un solo parametro, al quale è assegnata una funzione di tipo <code>Field -&gt; T</code>:</p>
 <pre><code>struct FieldCondition&lt;T&gt; {
     let apply: Field -&gt; T
     init(_ apply: Field -&gt; T) {
         self.apply = apply
     }
 }
-</code></pre>
-
-<p>Se prima abbiamo scritto semplicemente una funzione <code>setVisibilityIfOrigin</code>, l&rsquo;idea è riuscire ora a scrivere <strong>una funzione generica</strong> <code>setTargetIfOrigin&lt;T&gt;</code> che ritorna un <code>FieldChangeGenerator</code> che trasforma un campo bersaglio rispetto a un certo parametro, definito in base allo stato di un campo origine: come scrivere questa funzione? <strong>Ragioniamo sui tipi</strong>:</p>
-
+</code></pre><p>Se prima abbiamo scritto semplicemente una funzione <code>setVisibilityIfOrigin</code>, l&rsquo;idea è riuscire ora a scrivere <strong>una funzione generica</strong> <code>setTargetIfOrigin&lt;T&gt;</code> che ritorna un <code>FieldChangeGenerator</code> che trasforma un campo bersaglio rispetto a un certo parametro, definito in base allo stato di un campo origine: come scrivere questa funzione? <strong>Ragioniamo sui tipi</strong>:</p>
 <ul>
 <li><code>FieldCondition&lt;T&gt;</code> è un contenitore per una funzione di tipo <code>Field -&gt; T</code>;</li>
 <li><code>FieldChangeGenerator</code> è un alias per <code>Field -&gt; FieldChange</code>;</li>
 <li>per completare la catena abbiamo bisogno di una trasformazione del tipo <code>T -&gt; FieldChange</code> perché unendo <code>Field -&gt; T</code> e <code>T -&gt; FieldChange</code> otteniamo appunto <code>Field -&gt; FieldChange</code>;</li>
 </ul>
-
 <p>Possiamo scrivere quindi la funzione generica di cui sopra:</p>
-
 <pre><code>func setTargetIfOrigin&lt;T&gt; (condition: FieldCondition&lt;T&gt;, generate: T -&gt; FieldChange) -&gt; FieldChangeGenerator {
     return { field in
         return generate(condition.apply(field))
     }
 }
-</code></pre>
-
-<p>Se tutto sembra molto astratto è perché <strong>lo è</strong>: stiamo gradualmente costruendo degli strumenti di manipolazione dei dati (e delle funzioni, che sono anch&rsquo;esse dati) operando su astrazioni successive.</p>
-
-<p>Nella funzione <code>setTargetIfOrigin&lt;T&gt;</code> c&rsquo;è un parametro <code>generate</code> che è definito come <code>T -&gt; FieldChange</code>: cosa è <code>T</code>? È semplicemente lo stesso tipo di dato con il quale viene passata la condizione in <code>condition</code>; se passiamo una condizione sulla visibilità, ad esempio, <code>T</code> sarà <code>FieldVisibility</code>: <strong>una funzione generica si specializza nel momento in cui è definito il tipo concreto da assegnare ai tipi generici</strong>. Volendo fare un esempio concreto, possiamo ridefinire la funzione <code>setVisibilityIfOrigin</code>:</p>
-
+</code></pre><p>Se tutto sembra molto astratto è perché <strong>lo è</strong>: stiamo gradualmente costruendo degli strumenti di manipolazione dei dati (e delle funzioni, che sono anch&rsquo;esse dati) operando su astrazioni successive.</p>
+<p>Nella funzione <code>setTargetIfOrigin&lt;T&gt;</code> c'è un parametro <code>generate</code> che è definito come <code>T -&gt; FieldChange</code>: cosa è <code>T</code>? È semplicemente lo stesso tipo di dato con il quale viene passata la condizione in <code>condition</code>; se passiamo una condizione sulla visibilità, ad esempio, <code>T</code> sarà <code>FieldVisibility</code>: <strong>una funzione generica si specializza nel momento in cui è definito il tipo concreto da assegnare ai tipi generici</strong>. Volendo fare un esempio concreto, possiamo ridefinire la funzione <code>setVisibilityIfOrigin</code>:</p>
 <pre><code>func setVisibilityIfOrigin (condition: FieldCondition&lt;FieldVisibility&gt;) -&gt; FieldChangeGenerator {
     return setTargetIfOrigin (condition) { visibility in setVisibility(visibility) }
 }
-</code></pre>
-
-<p>Come si può vedere, la funzione chiama <code>setTargetIfOrigin</code>, passando una condizione del tipo <code>FieldCondition&lt;FieldVisibility&gt;</code>: il secondo parametro dovrà essere quindi una funzione del tipo <code>FieldVisibility -&gt; FieldChange</code>, e possiamo usare la funzione <code>setVisibility</code> definita prima. Vediamo qualche altro esempio:</p>
-
+</code></pre><p>Come si può vedere, la funzione chiama <code>setTargetIfOrigin</code>, passando una condizione del tipo <code>FieldCondition&lt;FieldVisibility&gt;</code>: il secondo parametro dovrà essere quindi una funzione del tipo <code>FieldVisibility -&gt; FieldChange</code>, e possiamo usare la funzione <code>setVisibility</code> definita prima. Vediamo qualche altro esempio:</p>
 <pre><code>let setVisibleIfNotEmpty = setVisibilityIfOrigin (FieldCondition { origin in
     switch origin.value {
     case .Empty:
@@ -687,29 +602,17 @@ let field2 = Field(&quot;field2&quot;,&quot;&quot;,.Text(&quot;2&quot;),.Visible
 let newField1 = copyValue(field2)(field1)
 
 let isTrue4 = newField1.value == .Text(&quot;2&quot;)
-</code></pre>
-
-<p>Può essere interessante spendere qualche parola per la funzione <code>copyValue</code> definita nell&rsquo;esempio:</p>
-
+</code></pre><p>Può essere interessante spendere qualche parola per la funzione <code>copyValue</code> definita nell&rsquo;esempio:</p>
 <ul>
 <li>la condizione è chiaramente del tipo <code>FieldCondition&lt;FieldValue&gt;</code> perché la <em>closure</em> passata ritorna il <code>value</code> del campo;</li>
 <li>nella seconda <em>closure</em> passata, il valore è usato per costruire un nuovo campo, uguale al bersaglio tranne proprio per quel valore;</li>
 </ul>
-
 <p>Quindi <code>copyValue</code>, che ricordiamo è di tipo <code>FieldChangeGenerator</code>, è una trasformazione che prende il valore di un campo origine e lo assegna a un campo bersaglio.</p>
-
 <p>Nel caso in cui avessimo una serie di campi e volessimo applicare una certa trasformazione a un solo campo particolare, avremmo bisogno di un check sul campo bersaglio. Come al solito, pensiamo prima al <strong>tipo</strong> di questo check: sarà qualcosa che prende un <code>FieldChange</code> e ritorna un altro <code>FieldChange</code>, che potrebbe essere uguale a quello in ingresso, oppure diverso in base a una certa condizione applicata al campo bersaglio.</p>
-
 <pre><code>typealias FieldCheck = FieldChange -&gt; FieldChange
-</code></pre>
-
-<p>Per quanto riguarda la condizione, possiamo usare lo stesso FieldCondition<T> di prima, ma in questo caso lo specializzeremo direttamente in <code>FieldCondition&lt;Bool&gt;</code> perché quello che ci interessa sapere è se un certo campo bersaglio è interessato oppure no da una certa trasformazione.</p>
-
+</code></pre><p>Per quanto riguarda la condizione, possiamo usare lo stesso FieldCondition<!-- raw HTML omitted --> di prima, ma in questo caso lo specializzeremo direttamente in <code>FieldCondition&lt;Bool&gt;</code> perché quello che ci interessa sapere è se un certo campo bersaglio è interessato oppure no da una certa trasformazione.</p>
 <pre><code>typealias FieldConditionBool = FieldCondition&lt;Bool&gt;
-</code></pre>
-
-<p>Definiamo quindi una funzione <code>checkTarget</code> che prende in ingresso una condizione, e ritorna un <code>FieldCheck</code>:</p>
-
+</code></pre><p>Definiamo quindi una funzione <code>checkTarget</code> che prende in ingresso una condizione, e ritorna un <code>FieldCheck</code>:</p>
 <pre><code>func checkTarget (condition: FieldConditionBool) -&gt; FieldCheck {
     return { change in
         return { field in
@@ -722,18 +625,13 @@ let isTrue4 = newField1.value == .Text(&quot;2&quot;)
         }
     }
 }
-</code></pre>
-
-<p>Nel definire <code>checkTarget</code> possiamo vedere un altro caso in cui ragionare solo sui tipi ci aiuta a capire cosa poi dobbiamo effettivamente fare nel codice:</p>
-
+</code></pre><p>Nel definire <code>checkTarget</code> possiamo vedere un altro caso in cui ragionare solo sui tipi ci aiuta a capire cosa poi dobbiamo effettivamente fare nel codice:</p>
 <ul>
 <li>la funzione deve ritornare un dato di tipo <code>FieldCheck</code>, che è una funzione che prende in ingresso un dato di tipo <code>FieldChange</code>, quindi la prima riga della funzione è appunto <code>return { change in</code>;</li>
 <li><code>FieldCheck</code> è una funzione che ritorna un dato di tipo <code>FieldChange</code>, che come definito prima corrisponde a una funzione che prende in ingresso un <code>Field</code>, quindi la seconda riga è <code>return { field in</code>;</li>
 <li><code>FieldChange</code> deve ritornare un <code>Field</code>, ma a questo punto possiamo applicare la nostra condizione sul campo in ingresso: se la condizione è verificata allora ritorniamo il campo trasformato, mentre se non lo è &ldquo;facciamo uscire&rdquo; il campo esattamente come è &ldquo;entrato&rdquo;;</li>
 </ul>
-
 <p>Come si può vedere, abbiamo iniziato a implementare funzioni ragionando quasi esclusivamente sui tipi coinvolti. Vediamo alcuni esempi:</p>
-
 <pre><code>func ifTargetId (id: UniqueKey) -&gt; FieldCheck {
     return checkTarget (FieldCondition { $0.id == id })
 }
@@ -749,14 +647,9 @@ let newFields = fields.map(ifTargetId(&quot;field2&quot;)(setHidden))
 
 let isTrue7 = newFields[0].visibility == .Visible
 let isTrue8 = newFields[1].visibility == .Hidden
-</code></pre>
-
-<p><a name="il-tipo-form"></a></p>
-
+</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="il-tipo-form">Il tipo <em>Form</em></h2>
-
 <p>Abbiamo implementato quindi alcuni strumenti per manipolare i singoli campi: a questo punto proviamo a unire il tutto definendo un <code>Form</code> come contenitore strutturato di campi, insieme ad alcune funzioni di manipolazione. Intanto <strong>pensiamo al tipo da assegnare al nostro form</strong>: una possibilità è quella di definire alcuni blocchi costruttivi che ne descrivono la struttura:</p>
-
 <pre><code>/// sezione: è una semplice lista di campi
 struct Section {
     let fields: [Field]
@@ -771,30 +664,21 @@ struct Step {
 struct Form {
     let steps: [Step]
 }
-</code></pre>
-
-<p>Ci sono però due problemi con questo approccio:</p>
-
+</code></pre><p>Ci sono però due problemi con questo approccio:</p>
 <ul>
 <li>stiamo prematuramente fornendo al nostro form <strong>una struttura rigida</strong>: se in futuro decidessimo di voler creare una sottostruttura rispetto a <code>Section</code> sarebbe probabilmente molto complesso modificare il tutto;</li>
 <li>nello scrivere le logiche di ricerca e manipolazione dei campi ci ritroveremmo a dover gestire le <code>struct</code> appena definite: stiamo quindi automaticamente <strong>accoppiando</strong> un particolare modello di dati con la logica di manipolazione dei form, che <strong>dovrebbero essere adattabili a più modelli, senza cambiare la logica</strong>;</li>
 </ul>
-
 <p>Per evitare questi problemi gli approcci possibili sono molti: un&rsquo;opzione, ad esempio, è quella definire un tipo di dato corrispondente a un contenitore <em>ricorsivo</em> per un valore generico, che chiameremo <code>Node&lt;T&gt;</code>. Un valore di tipo <code>Node&lt;T&gt;</code> definisce due casi:</p>
-
 <ul>
 <li><em>branch</em>, cioè una lista di valori di tipo T;</li>
 <li><em>root</em>, cioè una lista di altri <code>Node&lt;T&gt;</code></li>
 </ul>
-
 <pre><code>enum Node&lt;T&gt; {
     case Branch([T])
     case Root([Node&lt;T&gt;])
 }
-</code></pre>
-
-<p>Possiamo quindi definire un <code>Form</code> come una versione specializzata di <code>Node&lt;T&gt;</code> dove <code>T</code> è <code>Field</code>, e definiremo un paio di funzioni di convenienza per generare un <em>branch</em> di <code>Field</code> o una <em>root</em> di <code>Form</code>:</p>
-
+</code></pre><p>Possiamo quindi definire un <code>Form</code> come una versione specializzata di <code>Node&lt;T&gt;</code> dove <code>T</code> è <code>Field</code>, e definiremo un paio di funzioni di convenienza per generare un <em>branch</em> di <code>Field</code> o una <em>root</em> di <code>Form</code>:</p>
 <pre><code>typealias Form = Node&lt;Field&gt;
 
 func branch (fields: [Field]) -&gt; Form {
@@ -804,19 +688,11 @@ func branch (fields: [Field]) -&gt; Form {
 func root (nodes: [Form]) -&gt; Form {
     return Node.Root(nodes)
 }
-</code></pre>
-
-<p><a name="modifica-di-un-form-e-ricerca-di-un-campo"></a></p>
-
+</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="modifica-di-un-form-e-ricerca-di-un-campo">Modifica di un form e ricerca di un campo</h2>
-
 <p>Come accadeva per <code>Field</code>, la prima operazione che vogliamo poter effettuare su <code>Form</code> è quella modificarlo; definiamo quindi il tipo <code>FormChange</code> in maniera a simile a come avevamo definito <code>FieldChange</code>:</p>
-
 <pre><code>typealias FormChange = Form -&gt; Form
-</code></pre>
-
-<p>Supponiamo ad esempio di avere un form, e voler applicare una modifica a un campo presente nel form, ottenendo un nuovo form con il campo modificato: abbiamo bisogno di una funzione che potremmo chiamare <code>changeFromFieldChange</code> che prende in ingresso un <code>FieldChange</code> e ritorna un <code>FormChange</code>; grazie alla struttura ricorsiva del tipo <code>Form</code> definito, possiamo scrivere in poche righe una funzione che attraversa un form nei suoi vari livelli e lo ricostruisce applicando la modifica passata in ingresso a ogni campo, tenendo eventualmente conto di una certa condizione per verificare se un certo campo è interessato dalla modifica o meno.</p>
-
+</code></pre><p>Supponiamo ad esempio di avere un form, e voler applicare una modifica a un campo presente nel form, ottenendo un nuovo form con il campo modificato: abbiamo bisogno di una funzione che potremmo chiamare <code>changeFromFieldChange</code> che prende in ingresso un <code>FieldChange</code> e ritorna un <code>FormChange</code>; grazie alla struttura ricorsiva del tipo <code>Form</code> definito, possiamo scrivere in poche righe una funzione che attraversa un form nei suoi vari livelli e lo ricostruisce applicando la modifica passata in ingresso a ogni campo, tenendo eventualmente conto di una certa condizione per verificare se un certo campo è interessato dalla modifica o meno.</p>
 <pre><code>func changeFromFieldChange (fieldChange: FieldChange) -&gt; FormChange {
     return { form in
         switch form {
@@ -827,31 +703,19 @@ func root (nodes: [Form]) -&gt; Form {
         }
     }
 }
-</code></pre>
-
-<p>Come si può vedere, la funzione verifica se un form è del tipo <code>.Branch</code> o <code>.Root</code>:</p>
-
+</code></pre><p>Come si può vedere, la funzione verifica se un form è del tipo <code>.Branch</code> o <code>.Root</code>:</p>
 <ul>
 <li>nel primo caso, ricostruisce il <em>branch</em> applicando la funzione <code>FieldChange</code> in ingresso a ogni campo nel <em>branch</em>;</li>
 <li>nel secondo caso, ricostruisce il <em>root</em> applicando ricorsivamente la stessa funzione <code>changeFromFieldChange</code>;</li>
 </ul>
-
 <p>Per migliorare la leggibilità possiamo definire una nuova funzione <code>updateField</code> identica a <code>changeFromFieldChange</code> che dichiara <strong>in maniera più espressiva</strong> il tipo di operazione che vogliamo poter effettuare su un form, e cioè aggiornare un certo campo in base a una certa trasformazione:</p>
-
 <pre><code>let updateField = changeFromFieldChange
-</code></pre>
-
-<p>Vediamo quindi un esempio:</p>
-
+</code></pre><p>Vediamo quindi un esempio:</p>
 <pre><code>let form = branch([field1,field2])
 
 let newForm = updateField(ifTargetId(&quot;field1&quot;)(setHidden))(form)
-</code></pre>
-
-<p>Come si può vedere dall&rsquo;esempio, otteniamo <code>newForm</code> componendo alcune funzioni definite in precedenza con <code>updateField</code>: se l&rsquo;id del campo bersaglio è &ldquo;field1&rdquo;, nascondiamo il campo.</p>
-
+</code></pre><p>Come si può vedere dall&rsquo;esempio, otteniamo <code>newForm</code> componendo alcune funzioni definite in precedenza con <code>updateField</code>: se l&rsquo;id del campo bersaglio è &ldquo;field1&rdquo;, nascondiamo il campo.</p>
 <p>Come verificare se il campo con id &ldquo;field1&rdquo; è effettivamente nascosto? Come ultima operazione vogliamo definire una funzione <code>fieldsWithCondition</code> che ci permetta di cercare uno o più campi in un form in base a una certa condizione: la condizione sarà ancora di tipo <code>FieldConditionBool</code>, cioè da un campo otteniamo un valore <code>true</code> o <code>false</code>. Per scrivere la funzione ragioniamo sul tipo di dato ritornato: esso deve corrispondere a una funzione che prende un form e ritorna un array di campi; chiameremo questo tipo <code>FieldGet</code>.</p>
-
 <pre><code>typealias FieldGet = Form -&gt; [Field]
 
 func fieldsWithCondition (condition: FieldConditionBool) -&gt; FieldGet {
@@ -864,10 +728,7 @@ func fieldsWithCondition (condition: FieldConditionBool) -&gt; FieldGet {
         }
     }
 }
-</code></pre>
-
-<p>La funzione <code>fieldsWithCondition</code> opera ricorsivamente, come è ovvio che sia considerando la natura ricorsiva del tipo di dato <code>Node&lt;T&gt;</code>. Vediamo qualche applicazione:</p>
-
+</code></pre><p>La funzione <code>fieldsWithCondition</code> opera ricorsivamente, come è ovvio che sia considerando la natura ricorsiva del tipo di dato <code>Node&lt;T&gt;</code>. Vediamo qualche applicazione:</p>
 <pre><code>func fieldsWithId (id: UniqueKey) -&gt; FieldGet {
     return fieldsWithCondition (FieldConditionBool { $0.id == id })
 }
@@ -879,36 +740,25 @@ let twoFields = allFields(form)
 let isTrue9 = count(twoFields) == 2
 
 let isTrue10 = fieldsWithId(&quot;field1&quot;)(form)[0].visibility == .Visible
-</code></pre>
-
-<p>La funzione <code>fieldsWithId</code> prende una <code>UniqueKey</code> e permette di ottenere tutti i campi con quell&rsquo;id (presumibilmente l&rsquo;array risultante conterrà un solo elemento); <code>allFields</code> genera semplicemente un array con tutti i campi: da notare che la <em>closure</em> <code>{ _ in true }</code> ignora il valore in ingresso e ritorna sempre <code>true</code>.</p>
-
+</code></pre><p>La funzione <code>fieldsWithId</code> prende una <code>UniqueKey</code> e permette di ottenere tutti i campi con quell&rsquo;id (presumibilmente l&rsquo;array risultante conterrà un solo elemento); <code>allFields</code> genera semplicemente un array con tutti i campi: da notare che la <em>closure</em> <code>{ _ in true }</code> ignora il valore in ingresso e ritorna sempre <code>true</code>.</p>
 <p>Usando <code>fieldsWithId</code> possiamo infine verificare che il campo con id &ldquo;field1&rdquo; sia effettivamente nascosto, in base alle manipolazioni precedenti:</p>
-
 <pre><code>let isTrue11 = fieldsWithId(&quot;field1&quot;)(newForm)[0].visibility == .Hidden
-</code></pre>
-
-<p><a name="conclusione"></a></p>
-
+</code></pre><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
 <h2 id="conclusione">Conclusione</h2>
-
 <p>Per concludere, abbiamo visto come partendo da <strong>tipi</strong>, che siano essi relativi a singoli valori o a funzioni, è stato possibile iniziare a scrivere una libreria composta da semplici tipi di base e funzioni elementari che vengono composte via via a livelli di astrazione più alti. Definendo tipi specifici per molte astrazioni siamo riusciti a <strong>gestire meglio la complessità</strong> inerente nel manipolare e comporre funzioni, al punto da poter <strong>trattare funzioni complesse come semplici dati</strong> da passare ad altre funzioni. In un articolo successivo vedremo come estendere la libreria qui iniziata, abbracciando completamente la composizione funzionale e usando operatori specificamente definiti per migliorare la chiarezza del codice e rendere più semplice la manipolazione e combinazione delle funzioni.</p>
-
 <blockquote>
 <p><strong>N.B.</strong> <em>Nello scrivere questo articolo si è scelto specificamente di non definire operatori su misura per comporre le funzioni, per evitare un ulteriore appesantimento legato alla presenza di codice dalla sintassi poco familiare. La chiamata di una funzione in Swift è c-like: si scrive il nome della funzione e poi si inseriscono i dati di ingresso tra due parentesi tonde; questo purtroppo può portare a diverse chiamate in parentesi annidate; inoltre, può non risultar chiara una chiamata del tipo <code>updateField(ifTargetId(&quot;field1&quot;)(setHidden))(form)</code>: come accennato, in un articolo futuro vedremo come usare operatori personalizzati per rendere il tutto più semplice e leggibile.</em></p>
-
+</blockquote>
+<blockquote>
 <p><strong>N.B.</strong> <em>La chiamata <code>subforms.map(fieldsWithCondition(condition)).reduce([], combine: +)</code>, nella funzione <code>fieldsWithCondition</code>, è piuttosto inefficiente dal punto di vista della performance: l&rsquo;inefficienza è dovuta al fatto che a ogni chiamata vengono generati array intermedi dovuti alle varie mappature dei dati; non è in realtà necessario creare questi array intermedi: basta utilizzare procedure &ldquo;lazy&rdquo;, che vedremo in un articolo futuro.</em></p>
 </blockquote>
-
 <h2 id="riferimenti">Riferimenti</h2>
-
 <ul>
 <li>Tomas Petricek - <a href="http://tomasp.net/blog/type-first-development.aspx">Why type-first development matters</a></li>
 <li>Michael Feathers - <a href="http://www.infoq.com/presentations/Type-Functional-Design">A Type Driven Approach to Functional Design</a></li>
 <li>Johannes Weiß - <a href="https://speakerdeck.com/johannesweiss/type-driven-development-in-swift">Type Driven Development in Swift</a></li>
 <li>Luca Cardelli - <a href="http://www.lucacardelli.name/Papers/TypefulProg.pdf">Typeful Programming</a></li>
 </ul>
-
 <p>Il codice mostrato nell&rsquo;articolo è disponibile su <a href="https://gist.github.com/broomburgo/ba8e5dd6cd509fdfd781">GitHub Gist</a>.</p>
 
   </div>
@@ -953,7 +803,7 @@ let isTrue10 = fieldsWithId(&quot;field1&quot;)(form)[0].visibility == .Visible
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -1249,7 +1099,7 @@ let isTrue10 = fieldsWithId(&quot;field1&quot;)(form)[0].visibility == .Visible
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1268,13 +1118,11 @@ let isTrue10 = fieldsWithId(&quot;field1&quot;)(form)[0].visibility == .Visible
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1287,11 +1135,13 @@ let isTrue10 = fieldsWithId(&quot;field1&quot;)(form)[0].visibility == .Visible
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1310,7 +1160,7 @@ let isTrue10 = fieldsWithId(&quot;field1&quot;)(form)[0].visibility == .Visible
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1341,7 +1191,7 @@ let isTrue10 = fieldsWithId(&quot;field1&quot;)(form)[0].visibility == .Visible
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1384,13 +1234,11 @@ let isTrue10 = fieldsWithId(&quot;field1&quot;)(form)[0].visibility == .Visible
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1399,11 +1247,13 @@ let isTrue10 = fieldsWithId(&quot;field1&quot;)(form)[0].visibility == .Visible
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1446,14 +1296,12 @@ let isTrue10 = fieldsWithId(&quot;field1&quot;)(form)[0].visibility == .Visible
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1465,19 +1313,19 @@ let isTrue10 = fieldsWithId(&quot;field1&quot;)(form)[0].visibility == .Visible
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

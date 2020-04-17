@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -46,40 +46,22 @@
 <meta property="og:description" content="The third edition of Droidcon IT was, as expected, a great conference, full of interesting talks and people coming from all over the world. We saw a lot of GDEs (Google Developer Expert) and also some Developer Advocates from Google, although it was not organized directly by the company. Back in March the Android team surprisingly released the brand new N Developer Preview earlier than expected, so this year we were already able to talk about the new features in Android N and analyze them." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/droidcon-it-2016/" />
-
-
-
-<meta property="article:published_time" content="2016-04-18T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2016-04-18T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2016-04-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-04-18T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Droidcon It 2016">
+        <meta itemprop="name" content="Droidcon It 2016">
 <meta itemprop="description" content="The third edition of Droidcon IT was, as expected, a great conference, full of interesting talks and people coming from all over the world. We saw a lot of GDEs (Google Developer Expert) and also some Developer Advocates from Google, although it was not organized directly by the company. Back in March the Android team surprisingly released the brand new N Developer Preview earlier than expected, so this year we were already able to talk about the new features in Android N and analyze them.">
-
-
 <meta itemprop="datePublished" content="2016-04-18T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-18T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1957">
+<meta itemprop="wordCount" content="1926">
 
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -108,14 +90,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -416,124 +401,75 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p><img src="/images/droidconit-recap/logo_droidcon_it.png" alt="Droidcon It" /></p>
-
+    <p><img src="/images/droidconit-recap/logo_droidcon_it.png" alt="Droidcon It"></p>
 <p>The third edition of <a href="http://it.droidcon.com/2016/">Droidcon IT</a> was, as expected, a great conference, full of interesting talks and people coming from all over the world. We saw a lot of GDEs (<a href="https://developers.google.com/experts/all/technology/android">Google Developer Expert</a>) and also some Developer Advocates from Google, although it was not organized directly by the company. Back in March the Android team surprisingly released the brand new <strong>N Developer Preview</strong> earlier than expected, so this year we were already able to talk about the new features in Android N and analyze them. Furthermore, there was talk of <strong>Kotlin</strong>, <strong>RxJava</strong> and a lot of other useful and interesting topics.</p>
-
 <p>In this post I&rsquo;m going to recap the event and make some considerations about the most interesting (and funny) talks.</p>
-
 <h1 id="day-1">Day 1</h1>
-
-<h2 id="keynote-wojtek-kalicinski-https-twitter-com-wkalic">Keynote - <em><a href="https://twitter.com/wkalic">Wojtek Kalicinski</a></em></h2>
-
+<h2 id="keynote---wojtek-kalicinskihttpstwittercomwkalic">Keynote - <em><a href="https://twitter.com/wkalic">Wojtek Kalicinski</a></em></h2>
 <p>The day 1 keynote was all about the N Developer Preview and was given by Wojtek Kalicinski, a developer advocate directly from Google.
 Wojtek went through all the new improvements of the platform, both from user&rsquo;s and developer&rsquo;s point of view. Here’s a short summary of the most relevant ones:</p>
-
 <ul>
 <li><strong>Multi-window support</strong>: probably the most requested user feature. I’ve always thought that its implementation would have been relatively straightforward, given the already responsive UI of Android, and in fact the code changes that are needed to support this feature are minimal. Just make sure you don’t lock screen orientation using <code>android:screenOrientation</code> in your manifest.</li>
 <li><strong>Better notifications</strong>: in addition to a visual change of the notification panel, apps will now be able to let the user interact with bundled notifications individually or to reply from the notification itself directly. Moreover, if the app already supports Android Wear notifications, most of this will come for free, since the APIs are the same.</li>
 <li><strong>Doze improvements</strong>: the battery saving mode called Doze, now works — in a less aggressive mode — when the phone is in the user pocket or hands, and not only when the phone is stationary. Wojtek said that most of the apps should continue to work without any change — or eventually <a href="http://developer.android.com/intl/ko/training/monitoring-device-state/doze-standby.html#assessing_your_app">minimal</a> —, but he strongly encouraged to test apps against this new feature.</li>
-<li><strong>JAVA 8 features!</strong>: finally Google will allow developers to use a limited set of features from the latest version of the language (already two years old) including <em>lambdas</em> (🎉) and <em>default and static interface methods</em> (TODO: add DP2 apis). All of this is possibile thanks to the Jack<sup class="footnote-ref" id="fnref:1"><a rel="footnote" href="#fn:1">1</a></sup> toolchain which is able to compile Java 8 syntax to Java 6 compatible bytecode: in this way, old phones’ support is guaranteed.</li>
+<li><strong>JAVA 8 features!</strong>: finally Google will allow developers to use a limited set of features from the latest version of the language (already two years old) including <em>lambdas</em> (🎉) and <em>default and static interface methods</em> (TODO: add DP2 apis). All of this is possibile thanks to the Jack<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> toolchain which is able to compile Java 8 syntax to Java 6 compatible bytecode: in this way, old phones’ support is guaranteed.</li>
 </ul>
-
 <p>Other changes include improvements to <a href="http://developer.android.com/intl/ko/preview/api-overview.html#background_optimizations">Project Svelte</a>, a new <a href="http://developer.android.com/intl/ko/preview/api-overview.html#data_saver">Data Saver</a> feature, the addition of the <a href="http://developer.android.com/intl/ko/preview/api-overview.html#tile_api">Quick Settings Tile API</a> and <a href="http://developer.android.com/intl/ko/preview/api-overview.html">many more</a>.</p>
-
 <p>The most interesting and encouraging aspect coming out from the keynote and the N Preview release itself, is the fact that Google is, finally, trying to fix the Android updates issue.</p>
-
-<p><img src="/images/droidconit-recap/n-preview-updates.png" alt="N Preview Updates" /></p>
-
+<p><img src="/images/droidconit-recap/n-preview-updates.png" alt="N Preview Updates"></p>
 <p>Not only the release of the new OS preview six months before its public release — instead of three — is really useful for third party developers to update apps to support new APIs, but hopefully it will also help phone manufactures to keep their custom Android implementations more aligned with the stock version release cycle. This will result in a better user experience and, more importantly to us, a better developer experience, making it closer to the iOS world where developers are not required to support five years old OS versions.</p>
-
-<h2 id="perfmatters-for-android-hasan-hosgel-https-twitter-com-alosdev">#PERFMATTERS for Android - <em><a href="https://twitter.com/alosdev">Hasan Hosgel</a></em></h2>
-
+<h2 id="perfmatters-for-android---hasan-hosgelhttpstwittercomalosdev">#PERFMATTERS for Android - <em><a href="https://twitter.com/alosdev">Hasan Hosgel</a></em></h2>
 <p><a href="https://speakerdeck.com/alosdev/perfmatters-for-android-droidcon-turin-2016">Slides</a></p>
-
 <p>The talk was all about performance in Android. The speaker analyzed why #<strong>PERFMATTERS</strong> on Android: the typical mobile user is generally <em>impatient</em> and <em>intolerant</em> and even just a couple of extra seconds during the start-up could make the difference in the user&rsquo;s choice to use or not your app. Hasan went through a lot of interesting tips and tricks to improve performance, such as avoiding multi-pass nested layout — a topic discussed in more detail by Huyen Tue Dao during her <a href="#lean-layouts">talk</a> —, avoiding memory leaks or having a cache on disk for data.</p>
-
 <p>Performance is crucial to <strong>engage the user</strong> and I think the speaker did a great job in summarizing useful tips to improve it. Moreover most of them doesn’t alter the readability or the maintainability of the code, as is often the case for performance driven code changes.</p>
-
-<h2 id="let-it-flow-unidirectional-data-flow-architecture-in-android-benjamin-augustin-https-twitter-com-dorvaryn">Let it flow! Unidirectional data flow architecture in Android - <a href="https://twitter.com/dorvaryn"><em>Benjamin Augustin</em></a></h2>
-
+<h2 id="let-it-flow-unidirectional-data-flow-architecture-in-android---benjamin-augustinhttpstwittercomdorvaryn">Let it flow! Unidirectional data flow architecture in Android - <a href="https://twitter.com/dorvaryn"><em>Benjamin Augustin</em></a></h2>
 <p><a href="https://speakerdeck.com/dorvaryn/let-it-flow">Slides</a></p>
-
 <p>The use of patterns to structure the presentation layer (UI) in Android is still infrequent. During the last couple of years we have seen a lot of discussions about <strong>MVC</strong>/<strong>MVP</strong>/<strong>MVVM</strong> patterns within the Android developers community, and some implementations of them.
 During the talk the speaker presented a new approach that takes some concepts from the web development world like <a href="https://facebook.github.io/flux/"><em>Flux</em></a> and <a href="http://redux.js.org"><em>Redux</em></a>. The concept in a nutshell is that the UI, in addition to being as dumb as possible, should also be <strong>stateless</strong>. In other words, the UI listens to state changes pushed by the business logic and updates itself accordingly.
 Benjamin chose to focus more on the practical aspects and so he made the concept clear by directly building an <a href="https://github.com/Dorvaryn/unidirectionalDataFlow">app</a> using Kotlin and RxJava.</p>
-
 <p>I personally likey approach that Benjamin showed us, since it has a lot of advantages. It makes the UI state completely <strong>predictable</strong> and <strong>reproducible</strong>: it allows us to represent an app state without the need to go through all the steps needed to reach it, thus it can be very useful in reproducing a bug or testing a particular situation. The problem is that, as you can see from the demo app, it adds a lot of boilerplate code and it&rsquo;s also much more verbose and difficult to implement without tools like RxJava or Kotlin, that might be problematic to some.</p>
-
-<h2 id="play-everywhere-providing-a-consistent-experience-across-very-different-devices-alessandro-bizzarri-http-it-droidcon-com-2016-speakers-alessandro-bizzarri-dima-kunin-http-it-droidcon-com-2016-speakers-dima-kunin">Play everywhere: providing a consistent experience across very different devices - <a href="http://it.droidcon.com/2016/speakers/alessandro-bizzarri/"><em>Alessandro Bizzarri</em></a> &amp; <a href="http://it.droidcon.com/2016/speakers/dima-kunin/"><em>Dima Kunin</em></a></h2>
-
+<h2 id="play-everywhere-providing-a-consistent-experience-across-very-different-devices---alessandro-bizzarrihttpitdroidconcom2016speakersalessandro-bizzarri--dima-kuninhttpitdroidconcom2016speakersdima-kunin">Play everywhere: providing a consistent experience across very different devices - <a href="http://it.droidcon.com/2016/speakers/alessandro-bizzarri/"><em>Alessandro Bizzarri</em></a> &amp; <a href="http://it.droidcon.com/2016/speakers/dima-kunin/"><em>Dima Kunin</em></a></h2>
 <p>The two speakers showed a high-level tour of how at <strong>Spotify</strong> they  are able to provide a consistent experience across different devices — defined as the combination of its physical form and its OS.
 They created their own <strong>design language</strong> to support the majority of platforms used to define almost everything, from color palette and buttons style to animations and sounds.
 They explained also how they use a <strong>C++ library</strong> common to all platforms to reuse code; in particular on Android they use it through the NDK, a toolset to include C or C++ code in your app and call it from Java code.</p>
-
 <p>It was a light talk but still it was interesting to see how a big company like Spotify finds solutions to scale and maintain a <strong>consistent and engaging UX</strong> across all of its user-base.</p>
-
-<h2 id="loving-lean-layouts-huyen-tue-dao-https-twitter-com-queencodemonkey-a-name-lean-layouts-a">Loving lean layouts - <a href="https://twitter.com/queencodemonkey"><em>Huyen Tue Dao</em></a> <a name="lean-layouts"></a></h2>
-
+<h2 id="loving-lean-layouts---huyen-tue-daohttpstwittercomqueencodemonkey-a-namelean-layoutsa">Loving lean layouts - <a href="https://twitter.com/queencodemonkey"><em>Huyen Tue Dao</em></a> <!-- raw HTML omitted --><!-- raw HTML omitted --></h2>
 <p><a href="https://speakerdeck.com/queencodemonkey/droidcon-italy-2016-loving-lean-layouts">Slides</a></p>
-
-<p>The speaker gave a really great talk about one of the best ways to keep an app smooth and responsive: <strong>optimize layouts</strong> to be as flat as possible. The Android UI layer will call <code>measure()</code> and    <code>layout()</code> methods — two times in the case of <code>RelativeLayout</code> — through all the hierarchy of views to be able to draw the layout; so, for example, having a useless root level  or useless views will result in more measure/layout passes, thus poor performance. Huyen explained how sometimes the solution to this problem may be to choose the right view or layout, but it could be useful to know that there is always the possibility to implement a custom <code>ViewGroup</code> to mitigate the number of measure/layout passes or even a totally custom <code>View</code> that overrides <code>onDraw()</code> to draw everything by hand.</p>
-
+<p>The speaker gave a really great talk about one of the best ways to keep an app smooth and responsive: <strong>optimize layouts</strong> to be as flat as possible. The Android UI layer will call <code>measure()</code> and 	<code>layout()</code> methods — two times in the case of <code>RelativeLayout</code> — through all the hierarchy of views to be able to draw the layout; so, for example, having a useless root level  or useless views will result in more measure/layout passes, thus poor performance. Huyen explained how sometimes the solution to this problem may be to choose the right view or layout, but it could be useful to know that there is always the possibility to implement a custom <code>ViewGroup</code> to mitigate the number of measure/layout passes or even a totally custom <code>View</code> that overrides <code>onDraw()</code> to draw everything by hand.</p>
 <p>The talk was very easy to follow and really useful: most of the advices covered are often ignored because singularly they have less impact, but, if taken all together and especially as good habits, they could really make the difference in maintain the <strong>UI smooth and lag-free</strong>.</p>
-
 <h1 id="day-2">Day 2</h1>
-
-<h2 id="android-reactive-programming-with-rxjava-ivan-morgillo-https-twitter-com-hamen">Android reactive programming with RxJava - <a href="https://twitter.com/hamen"><em>Ivan Morgillo</em></a></h2>
-
+<h2 id="android-reactive-programming-with-rxjava---ivan-morgillohttpstwittercomhamen">Android reactive programming with RxJava - <a href="https://twitter.com/hamen"><em>Ivan Morgillo</em></a></h2>
 <p>During last couple of years RxJava has been echoing all over the Android developers community and given its huge popularity I was surprised to see that Droidcon IT offered only one talk about it.</p>
-
 <p>Fortunately Ivan Morgillo is a topic expert — he also wrote a <a href="https://www.packtpub.com/application-development/rxjava-essentials">book</a> about RxJava and Android — and during the talk he went through some of the <strong>basics of reactive programming</strong> (<code>Observables</code>, <code>Observer</code>, <code>Subscription</code>…) and a lot of useful <strong>operators</strong>, which are one of the strengths of RxJava and Reactive extensions (Rx*) in general.</p>
-
 <p>To be honest I was hoping for a more theoretical talk with an analysis of the advantages and disadvantages of embracing the reactive pattern in our Android projects. It was instead a lot practical and it covered a great number of common use cases where reactive programming could really help to make code mode readable and maintainable.</p>
-
-<h2 id="you-can-do-better-with-kotlin-svetlana-isakova-https-github-com-svtk">You can do better with Kotlin - <a href="https://github.com/svtk"><em>Svetlana Isakova</em></a></h2>
-
+<h2 id="you-can-do-better-with-kotlin---svetlana-isakovahttpsgithubcomsvtk">You can do better with Kotlin - <a href="https://github.com/svtk"><em>Svetlana Isakova</em></a></h2>
 <p><a href="https://speakerdeck.com/svtk/you-can-do-better-with-kotlin">Slides</a></p>
-
 <p>Kotlin has recently reached <a href="https://blog.jetbrains.com/kotlin/2016/02/kotlin-1-0-released-pragmatic-language-for-jvm-and-android/"><strong>1.0 version</strong></a> and it is gaining a lot of attention within the Java community and especially the Android one. A lot of developers — me included — are in fact hoping that Google will make it the default programming language for its mobile OS.</p>
-
 <p>Kotlin is a <strong>modern</strong>, <strong>pragmatic</strong> and <strong>Android-friendly</strong> programming language, with robust supporting tools since it is developed from the people behind IntelliJ (thus, Android Studio). It could be mixed with Java code — thus making the switch painless — since there is no Kotlin SDK but just JDK plus extensions, and it includes a lot of modern concept such as <em>data classes</em>, <em>null-safety</em>, <em>extension functions</em> and <em>lambdas</em>.</p>
-
 <p>The speaker showed also ANKO, a DSL written in Kotlin, that uses <em>lambdas with receivers</em>, to create layouts and views and allows to write code like:</p>
-
 <pre><code>verticalLayout {
     val name = editText()
     button(&quot;Say Hello&quot;) {
         onClick { toast(&quot;Hello, ${name.text}!&quot;) }
     }
 }
-</code></pre>
-
-<p>This talk was one of the most interesting to me, as it persuaded me to try and deepen my knowledge of Kotlin. Svetlana was very good at showing the main features of the JetBrains language and at explaining how they convert in Java code, an aspect that I found very useful to mutate my mindset with new concepts and  syntaxes.</p>
-
-<h2 id="fun-things-you-cando-in-kotlin-maciej-górski-https-github-com-mg6maciej">fun things (you: CanDo <in Kotlin> ) = … - <a href="https://github.com/mg6maciej"><em>Maciej Górski</em></a></h2>
-
+</code></pre><p>This talk was one of the most interesting to me, as it persuaded me to try and deepen my knowledge of Kotlin. Svetlana was very good at showing the main features of the JetBrains language and at explaining how they convert in Java code, an aspect that I found very useful to mutate my mindset with new concepts and  syntaxes.</p>
+<h2 id="fun-things-you-cando-in-kotlin------maciej-górskihttpsgithubcommg6maciej">fun things (you: CanDo <!-- raw HTML omitted --> ) = … - <a href="https://github.com/mg6maciej"><em>Maciej Górski</em></a></h2>
 <p><a href="https://github.com/mg6maciej/fun-things-you-CanDo-in-Kotlin">Code</a></p>
-
 <p>The second Droidcon talk about Kotlin was a very fun one, with the speaker acting a funny scene where a nephew tries to explain to his granpa why he should use <strong>Kotlin instead of Java</strong> with a live coding session.</p>
-
-<p><style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://www.youtube.com/embed/RVu_0TIiH8Q' frameborder='0' allowfullscreen></iframe></div></p>
-
+<!-- raw HTML omitted -->
 <p>The second part of the talk was still in live programming (without slides) and showed some Kotlin feature in practice. It covered some advanced topics such as functional programming, operator overloading, infix functions, laziness and more.</p>
-
 <p>It was funny and informative to watch a <strong>live coding talk</strong> and for sure it made me more curious and confident about Kotlin.</p>
-
 <h1 id="conclusions">Conclusions</h1>
-
 <p>The Droidcon IT is already, after three editions, the <strong>point of reference</strong> for the Android community in Italy and this year too it lived up to the expectations. We saw a lot of well-known speakers and developers such as the Googlers Nick Butcher and  Wojtek Kaliciński. It was a conference rich of interesting talks in addition to those summarized in this post, ranging between al lot of various topics such as TDD, UX, tools and many more. The only thing that surprised me was the lack of talks about Android Wear: perhaps Google is slowing down to push this platform among developers?</p>
-<div class="footnotes">
-
-<hr />
-
+<section class="footnotes" role="doc-endnotes">
+<hr>
 <ol>
-<li id="fn:1"><a href="https://source.android.com/source/jack.html">Jack</a> is the new Google compiler which has the goal to speed up the compilation process, compiling Java .class files directly to .dex files (Android bytecode)
- <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://source.android.com/source/jack.html">Jack</a> is the new Google compiler which has the goal to speed up the compilation process, compiling Java .class files directly to .dex files (Android bytecode) <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
-</div>
+</section>
 
   </div>
 
@@ -574,7 +510,7 @@ They explained also how they use a <strong>C++ library</strong> common to all pl
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -870,7 +806,7 @@ They explained also how they use a <strong>C++ library</strong> common to all pl
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -889,13 +825,11 @@ They explained also how they use a <strong>C++ library</strong> common to all pl
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -908,11 +842,13 @@ They explained also how they use a <strong>C++ library</strong> common to all pl
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -931,7 +867,7 @@ They explained also how they use a <strong>C++ library</strong> common to all pl
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -962,7 +898,7 @@ They explained also how they use a <strong>C++ library</strong> common to all pl
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1005,13 +941,11 @@ They explained also how they use a <strong>C++ library</strong> common to all pl
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1020,11 +954,13 @@ They explained also how they use a <strong>C++ library</strong> common to all pl
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1067,14 +1003,12 @@ They explained also how they use a <strong>C++ library</strong> common to all pl
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1086,19 +1020,19 @@ They explained also how they use a <strong>C++ library</strong> common to all pl
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

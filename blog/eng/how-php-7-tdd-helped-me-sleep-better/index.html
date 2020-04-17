@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -32,7 +32,8 @@
     
     <meta name="twitter:title" content="How PHP 7 &amp; TDD helped me sleep better"/>
     <meta name="twitter:description" content="The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
-Maybe we fear only one thing more than that: being interrupted.  While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&hellip; fatigue and interruptions are the main enemies of those in this line of work.
+Maybe we fear only one thing more than that: being interrupted.
+While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&hellip; fatigue and interruptions are the main enemies of those in this line of work.
 My experience On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5."/>
     
         
@@ -46,38 +47,23 @@ My experience On my day job, I do all this mental juggling on a pretty big proje
 
         <meta property="og:title" content="How PHP 7 &amp; TDD helped me sleep better" />
 <meta property="og:description" content="The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
-Maybe we fear only one thing more than that: being interrupted.  While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&hellip; fatigue and interruptions are the main enemies of those in this line of work.
+Maybe we fear only one thing more than that: being interrupted.
+While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&hellip; fatigue and interruptions are the main enemies of those in this line of work.
 My experience On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/" />
-
-
-
-<meta property="article:published_time" content="2016-06-07T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2016-06-07T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2016-06-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-06-07T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="How PHP 7 &amp; TDD helped me sleep better">
+        <meta itemprop="name" content="How PHP 7 &amp; TDD helped me sleep better">
 <meta itemprop="description" content="The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
-Maybe we fear only one thing more than that: being interrupted.  While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&hellip; fatigue and interruptions are the main enemies of those in this line of work.
+Maybe we fear only one thing more than that: being interrupted.
+While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&hellip; fatigue and interruptions are the main enemies of those in this line of work.
 My experience On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5.">
-
-
 <meta itemprop="datePublished" content="2016-06-07T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-06-07T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1360">
@@ -85,7 +71,6 @@ My experience On my day job, I do all this mental juggling on a pretty big proje
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -114,14 +99,17 @@ My experience On my day job, I do all this mental juggling on a pretty big proje
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -422,84 +410,44 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<h1 id="the-enemies-of-programming">The enemies of programming</h1>
-
-<p>As many of you will agree with me, <strong>sleep deprivation</strong> is the enemy of programming.<br />
-Maybe we fear only one thing more than that: <strong>being interrupted</strong>.
-<p style="text-align: center;">
-    <a href="http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/"><img src="/images/how-php-7-tdd-helped-me-sleep-better/interruption.png" alt="Why you shouldn't interrupt a programmer (by Jason Heeris)" /></a>
-</p></p>
-
+    <h1 id="the-enemies-of-programming">The enemies of programming</h1>
+<p>As many of you will agree with me, <strong>sleep deprivation</strong> is the enemy of programming.<br>
+Maybe we fear only one thing more than that: <strong>being interrupted</strong>.</p>
+<!-- raw HTML omitted -->
 <p>While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&hellip; fatigue and interruptions are the main enemies of those in this line of work.</p>
-
 <h1 id="my-experience">My experience</h1>
-
 <p>On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5.5, Symfony 2.8, Doctrine etc.; luckily, in this project we use a good deal of <strong>good practices</strong>, and <strong>automated software testing</strong> is one of those. I actually switched to this job to learn about doing automatic testing, continuous integration and other best practices.</p>
-
-<p>Almost half a year ago <strong>I became a dad</strong>. It has been great, and you also get some unexpected perks! For example, my colleagues got me this gift for my son:
-<p style="text-align: center;">
-    <img src="/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg" alt="A blue elePHPant!" />
-</p></p>
-
+<p>Almost half a year ago <strong>I became a dad</strong>. It has been great, and you also get some unexpected perks! For example, my colleagues got me this gift for my son:</p>
+<!-- raw HTML omitted -->
 <p>So, we can say that his future is pretty clear&hellip; But don&rsquo;t say this to my wife!</p>
-
-<p>During the pregnancy, many of my friends and fellow parents warned me half jokingly about one thing: <em>&ldquo;sleep now, you&rsquo;ll be deadly tired after!&rdquo;</em>. Now I can say that they were a bit exaggerating, but I can&rsquo;t deny that, having a child takes a toll on your sleep schedule&hellip; Even if, as in my case having a 9 to 6 office job, my wonderful wife does all the parenting heavy lifting (and I consider myself pretty lucky for having her!).</p>
-
+<p>During the pregnancy, many of my friends and fellow parents warned me half jokingly about one thing: <em>&ldquo;sleep now, you&rsquo;ll be deadly tired after!&quot;</em>. Now I can say that they were a bit exaggerating, but I can&rsquo;t deny that, having a child takes a toll on your sleep schedule&hellip; Even if, as in my case having a 9 to 6 office job, my wonderful wife does all the parenting heavy lifting (and I consider myself pretty lucky for having her!).</p>
 <p>A few months after my son was born I also had the opportunity to start <strong>a new, fresh project</strong>. To be completely honest, it was not actually fresh: it was a <strong>complete rewrite</strong> of an internal service that&rsquo;s used to manage the invoices for multiple business units inside our company. I knew pretty well that the old system had to be replaced, so I was put in charge of redoing it from scratch.</p>
-
 <p>One of the issue with the old system (and the main reason behind the rewrite) was <strong>maintainability</strong>: we had no tests, we had no proper development environment, and its design wasn&rsquo;t that great; also, bureaucracy and invoicing are the core domain of the system, so it was inherently complex. It was the perfect environment to witness the <a href="https://en.wikipedia.org/wiki/Broken_windows_theory">broken windows theory</a> in action: the code base got worse over time, one patch, copy paste or quick fix at a time.</p>
-
 <p>Obviously, as anyone that&rsquo;s passionate in technology would do, I took the opportunity to use a lot of new shiny tools: I picked <strong>PHP 7</strong>, which had just been released, and started the project with something familiar to me but still pretty new and cool, <strong>Symfony 3.0</strong>.</p>
-
 <h1 id="what-i-found-to-be-useful">What I found to be useful</h1>
-
 <p>I rambled and thought about this project a lot in the past months with my colleagues, because the old system was costing us a lot of overhead in usage and maintenance, and we had a pretty clear idea of what its problems were, so I didn&rsquo;t need to study a lot before starting to write the first classes.</p>
-
 <p>Thus, I had to spend <em>some</em> time thinking about an object oriented design for my project, but I was rapidly able to start writing code with confidence. In the end, most of this confidence came from a few choices that I pursued during the development of this project.</p>
-
 <h2 id="tdd-and-high-coverage">TDD and high coverage</h2>
-
 <p>The first choice that I am pretty satisfied about is <strong>automatic testing</strong>: I already knew the advantages of doing tests and Test Driven Development, but in the previous project that practice was not introduced from the start, so not all the codebase was covered, and we couldn&rsquo;t (or wouldn&rsquo;t?) do TDD 100% of the time.</p>
-
 <p>In this case instead <strong>I wanted to write nearly everything with TDD</strong>, and keep a <strong>very high threshold for the minimum coverage</strong> achieved through automatic testing. Right now I&rsquo;m sitting on a ~92% test coverage, and I feel proud about it. This wasn&rsquo;t a mere &ldquo;let&rsquo;s hit 100%!&rdquo; mindless goal (<a href="https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/">since it&rsquo;s pointless</a>), but it fueled <strong>a positive feedback cycle</strong> instead: the more I used TDD in writing new classes, the more the coverage rose and stayed high; at the same time, I found myself inspecting the coverage reports to find missing spots, and that allowed me to discover many edge-cases that I didn&rsquo;t test and should have been.</p>
-
 <p>Of course, I still left some parts without coverage or specific tests, since it was pointless to test them (e.g. Doctrine entities), while I covered some parts multiple times, since they were <strong>critical paths</strong> inside my application.</p>
-
 <h2 id="unit-tests-to-the-rescue">Unit tests to the rescue!</h2>
-
 <p>Last but not least, the main critical advantage that TDD gave me was <strong>focus even on strained days</strong>: I wrote the classes starting from unit tests, giving all my effort to one piece of code at a time, without having to keep in mind the entire project with its complexities.</p>
-
 <p>I then wrote some functional tests to assure that the <strong>collaboration between my unit-tested objects</strong> was fine, and this later step was also useful in delaying the definition of the classes as services inside the Symfony DI container. I was also <strong>able to change my mind</strong> a few times on some details of the design without having to suffer mental confusion or rewrite too much code.</p>
-
 <h2 id="php-7-scalar-and-return-types-declarations">PHP 7: scalar and return types declarations</h2>
-
-<p>The second good choice was <strong>PHP 7</strong>: among the reasons behind it as the language version of choice for this project were the <a href="http://php.net/manual/en/migration70.new-features.php">two main new features</a> introduced: <strong>scalar types</strong> and <strong>return type declarations</strong>.
-<p style="text-align: center;">
-    <img src="/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg" alt="Return types, return types everywhere!" />
-</p></p>
-
+<p>The second good choice was <strong>PHP 7</strong>: among the reasons behind it as the language version of choice for this project were the <a href="http://php.net/manual/en/migration70.new-features.php">two main new features</a> introduced: <strong>scalar types</strong> and <strong>return type declarations</strong>.</p>
+<!-- raw HTML omitted -->
 <p>Before Facile.it, I worked as C++ developer, and oh boy! did I miss scalars and return types!</p>
-
 <p><em>&ldquo;I came onboard of the PHP community right on time&rdquo;</em>, I thought&hellip; So I took advantage of the situation to start using all these new features. I enjoyed having again the possibility to typehint strings and integers; I discovered how return types declaration enforces the cohesion of your objects really well, making it <strong>rightly painful to return different things</strong>: it became impossible to return <em>something</em> OR <em>null</em>, for example.</p>
-
 <p>Interestingly, in my tests I found myself writing a lot of this kind of code:</p>
-
 <pre><code>$result = $testClass-&gt;method();
 $this-&gt;assertInstanceOf(SomeClass::class, $result);
 </code></pre>
-
 <p>I did this more than once, just to realize that I was wasting my time! This was normally the first TDD step on PHP 5.x code, but now this kinds of assertion were futile, because the return type was already checked at a language level! Great!</p>
-
 <p>Return types also proved themselves to be a <strong>double-edged sword</strong> in some cases, especially on Doctrine entities: they are really useful to enforce consistency in your values, since they trigger a <code>\TypeError</code> each time you call a getter method on a erroneously empty property, but <strong>you can&rsquo;t use them on nullable fields</strong>, since it will break your application at any time during execution.</p>
-
 <p>On the other hand, having return types declared on your business-logic classes it&rsquo;s pretty useful, even more when used in conjunction with TDD: every time you define a mock you are forced to declare expectations and predictions with the right types, so it <strong>indirectly helps maintaining the collaboration contract between objects</strong>, without too much hassle. If I changed a method&rsquo;s signature that was mocked somewhere, the mock would break the test, <strong>highlighting the issue and making the tests</strong> (and an high coverage) <strong>even more valuable</strong>.</p>
-
 <h1 id="conclusions">Conclusions</h1>
-
 <p>At the end of the day, these and other <strong>good practices are helpful</strong> for both your job and your personal life: you can go a long way in being fit and in the best shape while working, but stressful and (good) distracting events are unavoidable: you&rsquo;ll often have to fight stress, fatigue or distractions, and there will be days where you can&rsquo;t be at the top of your game, for any number of reasons.</p>
-
 <p>Since programming is a mental job, I think that having instruments and good practices in your toolset is invaluable, being them the <strong>essential tools of our craft</strong>. Thus, I hope that those little life/programming lessons I learned in these months will be useful to other people like me.</p>
 
   </div>
@@ -541,7 +489,7 @@ $this-&gt;assertInstanceOf(SomeClass::class, $result);
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -837,7 +785,7 @@ $this-&gt;assertInstanceOf(SomeClass::class, $result);
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -856,13 +804,11 @@ $this-&gt;assertInstanceOf(SomeClass::class, $result);
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -875,11 +821,13 @@ $this-&gt;assertInstanceOf(SomeClass::class, $result);
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -898,7 +846,7 @@ $this-&gt;assertInstanceOf(SomeClass::class, $result);
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -929,7 +877,7 @@ $this-&gt;assertInstanceOf(SomeClass::class, $result);
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -972,13 +920,11 @@ $this-&gt;assertInstanceOf(SomeClass::class, $result);
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -987,11 +933,13 @@ $this-&gt;assertInstanceOf(SomeClass::class, $result);
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1034,14 +982,12 @@ $this-&gt;assertInstanceOf(SomeClass::class, $result);
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1053,19 +999,19 @@ $this-&gt;assertInstanceOf(SomeClass::class, $result);
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

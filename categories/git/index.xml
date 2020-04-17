@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Facile.it Engineering</title>
@@ -6,7 +6,7 @@
     <description>Recent content in Git on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/git/index.xml" rel="self" type="application/rss+xml" />
     

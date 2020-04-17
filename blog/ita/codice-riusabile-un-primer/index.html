@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -46,32 +46,15 @@
 <meta property="og:description" content="L&rsquo;ultima volta abbiamo visto una possibile implementazione del tipo Optional in Objective-C; l&rsquo;obiettivo primario dell&rsquo;articolo era quello di importare in Objective-C uno strumento frequentemente utilizzato in Swift, ma usare una classe come Optional può essere considerato un&rsquo;applicazione di un concetto molto più generale: il riutilizzo del codice. In effetti, Optional non è legato a un particolare dominio, e può essere riutilizzato più e più volte in molti progetti: questo è esattamente ciò che accade in Swift." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/codice-riusabile-un-primer/" />
-
-
-
-<meta property="article:published_time" content="2015-12-09T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-12-09T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-12-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-12-09T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Codice riusabile: un primer">
+        <meta itemprop="name" content="Codice riusabile: un primer">
 <meta itemprop="description" content="L&rsquo;ultima volta abbiamo visto una possibile implementazione del tipo Optional in Objective-C; l&rsquo;obiettivo primario dell&rsquo;articolo era quello di importare in Objective-C uno strumento frequentemente utilizzato in Swift, ma usare una classe come Optional può essere considerato un&rsquo;applicazione di un concetto molto più generale: il riutilizzo del codice. In effetti, Optional non è legato a un particolare dominio, e può essere riutilizzato più e più volte in molti progetti: questo è esattamente ciò che accade in Swift.">
-
-
 <meta itemprop="datePublished" content="2015-12-09T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-12-09T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1768">
@@ -79,7 +62,6 @@
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -108,14 +90,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -422,183 +407,159 @@ ga('send', 'pageview');
 
   <div id="content">
     <p><a href="http://engineering.facile.it/optionals-in-objective-c-ita/">L&rsquo;ultima volta</a> abbiamo visto una possibile implementazione del tipo <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330">Optional</a> in Objective-C; l&rsquo;obiettivo primario dell&rsquo;articolo era quello di importare in Objective-C uno strumento frequentemente utilizzato in Swift, ma usare una classe come <code>Optional</code> può essere considerato un&rsquo;applicazione di un concetto molto più generale: il <strong>riutilizzo del codice</strong>. In effetti, <code>Optional</code> non è legato a un particolare dominio, e può essere riutilizzato più e più volte in molti progetti: questo è esattamente ciò che accade in Swift. Ma a pensarci bene, questo è ciò che accade per una grande varietà di <em>classi</em> in Objective-C (e di <em>tipi</em> in Swift): ad esempio, <code>NSArray</code> e <code>Array</code> sono entrambi costrutti che espongono una specifica interfaccia, possiedono una certa implementazione, e vengono riutilizzati continuamente in metodi e funzioni. <code>NSArray</code> e <code>Array</code> non sono legati a un particolare dominio, e possiedono due importanti caratteristiche:</p>
-
 <ul>
 <li>sono <strong>generici</strong>, quindi non sono legati a un particolare sottotipo: un array di numeri e un array di stringhe funzioneranno esattamente allo stesso modo per quanto riguarda le funzioni strettamente associate agli array, come il conteggio degli elementi, rimuovere o aggiungere un elemento, mappare, filtrare, ridurre e così via;</li>
 <li>sono <strong>componibili</strong>, quindi possono essere combinati tra loro e con altri oggetti più specifici, mantenendo comunque lo stesso <strong>comportamento predicibile</strong>: un array di <em>clienti</em>, ciascuno con il suo array <em>prodotti acquistati</em>, può essere mappato in un array di array di <em>prodotti</em>, che può essere appiattito in un array di <em>prodotti</em>, che può essere ridotto a un numero che rappresenta il costo totale;</li>
 </ul>
-
 <p><code>Array</code>, come <code>Optional</code>, è un ottimo esempio di codice perfettamente riutilizzabile, ma ci sono molti altri costrutti che soddisfano le regole di cui sopra, cioè <em>genericità</em> e <em>componibilità</em>. Gli oggetti specifici di dominio, invece, tipicamente non soddisfano queste regole, anche quando un oggetto sembra essere sufficientemente generico da poter essere riutilizzato. Una classe <code>Cliente</code>, ad esempio, potrebbe sembrare un buon candidato, ma cercare di usare la stessa classe in due diversi progetti si rivelerebbe <strong>una pessima idea</strong>: probabilmente saremo costretti a <strong>specializzare</strong> la classe per ciascun progetto, portando a divergenza tra le implementazioni, o usare diversi livelli di <strong>indirezione</strong>, perché stiamo inserendo a forza un oggetto in un dominio che non gli appartiene.</p>
-
-<p>C&rsquo;è un&rsquo;altra cosa da considerare: se davvero vogliamo riutilizzare del codice, dovremo anche stare attenti alle nostre <strong>scelte di design</strong>, perché non tutti i design permettono l&rsquo;utilizzo di codice generico. Potrei dimenticarmi dell&rsquo;esistenza dei tipi <code>Optional</code> e <code>Array</code>, e creare classi che non espongono mai i loro componenti di base; ad esempio, potrei creare una classe che rappresenta una collezione di oggetti opzionali, senza mai esporre nell&rsquo;interfaccia il fatto che sto utilizzando <code>Array</code> e <code>Optional</code> nell&rsquo;implementazione: ne risulterebbe una certa <strong>complicazione</strong> della firma dei metodi, ma è possibile. Ma, a pensarci bene, è una buona idea? <strong>Ne dubito</strong>. Creare una nuova e specifica classe, non componibile, per ogni possibile necessità produrrà migliaia di linee di codice <strong>boilerplate</strong>, interfacce complicate, e nomi di classi assurdamente lunghi. Se vogliamo scrivere codice riutilizzabile, oltre a seguire le due regole già viste, dobbiamo anche prestare attenzione al modo in cui architettiamo le nostre app, e il principio di design da seguire in questo caso è il principio di <strong>composizione</strong>, che può essere sintetizzato con la seguente frase:</p>
-
+<p>C'è un&rsquo;altra cosa da considerare: se davvero vogliamo riutilizzare del codice, dovremo anche stare attenti alle nostre <strong>scelte di design</strong>, perché non tutti i design permettono l&rsquo;utilizzo di codice generico. Potrei dimenticarmi dell&rsquo;esistenza dei tipi <code>Optional</code> e <code>Array</code>, e creare classi che non espongono mai i loro componenti di base; ad esempio, potrei creare una classe che rappresenta una collezione di oggetti opzionali, senza mai esporre nell&rsquo;interfaccia il fatto che sto utilizzando <code>Array</code> e <code>Optional</code> nell&rsquo;implementazione: ne risulterebbe una certa <strong>complicazione</strong> della firma dei metodi, ma è possibile. Ma, a pensarci bene, è una buona idea? <strong>Ne dubito</strong>. Creare una nuova e specifica classe, non componibile, per ogni possibile necessità produrrà migliaia di linee di codice <strong>boilerplate</strong>, interfacce complicate, e nomi di classi assurdamente lunghi. Se vogliamo scrivere codice riutilizzabile, oltre a seguire le due regole già viste, dobbiamo anche prestare attenzione al modo in cui architettiamo le nostre app, e il principio di design da seguire in questo caso è il principio di <strong>composizione</strong>, che può essere sintetizzato con la seguente frase:</p>
 <blockquote>
 <p>Costrutti e comportamenti specifici del dominio dovrebbero essere realizzati componendo blocchi costruttivi atomici e generici.</p>
 </blockquote>
-
 <p>Ciò significa sostanzialmente che, invece di creare di volta in volta una specifica implementazione per ovviare alle nostre necessità, dovremmo costruire le nuove funzionalità aggregando oggetti atomici già definiti. Sembra un&rsquo;idea complessa, e forse dovremmo fermarci un attimo e chiederci se scrivere codice riutilizzabile sia davvero una buona idea. La mia risposta è un definitivo <strong>si</strong>, per i seguenti motivi:</p>
-
 <ul>
 <li>scrivendo componenti riutilizzabili possiamo <strong>incapsulare</strong> uno specifico comportamento, evitando di dover riscrivere di continuo sostanzialmente lo stesso codice;</li>
 <li>potremmo disporre di <strong>linee guida</strong> per progettare l&rsquo;architettura delle nostre app, perché non avremmo bisogno di definire sempre nuove interfacce per rappresentare gli stessi comportamenti;</li>
 <li>un componente riutilizzabile è molto facile da <strong>testare</strong>, perché piccolo e atomico, quindi usandolo potremmo confidare maggiormente sulla correttezza del nostro codice;</li>
 </ul>
-
 <p>Questi stessi vantaggi si ottengono, infatti, proprio usando oggetti come <code>Array</code> e <code>Optional</code>. Ma, come ho detto, esistono molti altri componenti di questo tipo, e in effetti definire le loro interfacce è un problema a sé, di non facile soluzione: lo trovo tuttavia un problema molto interessante. Seguendo le regole <em>generico</em> e <em>componibile</em> abbiamo già una linea guida per definire nuovi componenti riusabili, ma per chiudere il cerchio abbiamo bisogno di una terza regola, non meno importante:</p>
-
 <ul>
 <li>un oggetto riusabile deve essere <strong>semplice</strong>, cioè deve avere una unica responsabilità, lineare e facile da descrivere;</li>
 </ul>
-
 <p><code>Optional</code> segue questa regola: è un contenitore generico per un oggetto che potrebbe esserci, oppure no. <code>Array</code> segue questa regola: rappresenta una collezione ordinata di oggetti, ai quali posso accedere in un tempo costante. Proviamo a creare un nuovo componente riutilizzabile applicando le regole.</p>
-
 <p>Consideriamo questo caso d&rsquo;uso reale (piuttosto frequente): diversi oggetti devono essere notificati quando un certo oggetto cambia il suo stato, o compie qualche azione. Un modo per risolvere il problema è rappresentato dall&rsquo;<a href="https://en.wikipedia.org/wiki/Observer_pattern">observer pattern</a>, che consiste nel far implementare ai nostri oggetti un&rsquo;interfaccia che indica un comportamento di tipo <a href="https://it.wikipedia.org/wiki/Publish/subscribe">publish-subscribe</a>. Tuttavia, far implementare agli oggetti un&rsquo;interfaccia <strong>non è riusabile</strong>: ogni volta in cui useremo questo pattern finiremo per <strong>riscrivere</strong> codice molto simile. Vogliamo invece incapsulare il comportamento alla base di questo pattern in un oggetto generico, e riutilizzare quell&rsquo;oggetto. Quanto segue è una possibile implementazione di tale oggetto, quella che personalmente uso in produzione, ma ce ne sono molte altre: in effetti, l&rsquo;idea di trovare un modo generico e componibile di rappresentare e manipolare <em>flussi</em> di segnali osservabili ha fatto nascere un intero paradigma di programmazione, chiamato <a href="https://en.wikipedia.org/wiki/Functional_reactive_programming">functional reactive programming</a>. Ma nel nostro caso siamo interessati a creare un ben più semplice oggetto <strong>Signal</strong>.</p>
-
 <p>La classe <code>Signal</code> che vogliamo implementare deve rappresentare un <em>aggiornamento</em> per un certo oggetto: l&rsquo;aggiornamento può riguardare qualsiasi cosa, per esempio un nuovo valore per un attributo, o il fatto che una certa azione è stata compiuta. Useremo il linguaggio Swift, grazie al quale potremo godere anche di ottima sicurezza sulla manipolazione dei <strong>tipi</strong> coinvolti. Ecco in sintesi cosa chiediamo alla classe <code>Signal</code>:</p>
-
 <ul>
 <li>deve avere un sottotipo <strong>parametrico</strong>, che sarà appunto il tipo del valore segnalato ad ogni aggiornamento;</li>
 <li>deve dichiarare un metodo <code>observe</code>, che prende in ingresso una <em>closure</em> che rappresenta l&rsquo;azione da compiere a ogni aggiornamento;</li>
 <li>deve dichiarare un metodo <code>send</code>, che prende in ingresso un nuovo valore del tipo sottostante;</li>
 <li>deve dichiarare semplici metodi di composizione, che seguano le convenzioni classiche per i nomi, come <code>map</code> per generare un nuovo <code>Signal</code> da uno esistente trasformando il valore osservato, e <code>forwardTo</code> per fare in modo che un altro <code>Signal</code>, quando produce un nuovo valore, <em>attivi</em> il segnale di partenza;</li>
 </ul>
-
 <p>Dal punto di vista semantico, possiamo descrivere un <code>Signal</code> come un contenitore di un valore che esisterà a un certo punto nel futuro, e continuerà ad aggiornarsi indefinitamente.</p>
-
 <p>Segue l&rsquo;intera implementazione della classe <code>Signal</code>:</p>
-
-<pre><code class="language-swift">public enum SignalContinuation
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">SignalContinuation</span>
 {
-  case Continue
-  case Stop
+  <span style="color:#66d9ef">case</span> Continue
+  <span style="color:#66d9ef">case</span> Stop
 }
 
-public class Signal&lt;Subtype&gt;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Signal</span>&lt;Subtype&gt;
 {
-  private var observers: [(Subtype -&gt; SignalContinuation)] = []
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> observers: [(Subtype -&gt; SignalContinuation)] = []
 
-  public init() {}
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">init</span>() {}
 
-  public func observe (observeFunction: Subtype -&gt; SignalContinuation)
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">observe</span> (observeFunction: Subtype -&gt; SignalContinuation)
   {
     observers.append(observeFunction)
   }
 
-  public func send (value: Subtype)
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">send</span> (value: Subtype)
   {
-    var continuations: [(Subtype -&gt; SignalContinuation)] = []
-    while observers.count &gt; 0
+    <span style="color:#66d9ef">var</span> continuations: [(Subtype -&gt; SignalContinuation)] = []
+    <span style="color:#66d9ef">while</span> observers.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>
     {
-      let observer = observers.removeFirst()
-      let continuation = observer(value)
-      switch continuation
+      <span style="color:#66d9ef">let</span> observer = observers.removeFirst()
+      <span style="color:#66d9ef">let</span> continuation = observer(value)
+      <span style="color:#66d9ef">switch</span> continuation
       {
-      case .Continue:
+      <span style="color:#66d9ef">case</span> .Continue:
         continuations.append(observer)
-      case .Stop: break
+      <span style="color:#66d9ef">case</span> .Stop: <span style="color:#66d9ef">break</span>
       }
     }
     observers = continuations
   }
 
-  public func forwardTo (otherSignal: Signal&lt;Subtype&gt;) -&gt; Signal
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">forwardTo</span> (otherSignal: Signal&lt;Subtype&gt;) -&gt; Signal
   {
-    observe { action in
+    observe { action <span style="color:#66d9ef">in</span>
       otherSignal.send(action)
-      return .Continue
+      <span style="color:#66d9ef">return</span> .Continue
     }
-    return self
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">self</span>
   }
 
-  public func forwardTo &lt;OtherSubtype&gt; (
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">forwardTo</span> &lt;OtherSubtype&gt; (
     otherSignal: Signal&lt;OtherSubtype&gt;,
     mappingFunction: Subtype -&gt; OtherSubtype) -&gt; Signal
   {
-    observe { action in
+    observe { action <span style="color:#66d9ef">in</span>
       otherSignal.send(mappingFunction(action))
-      return .Continue
+      <span style="color:#66d9ef">return</span> .Continue
     }
-    return self
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">self</span>
   }
 
-  public func map &lt;OtherSubtype&gt; (transform: Subtype -&gt; OtherSubtype) -&gt; Signal&lt;OtherSubtype&gt;
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">map</span> &lt;OtherSubtype&gt; (transform: Subtype -&gt; OtherSubtype) -&gt; Signal&lt;OtherSubtype&gt;
   {
-    let mappedSignal = Signal&lt;OtherSubtype&gt;()
+    <span style="color:#66d9ef">let</span> mappedSignal = Signal&lt;OtherSubtype&gt;()
     forwardTo(mappedSignal, mappingFunction: transform)
-    return mappedSignal
+    <span style="color:#66d9ef">return</span> mappedSignal
   }
 }
-</code></pre>
-
-<p>L&rsquo;implementazione è semplice, ma potente. Un problema affrontato di frequente quando si implementa l&rsquo;<em>observer pattern</em> è la gestione delle disiscrizioni; è responsabilità di chi osserva smettere di farlo, e in questa implementazione di <code>Signal</code> la cosa è gestita direttamente nella <em>closure</em> passata al metodo <code>observe</code>: la <em>closure</em> deve ritornare un valore di tipo <code>SignalContinuation</code> che può essere appunto <code>.Continue</code> o <code>.Stop</code>. Un altro problema è la gestione della memoria: dobbiamo assicurarci che quando la memoria di un osservatore è rilasciata, questo debba anche smettere di osservare i segnali, o il messaggio verrà inviato a un puntatore non valido, con conseguente crash dell&rsquo;app. Swift definisce alcuni descrittori di <em>memory ownership</em>, e <code>weak</code> fa al caso nostro: sarà sufficiente inserire una <em>guard clause</em> all&rsquo;inizio della <em>closure</em> passata al metodo <code>observe</code>; se l&rsquo;oggetto è diventato <code>nil</code>, la <em>closure</em> ritornerà <code>.Stop</code>. L&rsquo;esempio seguente mostra un possibile utilizzo della classe <code>Signal</code>, incluso il meccanismo appena descritto:</p>
-
-<pre><code class="language-swift">class Sender
+</code></pre></div><p>L&rsquo;implementazione è semplice, ma potente. Un problema affrontato di frequente quando si implementa l&rsquo;<em>observer pattern</em> è la gestione delle disiscrizioni; è responsabilità di chi osserva smettere di farlo, e in questa implementazione di <code>Signal</code> la cosa è gestita direttamente nella <em>closure</em> passata al metodo <code>observe</code>: la <em>closure</em> deve ritornare un valore di tipo <code>SignalContinuation</code> che può essere appunto <code>.Continue</code> o <code>.Stop</code>. Un altro problema è la gestione della memoria: dobbiamo assicurarci che quando la memoria di un osservatore è rilasciata, questo debba anche smettere di osservare i segnali, o il messaggio verrà inviato a un puntatore non valido, con conseguente crash dell&rsquo;app. Swift definisce alcuni descrittori di <em>memory ownership</em>, e <code>weak</code> fa al caso nostro: sarà sufficiente inserire una <em>guard clause</em> all&rsquo;inizio della <em>closure</em> passata al metodo <code>observe</code>; se l&rsquo;oggetto è diventato <code>nil</code>, la <em>closure</em> ritornerà <code>.Stop</code>. L&rsquo;esempio seguente mostra un possibile utilizzo della classe <code>Signal</code>, incluso il meccanismo appena descritto:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Sender</span>
 {
-  let signal = Signal&lt;Int&gt;()
+  <span style="color:#66d9ef">let</span> signal = Signal&lt;Int&gt;()
 
-  func sendNew(value: Int)
+  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sendNew</span>(value: Int)
   {
     signal.send(value)
   }
 }
 
-class Receiver&lt;Type: CustomStringConvertible&gt;
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Receiver</span>&lt;<span style="color:#66d9ef">Type</span>: CustomStringConvertible&gt;
 {
-  func startObserving(signal: Signal&lt;Type&gt;)
+  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">startObserving</span>(signal: Signal&lt;<span style="color:#66d9ef">Type</span>&gt;)
   {
-    signal.observe { [weak self] value in
-      guard let this = self else { return .Stop }
+    signal.observe { [<span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">self</span>] value <span style="color:#66d9ef">in</span>
+      <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> this = <span style="color:#66d9ef">self</span> <span style="color:#66d9ef">else</span> { <span style="color:#66d9ef">return</span> .Stop }
       this.printNewValue(value)
-      return .Continue
+      <span style="color:#66d9ef">return</span> .Continue
     }
   }
 
-  func printNewValue(value: Type)
+  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">printNewValue</span>(value: <span style="color:#66d9ef">Type</span>)
   {
     print(value)
   }
 }
 
-let sender = Sender()
-let receiver = Receiver&lt;Int&gt;()
+<span style="color:#66d9ef">let</span> sender = Sender()
+<span style="color:#66d9ef">let</span> receiver = Receiver&lt;Int&gt;()
 
 receiver.startObserving(sender.signal)
 
-sender.signal.send(3)
-sender.signal.send(5)
-sender.signal.send(10)
-sender.signal.send(20)
-/// this will print 3, 5, 10, 20 on console
-</code></pre>
-
-<p>Nell&rsquo;esempio possiamo osservare l&rsquo;applicazione dei concetti introdotti all&rsquo;inizio dell&rsquo;articolo: invece di creare una nuova interfaccia per lo stesso comportamento, stiamo direttamente usando e riusando l&rsquo;oggetto <code>Signal</code>. Un esempio più complesso potrebbe essere rappresentato dall&rsquo;aggiunta di un <em>resonator</em>, cioè di un oggetto che possiede un segnale che risuona con un altro, quindi:</p>
-
-<pre><code class="language-swift">class DoublingResonator
+sender.signal.send(<span style="color:#ae81ff">3</span>)
+sender.signal.send(<span style="color:#ae81ff">5</span>)
+sender.signal.send(<span style="color:#ae81ff">10</span>)
+sender.signal.send(<span style="color:#ae81ff">20</span>)
+<span style="color:#75715e">/// this will print 3, 5, 10, 20 on console</span>
+</code></pre></div><p>Nell&rsquo;esempio possiamo osservare l&rsquo;applicazione dei concetti introdotti all&rsquo;inizio dell&rsquo;articolo: invece di creare una nuova interfaccia per lo stesso comportamento, stiamo direttamente usando e riusando l&rsquo;oggetto <code>Signal</code>. Un esempio più complesso potrebbe essere rappresentato dall&rsquo;aggiunta di un <em>resonator</em>, cioè di un oggetto che possiede un segnale che risuona con un altro, quindi:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DoublingResonator</span>
 {
-  let signal = Signal&lt;Int&gt;()
+  <span style="color:#66d9ef">let</span> signal = Signal&lt;Int&gt;()
 
-  func resonateWith(otherSignal: Signal&lt;Int&gt;)
+  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">resonateWith</span>(otherSignal: Signal&lt;Int&gt;)
   {
-    otherSignal.forwardTo(signal) { $0*2 }
+    otherSignal.forwardTo(signal) { $0<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> }
   }
 }
 
-let resonator = DoublingResonator()
+<span style="color:#66d9ef">let</span> resonator = DoublingResonator()
 resonator.resonateWith(sender.signal)
 
-let receiver = Receiver&lt;Int&gt;()
+<span style="color:#66d9ef">let</span> receiver = Receiver&lt;Int&gt;()
 
 receiver.startObserving(resonator.signal)
 
-sender.signal.send(3)
-sender.signal.send(5)
-sender.signal.send(10)
-sender.signal.send(20)
-/// this will print 6, 10, 20, 40 on console
-</code></pre>
-
-<p>Ci sono molte altre opzioni per comporre segnali, ma finché non ne avremo bisogno sarà meglio mantenere la classe <strong>semplice</strong>: gradualmente nel tempo potremo aggiungere nuove funzionalità, e fintanto che queste saranno sufficientemente generiche e propriamente testate, saremo in grado di usarle in tutti i nostri progetti.</p>
-
+sender.signal.send(<span style="color:#ae81ff">3</span>)
+sender.signal.send(<span style="color:#ae81ff">5</span>)
+sender.signal.send(<span style="color:#ae81ff">10</span>)
+sender.signal.send(<span style="color:#ae81ff">20</span>)
+<span style="color:#75715e">/// this will print 6, 10, 20, 40 on console</span>
+</code></pre></div><p>Ci sono molte altre opzioni per comporre segnali, ma finché non ne avremo bisogno sarà meglio mantenere la classe <strong>semplice</strong>: gradualmente nel tempo potremo aggiungere nuove funzionalità, e fintanto che queste saranno sufficientemente generiche e propriamente testate, saremo in grado di usarle in tutti i nostri progetti.</p>
 <p>Per concludere, definire le giuste astrazioni per conseguire riusabilità del codice non è un problema di semplice soluzione: molte pubblicazioni accademiche affrontano il problema (il classico articolo <a href="http://www.biglever.com/papers/Krueger_AcmReuseSurvey.pdf">Software Reuse</a> di Charles W. Krueger fornisce una buona panoramica delle tecniche considerate), e il motivo per il quale la <a href="https://it.wikipedia.org/wiki/Teoria_delle_categorie">teoria delle categorie</a> ha trovato molte applicazioni in programmazione funzionale è perché essa offre un eccellente insieme di astrazioni per affrontare diverse classi di problemi. Tuttavia sono convinto che i vantaggi legati allo scrivere codice riutilizzabile siano molti, e che poter basare un design sulla composizione di oggetti atomici sia <strong>un degno obiettivo</strong> da perseguire.</p>
 
   </div>
@@ -643,7 +604,7 @@ sender.signal.send(20)
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -939,7 +900,7 @@ sender.signal.send(20)
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -958,13 +919,11 @@ sender.signal.send(20)
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -977,11 +936,13 @@ sender.signal.send(20)
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1000,7 +961,7 @@ sender.signal.send(20)
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1031,7 +992,7 @@ sender.signal.send(20)
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1074,13 +1035,11 @@ sender.signal.send(20)
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1089,11 +1048,13 @@ sender.signal.send(20)
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1136,14 +1097,12 @@ sender.signal.send(20)
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1155,19 +1114,19 @@ sender.signal.send(20)
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

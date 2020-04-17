@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -46,32 +46,15 @@
 <meta property="og:description" content="When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability. I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy. Imagine for example a web application where a user can login and obtain a &ldquo;pass&rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/json-web-tokens/" />
-
-
-
-<meta property="article:published_time" content="2016-04-08T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2016-04-08T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2016-04-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-04-08T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Json Web Token">
+        <meta itemprop="name" content="Json Web Token">
 <meta itemprop="description" content="When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability. I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy. Imagine for example a web application where a user can login and obtain a &ldquo;pass&rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted.">
-
-
 <meta itemprop="datePublished" content="2016-04-08T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-04-08T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="756">
@@ -79,7 +62,6 @@
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -108,14 +90,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -416,94 +401,61 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p><img src="/images/json-web-tokens/logo.svg" alt="JWT" /></p>
-
+    <p><img src="/images/json-web-tokens/logo.svg" alt="JWT"></p>
 <p>When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability.
 I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy.
 Imagine for example a web application where a user can login and obtain a &ldquo;pass&rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted.
 Thanks to JWT&rsquo;s self verification capabilities, I could discard every request where the token is invalid (a fake token not signed by my application) or expired.
 Beyond this specific use case, JWT can be also useful to securely transmit data to other applications.</p>
-
 <p>Now let me introduce the standard: JSON Web Token (JWT) is an open standard <a href="https://tools.ietf.org/html/rfc7519">RFC 7519</a> that defines a compact, self-contained and secure way for transmitting information between two parties.</p>
-
 <p>Using javascript object notation to represent the data means two things:</p>
-
 <ul>
 <li>saving lots of bytes when the token goes over the network, <strong>because of it&rsquo;s size</strong> it can be sent over an URL or inside an HTTP Header</li>
 <li>it can be <strong>easily parsed by a browser</strong> and consumed by a client application</li>
 </ul>
-
 <p>This is more clear when comparing JSON to other standards like <a href="https://en.wikipedia.org/wiki/Security_Assertion_Markup_Language">SAML</a> that uses a very verbose XML structure.</p>
-
 <p>A JWT token can be trusted because it is digitally signed using a secret (usually with <a href="https://en.wikipedia.org/wiki/Hash-based_message_authentication_code">HMAC</a> algorithm) or a keypair with <a href="https://en.wikipedia.org/wiki/RSA">RSA</a>.
 Its payload contains all the required data to verify itself and, for example, transport the user data to avoid querying the database more than once.</p>
-
 <h2 id="how-the-token-presents-itself">How the token presents itself</h2>
-
 <p>A token is represented as three base64 encoded strings joined by two points:</p>
-
-<pre><code class="language-javascript">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
-</code></pre>
-
-<h3 id="headers">Headers</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9</span>.<span style="color:#a6e22e">eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9</span>.<span style="color:#a6e22e">TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ</span>
+</code></pre></div><h3 id="headers">Headers</h3>
 <p>The first part of the string contains the headers, <code>&quot;alg&quot;</code> is the algorithm used to secure the token and <code>&quot;typ&quot;</code> is the type; in this case as we can see that I used an HMAC SHA256 to sign the JWT token:</p>
-
-<pre><code class="language-javascript">{
-  &quot;alg&quot;: &quot;HS256&quot;,
-  &quot;typ&quot;: &quot;JWT&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+  <span style="color:#e6db74">&#34;alg&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;HS256&#34;</span>,
+  <span style="color:#e6db74">&#34;typ&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;JWT&#34;</span>
 }
-</code></pre>
-
-<h3 id="payload">Payload</h3>
-
+</code></pre></div><h3 id="payload">Payload</h3>
 <p>The second part is the payload: it&rsquo;s the data sent with the token. It contains metadata and information like expiration, audience or subject, and whatever you need.</p>
-
-<pre><code class="language-javascript">{
-  &quot;sub&quot;: &quot;1234567890&quot;,
-  &quot;name&quot;: &quot;John Doe&quot;,
-  &quot;admin&quot;: true
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+  <span style="color:#e6db74">&#34;sub&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1234567890&#34;</span>,
+  <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John Doe&#34;</span>,
+  <span style="color:#e6db74">&#34;admin&#34;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
 }
-</code></pre>
-
-<p>All data is organized in <strong>claims</strong>, statements about an entity (typically, the user). There are three types of claims: reserved, public, and private claims.</p>
-
+</code></pre></div><p>All data is organized in <strong>claims</strong>, statements about an entity (typically, the user). There are three types of claims: reserved, public, and private claims.</p>
 <ul>
 <li><strong>Reserved claims</strong>: a set of predefined claims, conceived to provide a set of useful information. Some of them are: <code>iss</code> (issuer), <code>exp</code> (expiration time), <code>sub</code> (subject), <code>aud</code> (audience), among others.</li>
 <li><strong>Public claims</strong>: defined at will but, in order to avoid collisions, they should be defined in the <a href="http://www.iana.org/assignments/jwt/jwt.xhtml">IANA JSON Web Token Registry</a> or be described as a URI that contains a collision resistant namespace.</li>
 <li><strong>Private claims</strong>: custom claims created to share information between parties that agree with using them.</li>
 </ul>
-
 <h3 id="sign">Sign</h3>
-
 <p>The third part of the string is the sign, obtained from hashing headers and payload with a secret using the algorithm described in headers.</p>
-
-<pre><code class="language-javascript">HMACSHA256(
-  base64UrlEncode(header) + &quot;.&quot; +
-  base64UrlEncode(payload),
-  secret
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">HMACSHA256</span>(
+  <span style="color:#a6e22e">base64UrlEncode</span>(<span style="color:#a6e22e">header</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;.&#34;</span> <span style="color:#f92672">+</span>
+  <span style="color:#a6e22e">base64UrlEncode</span>(<span style="color:#a6e22e">payload</span>),
+  <span style="color:#a6e22e">secret</span>
 )
-</code></pre>
-
-<p>As said before the more interesting feature of JWT is in it&rsquo;s flexibility. It can be created with the claims you need, carry your data and validated on other claims (standard or not).
+</code></pre></div><p>As said before the more interesting feature of JWT is in it&rsquo;s flexibility. It can be created with the claims you need, carry your data and validated on other claims (standard or not).
 As an example, if on authentication I want to be sure that the token is issued by my application and that it is not older than 1 hour I can generate a token with a payload like this:</p>
-
-<pre><code class="language-javascript">{
-  &quot;iss&quot;: &quot;1234567890&quot;, // my application code
-  &quot;exp&quot;: &quot;1459868400&quot;, // 2016-04-04 15:00:00 Expiration time
-  &quot;uid&quot;: 159, // the user id
-  &quot;name&quot;: &quot;Alessandro Galli&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">{
+  <span style="color:#e6db74">&#34;iss&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1234567890&#34;</span>, <span style="color:#75715e">// my application code
+</span><span style="color:#75715e"></span>  <span style="color:#e6db74">&#34;exp&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;1459868400&#34;</span>, <span style="color:#75715e">// 2016-04-04 15:00:00 Expiration time
+</span><span style="color:#75715e"></span>  <span style="color:#e6db74">&#34;uid&#34;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">159</span>, <span style="color:#75715e">// the user id
+</span><span style="color:#75715e"></span>  <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Alessandro Galli&#34;</span>
 }
-</code></pre>
-
-<p>Once my application receives a request with this token, an authenticator component will check the two claims (<code>iss</code>, <code>exp</code>) to be sure of the assertions made before, and then validate the sign. Furthermore, with the additional claims it can login the user without querying the database and complete the request.</p>
-
+</code></pre></div><p>Once my application receives a request with this token, an authenticator component will check the two claims (<code>iss</code>, <code>exp</code>) to be sure of the assertions made before, and then validate the sign. Furthermore, with the additional claims it can login the user without querying the database and complete the request.</p>
 <p>This approach results in a stateless authentication removing all problems related to session storage, CORS+cookies requests and CSRF protection, among others.</p>
-
 <p>As a solid standard, JWT has been adopted by a large number of users and it has libraries for almost every programming language: PHP, Java, Go, Python, Javascript, Ruby, Elixir, Scala, .NET. You can find a full list of available and trusted libraries on <a href="https://jwt.io/#libraries-io">JWT.io</a></p>
-
 <p>In the next weeks, I will write a post and release my personal authentication example, using PHP with the Symfony framework.</p>
 
   </div>
@@ -548,7 +500,7 @@ As an example, if on authentication I want to be sure that the token is issued b
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -844,7 +796,7 @@ As an example, if on authentication I want to be sure that the token is issued b
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -863,13 +815,11 @@ As an example, if on authentication I want to be sure that the token is issued b
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -882,11 +832,13 @@ As an example, if on authentication I want to be sure that the token is issued b
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -905,7 +857,7 @@ As an example, if on authentication I want to be sure that the token is issued b
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -936,7 +888,7 @@ As an example, if on authentication I want to be sure that the token is issued b
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -979,13 +931,11 @@ As an example, if on authentication I want to be sure that the token is issued b
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -994,11 +944,13 @@ As an example, if on authentication I want to be sure that the token is issued b
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1041,14 +993,12 @@ As an example, if on authentication I want to be sure that the token is issued b
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1060,19 +1010,19 @@ As an example, if on authentication I want to be sure that the token is issued b
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

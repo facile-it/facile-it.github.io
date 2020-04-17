@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -50,34 +50,17 @@ Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, def
 A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/" />
-
-
-
-<meta property="article:published_time" content="2015-03-23T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-03-23T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-03-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-03-23T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="PHP coding standard: PSR-7  HTTP message interfaces">
+        <meta itemprop="name" content="PHP coding standard: PSR-7  HTTP message interfaces">
 <meta itemprop="description" content="Le specifiche PSR-7 descrivono una proposta di standardizzazione delle interfacce per i messaggi HTTP.
 Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, definisce una serie di regole di comunicazione che vengono implementate dalle applicazioni client e server che lo adottano.
 A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP.">
-
-
 <meta itemprop="datePublished" content="2015-03-23T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-03-23T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1152">
@@ -85,7 +68,6 @@ A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comp
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -114,14 +96,17 @@ A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comp
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -422,70 +407,53 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>Le specifiche PSR-7 descrivono una <a href="https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md">proposta di standardizzazione</a> delle <strong>interfacce per i messaggi HTTP</strong>.</p>
-
+    <p>Le specifiche PSR-7 descrivono una <a href="https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md">proposta di standardizzazione</a> delle <strong>interfacce per i messaggi HTTP</strong>.</p>
 <p>Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, definisce una serie di regole di comunicazione che vengono implementate dalle applicazioni client e server che lo adottano.</p>
-
 <p>A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP.</p>
-
 <h4 id="una-questione-di-interoperabilità-tra-framework">Una questione di interoperabilità tra framework</h4>
-
 <p>I principali framework PHP, pur fornendo dei layer di astrazione del protocollo HTTP maturi e funzionali, impongono la scrittura di codice da essi dipendente.</p>
-
 <p>Questo vuol dire che <strong>tutto il codice</strong> che implementa le logiche applicative, anche se ben definito e isolato, <strong>dovrà essere adattato per ciascun framework</strong>, a discapito di un&rsquo;evidente similarità operativa, come per esempio:</p>
-
 <ul>
 <li>il recupero delle informazioni dalle variabili del server per costruire la richiesta</li>
 <li>il parsing degli header e del body della richiesta</li>
 <li>l&rsquo;aggiunta di uno o più header alla risposta</li>
 <li>l&rsquo;impostazione dello status code</li>
 </ul>
-
 <p>Immaginiamo di voler scrivere un applicativo che abbia questi requisiti:</p>
-
 <ul>
 <li>aggiunge un header personalizzato alla risposta, <code>X-GREETINGS</code></li>
 <li>l&rsquo;header deve contenere un messaggio personalizzato in base all&rsquo;orario della richiesta</li>
 <li>l&rsquo;header deve essere aggiunto solo in base agli headers inviati ed il verbo HTTP (ad es. solo per le richieste GET)</li>
 </ul>
-
 <p>Decidiamo di scrivere le linee di codice necessarie con <strong>Symfony2</strong> e <strong>Zend Framework 2</strong>, per poi muoverci verso <strong>una sola soluzione ipoteticamente riutilizzabile</strong> in ciascuno dei due contesti.</p>
-
 <p>Diamo per scontato di avere a disposizione un servizio che dato un orario determini con che formula salutarci:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 
-<pre><code class="language-php">&lt;?php
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Acme\Utils</span>;
 
-namespace Acme\Utils;
-
-class GreetingSentence
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GreetingSentence</span>
 {
-  public static function compose(\DateTime $time, $name)
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">compose</span>(<span style="color:#a6e22e">\DateTime</span> $time, $name)
   {  		  
-            $msg = &quot;Ciao $name&quot;;  
-			$hour = (int)$time-&gt;format('h');				
+            $msg <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Ciao </span><span style="color:#e6db74">$name</span><span style="color:#e6db74">&#34;</span>;  
+			$hour <span style="color:#f92672">=</span> (<span style="color:#a6e22e">int</span>)$time<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">format</span>(<span style="color:#e6db74">&#39;h&#39;</span>);				
 
-			if ($hour &gt;= 20 &amp;&amp; $hour &lt; 6) {
-				return $msg + ' buonanotte!';
-			} else if ($hour &gt;= 6 &amp;&amp; $hour &lt; 13) {
-				return $msg + ' buongiorno!';
-			} else if ($hour &gt;= 13 &amp;&amp; $hour &lt; 18) {
-				return $msg + ' buon pomeriggio!';	
-			} else if ($hour &gt;= 18 &amp;&amp; $hour &lt; 20) {
-				return $msg + ' buonasera!';
-			} else {
-            	return $msg + ' c\'è vita su Marte!';
+			<span style="color:#66d9ef">if</span> ($hour <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">20</span> <span style="color:#f92672">&amp;&amp;</span> $hour <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">6</span>) {
+				<span style="color:#66d9ef">return</span> $msg <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; buonanotte!&#39;</span>;
+			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ($hour <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">6</span> <span style="color:#f92672">&amp;&amp;</span> $hour <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">13</span>) {
+				<span style="color:#66d9ef">return</span> $msg <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; buongiorno!&#39;</span>;
+			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ($hour <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">13</span> <span style="color:#f92672">&amp;&amp;</span> $hour <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">18</span>) {
+				<span style="color:#66d9ef">return</span> $msg <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; buon pomeriggio!&#39;</span>;	
+			} <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> ($hour <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">18</span> <span style="color:#f92672">&amp;&amp;</span> $hour <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">20</span>) {
+				<span style="color:#66d9ef">return</span> $msg <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; buonasera!&#39;</span>;
+			} <span style="color:#66d9ef">else</span> {
+            	<span style="color:#66d9ef">return</span> $msg <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; c\&#39;è vita su Marte!&#39;</span>;
             }						
   }
 }
 
-</code></pre>
-
-<h6 id="symfony-2">Symfony 2</h6>
-
+</code></pre></div><h6 id="symfony-2">Symfony 2</h6>
 <p>Ecco come implementeremmo la funzionalità richiesta in Symfony2:</p>
-
 <pre><code>&lt;?php 
 
 namespace Acme\HelloYouBundle\Controller;
@@ -523,12 +491,8 @@ class MainController
         return $response;
     }
 } 
-</code></pre>
-
-<h6 id="zend-framework-2">Zend Framework 2</h6>
-
+</code></pre><h6 id="zend-framework-2">Zend Framework 2</h6>
 <p>Questa è invece l&rsquo;implementazione in Zend Framework 2:</p>
-
 <pre><code>&lt;?php
 
 namespace Acme\HelloYouModule\Controller;
@@ -562,36 +526,25 @@ class MainController extends AbstractActionController
     
     $response-&gt;send();
 }
-</code></pre>
-
-<p>Risulta evidente come siamo stati a costretti ad implementare due pezzi di codice quasi identici. Vediamo ora <strong>come uno standard come quello proposto dal PSR-7 possa aiutarci</strong>.</p>
-
+</code></pre><p>Risulta evidente come siamo stati a costretti ad implementare due pezzi di codice quasi identici. Vediamo ora <strong>come uno standard come quello proposto dal PSR-7 possa aiutarci</strong>.</p>
 <h4 id="middleware-ovvero-componenti-web-riutilizzabili">Middleware: ovvero componenti web riutilizzabili</h4>
-
 <p>Potremmo voler implemenare la nostra soluzione come un <strong>middleware</strong>, ovvero un componente che <strong>esiste durante il ciclo di vita di una comunicazione HTTP</strong>, cioè dall&rsquo;accettazione della richiesta fino all&rsquo;evasione della risposta.</p>
-
 <p>Negli esempi precedenti abbiamo aggiunto il codice di gestione all&rsquo;interno dei controller, e questa implementazione carica l&rsquo;Action della responsabilità di esaminare la richiesta e comporre la risposta; questa operazione dovrà essere <strong>ripetuta in ogni controller</strong> della nostra applicazione.</p>
-
 <p>Per fortuna i maggiori framework espongono astrazioni molto complete del ciclo di vita di una richiesta HTTP, che permettono di implementare il nostro middleware.</p>
-
 <ul>
-<li><p>in Symfony2 l&rsquo;interfaccia <a href="https://github.com/symfony/HttpKernel/blob/master/HttpKernelInterface.php">HttpKernelInterface</a> definisce un componenente capace di calcolare per una data una richiesta (Request) una determinata risposta (Response).</p></li>
-
-<li><p>in Zend Framework l&rsquo;interfaccia che definisce un componente capace di associare una richiesta ad una risposta si chiama <a href="https://github.com/zendframework/zf2/blob/master/library/Zend/Stdlib/DispatchableInterface.php">DispatchableInterface</a>.</p></li>
+<li>
+<p>in Symfony2 l&rsquo;interfaccia <a href="https://github.com/symfony/HttpKernel/blob/master/HttpKernelInterface.php">HttpKernelInterface</a> definisce un componenente capace di calcolare per una data una richiesta (Request) una determinata risposta (Response).</p>
+</li>
+<li>
+<p>in Zend Framework l&rsquo;interfaccia che definisce un componente capace di associare una richiesta ad una risposta si chiama <a href="https://github.com/zendframework/zf2/blob/master/library/Zend/Stdlib/DispatchableInterface.php">DispatchableInterface</a>.</p>
+</li>
 </ul>
-
 <p>Tuttavia se volessimo utilizzare lo stesso codice in Zend Framework 2 e Symfony2, dovremmo wrappare il codice necessario attorno a entrambe le interfacce oppure importare i componenti dell&rsquo;uno nell&rsquo;altro.</p>
-
 <p>A questo punto possiamo cominciare a capire realmente il significato di questo nuovo processo di standardizzazione proposto dal <a href="http://www.php-fig.org/"><strong>FIG</strong></a>.</p>
-
 <h4 id="scrivere-middleware-usando-le-interfacce-proposte-nello-standard-psr-7">Scrivere middleware usando le interfacce proposte nello standard PSR-7</h4>
-
 <p>La proposta dello standard PSR-7 si riassume nella descrizione di una serie di <a href="https://github.com/php-fig/http-message/tree/master/src">interfacce</a>.</p>
-
 <p>Attualmente Matthew Weier O&rsquo;Phinney, membro attivo del FIG e main contributor di Zend Framework 2 sta realizzando un&rsquo;<a href="https://github.com/phly/http/tree/master/src">implementazione</a> completa di queste interfacce.</p>
-
 <p>A questo punto possiamo scrivere il codice di un middleware, aderendo alle specifiche PSR-7, come una semplice classe capace di interpretare una richiesta e costruire una risposta secondo le nostre necessità:</p>
-
 <pre><code>&lt;?php
 
 use phly\http\ServerRequestFactory;
@@ -638,24 +591,14 @@ class AcmeLifeCycle
         return $response;
     }
 }
-</code></pre>
-
-<p>Da notare che sia la classe <code>Response</code> che <code>ServerRequest</code> implementano lo stesso trait <code>Message</code>.</p>
-
+</code></pre><p>Da notare che sia la classe <code>Response</code> che <code>ServerRequest</code> implementano lo stesso trait <code>Message</code>.</p>
 <p>La classe <code>Message</code> è stata volutamente concepita affinchè sia <strong>immutabile</strong> ed i vari metodi <code>-&gt;withX()</code> restituiranno solo copie modificate dell&rsquo;oggetto inizialmente istanziato.</p>
-
 <p>Ovviamente questo middleware adesso come adesso è tutt&rsquo;altro che utilizzabile all&rsquo;interno di un framework, poichè ciascun vendor usa un modello diverso per richieste e risposte, ma è molto probabile che <strong>in un futuro</strong> non troppo lontano le varie implementazioni <strong>convergeranno</strong> su qualcosa di simile a quella appena vista e proposta da O&rsquo;Phinney.</p>
-
 <h4 id="conclusioni">Conclusioni</h4>
-
 <p>Se pensiamo agli strumenti forniti di base dal linguaggio PHP (e non ai framework) nel contesto di una comunicazione HTTP, ci rendiamo conto che di fatto dovremmo ridurci a lavorare con le sole variabili globali d&rsquo;ambiente contenenti tutti i valori necessari (<code>$_SERVER</code>, <code>$_GET</code>, <code>$_POST</code>, <code>$_FILES</code>, &hellip;).</p>
-
 <p>Invece, grazie a PSR-7, potremmo <strong>standardizzare la rappresentazione degli oggetti coinvolti nel ciclo richiesta\riposta</strong> (cioè i messaggi HTTP), e poter finalmente sviluppare componenti <strong>middleware indipendenti</strong> dal framework utilizzato, il cui unico presupposto esistenziale è quello di <strong>gestire messaggi HTTP tramite il linguaggio PHP</strong>.</p>
-
 <p>Sicuramente tenere <a href="https://github.com/php-fig/fig-standards">a portata di github</a> gli sviluppi di questa proposta vorrà dire tenersi aggiornati sui <strong>futuri sviluppi</strong> dei più blasonati framework e componenti PHP, tenendo conto, <strong>come già accaduto per le precedenti proposte</strong> <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md">PSR-0</a> e <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md">PSR-4</a> (autoloading) e <a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-3-logger-interface.md">PSR-3</a> (logging), che, quasi sicuramente, i principali vendor le implementeranno nelle loro prossime versioni.</p>
-
 <h4 id="altre-risorse-consultabili">Altre risorse consultabili</h4>
-
 <ul>
 <li>Blog di Matthew Weier O&rsquo;Phinney: <a href="https://mwop.net/blog/2015-01-08-on-http-middleware-and-psr-7.html">https://mwop.net/blog/2015-01-08-on-http-middleware-and-psr-7.html</a></li>
 <li>Specifiche PSR-7: <a href="https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md">https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md</a></li>
@@ -709,7 +652,7 @@ class AcmeLifeCycle
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -1005,7 +948,7 @@ class AcmeLifeCycle
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1024,13 +967,11 @@ class AcmeLifeCycle
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1043,11 +984,13 @@ class AcmeLifeCycle
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -1066,7 +1009,7 @@ class AcmeLifeCycle
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -1097,7 +1040,7 @@ class AcmeLifeCycle
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -1140,13 +1083,11 @@ class AcmeLifeCycle
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1155,11 +1096,13 @@ class AcmeLifeCycle
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1202,14 +1145,12 @@ class AcmeLifeCycle
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1221,19 +1162,19 @@ class AcmeLifeCycle
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

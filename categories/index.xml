@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Facile.it Engineering</title>
@@ -6,19 +6,10 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Oct 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>AES</title>
-      <link>https://engineering.facile.it/categories/aes/</link>
-      <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/aes/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>AMQP</title>
@@ -30,110 +21,11 @@
     </item>
     
     <item>
-      <title>AWS</title>
-      <link>https://engineering.facile.it/categories/aws/</link>
-      <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Agile</title>
-      <link>https://engineering.facile.it/categories/agile/</link>
-      <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/agile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Algorithms</title>
-      <link>https://engineering.facile.it/categories/algorithms/</link>
-      <pubDate>Tue, 12 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/algorithms/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Android</title>
-      <link>https://engineering.facile.it/categories/android/</link>
-      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/android/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Angular</title>
-      <link>https://engineering.facile.it/categories/angular/</link>
-      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/angular/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Artificial intelligence</title>
-      <link>https://engineering.facile.it/categories/artificial-intelligence/</link>
-      <pubDate>Tue, 12 May 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/artificial-intelligence/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Blog</title>
-      <link>https://engineering.facile.it/categories/blog/</link>
-      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/blog/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>C</title>
       <link>https://engineering.facile.it/categories/c/</link>
-      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CMake</title>
-      <link>https://engineering.facile.it/categories/cmake/</link>
-      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/cmake/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Code reuse</title>
-      <link>https://engineering.facile.it/categories/code-reuse/</link>
-      <pubDate>Wed, 09 Dec 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/code-reuse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Codemotion</title>
-      <link>https://engineering.facile.it/categories/codemotion/</link>
-      <pubDate>Thu, 26 Nov 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/codemotion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Conferences</title>
-      <link>https://engineering.facile.it/categories/conferences/</link>
-      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/conferences/</guid>
       <description></description>
     </item>
     
@@ -143,6 +35,51 @@
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/consumer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>English</title>
+      <link>https://engineering.facile.it/categories/english/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://engineering.facile.it/categories/go/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PHP</title>
+      <link>https://engineering.facile.it/categories/php/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://engineering.facile.it/categories/rabbitmq/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/rabbitmq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://engineering.facile.it/categories/rust/</link>
+      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/rust/</guid>
       <description></description>
     </item>
     
@@ -165,33 +102,6 @@
     </item>
     
     <item>
-      <title>DSL</title>
-      <link>https://engineering.facile.it/categories/dsl/</link>
-      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/dsl/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Database</title>
-      <link>https://engineering.facile.it/categories/database/</link>
-      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/database/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Design patterns</title>
-      <link>https://engineering.facile.it/categories/design-patterns/</link>
-      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/design-patterns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Docker</title>
       <link>https://engineering.facile.it/categories/docker/</link>
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
@@ -201,92 +111,11 @@
     </item>
     
     <item>
-      <title>Doctrine</title>
-      <link>https://engineering.facile.it/categories/doctrine/</link>
-      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/doctrine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Encryption</title>
-      <link>https://engineering.facile.it/categories/encryption/</link>
-      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/encryption/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>https://engineering.facile.it/categories/english/</link>
-      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Event driven</title>
-      <link>https://engineering.facile.it/categories/event-driven/</link>
-      <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/event-driven/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>FacileHack</title>
-      <link>https://engineering.facile.it/categories/facilehack/</link>
-      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/facilehack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Filesystem</title>
-      <link>https://engineering.facile.it/categories/filesystem/</link>
-      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/filesystem/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Functional programming</title>
-      <link>https://engineering.facile.it/categories/functional-programming/</link>
-      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/functional-programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fuse</title>
-      <link>https://engineering.facile.it/categories/fuse/</link>
-      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/fuse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Git</title>
       <link>https://engineering.facile.it/categories/git/</link>
-      <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/git/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GitHub</title>
-      <link>https://engineering.facile.it/categories/github/</link>
-      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/github/</guid>
       <description></description>
     </item>
     
@@ -300,191 +129,11 @@
     </item>
     
     <item>
-      <title>Go</title>
-      <link>https://engineering.facile.it/categories/go/</link>
-      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GraphQL</title>
-      <link>https://engineering.facile.it/categories/graphql/</link>
-      <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/graphql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HTTP</title>
-      <link>https://engineering.facile.it/categories/http/</link>
-      <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/http/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hackathon</title>
-      <link>https://engineering.facile.it/categories/hackathon/</link>
-      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/hackathon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://engineering.facile.it/categories/hugo/</link>
-      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Italiano</title>
-      <link>https://engineering.facile.it/categories/italiano/</link>
-      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/italiano/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JSON</title>
-      <link>https://engineering.facile.it/categories/json/</link>
-      <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/json/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JVM</title>
-      <link>https://engineering.facile.it/categories/jvm/</link>
-      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/jvm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JWT</title>
-      <link>https://engineering.facile.it/categories/jwt/</link>
-      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/jwt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://engineering.facile.it/categories/java/</link>
-      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://engineering.facile.it/categories/javascript/</link>
-      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kanban</title>
-      <link>https://engineering.facile.it/categories/kanban/</link>
-      <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/kanban/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kotlin</title>
-      <link>https://engineering.facile.it/categories/kotlin/</link>
-      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/kotlin/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Kubernetes</title>
       <link>https://engineering.facile.it/categories/kubernetes/</link>
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/kubernetes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MessagePack</title>
-      <link>https://engineering.facile.it/categories/messagepack/</link>
-      <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/messagepack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Monad</title>
-      <link>https://engineering.facile.it/categories/monad/</link>
-      <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/monad/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>MySQL</title>
-      <link>https://engineering.facile.it/categories/mysql/</link>
-      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Networking</title>
-      <link>https://engineering.facile.it/categories/networking/</link>
-      <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/networking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>NewRelic</title>
-      <link>https://engineering.facile.it/categories/newrelic/</link>
-      <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/newrelic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Node.js</title>
-      <link>https://engineering.facile.it/categories/node.js/</link>
-      <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/node.js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OOP</title>
-      <link>https://engineering.facile.it/categories/oop/</link>
-      <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/oop/</guid>
       <description></description>
     </item>
     
@@ -498,209 +147,11 @@
     </item>
     
     <item>
-      <title>OSX</title>
-      <link>https://engineering.facile.it/categories/osx/</link>
-      <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/osx/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Objective-C</title>
-      <link>https://engineering.facile.it/categories/objective-c/</link>
-      <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/objective-c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Open Source</title>
-      <link>https://engineering.facile.it/categories/open-source/</link>
-      <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/open-source/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PHP</title>
-      <link>https://engineering.facile.it/categories/php/</link>
-      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/php/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PHP Coding standards</title>
-      <link>https://engineering.facile.it/categories/php-coding-standards/</link>
-      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/php-coding-standards/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PHP internals</title>
-      <link>https://engineering.facile.it/categories/php-internals/</link>
-      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/php-internals/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>PSR</title>
-      <link>https://engineering.facile.it/categories/psr/</link>
-      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/psr/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://engineering.facile.it/categories/python/</link>
-      <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/python/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>REST</title>
-      <link>https://engineering.facile.it/categories/rest/</link>
-      <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/rest/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RSA</title>
-      <link>https://engineering.facile.it/categories/rsa/</link>
-      <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/rsa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RabbitMQ</title>
-      <link>https://engineering.facile.it/categories/rabbitmq/</link>
-      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/rabbitmq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Realpath_cache</title>
+      <title>realpath_cache</title>
       <link>https://engineering.facile.it/categories/realpath_cache/</link>
       <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/realpath_cache/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rjindael</title>
-      <link>https://engineering.facile.it/categories/rjindael/</link>
-      <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/rjindael/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Rust</title>
-      <link>https://engineering.facile.it/categories/rust/</link>
-      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/rust/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SOLID</title>
-      <link>https://engineering.facile.it/categories/solid/</link>
-      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/solid/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scrum</title>
-      <link>https://engineering.facile.it/categories/scrum/</link>
-      <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/scrum/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://engineering.facile.it/categories/security/</link>
-      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/security/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Semantic versioning</title>
-      <link>https://engineering.facile.it/categories/semantic-versioning/</link>
-      <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/semantic-versioning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Serverless</title>
-      <link>https://engineering.facile.it/categories/serverless/</link>
-      <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/serverless/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Signal</title>
-      <link>https://engineering.facile.it/categories/signal/</link>
-      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/signal/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software Crisis</title>
-      <link>https://engineering.facile.it/categories/software-crisis/</link>
-      <pubDate>Mon, 13 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/software-crisis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software Testing</title>
-      <link>https://engineering.facile.it/categories/software-testing/</link>
-      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/software-testing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software complexity</title>
-      <link>https://engineering.facile.it/categories/software-complexity/</link>
-      <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/software-complexity/</guid>
       <description></description>
     </item>
     
@@ -714,65 +165,110 @@
     </item>
     
     <item>
-      <title>Static site</title>
-      <link>https://engineering.facile.it/categories/static-site/</link>
-      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
+      <title>OOP</title>
+      <link>https://engineering.facile.it/categories/oop/</link>
+      <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://engineering.facile.it/categories/static-site/</guid>
+      <guid>https://engineering.facile.it/categories/oop/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Structured programming</title>
-      <link>https://engineering.facile.it/categories/structured-programming/</link>
-      <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
+      <title>Conferences</title>
+      <link>https://engineering.facile.it/categories/conferences/</link>
+      <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://engineering.facile.it/categories/structured-programming/</guid>
+      <guid>https://engineering.facile.it/categories/conferences/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Swift</title>
-      <link>https://engineering.facile.it/categories/swift/</link>
-      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
+      <title>FacileHack</title>
+      <link>https://engineering.facile.it/categories/facilehack/</link>
+      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://engineering.facile.it/categories/swift/</guid>
+      <guid>https://engineering.facile.it/categories/facilehack/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Symfony</title>
-      <link>https://engineering.facile.it/categories/symfony/</link>
-      <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
+      <title>Hackathon</title>
+      <link>https://engineering.facile.it/categories/hackathon/</link>
+      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://engineering.facile.it/categories/symfony/</guid>
+      <guid>https://engineering.facile.it/categories/hackathon/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>TDD</title>
-      <link>https://engineering.facile.it/categories/tdd/</link>
-      <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
+      <title>Italiano</title>
+      <link>https://engineering.facile.it/categories/italiano/</link>
+      <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://engineering.facile.it/categories/tdd/</guid>
+      <guid>https://engineering.facile.it/categories/italiano/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Test coverage</title>
-      <link>https://engineering.facile.it/categories/test-coverage/</link>
-      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
+      <title>Android</title>
+      <link>https://engineering.facile.it/categories/android/</link>
+      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://engineering.facile.it/categories/test-coverage/</guid>
+      <guid>https://engineering.facile.it/categories/android/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Type First Development</title>
-      <link>https://engineering.facile.it/categories/type-first-development/</link>
-      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      <title>DSL</title>
+      <link>https://engineering.facile.it/categories/dsl/</link>
+      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://engineering.facile.it/categories/type-first-development/</guid>
+      <guid>https://engineering.facile.it/categories/dsl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://engineering.facile.it/categories/java/</link>
+      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JVM</title>
+      <link>https://engineering.facile.it/categories/jvm/</link>
+      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/jvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kotlin</title>
+      <link>https://engineering.facile.it/categories/kotlin/</link>
+      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/kotlin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Angular</title>
+      <link>https://engineering.facile.it/categories/angular/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/angular/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://engineering.facile.it/categories/javascript/</link>
+      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/javascript/</guid>
       <description></description>
     </item>
     
@@ -795,6 +291,339 @@
     </item>
     
     <item>
+      <title>Functional programming</title>
+      <link>https://engineering.facile.it/categories/functional-programming/</link>
+      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/functional-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Symfony</title>
+      <link>https://engineering.facile.it/categories/symfony/</link>
+      <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/symfony/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JSON</title>
+      <link>https://engineering.facile.it/categories/json/</link>
+      <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MessagePack</title>
+      <link>https://engineering.facile.it/categories/messagepack/</link>
+      <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/messagepack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AWS</title>
+      <link>https://engineering.facile.it/categories/aws/</link>
+      <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Event driven</title>
+      <link>https://engineering.facile.it/categories/event-driven/</link>
+      <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/event-driven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Serverless</title>
+      <link>https://engineering.facile.it/categories/serverless/</link>
+      <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/serverless/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TDD</title>
+      <link>https://engineering.facile.it/categories/tdd/</link>
+      <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/tdd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTTP</title>
+      <link>https://engineering.facile.it/categories/http/</link>
+      <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>https://engineering.facile.it/categories/networking/</link>
+      <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>https://engineering.facile.it/categories/blog/</link>
+      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>https://engineering.facile.it/categories/github/</link>
+      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://engineering.facile.it/categories/hugo/</link>
+      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Static site</title>
+      <link>https://engineering.facile.it/categories/static-site/</link>
+      <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/static-site/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Encryption</title>
+      <link>https://engineering.facile.it/categories/encryption/</link>
+      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/encryption/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JWT</title>
+      <link>https://engineering.facile.it/categories/jwt/</link>
+      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/jwt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://engineering.facile.it/categories/security/</link>
+      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Signal</title>
+      <link>https://engineering.facile.it/categories/signal/</link>
+      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/signal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Swift</title>
+      <link>https://engineering.facile.it/categories/swift/</link>
+      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/swift/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GraphQL</title>
+      <link>https://engineering.facile.it/categories/graphql/</link>
+      <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/graphql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Node.js</title>
+      <link>https://engineering.facile.it/categories/node.js/</link>
+      <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>REST</title>
+      <link>https://engineering.facile.it/categories/rest/</link>
+      <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/rest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CMake</title>
+      <link>https://engineering.facile.it/categories/cmake/</link>
+      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/cmake/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Filesystem</title>
+      <link>https://engineering.facile.it/categories/filesystem/</link>
+      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/filesystem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fuse</title>
+      <link>https://engineering.facile.it/categories/fuse/</link>
+      <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/fuse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open Source</title>
+      <link>https://engineering.facile.it/categories/open-source/</link>
+      <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/open-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Code reuse</title>
+      <link>https://engineering.facile.it/categories/code-reuse/</link>
+      <pubDate>Wed, 09 Dec 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/code-reuse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Codemotion</title>
+      <link>https://engineering.facile.it/categories/codemotion/</link>
+      <pubDate>Thu, 26 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/codemotion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Monad</title>
+      <link>https://engineering.facile.it/categories/monad/</link>
+      <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/monad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Objective-C</title>
+      <link>https://engineering.facile.it/categories/objective-c/</link>
+      <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/objective-c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>https://engineering.facile.it/categories/database/</link>
+      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Doctrine</title>
+      <link>https://engineering.facile.it/categories/doctrine/</link>
+      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/doctrine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>MySQL</title>
+      <link>https://engineering.facile.it/categories/mysql/</link>
+      <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/mysql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AES</title>
+      <link>https://engineering.facile.it/categories/aes/</link>
+      <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/aes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rjindael</title>
+      <link>https://engineering.facile.it/categories/rjindael/</link>
+      <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/rjindael/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RSA</title>
+      <link>https://engineering.facile.it/categories/rsa/</link>
+      <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/rsa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://engineering.facile.it/categories/python/</link>
+      <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Websocket</title>
       <link>https://engineering.facile.it/categories/websocket/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
@@ -804,11 +633,173 @@
     </item>
     
     <item>
+      <title>Software complexity</title>
+      <link>https://engineering.facile.it/categories/software-complexity/</link>
+      <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/software-complexity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Structured programming</title>
+      <link>https://engineering.facile.it/categories/structured-programming/</link>
+      <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/structured-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OSX</title>
+      <link>https://engineering.facile.it/categories/osx/</link>
+      <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/osx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Agile</title>
+      <link>https://engineering.facile.it/categories/agile/</link>
+      <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Crisis</title>
+      <link>https://engineering.facile.it/categories/software-crisis/</link>
+      <pubDate>Mon, 13 Jul 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/software-crisis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Semantic versioning</title>
+      <link>https://engineering.facile.it/categories/semantic-versioning/</link>
+      <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/semantic-versioning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Xcode</title>
       <link>https://engineering.facile.it/categories/xcode/</link>
       <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/xcode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorithms</title>
+      <link>https://engineering.facile.it/categories/algorithms/</link>
+      <pubDate>Tue, 12 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/algorithms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Artificial intelligence</title>
+      <link>https://engineering.facile.it/categories/artificial-intelligence/</link>
+      <pubDate>Tue, 12 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/artificial-intelligence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Type First Development</title>
+      <link>https://engineering.facile.it/categories/type-first-development/</link>
+      <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/type-first-development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kanban</title>
+      <link>https://engineering.facile.it/categories/kanban/</link>
+      <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/kanban/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scrum</title>
+      <link>https://engineering.facile.it/categories/scrum/</link>
+      <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/scrum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NewRelic</title>
+      <link>https://engineering.facile.it/categories/newrelic/</link>
+      <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/newrelic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design patterns</title>
+      <link>https://engineering.facile.it/categories/design-patterns/</link>
+      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/design-patterns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SOLID</title>
+      <link>https://engineering.facile.it/categories/solid/</link>
+      <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/solid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PHP Coding standards</title>
+      <link>https://engineering.facile.it/categories/php-coding-standards/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/php-coding-standards/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PSR</title>
+      <link>https://engineering.facile.it/categories/psr/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/psr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Test coverage</title>
+      <link>https://engineering.facile.it/categories/test-coverage/</link>
+      <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/test-coverage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PHP internals</title>
+      <link>https://engineering.facile.it/categories/php-internals/</link>
+      <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/php-internals/</guid>
       <description></description>
     </item>
     

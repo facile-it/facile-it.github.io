@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -50,34 +50,17 @@ Come proteggere questi dati da eventuali malintenzionati che vorrebbero - e potr
 Prima di arrivare alla soluzione di questo problema però, è doveroso suddividere la casistica in almeno due rami." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/" />
-
-
-
-<meta property="article:published_time" content="2015-10-05T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2015-10-05T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2015-10-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2015-10-05T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="Protezione di dati sensibili usando la crittografia">
+        <meta itemprop="name" content="Protezione di dati sensibili usando la crittografia">
 <meta itemprop="description" content="La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.
 Come proteggere questi dati da eventuali malintenzionati che vorrebbero - e potrebbero(!!) - riuscire a entrarne in possesso ?
 Prima di arrivare alla soluzione di questo problema però, è doveroso suddividere la casistica in almeno due rami.">
-
-
 <meta itemprop="datePublished" content="2015-10-05T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-10-05T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="1175">
@@ -85,7 +68,6 @@ Prima di arrivare alla soluzione di questo problema però, è doveroso suddivide
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -114,14 +96,17 @@ Prima di arrivare alla soluzione di questo problema però, è doveroso suddivide
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -422,99 +407,62 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p>La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.</p>
-
+    <p>La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.</p>
 <p><strong>Come proteggere questi dati da eventuali malintenzionati che vorrebbero -  e potrebbero(!!) -  riuscire a entrarne in possesso ?</strong></p>
-
 <p>Prima di arrivare alla soluzione di questo problema però, è doveroso suddividere la casistica in almeno due rami. Nel mondo del web i dati possono essere &ldquo;ottenuti&rdquo; in due momenti differenti: 1) mentre transitano sulla rete sotto forma di pacchetti, oppure 2) successivamente al loro immagazzinamento (es. database o file) all&rsquo;interno di uno o più server.</p>
-
 <p>In questo articolo esploreremo il secondo caso, e verrà proposta una possibile soluzione: come proteggere quei dati che parsimoniosamente abbiamo accumulato &ldquo;in casa&rdquo;?.</p>
-
 <h2 id="mettere-i-dati-in-cassaforte">Mettere i dati in cassaforte</h2>
-
 <p>In caso di dati immagazzinati, ad esempio, all&rsquo;interno di un database; è certamente più difficile raggiungere il nostro tesoro, in quanto già al &ldquo;sicuro&rdquo; all&rsquo;interno di un ambiente protetto, del quale ci fidiamo maggiormente rispetto alla volatilità della rete.
 Tuttavia è meglio non sentirsi troppo sicuri: più i nostri dati saranno preziosi, più eventuali interessati saranno stimolati a ricercare ogni via per ottenerli.
 Una qualsiasi falla, sia hardware che software, per quanto limitata nel tempo potrebbe esporre le nostre ricchezze ad attacchi di vario genere, permettendo a chiunque (o quasi) di ottenerle.</p>
-
 <p>Una possibile ed efficace tecnica di protezione in questi casi è <strong>rendere inutili o illeggibili i dati</strong> per coloro che li hanno ottenuti in maniera illegittima, attraverso il loro immagazzinamento in forma cifrata.</p>
-
 <p>Quella che proporrò di seguito è una possibile soluzione al problema di come immagazzinare e cifrare questi dati, in modo da ottenere un livello di sicurezza adeguato e mantenere una buona elasticità, tanto da permettere differenti implementazioni e da coprire quanti più possibili casi d&rsquo;uso.</p>
-
 <p>La soluzione stessa prevede che la prima parte della problematica esposta (protezione dei dati durante il transito) sia risolta, e si baserà sull&rsquo;uso combinato di due tipologie differenti di algoritmi di cifratura.</p>
-
 <h2 id="algoritmi-crittografici-simmetrici-e-asimmetrici">Algoritmi Crittografici Simmetrici e Asimmetrici</h2>
-
 <p>Con <em>algoritmi crittografici</em> si intendono tutti quei <strong>processi e procedure finalizzati ad ottenere un dato &ldquo;offuscato&rdquo; in modo da non essere comprensibile/intelligibile</strong> da persone non autorizzate a leggerlo.</p>
-
 <h3 id="algoritmi-simmetrici">Algoritmi Simmetrici</h3>
-
 <p>Questa tipologia di algoritmi si basa sull&rsquo;uso di chiavi di cifratura dette <strong>simmetriche</strong> che permettono di cifrare e decifrare dati <strong>utilizzando la medesima chiave crittografica</strong>.
 Un esempio è <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a> (Advanced Encryption Standard), evoluzione dell&rsquo;algoritmo <a href="https://en.wikipedia.org/wiki/Rijndael_key_schedule">Rijndael</a> le cui caratteristiche si possono riassumere in un buon livello di sicurezza ed un&rsquo;ottima velocità, sia che venga implementato via hardware che software.</p>
-
-<p><img src="/images/protezione-di-dati-sensibili-usando-la-crittografia/aes.png" alt="AES" /></p>
-
+<p><img src="/images/protezione-di-dati-sensibili-usando-la-crittografia/aes.png" alt="AES"></p>
 <h3 id="algoritmi-asimmetrici">Algoritmi Asimmetrici</h3>
-
 <p>Gli algoritmi asimmetrici si distinguono dai precedenti per l&rsquo;utilizzo di <strong>due chiavi crittografiche distinte</strong>, dette pubblica e privata, per effettuare le operazioni di cifratura e decifratura.
 Il nome deriva dal metodo con il quale le due chiavi devono essere utilizzate. La chiave pubblica viene <strong>liberamente scambiata</strong>, mentre la chiave privata <strong>rimane a conoscenza solo di coloro che devono poter leggere i dati</strong> o i messaggi scambiati.
 La particolarità che caratterizza queste chiavi è l&rsquo;impossibilità di ricavare, ad esempio, la chiave privata essendo in possesso della chiave pubblica. A meno di particolari exploit dell&rsquo;algoritmo, l&rsquo;unico metodo per ottenere tale chiave è il <strong>brute force</strong> sui dati stessi.
 In questo caso l&rsquo;esempio per eccellenza è <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">RSA</a>, uno standard di fatto nella sicurezza riguardante la trasmissione di dati: è infatti largamente utilizzato per cifrare le comunicazioni che avvengono tra client e server.</p>
-
-<p><img src="/images/protezione-di-dati-sensibili-usando-la-crittografia/rsa.png" alt="RSA" /></p>
-
+<p><img src="/images/protezione-di-dati-sensibili-usando-la-crittografia/rsa.png" alt="RSA"></p>
 <h2 id="la-soluzione-combinando-rsa-e-aes">La soluzione combinando RSA e AES</h2>
-
 <p>Ora che abbiamo ripassato le basi tecnologiche, possiamo pensare a come implementare una soluzione.</p>
-
 <p>Immaginiamo di avere una piattaforma che permetta ai vari <strong>utenti</strong> di collegarsi con le proprie credenziali e di effettuare svariate operazioni, tra cui immagazzinare i propri documenti privati (foto, documenti, password, contratti, etc.) che necessitano di un più alto livello di sicurezza, e magari di poter condividere tra loro questi dati in un futuro prossimo.</p>
-
 <p>Partendo da queste semplici condizioni, e predisponendo il tutto alla futura &ldquo;condivisibilità&rdquo; dei documenti, una possibile soluzione è la seguente:</p>
-
 <ul>
 <li>utilizzeremo AES per cifrare i singoli documenti;</li>
 <li>per permettere la condivisione, utilizzeremo una tabella (di scambio) del nostro database; al suo interno verranno tracciati il proprietario del documento e gli utenti che potranno accedervi;</li>
 <li>ogni singolo utente avrà il suo portachiavi, contenente le chiavi RSA che fungeranno da &ldquo;lucchetto&rdquo; per la chiave del singolo documento;</li>
 <li>sarà necessario offuscare anche la chiave privata di ogni utente, in modo da permetterne l&rsquo;accesso solo al proprietario;</li>
 </ul>
-
 <h3 id="gestire-gli-utenti">Gestire gli utenti</h3>
-
 <p>Alla creazione di un nuovo utente sarà nostra premura <strong>generare una nuova coppia di chiavi</strong> RSA, che andrà legata all&rsquo;utente.
 Prima di memorizzare queste chiavi nel database (assieme alle credenziali dell&rsquo;utente o in un&rsquo;altra tabella), sarà necessario offuscare la chiave privata. È buona prassi, in questi casi, far scegliere una <strong>masterkey</strong> all&rsquo;utente, da utilizzare per cifrare a sua volta la chiave privata con algoritmo simmetrico.
 La masterkey scelta sarà importantissima in quanto andrà richiesta ogni qual volta dovremo decifrare i nostri dati (purtroppo la user experience è sacrificata a favore di un livello di sicurezza nettamente maggiore).
 <strong>N.B.</strong> È assolutamente sconsigliato memorizzare la masterkey (in qualsiasi forma) sul server: l&rsquo;attaccante potrebbe facilmente accedervi e tentare di forzarla sbloccando di conseguenza tutte le altre chiavi.</p>
-
 <h3 id="cifrare-il-documento">Cifrare il documento</h3>
-
 <p><strong>Ogni volta</strong> in cui un utente caricherà un file o inserirà un testo da proteggere, sarà necessario generare una nuova chiave simmetrica <strong>univoca</strong>. Useremo la chiave per cifrare il documento utilizzando AES e lo memorizzeremo all&rsquo;interno della nostra base dati.</p>
-
-<h3 id="associare-il-file-all-utente">Associare il file all&rsquo;utente</h3>
-
+<h3 id="associare-il-file-allutente">Associare il file all&rsquo;utente</h3>
 <p>Come ultimo passo dovremo associare i dati cifrati all&rsquo;utente che li sta memorizzando. È il momento di utilizzare la &ldquo;tabella di scambio&rdquo;. Inseriremo un record contenente i riferimenti all&rsquo;utente e al file, insieme alla chiave univoca legata a quest&rsquo;ultimo. La chiave verrà però prima cifrata utilizzando la chiave pubblica dell&rsquo;utente.</p>
-
 <p>Abbiamo ottenuto un sistema simile a quello visualizzato di seguito:</p>
-
-<p><img src="/images/protezione-di-dati-sensibili-usando-la-crittografia/system.png" alt="" /></p>
-
+<p><img src="/images/protezione-di-dati-sensibili-usando-la-crittografia/system.png" alt=""></p>
 <h3 id="condividere">Condividere!</h3>
-
 <p>Ogni volta in cui un utente proprietario di un documento (o che ha ottenuto il diritto di leggerlo) vorrà condividerlo con un secondo utente sarà sufficiente operare come segue:</p>
-
 <ul>
 <li>richiedere la masterkey dell&rsquo;utente;</li>
 <li>decifrare la chiave privata dello stesso utente utilizzando la chiave appena ottenuta;</li>
 <li>decifrare la chiave legata al documento (recuperata dalla tabella di scambio);</li>
 <li>effettuare una copia del record di scambio, sostituendo l&rsquo;utente con quello di destinazione e cifrando nuovamente la chiave di scambio con quella pubblica del destinatario;</li>
 </ul>
-
 <h3 id="e-ora">E ora?</h3>
-
 <p>Ora che abbiamo ultimato (almeno teoricamente) il nostro sistema di protezione dei dati <strong>siamo definitivamente al sicuro?</strong> <strong>Assolutamente no!</strong> Tralasciando il buon esercizio tecnico svolto fin ora, dobbiamo ricordarci che <strong>abbiamo affidato buona parte della sicurezza del nostro sistema all&rsquo;utente</strong>.
 Il punto debole infatti risiede nella masterkey che resta nelle mani dei nostri utenti: se questi ultimi dovessero condividerla, o perderla, sarebbe impossibile garantire la sicurezza o il recupero dei dati immagazzinati.
 Inoltre una chiave - che è scelta dell&rsquo;utente - troppo semplice sarebbe facilmente aggirabile tramite brute force o altre tecniche.</p>
-
 <p>In conclusione, tengo ad esortarvi a rispettare tutte le <a href="https://en.wikipedia.org/wiki/Password#Factors_in_the_security_of_a_password_system">regole generali riguardanti la composizione delle password</a>, impendendo agli utenti di sceglierne una troppo semplice.</p>
 
   </div>
@@ -565,7 +513,7 @@ Inoltre una chiave - che è scelta dell&rsquo;utente - troppo semplice sarebbe f
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -861,7 +809,7 @@ Inoltre una chiave - che è scelta dell&rsquo;utente - troppo semplice sarebbe f
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -880,13 +828,11 @@ Inoltre una chiave - che è scelta dell&rsquo;utente - troppo semplice sarebbe f
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -899,11 +845,13 @@ Inoltre una chiave - che è scelta dell&rsquo;utente - troppo semplice sarebbe f
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -922,7 +870,7 @@ Inoltre una chiave - che è scelta dell&rsquo;utente - troppo semplice sarebbe f
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -953,7 +901,7 @@ Inoltre una chiave - che è scelta dell&rsquo;utente - troppo semplice sarebbe f
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -996,13 +944,11 @@ Inoltre una chiave - che è scelta dell&rsquo;utente - troppo semplice sarebbe f
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -1011,11 +957,13 @@ Inoltre una chiave - che è scelta dell&rsquo;utente - troppo semplice sarebbe f
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1058,14 +1006,12 @@ Inoltre una chiave - che è scelta dell&rsquo;utente - troppo semplice sarebbe f
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1077,19 +1023,19 @@ Inoltre una chiave - che è scelta dell&rsquo;utente - troppo semplice sarebbe f
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MessagePack on Facile.it Engineering</title>
@@ -17,7 +17,7 @@
       <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
-      <description>When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &amp;ldquo;JSONC&amp;rdquo;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.</description>
+      <description>When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &amp;ldquo;JSONC&amp;quot;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.</description>
     </item>
     
   </channel>

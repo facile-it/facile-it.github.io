@@ -11,7 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.31.1" />
+        <meta name="generator" content="Hugo 0.69.0" />
         
 
 
@@ -46,32 +46,15 @@
 <meta property="og:description" content="Premise Java is an old programming language. Version 1.0 was released in 1996 by Sun Microsystems and even though it has evolved and grown a lot over the past twenty years it is still carrying on some bad design choices such as null (ask Tony Hoare), primitive types or lack of a proper function type. With the last version of the language (Java 8) Java tried to address some of these problems introducing concepts such as Optional or lambda expression." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/kotlin-intro/" />
-
-
-
-<meta property="article:published_time" content="2016-10-17T00:00:00&#43;00:00"/>
-
-<meta property="article:modified_time" content="2016-10-17T00:00:00&#43;00:00"/>
-
-
-
-
-
-
-
-
-
-
+<meta property="article:published_time" content="2016-10-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-10-17T00:00:00+00:00" />
 
         <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <meta property="og:image:width" content="512">
         <meta property="og:image:height" content="512">
-        
-<meta itemprop="name" content="A new hope for the JVM: Kotlin">
+        <meta itemprop="name" content="A new hope for the JVM: Kotlin">
 <meta itemprop="description" content="Premise Java is an old programming language. Version 1.0 was released in 1996 by Sun Microsystems and even though it has evolved and grown a lot over the past twenty years it is still carrying on some bad design choices such as null (ask Tony Hoare), primitive types or lack of a proper function type. With the last version of the language (Java 8) Java tried to address some of these problems introducing concepts such as Optional or lambda expression.">
-
-
 <meta itemprop="datePublished" content="2016-10-17T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2016-10-17T00:00:00&#43;00:00" />
 <meta itemprop="wordCount" content="857">
@@ -79,7 +62,6 @@
 
 
 <meta itemprop="keywords" content="" />
-
         
 
         
@@ -108,14 +90,17 @@
 
 
       
-<script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22342495-1', 'auto');
-ga('send', 'pageview');
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
 </script>
 
     </head>
@@ -416,68 +401,38 @@ ga('send', 'pageview');
   
 
   <div id="content">
-    
-
-<p><img src="/images/kotlin-intro/logo_Kotlin.svg" alt="Kotlin" /></p>
-
+    <p><img src="/images/kotlin-intro/logo_Kotlin.svg" alt="Kotlin"></p>
 <h2 id="premise">Premise</h2>
-
 <p>Java is an <strong>old</strong> programming language. Version 1.0 was released in 1996 by Sun Microsystems and  even though it has evolved and grown a lot over the past twenty years it is still carrying on some bad design choices such as <em>null</em> (ask <a href="https://en.wikipedia.org/wiki/Tony_Hoare?section=3#Apologies_and_retractions">Tony Hoare</a>), primitive types or lack of a proper function type. With the last version of the language (Java 8) Java tried to address some of these problems introducing concepts such as <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html"><code>Optional</code></a> or <a href="http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html">lambda expression</a>. Although these additions clearly represent a step forward for the language I still have the feeling that they are just <em>patches</em> applied to <strong>mitigate problems</strong> and not to solve them at their very source. For example <code>Optional</code> could be used to reduce NPE (Null Pointer Exception) but it is clearly not designed for <a href="https://twitter.com/mariofusco/status/780770300178956289">this purpose</a> and lambda expressions, implemented in Java 8 with SAM types, still force you to write an interface only to define a <em>function</em>.</p>
-
 <h2 id="the-android-world">The Android world</h2>
-
 <p>All the above concerns about Java are even more problematic within the Android world where, due to the notorious <a href="https://developer.android.com/about/dashboards/index.html">fragmentation</a> (a huge amount of devices are stuck with an <strong>outdated VM</strong>), you are forced to target lower Java versions (6 and 7).
 Google is addressing the problem with its new compiler <a href="https://source.android.com/source/jack.html">Jack</a> that enables <em>some</em> of the features of Java 8 maintaining backward compatibility with older OS versions. But still it lets us deal with the verbosity of the language and it doesn’t truly solve the problem.</p>
-
 <h2 id="a-new-hope">A new hope</h2>
-
-<p><img src="/images/kotlin-intro/kotlin_helloworld.png" alt="Kotlin Hello World!" /></p>
-
+<p><img src="/images/kotlin-intro/kotlin_helloworld.png" alt="Kotlin Hello World!"></p>
 <p>Back in 2011 the JetBrains team (the guys behind IntelliJ and so Android Studio) unveiled <a href="https://kotlinlang.org/">Kotlin</a>, a new programming language that targets the JVM (and can also be compiled to JavaScript).
 Kotlin is a statically-typed language that combines Object Oriented and functional features enforcing no particular philosophy of programming, and it introduces a whole new set of concepts and tools that helps making the code <strong>safer, cleaner and much more readable</strong>.
 Thanks to its nature it works everywhere Java do and it is also <strong>interoperable</strong> with it, meaning it will not force you to rewrite the entire codebase to taste it: you can add it to your project a little at a time (<a href="https://medium.com/@sergii/using-kotlin-for-tests-in-android-6d4a0c818776#.lyvd3h43x">maybe starting with tests</a> 😉). It also features a REPL <code>kotlinc-jvm</code> that allows you to test language features with no effort (see the <a href="https://kotlinlang.org/docs/tutorials/command-line.html#running-the-repl">doc</a> form more info).
 I am going to rapidly cover some features of Kotlin that address the previously mentioned Java limitations.</p>
-
 <h3 id="null-safety">Null-safety</h3>
-
 <p>In Kotlin <strong>a variable cannot be null</strong>. If you want or need a variable to be <em>nullable</em> you have to add <code>?</code> to the variable type:</p>
-
-<pre><code class="language-kotlin">val x: Int = null // compile error
-val y: Int? = null // ok
-</code></pre>
-
-<p>Thanks to this information the compiler sees <code>Int</code> and <code>Int?</code> as two completely different types and can therefore enforce the <a href="http://kotlinlang.org/docs/reference/null-safety.html">null-safety</a> of your variables.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> x: Int = <span style="color:#66d9ef">null</span> <span style="color:#75715e">// compile error
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> y: Int? = <span style="color:#66d9ef">null</span> <span style="color:#75715e">// ok
+</span></code></pre></div><p>Thanks to this information the compiler sees <code>Int</code> and <code>Int?</code> as two completely different types and can therefore enforce the <a href="http://kotlinlang.org/docs/reference/null-safety.html">null-safety</a> of your variables.
 The <code>?.</code> allows you to safe call methods on nullable variables without throwing NPE but simply returning null at the end of the  call chain:</p>
-
-<pre><code class="language-kotlin">val x: Int? = null
-x?.toString()?.substring(2) // no NPE, returns null
-</code></pre>
-
-<p>The <code>?:</code> operator (Elvis operator) allows you to provide a “default” value when the variable is <code>null</code>:</p>
-
-<pre><code class="language-kotlin">// The two expressions are semantically equivalent:
-text?.length ?: -1
-(text.length != null) ? text.length  : -1
-</code></pre>
-
-<h3 id="higher-order-functions-and-lambdas">Higher-Order Functions and Lambdas</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> x: Int? = <span style="color:#66d9ef">null</span>
+x<span style="color:#f92672">?.</span>toString()<span style="color:#f92672">?.</span>substring(<span style="color:#ae81ff">2</span>) <span style="color:#75715e">// no NPE, returns null
+</span></code></pre></div><p>The <code>?:</code> operator (Elvis operator) allows you to provide a “default” value when the variable is <code>null</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#75715e">// The two expressions are semantically equivalent:
+</span><span style="color:#75715e"></span>text<span style="color:#f92672">?.</span>length <span style="color:#f92672">?:</span> -<span style="color:#ae81ff">1</span>
+(text.length != <span style="color:#66d9ef">null</span>) ? text.length  : -<span style="color:#ae81ff">1</span>
+</code></pre></div><h3 id="higher-order-functions-and-lambdas">Higher-Order Functions and Lambdas</h3>
 <p>In Kotlin is possible to declare a method (or more generally a function) that returns or takes another <strong>function as parameter</strong>. The syntax to define the <a href="https://kotlinlang.org/docs/reference/lambdas.html">function type</a> is similar to other languages such as Scala or Swift and is very <strong>intuitive</strong>:</p>
-
-<pre><code class="language-kotlin">val function: (T1, T2) -&gt; R = {t1, t2 -&gt; r}
-</code></pre>
-
-<h3 id="data-classes">Data classes</h3>
-
-<pre><code class="language-kotlin">data class City(val name: String, val state: String)
-</code></pre>
-
-<p><a href="https://kotlinlang.org/docs/reference/data-classes.html">Data classes</a> address the verbosity of Java when dealing with classes that have the only purpose to hold data. With a single line you get <code>equals()/hashCode()</code>, <code>toString()</code> and getters/setters for free (and if you are a Java developer you already knows the benefits!)</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> function: (T1, T2) -&gt; R = {t1, t2 -&gt; r}
+</code></pre></div><h3 id="data-classes">Data classes</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">data</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">City</span>(<span style="color:#66d9ef">val</span> name: String, <span style="color:#66d9ef">val</span> state: String)
+</code></pre></div><p><a href="https://kotlinlang.org/docs/reference/data-classes.html">Data classes</a> address the verbosity of Java when dealing with classes that have the only purpose to hold data. With a single line you get <code>equals()/hashCode()</code>, <code>toString()</code> and getters/setters for free (and if you are a Java developer you already knows the benefits!)</p>
 <h1 id="conclusions">Conclusions</h1>
-
 <p>Java has to maintain backward compatibility with previous versions and still has to support the huge amount of developers and codebases present all around the world; therefore it is natural that every new feature and design change is to be considered, weighted and reasoned really carefully, inevitably <strong>slowing down its evolution</strong>. But this does not have to mean that us, as Android developers, “tied” to the JVM, should not try more modern and advanced languages such as Kotlin. At bottom, a part of our job (one of the best!) is to try and <strong>experiment</strong> new technologies and to <strong>learn</strong> new concepts and techniques that improve our ability to address problems in the best possible way (and of course, to have some fun 😄).</p>
-
 <p>I think that it is fundamental for a software engineer to be <strong>exposed to more than a single programming language</strong>: learning new patterns, exploring other programming paradigms or simply using and understanding a never-seen syntax has an immeasurable value for our growth and most of the times it turns out to be unexpectedly useful even when coding with ”our” language.
 So why not do it with a language that allows us to continue working on projects targeting our beloved JVM?</p>
 
@@ -526,7 +481,7 @@ So why not do it with a language that allows us to continue working on projects 
 
     <article class="post">
         <div id="disqus_thread"></div>
-<script>
+<script type="application/javascript">
     var disqus_config = function () {
     
     
@@ -822,7 +777,7 @@ So why not do it with a language that allows us to continue working on projects 
           <article>
             <header>
               
-                <a href="/categories/conferences/">Conferences</a>
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -841,13 +796,11 @@ So why not do it with a language that allows us to continue working on projects 
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/docker/">Docker</a>
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -860,11 +813,13 @@ So why not do it with a language that allows us to continue working on projects 
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/english/">English</a>
+                <a href="https://engineering.facile.it/categories/english/">English</a>
                 <span style="float:right;">29</span>
               
             </header>
@@ -883,7 +838,7 @@ So why not do it with a language that allows us to continue working on projects 
           <article>
             <header>
               
-                <a href="/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
                 <span style="float:right;">10</span>
               
             </header>
@@ -914,7 +869,7 @@ So why not do it with a language that allows us to continue working on projects 
           <article>
             <header>
               
-                <a href="/categories/italiano/">Italiano</a>
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
                 <span style="float:right;">34</span>
               
             </header>
@@ -957,13 +912,11 @@ So why not do it with a language that allows us to continue working on projects 
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/open-source/">Open Source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">5</span>
               
             </header>
@@ -972,11 +925,13 @@ So why not do it with a language that allows us to continue working on projects 
         
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/php/">PHP</a>
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
                 <span style="float:right;">20</span>
               
             </header>
@@ -1019,14 +974,12 @@ So why not do it with a language that allows us to continue working on projects 
             
     
             
-    
-            
         <p>
           <article>
             <header>
               
-                <a href="/categories/software-testing/">Software testing</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1038,19 +991,19 @@ So why not do it with a language that allows us to continue working on projects 
             
     
             
+    
+            
         <p>
           <article>
             <header>
               
-                <a href="/categories/swift/">Swift</a>
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
                 <span style="float:right;">8</span>
               
             </header>
           </article>
         </p>
         
-    
-            
     
             
     

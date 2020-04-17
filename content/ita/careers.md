@@ -25,4 +25,4 @@ twitterlargeimage: "/images/careers/banner.png"
  * Convenzioni (bar, ristoranti, palestre e molto altro), Ticket Restaurant, caffè, acqua e frutta fresca ogni giorno
  * Fare il lavoro che ami in una realtà italiana di successo con un top team al tuo fianco
 
-Se sei interessato, dai uno sguardo alle nostre <a href="https://jobs.facile.it/chi-cerchiamo.html" target="\_blank">offerte di lavoro »</a>.
+Se sei interessato, dai uno sguardo alle nostre {{< url-link "offerte di lavoro »" "https://jobs.facile.it/chi-cerchiamo.html" "_blank">}}.

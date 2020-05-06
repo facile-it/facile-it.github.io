@@ -204,9 +204,11 @@ If the a value is non-null, the b value is not evaluated, this is also know as s
 ## Range operators
 Symbols: `...` , `..<`
 
-Some programming languages support range operators, this operators are a shortcut to work with the range values. The main types are:
+Some programming languages support range operators, this operators are a shortcut to work with the range values. 
 
-• Closed range (a...b): it defines a range from a to b, both a and b are included into the range
+The main types are:
+
+• closed range (a...b): it defines a range from a to b, both a and b are included into the range
 
 • half-open range (a..<b): it defines define a range from a to b, the b value is not included into the range
 

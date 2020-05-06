@@ -6,10 +6,28 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>English</title>
+      <link>https://engineering.facile.it/categories/english/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Operators</title>
+      <link>https://engineering.facile.it/categories/operators/</link>
+      <pubDate>Tue, 24 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/operators/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>AMQP</title>
@@ -35,15 +53,6 @@
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/consumer/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>https://engineering.facile.it/categories/english/</link>
-      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/english/</guid>
       <description></description>
     </item>
     

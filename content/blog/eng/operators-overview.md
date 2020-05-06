@@ -23,12 +23,12 @@ Usually we use operators for arithmetic operations (+, -), logic (&&, ||) and co
 Parameters that are passed to the operators are called **operands**.
 
 There are three different types of operators:
-* **Unary**: it takes a single parameter placed before (prefix) or after (postfix) it.
+* **Unary**: it takes a single parameter, and it's placed before (prefix) or after (postfix) it.
 * **Binary**: it takes two parameters, it is placed between them. It’s also called infix operator.
 * **Ternary**: it takes three parameters, the first operand is a predicate. Based on the result of the praticate, the operator evaluates the first operand or the second.
 
 # User defined operators
-Some programming languages (e.g.: Haskell, F#, Swift, ...), allow defining custom operators with special symbols, some other language (Kotlin, Pascal, ...) allows defining literal operators, in both cases we have to define a function that will be executed when we use operators.
+Some programming languages (e.g.: Haskell, F#, Swift, ...), allow defining custom operators with special symbols, some other languages (Kotlin, Pascal, ...) allows defining literal operators, in both cases we have to define a function that will be executed when we use operators.
 Other kinds of programming languages allow operator overloading, this operation is identified as ad hoc polymorphism. **Ad hoc polymorphism** is a kind of polymorphism in which an operator can be applied to arguments of different types because a polymorphic operator can denote a different implementations depending on the type of arguments.
 
 Operator overloading means making two declarations with the same name in the same scope, except that both declarations have different types of arguments and different implementation.
@@ -36,7 +36,7 @@ Operator overloading means making two declarations with the same name in the sam
 # Operator syntax
 Syntactically the declaration of an operator is like a function definition.  We can either think of functions as a prefix operators whose operands are the parameters passed in the parentheses or we can think of operators as a functions that takes one or two parameters as input.
 
-As stated above, we have three types of operators and their type depends on the position (prefix, postfix and infix), on their airiness (unary, binary and ternary), on their precedence and associativity. Let's see some examples:
+As stated above, we have three types of operators and their type depends on the position (prefix, postfix and infix), on their arity (unary, binary and ternary), on their precedence and associativity. Let's see some examples:
 
  - **prefix**: !condition
  - **binary**: conditionA || conditionB
@@ -55,7 +55,7 @@ The associativity of an operator is a property that determines how operators of 
 
 An operator is **left associative** if its application in an expression can be grouped together from left to right without affecting the expression's meaning, while it is said to be **right associative** if its application in an expression can be grouped together from right to left it is right-associative.
 
-An operator can be **associative** if it is both left and right associative, in other words, it doesn't matter where you place the parentheses, the expression's evaluation always results in the same value.
+An operator can be **fully associative** if it is both left and right associative, in other words, it doesn't matter where you place the parentheses, the expression's evaluation always results in the same value.
 
 Also, an operator could be **non-associative**. This means that the operator cannot be chained with other operators, often because the output type is incompatible with the input types.
 
@@ -144,7 +144,7 @@ The main conditional logical operators are:
 * OR (a || b)
 * NOT (!a)
 
-The AND operator creates a logical expression that returns a boolean. This expression return true if and only if both the left and right operands are true. During the evaluation of the result, on the first false operand encountered the AND operator returns false without evaluate the rest of operands.
+The AND operator creates a logical expression that returns a boolean. This expression return true if and only if both the left and right operands are true. During the evaluation of the result, on the first false operand encountered the AND operator returns false without evaluating the rest of operands.
 ```JavaScript
 true && true && true  //true
 
@@ -178,10 +178,10 @@ The logical NOT operator is a prefix operator that reverses the boolean value of
 
 All the operators can be composed tighter to compose more complex expressions. This composition is possible because all the operators have the left associativity property. Otherwise, we should use the parentheses.
 
-## Ternary operator (Elvis operator)
+## Ternary operator
 Symbol: `? :`
 
-In some programming languages the **Elvis operator** is declared like ?: or ||. It is a conditional operator with three operands, the first operand is a predicate, the other two operands are expressions.
+Ternary operator has three operands, the first operand is a predicate, the other two operands are expressions.
 If the predicate return true the operator performs the first expression. Otherwise it performs the second expression.
 ```JavaScript
 condition ? firstExpression : secondExpression
@@ -205,8 +205,11 @@ If the a value is non-null, the b value is not evaluated, this is also know as s
 Symbols: `...` , `..<`
 
 Some programming languages support range operators, this operators are a shortcut to work with the range values. The main types are:
+
 • Closed range (a...b): it defines a range from a to b, both a and b are included into the range
+
 • half-open range (a..<b): it defines define a range from a to b, the b value is not included into the range
+
 • one-side ranges elementList[...2]: this prefix operator works with array indices and when we used it, the output is an ArraySlice with all the elements in the elementList until the third value.
 
 ## Identity operator
@@ -214,7 +217,7 @@ Symbols: `===`, `!==`
 The identity operator  (=== and !==) compares directly the memory reference of two objects, it returns true if the two objects have the same memory address, false otherwise.
 
 # Conclusion
-Operators are useful development tools available to the developer, by knowing their potential allows you to make complex assessments in a few lines of code. In the next article we will create some custom operators by introducing new concepts and we will explore the potential of operators even more in detail.
+Operators are useful development tools available to the developer, and by knowing their potential allows you to make complex assessments in a few lines of code. In the next article we will create some custom operators by introducing new concepts and we will explore the potential of operators even more in detail.
 
 # References
 

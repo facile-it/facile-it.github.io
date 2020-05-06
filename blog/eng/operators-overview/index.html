@@ -60,7 +60,7 @@ This article is the first in a series of two about operators. Here we will make 
 This article is the first in a series of two about operators. Here we will make an overview of the main operators&rsquo; properties and in the next one we will discuss about some custom operators that we use in our production code.">
 <meta itemprop="datePublished" content="2020-05-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-05-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1855">
+<meta itemprop="wordCount" content="1848">
 
 
 
@@ -408,7 +408,7 @@ if (!doNotTrack) {
     <li><a href="#definition">Definition</a></li>
     <li><a href="#user-defined-operators">User defined operators</a></li>
     <li><a href="#operator-syntax">Operator syntax</a></li>
-    <li><a href="#operator-semantic">Operator semantic</a></li>
+    <li><a href="#operator-semantics">Operator semantics</a></li>
     <li><a href="#operator-properties">Operator Properties</a>
       <ul>
         <li><a href="#associativity">Associativity</a></li>
@@ -426,7 +426,7 @@ if (!doNotTrack) {
         <li><a href="#invocation-operator">Invocation operator</a></li>
         <li><a href="#relational-operator">Relational operator</a></li>
         <li><a href="#logical-operator">Logical operator</a></li>
-        <li><a href="#ternary-operator-elvis-operator">Ternary operator (Elvis operator)</a></li>
+        <li><a href="#ternary-operator">Ternary operator</a></li>
         <li><a href="#null---coalescing-operator">Null - Coalescing Operator</a></li>
         <li><a href="#range-operators">Range operators</a></li>
         <li><a href="#identity-operator">Identity operator</a></li>
@@ -443,44 +443,44 @@ if (!doNotTrack) {
 <p>Operators are useful constructors and they are present in most programming languages. They are fundamental for many operations and in this article we will provide an overview to better understand their properties.</p>
 <p>This article is the first in a series of two about operators. Here we will make an overview of the main operators&rsquo; properties and in the next one we will discuss about some custom operators that we use in our production code.</p>
 <h1 id="definition">Definition</h1>
-<p><strong>An operator is a special symbol or expression that is used to check, change or combine values. Most programming languages support their construct and we can considered them like a functions but with a different syntax and semantic.</strong></p>
-<p>Usually we use operators for arithmetics operations (+, -), logic (&amp;&amp;, ||) and comparison (==, &gt;), but we also consider other types of operators including assignment and variable access operators.</p>
-<p>Parameters that we pass to the operators are called <strong>operands</strong>.</p>
+<p><strong>Operators are special symbols or expressions that are used to check, change or combine values. Most programming languages support their construct and we can considered as functions but with a different syntax and semantics.</strong></p>
+<p>Usually we use operators for arithmetic operations (+, -), logic (&amp;&amp;, ||) and comparison (==, &gt;), but we also consider other types of operators including assignment and variable access operators.</p>
+<p>Parameters that are passed to the operators are called <strong>operands</strong>.</p>
 <p>There are three different types of operators:</p>
 <ul>
-<li><strong>Unary</strong>: takes a single parameter placed before (prefix) or after (postfix) it.</li>
-<li><strong>Binary</strong>: takes two parameters, it is placed between them. It’s also called infix operator.</li>
-<li><strong>Ternary</strong>: takes three parameters, the first operand is a predicate and based on its result evaluate the first operand or the second.</li>
+<li><strong>Unary</strong>: it takes a single parameter, and it&rsquo;s placed before (prefix) or after (postfix) it.</li>
+<li><strong>Binary</strong>: it takes two parameters, it is placed between them. It’s also called infix operator.</li>
+<li><strong>Ternary</strong>: it takes three parameters, the first operand is a predicate. Based on the result of the praticate, the operator evaluates the first operand or the second.</li>
 </ul>
 <h1 id="user-defined-operators">User defined operators</h1>
-<p>Some programming languages (e.g.: Haskell, F#, Swift, &hellip;), allow to define custom operators with special symbols, some other languages (Kotlin, Pascal, &hellip;) allows to define literal operators, in both cases we have to define a function that will be executed when we use some operator.
-Other kind of programming languages allow operator overloading, this operation is identified like ad hoc polymorphism. <strong>Ad hoc polymorphism</strong> is a kind of polymorphism in which an operator can be applied to arguments of different types because a polymorphic operator can denote a different implementations depending on the type of arguments.</p>
-<p>Operator overloading is to declare with the same name in the same scope, except that both declarations have different arguments type and different implementation.</p>
+<p>Some programming languages (e.g.: Haskell, F#, Swift, &hellip;), allow defining custom operators with special symbols, some other languages (Kotlin, Pascal, &hellip;) allows defining literal operators, in both cases we have to define a function that will be executed when we use operators.
+Other kinds of programming languages allow operator overloading, this operation is identified as ad hoc polymorphism. <strong>Ad hoc polymorphism</strong> is a kind of polymorphism in which an operator can be applied to arguments of different types because a polymorphic operator can denote a different implementations depending on the type of arguments.</p>
+<p>Operator overloading means making two declarations with the same name in the same scope, except that both declarations have different types of arguments and different implementation.</p>
 <h1 id="operator-syntax">Operator syntax</h1>
-<p>Syntactically the declaration of an operator is like a function definition.  We can think of function as a prefix operator whose operands are the parameters passed in the parentheses or we can think about an operator as a function that takes one or two parameters as input.</p>
-<p>As seen before we have three types of operators and their type depends on the position (prefix, postfix and infix), on their airiness (unary, binary and ternary), on their precedence and associativity. Let&rsquo;s see some examples:</p>
+<p>Syntactically the declaration of an operator is like a function definition.  We can either think of functions as a prefix operators whose operands are the parameters passed in the parentheses or we can think of operators as a functions that takes one or two parameters as input.</p>
+<p>As stated above, we have three types of operators and their type depends on the position (prefix, postfix and infix), on their arity (unary, binary and ternary), on their precedence and associativity. Let&rsquo;s see some examples:</p>
 <ul>
 <li><strong>prefix</strong>: !condition</li>
 <li><strong>binary</strong>: conditionA || conditionB</li>
 <li><strong>ternary</strong>: condition ? firstExpression : secondExpression</li>
 </ul>
-<h1 id="operator-semantic">Operator semantic</h1>
-<p>The semantic of an operator depends by its value, implementation and arity. An expression can involve an operator and simply return the result of an evaluation or may be an object allowing assignment.</p>
-<p>There are some operators with an explicit semantic, like + or ==, than based on the context, perform an evaluation and return. However the semantics can be significantly different for example the assignment operator (var a = b), does not perform an evaluation, but it is used to store a value in a location address.</p>
+<h1 id="operator-semantics">Operator semantics</h1>
+<p>The semantic of an operator depends on its value, implementation and arity. An expression can either involve an operator and simply return the result of an evaluation or it can be an object that allows assignment.</p>
+<p>There are some operators with an explicit semantics, like + or ==, that based on the context, perform an evaluation and return. However, the semantics can be significantly different. For example, the assignment operator (var a = b) does not perform an evaluation, but it is used to store a value in a location address.</p>
 <h1 id="operator-properties">Operator Properties</h1>
 <h2 id="associativity">Associativity</h2>
-<p>The associativity of an operator is a property that determines how operators of the same precedence are grouped in absence of parentheeses. The choice of which operations to apply to the operand, is determinated by the associativity of the operators. An operator can have the association property left, right, full or non-associative.</p>
-<p>An operator is <strong>left associative</strong> if its application in an expression can be grouped together from left to right without affection the expression&rsquo;s meaning, while it is said to be <strong>right associative</strong> if its application in an expression can be grouped together from right to left it is right-associative.</p>
-<p>An operator can be <strong>full associative</strong> if it is both left and right associative, in other words, it doesn&rsquo;t matter where you place the parentheses, the expression&rsquo;s evaluation always results in the same value.</p>
-<p>Also, an operator could be <strong>non-associative</strong> this means that the operator cannot be chained with other operators, often because the output type is incompatible with the input types.</p>
+<p>The associativity of an operator is a property that determines how operators of the same precedence are grouped in absence of parentheeses. The choice of which operations to apply to the operand to, is determined by the associativity of the operators. An operator can have the association property left, right, full or non-associative.</p>
+<p>An operator is <strong>left associative</strong> if its application in an expression can be grouped together from left to right without affecting the expression&rsquo;s meaning, while it is said to be <strong>right associative</strong> if its application in an expression can be grouped together from right to left it is right-associative.</p>
+<p>An operator can be <strong>fully associative</strong> if it is both left and right associative, in other words, it doesn&rsquo;t matter where you place the parentheses, the expression&rsquo;s evaluation always results in the same value.</p>
+<p>Also, an operator could be <strong>non-associative</strong>. This means that the operator cannot be chained with other operators, often because the output type is incompatible with the input types.</p>
 <p>The associativity of an operator is important because it can change the result of an expression:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> (<span style="color:#ae81ff">7</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">-</span> <span style="color:#ae81ff">3</span> <span style="color:#75715e">// 3
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span> <span style="color:#f92672">-</span> (<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">3</span>) <span style="color:#75715e">// 9
 </span></code></pre></div><h2 id="precedence">Precedence</h2>
-<p>The operator <strong>precedence</strong> (aka operator binding) is a collection of rules that reflect conventions about which procedures perform first in order to evaluate a given expression. This conventions are very useful to eliminate ambiguity while we perform an expression with a group of operators.</p>
+<p>The operator <strong>precedence</strong> (aka operator binding) is a collection of rules that reflect conventions about which procedures to perform first in order to evaluate a given expression. This conventions are very useful to eliminate ambiguity while we perform an expression with a group of operators.</p>
 <h2 id="operand-coercion">Operand coercion</h2>
-<p>Some languages also allow to the operands of an operator to be implicitly converted, or coerced, to suitable data types for the operation to occur.</p>
-<p>For example, in Perl coercion rules lead into 12 + &ldquo;3.14&rdquo; producing the result of 15.14. The text &ldquo;3.14&rdquo; is converted to the number 3.14 before addition can takes place. Further, 12 is an integer and 3.14 is either a floating or fixed-point number (a number that has a decimal place in it) so the integer is then converted to a floating point or fixed-point number respectively.</p>
+<p>Some languages allow the operands of an operator to be implicitly converted, or coerced, to suitable data types for the operation to occur.</p>
+<p>For example, in Perl coercion rules lead into 12 + &ldquo;3.14&rdquo; producing the result of 15.14. The text &ldquo;3.14&rdquo; is converted to the number 3.14 before addition can takes place. Furthermore, 12 is an integer and 3.14 is either a floating or fixed-point number (a number that has a decimal place in it) so the integer is then converted to a floating point or fixed-point number respectively.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Perl" data-lang="Perl">$firstValue <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
 $secondValue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;3.14&#34;</span>;
 <span style="color:#66d9ef">print</span> $firstValue <span style="color:#f92672">+</span> $secondValue; <span style="color:#e6db74">//</span> <span style="color:#ae81ff">15.14</span>
@@ -492,48 +492,48 @@ $secondValue <span style="color:#f92672">=</span> <span style="color:#e6db74">&#
 <h1 id="common-operators">Common operators</h1>
 <h2 id="access-operator">Access operator</h2>
 <p>Symbol: <code>.</code></p>
-<p><strong>Access operator</strong> is used for to access a member of a namespace or a type (type.member). For example we can use access operator to access a nested namespace  String.Indices or to access type members static and non-static.</p>
+<p><strong>Access operator</strong> is used to access a member of a namespace or a type (type.member). For example, we can use access operator to access a nested namespace  String.Indices or to access type members static and non-static.</p>
 <h2 id="scope-resolution-operator">Scope resolution operator</h2>
 <p>Symbol: <code>::</code></p>
-<p>The <strong>scope resolution operator</strong>, helps to identify and specify the context which an identifier refers.</p>
+<p>The <strong>scope resolution operator</strong>, helps to identify and specify the context which an identifier refers to.</p>
 <h2 id="indexer-operator">Indexer operator</h2>
 <p>Symbol: <code>[ ]</code></p>
 <p>The <strong>indexer operator</strong> is typically used to access a variable in a sequence or in a pointer element access.</p>
 <h2 id="null-conditional-operators">Null-conditional operators</h2>
 <p>Symbols: <code>?.</code>, <code>?[ ]</code></p>
-<p><strong>Null-conditional</strong> operators allow access to a member only if that operand evaluates to non-null; otherwise, it returns null.</p>
+<p><strong>Null-conditional</strong> operators allow access to a member only if that operand evaluates to non-null. Otherwise, it returns null.</p>
 <h2 id="compound-assignment-operators">Compound Assignment Operators</h2>
 <p>Symbols: <code>+=</code> , <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>&amp;=</code>, <code>|=</code>, <code>^=</code>, &hellip;</p>
-<p><strong>Compound assignment operators</strong> provide a shorter syntax for assigning the result for an arithmetic and bitwise operator. They perform the operation on the two operands before assigning the result to the first operand.</p>
+<p><strong>Compound assignment operators</strong> provide a shorter syntax for assigning the result of an arithmetic and bitwise operator. They perform the operation on the two operands before assigning the result to the first operand.</p>
 <p>For example  x += 2  is a shortcut for  x = x + 2.</p>
 <h2 id="invocation-operator">Invocation operator</h2>
 <p>Symbol: <code>()</code></p>
-<p>The invocation operator () call a method or invoke a delegate.</p>
+<p>The invocation operator () calls a method or invokes a delegate.</p>
 <h2 id="relational-operator">Relational operator</h2>
 <p>The relational operator are constructs that define a type of relationship between two entities, this definition includes both equality and inequality.</p>
-<p>An expression built with relational operators is called conditional expression and expressions of this type are defined <strong>predicates</strong>. If the language support the Boolean type (es. Java, PHP) the relational operator returns a true/false value, instead in other languages like C the relational operator returns 0 or 1, where the 0 correspond to false value and 1 to the true value.</p>
+<p>An expression built with relational operators is called conditional expressions are known as a <strong>predicates</strong>. If the language support the Boolean type (e.g. Java, PHP) the relational operator returns a true/false value, instead in other languages (e.g. C) the relational operator returns 0 or 1, where the 0 corresponds to the false value and 1 to the true value.</p>
 <p>In some dynamic languages, we can match two values based on their types, for example:</p>
 <p>• 4 === “4” is false because the left operand is an integer and the second is a string</p>
-<p>• 4 == “4” is true because the both operands are 4</p>
+<p>• 4 == “4” is true because the both the operands are 4</p>
 <h2 id="logical-operator">Logical operator</h2>
 <p>Symbols: <code>&amp;&amp;</code>, <code>||</code>, <code>!**</code></p>
 <p>Conditional logical operators modify or combine true or false boolean logical values.
-The main conditional logic are:</p>
+The main conditional logical operators are:</p>
 <ul>
 <li>AND (a &amp;&amp; b)</li>
 <li>OR (a || b)</li>
 <li>NOT (!a)</li>
 </ul>
-<p>The AND operator creates a logical expression that returns a boolean, this expression return true if and only if both the left and right operands are true. During the evaluation of the result, on the first false operand encountered the AND operator return false without evaluate the rest of operands.</p>
+<p>The AND operator creates a logical expression that returns a boolean. This expression return true if and only if both the left and right operands are true. During the evaluation of the result, on the first false operand encountered the AND operator returns false without evaluating the rest of operands.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">true</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">true</span>  <span style="color:#75715e">//true
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">true</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">false</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">true</span>  <span style="color:#75715e">//false
-</span></code></pre></div><p>The logical OR operator creates a logical expression that returns a boolean, this expression return true if at least one of the operands is true.
+</span></code></pre></div><p>The logical OR operator creates a logical expression that returns a boolean. This expression return true if at least one of the operands is true.
 In most cases if left-hand operand is evaluated true, the right-hand operand is not evaluated.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">false</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">false</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">true</span>  <span style="color:#75715e">//true
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">false</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">false</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">false</span>  <span style="color:#75715e">//false
-</span></code></pre></div><p>The logical exclusive OR operator, also know as the XOR,  creates a logical expression that returns a boolean, this expression return true if the right and left operands are different.</p>
+</span></code></pre></div><p>The logical exclusive OR operator, also know as the XOR, creates a logical expression that returns a boolean. This expression return true if the right and left operands are different.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">true</span> <span style="color:#f92672">^</span> <span style="color:#66d9ef">true</span> <span style="color:#75715e">//false
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">false</span> <span style="color:#f92672">^</span> <span style="color:#66d9ef">true</span> <span style="color:#75715e">//true
@@ -541,33 +541,34 @@ In most cases if left-hand operand is evaluated true, the right-hand operand is 
 <span style="color:#66d9ef">true</span> <span style="color:#f92672">^</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">//true
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">false</span> <span style="color:#f92672">^</span> <span style="color:#66d9ef">false</span> <span style="color:#75715e">//false
-</span></code></pre></div><p>The logical NOT operator is a prefix operator that reverse the boolean value of the operand.</p>
+</span></code></pre></div><p>The logical NOT operator is a prefix operator that reverses the boolean value of the operand.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#f92672">!</span><span style="color:#66d9ef">true</span> <span style="color:#75715e">//false
-</span></code></pre></div><p>All the operators can be composed tighter to compose more complex expressions. This composition is possible because all the operators have the left associativity property. Otherwise we should use the parentheses.</p>
-<h2 id="ternary-operator-elvis-operator">Ternary operator (Elvis operator)</h2>
+</span></code></pre></div><p>All the operators can be composed tighter to compose more complex expressions. This composition is possible because all the operators have the left associativity property. Otherwise, we should use the parentheses.</p>
+<h2 id="ternary-operator">Ternary operator</h2>
 <p>Symbol: <code>? :</code></p>
-<p>In some programming languages the <strong>Elvis operator</strong> is declared like ?: or ||. It is a conditional operator with three operands, the first operand is a predicate, the other two operands are expressions.
-If the predicate return true the operator performs the first expression, otherwise it performs the second expression.</p>
+<p>Ternary operator has three operands, the first operand is a predicate, the other two operands are expressions.
+If the predicate return true the operator performs the first expression. Otherwise it performs the second expression.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">condition</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">firstExpression</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">secondExpression</span>
 </code></pre></div><h2 id="null---coalescing-operator">Null - Coalescing Operator</h2>
 <p>Symbol: <code>??</code></p>
-<p>The <strong>null-coalescing</strong> operator (a ?? b) return the wrapped value in the optional type if it exists, otherwise the operator returns the right operand. The wrapped type on the left and the type of the right operands are the same.
+<p>The <strong>null-coalescing</strong> operator (a ?? b) return the wrapped value in the optional type if it exists. Otherwise the operator returns the right operand. The wrapped type on the left and the type of the right operands are the same.
 This operator is a shortcut to avoid the if and the force cast when we try to unwrap an Optional type, for example the expression:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">a</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">a</span><span style="color:#f92672">!</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">b</span>
 </code></pre></div><p>with coalescing operator becomes:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"> <span style="color:#a6e22e">a</span> <span style="color:#f92672">??</span> <span style="color:#a6e22e">b</span>
-</code></pre></div><p>If the value is non-null, the b value is not evaluated, this is also know as short-circuit evaluation.</p>
+</code></pre></div><p>If the a value is non-null, the b value is not evaluated, this is also know as short-circuit evaluation.</p>
 <h2 id="range-operators">Range operators</h2>
 <p>Symbols: <code>...</code> , <code>..&lt;</code></p>
-<p>Some programming languages support the range operators, this operators are a shortcut to work with the range values. The main types are:
-• Closed range (a&hellip;b): define a range from a to b, both a and b are included into the range
-• half-open range (a..&lt;b): define a range from a to b, the b value is not included into the range
-• one-side ranges elementList[&hellip;2]: this prefix operator works with array indices and when we used it, the output is an ArraySlice with all the elements in the elementList until the third value.</p>
+<p>Some programming languages support range operators, this operators are a shortcut to work with the range values.</p>
+<p>The main types are:</p>
+<p>• closed range (a&hellip;b): it defines a range from a to b, both a and b are included into the range</p>
+<p>• half-open range (a..&lt;b): it defines define a range from a to b, the b value is not included into the range</p>
+<p>• one-side ranges elementList[&hellip;2]: this prefix operator works with array indices and when we used it, the output is an ArraySlice with all the elements in the elementList until the third value.</p>
 <h2 id="identity-operator">Identity operator</h2>
 <p>Symbols: <code>===</code>, <code>!==</code>
 The identity operator  (=== and !==) compares directly the memory reference of two objects, it returns true if the two objects have the same memory address, false otherwise.</p>
 <h1 id="conclusion">Conclusion</h1>
-<p>Operators are useful development tools available to the developer, by knowing their potential allows you to make complex assessments in a few lines of code. In the next article we will create some custom operators by introducing new concepts and we will explore the potential of operators even more in detail.</p>
+<p>Operators are useful development tools available to the developer, and by knowing their potential allows you to make complex assessments in a few lines of code. In the next article we will create some custom operators by introducing new concepts and we will explore the potential of operators even more in detail.</p>
 <h1 id="references">References</h1>
 <ul>
 <li><a href="https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html">Swift basic operators</a></li>

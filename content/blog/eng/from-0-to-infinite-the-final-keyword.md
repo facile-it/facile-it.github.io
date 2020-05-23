@@ -4,7 +4,7 @@ date: "2018-12-04"
 draft: true
 share: false
 categories: [English, php, oop]
-title: "From 0 to infinite: the Final keyword"
+title: "From zero to infinite: the Final keyword"
 type: "post"
 languageCode: "en-EN"
 toc: true

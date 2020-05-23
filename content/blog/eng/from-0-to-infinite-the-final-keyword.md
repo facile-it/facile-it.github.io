@@ -75,7 +75,7 @@ I do not want to write an article on how to respect the development according to
 For this reason, before creating subclasses we should ask ourselves questions such as these or similar:
 
 - is my derived class of the same type as the base class?
-- can the base class be exchanged with my derived class without having "strange" behaviors in the code at runtime?
+- I can use the derived class of base where requireds a base class without having "strange" behaviors in the code at runtime?
 - is my base class prepared to be derived?
 - the enhancements made by the subclass are primarily additive?
 

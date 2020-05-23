@@ -134,7 +134,7 @@ echo $one->getValue(); //Pluto
 try it! **[break the immutable object] (https://3v4l.org/CiHPG)**
 
 This problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. 
-Another way to fix, is to create a `name constuctor` and make the `__constructor` private. 
+Another way to fix, is to create a `named constuctor` and make the `__constructor` private. 
 let's do it with the first solution!
 
 # The concrete example, break the immutable object first fix

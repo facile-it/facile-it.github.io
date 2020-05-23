@@ -26,8 +26,7 @@ The manual says:
 > Final Keyword. PHP 5 introduces the final keyword, which prevents child classes from overriding a method by prefixing the definition with final. 
 > If the class itself is being defined final then it cannot be extended. Note: Properties cannot be declared final, only classes and methods may be declared as final.
 
-Java has the same keyword, c# too but it is called "sealed" instead of "final", but more or less have the same behavior.
-To prevent a class from being inherited (in our case we will see only this type of use,for example languages like java support further behavior but in different contexts).
+Java has the same keyword, c# too but it is called "sealed" instead of "final", but more or less have the same behavior: to prevent a class from being inherited (in our case we will see only this type of use, for example languages like Java support further behavior but in different contexts).
 
 First of all we will try to understand what it is for, then we will try to do some additional reasoning, and finally we will talk about of comments on the net.
 
@@ -330,4 +329,3 @@ The theme is quite complex, this article wants to be a general overview. I hope 
 From my point of view the use of keyword **final** can help to improve design. 
 I would not write all my class with **final** but i'd start from the simplest cases: value objects, algorithms, patterns like the template method etc.  
 In any case, with the right attentions it can always be removed, if nothing else it has forcibly added one more step to the analysis process.
-

@@ -61,12 +61,16 @@ The canonical statement says the following:
 
 > The concept of this principle was introduced by Barbara **Liskov** in a 1987 conference keynote and later published in a paper together with Jannette Wing in 1994. 
 
-> Their original definition is as follows:
+The more precise definition:
+>“if S is a subtype of T, then objects of type T in a program may be replaced with objects of type S without altering any of >the desirable properties of that program.”
 
-> - Don’t implement any stricter validation rules on input parameters than implemented by the parent class.
-> - Apply at the least the same rules to all output parameters as applied by the parent class
+Link to orginal paper: https://dl.acm.org/doi/pdf/10.1145/62138.62141
+
+> Simplifying the following could be good guidelines:
+
+> - Don’t stricter more validation rules on input parameters than those implemented by the parent class.
 > - Objects should be replaceable with instances of their subtypes without altering the correctness of that program
-> - In general: If you need to add some restriction in an overridden method and that restriction doesn't exist in baseline implementation, you probably violates Liskov Substitution Principle.
+> - Not add restriction in an overridden method if that restriction doesn't exist in baseline implementation
 
 I have used it like as example because is specifically for the design of hierarchies.
 

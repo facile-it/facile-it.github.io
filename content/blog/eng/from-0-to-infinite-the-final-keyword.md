@@ -46,7 +46,8 @@ I think that this is a good method. In fact, in relation to the time used for th
 
 Develop architecture isn't a trivial task, many programmers use inheritance as solution to all problems.  
 
-There are many principles and guidelines to help to develop good design like S.O.L.I.D, design patterns, etc.
+There are many principles and guidelines to help to develop good design 
+like S.O.L.I.D (https://en.wikipedia.org/wiki/SOLID), design patterns, (https://en.wikipedia.org/wiki/Design_pattern) etc.
 But the problem is that these principles are difficult to apply, they almost always lead to writing more code. 
 Not always this is possible, not always this is accepted. 
 

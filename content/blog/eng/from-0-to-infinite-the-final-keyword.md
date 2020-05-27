@@ -92,7 +92,7 @@ class Stack extends ArrayList {
 }
 ```
 
-Why ? the Stack class inheriting from ArrayList will have a lot of additional methods not related to the concept of Stack (push or pop). To make the Stack work, you would have to remap the behavior of the extra methods, but this only because a design error was made. 
+Why ? The Stack class inheriting from ArrayList will have a lot of additional methods not related to the concept of ArrayList (e.g. push and pop).
 
 You are probably thinking that the OOP is not keeping its promise. 
 However, let us remember that we are programming in OOP (Object Oriented Programming) not in OOI (Object Oriented Inheritance). There is always a trade off between code reuse and good design. 

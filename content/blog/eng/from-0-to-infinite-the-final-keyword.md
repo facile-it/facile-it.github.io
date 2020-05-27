@@ -36,9 +36,7 @@ There are situations in which extension by inheritance is a good solution, other
 
 So when the consumer of the class will meet the keyword final, it will have to use different solutions from the inheritance. And this decision is imposed from the class designer.
 
-Why someone should set such a strong constraint?. The answers are many, all aim of having a robust,  and more manageable code-base. For example to avoid the proliferation of infinite hierarchies of classes such as VCL (see Visual Component Library), which are difficult to extend and maintain. In this case (even being a well-made library) the use of inheritance has been used a lot.
-
-![big hierarchy](/images/from-0-to-infinite-the-final-keyword/big-hierarchy.png)
+Why someone should set such a strong constraint?. The answers are many, all aim of having a robust,  and more manageable code-base. For example to avoid the proliferation of infinite hierarchies of classes such as VCL (https://en.wikipedia.org/wiki/Visual_Component_Library), which are difficult to extend and maintain. In this case, even being a well-made library, the use of inheritance has been used a lot.
 
 When we meet a class with the keyword final, who designed the class not allow us inherit from it, if we want to extend some behavior we must do it by composition or other mechanisms (like events, or plugins). 
 

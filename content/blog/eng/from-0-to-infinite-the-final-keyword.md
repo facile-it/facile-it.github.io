@@ -36,7 +36,11 @@ There are situations in which extension by inheritance is a good solution, other
 
 So when the consumer of the class will meet the keyword final, it will have to use different solutions from the inheritance. And this decision is imposed from the class designer.
 
-Why someone should set such a strong constraint?. The answers are many, all aim of having a robust,  and more manageable code-base. For example to avoid the proliferation of infinite hierarchies of classes such as VCL (https://en.wikipedia.org/wiki/Visual_Component_Library), which are difficult to extend and maintain. In this case, even being a well-made library, the use of inheritance has been used a lot. Also I use final is to reduce the API surface that needs to be covered by BC breaks avoidance in a distributed library.
+Why someone should set such a strong constraint?. The answers are many, all aim of having a robust,  and more manageable code-base. For example to avoid the proliferation of infinite hierarchies of classes such as VCL (https://en.wikipedia.org/wiki/Visual_Component_Library), which are difficult to extend and maintain. In this case, even being a well-made library, the use of inheritance has been used a lot. 
+
+Also I use final is to reduce the API surface that needs to be covered by BC breaks avoidance in a distributed library.
+
+Further to use **final** in some cases forces adopt the interfaces, by testing, for example, this is a positive side effect brought indirectly by the use of this keyword.
 
 When we meet a class with the keyword final, who designed the class not allow us inherit from it, if we want to extend some behavior we must do it by composition or other mechanisms (like events, or plugins). 
 
@@ -301,10 +305,9 @@ Using **final** keyword leads programmers to make a round of additional reasonin
 For example, during review a diff with the removal of **final** keyword, it could lead to useful comments to find different solutions. 
 
 There are also some points against **final**. Testing becomes more complex as classes with **final** can not be mocked. 
-A solution to this problem is partially solved in php, using the annotation **@final**, even if it does not have the same validity as a language keyword.
-However using the interfaces is a huge advantage brought indirectly by the use of the this keyword.
+A solution to this problem is solved in php, using the annotation **@final**, even if it does not have the same validity as a language keyword. However at nowadays with Ide inspectors, and with static analysis tools like PhpStan (https://phpstan.org/blog), Psalm(https://psalm.dev/docs/) the annotation is fully supporteds and work properly.
 
-Another point to disadvantage is that it is considered an instrument too coarse to be effective. 
+A point to disadvantage is that it is considered an instrument too coarse to be effective. 
 A developer can simply to remove the **final** keyword and then do wrong things!. 
 I not agree with this. Too many times I saw to use wrong the inheritance, so I think that this is useful for beginner but also a more senior developer.
 

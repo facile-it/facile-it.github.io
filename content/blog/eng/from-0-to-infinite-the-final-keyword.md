@@ -99,11 +99,11 @@ class Stack extends ArrayList {
 
 Why ? The Stack class inheriting from ArrayList will have a lot of additional methods not related to the concept of ArrayList (e.g. push and pop).
 
+In the previous example two main errors have been made, first error a Stack IS NOT an Array, second problem, is the cross-domain inheritance relationship. Simply, our domain classes must use implementations not to inherit them, in our example, stack was a concept of domain (Focusing only on reusing code can be a problem).
+
 You are probably thinking that the OOP is not keeping its promise. 
 However, let us remember that we are programming in OOP (Object Oriented Programming) not in OOI (Object Oriented Inheritance). There is always a trade off between code reuse and good design. 
 Inheritance should be mostly used for good design, for code reuse we go with composition.
-
-In the previous example two main errors have been made, first error a Stack IS NOT an Array, second  problem, is the cross-domain inheritance relationship. Simply, our domain classes must use implementations not to inherit them, in our example, stack was a concept of domain (Focusing only on reusing code can be a problem). 
 
 I invite you, however, to do some tests with your classes, to see if they adhere to these good practices and try to get a better design, avoiding inheritance.
 

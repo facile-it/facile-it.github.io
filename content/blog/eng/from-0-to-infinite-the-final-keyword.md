@@ -34,13 +34,13 @@ The concept that expresses the keyword final is that a class can not be extended
 
 There are situations in which extension by inheritance is a good solution, others where it is not possible and others where it is wrong. The keyword final is a "tool" given to the programmer to express this decision.
 
-So when the consumer of the class will meet the keyword final, it will have to use different solutions from the inheritance. And this decision is imposed from the class designer.
+So when the consumer of the class will meet the keyword final, it will have to use different approach from the inheritance. And this decision is imposed from the class designer.
 
 Why someone should set such a strong constraint?. The answers are many, all aim of having a robust,  and more manageable code-base. For example to avoid the proliferation of infinite hierarchies of classes such as VCL (https://en.wikipedia.org/wiki/Visual_Component_Library), which are difficult to extend and maintain. In this case, even being a well-made library, the use of inheritance has been used a lot. 
 
 Also I use final is to reduce the API surface that needs to be covered by BC breaks avoidance in a distributed library.
 
-Further to use **final** in some cases forces adopt the interfaces, by testing, for example, this is a positive side effect brought indirectly by the use of this keyword.
+Further to use **final** in some cases forces adopt the interfaces, by testing for example, this is a positive side effect brought indirectly by the use of this keyword.
 
 When we meet a class with the keyword final, who designed the class not allow us inherit from it, if we want to extend some behavior we must do it by composition or other mechanisms (like events, or plugins). 
 
@@ -110,7 +110,8 @@ I invite you, however, to do some tests with your classes, to see if they adhere
 # The concrete example, break the immutable object 
 
 Let's see some example where the **final** keyword could be the right choice. 
-Through **final** we create a immutable object with minimal effort.
+Through **final** we create a immutable object with minimal effort. This is only a **POC** to show how **final** works, there are many ways to resolve this problem. 
+
 Let's go see some code.
 
 ```php
@@ -141,7 +142,7 @@ echo $one->getValue(); //Pluto
 try it! **[break the immutable object] (https://3v4l.org/CiHPG)**
 
 This problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. 
-Another way to fix, is to create a `named constuctor` and make the `__constructor` private. 
+_Another way to fix, is to create a `named constuctor` and make the `__constructor` private_. 
 let's do it with the first solution!
 
 # The concrete example, break the immutable object first fix

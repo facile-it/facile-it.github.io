@@ -311,7 +311,7 @@ For example, during review a diff with the removal of **final** keyword, it coul
 
 This problem is solved in php by using the annotation @Final, even if it does not have the same validity as a language keyword. However, nowadays, with Ide inspectors, and with static analysis tools like PhpStan (https://phpstan.org/blog), Psalm (https://psalm.dev/docs/) the annotation is fully supported and it works properly.
 
-A point to disadvantage is that it is considered an instrument too coarse to be effective. 
+A downside of the final keyword is that it is considered too coarse an instrument to be effective.
 A developer can simply remove the **final** keyword and then do wrong things!. 
 
 I not agree with this. Too many times I saw to use wrong the inheritance, so I think that this is useful for beginner but also a more senior developer.

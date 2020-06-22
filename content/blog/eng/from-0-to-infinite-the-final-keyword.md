@@ -307,7 +307,7 @@ try it! **[immutable object] (https://3v4l.org/OsOoW)**
 Obviously it is not always all pink and flowers, not always literature especially in our work, it is perfectly suited to all needs. 
 What I want to point out is that in some cases **final** can be a good ally and can help us to simplify the design.  
 Using **final** keyword leads programmers to make a round of additional reasoning, to pay more attention to the use of the class. 
-For example, during review a diff with the removal of **final** keyword, it could lead to useful comments to find different solutions. 
+For example, during review, a diff with the removal of final keyword could lead to useful comments to find different solutions
 
 This problem is solved in php by using the annotation @Final, even if it does not have the same validity as a language keyword. However, nowadays, with Ide inspectors, and with static analysis tools like PhpStan (https://phpstan.org/blog), Psalm (https://psalm.dev/docs/) the annotation is fully supported and it works properly.
 

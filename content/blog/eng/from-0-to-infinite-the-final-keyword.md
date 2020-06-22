@@ -235,7 +235,7 @@ echo $three->getValue(); //the value is: Pippo and Minny -
 ```
 try it! **[break the immutable object] (https://3v4l.org/KpnfR)**
 
-It still does not work, ok now we definitely correct promised!
+It doesn't work yet. Ok, now we're going to fix it, I promise!
 The problem is that inheritance breaks the encapsulation so a good solution in this case is to use **final**!.
 **the definitive version**
 

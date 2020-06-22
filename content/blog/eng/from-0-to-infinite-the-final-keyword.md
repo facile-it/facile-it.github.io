@@ -83,8 +83,8 @@ For this reason, before creating subclasses we should ask ourselves questions li
 
 - is my derived class of the same type as the base class?
 - I can use the derived class of base where requireds a base class without having "strange" behaviors in the code at runtime?
-- is my base class prepared to be derived?
-- the enhancements made by the subclass are primarily additive?
+- Is my base class prepared to be derived?
+- Are the enhancements made by the subclass primarily additive?
 
 If the answers to these questions are negative, using inheritance in this use case it could lead us to create complex and unmanageable hierarchies. 
 

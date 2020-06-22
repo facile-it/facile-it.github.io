@@ -86,7 +86,7 @@ For this reason, before creating subclasses we should ask ourselves questions li
 - Is my base class prepared to be derived?
 - Are the enhancements made by the subclass primarily additive?
 
-If the answers to these questions are negative, using inheritance in this use case it could lead us to create complex and unmanageable hierarchies. 
+If the answers to these questions are negative, using inheritance could lead to complex and unmanageable hierarchies
 
 Now some basic example of wrong use of inheritance:
 ```php

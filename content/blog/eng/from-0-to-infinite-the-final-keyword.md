@@ -79,7 +79,7 @@ I used it as an example since it is specific to the design of hierarchies.
 
 I do not want to write an article on how to respect the development according to **Liskov** in the net there is a lot of literature. I would just like to emphasize that building a hierarchy of objects is not easy, that more the hierarchy is deep then more we are faced with design problems and **final** helps use to prevent this. 
 
-For this reason, before creating subclasses we should ask ourselves questions such as these or similar:
+For this reason, before creating subclasses we should ask ourselves questions like the following or similar:
 
 - is my derived class of the same type as the base class?
 - I can use the derived class of base where requireds a base class without having "strange" behaviors in the code at runtime?

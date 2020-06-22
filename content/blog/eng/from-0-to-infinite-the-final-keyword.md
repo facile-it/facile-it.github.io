@@ -181,7 +181,7 @@ $two->__construct('Pluto'); // \BadMethodCallException
 echo $two->getValue();
 ```
 
-Now we are happy and we have our immutable object, are we sure?, mmm no… look here! 
+Now we are happy and we have our immutable object. Are we sure? Mmm no… have a look at here!
 
 # The concrete example, break the immutable object the second way
 

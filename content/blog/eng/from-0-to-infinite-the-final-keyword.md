@@ -147,7 +147,7 @@ try it! **[break the immutable object] (https://3v4l.org/CiHPG)**
 
 This problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. 
 _Another way to fix it, is to create a `named constuctor` and make the `__constructor` private_. 
-let's do it with the first solution!
+let's do it using the first solution!
 
 # The concrete example, break the immutable object first fix
 

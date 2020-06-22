@@ -304,8 +304,8 @@ try it! **[immutable object] (https://3v4l.org/OsOoW)**
 - [Final classes by default] (https://github.com/symfony/symfony/issues/15233)
 - [Final classes: Open for Extension, Closed for Inheritance] (http://verraes.net/2014/05/final-classes-in-php/)
 
+Obviously, it isn’t all puppy dogs and rainbows. Technical literature does not perfectly suit to all needs, especially in our field.
 
-Obviously it is not always all pink and flowers, not always literature especially in our work, it is perfectly suited to all needs. 
 What I want to point out is that in some cases **final** can be a good ally and can help us to simplify the design.  
 Using **final** keyword leads programmers to make a round of additional reasoning, to pay more attention to the use of the class. 
 For example, during review, a diff with the removal of final keyword could lead to useful comments to find different solutions

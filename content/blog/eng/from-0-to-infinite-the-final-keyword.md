@@ -97,7 +97,7 @@ class Stack extends ArrayList {
 }
 ```
 
-Why ? The Stack class inheriting from ArrayList will have a lot of additional methods not related to the concept of ArrayList (e.g. push and pop).
+Why is it wrong? Because the Stack class inheriting from ArrayList will have a lot of additional methods that are not related to the concept of ArrayList (e.g. push and pop).
 
 In the previous example two main errors have been made, first error a Stack IS NOT an Array, second problem, is the cross-domain inheritance relationship. Simply, our domain classes must use implementations not to inherit them, in our example, stack was a concept of domain (Focusing only on reusing code can be a problem).
 

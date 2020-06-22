@@ -298,7 +298,7 @@ echo $four->getValue();
 try it! **[immutable object] (https://3v4l.org/OsOoW)**
 
 
-… Some links in-depth study
+… Here are some links to deepen the topic
 
 - [Final or not final] (https://github.com/thephpleague/period/issues/54) 
 - [Final classes by default] (https://github.com/symfony/symfony/issues/15233)

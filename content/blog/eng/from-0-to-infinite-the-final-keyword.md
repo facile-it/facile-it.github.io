@@ -105,7 +105,7 @@ In the previous example two main errors have been made:
  2. The cross-domain inheritance relationship.
 Our domain classes must use implementations not to inherit them. In the example, stack was a concept of domain (focusing on reusing code only can be a problem).
 
-You are probably thinking that the OOP is not keeping its promise. 
+You will be probably thinking that the OOP is not keeping its promise.
 However, let us remember that we are programming in OOP (Object Oriented Programming) not in OOI (Object Oriented Inheritance). There is always a trade off between code reuse and good design. 
 Inheritance should be mostly used for good design, for code reuse we go with composition.
 

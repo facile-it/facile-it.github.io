@@ -315,7 +315,7 @@ This problem is solved in php by using the annotation @Final, even if it does no
 A downside of the final keyword is that it is considered too coarse an instrument to be effective.
 A developer can simply remove the **final** keyword and then do wrong things!. 
 
-I not agree with this. Too many times I saw to use wrong the inheritance, so I think that this is useful for beginner but also a more senior developer.
+I do not agree with this. I've seen misuse of inheritance many times. Therefore, I think that using the **final** keyword is useful both for beginners and senior developers.
 
 To support the last topics I add some links on discussions against the use of **final**.
 

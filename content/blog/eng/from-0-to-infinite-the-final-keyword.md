@@ -107,7 +107,7 @@ Our domain classes must use implementations not to inherit them. In the example,
 
 You will be probably thinking that the OOP is not keeping its promise.
 However, let us remember that we are programming in OOP (Object Oriented Programming) not in OOI (Object Oriented Inheritance). There is always a trade off between code reuse and good design. 
-Inheritance should be mostly used for good design, for code reuse we go with composition.
+Inheritance should be mostly used for good design, for code reuse we choose composition.
 
 I invite you, however, to do some tests with your classes, to see if they adhere to these good practices and try to get a better design, avoiding inheritance.
 

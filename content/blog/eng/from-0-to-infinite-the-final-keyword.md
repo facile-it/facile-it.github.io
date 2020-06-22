@@ -64,7 +64,7 @@ The canonical statement is the following:
 
 > The concept of this principle was introduced by Barbara **Liskov** in a 1987 conference keynote and later published in a paper together with Jannette Wing in 1994. 
 
-The more precise definition:
+This is a more precise definition:
 >“if S is a subtype of T, then objects of type T in a program may be replaced with objects of type S without altering any of >the desirable properties of that program.”
 
 Link to orginal paper: https://dl.acm.org/doi/pdf/10.1145/62138.62141

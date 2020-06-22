@@ -334,5 +334,5 @@ The topic is very complex, this article aimed at giving a general overview of it
 
 From my point of view the use of **final** can help to improve design. 
 I would not write all my class with **final** but i'd start from the simplest cases: value objects, algorithms, patterns like the template method etc.  
-In any case, the **final** can be removed with with due precautions and, if nothing else, using it has forcibly added one more step to the analysis process."
+In any case, the **final** can be removed with with due precautions and, if nothing else, using it has forcibly added one more step to the analysis process.
 

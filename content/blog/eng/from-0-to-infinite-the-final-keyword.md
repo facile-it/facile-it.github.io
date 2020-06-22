@@ -75,7 +75,7 @@ Link to orginal paper: https://dl.acm.org/doi/pdf/10.1145/62138.62141
 > - Objects should be replaceable with instances of their subtypes without altering the correctness of that program
 > - Not add restriction in an overridden method if that restriction doesn't exist in baseline implementation
 
-I have used it like as example because is specifically for the design of hierarchies.
+I used it as an example since it is specific to the design of hierarchies.
 
 I do not want to write an article on how to respect the development according to **Liskov** in the net there is a lot of literature. I would just like to emphasize that building a hierarchy of objects is not easy, that more the hierarchy is deep then more we are faced with design problems and **final** helps use to prevent this. 
 

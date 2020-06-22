@@ -313,7 +313,8 @@ There are also some points against **final**. Testing becomes more complex as cl
 A solution to this problem is solved in php, using the annotation **@final**, even if it does not have the same validity as a language keyword. However at nowadays with Ide inspectors, and with static analysis tools like PhpStan (https://phpstan.org/blog), Psalm(https://psalm.dev/docs/) the annotation is fully supporteds and work properly.
 
 A point to disadvantage is that it is considered an instrument too coarse to be effective. 
-A developer can simply to remove the **final** keyword and then do wrong things!. 
+A developer can simply remove the **final** keyword and then do wrong things!. 
+
 I not agree with this. Too many times I saw to use wrong the inheritance, so I think that this is useful for beginner but also a more senior developer.
 
 To support the last topics I add some links on discussions against the use of **final**.

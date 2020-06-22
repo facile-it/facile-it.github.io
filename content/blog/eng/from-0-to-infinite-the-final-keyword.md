@@ -58,7 +58,7 @@ Not always this is possible, not always this is accepted.
 Regarding final, in my opinion, one of the principle that best represents it is LSP.
 
 Let's see what **Liskov principle** says in more detail. 
-The canonical statement says the following:
+The canonical statement is the following:
 
 > "you should always be able to substitute the parent class with its derived class without any undesirable behaviour"
 

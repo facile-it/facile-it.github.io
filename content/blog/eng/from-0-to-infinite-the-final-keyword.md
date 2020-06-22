@@ -309,8 +309,7 @@ What I want to point out is that in some cases **final** can be a good ally and 
 Using **final** keyword leads programmers to make a round of additional reasoning, to pay more attention to the use of the class. 
 For example, during review a diff with the removal of **final** keyword, it could lead to useful comments to find different solutions. 
 
-There are also some points against **final**. Testing becomes more complex as classes with **final** can not be mocked. 
-A solution to this problem is solved in php, using the annotation **@final**, even if it does not have the same validity as a language keyword. However at nowadays with Ide inspectors, and with static analysis tools like PhpStan (https://phpstan.org/blog), Psalm(https://psalm.dev/docs/) the annotation is fully supporteds and work properly.
+This problem is solved in php by using the annotation @Final, even if it does not have the same validity as a language keyword. However, nowadays, with Ide inspectors, and with static analysis tools like PhpStan (https://phpstan.org/blog), Psalm (https://psalm.dev/docs/) the annotation is fully supported and it works properly.
 
 A point to disadvantage is that it is considered an instrument too coarse to be effective. 
 A developer can simply remove the **final** keyword and then do wrong things!. 

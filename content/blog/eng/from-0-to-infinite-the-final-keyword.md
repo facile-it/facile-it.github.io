@@ -335,7 +335,7 @@ Other links that I used as a starting point for this article
 
 # Conclusion
 
-The theme is quite complex, this article wants to be a general overview. I hope it is useful as a starting point to deepen and begin to evaluate when to use **final** in our classes.
+The topic is very complex, this article aimed at giving a general overview of it. I hope it will be useful as a starting point to deepen the subject and to evaluate when to use **final** in our classes.
 
 From my point of view the use of keyword **final** can help to improve design. 
 I would not write all my class with **final** but i'd start from the simplest cases: value objects, algorithms, patterns like the template method etc.  

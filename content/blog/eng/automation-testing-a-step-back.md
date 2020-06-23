@@ -20,7 +20,7 @@ After some research I came to the conclusion that the benefits of the tests are 
 
 Let's focus on one of them at the time and analyze it.
 
-#### Avoid regression
+## Avoid regression
 
 > When you implemented a feature in your app, you likely ran the code to verify that it worked as expected. You performed a test, albeit a manual test. As you continued to add and update features, you probably also continued to run your code and verify it works. But doing this manually every time is tiring, prone to mistakes, and does not scale.  
 Computers are great at scaling and automation! So developers at companies large and small write automated tests, which are tests that are run by software and do not require you to manually operate the app to verify the code works.
@@ -31,11 +31,11 @@ So we write automated tests to save time in the future, it's an investment. We s
 
 If we imagine a big project with many developers it becomes more clear, we cannot check manually everything every time (if we want to release often or with simplicity). So if we want to release soon and we have no automation tests we end up testing only what seems most important at the moment, exposing ourselves to the risk of regression.
 
-#### Count as documentation
+## Count as documentation
 
 This is an easy point. Documentation can be important (less than working software, see agile manifesto) but it's a pain for most and takes a lot of time to do it well. But if tests are written in a certain way they can have the same information of product documentation, that evolves and adapts as the software grows. This way the software can be self-documented.
 
-#### Help write better code
+## Help write better code
 
 This is a very generic sentence, what do I mean by "better code"? First say that software as every other built thing has a quality. A program can be better than another that does the same things based on some parameters (performance, usability and many others), we can divide these parameters into 2 big groups: the one that users notice and the one that users don't.
 
@@ -47,13 +47,13 @@ Test helps to increase quality because to make a portion of code testable we are
 
 This doesn't mean that untested code have worse distribution of responsibilities. But testing can help to achieve this goal putting us in a position where we need to rethink our code structure.
 
-#### Find bug during development
+## Find bug during development
 
 I think it's uncommon but can happen to find a bug out of an automated test during development. It happens because usually the tested cases in automated tests are more structured than manual tests. Precisely because we are forced to write them and we know that they will remain written it happens that we pay more attention to them. A developer rarely writes all the manual test cases to be performed and then runs them based on how he wrote them. For this reason, the process of writing an automatic test finds problems that may go unnoticed during a manual test.
 
 Contrary to the first two points the benefits of this last two are immediate and do not increase over time, so a strategy could be to delete the test after the development is done. I know that it sounds weird but it makes sense if we don't consider the other points.
 
-#### Honorable mentions
+## Honorable mentions
 
 There is another point that usually people talk about as a benefit of working on a well-tested project: it is confidence; since developing while having your shoulders covered by tests it's just mentally lighter.
 
@@ -65,7 +65,7 @@ We have seen what are the pros of automation testing, now let's examine what are
 
 Tests come at a cost: they can slow down the development process, they can slow down the CI, they can make harder maintenance and refactoring, they can make write worst code.
 
-#### Slow down the development process
+## Slow down the development process
 
 It has happened to me several times that writing tests has consumed me much more time and effort than developing the tested feature. It can happen due to inexperience, or due to technical limitations for which there is a greater complexity in writing tests.
 
@@ -77,19 +77,19 @@ So focusing only on the first of the benefits, for simplicity, we compare the ti
 
 To evaluate it, I refer to this scheme found on internet.
 
-#### Slow down the CI
+## Slow down the CI
 
 Having a test suite makes sense when it is used in a continuous integration system. Typically tests are fairly fast when taken individually, but these can start to become a problem when they are in large quantities.
 
 This may seem like a marginal problem but having a slow CI is problematic. So be careful because at the beginning they can be like grains of sand and when the project becomes very large, the CI can become like a sandstorm and block the development process like a slow build.
 
-#### Make harder maintenance and refactoring
+## Make harder maintenance and refactoring
 
 This is the case when a change to the codebase (like refactoring an implementation detail or adding a new feature) also implies changes to the test code even if the previous tested behavior doesn't change.
 
 This means that your test code is heavily coupled with your tested code. And can make frustrating, slow and inefficient working on a project.
 
-#### Make write worst code
+## Make write worst code
 
 This point is the exact opposite of the one written above on the list of the pros. Indeed to make a portion of code testable we are often forced to restructure our code, but we can harm doing that.
 

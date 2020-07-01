@@ -1,12 +1,13 @@
 ---
 authors: ["bruce"]
-date: "2018-12-04"
-draft: true
-share: false
+date: "2020-06-01"
+draft: false
+share: true
 categories: [English, php, oop]
 title: "From zero to infinite: the Final keyword"
 type: "post"
 languageCode: "en-EN"
+twitterImage: /images/from-0-to-infinite-the-final-keyword/share.png
 toc: true
 ---
 

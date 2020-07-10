@@ -41,7 +41,7 @@ Also, I use **final** to reduce the API surface that needs to be covered by BC b
 
 Furthermore, the use of **final** forces the adoption of interfaces, in tests for example, which is a positive side effect.
 
-When we meet a class with the keyword **final**, who designed the class does not allow us to inherit from it: if we want to extend some behavior we must do it by composition or other mechanisms ([like events PSR-14](https://www.php-fig.org/psr/psr-14/), or plugins, etc.). 
+When we meet a class with the keyword **final**, who designed the class does not allow us to inherit from it: if we want to extend some behavior we must do it by composition or other mechanisms ([like PSR-14 events](https://www.php-fig.org/psr/psr-14/), or plugins, etc.). 
 
 I think that this is a good feature of the language. In fact, in relation to the time used for the analysis of the design class, through **final** we provide important information on how it should be used, simplifying the effort of the developer.
 

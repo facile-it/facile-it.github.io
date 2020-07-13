@@ -16,11 +16,11 @@ toc: true
 Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc. 
 I apply a technique invented by me named: **"Google from zero to infinite"**.
 
-Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. But most of the time I find very interesting documents, otherwise difficult to reach. This time I decided to use the keyword final of PHP.
+Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. However, most of the time I find very interesting documents, otherwise difficult to reach. This time I decided to use the final keyword of PHP.
 
 # The concept behind final keyword
  
-The keyword final was introduced in version 5 of php. 
+The final keyword was introduced in version 5 of php. 
 
 The manual says: 
 
@@ -31,7 +31,7 @@ Java has the same keyword, c# too but it is called "**sealed**" instead of "**fi
 
 First of all we will try to understand what it is for, then we will try to do some additional reasoning, and finally we will talk about of comments on the web.
 
-The concept that expresses the keyword final is that a class can not be extended, the decision must be taken by the programmer in the design stage utilizing just the **final**. 
+The concept that expresses the final keyword is that a class cannot be extended, the decision must be taken by the programmer in the design stage utilizing just the **final**. 
 
 There are situations in which extension by inheritance is a good solution, others where it is not possible and others where it is wrong. The keyword **final** is a "tool" given to the programmer to express this constraint.
 
@@ -47,11 +47,11 @@ I think that this is a good feature of the language. In fact, in relation to the
 
 # S.O.L.I.D, Liskov and final
 
-Architectures development isn't a trivial task, many programmers use inheritance as solution to all problems.  
+Developing an architecture isn't a trivial task, many programmers use inheritance as solution to all problems.  
 
-There are many principles and guidelines to help to develop good design 
+There are many principles and guidelines that help to develop good design 
 like S.O.L.I.D (https://en.wikipedia.org/wiki/SOLID), design patterns, (https://en.wikipedia.org/wiki/Design_pattern) etc.
-But the problem is that these principles are difficult to apply, they almost always lead to writing more code. 
+However, the problem is that these principles are difficult to apply, they almost always lead to writing more code. 
 Not always this is possible, not always this is accepted. 
 
 Regarding **final**, in my opinion, one of the principle that best represents it is LSP.
@@ -81,7 +81,7 @@ For this reason, before creating subclasses, we should ask ourselves questions l
 
 If the answers to these questions are negative, using inheritance could lead to complex and unmanageable hierarchies.
 
-Now some basic example of wrong use of inheritance:
+I will now present some examples of misuse of inheritance:
 ```php
 use App\Domain\Model;
 class Stack extends ArrayList {

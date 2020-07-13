@@ -66,7 +66,7 @@ The canonical statement is the following:
 This is a more precise definition:
 >“if S is a subtype of T, then objects of type T in a program may be replaced with objects of type S without altering any of the desirable properties of that program.”
 
-Link to orginal paper: https://dl.acm.org/doi/pdf/10.1145/62138.62141
+Link to original paper: https://dl.acm.org/doi/pdf/10.1145/62138.62141
 
 I used it as an example since it is specific to the design of hierarchies.
 
@@ -137,7 +137,7 @@ $one->__construct('Bar');
 echo $one->getValue(); //Bar
 ```
 
-try it! **[break the immutable object](https://3v4l.org/CiHPG)**
+try it! **[break the immutable object](https://3v4l.org/AWndR)**
 
 This problem is easy to solve, we must put a flag in the constructor and if it is true, throw an exception. 
 _Another way to fix it would be to create a `named constuctor` and make the `__constructor` private_. 
@@ -218,23 +218,23 @@ class AnotherClassToBreakImmutableObject extends SomeImmutableObject
 
     public function change(): void
     {
-        $this->someString .= ' and Bar';
+        $this->someString .= ' and Baz';
     }
 }
 
 $three = new AnotherClassToBreakImmutableObject('Foo');
 echo $three->getValue(); //Foo
 echo $three->change();
-echo $three->getValue(); //the value is: Foo and Bar -
+echo $three->getValue(); //the value is: Foo and Baz -
 ```
-try it! **[break the immutable object](https://3v4l.org/KpnfR)**
+try it! **[break the immutable object](https://3v4l.org/JmkoK)**
 
 It doesn't work yet. Ok, now we're going to fix it, I promise!
 The problem is that inheritance breaks encapsulation.
 
 **the definitive version**
 
-# The concrete example: definitive fix with final keyword
+# The concrete example: a definitive fix with final keyword
 
 ```php
 <?php
@@ -277,7 +277,7 @@ class TryToBreakImmutableObject extends SomeImmutableObject
 
     public function change(): void
     {
-        $this->someString .= ' and Bar';
+        $this->someString .= ' and Baz';
     }
 }
 
@@ -289,7 +289,7 @@ echo $four->getValue();
 
 ```PHP Fatal error:  Class BreakImmutableObject may not inherit from final class (SomeImmutableObject)```
 
-try it! **[immutable object](https://3v4l.org/OsOoW)**
+try it! **[immutable object](https://3v4l.org/3vjQ0)**
 
 
 … Here are some links to deepen the topic:

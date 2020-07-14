@@ -45,7 +45,7 @@ If we encounter a class with the `final` keyword, it means that the designer of 
 
 I think that this is a good features of the language. In fact, by using the `final` keyword we provide important information on how the class should be used. Therefore, we reduce the effort of developers since they will spend less time analysing the design class.
 
-# S.O.L.I.D, Liskov and `final`
+# S.O.L.I.D, Liskov and final
 
 Developping an architecture isn't a trivial task, many programmers use inheritance as a solution to all problems.  
 

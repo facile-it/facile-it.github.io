@@ -16,7 +16,7 @@ toc: true
 Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc. 
 I apply a technique invented by me named: **"Google from zero to infinite"**.
 
-Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. But most of the time I find very interesting documents, otherwise difficult to reach. This time I decided to use the keyword final of PHP.
+Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. However, most of the time I find very interesting documents, otherwise difficult to reach. This time I decided to use the `final` keyword of PHP.
 
 # The concept behind final keyword
  
@@ -49,11 +49,11 @@ I think that this is a good features of the language. In fact, by using the `fin
 
 # S.O.L.I.D, Liskov and final
 
-Developping an architecture isn't a trivial task, many programmers use inheritance as a solution to all problems.  
+Developing an architecture isn't a trivial task, many programmers use inheritance as solution to all problems.  
 
-There are many principles and guidelines that help developping good design. 
+There are many principles and guidelines that help to develop good design 
 like S.O.L.I.D (https://en.wikipedia.org/wiki/SOLID), design patterns, (https://en.wikipedia.org/wiki/Design_pattern) etc.
-However, the problem is that these principles are difficult to apply since they frequently lead to writing more code. 
+However, the problem is that these principles are difficult to apply, they almost always  lead to writing more code. 
 Not always this is possible, not always this is accepted. 
 
 In my opinion, one of the principles that best represents the use of `final` is LSP.
@@ -66,15 +66,15 @@ The canonical statement is the following:
 > The concept of this principle was introduced by Barbara **Liskov** in a 1987 conference keynote and later published in a paper together with Jannette Wing in 1994. 
 
 This is a more precise definition:
->“if S is a subtype of T, then objects of type T in a program may be replaced with objects of type S without altering any of >the desirable properties of that program.”
+>“if S is a subtype of T, then objects of type T in a program may be replaced with objects of type S without altering any of the desirable properties of that program.”
 
-Link to orginal paper: https://dl.acm.org/doi/pdf/10.1145/62138.62141
+Link to original paper: https://dl.acm.org/doi/pdf/10.1145/62138.62141
 
 I used it as an example since it is specific to the design of hierarchies.
 
-I do not want to write an article about developping in accordance with **Liskov principle**, there is already a lot of literature about it on the net. I would just like to emphasize that building a hierarchy of objects is not easy. The deeper the hierarchy, the more we will face design problems. `final` helps use to prevent these problems.
+I do not want to write an article about developping in accordance with **Liskov principle**, there is already a lot of literature about it on the web. I would just like to emphasize that building a hierarchy of objects is not easy: more the hierarchy is deep and more we are faced with design problems. `final` helps us to prevent these problems.
 
-For this reason, before creating subclasses we should ask ourselves questions like the following or similar:
+For this reason, before creating subclasses, we should ask ourselves questions like the following or similar:
 
 - is my derived class of the same type as the base class?
 - can I use a derived class instead of its base class without having "strange" behaviors in the code at runtime?
@@ -92,14 +92,14 @@ class Stack extends ArrayList {
 }
 ```
 
-Why is it wrong? Because the Stack class inheriting from ArrayList will have a lot of additional methods that are not related to the concept of ArrayList (e.g. push and pop).
+Why is it wrong? Because the Stack class, inheriting from ArrayList, will have a lot of additional methods that are not related to the concept of ArrayList (e.g. push and pop).
 
 In the previous example two main errors have been made:
 
  1. Stack is NOT an Array
  2. The cross-domain inheritance relationship
  
-Our domain classes must use implementations not to inherit them. In the example, stack was a concept of domain (focusing only on reusing code can be a problem).
+Our domain classes must use implementations and not inherit them. In the example, stack was a concept of domain (focusing only on reusing code can be a problem).
 
 You will be probably thinking that the OOP is not keeping its promise.
 However, let us remember that we are programming in OOP (Object Oriented Programming) not in OOI (Object Oriented Inheritance). There is always a trade off between code reuse and good design. 
@@ -110,9 +110,9 @@ I invite you, however, to do some tests with your classes to see if they adhere 
 # The concrete example, break the immutable object 
 
 Let's see some example where the `final` could be the right choice. 
-Through `final` we create a immutable object with minimal effort. This is only a **POC** to show how `final` works, there are many ways to resolve this problem. 
+Through `final` we create a immutable object with minimal effort. This is only a **POC** to show how `final` works. There are many ways to resolve this problem. 
 
-Let's go see some code.
+Let's go and see some code.
 
 ```php
 class SomeImmutableObject
@@ -141,8 +141,8 @@ echo $one->getValue(); //Bar
 
 try it! **[break the immutable object] (https://3v4l.org/AWndR)**
 
-This problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. 
-__Another way to fix it would be to create a `named constuctor` and make the `__constructor` private_. 
+This problem is easy to solve, we must put a flag in the constructor and if it is true, throw an exception. 
+_Another way to fix it would be to create a `named constuctor` and make the `__constructor` private_. 
 Let's do it using the first solution!
 
 # The concrete example, break the immutable object: first fix
@@ -224,19 +224,19 @@ class AnotherClassToBreakImmutableObject extends SomeImmutableObject
     }
 }
 
-$three = new AnotherClassToBreakImmutableObject('Pippo');
-echo $three->getValue(); //Pippo
+$three = new AnotherClassToBreakImmutableObject('Foo');
+echo $three->getValue(); //Foo
 echo $three->change();
-echo $three->getValue(); //the value is: Pippo and Minny -
+echo $three->getValue(); //the value is: Foo and Baz -
 ```
-try it! **[break the immutable object] (https://3v4l.org/KpnfR)**
+try it! **[break the immutable object] (https://3v4l.org/JmkoK)**
 
 It doesn't work yet. Ok, now we're going to fix it, I promise!
 The problem is that inheritance breaks encapsulation. Therefore, in this case using `final` is a good solution!.
 
 **the definitive version**
 
-# The concrete example definitive fix with final keyword
+# The concrete example: a definitive fix with final keyword
 
 ```php
 <?php

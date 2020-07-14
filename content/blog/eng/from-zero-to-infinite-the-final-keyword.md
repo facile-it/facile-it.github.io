@@ -131,21 +131,21 @@ class SomeImmutableObject
 }
 ```
 
-Let's concentrate, can we modify this object after it has been created? …. Yes we can!
+Let's concentrate: can we modify this object after it has been created? …. Yes we can!
 ```php
-$one = new SomeImmutableObject('Pippo');
-echo $one->getValue(); //Pippo
-$one->__construct('Pluto'); 
-echo $one->getValue(); //Pluto
+$one = new SomeImmutableObject('Foo');
+echo $one->getValue(); //Foo
+$one->__construct('Bar'); 
+echo $one->getValue(); //Bar
 ```
 
-try it! **[break the immutable object] (https://3v4l.org/CiHPG)**
+try it! **[break the immutable object] (https://3v4l.org/AWndR)**
 
 This problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception. 
-_Another way to fix it, is to create a `named constuctor` and make the `__constructor` private_. 
-let's do it using the first solution!
+__Another way to fix it would be to create a `named constuctor` and make the `__constructor` private_. 
+Let's do it using the first solution!
 
-# The concrete example, break the immutable object first fix
+# The concrete example, break the immutable object: first fix
 
 ```php
 <?php declare(strict_types=1);
@@ -158,7 +158,7 @@ class SomeImmutableObject
     public function __construct(string $value)
     {
         if (true === $this->flagCreate) {
-            throw new \BadMethodCallException('This is an immutable object has already create.');
+            throw new \BadMethodCallException('This immutable object has already been created.');
         }
 
         $this->someString = $value;
@@ -171,15 +171,15 @@ class SomeImmutableObject
     }
 }
 
-$two = new SomeImmutableObject('Pippo');
-echo $two->getValue(); //Pippo
-$two->__construct('Pluto'); // \BadMethodCallException 
-echo $two->getValue();
+$two = new SomeImmutableObject('Foo');
+echo $two->getValue(); //Foo
+$two->__construct('Bar'); // \BadMethodCallException 
+echo $two->getValue(); //Bar
 ```
 
 Now we are happy and we have our immutable object. Are we sure? Mmm no… have a look at here!
 
-# The concrete example, break the immutable object the second way
+# The concrete example, break the immutable object: the second way
 
 ```php
 <?php
@@ -192,7 +192,7 @@ class SomeImmutableObject
     {
 
         if ($this->flagCreate === true) {
-            throw new \BadMethodCallException('This is an immutable object has already create.');
+            throw new \BadMethodCallException('This immutable object has already been created.');
         }
 
         $this->someString = $value;
@@ -220,7 +220,7 @@ class AnotherClassToBreakImmutableObject extends SomeImmutableObject
 
     public function change(): void
     {
-        $this->someString .= ' and Minny';
+        $this->someString .= ' and Baz';
     }
 }
 
@@ -283,15 +283,15 @@ class TryToBreakImmutableObject extends SomeImmutableObject
     }
 }
 
-$four = new TryToBreakImmutableObject('Pippo');
-echo $four->getValue(); //Pippo
+$four = new TryToBreakImmutableObject('Foo');
+echo $four->getValue(); //Foo
 echo $four->change();
 echo $four->getValue();
 ```
 
 ```PHP Fatal error:  Class BreakImmutableObject may not inherit from final class (SomeImmutableObject)```
 
-try it! **[immutable object] (https://3v4l.org/OsOoW)**
+try it! **[immutable object] (https://3v4l.org/3vjQ0)**
 
 
 … Here are some links to deepen the topic
@@ -320,7 +320,7 @@ To support the last topics I add some links on discussions against the use of `f
 - [Please stop using "final" classes] (https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!msg/dddinphp/r9kZ5eI6eiw/TpopVjVv-VgJ)
 
 
-Other links that I used as a starting point for this article
+Other links that I used as a starting point for this article:
 
 - https://matthiasnoback.nl/2018/09/final-classes-by-default-why/
 - http://ocramius.github.io/blog/when-to-declare-classes-final/

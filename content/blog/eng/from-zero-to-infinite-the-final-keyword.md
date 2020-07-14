@@ -27,7 +27,7 @@ The manual says:
 >PHP 5 introduces the final keyword, which prevents child classes from overriding a method by prefixing the definition with final. 
 >If the class itself is being defined final then it cannot be extended.
 
--- [PHP: Final Keyword - Manual ] (https://www.php.net/manual/en/language.oop5.final.php)
+-- [PHP: Final Keyword - Manual](https://www.php.net/manual/en/language.oop5.final.php)
 
 Java and C# use the same keyword but it is called **sealed** instead of `final`. These keywords have more or less the same behavior: they prevent a class from being inherited.  In this article, we will discuss this bahavior only, even if some languages like Java support further behaviors in different contexts.
 
@@ -139,7 +139,7 @@ $one->__construct('Bar');
 echo $one->getValue(); //Bar
 ```
 
-try it! **[break the immutable object] (https://3v4l.org/AWndR)**
+try it! **[break the immutable object](https://3v4l.org/AWndR)**
 
 This problem is easy to solve, we must put a flag in the constructor and if it is true, throw an exception. 
 _Another way to fix it would be to create a `named constuctor` and make the `__constructor` private_. 
@@ -229,7 +229,7 @@ echo $three->getValue(); //Foo
 echo $three->change();
 echo $three->getValue(); //the value is: Foo and Baz -
 ```
-try it! **[break the immutable object] (https://3v4l.org/JmkoK)**
+try it! **[break the immutable object](https://3v4l.org/JmkoK)**
 
 It doesn't work yet. Ok, now we're going to fix it, I promise!
 The problem is that inheritance breaks encapsulation. Therefore, in this case using `final` is a good solution!.
@@ -291,14 +291,14 @@ echo $four->getValue();
 
 ```PHP Fatal error:  Class BreakImmutableObject may not inherit from final class (SomeImmutableObject)```
 
-try it! **[immutable object] (https://3v4l.org/3vjQ0)**
+try it! **[immutable object](https://3v4l.org/3vjQ0)**
 
 
 … Here are some links to deepen the topic
 
-- [Final or not final] (https://github.com/thephpleague/period/issues/54) 
-- [Final classes by default] (https://github.com/symfony/symfony/issues/15233)
-- [Final classes: Open for Extension, Closed for Inheritance] (http://verraes.net/2014/05/final-classes-in-php/)
+- [Final or not final](https://github.com/thephpleague/period/issues/54) 
+- [Final classes by default](https://github.com/symfony/symfony/issues/15233)
+- [Final classes: Open for Extension, Closed for Inheritance](http://verraes.net/2014/05/final-classes-in-php/)
 
 Obviously, it isn’t all puppy dogs and rainbows. Technical literature does not perfectly suit to all needs, especially in our field.
 
@@ -316,8 +316,8 @@ This problem is solved in php by using the annotation @Final, even if it does no
 
 To support the last topics I add some links on discussions against the use of `final`.
 
-- [Michael Feathers: It's time to deprecate final] (http://butunclebob.com/ArticleS.MichaelFeathers.ItsTimeToDeprecateFinal)
-- [Please stop using "final" classes] (https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!msg/dddinphp/r9kZ5eI6eiw/TpopVjVv-VgJ)
+- [Michael Feathers: It's time to deprecate final](http://butunclebob.com/ArticleS.MichaelFeathers.ItsTimeToDeprecateFinal)
+- [Please stop using "final" classes](https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!msg/dddinphp/r9kZ5eI6eiw/TpopVjVv-VgJ)
 
 
 Other links that I used as a starting point for this article:

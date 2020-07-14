@@ -27,25 +27,25 @@ The manual says:
 > Final Keyword. PHP 5 introduces the final keyword, which prevents child classes from overriding a method by prefixing the definition with final. 
 > If the class itself is being defined final then it cannot be extended. Note: Properties cannot be declared final, only classes and methods may be declared as final.
 
-Java and C# use the same keyword but it is called **sealed** instead of **final**. These keywords have more or less the same behavior: they prevent a class from being inherited.  In this article, we will discuss this bahavior only, even if some languages like Java support further behaviors in different contexts.
+Java and C# use the same keyword but it is called **sealed** instead of `final`. These keywords have more or less the same behavior: they prevent a class from being inherited.  In this article, we will discuss this bahavior only, even if some languages like Java support further behaviors in different contexts.
 
 In this article we will start by explaining the purpose of the final keyword. Then, we will try to do some additional reasoning. Finally, we will talk about comments found on the net.
 
 The concept expressed by the final keyword is that a class cannot be extended. The programmer must take this decision at the design stage by using this keyword.
 
-In some cases, extension by inheritance is a good solution while in some others it is either not possible or wrong. The keyword **final** is a "tool" given to the programmer to express this constraint.
+In some cases, extension by inheritance is a good solution while in some others it is either not possible or wrong. The keyword `final` is a "tool" given to the programmer to express this constraint.
 
 Why should someone set such a strong constraint?. The answers are many, all aim of having a robust, and more manageable code-base. For example to avoid the proliferation of infinite hierarchies of classes such as VCL (https://en.wikipedia.org/wiki/Visual_Component_Library), which are difficult to extend and maintain. In this case, even being a well-made library, the use of inheritance has been used a lot. 
 
-Furthermore, I use the final keyword to reduce the API surface API surface that needs to be covered by BC breaks avoidance in a distributed library.
+Furthermore, I use the `final` keyword to reduce the API surface API surface that needs to be covered by BC breaks avoidance in a distributed library.
 
-Furthermore, using final forces the adoption of interfaces for example, for testing. This is a positive side effect indirectly caused by the use of this keyword.
+Furthermore, using `final` forces the adoption of interfaces for example, for testing. This is a positive side effect indirectly caused by the use of this keyword.
 
-If we encounter a class with the final keyword, it means that the designer of the class doesn't want us to inherit from it. If we want to extend some behaviors, we must do it by composition or other mechanisms like events (PSR-14 https://www.php-fig.org/psr/psr-14 ) or plugins.
+If we encounter a class with the `final` keyword, it means that the designer of the class doesn't want us to inherit from it. If we want to extend some behaviors, we must do it by composition or other mechanisms like events (PSR-14 https://www.php-fig.org/psr/psr-14 ) or plugins.
 
-I think that this is a good features of the language. In fact, by using the final keyword we provide important information on how the class should be used. Therefore, we reduce the effort of developers since they will spend less time analysing the design class.
+I think that this is a good features of the language. In fact, by using the `final` keyword we provide important information on how the class should be used. Therefore, we reduce the effort of developers since they will spend less time analysing the design class.
 
-# S.O.L.I.D, Liskov and final
+# S.O.L.I.D, Liskov and `final`
 
 Developping an architecture isn't a trivial task, many programmers use inheritance as a solution to all problems.  
 
@@ -54,7 +54,7 @@ like S.O.L.I.D (https://en.wikipedia.org/wiki/SOLID), design patterns, (https://
 However, the problem is that these principles are difficult to apply since they frequently lead to writing more code. 
 Not always this is possible, not always this is accepted. 
 
-In my opinion, one of the principles that best represents the use of final is LSP.
+In my opinion, one of the principles that best represents the use of `final` is LSP.
 
 Let's see what **Liskov principle** says in more detail. 
 The canonical statement is the following:
@@ -70,7 +70,7 @@ Link to orginal paper: https://dl.acm.org/doi/pdf/10.1145/62138.62141
 
 I used it as an example since it is specific to the design of hierarchies.
 
-I do not want to write an article about developping in accordance with **Liskov principle**, there is already a lot of literature about it on the net. I would just like to emphasize that building a hierarchy of objects is not easy. The deeper the hierarchy, the more we will face design problems. Final helps use to prevent these problems.
+I do not want to write an article about developping in accordance with **Liskov principle**, there is already a lot of literature about it on the net. I would just like to emphasize that building a hierarchy of objects is not easy. The deeper the hierarchy, the more we will face design problems. `final` helps use to prevent these problems.
 
 For this reason, before creating subclasses we should ask ourselves questions like the following or similar:
 
@@ -107,8 +107,8 @@ I invite you, however, to do some tests with your classes to see if they adhere 
 
 # The concrete example, break the immutable object 
 
-Let's see some example where the **final** could be the right choice. 
-Through **final** we create a immutable object with minimal effort. This is only a **POC** to show how **final** works, there are many ways to resolve this problem. 
+Let's see some example where the `final` could be the right choice. 
+Through `final` we create a immutable object with minimal effort. This is only a **POC** to show how `final` works, there are many ways to resolve this problem. 
 
 Let's go see some code.
 
@@ -230,7 +230,7 @@ echo $three->getValue(); //the value is: Pippo and Minny -
 try it! **[break the immutable object] (https://3v4l.org/KpnfR)**
 
 It doesn't work yet. Ok, now we're going to fix it, I promise!
-The problem is that inheritance breaks encapsulation. Therefore, in this case using final is a good solution!.
+The problem is that inheritance breaks encapsulation. Therefore, in this case using `final` is a good solution!.
 
 **the definitive version**
 
@@ -300,22 +300,22 @@ try it! **[immutable object] (https://3v4l.org/OsOoW)**
 
 Obviously, it isn’t all puppy dogs and rainbows. Technical literature does not perfectly suit to all needs, especially in our field.
 
-What I want to point out is that in some cases **final** can be a good ally and can help us to simplify the design.  
-Using **final** leads programmers to make a round of additional reasoning, to pay more attention to the use of the class. 
-For example, during review, a diff with the removal of **final keyword** could lead to useful comments to find different solutions.
+What I want to point out is that in some cases `final` can be a good ally and can help us to simplify the design.  
+Using `final` leads programmers to make a round of additional reasoning, to pay more attention to the use of the class. 
+For example, during review, a diff with the removal of `final` could lead to useful comments to find different solutions.
 
-A downside of the final keyword is that it is considered too coarse an instrument to be effective.
-A developer can simply remove the **final** keyword and then do wrong things!. 
+A downside of the `final` keyword is that it is considered too coarse an instrument to be effective.
+A developer can simply remove the `final` keyword and then do wrong things!. 
 
-I do not agree with this. I've seen misuse of inheritance many times. Therefore, I think that using the final keyword is useful both for beginners and senior developers.
+I do not agree with this. I've seen misuse of inheritance many times. Therefore, I think that using the `final` keyword is useful both for beginners and senior developers.
 
-Another problem is that with some moccking library them don't work with **final class**. 
+Another problem is that with some moccking library them don't work with `final` class. 
 This problem is solved in php by using the annotation @Final, even if it does not have the same validity as a language keyword. However, nowadays, with Ide inspectors, and with static analysis tools like PhpStan (https://phpstan.org/blog), Psalm (https://psalm.dev/docs/) the annotation is fully supported and it works properly.
 
-To support the last topics I add some links on discussions against the use of **final**.
+To support the last topics I add some links on discussions against the use of `final`.
 
-- [Michael Feathers: It's time to deprecate final](http://butunclebob.com/ArticleS.MichaelFeathers.ItsTimeToDeprecateFinal)
-- [Please stop using "final" classes](https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!msg/dddinphp/r9kZ5eI6eiw/TpopVjVv-VgJ)
+- [Michael Feathers: It's time to deprecate final] (http://butunclebob.com/ArticleS.MichaelFeathers.ItsTimeToDeprecateFinal)
+- [Please stop using "final" classes] (https://groups.google.com/forum/?utm_medium=email&utm_source=footer#!msg/dddinphp/r9kZ5eI6eiw/TpopVjVv-VgJ)
 
 
 Other links that I used as a starting point for this article
@@ -331,9 +331,9 @@ Other links that I used as a starting point for this article
 
 # Conclusion
 
-The topic is very complex, this article aimed at giving a general overview of it. I hope it will be useful as a starting point to deepen the subject and to evaluate when to use **final** in our classes.
+The topic is very complex, this article aimed at giving a general overview of it. I hope it will be useful as a starting point to deepen the subject and to evaluate when to use `final` in our classes.
 
-From my point of view the use of **final** can help to improve design. 
-I would not write all my class with **final** but i'd start from the simplest cases: value objects, algorithms, patterns like the template method etc.  
-In any case, the final keyword can be removed with due precautions and, if nothing else, using it has forcibly added one more step to the analysis process.
+From my point of view the use of `final` can help to improve design. 
+I would not write all my class with `final` but i'd start from the simplest cases: value objects, algorithms, patterns like the template method etc.  
+In any case, the `final` keyword can be removed with due precautions and, if nothing else, using it has forcibly added one more step to the analysis process.
 

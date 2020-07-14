@@ -24,8 +24,10 @@ The keyword final was introduced in version 5 of php.
 
 The manual says: 
 
-> Final Keyword. PHP 5 introduces the final keyword, which prevents child classes from overriding a method by prefixing the definition with final. 
-> If the class itself is being defined final then it cannot be extended. Note: Properties cannot be declared final, only classes and methods may be declared as final.
+>PHP 5 introduces the final keyword, which prevents child classes from overriding a method by prefixing the definition with final. 
+>If the class itself is being defined final then it cannot be extended.
+
+-- [PHP: Final Keyword - Manual ] (https://www.php.net/manual/en/language.oop5.final.php)
 
 Java and C# use the same keyword but it is called **sealed** instead of `final`. These keywords have more or less the same behavior: they prevent a class from being inherited.  In this article, we will discuss this bahavior only, even if some languages like Java support further behaviors in different contexts.
 

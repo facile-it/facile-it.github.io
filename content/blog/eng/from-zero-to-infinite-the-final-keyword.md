@@ -35,17 +35,17 @@ In this article we will start by explaining the purpose of the final keyword. Th
 
 The concept expressed by the final keyword is that a class cannot be extended. The programmer must take this decision at the design stage by using this keyword.
 
-In some cases, extension by inheritance is a good solution while in some others it is either not possible or wrong. The keyword `final` is a "tool" given to the programmer to express this constraint.
+In some cases, extension by inheritance is a good solution while in some others it is either not possible or wrong. The `final` keyword is a "tool" given to the programmer to express this constraint.
 
-Why should someone set such a strong constraint?. The answers are many, all aim of having a robust, and more manageable code-base. For example to avoid the proliferation of infinite hierarchies of classes such as VCL (https://en.wikipedia.org/wiki/Visual_Component_Library), which are difficult to extend and maintain. In this case, even being a well-made library, the use of inheritance has been used a lot. 
+Why should someone set such a strong constraint? The answers are many and they all aim at having a robust and more manageable code-base. For example, to avoid the proliferation of infinite hierarchies of classes such as VCL (https://en.wikipedia.org/wiki/Visual_Component_Library), which are difficult to extend and maintain. In this case, even though it is a well-made library, inheritance has been used a lot.
 
-Furthermore, I use the `final` keyword to reduce the API surface API surface that needs to be covered by BC breaks avoidance in a distributed library.
+Furthermore, I use the `final` keyword to reduce the API surface that needs to be covered by BC breaks avoidance in a distributed library.
 
 Furthermore, using `final` forces the adoption of interfaces for example, for testing. This is a positive side effect indirectly caused by the use of this keyword.
 
 If we encounter a class with the `final` keyword, it means that the designer of the class doesn't want us to inherit from it. If we want to extend some behaviors, we must do it by composition or other mechanisms like events (PSR-14 https://www.php-fig.org/psr/psr-14 ) or plugins.
 
-I think that this is a good features of the language. In fact, by using the `final` keyword we provide important information on how the class should be used. Therefore, we reduce the effort of developers since they will spend less time analysing the design class.
+I think that this is a good feature of the language. In fact, by using the `final` keyword we provide important information on how the class should be used. Therefore, we reduce the effort of developers since they will spend less time analysing the design class.
 
 # S.O.L.I.D, Liskov and final
 
@@ -72,7 +72,7 @@ Link to original paper: https://dl.acm.org/doi/pdf/10.1145/62138.62141
 
 I used it as an example since it is specific to the design of hierarchies.
 
-I do not want to write an article about developping in accordance with **Liskov principle**, there is already a lot of literature about it on the web. I would just like to emphasize that building a hierarchy of objects is not easy: more the hierarchy is deep and more we are faced with design problems. `final` helps us to prevent these problems.
+I do not want to write an article about developping in accordance with **Liskov principle**, there is already a lot of literature about it on the web. I would just like to emphasize that building a hierarchy of objects is not easy: the deeper the hierarchy, the more we are faced with design problems. `final` helps us to prevent these problems.
 
 For this reason, before creating subclasses, we should ask ourselves questions like the following or similar:
 
@@ -109,8 +109,8 @@ I invite you, however, to do some tests with your classes to see if they adhere 
 
 # The concrete example, break the immutable object 
 
-Let's see some example where the `final` could be the right choice. 
-Through `final` we create a immutable object with minimal effort. This is only a **POC** to show how `final` works. There are many ways to resolve this problem. 
+Let's see some examples where `final` could be the right choice.
+Through `final` we create an immutable object with minimal effort. This is only a **POC** to show how `final` works. There are many ways to resolve this problem. 
 
 Let's go and see some code.
 
@@ -141,7 +141,7 @@ echo $one->getValue(); //Bar
 
 try it! **[break the immutable object](https://3v4l.org/AWndR)**
 
-This problem is easy to solve, we must put a flag in the constructor and if it is true, throw an exception. 
+This problem is easy to solve: we must put a flag in the constructor and, if it is true, it throws an exception.
 _Another way to fix it would be to create a `named constuctor` and make the `__constructor` private_. 
 Let's do it using the first solution!
 
@@ -311,7 +311,7 @@ A developer can simply remove the `final` keyword and then do wrong things!.
 
 I do not agree with this. I've seen misuse of inheritance many times. Therefore, I think that using the `final` keyword is useful both for beginners and senior developers.
 
-Another problem is that with some moccking library them don't work with `final` class. 
+Another problem is that some mocking libraries don't work with `final` class.
 This problem is solved in php by using the annotation @Final, even if it does not have the same validity as a language keyword. However, nowadays, with Ide inspectors, and with static analysis tools like PhpStan (https://phpstan.org/blog), Psalm (https://psalm.dev/docs/) the annotation is fully supported and it works properly.
 
 To support the last topics I add some links on discussions against the use of `final`.
@@ -333,7 +333,7 @@ Other links that I used as a starting point for this article:
 
 # Conclusion
 
-The topic is very complex, this article aimed at giving a general overview of it. I hope it will be useful as a starting point to deepen the subject and to evaluate when to use `final` in our classes.
+The topic is very complex, this article aims at giving a general overview of it. I hope it will be useful as a starting point to deepen the subject and to evaluate when to use `final` in our classes.
 
 From my point of view the use of `final` can help to improve design. 
 I would not write all my class with `final` but i'd start from the simplest cases: value objects, algorithms, patterns like the template method etc.  

@@ -25,7 +25,7 @@ Let's focus on one of them at the time and analyze it.
 > When you implemented a feature in your app, you likely ran the code to verify that it worked as expected. You performed a test, albeit a manual test. As you continued to add and update features, you probably also continued to run your code and verify it works. But doing this manually every time is tiring, prone to mistakes, and does not scale.  
 Computers are great at scaling and automation! So developers at companies large and small write automated tests, which are tests that are run by software and do not require you to manually operate the app to verify the code works.
 
-This is the introduction of a Google test codelab. It not only defines in a pretty straightforward way what automated tests are, but it also tells why you should do that. The reason mentioned here is only the first of the four on the list that I have compiled before, but this is the main reason.
+This is the introduction of a [Google test codelab](https://codelabs.developers.google.com/codelabs/advanced-android-kotlin-training-testing-basics/#0). It not only defines in a pretty straightforward way what automated tests are, but it also tells why you should do that. The reason mentioned here is only the first of the four on the list that I have compiled before, but this is the main reason.
 
 So we write automated tests to save time in the future, it's an investment. We suppose that when we add more features the old ones need to be checked again, and we invest our time in order to save more in the future, but in the short term we will not have a return.
 
@@ -41,21 +41,21 @@ This is a very generic sentence, what do I mean by "better code"? First say that
 
 For example, if the same thing code is written without naming convection or indentation the user doesn't notice and the software runs exactly the same, so why should we care? Because if we want to modify this code, adding new features for example, it will be much much harder.
 
-That said a code is "better" than another when, even if does the same things, it is easier to maintain and to evolve (beeing more readable, respecting the SOLID principles, etc...).
+That said a code is "better" than another when, even if does the same things, it is easier to maintain and to evolve (being more readable, respecting the SOLID principles, etc...).
 
-Test helps to increase quality because to make a portion of code testable we are often forced to restructure it and change the management of dependencies. This generally translates into a more correct distribution of responsibilities. So it's better from an architectural point of view.
+Tests help to increase quality, because making testable code forces us to restructure it and to change dependency management. This generally translates into a more correct distribution of responsibilities. So it's better from an architectural point of view.
 
 This doesn't mean that untested code have worse distribution of responsibilities. But testing can help to achieve this goal putting us in a position where we need to rethink our code structure.
 
 ## Find bug during development
 
-I think it's uncommon but can happen to find a bug out of an automated test during development. It happens because usually the tested cases in automated tests are more structured than manual tests. Precisely because we are forced to write them and we know that they will remain written it happens that we pay more attention to them. A developer rarely writes all the manual test cases to be performed and then runs them based on how he wrote them. For this reason, the process of writing an automatic test finds problems that may go unnoticed during a manual test.
+I think it's uncommon but can happen to find a bug out of an automated test during development. It happens because usually the tested cases in automated tests are more structured than manual tests. Precisely because we are forced to write them and we know that they will remain written, it happens that we pay more attention to them. A developer rarely writes all the manual test cases to be performed and then runs them based on how he wrote them. For this reason, the process of writing an automatic test spots problems that may go unnoticed during a manual test.
 
-Contrary to the first two points the benefits of this last two are immediate and do not increase over time, so a strategy could be to delete the test after the development is done. I know that it sounds weird but it makes sense if we don't consider the other points.
+Contrary to the first two points, the benefits of this last two are immediate and do not increase over time. So a strategy could be to delete the test after the development is done. I know that it sounds weird but it makes sense if we don't consider the other points.
 
 ## Honorable mentions
 
-There is another point that usually people talk about as a benefit of working on a well-tested project: it is confidence; since developing while having your shoulders covered by tests it's just mentally lighter.
+There is another point that usually people talk about as a benefit of working on a well-tested project: it is confidence; since developing while having your shoulders covered by tests is just mentally lighter.
 
 I didn't put it on the list because I am not comparing automation-tests with no-tests, but automation-tests with manual-tests.
 
@@ -63,7 +63,7 @@ I didn't put it on the list because I am not comparing automation-tests with no-
 
 We have seen what are the pros of automation testing, now let's examine what are the cons.
 
-Tests come at a cost: they can slow down the development process, they can slow down the CI, they can make harder maintenance and refactoring, they can make write worst code.
+Tests come at a cost: they can slow down the development process, they can slow down the CI, they can make harder maintenance and refactoring, they can make you write worst code.
 
 ## Slow down the development process
 

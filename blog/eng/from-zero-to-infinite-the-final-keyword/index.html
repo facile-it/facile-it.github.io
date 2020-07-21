@@ -32,7 +32,7 @@
     
     <meta name="twitter:title" content="From zero to infinite: the Final keyword"/>
     <meta name="twitter:description" content="Google from zero to infinite Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc. I apply a technique invented by me named: &ldquo;Google from zero to infinite&rdquo;.
-Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. But most of the time I find very interesting documents, otherwise difficult to reach."/>
+Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. However, most of the time I find very interesting documents, otherwise difficult to reach."/>
     
         
             
@@ -45,7 +45,7 @@ Basically I use one or more keywords in Google, then I literally follow all the 
 
         <meta property="og:title" content="From zero to infinite: the Final keyword" />
 <meta property="og:description" content="Google from zero to infinite Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc. I apply a technique invented by me named: &ldquo;Google from zero to infinite&rdquo;.
-Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. But most of the time I find very interesting documents, otherwise difficult to reach." />
+Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. However, most of the time I find very interesting documents, otherwise difficult to reach." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://engineering.facile.it/blog/eng/from-zero-to-infinite-the-final-keyword/" />
 <meta property="article:published_time" content="2020-07-10T00:00:00+00:00" />
@@ -57,10 +57,10 @@ Basically I use one or more keywords in Google, then I literally follow all the 
         <meta property="og:image:height" content="512">
         <meta itemprop="name" content="From zero to infinite: the Final keyword">
 <meta itemprop="description" content="Google from zero to infinite Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc. I apply a technique invented by me named: &ldquo;Google from zero to infinite&rdquo;.
-Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. But most of the time I find very interesting documents, otherwise difficult to reach.">
+Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. However, most of the time I find very interesting documents, otherwise difficult to reach.">
 <meta itemprop="datePublished" content="2020-07-10T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-07-10T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1985">
+<meta itemprop="wordCount" content="1990">
 
 
 
@@ -408,9 +408,9 @@ if (!doNotTrack) {
     <li><a href="#the-concept-behind-final-keyword">The concept behind final keyword</a></li>
     <li><a href="#solid-liskov-and-final">S.O.L.I.D, Liskov and final</a></li>
     <li><a href="#the-concrete-example-break-the-immutable-object">The concrete example, break the immutable object</a></li>
-    <li><a href="#the-concrete-example-break-the-immutable-object-first-fix">The concrete example, break the immutable object first fix</a></li>
-    <li><a href="#the-concrete-example-break-the-immutable-object-the-second-way">The concrete example, break the immutable object the second way</a></li>
-    <li><a href="#the-concrete-example-definitive-fix-with-final-keyword">The concrete example definitive fix with final keyword</a></li>
+    <li><a href="#the-concrete-example-break-the-immutable-object-first-fix">The concrete example, break the immutable object: first fix</a></li>
+    <li><a href="#the-concrete-example-break-the-immutable-object-the-second-way">The concrete example, break the immutable object: the second way</a></li>
+    <li><a href="#the-concrete-example-a-definitive-fix-with-final-keyword">The concrete example: a definitive fix with final keyword</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
@@ -420,30 +420,31 @@ if (!doNotTrack) {
     <h1 id="google-from-zero-to-infinite">Google from zero to infinite</h1>
 <p>Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc.
 I apply a technique invented by me named: <strong>&ldquo;Google from zero to infinite&rdquo;</strong>.</p>
-<p>Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. But most of the time I find very interesting documents, otherwise difficult to reach. This time I decided to use the keyword final of PHP.</p>
+<p>Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. However, most of the time I find very interesting documents, otherwise difficult to reach. This time I decided to use the <code>final</code> keyword of PHP.</p>
 <h1 id="the-concept-behind-final-keyword">The concept behind final keyword</h1>
 <p>The keyword final was introduced in version 5 of php.</p>
 <p>The manual says:</p>
 <blockquote>
-<p>Final Keyword. PHP 5 introduces the final keyword, which prevents child classes from overriding a method by prefixing the definition with final.
-If the class itself is being defined final then it cannot be extended. Note: Properties cannot be declared final, only classes and methods may be declared as final.</p>
+<p>PHP 5 introduces the final keyword, which prevents child classes from overriding a method by prefixing the definition with final.
+If the class itself is being defined final then it cannot be extended.</p>
 </blockquote>
-<p>Java has the same keyword, c# too but it is called &ldquo;<strong>sealed</strong>&rdquo; instead of &ldquo;<strong>final</strong>&quot;, but more or less have the same behavior: to prevent a class from being inherited (in our case we will see only this type of use php support further behavior but in different contexts).</p>
-<p>First of all we will try to understand what it is for, then we will try to do some additional reasoning, and finally we will talk about of comments on the web.</p>
-<p>The concept that expresses the keyword final is that a class can not be extended, the decision must be taken by the programmer in the design stage utilizing just the <strong>final</strong>.</p>
-<p>There are situations in which extension by inheritance is a good solution, others where it is not possible and others where it is wrong. The keyword <strong>final</strong> is a &ldquo;tool&rdquo; given to the programmer to express this constraint.</p>
-<p>Why someone should set such a strong constraint?. The answers are many, all aim of having a robust, and more manageable code-base. For example to avoid the proliferation of infinite hierarchies of classes such as VCL (<a href="https://en.wikipedia.org/wiki/Visual_Component_Library),">https://en.wikipedia.org/wiki/Visual_Component_Library),</a> which are difficult to extend and maintain. In this case, even being a well-made library, the use of inheritance has been used a lot.</p>
-<p>Also I use final is to reduce the API surface that needs to be covered by BC breaks avoidance in a distributed library.</p>
-<p>Further to use <strong>final</strong> in some cases forces adopt the interfaces, by testing for example, this is a positive side effect.</p>
-<p>When we meet a class with the keyword <strong>final</strong>, who designed the class not allow us inherit from it, if we want to extend some behavior we must do it by composition or other mechanisms (like events PSR-14 (<a href="https://www.php-fig.org/psr/psr-14/),">https://www.php-fig.org/psr/psr-14/),</a> or plugins, etc.).</p>
-<p>I think that this is a good features of the language. In fact, in relation to the time used for the analysis of the design class, through <strong>final</strong> we provide important information on how she should be useds, simplifying the effort of the developer.</p>
+<p>&ndash; <a href="https://www.php.net/manual/en/language.oop5.final.php">PHP: Final Keyword - Manual</a></p>
+<p>Java and C# use the same keyword but it is called <strong>sealed</strong> instead of <code>final</code>. These keywords have more or less the same behavior: they prevent a class from being inherited.  In this article, we will discuss this bahavior only, even if some languages like Java support further behaviors in different contexts.</p>
+<p>In this article we will start by explaining the purpose of the final keyword. Then, we will try to do some additional reasoning. Finally, we will talk about comments found on the net.</p>
+<p>The concept expressed by the final keyword is that a class cannot be extended. The programmer must take this decision at the design stage by using this keyword.</p>
+<p>In some cases, extension by inheritance is a good solution while in some others it is either not possible or wrong. The <code>final</code> keyword is a &ldquo;tool&rdquo; given to the programmer to express this constraint.</p>
+<p>Why should someone set such a strong constraint? The answers are many and they all aim at having a robust and more manageable code-base. For example, to avoid the proliferation of infinite hierarchies of classes such as VCL (<a href="https://en.wikipedia.org/wiki/Visual_Component_Library),">https://en.wikipedia.org/wiki/Visual_Component_Library),</a> which are difficult to extend and maintain. In this case, even though it is a well-made library, inheritance has been used a lot.</p>
+<p>Furthermore, I use the <code>final</code> keyword to reduce the API surface that needs to be covered by BC breaks avoidance in a distributed library.</p>
+<p>Furthermore, using <code>final</code> forces the adoption of interfaces for example, for testing. This is a positive side effect indirectly caused by the use of this keyword.</p>
+<p>If we encounter a class with the <code>final</code> keyword, it means that the designer of the class doesn&rsquo;t want us to inherit from it. If we want to extend some behaviors, we must do it by composition or other mechanisms like events (PSR-14 <a href="https://www.php-fig.org/psr/psr-14">https://www.php-fig.org/psr/psr-14</a> ) or plugins.</p>
+<p>I think that this is a good feature of the language. In fact, by using the <code>final</code> keyword we provide important information on how the class should be used. Therefore, we reduce the effort of developers since they will spend less time analysing the design class.</p>
 <h1 id="solid-liskov-and-final">S.O.L.I.D, Liskov and final</h1>
-<p>Develop architecture isn&rsquo;t a trivial task, many programmers use inheritance as solution to all problems.</p>
-<p>There are many principles and guidelines to help to develop good design
+<p>Developing an architecture isn&rsquo;t a trivial task, many programmers use inheritance as solution to all problems.</p>
+<p>There are many principles and guidelines that help to develop good design
 like S.O.L.I.D (<a href="https://en.wikipedia.org/wiki/SOLID),">https://en.wikipedia.org/wiki/SOLID),</a> design patterns, (<a href="https://en.wikipedia.org/wiki/Design_pattern">https://en.wikipedia.org/wiki/Design_pattern</a>) etc.
-But the problem is that these principles are difficult to apply, they almost always lead to writing more code.
+However, the problem is that these principles are difficult to apply, they almost always  lead to writing more code.
 Not always this is possible, not always this is accepted.</p>
-<p>Regarding <strong>final</strong>, in my opinion, one of the principle that best represents it is LSP.</p>
+<p>In my opinion, one of the principles that best represents the use of <code>final</code> is LSP.</p>
 <p>Let&rsquo;s see what <strong>Liskov principle</strong> says in more detail.
 The canonical statement is the following:</p>
 <blockquote>
@@ -454,40 +455,40 @@ The canonical statement is the following:</p>
 </blockquote>
 <p>This is a more precise definition:</p>
 <blockquote>
-<p>“if S is a subtype of T, then objects of type T in a program may be replaced with objects of type S without altering any of &gt;the desirable properties of that program.”</p>
+<p>“if S is a subtype of T, then objects of type T in a program may be replaced with objects of type S without altering any of the desirable properties of that program.”</p>
 </blockquote>
-<p>Link to orginal paper: <a href="https://dl.acm.org/doi/pdf/10.1145/62138.62141">https://dl.acm.org/doi/pdf/10.1145/62138.62141</a></p>
+<p>Link to original paper: <a href="https://dl.acm.org/doi/pdf/10.1145/62138.62141">https://dl.acm.org/doi/pdf/10.1145/62138.62141</a></p>
 <p>I used it as an example since it is specific to the design of hierarchies.</p>
-<p>I do not want to write an article on how to respect the development according to <strong>Liskov</strong> in the web there is a lot of literature. I would just like to emphasize that building a hierarchy of objects is not easy, that more the hierarchy is deep then more we are faced with design problems and <strong>final</strong> helps use to prevent this.</p>
-<p>For this reason, before creating subclasses we should ask ourselves questions like the following or similar:</p>
+<p>I do not want to write an article about developping in accordance with <strong>Liskov principle</strong>, there is already a lot of literature about it on the web. I would just like to emphasize that building a hierarchy of objects is not easy: the deeper the hierarchy, the more we are faced with design problems. <code>final</code> helps us to prevent these problems.</p>
+<p>For this reason, before creating subclasses, we should ask ourselves questions like the following or similar:</p>
 <ul>
 <li>is my derived class of the same type as the base class?</li>
-<li>I can use the derived class of base where requireds a base class without having &ldquo;strange&rdquo; behaviors in the code at runtime?</li>
-<li>Is my base class prepared to be derived?</li>
-<li>Are the enhancements made by the subclass primarily additive?</li>
+<li>can I use a derived class instead of its base class without having &ldquo;strange&rdquo; behaviors in the code at runtime?</li>
+<li>is my base class prepared to be derived?</li>
+<li>are the enhancements made by the subclass primarily additive?</li>
 </ul>
 <p>If the answers to these questions are negative, using inheritance could lead to complex and unmanageable hierarchies.</p>
-<p>Now some basic example of wrong use of inheritance:</p>
+<p>I will now present some examples of misuse of inheritance:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">use App\Domain\Model;
 class Stack extends ArrayList {
     public push(Object value) { … }
     public Object pop() { … }
 }
-</code></pre></div><p>Why is it wrong? Because the Stack class inheriting from ArrayList will have a lot of additional methods that are not related to the concept of ArrayList (e.g. push and pop).</p>
+</code></pre></div><p>Why is it wrong? Because the Stack class, inheriting from ArrayList, will have a lot of additional methods that are not related to the concept of ArrayList (e.g. push and pop).</p>
 <p>In the previous example two main errors have been made:</p>
 <ol>
 <li>Stack is NOT an Array</li>
 <li>The cross-domain inheritance relationship</li>
 </ol>
-<p>Our domain classes must use implementations not to inherit them. In the example, stack was a concept of domain (focusing only on reusing code can be a problem).</p>
+<p>Our domain classes must use implementations and not inherit them. In the example, stack was a concept of domain (focusing only on reusing code can be a problem).</p>
 <p>You will be probably thinking that the OOP is not keeping its promise.
 However, let us remember that we are programming in OOP (Object Oriented Programming) not in OOI (Object Oriented Inheritance). There is always a trade off between code reuse and good design.
 Inheritance should be mostly used for good design, for code reuse we choose composition.</p>
 <p>I invite you, however, to do some tests with your classes to see if they adhere to these good practices and try to get a better design by avoiding inheritance.</p>
 <h1 id="the-concrete-example-break-the-immutable-object">The concrete example, break the immutable object</h1>
-<p>Let&rsquo;s see some example where the <strong>final</strong> could be the right choice.
-Through <strong>final</strong> we create a immutable object with minimal effort. This is only a <strong>POC</strong> to show how <strong>final</strong> works, there are many ways to resolve this problem.</p>
-<p>Let&rsquo;s go see some code.</p>
+<p>Let&rsquo;s see some examples where <code>final</code> could be the right choice.
+Through <code>final</code> we create an immutable object with minimal effort. This is only a <strong>POC</strong> to show how <code>final</code> works. There are many ways to resolve this problem.</p>
+<p>Let&rsquo;s go and see some code.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">class SomeImmutableObject
 {
     private $someString;
@@ -502,16 +503,16 @@ Through <strong>final</strong> we create a immutable object with minimal effort.
         return &#39;the value is:&#39; . $this-&gt;someString . &#39; - &#39;;
     }
 }
-</code></pre></div><p>Let&rsquo;s concentrate, can we modify this object after it has been created? …. Yes we can!</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$one = new SomeImmutableObject(&#39;Pippo&#39;);
-echo $one-&gt;getValue(); //Pippo
-$one-&gt;__construct(&#39;Pluto&#39;); 
-echo $one-&gt;getValue(); //Pluto
-</code></pre></div><p>try it! <strong>[break the immutable object] (<a href="https://3v4l.org/CiHPG">https://3v4l.org/CiHPG</a>)</strong></p>
-<p>This problem is easy to solve, we must put a flag in the constructor and if it is true throw an exception.
-<em>Another way to fix it, is to create a <code>named constuctor</code> and make the <code>__constructor</code> private</em>.
-let&rsquo;s do it using the first solution!</p>
-<h1 id="the-concrete-example-break-the-immutable-object-first-fix">The concrete example, break the immutable object first fix</h1>
+</code></pre></div><p>Let&rsquo;s concentrate: can we modify this object after it has been created? …. Yes we can!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$one = new SomeImmutableObject(&#39;Foo&#39;);
+echo $one-&gt;getValue(); //Foo
+$one-&gt;__construct(&#39;Bar&#39;); 
+echo $one-&gt;getValue(); //Bar
+</code></pre></div><p>try it! <strong><a href="https://3v4l.org/AWndR">break the immutable object</a></strong></p>
+<p>This problem is easy to solve: we must put a flag in the constructor and, if it is true, it throws an exception.
+<em>Another way to fix it would be to create a <code>named constuctor</code> and make the <code>__constructor</code> private</em>.
+Let&rsquo;s do it using the first solution!</p>
+<h1 id="the-concrete-example-break-the-immutable-object-first-fix">The concrete example, break the immutable object: first fix</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span> <span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
 
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SomeImmutableObject</span>
@@ -522,7 +523,7 @@ let&rsquo;s do it using the first solution!</p>
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">string</span> $value)
     {
         <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">true</span> <span style="color:#f92672">===</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">flagCreate</span>) {
-            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\BadMethodCallException</span>(<span style="color:#e6db74">&#39;This is an immutable object has already create.&#39;</span>);
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\BadMethodCallException</span>(<span style="color:#e6db74">&#39;This immutable object has already been created.&#39;</span>);
         }
 
         $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">someString</span> <span style="color:#f92672">=</span> $value;
@@ -535,12 +536,12 @@ let&rsquo;s do it using the first solution!</p>
     }
 }
 
-$two <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SomeImmutableObject</span>(<span style="color:#e6db74">&#39;Pippo&#39;</span>);
-<span style="color:#66d9ef">echo</span> $two<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getValue</span>(); <span style="color:#75715e">//Pippo
-</span><span style="color:#75715e"></span>$two<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">__construct</span>(<span style="color:#e6db74">&#39;Pluto&#39;</span>); <span style="color:#75715e">// \BadMethodCallException 
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $two<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getValue</span>();
-</code></pre></div><p>Now we are happy and we have our immutable object. Are we sure? Mmm no… have a look at here!</p>
-<h1 id="the-concrete-example-break-the-immutable-object-the-second-way">The concrete example, break the immutable object the second way</h1>
+$two <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SomeImmutableObject</span>(<span style="color:#e6db74">&#39;Foo&#39;</span>);
+<span style="color:#66d9ef">echo</span> $two<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getValue</span>(); <span style="color:#75715e">//Foo
+</span><span style="color:#75715e"></span>$two<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">__construct</span>(<span style="color:#e6db74">&#39;Bar&#39;</span>); <span style="color:#75715e">// \BadMethodCallException 
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $two<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getValue</span>(); <span style="color:#75715e">//Bar
+</span></code></pre></div><p>Now we are happy and we have our immutable object. Are we sure? Mmm no… have a look at here!</p>
+<h1 id="the-concrete-example-break-the-immutable-object-the-second-way">The concrete example, break the immutable object: the second way</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SomeImmutableObject</span>
 {
@@ -551,7 +552,7 @@ $two <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span>
     {
 
         <span style="color:#66d9ef">if</span> ($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">flagCreate</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">true</span>) {
-            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\BadMethodCallException</span>(<span style="color:#e6db74">&#39;This is an immutable object has already create.&#39;</span>);
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">\BadMethodCallException</span>(<span style="color:#e6db74">&#39;This immutable object has already been created.&#39;</span>);
         }
 
         $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">someString</span> <span style="color:#f92672">=</span> $value;
@@ -579,19 +580,19 @@ $two <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span>
 
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">change</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
     {
-        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">someString</span> <span style="color:#f92672">.=</span> <span style="color:#e6db74">&#39; and Minny&#39;</span>;
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">someString</span> <span style="color:#f92672">.=</span> <span style="color:#e6db74">&#39; and Baz&#39;</span>;
     }
 }
 
-$three <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">AnotherClassToBreakImmutableObject</span>(<span style="color:#e6db74">&#39;Pippo&#39;</span>);
-<span style="color:#66d9ef">echo</span> $three<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getValue</span>(); <span style="color:#75715e">//Pippo
+$three <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">AnotherClassToBreakImmutableObject</span>(<span style="color:#e6db74">&#39;Foo&#39;</span>);
+<span style="color:#66d9ef">echo</span> $three<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getValue</span>(); <span style="color:#75715e">//Foo
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $three<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">change</span>();
-<span style="color:#66d9ef">echo</span> $three<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getValue</span>(); <span style="color:#75715e">//the value is: Pippo and Minny -
-</span></code></pre></div><p>try it! <strong>[break the immutable object] (<a href="https://3v4l.org/KpnfR">https://3v4l.org/KpnfR</a>)</strong></p>
+<span style="color:#66d9ef">echo</span> $three<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getValue</span>(); <span style="color:#75715e">//the value is: Foo and Baz -
+</span></code></pre></div><p>try it! <strong><a href="https://3v4l.org/JmkoK">break the immutable object</a></strong></p>
 <p>It doesn&rsquo;t work yet. Ok, now we&rsquo;re going to fix it, I promise!
-The problem is that inheritance breaks encapsulation.</p>
+The problem is that inheritance breaks encapsulation. Therefore, in this case using <code>final</code> is a good solution!.</p>
 <p><strong>the definitive version</strong></p>
-<h1 id="the-concrete-example-definitive-fix-with-final-keyword">The concrete example definitive fix with final keyword</h1>
+<h1 id="the-concrete-example-a-definitive-fix-with-final-keyword">The concrete example: a definitive fix with final keyword</h1>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
 
 <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SomeImmutableObject</span>
@@ -636,33 +637,33 @@ The problem is that inheritance breaks encapsulation.</p>
     }
 }
 
-$four <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TryToBreakImmutableObject</span>(<span style="color:#e6db74">&#39;Pippo&#39;</span>);
-<span style="color:#66d9ef">echo</span> $four<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getValue</span>(); <span style="color:#75715e">//Pippo
+$four <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TryToBreakImmutableObject</span>(<span style="color:#e6db74">&#39;Foo&#39;</span>);
+<span style="color:#66d9ef">echo</span> $four<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getValue</span>(); <span style="color:#75715e">//Foo
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $four<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">change</span>();
 <span style="color:#66d9ef">echo</span> $four<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getValue</span>();
 </code></pre></div><p><code>PHP Fatal error:  Class BreakImmutableObject may not inherit from final class (SomeImmutableObject)</code></p>
-<p>try it! <strong>[immutable object] (<a href="https://3v4l.org/OsOoW">https://3v4l.org/OsOoW</a>)</strong></p>
+<p>try it! <strong><a href="https://3v4l.org/3vjQ0">immutable object</a></strong></p>
 <p>… Here are some links to deepen the topic</p>
 <ul>
-<li>[Final or not final] (<a href="https://github.com/thephpleague/period/issues/54">https://github.com/thephpleague/period/issues/54</a>)</li>
-<li>[Final classes by default] (<a href="https://github.com/symfony/symfony/issues/15233">https://github.com/symfony/symfony/issues/15233</a>)</li>
-<li>[Final classes: Open for Extension, Closed for Inheritance] (<a href="http://verraes.net/2014/05/final-classes-in-php/">http://verraes.net/2014/05/final-classes-in-php/</a>)</li>
+<li><a href="https://github.com/thephpleague/period/issues/54">Final or not final</a></li>
+<li><a href="https://github.com/symfony/symfony/issues/15233">Final classes by default</a></li>
+<li><a href="http://verraes.net/2014/05/final-classes-in-php/">Final classes: Open for Extension, Closed for Inheritance</a></li>
 </ul>
 <p>Obviously, it isn’t all puppy dogs and rainbows. Technical literature does not perfectly suit to all needs, especially in our field.</p>
-<p>What I want to point out is that in some cases <strong>final</strong> can be a good ally and can help us to simplify the design.<br>
-Using <strong>final</strong> leads programmers to make a round of additional reasoning, to pay more attention to the use of the class.
-For example, during review, a diff with the removal of <strong>final keyword</strong> could lead to useful comments to find different solutions</p>
-<p>A downside of the final keyword is that it is considered too coarse an instrument to be effective.
-A developer can simply remove the <strong>final</strong> keyword and then do wrong things!.</p>
-<p>I do not agree with this. I&rsquo;ve seen misuse of inheritance many times. Therefore, I think that using the <strong>final</strong> is useful both for beginners and senior developers.</p>
-<p>Another problem is that with some moccking library them don&rsquo;t work with <strong>final class</strong>.
+<p>What I want to point out is that in some cases <code>final</code> can be a good ally and can help us to simplify the design.<br>
+Using <code>final</code> leads programmers to make a round of additional reasoning, to pay more attention to the use of the class.
+For example, during review, a diff with the removal of <code>final</code> could lead to useful comments to find different solutions.</p>
+<p>A downside of the <code>final</code> keyword is that it is considered too coarse an instrument to be effective.
+A developer can simply remove the <code>final</code> keyword and then do wrong things!.</p>
+<p>I do not agree with this. I&rsquo;ve seen misuse of inheritance many times. Therefore, I think that using the <code>final</code> keyword is useful both for beginners and senior developers.</p>
+<p>Another problem is that some mocking libraries don&rsquo;t work with <code>final</code> class.
 This problem is solved in php by using the annotation @Final, even if it does not have the same validity as a language keyword. However, nowadays, with Ide inspectors, and with static analysis tools like PhpStan (<a href="https://phpstan.org/blog),">https://phpstan.org/blog),</a> Psalm (<a href="https://psalm.dev/docs/">https://psalm.dev/docs/</a>) the annotation is fully supported and it works properly.</p>
-<p>To support the last topics I add some links on discussions against the use of <strong>final</strong>.</p>
+<p>To support the last topics I add some links on discussions against the use of <code>final</code>.</p>
 <ul>
 <li><a href="http://butunclebob.com/ArticleS.MichaelFeathers.ItsTimeToDeprecateFinal">Michael Feathers: It&rsquo;s time to deprecate final</a></li>
 <li><a href="https://groups.google.com/forum/?utm_medium=email&amp;utm_source=footer#!msg/dddinphp/r9kZ5eI6eiw/TpopVjVv-VgJ">Please stop using &ldquo;final&rdquo; classes</a></li>
 </ul>
-<p>Other links that I used as a starting point for this article</p>
+<p>Other links that I used as a starting point for this article:</p>
 <ul>
 <li><a href="https://matthiasnoback.nl/2018/09/final-classes-by-default-why/">https://matthiasnoback.nl/2018/09/final-classes-by-default-why/</a></li>
 <li><a href="http://ocramius.github.io/blog/when-to-declare-classes-final/">http://ocramius.github.io/blog/when-to-declare-classes-final/</a></li>
@@ -674,10 +675,10 @@ This problem is solved in php by using the annotation @Final, even if it does no
 <li><a href="http://www.freeklijten.nl/2016/06/17/Final-private-a-reaction">http://www.freeklijten.nl/2016/06/17/Final-private-a-reaction</a></li>
 </ul>
 <h1 id="conclusion">Conclusion</h1>
-<p>The topic is very complex, this article aimed at giving a general overview of it. I hope it will be useful as a starting point to deepen the subject and to evaluate when to use <strong>final</strong> in our classes.</p>
-<p>From my point of view the use of <strong>final</strong> can help to improve design.
-I would not write all my class with <strong>final</strong> but i&rsquo;d start from the simplest cases: value objects, algorithms, patterns like the template method etc.<br>
-In any case, the <strong>final</strong> can be removed with with due precautions and, if nothing else, using it has forcibly added one more step to the analysis process.</p>
+<p>The topic is very complex, this article aims at giving a general overview of it. I hope it will be useful as a starting point to deepen the subject and to evaluate when to use <code>final</code> in our classes.</p>
+<p>From my point of view the use of <code>final</code> can help to improve design.
+I would not write all my class with <code>final</code> but i&rsquo;d start from the simplest cases: value objects, algorithms, patterns like the template method etc.<br>
+In any case, the <code>final</code> keyword can be removed with due precautions and, if nothing else, using it has forcibly added one more step to the analysis process.</p>
 
   </div>
 

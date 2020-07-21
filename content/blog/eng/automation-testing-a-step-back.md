@@ -39,7 +39,7 @@ This is an easy point. Documentation can be important (less than working softwar
 
 This is a very generic sentence, what do I mean by "better code"? First say that software as every other built thing has a quality. A program can be better than another that does the same things based on some parameters (performance, usability and many others), we can divide these parameters into 2 big groups: the one that users notice and the one that users don't.
 
-For example, if the same thing code is written without naming convection or indentation the user doesn't notice and the software runs exactly the same, so why should we care? Because if we want to modify this code, adding new features for example, it will be much much harder.
+For example, if the same code is written without naming convection or indentation the end-users don't notice it and the software runs exactly the same, so why should we care? Because if we want to modify this code, adding new features for example, it will be much much harder.
 
 That said a code is "better" than another when, even if does the same things, it is easier to maintain and to evolve (being more readable, respecting the SOLID principles, etc...).
 

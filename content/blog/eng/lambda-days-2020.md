@@ -24,7 +24,7 @@ Here is a short list of the talks that caught our attention:
 
 **John Hughes** one of Haskell creators presented his QuickCheck library and some best practises to use it.
 John is a great entertainer, and in a funny way showed what is the so called *property based testing*.
-Brefly, we could say that our code that needs testing contains properties we need to prove and to do this is good let the 
+Brefly, we could say that the code we are testing contains properties to prove and to do this is best let the 
 testing library generate hundreds of of test cases.
 During the talk, he stressed the idea that tests themselves need correctness to avoid errors like duplicating the logic 
 we are testing against and listed some ways to model test that give correctness and completeness.
@@ -38,10 +38,8 @@ width="640" height="390" src="https://www.youtube.com/watch?v=3zT5eVHpQwA&list=P
 frameborder="0" allowFullScreen></iframe>
 
 **Thorsten Altenkirch** from the University of Nottingham gave a talk about implementing dependent types.
-Think for a second if it was possible to base our types on conditions only known at runtime, like the length of a list. 
-Normally you would think is not possible, but the truth is that with some mathematical assumptions, link proof by induction, we can obtain
-more precise types at compile time, that will avoid errors like empty input lists etc. 
-
+Think for a second if it was possible to base return types in functions by the value at runtime. Normally you would think is not possible because we should run the code to know the actual input value.
+The truth is that with some mathematical assumptions, it is possible to obtain types such as non-empty arrays that otherwise a compiler would not know.
 
 - **Designing composable functional libraries, not just for data visualization**
 

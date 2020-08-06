@@ -22,10 +22,10 @@ Here is a short list of the talks that caught our attention:
 
 [Video](https://www.youtube.com/watch?v=G0NUOst-53U&list=PLvL2NEhYV4ZsV9Bw0wp1P46SOdtk4pFW6&index=3&t=0s)
 
-**John Hughes** one of Haskell creators presented his QuickCheck library and some best practises to use it.
+**John Hughes** one of Haskell creators presented his QuickCheck library and some best practices to use it.
 John is a great entertainer, and in a funny way showed what is the so called *property based testing*.
-Brefly, we could say that the code we are testing contains properties to prove and to do this is best let the 
-testing library generate hundreds of of test cases.
+Briefly, we could say that the code we are testing contains properties that must be proven. To do this, the best practice 
+is to let the testing library generate hundreds of test cases.
 During the talk, he stressed the idea that tests themselves need correctness to avoid errors like duplicating the logic 
 we are testing against and listed some ways to model test that give correctness and completeness.
 One key point worth mentioning is *optimize for correctness and not for performance*. 

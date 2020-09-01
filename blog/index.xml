@@ -6,10 +6,19 @@
     <description>Recent content in Blogs on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lambda Days 2020</title>
+      <link>https://engineering.facile.it/blog/eng/lambda-days-2020/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/lambda-days-2020/</guid>
+      <description>This year, Facile attended for the first time Lambda Days Conference in the beautiful polish city of Krakow. It has been a two-days full immersion with speakers coming from all over the world. The latest trends and academic research in the functional world were showcased, spanning from beginner&amp;rsquo;s approaches to functional languages to highly specific scientific applications. This conference was totally worth attending, albeit very intense (sometimes mind-bending, actually!). All the talks were of high quality and the organization was perfect.</description>
+    </item>
     
     <item>
       <title>From zero to infinite: the Final keyword</title>

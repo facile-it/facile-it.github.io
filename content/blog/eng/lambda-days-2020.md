@@ -1,7 +1,7 @@
 ---
-authors: ["andreac"]
+authors: ["andrea-ceccarelli"]
 comments: true
-date: "2020-04-09"
+date: "2020-09-01"
 draft: false
 share: true
 categories: [English, Conference, Lambda-days, Krakow, Functional programming]

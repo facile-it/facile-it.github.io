@@ -81,7 +81,7 @@ To evaluate it, I refer to this scheme found on internet.
 
 Having a test suite makes sense when used in a continuous integration system. Usually, tests are quite fast when taken individually, but they can start to become a problem when they are in large quantities.
 
-This may seem like a marginal problem but having a slow CI is problematic. So be careful because at the beginning tests can be like grains of sand and when the project becomes very large, the CI can becomes like a sandstorm and block the development process like a slow build.
+This may seem like a marginal problem but having a slow CI is problematic. So be careful because at the beginning tests can be like grains of sand and when the project becomes very large, the CI can become a sandstorm and it can block the development process like a slow build.
 
 ## Make maintenance and refactoring harder
 

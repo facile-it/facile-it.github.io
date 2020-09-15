@@ -15,20 +15,31 @@ toc: true
 Everyone who works in software development has stumbled upon **software testing**.
 
 Why should a developer know anything about testing?  
-Well software testing is a valuable asset and a big part of development: it does not only test the application, it teaches to think outside the box and write code with quality in mind.  
-Don't forget it helps finding those **scary bugs** we're all afraid of.
+Well, software testing is a valuable asset and a big part of development: it does not only test the application, 
+helping to find scary bugs, it teaches to think outside the box and write code with quality in mind.
 
 ## Software testing is not finding bugs 
 
-Software testing goal is not only to *find bugs* and *"break things"*, there should be a deep knowledge of the tested application, an idea of the whats, the whys and the hows the application is being tested and a strong concept of quality.  
+Software testing goal is not only to *find bugs* and *"break things"*: testing can range from pure functionalities exploration
+to a deep understanding of the tested application, an idea of what, why and how the application is tested together with
+the guiding concept of quality.
 
-Tests do not break software. In fact the software is already broken before the QA/Developer finds out by running some tests: if we put it this way it is clear that focusing on enhancing code quality, analyzing the features before development and having a good amount of tests are good things to do.
+Tests do not break software. The software is already broken! Software can already have bugs before the QA/Developer 
+finds out by running some tests: if we put it this way it is clear that focusing on **enhancing code quality**, analyzing the 
+features before/alongside development and having the right amount of tests are good things to do.
+
+Software testing is however an engineering practice that offers support to different areas of software development. 
+There are therefore different methodologies, tools and needs to adopt the most suitable testing activities for your IT world
+
 
 ## Types
 
-So how do we plan test design and how can we decide *which types* of tests suits *our application*?  
+So how do we plan test design and how can we decide which types of tests suits our application?  
 
-There are many types of software tests, in this list I am going to cover some of the **most common** ones and explain how they work.
+There are *many types* of **software tests** and different classifications or topologies are defined of which 
+I report an example in the following image:
+
+![test Types](https://ehikioya.azureedge.net/wp-content/uploads/hm_bbpui/86828/fh2aspgg9au0icjnuf8d9lvhwccrv977.png)  
 
 
 ### Acceptance tests
@@ -99,8 +110,12 @@ This type of tests is one of the most expensive in terms of time but yet one of 
 
 ## Notes and conclusions
 
-We've understood that there's no such thing as 'breaking stuff', there are many types of testing (and many more than what we've covered) and most importantly that it's good to know atleast some of them.
+We introduced the concept that there is no such thing as "breaking things" and that there are 
+many types of tests that can support the *software life cycle*. We now know that it is a good idea 
+to know at least some of them.
 
-Testing is part of the development and having knowledge about them should be a focus for everyone who works in the development of an application. 
+*Tests* are part of the development process and knowing them should be a **goal** for everyone working
+on developing an application.
 
-Don't forget to check what's the best approach to test your application and plan some time with your team to discuss, review and create some tests for it!
+We must not forget to check what is the best approach to test our application, in the trade-off 
+between effort, time and coverage, planning some time with teams to discuss, review and create some tests!

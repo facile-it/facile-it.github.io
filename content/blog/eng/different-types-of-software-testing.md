@@ -108,7 +108,16 @@ There's usually a time limit and a specific part of the application that has to 
 This type of tests is one of the most expensive in terms of time but yet one of the best ways to cover your application from regression and UI bugs as the majority of the issues that are reported in this phase are usually difficult to find with automated tests.
 
 
-## Notes and conclusions
+## Notes
+
+Another good practice you should check out is the "Test Pyramid". On the bottom of the pyramid we have unit tests which are quick, easy to mantain and low in coverage while at the very top we can see *UI tests*: slow, costly and with a high coverage.  
+
+This pyramid helps the development teams keep a focus on what type of tests should prevail in their codebases, helping them focus on efficiency, delivery and quality at the same time.
+
+![Testing Pyramid](/images/different-types-of-software-testing/pyramid.png)
+
+
+## Conclusions
 
 We introduced the concept that there is no such thing as "breaking things" and that there are 
 many types of tests that can support the *software life cycle*. We now know that it is a good idea 

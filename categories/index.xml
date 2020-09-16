@@ -6,10 +6,46 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Agile</title>
+      <link>https://engineering.facile.it/categories/agile/</link>
+      <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>English</title>
+      <link>https://engineering.facile.it/categories/english/</link>
+      <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kanban</title>
+      <link>https://engineering.facile.it/categories/kanban/</link>
+      <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/kanban/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scrum</title>
+      <link>https://engineering.facile.it/categories/scrum/</link>
+      <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/scrum/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>C</title>
@@ -26,15 +62,6 @@
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/conference/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>https://engineering.facile.it/categories/english/</link>
-      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/english/</guid>
       <description></description>
     </item>
     
@@ -696,15 +723,6 @@
     </item>
     
     <item>
-      <title>Agile</title>
-      <link>https://engineering.facile.it/categories/agile/</link>
-      <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/agile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Software Crisis</title>
       <link>https://engineering.facile.it/categories/software-crisis/</link>
       <pubDate>Mon, 13 Jul 2015 00:00:00 +0000</pubDate>
@@ -755,24 +773,6 @@
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/type-first-development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Kanban</title>
-      <link>https://engineering.facile.it/categories/kanban/</link>
-      <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/kanban/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Scrum</title>
-      <link>https://engineering.facile.it/categories/scrum/</link>
-      <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/scrum/</guid>
       <description></description>
     </item>
     

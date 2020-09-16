@@ -3,17 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://engineering.facile.it/authors/andrea-ceccarelli/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+    <loc>https://engineering.facile.it/categories/agile/</loc>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/authors/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/blog/</loc>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/</loc>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/english/</loc>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/</loc>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/kanban/</loc>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/eng/php-day-2020/</loc>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/scrum/</loc>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/veronica-bolognesi/</loc>
+    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/andrea-ceccarelli/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,22 +63,7 @@
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/categories/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/categories/conference/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/english/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -748,11 +773,6 @@
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/categories/agile/</loc>
-    <lastmod>2015-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</loc>
     <lastmod>2015-07-15T00:00:00+00:00</lastmod>
   </url>
@@ -835,16 +855,6 @@
   <url>
     <loc>https://engineering.facile.it/blog/ita/type-first-development-in-swift/</loc>
     <lastmod>2015-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/kanban/</loc>
-    <lastmod>2015-04-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/scrum/</loc>
-    <lastmod>2015-04-30T00:00:00+00:00</lastmod>
   </url>
   
   <url>

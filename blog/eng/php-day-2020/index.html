@@ -1,0 +1,1233 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>PHPDay 2020</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="referrer" content="always">
+        <meta name="generator" content="Hugo 0.69.0" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+            
+        
+
+        
+    
+        <meta name="twitter:card" content="summary"/>
+        
+            <meta name="twitter:image:src" content="https://engineering.facile.it/images/social/twitter-card-logo.png"/>
+        
+    
+    
+    <meta name="twitter:title" content="PHPDay 2020"/>
+    <meta name="twitter:description" content="The 2020 edition of PHPDay took place on September 8th in a remote fashion.
+Having experienced the 2019 edition (indeed my first one, despite being a PHP developer from eons!) I would say that it was a little difficult to stay focused for such a long event. However, given the high-quality level of lecturers and talks, it was totally worth the effort.
+I would like to thank the folks at Grusp for their passionate work."/>
+    
+        
+            <meta name="twitter:creator" content="@zolletta"/>
+        
+    
+
+
+<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+
+        <meta property="og:title" content="PHPDay 2020" />
+<meta property="og:description" content="The 2020 edition of PHPDay took place on September 8th in a remote fashion.
+Having experienced the 2019 edition (indeed my first one, despite being a PHP developer from eons!) I would say that it was a little difficult to stay focused for such a long event. However, given the high-quality level of lecturers and talks, it was totally worth the effort.
+I would like to thank the folks at Grusp for their passionate work." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/php-day-2020/" />
+<meta property="article:published_time" content="2020-09-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-16T00:00:00+00:00" />
+
+        <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="PHPDay 2020">
+<meta itemprop="description" content="The 2020 edition of PHPDay took place on September 8th in a remote fashion.
+Having experienced the 2019 edition (indeed my first one, despite being a PHP developer from eons!) I would say that it was a little difficult to stay focused for such a long event. However, given the high-quality level of lecturers and talks, it was totally worth the effort.
+I would like to thank the folks at Grusp for their passionate work.">
+<meta itemprop="datePublished" content="2020-09-16T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-09-16T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="736">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/additional.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/monokai-sublime.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">Facile.it Engineering</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/authors/">
+                            <i class="fa fa-pencil">&nbsp;</i>Authors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/ita/careers/">
+                            <i class="fa fa-briefcase">&nbsp;</i>Careers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/eng/who-we-are/">
+                            <i class="fa fa-users">&nbsp;</i>Who we are
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/authors/">
+                            <h3>
+                                <i class="fa fa-pencil">&nbsp;</i>Authors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/ita/careers/">
+                            <h3>
+                                <i class="fa fa-briefcase">&nbsp;</i>Careers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/eng/who-we-are/">
+                            <h3>
+                                <i class="fa fa-users">&nbsp;</i>Who we are
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/php-day-2020/">PHPDay 2020</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-16'>
+                                    September 16, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/lambda-days-2020/">Lambda Days 2020</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-01'>
+                                    September 1, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/from-zero-to-infinite-the-final-keyword/">From zero to infinite: the Final keyword</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-07-10'>
+                                    July 10, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2020%2f&amp;text=PHPDay%202020&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2020%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2020%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2020%2f&amp;title=PHPDay%202020" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2020%2f&amp;title=PHPDay%202020" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2020%2f&amp;title=PHPDay%202020" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2020%2f&amp;description=PHPDay%202020" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphp-day-2020%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/eng/php-day-2020/">PHPDay 2020</a></h1>
+            
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2020-09-16'>
+            16 September 2020
+        </time>
+
+        
+            <a href="/authors/veronica-bolognesi/" class="author">
+            
+                <span class="name">Veronica Bolognesi</span>
+                <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" />
+            
+            </a>
+        
+
+        
+            <p>4 minute read</p>
+        
+    </div>
+</header>
+
+
+  
+
+
+  
+
+  <div id="content">
+    <p>The <strong><a href="https://2020.phpday.it/">2020 edition of PHPDay</a></strong> took place on September 8th in a remote fashion.</p>
+<p>Having experienced the 2019 edition (indeed my first one, despite being a PHP developer from eons!) I would say that it was a little difficult to stay focused for such a long event. However, given the high-quality level of lecturers and talks, it was totally worth the effort.</p>
+<p>I would like to thank the folks at <strong><a href="https://www.grusp.org/">Grusp</a></strong> for their passionate work. Please support them!</p>
+<p>What follows is a mere recap of the event, with my some comments of mine.</p>
+<h1 id="things-i-wish-i-knew-when-i-started-playing-developer">Things I Wish I Knew When I Started Playing Developer</h1>
+<h2 id="gary-hockin-geehhttpstwittercomgeeh">Gary Hockin (<a href="https://twitter.com/GeeH">@GeeH</a>)</h2>
+<p>A trip into developers&rsquo; mindset from a ludic (and hence, engaging) point of view. Gary is a natural born speaker ;) and this talk deserves to be seen at least once by anyone interested in programming, no matter their background and interests.</p>
+<h1 id="whats-new-in-php-8">What&rsquo;s new in PHP 8</h1>
+<h2 id="derick-rethans-derickrhttpstwittercomderickr">Derick Rethans (<a href="https://twitter.com/derickr">@derickr</a>)</h2>
+<p>Personally, I did not like the style of the presentation. I&rsquo;m not referring to the graphical layout of slides, but how they were presented! 🙂 However, the information provided is very important and so you should take a look <strong><a href="https://derickrethans.nl/talks/php-phpday20">here</a></strong></p>
+<h1 id="symfony-5-the-new-bit">Symfony 5, the new bit</h1>
+<h2 id="andreas-hucks-meandmymonkeyhttpstwittercommeandmymonkey">Andreas Hucks (<a href="https://twitter.com/meandmymonkey">@meandmymonkey</a>)</h2>
+<p>A deep dive into Symfony 5 features and enhancements. By knowing where the framework is heading, we will make better-informed decisions in our daily work.</p>
+<p>#Leveraging Typed Exceptions for Cleaner Error Handling</p>
+<h2 id="chris-holland-chrishollandhttpstwittercomchrisholland">Chris Holland (<a href="https://twitter.com/chrisholland">@chrisholland</a>)</h2>
+<p>This speech was mainly intended for entry-level or mid-level developers. However, it is very useful to learn (or recap) how to build a long-lasting relationship with exceptions. In fact, exceptions are not our enemies, they can help us contextualize the scope in which they occur and thus speed up the debugging process.
+Slides <strong><a href="https://bit.ly/exceptions-ftw">available here</a></strong></p>
+<h1 id="kubernetes-for-php-developers">Kubernetes for PHP developers</h1>
+<h2 id="alessandro-lai-alessandrolaihttpstwittercomalessandrolai">Alessandro Lai (<a href="https://twitter.com/AlessandroLai">@AlessandroLai</a>)</h2>
+<p>A well-presented talk by my colleague Alessandro - Too many screenshots of the dashboard for me, but that&rsquo;s only because I am more dev than ops ;)</p>
+<h1 id="technically-speaking-improve-your-code-with-documentation">Technically Speaking: Improve your code with documentation</h1>
+<h2 id="alexandra-white-heyawhitehttpstwittercomheyawhite">Alexandra White (<a href="https://twitter.com/heyawhite">@heyawhite</a>)</h2>
+<p>Brilliantly presented by Alexandra! A tidbit that I brought home: there are moments to be (like) Shakespeare and others not. One of those when not to be Shakespeare is when writing documentation.
+I must say that this talk lighted my interest in technical writing.
+The icing on the cake was that the presentation had subtitles, which should definitely become a de-facto standard at least for pre-recorded videos. Very inclusive!
+Slides <strong><a href="https://docs.google.com/presentation/d/1l7cjrouAGdsGae4nXyJLcGcool1l0zx5knXvL_4h04Q/edit#slide=id.g589a77319a_0_34">available here</a></strong></p>
+<h1 id="looping-the-loop-with-spl-iterators">Looping the Loop with SPL Iterators</h1>
+<h2 id="mark-baker-mark_bakerhttpstwittercommark_baker">Mark Baker (<a href="https://twitter.com/Mark_Baker">@Mark_Baker</a>)</h2>
+<p>A tour of the little-known iterators world. . There was also time for a little mea-culpa about the almost-not-existent documentation when the library was first published and its initial years.🙂
+Slides <strong><a href="https://www.slideshare.net/MarkBakerUK/looping-the-loop-with-spl-iterators/">available here</a></strong></p>
+<h1 id="getting-started-with-reactphp---pushing-real-time-data-to-the-browser">Getting started with ReactPHP - Pushing real-time data to the browser</h1>
+<h2 id="christian-lück-another_cluehttpstwittercomanother_clue">Christian Lück (<a href="https://twitter.com/another_clue">@another_clue</a>)</h2>
+<p>This is the real React! Not that other little thing made by Facebook! An introductory talk to the React world and the pillars it is based on: async and event-driven programming and, of course, promises (<a href="https://music.youtube.com/watch?v=Ok1Z65OMi1Y&amp;feature=gws_kp_track)">https://music.youtube.com/watch?v=Ok1Z65OMi1Y&amp;feature=gws_kp_track)</a>.</p>
+<h1 id="pragmatic-optimism-how-php-conquered-the-web">Pragmatic Optimism: How PHP Conquered the Web</h1>
+<h2 id="samantha-quiñones-ieatkillerbeeshttpstwittercomieatkillerbees">Samantha Quiñones (<a href="https://twitter.com/ieatkillerbees">@ieatkillerbees</a>)</h2>
+<p>I really enjoyed the final talk that was a historical retrospective of the web and web developing, starting from Charles Babbage up to (fast forward) CGI, the Personal Home Page Tools - PHP Tools and its evolution.
+There was a point in this talk worth mentioning: sometimes people are ashamed to tell others they are using PHP because of (insert here any drawback you heard of - probably already fixed by now).
+The fact is: why should we be ashamed by declaring that we&rsquo;re using PHP? Every problem could be sorted out by several approaches and tools, some better suited than others.
+Well, pragmatically speaking, PHP is a tool that has helped us solve our problems for a very long time and it has proven to listen to its community and to evolve.
+I liked the comparison with CoBOL: at the time it was published it was the perfect tool to program business applications because the alternatives were, more or less, not-existent (unless you would go low-level).
+So, CoBol was the right tool at the right time. And still it is&hellip; (that&rsquo;s why big companies find cheaper to maintain their big underdocumented monoliths than re-engineering it, but this is another story).</p>
+<p>So, let&rsquo;s be proud to be PHP developers, and let&rsquo;s hope that the 2021 PHPDay edition will be held in person in Verona!</p>
+
+  </div>
+
+  
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/agile">Agile</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/scrum">Scrum</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/kanban">Kanban</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/eng/lambda-days-2020/"
+                class="button big previous">Lambda Days 2020</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo_engineering.png" width="100%" alt="Facile.it Engineering" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>News, repos, tips & trends from the Facile.it Engineering team!</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section id="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
+                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/php-day-2020/">PHPDay 2020</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-16'>
+                16 September 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/andrea-ceccarelli/" class="author" title="See other posts from Andrea Ceccarelli">
+                      <img src="https://secure.gravatar.com/avatar/d726367c7bb9f7bd5e7573771a8599fa" alt="Andrea Ceccarelli avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/lambda-days-2020/">Lambda Days 2020</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-01'>
+                1 September 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/bruce/" class="author" title="See other posts from Roberto Diana">
+                      <img src="https://www.gravatar.com/avatar/7b41c4aa13af3d840d1464e8d5d9109b" alt="Roberto Diana avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/from-zero-to-infinite-the-final-keyword/">From zero to infinite: the Final keyword</a>
+              </h3>
+              
+              <time class="published" datetime='2020-07-10'>
+                10 July 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Top categories</a></h3>
+      </header>
+        
+          
+        
+
+        
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/english/">English</a>
+                <span style="float:right;">33</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
+                <span style="float:right;">34</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/oop/">oop</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
+                <span style="float:right;">21</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/software-testing/">Software testing</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+        <p>
+            <a href="/categories/" class="button">View more categories</a>
+        </p>
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h1>
+      <p>Facile.it relies on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. This blog allows our developers to share tips and direct experiences with new technologies.</p>
+      <a href="/ita/chi-siamo/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          Facile.it Engineering
+        
+      .
+      <a href="/ita/disclaimer/" rel="nofollow">Disclaimer</a><br>
+      Design <a href="http://html5up.net" rel="nofollow" target="_blank">HTML5 UP</a><br>
+      Ported by <a href="//github.com/jpescador" rel="nofollow" target="_blank">Julio Pescador</a><br>
+      Modified by <a href="//github.com/Jean85" rel="nofollow" target="_blank">Alessandro Lai</a><br>
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/objectivec.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/swift.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+      <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        $(function() {
+            $('.lazy').Lazy();
+        });
+    </script>
+  </body>
+</html>
+

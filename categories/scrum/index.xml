@@ -6,10 +6,21 @@
     <description>Recent content in Scrum on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Apr 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/scrum/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PHPDay 2020</title>
+      <link>https://engineering.facile.it/blog/eng/php-day-2020/</link>
+      <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/php-day-2020/</guid>
+      <description>The 2020 edition of PHPDay took place on September 8th in a remote fashion.
+Having experienced the 2019 edition (indeed my first one, despite being a PHP developer from eons!) I would say that it was a little difficult to stay focused for such a long event. However, given the high-quality level of lecturers and talks, it was totally worth the effort.
+I would like to thank the folks at Grusp for their passionate work.</description>
+    </item>
     
     <item>
       <title>Un flusso di lavoro agile</title>

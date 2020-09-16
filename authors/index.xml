@@ -6,10 +6,19 @@
     <description>Recent content in Authors on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/authors/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>veronica-bolognesi</title>
+      <link>https://engineering.facile.it/authors/veronica-bolognesi/</link>
+      <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/veronica-bolognesi/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>andrea-ceccarelli</title>

@@ -4,7 +4,7 @@ date: "2020-10-22"
 draft: false
 share: true
 categories: [English, Software Testing]
-title: "Automation testing: a step back"
+title: "Automated testing: a step back"
 type: "post"
 languageCode: "en-EN"
 toc: true
@@ -29,7 +29,7 @@ This is the introduction of a [Google test codelab](https://codelabs.developers.
 
 So, we write automated tests to save time in the future, it's an investment. We suppose that when we add more features the old ones need to be checked again. We invest our time in order to save more in the future but in the short term we will not have a return.
 
-If we imagine a big project with many developers, it becomes clearer. If we want to release often or with simplicity, we cannot check everything manually every time. Therefore, if we want to release soon and we don't have any automation tests, we will end up testing only what seems most important at the moment. In this way, we expose ourselves to the risk of regression.
+If we imagine a big project with many developers, it becomes clearer. If we want to release often or with simplicity, we cannot check everything manually every time. Therefore, if we want to release soon and we don't have any automated tests, we will end up testing only what seems most important at the moment. In this way, we expose ourselves to the risk of regression.
 
 ## Count as documentation
 
@@ -57,11 +57,11 @@ Unlike the first two points, the benefits of the latter two are immediate and do
 
 There is another point that is usually cited as an advantage of working on a well-tested project: confidence. In fact, developing with your shoulders covered by tests lightens your mind.
 
-I didn't put this point on the list because I am not comparing automation-tests with no-tests, but automation-tests with manual-tests.
+I didn't put this point on the list because I am not comparing automated-tests with no-tests, but automated-tests with manual-tests.
 
 # Can test harm?
 
-We have seen the pros of automation testing, now let's examine the cons.
+We have seen the pros of automated testing, now let's examine the cons.
 
 Tests come at a cost: they can slow down the development process, they can slow down the CI, they can make maintenance and refactoring harder, they can make you write worse code.
 
@@ -97,7 +97,7 @@ This is a concept that is well expressed [here](https://dhh.dk/2014/test-induced
 
 # Many ways of testing (wrong)
 
-Doing automation test is pretty complex. The first time I entered the testing world it was a nightmare, I was overwhelmed by how many concepts are needed only for testing purposes (i.e. several types of tests, test-driven development (TDD), test doubles, etc). And on top of that, all the framework related stuff. So that I asked myself: is it worth it? Short answer: if you want to be a good developer, yes.
+Doing automated test is pretty complex. The first time I entered the testing world it was a nightmare, I was overwhelmed by how many concepts are needed only for testing purposes (i.e. several types of tests, test-driven development (TDD), test doubles, etc). And on top of that, all the framework related stuff. So that I asked myself: is it worth it? Short answer: if you want to be a good developer, yes.
 
 In fact, there are many theoretical concepts and many ways of applying them and it is really very likely to do it the wrong way.
 

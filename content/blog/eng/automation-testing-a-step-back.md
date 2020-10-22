@@ -1,6 +1,6 @@
 ---
 authors: ["carmine-laface"]
-date: "2020-06-23"
+date: "2020-10-22"
 draft: false
 share: true
 categories: [English, Software Testing]

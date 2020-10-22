@@ -6,10 +6,19 @@
     <description>Recent content in Authors on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/authors/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>carmine-laface</title>
+      <link>https://engineering.facile.it/authors/carmine-laface/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/carmine-laface/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>veronica-bolognesi</title>

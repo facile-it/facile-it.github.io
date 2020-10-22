@@ -6,10 +6,28 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>English</title>
+      <link>https://engineering.facile.it/categories/english/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software Testing</title>
+      <link>https://engineering.facile.it/categories/software-testing/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/software-testing/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Agile</title>
@@ -17,15 +35,6 @@
       <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/agile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>https://engineering.facile.it/categories/english/</link>
-      <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/english/</guid>
       <description></description>
     </item>
     
@@ -233,15 +242,6 @@
       <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/realpath_cache/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Software testing</title>
-      <link>https://engineering.facile.it/categories/software-testing/</link>
-      <pubDate>Tue, 12 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/software-testing/</guid>
       <description></description>
     </item>
     

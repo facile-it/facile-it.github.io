@@ -1,0 +1,1260 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Automation testing: a step back</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="referrer" content="always">
+        <meta name="generator" content="Hugo 0.69.0" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+            
+        
+
+        
+    
+        <meta name="twitter:card" content="summary"/>
+        
+            <meta name="twitter:image:src" content="https://engineering.facile.it/images/social/twitter-card-logo.png"/>
+        
+    
+    
+    <meta name="twitter:title" content="Automation testing: a step back"/>
+    <meta name="twitter:description" content="The goal of this article is to define basic concepts related to testing, trying not to take anything for granted.
+Why do we test?? Why is it important to write automated tests? I asked myself and I did some research because the answer to this question was not obvious to me. I knew it was important but I didn&rsquo;t know why. So, I decided to try to explain it starting from a point of view as impartial as possible."/>
+    
+        
+            
+        
+    
+
+
+<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+
+        <meta property="og:title" content="Automation testing: a step back" />
+<meta property="og:description" content="The goal of this article is to define basic concepts related to testing, trying not to take anything for granted.
+Why do we test?? Why is it important to write automated tests? I asked myself and I did some research because the answer to this question was not obvious to me. I knew it was important but I didn&rsquo;t know why. So, I decided to try to explain it starting from a point of view as impartial as possible." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/automation-testing-a-step-back/" />
+<meta property="article:published_time" content="2020-10-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-10-22T00:00:00+00:00" />
+
+        <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="Automation testing: a step back">
+<meta itemprop="description" content="The goal of this article is to define basic concepts related to testing, trying not to take anything for granted.
+Why do we test?? Why is it important to write automated tests? I asked myself and I did some research because the answer to this question was not obvious to me. I knew it was important but I didn&rsquo;t know why. So, I decided to try to explain it starting from a point of view as impartial as possible.">
+<meta itemprop="datePublished" content="2020-10-22T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-10-22T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1678">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/additional.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/monokai-sublime.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">Facile.it Engineering</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/authors/">
+                            <i class="fa fa-pencil">&nbsp;</i>Authors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/ita/careers/">
+                            <i class="fa fa-briefcase">&nbsp;</i>Careers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/eng/who-we-are/">
+                            <i class="fa fa-users">&nbsp;</i>Who we are
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/authors/">
+                            <h3>
+                                <i class="fa fa-pencil">&nbsp;</i>Authors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/ita/careers/">
+                            <h3>
+                                <i class="fa fa-briefcase">&nbsp;</i>Careers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/eng/who-we-are/">
+                            <h3>
+                                <i class="fa fa-users">&nbsp;</i>Who we are
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/automation-testing-a-step-back/">Automation testing: a step back</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-10-22'>
+                                    October 22, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/php-day-2020/">PHPDay 2020</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-16'>
+                                    September 16, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/lambda-days-2020/">Lambda Days 2020</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-09-01'>
+                                    September 1, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fautomation-testing-a-step-back%2f&amp;text=Automation%20testing%3a%20a%20step%20back&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fautomation-testing-a-step-back%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fautomation-testing-a-step-back%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fautomation-testing-a-step-back%2f&amp;title=Automation%20testing%3a%20a%20step%20back" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fautomation-testing-a-step-back%2f&amp;title=Automation%20testing%3a%20a%20step%20back" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fautomation-testing-a-step-back%2f&amp;title=Automation%20testing%3a%20a%20step%20back" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fautomation-testing-a-step-back%2f&amp;description=Automation%20testing%3a%20a%20step%20back" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fautomation-testing-a-step-back%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/eng/automation-testing-a-step-back/">Automation testing: a step back</a></h1>
+            
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2020-10-22'>
+            22 October 2020
+        </time>
+
+        
+            <a href="/authors/carmine-laface/" class="author">
+            
+                <span class="name">Carmine Laface</span>
+                <img src="https://avatars0.githubusercontent.com/u/15687645" alt="Carmine Laface avatar" />
+            
+            </a>
+        
+
+        
+            <p>8 minute read</p>
+        
+    </div>
+</header>
+
+
+  
+
+
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-do-we-test">Why do we test??</a>
+      <ul>
+        <li><a href="#avoid-regression">Avoid regression</a></li>
+        <li><a href="#count-as-documentation">Count as documentation</a></li>
+        <li><a href="#help-write-better-code">Help write better code</a></li>
+        <li><a href="#find-bug-during-development">Find bug during development</a></li>
+        <li><a href="#honorable-mentions">Honorable mentions</a></li>
+      </ul>
+    </li>
+    <li><a href="#can-test-harm">Can test harm?</a>
+      <ul>
+        <li><a href="#slow-down-the-development-process">Slow down the development process</a></li>
+        <li><a href="#slow-down-the-ci">Slow down the CI</a></li>
+        <li><a href="#make-maintenance-and-refactoring-harder">Make maintenance and refactoring harder</a></li>
+        <li><a href="#make-write-worse-code">Make write worse code</a></li>
+      </ul>
+    </li>
+    <li><a href="#many-ways-of-testing-wrong">Many ways of testing (wrong)</a></li>
+    <li><a href="#how-should-we-test">How should we test?</a></li>
+  </ul>
+</nav>
+  
+
+  <div id="content">
+    <p>The goal of this article is to define basic concepts related to testing, trying not to take anything for granted.</p>
+<h1 id="why-do-we-test">Why do we test??</h1>
+<p>Why is it important to write automated tests? I asked myself and I did some research because the answer to this question was not obvious to me. I knew it was important but I didn&rsquo;t know why. So, I decided to try to explain it starting from a point of view as impartial as possible.</p>
+<p>After some research, I came to the conclusion that the benefits of tests are four: they can avoid regression, they can count as documentation, they can help write better code and they can help find bugs during development.</p>
+<p>Let&rsquo;s focus on one at a time and analyze it.</p>
+<h2 id="avoid-regression">Avoid regression</h2>
+<blockquote>
+<p>When you implemented a feature in your app, you likely ran the code to verify that it worked as expected. You performed a test, albeit a manual test. As you continued to add and update features, you probably also continued to run your code and verify it works. But doing this manually every time is tiring, prone to mistakes, and does not scale.<br>
+Computers are great at scaling and automation! So developers at companies large and small write automated tests, which are tests that are run by software and do not require you to manually operate the app to verify the code works.</p>
+</blockquote>
+<p>This is the introduction of a <a href="https://codelabs.developers.google.com/codelabs/advanced-android-kotlin-training-testing-basics/#0">Google test codelab</a>. It not only defines in a pretty straightforward way what automated tests are, but it also tells why you should do that. This reason is only the first of the four on the list that I have compiled before, but it is the main reason.</p>
+<p>So, we write automated tests to save time in the future, it&rsquo;s an investment. We suppose that when we add more features the old ones need to be checked again. We invest our time in order to save more in the future but in the short term we will not have a return.</p>
+<p>If we imagine a big project with many developers, it becomes clearer. If we want to release often or with simplicity, we cannot check everything manually every time. Therefore, if we want to release soon and we don&rsquo;t have any automation tests, we will end up testing only what seems most important at the moment. In this way, we expose ourselves to the risk of regression.</p>
+<h2 id="count-as-documentation">Count as documentation</h2>
+<p>This is an easy point. Documentation can be important (less than working software, see agile manifesto) but it&rsquo;s a pain for most developers and takes a lot of time to do it well. But if tests are written in a certain way they can have the same information of product documentation, that evolves and adapts as the software grows. This way the software can be self-documented.</p>
+<h2 id="help-write-better-code">Help write better code</h2>
+<p>This is a very generic sentence, what do I mean by &ldquo;better code&rdquo;? First, remember that software quality, as that of other built things, can be measured. A program can be better than another one that does the same things based on some parameters (performance, usability and many others). We can divide these parameters into 2 big groups: the one that users notice and the one that users don&rsquo;t.</p>
+<p>For example, if the same code is written without naming convention or indentation, end-users don&rsquo;t notice it and the software runs exactly the same. So why should we care? Because if we want to modify this code, for example by adding some new features, it will be much harder without naming conventions and indentation.</p>
+<p>That said, a code is &ldquo;better&rdquo; than another one when, even if does the same things, it is easier to maintain and to evolve (being more readable, respecting the SOLID principles etc.).</p>
+<p>Tests help to increase quality, because making testable code forces us to restructure it and to change dependency management. This generally translates into a more correct distribution of responsibilities. So, it is better from an architectural point of view.</p>
+<p>This doesn&rsquo;t mean that untested code has worse distribution of responsibilities. However, testing can help to achieve this goal by putting us in a position where we need to rethink our code structure.</p>
+<h2 id="find-bug-during-development">Find bug during development</h2>
+<p>I think it is uncommon, but it can happen to find a bug in an automated test during development. It is uncommon because test cases in automated tests are usually more structured than those in manual tests. This is because we are forced to write down automated test cases and we know that they will remain written. Therefore, we pay more attention to automated test cases. Developers do not write manual test cases often neither they run them based on how they wrote them. For this reason, the process of writing an automated test spots problems that may go unnoticed during a manual test.</p>
+<p>Unlike the first two points, the benefits of the latter two are immediate and do not increase over time. Therefore, a good strategy could be to delete the test after the development is complete. I know that it sounds weird but it makes sense if we don&rsquo;t consider the other points.</p>
+<h2 id="honorable-mentions">Honorable mentions</h2>
+<p>There is another point that is usually cited as an advantage of working on a well-tested project: confidence. In fact, developing with your shoulders covered by tests lightens your mind.</p>
+<p>I didn&rsquo;t put this point on the list because I am not comparing automation-tests with no-tests, but automation-tests with manual-tests.</p>
+<h1 id="can-test-harm">Can test harm?</h1>
+<p>We have seen the pros of automation testing, now let&rsquo;s examine the cons.</p>
+<p>Tests come at a cost: they can slow down the development process, they can slow down the CI, they can make maintenance and refactoring harder, they can make you write worse code.</p>
+<h2 id="slow-down-the-development-process">Slow down the development process</h2>
+<p>It has happened to me several times that writing tests took me longer and required more effort than developing the tested feature. This can happen due to inexperience, or due to technical limitations for which writing tests is more complicated.</p>
+<p>In these cases I always ask myself if it is really worth it, if the time invested in writing these tests will pay off and, if so, after how long.</p>
+<p>Therefore, focusing only on the first of the benefits for simplicity&rsquo;sake, we compare the time spent in writing the tests with the gain that will be obtained over time. When you invest money, you can see if the investment is good based on how long it will take to get back into the investment. The same rule applies to software automation.</p>
+<p><img src="https://imgs.xkcd.com/comics/is_it_worth_the_time_2x.png" alt="enter image description here"></p>
+<p>To evaluate it, I refer to this scheme found on internet.</p>
+<h2 id="slow-down-the-ci">Slow down the CI</h2>
+<p>Having a test suite makes sense when used in a continuous integration system. Usually, tests are quite fast when taken individually, but they can start to become a problem when they are in large quantities.</p>
+<p>This may seem like a marginal problem but having a slow CI is problematic. So be careful because at the beginning tests can be like grains of sand and when the project becomes very large, the CI can become a sandstorm and it can block the development process like a slow build.</p>
+<h2 id="make-maintenance-and-refactoring-harder">Make maintenance and refactoring harder</h2>
+<p>This is the case when a change to the codebase (like refactoring an implementation detail or adding a new feature) also implies changes to the test code even if the previous tested behavior doesn&rsquo;t change.</p>
+<p>This means that your test code is heavily coupled with your tested code. This can make working on a project frustrating, slow and inefficient.</p>
+<h2 id="make-write-worse-code">Make write worse code</h2>
+<p>This point is the exact opposite of the one written above on the list of the pros. In fact, in order to make a part of the code testable we are often forced to restructure our code but this can be harmful.</p>
+<p>This is a concept that is well expressed <a href="https://dhh.dk/2014/test-induced-design-damage.html">here</a>. By <em>&ldquo;test-induced design damage&rdquo;</em>, we refer to the process induced by the search for easier, faster or more tests that deforms your code through unnecessary indirection or complexity.</p>
+<h1 id="many-ways-of-testing-wrong">Many ways of testing (wrong)</h1>
+<p>Doing automation test is pretty complex. The first time I entered the testing world it was a nightmare, I was overwhelmed by how many concepts are needed only for testing purposes (i.e. several types of tests, test-driven development (TDD), test doubles, etc). And on top of that, all the framework related stuff. So that I asked myself: is it worth it? Short answer: if you want to be a good developer, yes.</p>
+<p>In fact, there are many theoretical concepts and many ways of applying them and it is really very likely to do it the wrong way.</p>
+<p>With regard to pure coding related concepts, it is easier to understand what we are doing wrong. Leaving out the functional aspect, since it is obvious that the code that works as expected is better than the one that does not, let&rsquo;s analyze it from an architectural point of view.</p>
+<p>Like I said before, code that is easy to change even after months is better than code that is hard to change. Code that does not break in point A when point B has changed is better than code that breaks, etc. Therefore, we can put ourselves in a position where, based on experience, we can define the boundaries to meet our standard. Then, it should be pretty clear when we cross those boundaries.</p>
+<p>For what concerns tests, the situation is a bit different. Typically, testing code is not treated as source code, but _&quot;_<em>Test code is source code, you need to architect it, to maintain it, to refactor it. It&rsquo;s source code that you are not shipping to your users&rdquo;.</em> Christina Lee</p>
+<h1 id="how-should-we-test">How should we test?</h1>
+<p>Above you can find the reason why you should test and why you should do it carefully. It is really important to do it right, otherwise it can be more harmful than useful. But what are the &lsquo;rules&rsquo; to do it right?</p>
+<p>You will find them in the next article.</p>
+
+  </div>
+
+  
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/software-testing">Software Testing</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/eng/php-day-2020/"
+                class="button big previous">PHPDay 2020</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo_engineering.png" width="100%" alt="Facile.it Engineering" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>News, repos, tips & trends from the Facile.it Engineering team!</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section id="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/carmine-laface/" class="author" title="See other posts from Carmine Laface">
+                      <img src="https://avatars0.githubusercontent.com/u/15687645" alt="Carmine Laface avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/automation-testing-a-step-back/">Automation testing: a step back</a>
+              </h3>
+              
+              <time class="published" datetime='2020-10-22'>
+                22 October 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
+                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/php-day-2020/">PHPDay 2020</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-16'>
+                16 September 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/andrea-ceccarelli/" class="author" title="See other posts from Andrea Ceccarelli">
+                      <img src="https://secure.gravatar.com/avatar/d726367c7bb9f7bd5e7573771a8599fa" alt="Andrea Ceccarelli avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/lambda-days-2020/">Lambda Days 2020</a>
+              </h3>
+              
+              <time class="published" datetime='2020-09-01'>
+                1 September 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Top categories</a></h3>
+      </header>
+        
+          
+        
+
+        
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/english/">English</a>
+                <span style="float:right;">34</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
+                <span style="float:right;">34</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/oop/">oop</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
+                <span style="float:right;">21</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/software-testing/">Software Testing</a>
+                <span style="float:right;">7</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+        <p>
+            <a href="/categories/" class="button">View more categories</a>
+        </p>
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h1>
+      <p>Facile.it relies on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. This blog allows our developers to share tips and direct experiences with new technologies.</p>
+      <a href="/ita/chi-siamo/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          Facile.it Engineering
+        
+      .
+      <a href="/ita/disclaimer/" rel="nofollow">Disclaimer</a><br>
+      Design <a href="http://html5up.net" rel="nofollow" target="_blank">HTML5 UP</a><br>
+      Ported by <a href="//github.com/jpescador" rel="nofollow" target="_blank">Julio Pescador</a><br>
+      Modified by <a href="//github.com/Jean85" rel="nofollow" target="_blank">Alessandro Lai</a><br>
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/objectivec.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/swift.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+      <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        $(function() {
+            $('.lazy').Lazy();
+        });
+    </script>
+  </body>
+</html>
+

@@ -3,32 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://engineering.facile.it/categories/agile/</loc>
-    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+    <loc>https://engineering.facile.it/authors/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/authors/</loc>
-    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+    <loc>https://engineering.facile.it/blog/eng/automation-testing-a-step-back/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/blog/</loc>
-    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/carmine-laface/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/categories/</loc>
-    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/categories/english/</loc>
-    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/software-testing/</loc>
+    <lastmod>2020-10-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/agile/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -219,11 +234,6 @@
   
   <url>
     <loc>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</loc>
-    <lastmod>2017-09-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/software-testing/</loc>
     <lastmod>2017-09-12T00:00:00+00:00</lastmod>
   </url>
   

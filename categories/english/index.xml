@@ -6,10 +6,20 @@
     <description>Recent content in English on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/english/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Automation testing: a step back</title>
+      <link>https://engineering.facile.it/blog/eng/automation-testing-a-step-back/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/automation-testing-a-step-back/</guid>
+      <description>The goal of this article is to define basic concepts related to testing, trying not to take anything for granted.
+Why do we test?? Why is it important to write automated tests? I asked myself and I did some research because the answer to this question was not obvious to me. I knew it was important but I didn&amp;rsquo;t know why. So, I decided to try to explain it starting from a point of view as impartial as possible.</description>
+    </item>
     
     <item>
       <title>PHPDay 2020</title>

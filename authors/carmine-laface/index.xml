@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>carmine-laface on Facile.it Engineering</title>
+    <link>https://engineering.facile.it/authors/carmine-laface/</link>
+    <description>Recent content in carmine-laface on Facile.it Engineering</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.facile.it/authors/carmine-laface/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Automation testing: a step back</title>
+      <link>https://engineering.facile.it/blog/eng/automation-testing-a-step-back/</link>
+      <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/automation-testing-a-step-back/</guid>
+      <description>The goal of this article is to define basic concepts related to testing, trying not to take anything for granted.
+Why do we test?? Why is it important to write automated tests? I asked myself and I did some research because the answer to this question was not obvious to me. I knew it was important but I didn&amp;rsquo;t know why. So, I decided to try to explain it starting from a point of view as impartial as possible.</description>
+    </item>
+    
+  </channel>
+</rss>

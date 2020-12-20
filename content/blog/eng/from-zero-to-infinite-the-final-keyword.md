@@ -7,7 +7,6 @@ categories: [English, php, oop]
 title: "From zero to infinite: the Final keyword"
 type: "post"
 languageCode: "en-EN"
-twitterImage: /images/from-zero-to-infinite-the-final-keyword/
 toc: true
 ---
 

@@ -239,10 +239,10 @@ So the point is that the check (do_inherit_constant_check()) in called by a func
 Besides, PHP source code lists seven tests for interface constants inheritance and all of them only test direct inheritance.  
 So, there's nothing that could make us think it's not a wanted (or tolerated) behaviour.
 
-# Late state bindings
+# Late static bindings
 
 Anyway, is that a real problem?  
-For sure, knowing how [late state bindings](https://www.php.net/manual/en/language.oop5.late-static-bindings.php) feature works, can help us to get an idea.  
+For sure, knowing how [late static bindings](https://www.php.net/manual/en/language.oop5.late-static-bindings.php) feature works, can help us to get an idea.  
 Take a look to the following example
 
 ```php

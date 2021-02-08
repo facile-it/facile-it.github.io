@@ -303,7 +303,7 @@ echo $anakin->useTheForce(); // returns dark
 
 That's how late static bindings feature works.  
 `self`, being a static reference to the current class, is resolved using the class in which the method belongs.  
-On the other hand, late state bindings feature with the keyword `static` goes beyond that limitation, by referencing the class that was initally called at runtime.
+On the other hand, late static bindings feature with the keyword `static` goes beyond that limitation, by referencing the class that was initally called at runtime.
 
 # Conclusion
 

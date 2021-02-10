@@ -209,7 +209,7 @@ So, there's nothing that could make us think it's not a wanted (or tolerated) be
 
 # Late static bindings
 
-Anyway, is that problem?  
+Anyway, is that a problem?  
 For sure, knowing how [late static bindings](https://www.php.net/manual/en/language.oop5.late-static-bindings.php) feature works, can help you to avoid risky practices.  
 Take a look to the following example
 

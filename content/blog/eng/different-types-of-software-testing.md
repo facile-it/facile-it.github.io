@@ -15,21 +15,17 @@ toc: true
 Everyone who works in software development has stumbled upon **software testing**.
 
 Why should a developer know anything about testing?  
-Well, software testing is a valuable asset and a big part of development: it does not only test the application, 
-helping to find scary bugs, it teaches to think outside the box and write code with quality in mind.
+Well, software testing is a valuable asset and a big part of development: it does not only test the application, it also teaches to think outside the box and to write code with quality in mind.
 
 ## Software testing is not finding bugs 
 
-Software testing goal is not only to *find bugs* and *"break things"*: testing can range from pure functionalities exploration
-to a deep understanding of the tested application, an idea of what, why and how the application is tested together with
-the guiding concept of quality.
+The goal of software testing is not only to *find bugs* and *"break things"*. Testing can range from a pure exploration of functionalities to a deep understanding of the tested application. Testing can give an idea of what, why and how the application is tested together with the guiding concept of quality.
 
-Tests do not break software. The software is already broken! Software can already have bugs before the QA/Developer 
-finds out by running some tests: if we put it this way it is clear that focusing on **enhancing code quality**, analyzing the 
-features before/alongside development and having the right amount of tests are good things to do.
+The software may already have bugs before the QA or the developer finds them out by running some tests. If we put it this way it is clear that focusing on **enhancing code quality**, analyzing the features before/alongside development and having the right amount of tests are good things to do.
 
-Software testing is however an engineering practice that offers support to different areas of software development. 
-There are therefore different methodologies, tools and needs to adopt the most suitable testing activities for your IT world
+However, software testing is an engineering practice that offers support to different areas of software development. 
+
+There are, therefore, different methodologies, tools and needs to adopt the most suitable testing activities for your IT world
 
 
 ## Types
@@ -103,14 +99,14 @@ Performance tests verify if the application performance is compromised during hi
 ### Exploratory testing
 
 Exploratory testing relies on finding all those not expected behaviors which may be not so obvious to design or cover in a test execution. 
-There's usually a time limit and a specific part of the application that has to be covered by the exploratory tests: after the time limit has expired all the people involved in the execution reports all the unexpected behaviors found on the application.
+There's usually a time limit and a specific part of the application that has to be covered by exploratory tests. When the time limit has expired, the people involved in the execution of these tests must report all the unexpected behaviors they have found on the application.
 
-This type of tests is one of the most expensive in terms of time but yet one of the best ways to cover your application from regression and UI bugs as the majority of the issues that are reported in this phase are usually difficult to find with automated tests.
+These tests are some of the most expensive in terms of time. However, they are one of the best ways to cover your application from regression and UI bugs since the majority of the issues that are reported in this phase are usually difficult to find with automated tests.
 
 
 ## Notes
 
-Another good practice you should check out is the "Test Pyramid". On the bottom of the pyramid we have unit tests which are quick, easy to mantain and low in coverage while at the very top we can see *UI tests*: slow, costly and with a high coverage.  
+Another good practice you should check out is the "Test Pyramid". At the bottom of the pyramid we have unit tests which are quick, easy to mantain and low in coverage, while at the very top we can see *UI tests* which are slow, costly and with a high coverage.
 
 This pyramid helps the development teams keep a focus on what type of tests should prevail in their codebases, helping them focus on efficiency, delivery and quality at the same time.
 
@@ -119,12 +115,9 @@ This pyramid helps the development teams keep a focus on what type of tests shou
 
 ## Conclusions
 
-We introduced the concept that there is no such thing as "breaking things" and that there are 
-many types of tests that can support the *software life cycle*. We now know that it is a good idea 
-to know at least some of them.
+We introduced the idea that software testing does not imply "breaking things" and that there are many types of tests that can support the *software life cycle*. We now know that it is a good idea to know at least some of them.
 
 *Tests* are part of the development process and knowing them should be a **goal** for everyone working
 on developing an application.
 
-We must not forget to check what is the best approach to test our application, in the trade-off 
-between effort, time and coverage, planning some time with teams to discuss, review and create some tests!
+We must remember to check what is the best approach to test our application considering the trade-off between effort, time and coverage. We should take some time with the teams involved in the development process to discuss, review and create some tests!

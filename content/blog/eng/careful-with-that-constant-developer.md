@@ -49,13 +49,18 @@ class Padawan extends Master {
 }
 ```
 
-And, you need to consider that.  
-But, let's step back, how does accessing class constants work?  
+Is that a proper behaviour?  
+That's the question that backs the not yet accepted [proposal to forbid constants overriding](https://github.com/phpstan/phpstan-strict-rules/issues/37) via [PHPStan](https://phpstan.org).  
+It depends on what kind of approach to programming you have. It's not in question that constants shouldn't be allowed to change (that's why they are called "constants") but maybe you could see this PHP feature like a curious implementation of [OTP (one-time programmability)](https://en.wikipedia.org/wiki/Programmable_ROM) on a per-class basis. In fact if you notice, every derived class can override the constant only once.
+
+# Constants access
+
+But, let's step back, how does class constants access work?  
 You can't use the object operator `->` neither the pseudo-variable `$this`. PHP has another token, the scope resolution operator `::`, that from within an object context, needs to be combined with keywords like `self`, `parent` or `static`. Let's just focus on `self` for now, we'll come back later to this topic.  
 
 # Using final
 
-So, you still need your constant but, since you are not sure yet that it can't be changed, you don't feel comfortable.  
+So, you still need your constant but, since you are not sure that it can't be changed, maybe you don't feel comfortable.  
 Of course you could try to take advantage of `final` by creating a class that carries the constant you need and ensures that it can't be changed. But, since a final class can't be extended, inevitably you would need to do something awkward, like this
 
 ```php
@@ -75,7 +80,7 @@ class Master {
 
 # Interface constants
 
-PHP provides you with another powerful tool: interface constants.  
+PHP provides you with another powerful feature: interface constants.  
 According to [PHP documentation](https://www.php.net/manual/en/language.oop5.interfaces.php#language.oop5.interfaces.constants), it's possible for interfaces to have constants and they can't be overridden by a class/interface that inherits them.  
 So you can define an interface constant, like this
 
@@ -189,50 +194,13 @@ static bool do_inherit_constant_check(HashTable *child_constants_table, zend_cla
 /* }}} */
 ```
 
-And this is where the check is called
+And here is where the check is called (zend_do_implement_inferface())
 
 ```c
-ZEND_API void zend_do_implement_interface(zend_class_entry *ce, zend_class_entry *iface) /* {{{ */
-{
-	uint32_t i, ignore = 0;
-	uint32_t current_iface_num = ce->num_interfaces;
-	uint32_t parent_iface_num  = ce->parent ? ce->parent->num_interfaces : 0;
-	zend_string *key;
-	zend_class_constant *c;
-
-	ZEND_ASSERT(ce->ce_flags & ZEND_ACC_LINKED);
-
-	for (i = 0; i < ce->num_interfaces; i++) {
-		if (ce->interfaces[i] == NULL) {
-			memmove(ce->interfaces + i, ce->interfaces + i + 1, sizeof(zend_class_entry*) * (--ce->num_interfaces - i));
-			i--;
-		} else if (ce->interfaces[i] == iface) {
-			if (EXPECTED(i < parent_iface_num)) {
-				ignore = 1;
-			} else {
-				zend_error_noreturn(E_COMPILE_ERROR, "Class %s cannot implement previously implemented interface %s", ZSTR_VAL(ce->name), ZSTR_VAL(iface->name));
-			}
-		}
-	}
-	if (ignore) {
-		/* Check for attempt to redeclare interface constants */
-		ZEND_HASH_FOREACH_STR_KEY_PTR(&ce->constants_table, key, c) {
-			do_inherit_constant_check(&iface->constants_table, c, key, iface);
-		} ZEND_HASH_FOREACH_END();
-	} else {
-		if (ce->num_interfaces >= current_iface_num) {
-			if (ce->type == ZEND_INTERNAL_CLASS) {
-				ce->interfaces = (zend_class_entry **) realloc(ce->interfaces, sizeof(zend_class_entry *) * (++current_iface_num));
-			} else {
-				ce->interfaces = (zend_class_entry **) erealloc(ce->interfaces, sizeof(zend_class_entry *) * (++current_iface_num));
-			}
-		}
-		ce->interfaces[ce->num_interfaces++] = iface;
-
-		do_interface_implementation(ce, iface);
-	}
-}
-/* }}} */
+/* Check for attempt to redeclare interface constants */
+ZEND_HASH_FOREACH_STR_KEY_PTR(&ce->constants_table, key, c) {
+    do_inherit_constant_check(&iface->constants_table, c, key, iface);
+} ZEND_HASH_FOREACH_END();
 ```
 
 So the point is that the check (do_inherit_constant_check()) in called by a function (zend_do_implement_interface()) which is simply not called for implementors derived classes.  
@@ -241,8 +209,8 @@ So, there's nothing that could make us think it's not a wanted (or tolerated) be
 
 # Late static bindings
 
-Anyway, is that a real problem?  
-For sure, knowing how [late static bindings](https://www.php.net/manual/en/language.oop5.late-static-bindings.php) feature works, can help us to get an idea.  
+Anyway, is that problem?  
+For sure, knowing how [late static bindings](https://www.php.net/manual/en/language.oop5.late-static-bindings.php) feature works, can help you to avoid risky practices.  
 Take a look to the following example
 
 ```php
@@ -266,9 +234,11 @@ class Padawan extends Master {
 }
 
 $obiwan = new Master();
-echo $obiwan->useTheForce(); // returns light
+echo $obiwan->useTheForce(); 
+// light
 $anakin = new Padawan();
-echo $anakin->useTheForce(); // returns light
+echo $anakin->useTheForce(); 
+// light
 ```
 
 It appears that the super class (in which the method useTheForce() belongs) is able to keep unchanged its constant.  
@@ -296,14 +266,18 @@ class Padawan extends Master {
 }
 
 $obiwan = new Master();
-echo $obiwan->useTheForce(); // returns light
+echo $obiwan->useTheForce(); 
+// light
 $anakin = new Padawan();
-echo $anakin->useTheForce(); // returns dark
+echo $anakin->useTheForce(); 
+// dark
 ```
 
 That's how late static bindings feature works.  
 `self`, being a static reference to the current class, is resolved using the class in which the method belongs.  
-On the other hand, late static bindings feature with the keyword `static` goes beyond that limitation, by referencing the class that was initally called at runtime.
+On the other hand, late static bindings feature with the keyword `static` goes beyond that limitation, by referencing the class that was initally called at runtime.  
+It's safe to use late stating bindings with constants?  
+Again, it's probably a matter of approach. Constants shouldn't but allowed to change, but in case, be sure that the things you do can't reveal unpleasant surprises, because maybe you expect the light side of the force and the dark side is what you get.
 
 # Conclusion
 

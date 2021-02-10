@@ -142,7 +142,8 @@ class Padawan extends Master {
 }
 
 $anakin = new Padawan();
-echo $anakin->useTheForce(); // returns dark
+echo $anakin->useTheForce(); 
+// dark
 ```
 This piece of code doesn't output any error.  
 It turns out that a derived class from a super class that implements an interface, can override the interface constants, despite the super class can't.  

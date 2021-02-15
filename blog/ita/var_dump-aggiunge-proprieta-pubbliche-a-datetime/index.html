@@ -55,10 +55,15 @@ $date = new \DateTime(); var_dump(isset($date-&gt;date)); // OUTPUT: bool(false)
 <meta property="article:published_time" content="2015-03-02T00:00:00+00:00" />
 <meta property="article:modified_time" content="2015-03-02T00:00:00+00:00" />
 
-        <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
-        <meta property="og:image:type" content="image/png">
-        <meta property="og:image:width" content="512">
-        <meta property="og:image:height" content="512">
+
+        
+            
+                
+                <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
+                
+            
+        
+
         <meta itemprop="name" content="var_dump() aggiunge proprietà pubbliche a DateTime">
 <meta itemprop="description" content="PHP, fin dalla versione 5.2.0, introduce gli oggetti \DateTime per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali.
 Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate var_dump, print_r, var_export o debug_zval_dump su un istanza di \DateTime.

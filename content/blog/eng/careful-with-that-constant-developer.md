@@ -325,7 +325,7 @@ echo Force::LIGHT_SIDE->value;
 // light
 ```
 
-Why are we talking about that? Because Enumerations values are read-only properties and it could be interesting.
+Why are we talking about that? Because Enumerations values are read-only properties and it could be interesting.  
 It is worth to say that Enumerations are much more than that, since they are built on top of classes and objects, so they can have costants, but methods too, they can implement interfaces and so on.  
 It means that it will be possible writing something like that
 

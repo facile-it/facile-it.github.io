@@ -27,7 +27,8 @@ So, you probably should get the result you want this way
 <?php
 declare(strict_types=1);
 
-class Jedi {
+class Jedi 
+{
     public const SIDE_OF_THE_FORCE = 'light';
 }
 ```
@@ -40,11 +41,13 @@ This means that, the following code, is correct
 <?php
 declare(strict_types=1);
 
-class Master {
+class Master 
+{
     public const SIDE_OF_THE_FORCE = 'light';
 }
 
-class Padawan extends Master {
+class Padawan extends Master 
+{
     public const SIDE_OF_THE_FORCE = 'dark';
 }
 ```
@@ -67,12 +70,15 @@ Of course you could try to take advantage of `final` by creating a class that ca
 <?php
 declare(strict_types=1);
 
-final class Jedi {
+final class Jedi 
+{
     public const SIDE_OF_THE_FORCE = 'light';
 }
 
-class Master {
-    public function useTheForce(): string {
+class Master 
+{
+    public function useTheForce(): string 
+    {
         return Jedi::SIDE_OF_THE_FORCE;
     }
 }
@@ -88,7 +94,8 @@ So you can define an interface constant, like this
 <?php
 declare(strict_types=1);
 
-interface JediInterface {
+interface JediInterface 
+{
     public const SIDE_OF_THE_FORCE = 'light';
 }
 ```
@@ -99,11 +106,13 @@ But you can't override it, in fact the following code
 <?php
 declare(strict_types=1);
 
-interface JediInterface {
+interface JediInterface 
+{
     public const SIDE_OF_THE_FORCE = 'light';
 }
 
-class Padawan implements JediInterface {
+class Padawan implements JediInterface 
+{
     public const SIDE_OF_THE_FORCE = 'dark';
 }
 ```
@@ -126,17 +135,21 @@ Take a look to this code
 <?php
 declare(strict_types=1);
 
-interface JediInterface {
+interface JediInterface 
+{
     public const SIDE_OF_THE_FORCE = 'light';
 }
 
-class Master implements JediInterface {
+class Master implements JediInterface 
+{
 }
 
-class Padawan extends Master {
+class Padawan extends Master 
+{
     public const SIDE_OF_THE_FORCE = 'dark';
 
-    public function useTheForce(): string {
+    public function useTheForce(): string 
+    {
         return self::SIDE_OF_THE_FORCE;
     }
 }
@@ -154,14 +167,17 @@ And in fact, if you make the derived class implement the interface likewise
 <?php
 declare(strict_types=1);
 
-interface JediInterface {
+interface JediInterface 
+{
     public const SIDE_OF_THE_FORCE = 'light';
 }
 
-class Master implements JediInterface {
+class Master implements JediInterface 
+{
 }
 
-class Padawan extends Master implements JediInterface {
+class Padawan extends Master implements JediInterface 
+{
     public const SIDE_OF_THE_FORCE = 'dark';
 }
 ```
@@ -220,19 +236,23 @@ Take a look to the following code
 <?php
 declare(strict_types=1);
 
-interface JediInterface {
+interface JediInterface 
+{
     public const SIDE_OF_THE_FORCE = 'light';
     
     public function useTheForce(): string;
 }
 
-class Master implements JediInterface {
-    public function useTheForce(): string {
+class Master implements JediInterface 
+{
+    public function useTheForce(): string 
+    {
         return self::SIDE_OF_THE_FORCE;
     } 
 }
 
-class Padawan extends Master {
+class Padawan extends Master 
+{
     public const SIDE_OF_THE_FORCE = 'dark';
 }
 
@@ -252,19 +272,23 @@ Try to change the access to the constant by replacing `self` with `static` this 
 <?php
 declare(strict_types=1);
 
-interface JediInterface {
+interface JediInterface 
+{
     public const SIDE_OF_THE_FORCE = 'light';
     
     public function useTheForce(): string;
 }
 
-class Master implements JediInterface {
-    public function useTheForce(): string {
+class Master implements JediInterface 
+{
+    public function useTheForce(): string 
+    {
         return static::SIDE_OF_THE_FORCE;
     } 
 }
 
-class Padawan extends Master {
+class Padawan extends Master 
+{
     public const SIDE_OF_THE_FORCE = 'dark';
 }
 
@@ -281,6 +305,68 @@ That's how late static bindings feature works.
 On the other hand, late static bindings feature with the keyword `static` goes beyond that limitation, by referencing the class that was initally called at runtime.  
 Is it safe to use late stating bindings with constants?  
 Again, it's probably a matter of approach. Constants shouldn't be allowed to change, but in case, be sure that the things you do can't reveal unpleasant surprises. If you expect to get the light side of the force and you get the dark side, you could be disappointed.
+
+# What the future holds...
+
+It's a fact that, [Enumerations](https://wiki.php.net/rfc/enumerations) are going to become a real thing with version 8.1.  
+So after that release, we will be able to write something like this  
+
+```php
+<?php
+declare(strict_types=1);
+
+enum Force: string 
+{
+    case LIGHT_SIDE = 'light';
+    case DARK_SIDE = 'dark';
+}
+
+echo Force::LIGHT_SIDE->value;
+// light
+```
+
+Why are we talking about that? Because Enumarations values are read-only properties and it could be interesting.
+It is worth to say that Enumerations are much more than that, since they are built on top of classes and objects, so they can have costants, but methods too, they can implement interfaces and so on.  
+It means that it will be possible writing something like that
+
+```php
+<?php
+declare(strict_types=1);
+
+enum Force
+{
+    case LIGHT_SIDE;
+    case DARK_SIDE;
+    
+    public function control(): string 
+    {
+        return match($this) {
+            self::LIGHT_SIDE => 'light',   
+            self::DARK_SIDE => 'dark'
+        }
+    }
+}
+
+class Jedi
+{
+    private Force $force;
+
+    public __construct(Force $force) 
+    {
+        $this->force = $force;
+    }
+
+    public function useTheForce(): string 
+    {
+        return $this->force->control();
+    }
+}
+
+$force = Force::LIGHT_SIDE;
+$obiwan = new Jedi($force);
+echo $obiwan->useTheForce();
+// light
+```
 
 # Conclusion
 

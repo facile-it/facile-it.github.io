@@ -21,7 +21,7 @@ PHP, at present (version 8.0.2) allows [`final`](https://engineering.facile.it/b
 # Class constants
 
 According to [PHP documentation](https://www.php.net/manual/en/language.oop5.constants.php) you can define constants on a per-class basis, using `const`.  
-So, you probably should get the result you want this way
+So, you probably should get the result you want this way  
 
 ```php
 <?php
@@ -29,7 +29,7 @@ declare(strict_types=1);
 
 class Jedi 
 {
-    public const SIDE_OF_THE_FORCE = 'light';
+    protected const SIDE_OF_THE_FORCE = 'light';
 }
 ```
 
@@ -43,12 +43,12 @@ declare(strict_types=1);
 
 class Master 
 {
-    public const SIDE_OF_THE_FORCE = 'light';
+    protected const SIDE_OF_THE_FORCE = 'light';
 }
 
 class Padawan extends Master 
 {
-    public const SIDE_OF_THE_FORCE = 'dark';
+    protected const SIDE_OF_THE_FORCE = 'dark';
 }
 ```
 
@@ -59,7 +59,7 @@ It depends on what kind of approach to programming you have. It's not in questio
 # Constants access
 
 But, let's step back, how does class constants access work?  
-You can't use the object operator `->` neither the pseudo-variable `$this`. PHP has another token, the scope resolution operator `::`, that from within an object context, needs to be combined with keywords like `self`, `parent` or `static`. Let's just focus on `self` for now, we'll come back later to this topic.  
+You can't use the object operator `->` neither the pseudo-variable `$this`. PHP has another token, the scope resolution operator `::`, that from within an object context, needs to be combined with the keywords `self`, `parent` or `static`. Let's just focus on `self` for now, we'll come back later to this topic.  
 
 # Using final
 
@@ -84,11 +84,14 @@ class Master
 }
 ```
 
+This kind of approach is one of the alternatives you can use to avoid [Constant interface](https://en.wikipedia.org/wiki/Constant_interface) anti-pattern.  
+And it brings us to the subject of interfaces.  
+
 # Interface constants
 
-PHP provides you with another powerful feature: interface constants.  
+Indeed PHP allows you to use interface constants too.  
 According to [PHP documentation](https://www.php.net/manual/en/language.oop5.interfaces.php#language.oop5.interfaces.constants), it's possible for interfaces to have constants and they can't be overridden by a class/interface that inherits them.  
-So you can define an interface constant, like this
+So you can define an interface constant, necessarily `public`, like this
 
 ```php
 <?php
@@ -189,7 +192,7 @@ Fatal error: Cannot inherit previously-inherited or override constant SIDE_OF_TH
 ```
 
 So, bug or feature?  
-It's a fair question, bearing in mind that PHPStorm static analysis tool, currently reports always as an error the attempt to redefine an interface constant, even if it's redefined by a child class that doesn't implement directly the interface.  
+It's a fair question, bearing in mind that PHPStorm static analysis tool, currently (version 2020.3.2) reports always as an error the attempt to redefine an interface constant, even if it's redefined by a child class that doesn't implement directly the interface.  
 Recently, they opened [an issue on JetBrains tracking system](https://youtrack.jetbrains.com/issue/WI-56949) asking to fix PHPStorm static analysis tool, since it should be a false positive.  
 For the sake of completeness, it must be said that a few years ago, they opened [an issue on PHP bug traking system](https://bugs.php.net/bug.php?id=73348) too, (version 7.0.12) asking for the opposite, that is asking to fix the behaviour by applying the inheritance check to derived classes too.  
 So, to get a sense of how things really are, we can just take a look to PHP source code, to *Zend/zend_inheritance.c* in particular.  
@@ -306,10 +309,59 @@ On the other hand, late static bindings feature with the keyword `static` goes b
 Is it safe to use late stating bindings with constants?  
 Again, it's probably a matter of approach. Constants shouldn't be allowed to change, but in case, be sure that the things you do can't reveal unpleasant surprises. If you expect to get the light side of the force and you get the dark side, you could be disappointed.
 
-# What the future holds...
+# Global constants
 
-It's a fact that, [Enumerations](https://wiki.php.net/rfc/enumerations) are going to become a real thing with version 8.1.  
-So after that release, we will be able to write something like this  
+Anyway, setting aside the objects for a moment, what if you need to have constants outside of a class hierarchy?  
+Of course you could set [global constants](https://www.php.net/manual/en/language.constants.php) using `define` this way
+
+```php
+<?php
+declare(strict_types=1);
+
+define('LIGHT_SIDE_OF_THE_FORCE', 'light');
+define('DARK_SIDE_OF_THE_FORCE', 'dark');
+
+echo LIGHT_SIDE_OF_THE_FORCE;
+// light
+echo DARK_SIDE_OF_THE_FORCE;
+// dark
+```
+
+# Namespace constants
+
+But instead, imagine you need to work in a [namespace context](https://www.php.net/manual/en/language.namespaces.basics.php) somehow. What are you allowed to do?  
+For sure, something like that
+
+```php
+<?php
+declare(strict_types=1);
+
+namespace Jedi {
+    const SIDE_OF_THE_FORCE = 'light';
+}
+
+namespace Sith {
+    const SIDE_OF_THE_FORCE = 'dark';
+}
+
+namespace {
+    echo Jedi\SIDE_OF_THE_FORCE;
+    // light
+    echo Sith\SIDE_OF_THE_FORCE;
+    // dark
+}
+```
+
+Notice the unusual namespace bracketed syntax, it's the only way for combining into a single file global non-namespaced code with namespaced code. Anyway, this example, it's just for demonstration purposes, because it's strongly discouraged as a coding practice to combine multiple namespaces into the same file.  
+Notice also that since you are out of any class hierarchy, you are not allowed to use access modifiers for `const` that is therefore set to a public default visibility. 
+
+# Back to the Future
+
+And probably that's enough on constants topic, at least if you address the topic the usual way.  
+But, what else could you do? Is there something to know if you want to approach differently the kind of problems that usually require constants?  
+Although other languages featured Enumerations for a long time, they are going to be available in PHP only since version 8.1.  
+And it's a fact that, [Enumerations](https://wiki.php.net/rfc/enumerations) offer other implementation possibilities. Maybe some way to reconsider your use of constants.  
+Take a look to the following code  
 
 ```php
 <?php
@@ -325,9 +377,9 @@ echo Force::LIGHT_SIDE->value;
 // light
 ```
 
-Why are we talking about that? Because Enumerations values are read-only properties and it could be interesting.  
-It is worth to say that Enumerations are much more than that, since they are built on top of classes and objects, so they can have costants, but methods too, they can implement interfaces and so on.  
-It means that it will be possible writing something like that
+Why is that interesting? For example because Enumerations cases are represented as constants on the enum itself and their values are read-only properties.  
+It is worth to say that Enumerations are much more than that, since they are built on top of classes and objects, so they can have their own costants and methods too, as also can implement interfaces.  
+So maybe, coming back to what you were looking for at the very beginning, something like the following code does the trick
 
 ```php
 <?php
@@ -362,13 +414,15 @@ class Jedi
     }
 }
 
-$force = Force::LIGHT_SIDE;
-$obiwan = new Jedi($force);
+$obiwan = new Jedi(Force::LIGHT_SIDE);
 echo $obiwan->useTheForce();
 // light
+$anakin = new Jedi(Force::DARK_SIDE);
+echo $anakin->useTheForce();
+// dark
 ```
 
 # Conclusion
 
-Constants should be the last concerns for developers, in PHP too. Nonetheless they carry with them a lot of situations that a developer needs to consider.  
+Constants should be the last concern for developers, in PHP too. Nonetheless they carry with them a lot of situations that a developer needs to consider.  
 Without claiming to be exhaustive, this article just gives a quick overview of the most common ones, trying to be a starting point to deepen the topic.

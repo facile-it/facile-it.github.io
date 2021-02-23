@@ -13,16 +13,62 @@ toc: true
 
 # Introduction
 
-Imagine you need to use a fixed numeric value, let's say 20.000. 20.000 it's what we call a *literal constant*, that is a value that will always remain the exact same in your code. 
-So, now image you need to use that value more than once. Sooner or later, you'll read your code and you won't remember what 20.000 was about. It's a fact. But what if you assign the value to an immutable variable with a meaningful name? Let's say MAXIMUM_MIDICHLORIAN_COUNT = 20000. It's different isn't it? By reading the name, you are immediately able to understand what its value is about. MAXIMUM_MIDICHLORIAN_COUNT it's what we call *named constant* or simply constant.
-So, why do we use constants? For sure it's a matter of readability. But there's more.  
-Now that you have a [self-documenting](https://en.wikipedia.org/wiki/Self-documenting_code) constant, you may have to use it in several parts of your code. So you probably need that the programming language protects you from the possibility your value is changed. 
-So again, why do we use constants? It's a matter of safety too.   
-Programming languages have their own way to identify something that can't be changed, for example `const` for C++ or `final` for Java.  
+Imagine you need to use a fixed numeric value in your code, let's say 20000. It's what we call a *literal constant*, that is a value that will always remain the exact same in your code. 
+So, now image you need to use that value more than once. Sooner or later, you'll read your code and you won't remember what 20000 was about. It's a fact. But what if you assign the value to an immutable variable with a [meaningful name](https://en.wikipedia.org/wiki/Self-documenting_code)? Let's say something like this
+
+```
+MAXIMUM_MIDICHLORIAN_COUNT = 20000 
+```
+
+It's different isn't it? By reading the name, you are immediately able to understand what its value is about. MAXIMUM_MIDICHLORIAN_COUNT it's what we call a *named constant* or simply a constant.  
+So, why do we use constants? As you just saw, it's a matter of readability. But there's more.  
+Let's say you have a function or a method that takes an argument and does something with it. For example the argument could be a number and based on its value, the function could behave differently.
+Take a look to the following code
+
+```php
+<?php
+declare(strict_types=1);
+
+class JediTest
+{
+    public function midichlorianCount(int $midichlorian): string
+    {
+        if($midichlorian > 20000) {
+            return "The chosen one may be!"
+        }
+        return "Just a regular Jedi...";
+    }
+}
+```
+
+Remeber? 20000 was the value of MAXIMUM_MIDICHLORIAN_COUNT, so we could have used that named constant insted of the literal one.  
+Again, why do we use constants? As you just saw, constants could be very useful to represent boundaries or edge cases.  
+And there would be more, but just focus on the fact that we assign certain values to immutable variables instead of variable variables. Why is that? Because we need that the programming language protects us from the possibility that our value is changed.  
+So finally, why do we use constants? For sure it's a matter of safety.  
+Programming languages have their own way to identify something that can't be changed, for example C++ uses `const` and Java uses `final`.  
 It may not seem like it, but there are a few interesting things to say about constants in PHP.  
-Let's say you have a class hierarchy and you need a constant that doesn't belong to a particular instance, since you need it to be shared between all the instances of its object.  
+
+# Global scope constants
+
+The easiest way to set a constant is using [global scope constants](https://www.php.net/manual/en/language.constants.php).  
+With the keyword `define` you can do something like that
+
+```php
+<?php
+declare(strict_types=1);
+
+define('LIGHT_SIDE_OF_THE_FORCE', 'light');
+define('DARK_SIDE_OF_THE_FORCE', 'dark');
+
+echo LIGHT_SIDE_OF_THE_FORCE;
+// light
+echo DARK_SIDE_OF_THE_FORCE;
+// dark
+```
+
+But let's say you don't need a global scope constant since you have a class hierarchy and you need a constant that doesn't belong to a particular instance, you need it to be shared between all the instances of its object.  
 Something you would write, for instance in Java, using a `static final` field.  
-PHP, at present (version 8.0.2) allows [`final`](https://engineering.facile.it/blog/eng/from-zero-to-infinite-the-final-keyword/) only for classes and methods and that's why constants exist.  
+PHP, at present (version 8.0.2) allows [`final`](https://engineering.facile.it/blog/eng/from-zero-to-infinite-the-final-keyword/) only for classes and methods and that's why class constants exist.  
 
 # Class constants
 
@@ -39,7 +85,7 @@ class Jedi
 }
 ```
 
-But we said that a constant has to be unchangeable.  
+But we said that a constant needs to be unchangeable.  
 So, before using class constants, you need to be aware that every child class is allowed to redefine inherited constants.   
 This means that, the following code, is correct
 
@@ -91,7 +137,7 @@ class Master
 ```
 
 This kind of approach is one of the alternatives you can use to avoid [Constant interface](https://en.wikipedia.org/wiki/Constant_interface) anti-pattern.  
-And it brings us to the subject of interfaces.  
+And precisely, it brings us to speak of interfaces.  
 
 # Interface constants
 
@@ -200,7 +246,7 @@ Fatal error: Cannot inherit previously-inherited or override constant SIDE_OF_TH
 So, bug or feature?  
 It's a fair question, bearing in mind that PHPStorm static analysis tool, currently (version 2020.3.2) reports always as an error the attempt to redefine an interface constant, even if it's redefined by a child class that doesn't implement directly the interface.  
 Recently, they opened [an issue on JetBrains tracking system](https://youtrack.jetbrains.com/issue/WI-56949) asking to fix PHPStorm static analysis tool, since it should be a false positive.  
-For the sake of completeness, it must be said that a few years ago, they opened [an issue on PHP bug traking system](https://bugs.php.net/bug.php?id=73348)(version 7.0.12) asking for the opposite, that is asking to fix the behaviour by applying the inheritance check to derived classes too.  
+For the sake of completeness, it must be said that a few years ago, they opened [an issue on PHP bug traking system](https://bugs.php.net/bug.php?id=73348)(version 7.0.12) asking for the opposite, that is asking to fix the behaviour by applying the inheritance check to derived classes.  
 So, to get a sense of how things really are, we can just take a look to PHP source code, to *Zend/zend_inheritance.c* in particular.  
 This is how PHP does the inheritance check
 
@@ -231,13 +277,13 @@ ZEND_HASH_FOREACH_STR_KEY_PTR(&ce->constants_table, key, c) {
 } ZEND_HASH_FOREACH_END();
 ```
 
-So the point is that the check (*do_inherit_constant_check()*) is called by a function (*zend_do_implement_interface()*) which is simply not called for implementors derived classes.  
+So the point is that the check (*do_inherit_constant_check()*) is called by a function (*zend_do_implement_interface()*) which is simply not called in case of implementors derived classes.  
 Besides, PHP source code lists seven tests for interface constants inheritance and all of them only test direct inheritance.  
 So, there's nothing that could make us think it's not a wanted (or tolerated) behaviour.
 
 # Late static bindings
 
-Anyway, is that a problem?  
+Anyway, is that a real problem?  
 For sure, knowing how [late static bindings](https://www.php.net/manual/en/language.oop5.late-static-bindings.php) feature works, can help you to avoid risky practices.  
 Take a look to the following code
 
@@ -273,7 +319,7 @@ echo $anakin->useTheForce();
 // light
 ```
 
-It appears that the super class (in which the method *useTheForce()* belongs) is able to keep unchanged its constant.  
+It appears that the super class (in which the method *useTheForce()* belongs) is able to keep unchanged its constant even when the derived class uses it.  
 But what happens if you make a small change to the previous example?   
 Try to change the access to the constant by replacing `self` with `static` this way
 
@@ -315,27 +361,10 @@ On the other hand, late static bindings feature with the keyword `static` goes b
 Is it safe to use late stating bindings with constants?  
 Again, it's probably a matter of approach. Constants shouldn't be allowed to change, but in case, be sure that the things you do, can't reveal unpleasant surprises. If you expect to get the light side of the force and you get the dark side, you could be disappointed.
 
-# Global constants
-
-Anyway, setting aside the objects for a moment, what if you need to have constants outside of a class hierarchy?  
-Of course you could set [global scope constants](https://www.php.net/manual/en/language.constants.php) using `define` this way
-
-```php
-<?php
-declare(strict_types=1);
-
-define('LIGHT_SIDE_OF_THE_FORCE', 'light');
-define('DARK_SIDE_OF_THE_FORCE', 'dark');
-
-echo LIGHT_SIDE_OF_THE_FORCE;
-// light
-echo DARK_SIDE_OF_THE_FORCE;
-// dark
-```
-
 # Namespace constants
 
-But instead, let's say you need to work in a [namespace context](https://www.php.net/manual/en/language.namespaces.basics.php) somehow. What are you allowed to do? For sure, something like that  
+Outside of a class hierarchy, PHP allows you to define constants in a [namespace context](https://www.php.net/manual/en/language.namespaces.basics.php) too.  
+Indeed you can do something like that  
 
 ```php
 <?php
@@ -360,12 +389,11 @@ namespace {
 Notice the unusual namespace bracketed syntax, it's the only way for combining into a single file global non-namespaced code with namespaced code. Anyway, this example, it's just for demonstration purposes, because it's strongly discouraged as a coding practice to combine multiple namespaces into the same file.  
 Notice also that since you are out of any class hierarchy, you are not allowed to use access modifiers for `const` that is therefore set to a public default visibility. 
 
-# Back to the Future
+# Sensing the future
 
-And probably that's enough on constants topic, at least if you address the topic the usual way.  
-But, what else could you do? Is there something to know if you want to approach differently the kind of problems that usually require constants?  
+All the scenarios we've briefly seen until now, could be addressed differently, thinking of one of the new PHP features.  
 Although other languages featured Enumerations for a long time, they are going to be available in PHP only since version 8.1.  
-And it's a fact that, [Enumerations](https://wiki.php.net/rfc/enumerations) offer other implementation possibilities. Maybe some way to reconsider your use of constants.  
+And it's a fact that, [Enumerations](https://wiki.php.net/rfc/enumerations) (enumerated types with a fixed number of possible values), offer other implementation possibilities. Maybe some way to reconsider the use of constants too.  
 Take a look to the following code  
 
 ```php
@@ -384,7 +412,7 @@ echo Force::LIGHT_SIDE->value;
 
 Why is that interesting? For example because Enumerations cases are represented as constants on the enum itself and their values are read-only properties.  
 It is worth to say that Enumerations are much more than that, since they are built on top of classes and objects, so they can have their own costants and methods too, as also can implement interfaces.  
-So maybe, coming back to what you were looking for at the very beginning, something like the following code does the trick
+So maybe, coming back to what you were talking about when we were dealing with class hierarchies, something like the following code does the trick
 
 ```php
 <?php
@@ -429,5 +457,6 @@ echo $anakin->useTheForce();
 
 # Conclusion
 
-Constants should be the last concern for developers, in PHP too. Nonetheless they carry with them a lot of situations that a developer needs to consider.  
-Without claiming to be exhaustive, this article just gives a quick overview of the most common ones, trying to be a starting point to deepen the topic.
+Constants should be the last concern during development, in PHP too. Nonetheless they carry with them a lot of situations that a developer needs to consider.  
+There are a few things to pay attention to, but for sure, the amount of possibilities that PHP gives, puts the developer in a real creative position, with the concrete possibility to make a consistent use of constants.  
+Without claiming to be exhaustive, this article just gives a quick overview of the most common scenarios, trying to be a starting point to deepen the topic.

@@ -13,14 +13,20 @@ toc: true
 
 # Introduction
 
+Imagine you need to use a fixed numeric value, let's say 20.000. 20.000 it's what we call a *literal constant*, that is a value that will always remain the exact same in your code. 
+So, now image you need to use that value more than once. Sooner or later, you'll read your code and you won't remember what 20.000 was about. It's a fact. But what if you assign the value to an immutable variable with a meaningful name? Let's say MAXIMUM_MIDICHLORIAN_COUNT = 20000. It's different isn't it? By reading the name, you are immediately able to understand what its value is about. MAXIMUM_MIDICHLORIAN_COUNT it's what we call *named constant* or simply constant.
+So, why do we use constants? For sure it's a matter of readability. But there's more.  
+Now that you have a [self-documenting](https://en.wikipedia.org/wiki/Self-documenting_code) constant, you may have to use it in several parts of your code. So you probably need that the programming language protects you from the possibility your value is changed. 
+So again, why do we use constants? It's a matter of safety too.   
+Programming languages have their own way to identify something that can't be changed, for example `const` for C++ or `final` for Java.  
 It may not seem like it, but there are a few interesting things to say about constants in PHP.  
-Imagine you need to define a class property that can't be changed and doesn't belong to a particular instance, since you need this property to be shared between all the instances of its object.  
-Something you would write, for instance in Java, using `static final`.  
-PHP, at present (version 8.0.2) allows [`final`](https://engineering.facile.it/blog/eng/from-zero-to-infinite-the-final-keyword/) only for classes and methods, so there's no chance to use it for properties. That's why constants exist.  
+Let's say you have a class hierarchy and you need a constant that doesn't belong to a particular instance, since you need it to be shared between all the instances of its object.  
+Something you would write, for instance in Java, using a `static final` field.  
+PHP, at present (version 8.0.2) allows [`final`](https://engineering.facile.it/blog/eng/from-zero-to-infinite-the-final-keyword/) only for classes and methods and that's why constants exist.  
 
 # Class constants
 
-According to [PHP documentation](https://www.php.net/manual/en/language.oop5.constants.php) you can define constants on a per-class basis, using `const`.  
+According to [PHP documentation](https://www.php.net/manual/en/language.oop5.constants.php) you can define constants on a per-class basis, using the keyword `const`.  
 So, you probably should get the result you want this way  
 
 ```php
@@ -33,7 +39,7 @@ class Jedi
 }
 ```
 
-But, the first requirement of your class property, as previously said, is that it has to be unchangeable.  
+But we said that a constant has to be unchangeable.  
 So, before using class constants, you need to be aware that every child class is allowed to redefine inherited constants.   
 This means that, the following code, is correct
 
@@ -54,7 +60,7 @@ class Padawan extends Master
 
 Is that a proper behaviour?  
 That's the question that backs the not yet accepted [proposal to forbid constants overriding](https://github.com/phpstan/phpstan-strict-rules/issues/37) via [PHPStan](https://phpstan.org).  
-It depends on what kind of approach to programming you have. It's not in question that constants shouldn't be allowed to change (that's why they are called "constants") but maybe you could see this PHP feature like a curious implementation of [OTP (one-time programmability)](https://en.wikipedia.org/wiki/Programmable_ROM) on a per-class basis. In fact if you notice, every derived class can override the constant only once.
+It depends on what kind of approach to programming you have. It's not in question that constants shouldn't be allowed to change, it's a matter of safety, we said. But maybe you could see this PHP feature like a curious implementation of [OTP (one-time programmability)](https://en.wikipedia.org/wiki/Programmable_ROM) on a per-class basis. In fact if you notice, every derived class can override the constant only once.
 
 # Constants access
 
@@ -127,7 +133,7 @@ Fatal error: Cannot inherit previously-inherited or override constant SIDE_OF_TH
 ```
 
 So, it seems you came to an end.   
-You have your property, it can't be changed, it doesn't belong to a particular instance.  
+You have your constant, it can't be changed, it doesn't belong to a particular instance.  
 However, it's not that simple.  
 
 # An unexpected behaviour
@@ -194,7 +200,7 @@ Fatal error: Cannot inherit previously-inherited or override constant SIDE_OF_TH
 So, bug or feature?  
 It's a fair question, bearing in mind that PHPStorm static analysis tool, currently (version 2020.3.2) reports always as an error the attempt to redefine an interface constant, even if it's redefined by a child class that doesn't implement directly the interface.  
 Recently, they opened [an issue on JetBrains tracking system](https://youtrack.jetbrains.com/issue/WI-56949) asking to fix PHPStorm static analysis tool, since it should be a false positive.  
-For the sake of completeness, it must be said that a few years ago, they opened [an issue on PHP bug traking system](https://bugs.php.net/bug.php?id=73348) too, (version 7.0.12) asking for the opposite, that is asking to fix the behaviour by applying the inheritance check to derived classes too.  
+For the sake of completeness, it must be said that a few years ago, they opened [an issue on PHP bug traking system](https://bugs.php.net/bug.php?id=73348)(version 7.0.12) asking for the opposite, that is asking to fix the behaviour by applying the inheritance check to derived classes too.  
 So, to get a sense of how things really are, we can just take a look to PHP source code, to *Zend/zend_inheritance.c* in particular.  
 This is how PHP does the inheritance check
 
@@ -307,12 +313,12 @@ That's how late static bindings feature works.
 `self`, being a static reference to the current class, is resolved using the class in which the method belongs.  
 On the other hand, late static bindings feature with the keyword `static` goes beyond that limitation, by referencing the class that was initally called at runtime.  
 Is it safe to use late stating bindings with constants?  
-Again, it's probably a matter of approach. Constants shouldn't be allowed to change, but in case, be sure that the things you do can't reveal unpleasant surprises. If you expect to get the light side of the force and you get the dark side, you could be disappointed.
+Again, it's probably a matter of approach. Constants shouldn't be allowed to change, but in case, be sure that the things you do, can't reveal unpleasant surprises. If you expect to get the light side of the force and you get the dark side, you could be disappointed.
 
 # Global constants
 
 Anyway, setting aside the objects for a moment, what if you need to have constants outside of a class hierarchy?  
-Of course you could set [global constants](https://www.php.net/manual/en/language.constants.php) using `define` this way
+Of course you could set [global scope constants](https://www.php.net/manual/en/language.constants.php) using `define` this way
 
 ```php
 <?php
@@ -329,8 +335,7 @@ echo DARK_SIDE_OF_THE_FORCE;
 
 # Namespace constants
 
-But instead, imagine you need to work in a [namespace context](https://www.php.net/manual/en/language.namespaces.basics.php) somehow. What are you allowed to do?  
-For sure, something like that
+But instead, let's say you need to work in a [namespace context](https://www.php.net/manual/en/language.namespaces.basics.php) somehow. What are you allowed to do? For sure, something like that  
 
 ```php
 <?php

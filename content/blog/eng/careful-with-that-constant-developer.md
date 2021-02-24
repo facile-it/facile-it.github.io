@@ -22,8 +22,8 @@ MAXIMUM_MIDICHLORIAN_COUNT = 20000
 
 It's different isn't it? By reading the name, you are immediately able to understand what its value is about. MAXIMUM_MIDICHLORIAN_COUNT it's what we call a *named constant* or simply a constant.  
 So, why do we use constants? As you just saw, it's a matter of readability. But there's more.  
-Let's say you have a function or a method that takes an argument and does something with it. For example the argument could be a number and based on its value, the function could behave differently.
-Take a look to the following code
+Let's say you have a function or a method that takes an argument and does something with it. For example, the argument could be a number and based on its value, the function could behave differently.
+Take a look at the following code
 
 ```php
 <?php
@@ -43,7 +43,7 @@ class JediTest
 
 Remeber? 20000 was the value of MAXIMUM_MIDICHLORIAN_COUNT, so we should have used that named constant insted of the literal one.  
 Again, why do we use constants? As you just saw, constants could be very useful to represent boundaries or edge cases.  
-And there would be more, but just focus on the fact that we assign certain values to immutable variables instead of simple variables. Why is that? Because we need that the programming language protects us from the possibility that our value is changed.  
+And there would be more, but just focus on the fact that we assign certain values to immutable variables instead of simple variables. Why is that? Because we need the programming language protects us from the possibility that our value is changed.  
 So finally, why do we use constants? For sure it's a matter of safety.  
 Programming languages have their own way to identify something that can't be changed, for example C++ uses `const` and Java uses `final`.  
 It may not seem like it, but there are a few interesting things to say about constants in PHP.  
@@ -184,7 +184,7 @@ However, it's not that simple.
 
 # An unexpected behaviour
 
-Take a look to this code
+Take a look at this code
 
 ```php
 <?php
@@ -244,10 +244,10 @@ Fatal error: Cannot inherit previously-inherited or override constant SIDE_OF_TH
 ```
 
 So, bug or feature?  
-It's a fair question, bearing in mind that PHPStorm static analysis tool, currently (version 2020.3.2) reports always as an error the attempt to redefine an interface constant, even if it's redefined by a child class that doesn't implement directly the interface.  
-Recently, they opened [an issue on JetBrains tracking system](https://youtrack.jetbrains.com/issue/WI-56949) asking to fix PHPStorm static analysis tool, since it should be a false positive.  
-For the sake of completeness, it must be said that a few years ago, they opened [an issue on PHP bug traking system](https://bugs.php.net/bug.php?id=73348) (version 7.0.12) asking for the opposite, that is asking to fix the behaviour by applying the inheritance check to derived classes too.  
-So, to get a sense of how things really are, we can just take a look to PHP source code, to *Zend/zend_inheritance.c* in particular.  
+It's a fair question, bearing in mind that the PHPStorm static analysis tool, currently (version 2020.3.2) reports always as an error the attempt to redefine an interface constant, even if it's redefined by a child class that doesn't implement directly the interface.  
+Recently, they opened [an issue on the JetBrains tracking system](https://youtrack.jetbrains.com/issue/WI-56949) asking to fix the PHPStorm static analysis tool, since it should be a false positive.  
+For the sake of completeness, it must be said that a few years ago, they opened [an issue on the PHP bug traking system](https://bugs.php.net/bug.php?id=73348) (version 7.0.12) asking for the opposite, that is asking to fix the behaviour by applying the inheritance check to derived classes too.  
+So, to get a sense of how things really are, we can just take a look at PHP source code, to *Zend/zend_inheritance.c* in particular.  
 This is how PHP does the inheritance check
 
 ```c
@@ -285,7 +285,7 @@ So, there's nothing that could make us think it's not a wanted (or tolerated) be
 
 Anyway, is that a real problem?  
 For sure, knowing how [late static bindings](https://www.php.net/manual/en/language.oop5.late-static-bindings.php) feature works, can help you to avoid risky practices.  
-Take a look to the following code
+Take a look at the following code
 
 ```php
 <?php
@@ -393,8 +393,8 @@ Notice also that since you are out of any class hierarchy, you are not allowed t
 
 All the scenarios we've briefly seen until now, could be addressed differently, thinking of one of the new PHP features.  
 Although other languages featured Enumerations for a long time, they are going to be available in PHP only since version 8.1.  
-And it's a fact that, [Enumerations](https://wiki.php.net/rfc/enumerations) (enumerated types with a fixed number of possible values), offer other interesting implementation possibilities. Maybe some way to reconsider the use of constants too.  
-Take a look to the following code  
+And it's a fact that [Enumerations](https://wiki.php.net/rfc/enumerations) (enumerated types with a fixed number of possible values) offer other interesting implementation possibilities. Maybe some way to reconsider the use of constants too.  
+Take a look at the following code  
 
 ```php
 <?php
@@ -410,8 +410,8 @@ echo Force::LIGHT_SIDE->value;
 // light
 ```
 
-Why is that interesting? For example because Enumerations cases are represented as constants on the enum itself and their values are read-only properties.  
-It is worth to say that Enumerations are much more than that, since they are built on top of classes and objects, so they can have their own costants and methods too, and also they can implement interfaces.  
+Why is that interesting? For example, because Enumerations cases are represented as constants on the enum itself and their values are read-only properties.  
+It is worth to say that Enumerations are much more than that, since they are built on top of classes and objects, so they can have their own constants and methods too, and also they can implement interfaces.  
 So maybe, coming back to what we were talking about when we were dealing with class hierarchies, something like the following code does the trick
 
 ```php
@@ -457,6 +457,6 @@ echo $anakin->useTheForce();
 
 # Conclusion
 
-Constants should be the last concern during development, in PHP too. Nonetheless they carry with them a lot of situations that a developer needs to consider.  
-There are a few things to pay attention to, but for sure, the amount of possibilities that PHP gives, puts the developer in a real creative position, with the concrete possibility to make a consistent use of constants.  
+Constants should be the last concern during development, in PHP too. Nonetheless, they carry with them a lot of situations that a developer needs to consider.  
+There are a few things to pay attention to, but for sure, the amount of possibilities that PHP gives, puts the developer in a real creative position, with the concrete possibility to make consistent use of constants.  
 Without claiming to be exhaustive, this article just gives a quick overview of the most common scenarios, trying to be a starting point to deepen the topic.

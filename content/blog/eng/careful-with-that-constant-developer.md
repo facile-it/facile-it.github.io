@@ -391,7 +391,7 @@ Notice also that since you are out of any class hierarchy, you are not allowed t
 
 # Sensing the future
 
-All the scenarios we've briefly seen until now, could be addressed differently, thinking of one of the new PHP features.  
+All the scenarios we've briefly seen until now could be addressed differently, thinking of one of the new PHP features.  
 Although other languages featured Enumerations for a long time, they are going to be available in PHP only since version 8.1.  
 And it's a fact that [Enumerations](https://wiki.php.net/rfc/enumerations) (enumerated types with a fixed number of possible values) offer other interesting implementation possibilities. Maybe some way to reconsider the use of constants too.  
 Take a look at the following code  

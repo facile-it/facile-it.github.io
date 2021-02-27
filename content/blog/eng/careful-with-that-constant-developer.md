@@ -31,9 +31,9 @@ declare(strict_types=1);
 
 class JediTest
 {
-    public function midichlorianCount(int $midichlorian): string
+    public static function checkMidichlorianCount(int $midichlorianCount): string
     {
-        if($midichlorian > 20000) {
+        if($midichlorianCount > 20000) {
             return "The chosen one, the boy may be!"
         }
         return "Just a regular Jedi...";
@@ -41,7 +41,7 @@ class JediTest
 }
 ```
 
-Remeber? 20000 was the value of MAXIMUM_MIDICHLORIAN_COUNT, so we should have used that named constant insted of the literal one.  
+Remember? 20000 was the value of MAXIMUM_MIDICHLORIAN_COUNT, so we should have used that named constant insted of the literal one.  
 Again, why do we use constants? As you just saw, constants could be very useful to represent boundaries or edge cases.  
 And there would be more, but just focus on the fact that we assign certain values to immutable variables instead of simple variables. Why is that? Because we need the programming language protects us from the possibility that our value is changed.  
 So finally, why do we use constants? For sure it's a matter of safety.  

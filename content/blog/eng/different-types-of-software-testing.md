@@ -1,12 +1,13 @@
 ---
 authors: ["andrea-gubellini"]
-date: "2020-09-14"
+date: "2021-03-04"
 draft: false
 share: true
 categories: [English, Testing, QA, Automation]
 title: "Types of software testing"
 type: "post"
 languageCode: "en-EN"
+twitterImage: '/images/cover.jpg'
 toc: true
 ---
 

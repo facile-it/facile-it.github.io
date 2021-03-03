@@ -277,10 +277,10 @@ Therefore, the point is that the check (*do_inherit_constant_check()*) is called
 Besides, PHP source code lists seven tests for interface constants inheritance and all of them only test direct inheritance.  
 Therefore, nothing could make us think this is not a wanted (or tolerated) behaviour.  
 
-# Late static bindings
+# Late Static Bindings
 
 Anyway, is that a real problem?  
-For sure, knowing how [late static bindings feature](https://www.php.net/manual/en/language.oop5.late-static-bindings.php) works helps you avoid risky practices.  
+For sure, knowing how [Late Static Bindings feature](https://www.php.net/manual/en/language.oop5.late-static-bindings.php) works helps you avoid risky practices.  
 Take a look at the following code:  
 
 ```php
@@ -351,10 +351,10 @@ echo $anakin->useTheForce();
 // dark
 ```
 
-This is how late static bindings feature works.  
+This is how Late Static Bindings feature works.  
 `self`, being a static reference to the current class, is resolved by using the class in which the method belongs.  
-On the other hand, late static bindings feature with the keyword `static` goes beyond that limitation, by referencing the class that was initally called at runtime.  
-Is it safe to use late stating bindings with constants?  
+On the other hand, Late Static Bindings feature with the keyword `static` goes beyond that limitation, by referencing the class that was initally called at runtime.  
+Is it safe to use Late Stating Bindings with constants?  
 Again, it is probably a question of approach. Constants should not be allowed to change. But if you do allow it, be sure that what you do will not reveal any unpleasant surprises. If you expect to get the light side of the force and you get the dark side, you could be disappointed.  
 
 # Namespace constants

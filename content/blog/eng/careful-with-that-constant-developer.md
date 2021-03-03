@@ -116,7 +116,7 @@ You cannot use the object operator `->` neither the pseudo-variable `$this`. How
 # Using final
  
 So, you still need a constant but since you are not sure it cannot be changed, maybe you are not comfortable with it.  
-Of course you could try to take advantage of `final` by creating a class that carries the constant you need and ensures that it can't be changed. But, since a final class can't be extended, inevitably you would need to do something awkward, like this
+Obviously, you could try to use `final` by creating a class that carries the constant you need and that ensures that the constant cannot be changed. However, since a final class cannot be extended, you would inevitably need to do something awkward like this:  
 
 ```php
 <?php
@@ -136,14 +136,14 @@ class Master
 }
 ```
 
-This kind of approach is one of the alternatives you can use to avoid [Constant interface](https://en.wikipedia.org/wiki/Constant_interface) anti-pattern.  
-And precisely, it brings us to speak of interfaces.  
+This approach is one of the alternatives you can use to avoid [Constant interface](https://en.wikipedia.org/wiki/Constant_interface) anti-pattern.  
+And that brings us to the topic of interfaces.  
 
 # Interface constants
 
-Indeed PHP allows you to use interface constants too.  
-According to [PHP documentation](https://www.php.net/manual/en/language.oop5.interfaces.php#language.oop5.interfaces.constants), it's possible for interfaces to have constants and they can't be overridden by a class/interface that inherits them.  
-So you can define an interface constant, necessarily `public`, like this
+In fact, PHP allows you to use interface constants too.  
+According to [PHP documentation](https://www.php.net/manual/en/language.oop5.interfaces.php#language.oop5.interfaces.constants), it is possible for interfaces to have constants and they cannot be overridden by a class/interface that inherits them.  
+Therefore, you can define an interface constant, necessarily `public`, like this
 
 ```php
 <?php
@@ -155,7 +155,7 @@ interface JediInterface
 }
 ```
 
-But you can't override it, in fact the following code
+However, it is not possible to overwrite it. In fact, the following code produces a fatal error (see below the code):
 
 ```php
 <?php
@@ -172,19 +172,17 @@ class Padawan implements JediInterface
 }
 ```
 
-outputs a fatal error
-
 ```
 Fatal error: Cannot inherit previously-inherited or override constant SIDE_OF_THE_FORCE from interface JediInterface in [...]
 ```
 
 So, it seems you came to an end.   
-You have your constant, it can't be changed, it doesn't belong to a particular instance.  
-However, it's not that simple.  
+You have your constant, it cannot be changed, it does not belong to a particular instance.  
+However, it is not that simple.  
 
 # An unexpected behaviour
 
-Take a look at this code
+Take a look at this code:
 
 ```php
 <?php
@@ -215,8 +213,8 @@ echo $anakin->useTheForce();
 ```
 
 This piece of code doesn't output any error.  
-It turns out that a derived class from a super class that implements an interface, can override the interface constants, despite the super class can't.  
-And in fact, if you make the derived class implement the interface likewise
+It turns out that a class derived from a superclass that implements an interface can override the interface constants, even though the superclass cannot.  
+In fact, if you make the derived class implement the interface likewise, you will get a fatal error again (see below the code):  
 
 ```php
 <?php
@@ -237,18 +235,16 @@ class Padawan extends Master implements JediInterface
 }
 ```
 
-you get again a fatal error
-
 ```
 Fatal error: Cannot inherit previously-inherited or override constant SIDE_OF_THE_FORCE from interface JediInterface in [...]
 ```
 
 So, bug or feature?  
 It's a fair question, bearing in mind that the PHPStorm static analysis tool, currently (version 2020.3.2) reports always as an error the attempt to redefine an interface constant, even if it's redefined by a child class that doesn't implement directly the interface.  
-Recently, they opened [an issue on the JetBrains tracking system](https://youtrack.jetbrains.com/issue/WI-56949) asking to fix the PHPStorm static analysis tool, since it should be a false positive.  
-For the sake of completeness, it must be said that a few years ago, they opened [an issue on the PHP bug traking system](https://bugs.php.net/bug.php?id=73348) (version 7.0.12) asking for the opposite, that is asking to fix the behaviour by applying the inheritance check to derived classes too.  
-So, to get a sense of how things really are, we can just take a look at PHP source code, to *Zend/zend_inheritance.c* in particular.  
-This is how PHP does the inheritance check
+Recently, [an issue was opened on the JetBrains tracking system](https://youtrack.jetbrains.com/issue/WI-56949) asking to fix the PHPStorm static analysis tool. In fact, the error mentioned above should be a false positive.  
+For the sake of completeness, it must be said that a few years ago [an issue was opened on the PHP bug tracking system](https://bugs.php.net/bug.php?id=73348) (version 7.0.12) asking for the opposite thing. It was asked to fix the behaviour by applying the inheritance check to derived classes too.  
+Therefore, to get an idea of how things really are, we can take a look at PHP source code, particularly at *Zend/zend_inheritance.c*.  
+This is how PHP executes the inheritance check:  
 
 ```c
 static bool do_inherit_constant_check(HashTable *child_constants_table, zend_class_constant *parent_constant, zend_string *name, const zend_class_entry *iface) /* {{{ */
@@ -268,7 +264,7 @@ static bool do_inherit_constant_check(HashTable *child_constants_table, zend_cla
 /* }}} */
 ```
 
-And here is where the check is called (*zend_do_implement_inferface()*)
+And here is where the check is called (*zend_do_implement_inferface()*):
 
 ```c
 /* Check for attempt to redeclare interface constants */
@@ -277,15 +273,15 @@ ZEND_HASH_FOREACH_STR_KEY_PTR(&ce->constants_table, key, c) {
 } ZEND_HASH_FOREACH_END();
 ```
 
-So the point is that the check (*do_inherit_constant_check()*) is called by a function (*zend_do_implement_interface()*) which is simply not called in case of implementors derived classes.  
+Therefore, the point is that the check (*do_inherit_constant_check()*) is called by a function (*zend_do_implement_interface()*) which is not called in case of implementors derived classes.  
 Besides, PHP source code lists seven tests for interface constants inheritance and all of them only test direct inheritance.  
-So, there's nothing that could make us think it's not a wanted (or tolerated) behaviour.
+Therefore, nothing could make us think this is not a wanted (or tolerated) behaviour.  
 
 # Late static bindings
 
 Anyway, is that a real problem?  
-For sure, knowing how [late static bindings](https://www.php.net/manual/en/language.oop5.late-static-bindings.php) feature works, can help you to avoid risky practices.  
-Take a look at the following code
+For sure, knowing how [late static bindings feature](https://www.php.net/manual/en/language.oop5.late-static-bindings.php) works helps you avoid risky practices.  
+Take a look at the following code:  
 
 ```php
 <?php
@@ -321,7 +317,7 @@ echo $anakin->useTheForce();
 
 It appears that the super class (in which the method *useTheForce()* belongs) is able to keep unchanged its constant even when the derived class uses it.  
 But what happens if you make a small change to the previous example?   
-Try to change the access to the constant by replacing `self` with `static` this way
+Try to change the access to the constant by replacing `self` with `static` this way:
 
 ```php
 <?php
@@ -355,16 +351,16 @@ echo $anakin->useTheForce();
 // dark
 ```
 
-That's how late static bindings feature works.  
-`self`, being a static reference to the current class, is resolved using the class in which the method belongs.  
+This is how late static bindings feature works.  
+`self`, being a static reference to the current class, is resolved by using the class in which the method belongs.  
 On the other hand, late static bindings feature with the keyword `static` goes beyond that limitation, by referencing the class that was initally called at runtime.  
 Is it safe to use late stating bindings with constants?  
-Again, it's probably a matter of approach. Constants shouldn't be allowed to change, but in case, be sure that the things you do, can't reveal unpleasant surprises. If you expect to get the light side of the force and you get the dark side, you could be disappointed.
+Again, it is probably a question of approach. Constants should not be allowed to change. But if you do allow it, be sure that what you do will not reveal any unpleasant surprises. If you expect to get the light side of the force and you get the dark side, you could be disappointed.  
 
 # Namespace constants
 
-Outside of a class hierarchy, PHP allows you to define constants in a [namespace context](https://www.php.net/manual/en/language.namespaces.basics.php) too.  
-Indeed you can do something like this  
+Outside of a class hierarchy, PHP allows you define constants in a [namespace context](https://www.php.net/manual/en/language.namespaces.basics.php) too.  
+In fact, you can do something like this:  
 
 ```php
 <?php
@@ -386,13 +382,13 @@ namespace {
 }
 ```
 
-Notice the unusual namespace bracketed syntax, it's the only way for combining into a single file global non-namespaced code with namespaced code. Anyway, this example, it's just for demonstration purposes, because it's strongly discouraged as a coding practice to combine multiple namespaces into the same file.  
-Notice also that since you are out of any class hierarchy, you are not allowed to use access modifiers for `const` that is therefore set to a public default visibility. 
+Please note the unusual namespace bracketed syntax. This is the only way for combining into a single file some global non-namespaced code with some namespaced code. However, this example is for demonstration purposes only. In fact, it is strongly discouraged as a programming practice to combine multiple namespaces in the same file.    
+Also note that you are not allowed to use access modifiers for `const` because you are outside of any class hierarchy. Thus, `const` is set to default public visibility.  
 
 # Sensing the future
 
-All the scenarios we've briefly seen until now could be addressed differently, thinking of one of the new PHP features.  
-Although other languages featured Enumerations for a long time, they are going to be available in PHP only since version 8.1.  
+All the scenarios we have briefly seen so far could be approached differently by thinking about one of PHP's new features.  
+Although other languages have supported Enumerations for a long time, they will only be available in PHP from version 8.1.  
 And it's a fact that [Enumerations](https://wiki.php.net/rfc/enumerations) (enumerated types with a fixed number of possible values) offer other interesting implementation possibilities. Maybe some ways to reconsider the use of constants too.  
 Take a look at the following code:  
 

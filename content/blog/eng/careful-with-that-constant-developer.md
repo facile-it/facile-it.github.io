@@ -13,15 +13,15 @@ toc: true
 
 # Introduction
 
-Imagine you need to use a fixed numeric value in your code, let's say 20000. It's what we call a *literal constant*, that is a value that will always remain the exact same in your code. 
-Now image you need to use that value more than once. Sooner or later you will read your code and not remember what 20000 was, it will happen for sure. But what if you assign the value to an immutable variable with a [meaningful name](https://en.wikipedia.org/wiki/Self-documenting_code)? Let's say something like this
+Imagine you need to use a fixed numeric value in your code, let's say 20000. It is what we call a *literal constant*, that is a value that will always remain the exact same in your code. 
+Now imagine you need to use that value more than once. Sooner or later you will read your code and you will not remember what 20000 was, it will happen for sure. But what if you assign the value to an immutable variable with a [meaningful name](https://en.wikipedia.org/wiki/Self-documenting_code)? Let's say something like this:
 
 ```
 MAXIMUM_MIDICHLORIAN_COUNT = 20000 
 ```
 
 It is different isn't it? By reading the name, you are immediately able to understand what its value is about. MAXIMUM_MIDICHLORIAN_COUNT is what we call a *named constant* or simply a constant.  
-So, why do we use constants? As you have just seen, it's a matter of readability. But there's more.  
+So, why do we use constants? As you have just seen, it is a matter of readability. But there's more.  
 Let's say you have a function or a method that takes an argument and does something with it. For example, the argument could be a number and, based on its value, the function could behave differently.  
 Take a look at the following code:
 
@@ -44,7 +44,7 @@ class JediTest
 Do you remember? 20000 was the value of MAXIMUM_MIDICHLORIAN_COUNT. Therefore we should have used that named constant insted of the literal one.  
 Again, why do we use constants? As you have just seen, constants can be very useful to represent boundaries or edge cases.  
 And there would be more, but let's just focus on the fact that we assign certain values to immutable variables instead of simple variables. Why is that? Because we need the programming language to protects us from the possibility that our value is changed.  
-Therefore, in the end, why do we use constants? For sure it's a matter of safety.  
+Therefore, in the end, why do we use constants? For sure it is a matter of safety.  
 Programming languages have their own way to identify something that can't be changed, for example C++ uses `const` and Java uses `final`.  
 It may not seem like it, but there are a few interesting things to say about constants in PHP.  
 
@@ -240,7 +240,7 @@ Fatal error: Cannot inherit previously-inherited or override constant SIDE_OF_TH
 ```
 
 So, bug or feature?  
-It's a fair question, bearing in mind that the PHPStorm static analysis tool, currently (version 2020.3.2) reports always as an error the attempt to redefine an interface constant, even if it's redefined by a child class that doesn't implement directly the interface.  
+This is a fair question, since the PHPStorm static analysis tool, currently (version 2020.3.2), always reports an attempt to redefine an interface constant as an error. The error is reported even if the interface constant is redefined by a child class that does not directly implement the interface.  
 Recently, [an issue was opened on the JetBrains tracking system](https://youtrack.jetbrains.com/issue/WI-56949) asking to fix the PHPStorm static analysis tool. In fact, the error mentioned above should be a false positive.  
 For the sake of completeness, it must be said that a few years ago [an issue was opened on the PHP bug tracking system](https://bugs.php.net/bug.php?id=73348) (version 7.0.12) asking for the opposite thing. It was asked to fix the behaviour by applying the inheritance check to derived classes too.  
 Therefore, to get an idea of how things really are, we can take a look at PHP source code, particularly at *Zend/zend_inheritance.c*.  
@@ -315,7 +315,7 @@ echo $anakin->useTheForce();
 // light
 ```
 
-It appears that the super class (in which the method *useTheForce()* belongs) is able to keep unchanged its constant even when the derived class uses it.  
+It appears that the super class, in which the method *useTheForce()* belongs, is able to keep unchanged its constant even when the derived class uses it.  
 But what happens if you make a small change to the previous example?   
 Try to change the access to the constant by replacing `self` with `static` this way:
 
@@ -389,7 +389,7 @@ Also note that you are not allowed to use access modifiers for `const` because y
 
 All the scenarios we have briefly seen so far could be approached differently by thinking about one of PHP's new features.  
 Although other languages have supported Enumerations for a long time, they will only be available in PHP from version 8.1.  
-And it's a fact that [Enumerations](https://wiki.php.net/rfc/enumerations) (enumerated types with a fixed number of possible values) offer other interesting implementation possibilities. Maybe some ways to reconsider the use of constants too.  
+And it is a fact that [Enumerations](https://wiki.php.net/rfc/enumerations) (enumerated types with a fixed number of possible values) offer other interesting implementation possibilities. Maybe some ways to reconsider the use of constants too.  
 Take a look at the following code:  
 
 ```php

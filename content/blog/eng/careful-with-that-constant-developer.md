@@ -315,7 +315,7 @@ echo $anakin->useTheForce();
 // light
 ```
 
-It appears that the super class, in which the method *useTheForce()* belongs, is able to keep unchanged its constant even when the derived class uses it.  
+It appears that the super class, to which the method *useTheForce()* belongs, is able to keep unchanged its constant even when the derived class uses it.  
 But what happens if you make a small change to the previous example?   
 Try to change the access to the constant by replacing `self` with `static` this way:
 
@@ -352,7 +352,7 @@ echo $anakin->useTheForce();
 ```
 
 This is how Late Static Bindings feature works.  
-`self`, being a static reference to the current class, is resolved by using the class in which the method belongs.  
+`self`, being a static reference to the current class, is resolved by using the class to which the method belongs.  
 On the other hand, Late Static Bindings feature with the keyword `static` goes beyond that limitation, by referencing the class that was initally called at runtime.  
 Is it safe to use Late Stating Bindings with constants?  
 Again, it is probably a question of approach. Constants should not be allowed to change. But if you do allow it, be sure that what you do will not reveal any unpleasant surprises. If you expect to get the light side of the force and you get the dark side, you could be disappointed.  

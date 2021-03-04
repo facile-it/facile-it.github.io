@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>andrea-gubellini on Facile.it Engineering</title>
+    <link>https://engineering.facile.it/authors/andrea-gubellini/</link>
+    <description>Recent content in andrea-gubellini on Facile.it Engineering</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.facile.it/authors/andrea-gubellini/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Types of software testing</title>
+      <link>https://engineering.facile.it/blog/eng/different-types-of-software-testing/</link>
+      <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/different-types-of-software-testing/</guid>
+      <description>Why do I need to test? Everyone who works in software development has stumbled upon software testing.
+Why should a developer know anything about testing?
+Well, software testing is a valuable asset and a big part of development: it does not only test the application, it also teaches to think outside the box and to write code with quality in mind.
+Software testing is not finding bugs The goal of software testing is not only to find bugs and &amp;ldquo;break things&amp;rdquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

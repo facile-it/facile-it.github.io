@@ -13,7 +13,7 @@ toc: true
 
 # Introduction
 
-Imagine you need to use a fixed numeric value in your code, let's say 20000. It is what we call a *literal constant*, that is a value that will always remain the exact same in your code. 
+Imagine you need to use a fixed numeric value in your code, let's say 20000. It is what we call a *literal constant*, that is a value that will always remain the exact same in your code.  
 Now imagine you need to use that value more than once. Sooner or later you will read your code and you will not remember what 20000 was, it will happen for sure. But what if you assign the value to an immutable variable with a [meaningful name](https://en.wikipedia.org/wiki/Self-documenting_code)? Let's say something like this:
 
 ```

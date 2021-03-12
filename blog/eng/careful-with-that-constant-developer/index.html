@@ -1,0 +1,1561 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Careful with that constant, developer</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="referrer" content="always">
+        <meta name="generator" content="Hugo 0.69.0" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+            
+        
+
+        
+    
+        <meta name="twitter:card" content="summary"/>
+        
+            <meta name="twitter:image:src" content="https://engineering.facile.it/images/cover.jpg"/>
+        
+    
+    
+    <meta name="twitter:title" content="Careful with that constant, developer"/>
+    <meta name="twitter:description" content="Introduction Imagine you need to use a fixed numeric value in your code, let&rsquo;s say 20000. It is what we call a literal constant, that is a value that will always remain the exact same in your code.
+Now imagine you need to use that value more than once. Sooner or later you will read your code and you will not remember what 20000 was, it will happen for sure. But what if you assign the value to an immutable variable with a meaningful name?"/>
+    
+        
+            <meta name="twitter:creator" content="@andreamaccis"/>
+        
+    
+
+
+<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+
+        <meta property="og:title" content="Careful with that constant, developer" />
+<meta property="og:description" content="Introduction Imagine you need to use a fixed numeric value in your code, let&rsquo;s say 20000. It is what we call a literal constant, that is a value that will always remain the exact same in your code.
+Now imagine you need to use that value more than once. Sooner or later you will read your code and you will not remember what 20000 was, it will happen for sure. But what if you assign the value to an immutable variable with a meaningful name?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/careful-with-that-constant-developer/" />
+<meta property="article:published_time" content="2021-03-12T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-03-12T00:00:00+00:00" />
+
+
+        
+            
+                <meta property="og:image" content="https://engineering.facile.it/images/cover.jpg">
+            
+        
+
+        <meta itemprop="name" content="Careful with that constant, developer">
+<meta itemprop="description" content="Introduction Imagine you need to use a fixed numeric value in your code, let&rsquo;s say 20000. It is what we call a literal constant, that is a value that will always remain the exact same in your code.
+Now imagine you need to use that value more than once. Sooner or later you will read your code and you will not remember what 20000 was, it will happen for sure. But what if you assign the value to an immutable variable with a meaningful name?">
+<meta itemprop="datePublished" content="2021-03-12T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-03-12T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2238">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/additional.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/monokai-sublime.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">Facile.it Engineering</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/authors/">
+                            <i class="fa fa-pencil">&nbsp;</i>Authors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/ita/careers/">
+                            <i class="fa fa-briefcase">&nbsp;</i>Careers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/eng/who-we-are/">
+                            <i class="fa fa-users">&nbsp;</i>Who we are
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/authors/">
+                            <h3>
+                                <i class="fa fa-pencil">&nbsp;</i>Authors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/ita/careers/">
+                            <h3>
+                                <i class="fa fa-briefcase">&nbsp;</i>Careers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/eng/who-we-are/">
+                            <h3>
+                                <i class="fa fa-users">&nbsp;</i>Who we are
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/careful-with-that-constant-developer/">Careful with that constant, developer</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-03-12'>
+                                    March 12, 2021</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/different-types-of-software-testing/">Types of software testing</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-03-04'>
+                                    March 4, 2021</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/automated-testing-a-step-back/">Automated testing: a step back</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-10-22'>
+                                    October 22, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcareful-with-that-constant-developer%2f&amp;text=Careful%20with%20that%20constant%2c%20developer&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcareful-with-that-constant-developer%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcareful-with-that-constant-developer%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcareful-with-that-constant-developer%2f&amp;title=Careful%20with%20that%20constant%2c%20developer" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcareful-with-that-constant-developer%2f&amp;title=Careful%20with%20that%20constant%2c%20developer" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcareful-with-that-constant-developer%2f&amp;title=Careful%20with%20that%20constant%2c%20developer" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcareful-with-that-constant-developer%2f&amp;description=Careful%20with%20that%20constant%2c%20developer" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcareful-with-that-constant-developer%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/eng/careful-with-that-constant-developer/">Careful with that constant, developer</a></h1>
+            
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2021-03-12'>
+            12 March 2021
+        </time>
+
+        
+            <a href="/authors/amaccis/" class="author">
+            
+                <span class="name">Andrea Maccis</span>
+                <img src="https://www.gravatar.com/avatar/d1a3ea36d64923e8e14295dbdf89e167" alt="Andrea Maccis avatar" />
+            
+            </a>
+        
+
+        
+            <p>11 minute read</p>
+        
+    </div>
+</header>
+
+
+  
+
+
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#global-scope-constants">Global scope constants</a></li>
+    <li><a href="#class-constants">Class constants</a></li>
+    <li><a href="#constants-access">Constants access</a></li>
+    <li><a href="#using-final">Using final</a></li>
+    <li><a href="#interface-constants">Interface constants</a></li>
+    <li><a href="#an-unexpected-behaviour">An unexpected behaviour</a></li>
+    <li><a href="#late-static-bindings">Late Static Bindings</a></li>
+    <li><a href="#namespace-constants">Namespace constants</a></li>
+    <li><a href="#sensing-the-future">Sensing the future</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+  
+
+  <div id="content">
+    <h1 id="introduction">Introduction</h1>
+<p>Imagine you need to use a fixed numeric value in your code, let&rsquo;s say 20000. It is what we call a <em>literal constant</em>, that is a value that will always remain the exact same in your code.<br>
+Now imagine you need to use that value more than once. Sooner or later you will read your code and you will not remember what 20000 was, it will happen for sure. But what if you assign the value to an immutable variable with a <a href="https://en.wikipedia.org/wiki/Self-documenting_code">meaningful name</a>? Let&rsquo;s say something like this:</p>
+<pre><code>MAXIMUM_MIDICHLORIAN_COUNT = 20000 
+</code></pre><p>It is different isn&rsquo;t it? By reading the name, you are immediately able to understand what its value is about. MAXIMUM_MIDICHLORIAN_COUNT is what we call a <em>named constant</em> or simply a constant.<br>
+So, why do we use constants? As you have just seen, it is a matter of readability. But there&rsquo;s more.<br>
+Let&rsquo;s say you have a function or a method that takes an argument and does something with it. For example, the argument could be a number and, based on its value, the function could behave differently.<br>
+Take a look at the following code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JediTest</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">checkMidichlorianCount</span>(<span style="color:#a6e22e">int</span> $midichlorianCount)<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>
+    {
+        <span style="color:#66d9ef">if</span>($midichlorianCount <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">20000</span>) {
+            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;The chosen one, the boy may be!&#34;</span>
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Just a regular Jedi...&#34;</span>;
+    }
+}
+</code></pre></div><p>Do you remember? 20000 was the value of MAXIMUM_MIDICHLORIAN_COUNT. Therefore we should have used that named constant insted of the literal one.<br>
+Again, why do we use constants? As you have just seen, constants can be very useful to represent boundaries or edge cases.<br>
+And there would be more, but let&rsquo;s just focus on the fact that we assign certain values to immutable variables instead of simple variables. Why is that? Because we need the programming language to protects us from the possibility that our value is changed.<br>
+Therefore, in the end, why do we use constants? For sure it is a matter of safety.<br>
+Programming languages have their own way to identify something that can&rsquo;t be changed, for example C++ uses <code>const</code> and Java uses <code>final</code>.<br>
+It may not seem like it, but there are a few interesting things to say about constants in PHP.</p>
+<h1 id="global-scope-constants">Global scope constants</h1>
+<p>The easiest way to set a constant is using <a href="https://www.php.net/manual/en/language.constants.php">global scope constants</a>.<br>
+With the keyword <code>define</code>, you can do something like that</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;LIGHT_SIDE_OF_THE_FORCE&#39;</span>, <span style="color:#e6db74">&#39;light&#39;</span>);
+<span style="color:#a6e22e">define</span>(<span style="color:#e6db74">&#39;DARK_SIDE_OF_THE_FORCE&#39;</span>, <span style="color:#e6db74">&#39;dark&#39;</span>);
+
+<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">LIGHT_SIDE_OF_THE_FORCE</span>;
+<span style="color:#75715e">// light
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">DARK_SIDE_OF_THE_FORCE</span>;
+<span style="color:#75715e">// dark
+</span></code></pre></div><p>However, let&rsquo;s say you don&rsquo;t need a global scope constant since you have a class hierarchy. Therefore, you need a constant that doesn&rsquo;t belong to a particular instance so that it can be shared between all the instances of its object.<br>
+Something you would write, for instance in Java, using a <code>static final</code> field.<br>
+PHP, at present (version 8.0.2) allows using <a href="https://engineering.facile.it/blog/eng/from-zero-to-infinite-the-final-keyword/"><code>final</code></a> only for classes and methods and that&rsquo;s why class constants exist.</p>
+<h1 id="class-constants">Class constants</h1>
+<p>According to <a href="https://www.php.net/manual/en/language.oop5.constants.php">PHP documentation</a>, you can define constants on a per-class basis by using the keyword <code>const</code>.<br>
+Therefore, you could achieve the desired result in the following way:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Jedi</span> 
+{
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;light&#39;</span>;
+}
+</code></pre></div><p>However, we said that a constant needs to be unchangeable.<br>
+Therefore, before using class constants, you need to be aware that every child class is allowed to redefine inherited constants.<br>
+This means that the following code is correct.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Master</span> 
+{
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;light&#39;</span>;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Padawan</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Master</span> 
+{
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dark&#39;</span>;
+}
+</code></pre></div><p>Is that a proper behaviour?<br>
+That&rsquo;s the question that backs the not yet accepted <a href="https://github.com/phpstan/phpstan-strict-rules/issues/37">proposal to forbid constants overriding</a> via <a href="https://phpstan.org">PHPStan</a>.<br>
+It depends on what kind of approach to programming you have. There is no doubt that constants should not be allowed to change, it is a safety issue, as we said above. Perhaps, you could see this PHP feature as a curious implementation of <a href="https://en.wikipedia.org/wiki/Programmable_ROM">OTP (one-time programmability)</a> on a per-class basis. In fact, if you notice, each derived class can overwrite the constant only once.</p>
+<h1 id="constants-access">Constants access</h1>
+<p>But let&rsquo;s take a step back: how does the access to class constants work?<br>
+You cannot use the object operator <code>-&gt;</code> neither the pseudo-variable <code>$this</code>. However, PHP has another token: the scope resolution operator <code>::</code>. This token, from within an object context, needs to be combined with the keywords <code>self</code>, <code>parent</code> or <code>static</code>. Let&rsquo;s just focus on <code>self</code> for now, we will come back to this topic later.</p>
+<h1 id="using-final">Using final</h1>
+<p>So, you still need a constant but since you are not sure it cannot be changed, maybe you are not comfortable with it.<br>
+Obviously, you could try to use <code>final</code> by creating a class that carries the constant you need and that ensures that the constant cannot be changed. However, since a final class cannot be extended, you would inevitably need to do something awkward like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Jedi</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;light&#39;</span>;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Master</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">useTheForce</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> 
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">Jedi</span><span style="color:#f92672">::</span><span style="color:#a6e22e">SIDE_OF_THE_FORCE</span>;
+    }
+}
+</code></pre></div><p>This approach is one of the alternatives you can use to avoid <a href="https://en.wikipedia.org/wiki/Constant_interface">Constant interface</a> anti-pattern.<br>
+And that brings us to the topic of interfaces.</p>
+<h1 id="interface-constants">Interface constants</h1>
+<p>In fact, PHP allows you to use interface constants too.<br>
+According to <a href="https://www.php.net/manual/en/language.oop5.interfaces.php#language.oop5.interfaces.constants">PHP documentation</a>, it is possible for interfaces to have constants and they cannot be overridden by a class/interface that inherits them.<br>
+Therefore, you can define an interface constant, necessarily <code>public</code>, like this</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;light&#39;</span>;
+}
+</code></pre></div><p>However, it is not possible to overwrite it. In fact, the following code produces a fatal error (see below the code):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;light&#39;</span>;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Padawan</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dark&#39;</span>;
+}
+</code></pre></div><pre><code>Fatal error: Cannot inherit previously-inherited or override constant SIDE_OF_THE_FORCE from interface JediInterface in [...]
+</code></pre><p>So, it seems you came to an end.<br>
+You have your constant, it cannot be changed, it does not belong to a particular instance.<br>
+However, it is not that simple.</p>
+<h1 id="an-unexpected-behaviour">An unexpected behaviour</h1>
+<p>Take a look at this code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;light&#39;</span>;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Master</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Padawan</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Master</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dark&#39;</span>;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">useTheForce</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> 
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">::</span><span style="color:#a6e22e">SIDE_OF_THE_FORCE</span>;
+    }
+}
+
+$anakin <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Padawan</span>();
+<span style="color:#66d9ef">echo</span> $anakin<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">useTheForce</span>(); 
+<span style="color:#75715e">// dark
+</span></code></pre></div><p>This piece of code doesn&rsquo;t output any error.<br>
+It turns out that a class derived from a superclass that implements an interface can override the interface constants, even though the superclass cannot.<br>
+In fact, if you make the derived class implement the interface likewise, you will get a fatal error again (see below the code):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;light&#39;</span>;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Master</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Padawan</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Master</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dark&#39;</span>;
+}
+</code></pre></div><pre><code>Fatal error: Cannot inherit previously-inherited or override constant SIDE_OF_THE_FORCE from interface JediInterface in [...]
+</code></pre><p>So, bug or feature?<br>
+This is a fair question, since the PHPStorm static analysis tool, currently (version 2020.3.2), always reports an attempt to redefine an interface constant as an error. The error is reported even if the interface constant is redefined by a child class that does not directly implement the interface.<br>
+Recently, <a href="https://youtrack.jetbrains.com/issue/WI-56949">an issue was opened on the JetBrains tracking system</a> asking to fix the PHPStorm static analysis tool. In fact, the error mentioned above should be a false positive.<br>
+For the sake of completeness, it must be said that a few years ago <a href="https://bugs.php.net/bug.php?id=73348">an issue was opened on the PHP bug tracking system</a> (version 7.0.12) asking for the opposite thing. It was asked to fix the behaviour by applying the inheritance check to derived classes too.<br>
+Therefore, to get an idea of how things really are, we can take a look at PHP source code, particularly at <em>Zend/zend_inheritance.c</em>.<br>
+This is how PHP executes the inheritance check:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">do_inherit_constant_check</span>(HashTable <span style="color:#f92672">*</span>child_constants_table, zend_class_constant <span style="color:#f92672">*</span>parent_constant, zend_string <span style="color:#f92672">*</span>name, <span style="color:#66d9ef">const</span> zend_class_entry <span style="color:#f92672">*</span>iface) <span style="color:#75715e">/* </span>{{{ <span style="color:#960050;background-color:#1e0010">*/</span>
+{
+	zval <span style="color:#f92672">*</span>zv <span style="color:#f92672">=</span> zend_hash_find_ex(child_constants_table, name, <span style="color:#ae81ff">1</span>);
+	zend_class_constant <span style="color:#f92672">*</span>old_constant;
+
+	<span style="color:#66d9ef">if</span> (zv <span style="color:#f92672">!=</span> NULL) {
+		old_constant <span style="color:#f92672">=</span> (zend_class_constant<span style="color:#f92672">*</span>)Z_PTR_P(zv);
+		<span style="color:#66d9ef">if</span> (old_constant<span style="color:#f92672">-&gt;</span>ce <span style="color:#f92672">!=</span> parent_constant<span style="color:#f92672">-&gt;</span>ce) {
+			zend_error_noreturn(E_COMPILE_ERROR, <span style="color:#e6db74">&#34;Cannot inherit previously-inherited or override constant %s from interface %s&#34;</span>, ZSTR_VAL(name), ZSTR_VAL(iface<span style="color:#f92672">-&gt;</span>name));
+		}
+		<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>;
+}
+<span style="color:#75715e">/* }}} */</span>
+</code></pre></div><p>And here is where the check is called (<em>zend_do_implement_inferface()</em>):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#75715e">/* Check for attempt to redeclare interface constants */</span>
+ZEND_HASH_FOREACH_STR_KEY_PTR(<span style="color:#f92672">&amp;</span>ce<span style="color:#f92672">-&gt;</span>constants_table, key, c) {
+    do_inherit_constant_check(<span style="color:#f92672">&amp;</span>iface<span style="color:#f92672">-&gt;</span>constants_table, c, key, iface);
+} ZEND_HASH_FOREACH_END();
+</code></pre></div><p>Therefore, the point is that the check (<em>do_inherit_constant_check()</em>) is called by a function (<em>zend_do_implement_interface()</em>) which is not called in case of implementors derived classes.<br>
+Besides, PHP source code lists seven tests for interface constants inheritance and all of them only test direct inheritance.<br>
+Therefore, nothing could make us think this is not a wanted (or tolerated) behaviour.</p>
+<h1 id="late-static-bindings">Late Static Bindings</h1>
+<p>Anyway, is that a real problem?<br>
+For sure, knowing how <a href="https://www.php.net/manual/en/language.oop5.late-static-bindings.php">Late Static Bindings feature</a> works helps you avoid risky practices.<br>
+Take a look at the following code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;light&#39;</span>;
+    
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">useTheForce</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Master</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">useTheForce</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> 
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">self</span><span style="color:#f92672">::</span><span style="color:#a6e22e">SIDE_OF_THE_FORCE</span>;
+    } 
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Padawan</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Master</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dark&#39;</span>;
+}
+
+$obiwan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Master</span>();
+<span style="color:#66d9ef">echo</span> $obiwan<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">useTheForce</span>(); 
+<span style="color:#75715e">// light
+</span><span style="color:#75715e"></span>$anakin <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Padawan</span>();
+<span style="color:#66d9ef">echo</span> $anakin<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">useTheForce</span>(); 
+<span style="color:#75715e">// light
+</span></code></pre></div><p>It appears that the super class, to which the method <em>useTheForce()</em> belongs, is able to keep unchanged its constant even when the derived class uses it.<br>
+But what happens if you make a small change to the previous example?<br>
+Try to change the access to the constant by replacing <code>self</code> with <code>static</code> this way:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;light&#39;</span>;
+    
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">useTheForce</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span>;
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Master</span> <span style="color:#66d9ef">implements</span> <span style="color:#a6e22e">JediInterface</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">useTheForce</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> 
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">static</span><span style="color:#f92672">::</span><span style="color:#a6e22e">SIDE_OF_THE_FORCE</span>;
+    } 
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Padawan</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Master</span> 
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dark&#39;</span>;
+}
+
+$obiwan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Master</span>();
+<span style="color:#66d9ef">echo</span> $obiwan<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">useTheForce</span>(); 
+<span style="color:#75715e">// light
+</span><span style="color:#75715e"></span>$anakin <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Padawan</span>();
+<span style="color:#66d9ef">echo</span> $anakin<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">useTheForce</span>(); 
+<span style="color:#75715e">// dark
+</span></code></pre></div><p>This is how Late Static Bindings feature works.<br>
+<code>self</code>, being a static reference to the current class, is resolved by using the class to which the method belongs.<br>
+On the other hand, Late Static Bindings feature with the keyword <code>static</code> goes beyond that limitation, by referencing the class that was initally called at runtime.<br>
+Is it safe to use Late Stating Bindings with constants?<br>
+Again, it is probably a question of approach. Constants should not be allowed to change. But if you do allow it, be sure that what you do will not reveal any unpleasant surprises. If you expect to get the light side of the force and you get the dark side, you could be disappointed.</p>
+<h1 id="namespace-constants">Namespace constants</h1>
+<p>Outside of a class hierarchy, PHP allows you define constants in a <a href="https://www.php.net/manual/en/language.namespaces.basics.php">namespace context</a> too.<br>
+In fact, you can do something like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Jedi</span> {
+    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;light&#39;</span>;
+}
+
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Sith</span> {
+    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">SIDE_OF_THE_FORCE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dark&#39;</span>;
+}
+
+<span style="color:#66d9ef">namespace</span> {
+    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">Jedi\SIDE_OF_THE_FORCE</span>;
+    <span style="color:#75715e">// light
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">Sith\SIDE_OF_THE_FORCE</span>;
+    <span style="color:#75715e">// dark
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Please note the unusual namespace bracketed syntax. This is the only way for combining into a single file some global non-namespaced code with some namespaced code. However, this example is for demonstration purposes only. In fact, it is strongly discouraged as a programming practice to combine multiple namespaces in the same file. <br>
+Also note that you are not allowed to use access modifiers for <code>const</code> because you are outside of any class hierarchy. Thus, <code>const</code> is set to default public visibility.</p>
+<h1 id="sensing-the-future">Sensing the future</h1>
+<p>All the scenarios we have briefly seen so far could be approached differently by thinking about one of PHP&rsquo;s new features.<br>
+Although other languages have supported Enumerations for a long time, they will only be available in PHP from version 8.1.<br>
+And it is a fact that <a href="https://wiki.php.net/rfc/enumerations">Enumerations</a> (enumerated types with a fixed number of possible values) offer other interesting implementation possibilities. Maybe some ways to reconsider the use of constants too.<br>
+Take a look at the following code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#a6e22e">enum</span> <span style="color:#a6e22e">Force</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> 
+{
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">LIGHT_SIDE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;light&#39;</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">DARK_SIDE</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;dark&#39;</span>;
+}
+
+<span style="color:#66d9ef">echo</span> <span style="color:#a6e22e">Force</span><span style="color:#f92672">::</span><span style="color:#a6e22e">LIGHT_SIDE</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">value</span>;
+<span style="color:#75715e">// light
+</span></code></pre></div><p>Why is that interesting? For example, because Enumerations cases are represented as constants on the enum itself and their values are read-only properties.<br>
+It is worth saying that Enumerations are much more than that, since they are built on top of classes and objects. Therefore, Enumerations can have their own constants and methods and they can also implement interfaces.<br>
+So perhaps, going back to what we said when we dealt with class hierarchies, something similar to the following code does the trick:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+<span style="color:#66d9ef">declare</span>(<span style="color:#a6e22e">strict_types</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>);
+
+<span style="color:#a6e22e">enum</span> <span style="color:#a6e22e">Force</span>
+{
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">LIGHT_SIDE</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">DARK_SIDE</span>;
+    
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">control</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> 
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">match</span>($this) {
+            <span style="color:#a6e22e">self</span><span style="color:#f92672">::</span><span style="color:#a6e22e">LIGHT_SIDE</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;light&#39;</span>,   
+            <span style="color:#a6e22e">self</span><span style="color:#f92672">::</span><span style="color:#a6e22e">DARK_SIDE</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;dark&#39;</span>
+        }
+    }
+}
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Jedi</span>
+{
+    <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Force</span> $force;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">__construct</span>(<span style="color:#a6e22e">Force</span> $force) 
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">force</span> <span style="color:#f92672">=</span> $force;
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">useTheForce</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">string</span> 
+    {
+        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">force</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">control</span>();
+    }
+}
+
+$obiwan <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Jedi</span>(<span style="color:#a6e22e">Force</span><span style="color:#f92672">::</span><span style="color:#a6e22e">LIGHT_SIDE</span>);
+<span style="color:#66d9ef">echo</span> $obiwan<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">useTheForce</span>();
+<span style="color:#75715e">// light
+</span><span style="color:#75715e"></span>$anakin <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Jedi</span>(<span style="color:#a6e22e">Force</span><span style="color:#f92672">::</span><span style="color:#a6e22e">DARK_SIDE</span>);
+<span style="color:#66d9ef">echo</span> $anakin<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">useTheForce</span>();
+<span style="color:#75715e">// dark
+</span></code></pre></div><h1 id="conclusion">Conclusion</h1>
+<p>Constants should be the last concern during development, in PHP too. Nonetheless, they carry with them a lot of situations that a developer needs to consider.<br>
+There are a few things to pay attention to but, for sure, the amount of possibilities that PHP gives puts the developer in a real creative position, with the concrete possibility to make consistent use of constants.<br>
+Without claiming to be exhaustive, this article just gives a quick overview of the most common scenarios, trying to be a starting point to deepen the topic.</p>
+
+  </div>
+
+  
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/php">PHP</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/oop">OOP</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/eng/different-types-of-software-testing/"
+                class="button big previous">Types of software testing</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo_engineering.png" width="100%" alt="Facile.it Engineering" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>News, repos, tips & trends from the Facile.it Engineering team!</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section id="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/amaccis/" class="author" title="See other posts from Andrea Maccis">
+                      <img src="https://www.gravatar.com/avatar/d1a3ea36d64923e8e14295dbdf89e167" alt="Andrea Maccis avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/careful-with-that-constant-developer/">Careful with that constant, developer</a>
+              </h3>
+              
+              <time class="published" datetime='2021-03-12'>
+                12 March 2021
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/andrea-gubellini/" class="author" title="See other posts from Andrea Gubellini">
+                      <img src="/images/avatar-agubellini.jpg" alt="Andrea Gubellini avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/different-types-of-software-testing/">Types of software testing</a>
+              </h3>
+              
+              <time class="published" datetime='2021-03-04'>
+                4 March 2021
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/carmine-laface/" class="author" title="See other posts from Carmine Laface">
+                      <img src="https://avatars0.githubusercontent.com/u/15687645" alt="Carmine Laface avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/automated-testing-a-step-back/">Automated testing: a step back</a>
+              </h3>
+              
+              <time class="published" datetime='2020-10-22'>
+                22 October 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Top categories</a></h3>
+      </header>
+        
+          
+        
+
+        
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/english/">English</a>
+                <span style="float:right;">36</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
+                <span style="float:right;">34</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/oop/">OOP</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
+                <span style="float:right;">22</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/software-testing/">Software Testing</a>
+                <span style="float:right;">7</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+        <p>
+            <a href="/categories/" class="button">View more categories</a>
+        </p>
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h1>
+      <p>Facile.it relies on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. This blog allows our developers to share tips and direct experiences with new technologies.</p>
+      <a href="/ita/chi-siamo/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2021
+        
+          Facile.it Engineering
+        
+      .
+      <a href="/ita/disclaimer/" rel="nofollow">Disclaimer</a><br>
+      Design <a href="http://html5up.net" rel="nofollow" target="_blank">HTML5 UP</a><br>
+      Ported by <a href="//github.com/jpescador" rel="nofollow" target="_blank">Julio Pescador</a><br>
+      Modified by <a href="//github.com/Jean85" rel="nofollow" target="_blank">Alessandro Lai</a><br>
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/objectivec.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/swift.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+      <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        $(function() {
+            $('.lazy').Lazy();
+        });
+    </script>
+  </body>
+</html>
+

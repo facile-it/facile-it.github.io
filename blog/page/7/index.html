@@ -39,7 +39,7 @@
 <meta property="og:description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://engineering.facile.it/blog/" />
-<meta property="og:updated_time" content="2021-03-04T00:00:00+00:00" />
+<meta property="og:updated_time" content="2021-03-12T00:00:00+00:00" />
 
 
         
@@ -214,6 +214,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/careful-with-that-constant-developer/">Careful with that constant, developer</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-03-12'>
+                                    March 12, 2021</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/different-types-of-software-testing/">Types of software testing</a></h3>
                                 
                                 <time class="published" datetime=
@@ -231,18 +243,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2020-10-22'>
                                     October 22, 2020</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/php-day-2020/">PHPDay 2020</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2020-09-16'>
-                                    September 16, 2020</time>
                             </header>
                             
 
@@ -266,6 +266,82 @@ if (!doNotTrack) {
     
     <div id="main">
         
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/eng/decoupling-view-controllers-with.signals/">Decoupling view controllers with Signals</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2016-03-15'>
+            15 March 2016
+        </time>
+
+        
+            <a href="/authors/elviro/" class="author">
+            
+                <span class="name">Elviro Rocca</span>
+                <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" />
+            
+            </a>
+        
+
+        
+            <p>12 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  
+  <p><a href="http://engineering.facile.it/code-reuse-a-primer/">Last time</a> we looked at the <strong>Signal</strong> class, that is, a simple, reusable way of encapsulating the <a href="https://en.wikipedia.org/wiki/Observer_pattern">observer pattern</a>. There are many use cases for a signal, and I&rsquo;m going to show one possible application, spawned from a real-world problem. View controllers&rsquo; composition and decoupling is <strong>hard</strong>: we often need an input from a view controller, that has to send its input back to its creator, while handling the back navigation somehow. We often find ourselves in a situation in which several&hellip;</p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/eng/decoupling-view-controllers-with.signals/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/swift">Swift</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/functional-programming">Functional programming</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/signal">Signal</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
         
             <article class="post">
   <header>
@@ -583,87 +659,6 @@ In questi ultimi anni si è assistito ad un proliferare di numerose componenti s
 </article>
 
         
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/ita/codice-riusabile-un-primer/">Codice riusabile: un primer</a></h2>
-        
-        
-        
-        
-            <p class="translated-article">
-                This article is also available
-                <a href="/blog/eng/code-reuse-a-primer/">in english</a>
-            </p>
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2015-12-09'>
-            9 December 2015
-        </time>
-
-        
-            <a href="/authors/elviro/" class="author">
-            
-                <span class="name">Elviro Rocca</span>
-                <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" />
-            
-            </a>
-        
-
-        
-            <p>9 minute read</p>
-        
-    </div>
-</header>
-
-  
-
-  
-  <p><a href="http://engineering.facile.it/optionals-in-objective-c-ita/">L&rsquo;ultima volta</a> abbiamo visto una possibile implementazione del tipo <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330">Optional</a> in Objective-C; l&rsquo;obiettivo primario dell&rsquo;articolo era quello di importare in Objective-C uno strumento frequentemente utilizzato in Swift, ma usare una classe come <code>Optional</code> può essere considerato un&rsquo;applicazione di un concetto molto più generale: il <strong>riutilizzo del codice</strong>. In effetti, <code>Optional</code> non è legato a un particolare dominio, e può essere riutilizzato più e più volte in molti progetti:&hellip;</p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/blog/ita/codice-riusabile-un-primer/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/swift">Swift</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/functional-programming">Functional programming</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/code-reuse">Code reuse</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
 
         
 <ul class="actions pagination">
@@ -816,6 +811,30 @@ In questi ultimi anni si è assistito ad un proliferare di numerose componenti s
               <div class="author-avatars">
                 
                   
+                    <a href="/authors/amaccis/" class="author" title="See other posts from Andrea Maccis">
+                      <img src="https://www.gravatar.com/avatar/d1a3ea36d64923e8e14295dbdf89e167" alt="Andrea Maccis avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/careful-with-that-constant-developer/">Careful with that constant, developer</a>
+              </h3>
+              
+              <time class="published" datetime='2021-03-12'>
+                12 March 2021
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
                     <a href="/authors/andrea-gubellini/" class="author" title="See other posts from Andrea Gubellini">
                       <img src="/images/avatar-agubellini.jpg" alt="Andrea Gubellini avatar" class="author-avatar"/>
                     </a>
@@ -853,30 +872,6 @@ In questi ultimi anni si è assistito ad un proliferare di numerose componenti s
               
               <time class="published" datetime='2020-10-22'>
                 22 October 2020
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
-                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/php-day-2020/">PHPDay 2020</a>
-              </h3>
-              
-              <time class="published" datetime='2020-09-16'>
-                16 September 2020
               </time>
             </header>
             
@@ -988,7 +983,7 @@ In questi ultimi anni si è assistito ad un proliferare di numerose componenti s
             <header>
               
                 <a href="https://engineering.facile.it/categories/english/">English</a>
-                <span style="float:right;">35</span>
+                <span style="float:right;">36</span>
               
             </header>
           </article>
@@ -1084,8 +1079,8 @@ In questi ultimi anni si è assistito ad un proliferare di numerose componenti s
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/oop/">oop</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/oop/">OOP</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1117,7 +1112,7 @@ In questi ultimi anni si è assistito ad un proliferare di numerose componenti s
             <header>
               
                 <a href="https://engineering.facile.it/categories/php/">PHP</a>
-                <span style="float:right;">21</span>
+                <span style="float:right;">22</span>
               
             </header>
           </article>

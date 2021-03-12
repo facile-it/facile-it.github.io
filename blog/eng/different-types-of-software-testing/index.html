@@ -243,6 +243,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/careful-with-that-constant-developer/">Careful with that constant, developer</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-03-12'>
+                                    March 12, 2021</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/different-types-of-software-testing/">Types of software testing</a></h3>
                                 
                                 <time class="published" datetime=
@@ -260,18 +272,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2020-10-22'>
                                     October 22, 2020</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/php-day-2020/">PHPDay 2020</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2020-09-16'>
-                                    September 16, 2020</time>
                             </header>
                             
 
@@ -413,62 +413,58 @@ if (!doNotTrack) {
   
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#why-do-i-need-to-test">Why do I need to test?</a></li>
+    <li><a href="#software-testing-is-not-finding-bugs">Software testing is not finding bugs</a></li>
+    <li><a href="#types">Types</a>
       <ul>
-        <li><a href="#why-do-i-need-to-test">Why do I need to test?</a></li>
-        <li><a href="#software-testing-is-not-finding-bugs">Software testing is not finding bugs</a></li>
-        <li><a href="#types">Types</a>
-          <ul>
-            <li><a href="#acceptance-tests">Acceptance tests</a></li>
-            <li><a href="#functional-tests">Functional tests</a></li>
-            <li><a href="#smoke-tests">Smoke tests</a></li>
-            <li><a href="#integration-tests">Integration tests</a></li>
-            <li><a href="#unit-tests">Unit tests</a></li>
-            <li><a href="#performance-tests">Performance tests</a></li>
-            <li><a href="#exploratory-testing">Exploratory testing</a></li>
-          </ul>
-        </li>
-        <li><a href="#notes">Notes</a></li>
-        <li><a href="#conclusions">Conclusions</a></li>
+        <li><a href="#acceptance-tests">Acceptance tests</a></li>
+        <li><a href="#functional-tests">Functional tests</a></li>
+        <li><a href="#smoke-tests">Smoke tests</a></li>
+        <li><a href="#integration-tests">Integration tests</a></li>
+        <li><a href="#unit-tests">Unit tests</a></li>
+        <li><a href="#performance-tests">Performance tests</a></li>
+        <li><a href="#exploratory-testing">Exploratory testing</a></li>
       </ul>
     </li>
+    <li><a href="#notes">Notes</a></li>
+    <li><a href="#conclusions">Conclusions</a></li>
   </ul>
 </nav>
   
 
   <div id="content">
-    <h2 id="why-do-i-need-to-test">Why do I need to test?</h2>
+    <h1 id="why-do-i-need-to-test">Why do I need to test?</h1>
 <p>Everyone who works in software development has stumbled upon <strong>software testing</strong>.</p>
 <p>Why should a developer know anything about testing?<br>
 Well, software testing is a valuable asset and a big part of development: it does not only test the application, it also teaches to think outside the box and to write code with quality in mind.</p>
-<h2 id="software-testing-is-not-finding-bugs">Software testing is not finding bugs</h2>
+<h1 id="software-testing-is-not-finding-bugs">Software testing is not finding bugs</h1>
 <p>The goal of software testing is not only to <em>find bugs</em> and <em>&ldquo;break things&rdquo;</em>. Testing can range from a pure exploration of functionalities to a deep understanding of the tested application. Testing can give an idea of what, why and how the application is tested together with the guiding concept of quality.</p>
 <p>The software may already have bugs before the QA or the developer finds them out by running some tests. If we put it this way it is clear that focusing on <strong>enhancing code quality</strong>, analyzing the features before/alongside development and having the right amount of tests are good things to do.</p>
 <p>However, software testing is an engineering practice that offers support to different areas of software development.</p>
 <p>There are, therefore, different methodologies, tools and needs to adopt the most suitable testing activities for your IT world</p>
-<h2 id="types">Types</h2>
+<h1 id="types">Types</h1>
 <p>So how do we plan test design and how can we decide which types of tests suits our application?</p>
 <p>There are <em>many types</em> of <strong>software tests</strong> and different classifications or topologies are defined of which
 I report an example in the following image:</p>
 <p><img src="https://ehikioya.azureedge.net/wp-content/uploads/hm_bbpui/86828/fh2aspgg9au0icjnuf8d9lvhwccrv977.png" alt="test Types"></p>
-<h3 id="acceptance-tests">Acceptance tests</h3>
+<h2 id="acceptance-tests">Acceptance tests</h2>
 <p>Acceptance tests are based on business requirements, this type of tests checks whether the end-to-end process works as intended by the business or user requirements.
 We often see this type of tests as the last step of the software delivery cycle: whether it is run automatically in a CI or performed manually by a Developer or QA.
 The software is usually accepted when the feature works as expected by the requirements.</p>
-<h3 id="functional-tests">Functional tests</h3>
+<h2 id="functional-tests">Functional tests</h2>
 <p>This type of tests checks that a specific feature functionality is working as intended by the business or user requirement. Differently from the previously seen *<em>Acceptance Tests</em> this type does not rely on a fully functioning application as it only tests a specific feature of it.
 An example of functional test may be checking that a login component is working as expected.</p>
-<h3 id="smoke-tests">Smoke tests</h3>
+<h2 id="smoke-tests">Smoke tests</h2>
 <p>Smoke tests are usually run before executing other types of tests. This type is very basic as it checks the application is working from high level perspective.
 These tests can check, for example, that a website&rsquo;s main page is loaded correctly while different types of tests will check the functionalities right after.
 Smoke tests should be quick and easy to both automate and maintain.</p>
-<h3 id="integration-tests">Integration tests</h3>
+<h2 id="integration-tests">Integration tests</h2>
 <p>These tests usually verify that different sections and services of an application work together as expected. This type of test is usually quite easy to automate and maintain but can be very expensive due to the requirement of having different services up and running.</p>
-<h3 id="unit-tests">Unit tests</h3>
+<h2 id="unit-tests">Unit tests</h2>
 <p>Unit are source-level tests which are executed on an individual portion of the application code: these tests are typically automated and run by software developers.
 Unit tests verify that the specific unit/function respects the intended design and works as expected.
 This type of tests is usually seen automated and executed in continuous integration servers.</p>
-<h3 id="performance-tests">Performance tests</h3>
+<h2 id="performance-tests">Performance tests</h2>
 <p>Performance tests verify if the application performance is compromised during high loads. This type of tests split in mupltiple sub-types:</p>
 <blockquote>
 <p>Load testing
@@ -503,15 +499,15 @@ Isolation testing is not unique to performance testing but involves repeating a 
 This is a relatively new form of performance testing when global applications such as Facebook, Google and Wikipedia, are performance tested from load generators that are placed on the actual target continent whether physical machines or cloud VMs. These tests usually requires an immense amount of preparation and monitoring to be executed successfully.</p>
 </blockquote>
 <p><em>source: wikipedia</em></p>
-<h3 id="exploratory-testing">Exploratory testing</h3>
+<h2 id="exploratory-testing">Exploratory testing</h2>
 <p>Exploratory testing relies on finding all those not expected behaviors which may be not so obvious to design or cover in a test execution.
 There&rsquo;s usually a time limit and a specific part of the application that has to be covered by exploratory tests. When the time limit has expired, the people involved in the execution of these tests must report all the unexpected behaviors they have found on the application.</p>
 <p>These tests are some of the most expensive in terms of time. However, they are one of the best ways to cover your application from regression and UI bugs since the majority of the issues that are reported in this phase are usually difficult to find with automated tests.</p>
-<h2 id="notes">Notes</h2>
+<h1 id="notes">Notes</h1>
 <p>Another good practice you should check out is the &ldquo;Test Pyramid&rdquo;. At the bottom of the pyramid we have unit tests which are quick, easy to mantain and low in coverage, while at the very top we can see <em>UI tests</em> which are slow, costly and with a high coverage.</p>
 <p>This pyramid helps the development teams keep a focus on what type of tests should prevail in their codebases, helping them focus on efficiency, delivery and quality at the same time.</p>
 <p><img src="/images/different-types-of-software-testing/pyramid.png" alt="Testing Pyramid"></p>
-<h2 id="conclusions">Conclusions</h2>
+<h1 id="conclusions">Conclusions</h1>
 <p>We introduced the idea that software testing does not imply &ldquo;breaking things&rdquo; and that there are many types of tests that can support the <em>software life cycle</em>. We now know that it is a good idea to know at least some of them.</p>
 <p><em>Tests</em> are part of the development process and knowing them should be a <strong>goal</strong> for everyone working
 on developing an application.</p>
@@ -587,6 +583,9 @@ on developing an application.</p>
                 class="button big previous">Automated testing: a step back</a></li>
     
 
+    
+        <li><a href="/blog/eng/careful-with-that-constant-developer/"
+                class="button big next">Careful with that constant, developer</a></li>
     
 </ul>
 
@@ -729,6 +728,30 @@ on developing an application.</p>
               <div class="author-avatars">
                 
                   
+                    <a href="/authors/amaccis/" class="author" title="See other posts from Andrea Maccis">
+                      <img src="https://www.gravatar.com/avatar/d1a3ea36d64923e8e14295dbdf89e167" alt="Andrea Maccis avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/careful-with-that-constant-developer/">Careful with that constant, developer</a>
+              </h3>
+              
+              <time class="published" datetime='2021-03-12'>
+                12 March 2021
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
                     <a href="/authors/andrea-gubellini/" class="author" title="See other posts from Andrea Gubellini">
                       <img src="/images/avatar-agubellini.jpg" alt="Andrea Gubellini avatar" class="author-avatar"/>
                     </a>
@@ -766,30 +789,6 @@ on developing an application.</p>
               
               <time class="published" datetime='2020-10-22'>
                 22 October 2020
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
-                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/php-day-2020/">PHPDay 2020</a>
-              </h3>
-              
-              <time class="published" datetime='2020-09-16'>
-                16 September 2020
               </time>
             </header>
             
@@ -901,7 +900,7 @@ on developing an application.</p>
             <header>
               
                 <a href="https://engineering.facile.it/categories/english/">English</a>
-                <span style="float:right;">35</span>
+                <span style="float:right;">36</span>
               
             </header>
           </article>
@@ -997,8 +996,8 @@ on developing an application.</p>
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/oop/">oop</a>
-                <span style="float:right;">5</span>
+                <a href="https://engineering.facile.it/categories/oop/">OOP</a>
+                <span style="float:right;">6</span>
               
             </header>
           </article>
@@ -1030,7 +1029,7 @@ on developing an application.</p>
             <header>
               
                 <a href="https://engineering.facile.it/categories/php/">PHP</a>
-                <span style="float:right;">21</span>
+                <span style="float:right;">22</span>
               
             </header>
           </article>

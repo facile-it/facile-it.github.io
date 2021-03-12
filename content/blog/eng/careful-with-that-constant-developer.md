@@ -1,13 +1,14 @@
 ---
 authors: ["amaccis"]
 comments: true
-date: "2021-02-07"
+date: "2021-03-12"
 draft: false
 share: true
 categories: [English, PHP, OOP]
 title: "Careful with that constant, developer"
 languageCode: "en-EN"
 type: "post"
+twitterImage: '/images/cover.jpg'
 toc: true
 ---
 

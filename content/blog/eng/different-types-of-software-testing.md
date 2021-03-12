@@ -11,14 +11,14 @@ twitterImage: '/images/cover.jpg'
 toc: true
 ---
 
-## Why do I need to test?
+ # Why do I need to test?
 
 Everyone who works in software development has stumbled upon **software testing**.
 
 Why should a developer know anything about testing?  
 Well, software testing is a valuable asset and a big part of development: it does not only test the application, it also teaches to think outside the box and to write code with quality in mind.
 
-## Software testing is not finding bugs 
+# Software testing is not finding bugs 
 
 The goal of software testing is not only to *find bugs* and *"break things"*. Testing can range from a pure exploration of functionalities to a deep understanding of the tested application. Testing can give an idea of what, why and how the application is tested together with the guiding concept of quality.
 
@@ -29,7 +29,7 @@ However, software testing is an engineering practice that offers support to diff
 There are, therefore, different methodologies, tools and needs to adopt the most suitable testing activities for your IT world
 
 
-## Types
+# Types
 
 So how do we plan test design and how can we decide which types of tests suits our application?  
 
@@ -39,34 +39,34 @@ I report an example in the following image:
 ![test Types](https://ehikioya.azureedge.net/wp-content/uploads/hm_bbpui/86828/fh2aspgg9au0icjnuf8d9lvhwccrv977.png)  
 
 
-### Acceptance tests
+## Acceptance tests
 
 Acceptance tests are based on business requirements, this type of tests checks whether the end-to-end process works as intended by the business or user requirements.
 We often see this type of tests as the last step of the software delivery cycle: whether it is run automatically in a CI or performed manually by a Developer or QA.
 The software is usually accepted when the feature works as expected by the requirements.
 
-### Functional tests
+## Functional tests
 
 This type of tests checks that a specific feature functionality is working as intended by the business or user requirement. Differently from the previously seen **Acceptance Tests* this type does not rely on a fully functioning application as it only tests a specific feature of it.
 An example of functional test may be checking that a login component is working as expected.
 
-### Smoke tests
+## Smoke tests
 
 Smoke tests are usually run before executing other types of tests. This type is very basic as it checks the application is working from high level perspective.
 These tests can check, for example, that a website's main page is loaded correctly while different types of tests will check the functionalities right after.
 Smoke tests should be quick and easy to both automate and maintain.
 
-### Integration tests
+## Integration tests
 
 These tests usually verify that different sections and services of an application work together as expected. This type of test is usually quite easy to automate and maintain but can be very expensive due to the requirement of having different services up and running.
 
-### Unit tests
+## Unit tests
 
 Unit are source-level tests which are executed on an individual portion of the application code: these tests are typically automated and run by software developers.
 Unit tests verify that the specific unit/function respects the intended design and works as expected.
 This type of tests is usually seen automated and executed in continuous integration servers.
 
-### Performance tests
+## Performance tests
 
 Performance tests verify if the application performance is compromised during high loads. This type of tests split in mupltiple sub-types:
 
@@ -97,7 +97,7 @@ Performance tests verify if the application performance is compromised during hi
 
 *source: wikipedia*
 
-### Exploratory testing
+## Exploratory testing
 
 Exploratory testing relies on finding all those not expected behaviors which may be not so obvious to design or cover in a test execution. 
 There's usually a time limit and a specific part of the application that has to be covered by exploratory tests. When the time limit has expired, the people involved in the execution of these tests must report all the unexpected behaviors they have found on the application.
@@ -105,7 +105,7 @@ There's usually a time limit and a specific part of the application that has to 
 These tests are some of the most expensive in terms of time. However, they are one of the best ways to cover your application from regression and UI bugs since the majority of the issues that are reported in this phase are usually difficult to find with automated tests.
 
 
-## Notes
+# Notes
 
 Another good practice you should check out is the "Test Pyramid". At the bottom of the pyramid we have unit tests which are quick, easy to mantain and low in coverage, while at the very top we can see *UI tests* which are slow, costly and with a high coverage.
 
@@ -114,7 +114,7 @@ This pyramid helps the development teams keep a focus on what type of tests shou
 ![Testing Pyramid](/images/different-types-of-software-testing/pyramid.png)
 
 
-## Conclusions
+# Conclusions
 
 We introduced the idea that software testing does not imply "breaking things" and that there are many types of tests that can support the *software life cycle*. We now know that it is a good idea to know at least some of them.
 

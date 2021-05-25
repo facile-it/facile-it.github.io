@@ -18,7 +18,7 @@ When we write a client to integrate an API in our systems it is important to tes
 Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler. This tool provides a mock handler 
 that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue.
 
-How does it work? Here’s an example provided by Guzzle documentation.
+How does it work? Here’s an example provided by Guzzle documentation (https://docs.guzzlephp.org/en/stable/).
 
 ```php
 <?php
@@ -50,7 +50,7 @@ echo $client->request('GET', '/')->getStatusCode();
 
 # A real use case
 But how can we test our actual Symfony controller 
-that has to handle all the response? 
+that has to handle all the responses? 
 Let's suppose we have a controller that returns a JsonResponse with a different message and status code based on what 
 it gets from the APIs
 
@@ -134,7 +134,7 @@ This way we are telling Symfony to inject Guzzle HTTP Client in MyApiClient.
 
 # Road to testing
 Now we have to create the functional test for our controller. The test will expect 3 different responses according to API responses.
-But before we have to create a class that extends Guzzle in order to easily manage the mock responses.  
+But before creating our test however, a preliminary step is needed. We have to create a class that extends Guzzle in order to easily manage the mock responses.  
 It will look like this:
 
 ```php
@@ -223,8 +223,10 @@ class MockHandlerTestCase extends WebTestCase
 ```
 
 # Tests
-And now we can finally write our tests. In the first one we simulate that APIs returns us a 200 code with a simple body.
+And now we can finally write our tests. 
 
+##Test 1
+In the first one we simulate that APIs returns us a 200 code with a simple body.
 ```php
 <?php
 
@@ -261,7 +263,8 @@ class apiControllerTest extends MockHandlerTestCase
 }
 ```
 
-Next one will test a 404 response.
+##Test 2
+It will test a 404 response.
 
 ```php
 <?php
@@ -285,7 +288,7 @@ public function testNotFound(): void
     $this->assertEquals('error', $result['status']);
 }
 ```
-
+##Test 3
 In the last one we simulate a 500 answer.
 ```php
 <?php

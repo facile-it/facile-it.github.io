@@ -14,12 +14,11 @@ toc: true
 
 # Introduction
 
-When we are writing a client to integrate an API in our systems it is important to test it to be sure you can handle every possible response.
-Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler.
+When we write a client to integrate an API in our systems it is important to test it to be sure we can handle every possible response.
+Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler. This tool provides a mock handler 
+that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue.
 
-Guzzle provides a mock handler that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue.
-
-How does it work? Here’s an example provided by Guzzle documentation
+How does it work? Here’s an example provided by Guzzle documentation.
 
 ```php
 <?php
@@ -50,9 +49,9 @@ echo $client->request('GET', '/')->getStatusCode();
 ```
 
 # A real use case
-But how can we test our actual symfony controller 
-that must handle all the response? Let's suppose we have a controller like this: 
-it returns a JsonResponse with a different message and status code based on what 
+But how can we test our actual Symfony controller 
+that has to handle all the response? 
+Let's suppose we have a controller that returns a JsonResponse with a different message and status code based on what 
 it gets from the APIs
 
 ```php
@@ -97,8 +96,7 @@ public function apiControllerAction(MyApiClient $client)
     }
 ```
 
-MyApiClient is done this way: it has a constructor that initialize the http client 
-and a method who retrieves foo from the API.
+MyApiClient has a constructor that initialize the HTTP client and a method who retrieves "foo" from the API.
 
 ```php
 <?php
@@ -132,13 +130,11 @@ Psr\Http\Client\ClientInterface: '@psr18.client'
     class: GuzzleHttp\Client
 ```
 
-This way we are telling to symfony inject Guzzle Http Client in MyApiClient
+This way we are telling Symfony to inject Guzzle HTTP Client in MyApiClient.
 
 # Road to testing
-Now we have to create our controller's functional test. It will expect 3 different 
-responses according to API responses.
-But first…
-We create a class that extends Guzzle in order to easily manage the mock responses.  
+Now we have to create the functional test for our controller. The test will expect 3 different responses according to API responses.
+But before we have to create a class that extends Guzzle in order to easily manage the mock responses.  
 It will look like this:
 
 ```php
@@ -178,9 +174,8 @@ class ClientFake extends Client
 }
 ```
 
-This is not enough yet. We have to tell symfony to use this client instead 
-GuzzleHttp\Client when we are running our test. So we open our services_test.yml 
-and we add following lines
+This is not enough yet. We have to tell Symfony to use our `ClientFake` instead of
+GuzzleHttp\Client when we are running our test. So we open our services_test.yml and we add following lines:
 
 ```yaml
 psr18.client:
@@ -188,9 +183,9 @@ psr18.client:
     class: Tests\Fake\ClientFake
 ```
 
-so when we are running our tests symfony will inject in MyApiClient ClientFake 
-instead of real GuzzleClient. Now are we ready to write our test? Almost! 
-We write a test case to initialize all the stuff we need
+When we are running our tests, Symfony will inject ClientFake in MyApiClient instead of real GuzzleClient. 
+Are we ready to write our test now?
+Almost! We have to write a test case to initialize all the stuff we need.
 
 ```php
 <?php
@@ -228,7 +223,7 @@ class MockHandlerTestCase extends WebTestCase
 ```
 
 # Tests
-And now we can finally write our tests. In the first one we simulate that APIs returns us a 200 code with a simple body
+And now we can finally write our tests. In the first one we simulate that APIs returns us a 200 code with a simple body.
 
 ```php
 <?php
@@ -266,7 +261,7 @@ class apiControllerTest extends MockHandlerTestCase
 }
 ```
 
-Next one will test a 404 response
+Next one will test a 404 response.
 
 ```php
 <?php
@@ -291,7 +286,7 @@ public function testNotFound(): void
 }
 ```
 
-In the last one we simulate a 500 answer
+In the last one we simulate a 500 answer.
 ```php
 <?php
 

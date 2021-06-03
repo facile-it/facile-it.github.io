@@ -49,7 +49,7 @@ echo $client->request('GET', '/')->getStatusCode();
 ```
 
 # A real use case
-But how can we test our actual Symfony controller 
+But how can we test our effective Symfony controller 
 that has to handle all the responses? 
 Let's suppose we have a controller that returns a JsonResponse with a different message and status code based on what 
 it gets from the APIs

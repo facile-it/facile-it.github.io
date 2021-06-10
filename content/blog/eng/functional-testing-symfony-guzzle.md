@@ -1,14 +1,14 @@
 ---
-authors: ["carlo cappai"]
+authors: ["carlo-cappai"]
 comments: true
-date: "2021-04-06"
-draft: true
+date: "2021-06-10"
+draft: false
 share: true
 categories: [English, PHP, Testing, Symfony, Guzzle]
 title: "How to write a functional test with Symfony and Guzzle's mock handler"
 languageCode: "en-EN"
 type: "post"
-twitterImage: ''
+twitterImage: '/images/cover.jpg'
 toc: true
 ---
 
@@ -222,7 +222,7 @@ class MockHandlerTestCase extends WebTestCase
 }
 ```
 
-# Tests
+## Tests
 And now we can finally write our tests. 
 
 ##Test 1
@@ -263,7 +263,7 @@ class apiControllerTest extends MockHandlerTestCase
 }
 ```
 
-##Test 2
+## Test 2
 It will test a 404 response.
 
 ```php
@@ -288,7 +288,7 @@ public function testNotFound(): void
     $this->assertEquals('error', $result['status']);
 }
 ```
-##Test 3
+## Test 3
 In the last one we simulate a 500 answer.
 ```php
 <?php

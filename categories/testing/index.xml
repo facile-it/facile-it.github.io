@@ -6,10 +6,19 @@
     <description>Recent content in Testing on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 10 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/testing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to write a functional test with Symfony and Guzzle&#39;s mock handler</title>
+      <link>https://engineering.facile.it/blog/eng/functional-testing-symfony-guzzle/</link>
+      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/functional-testing-symfony-guzzle/</guid>
+      <description>Introduction When we write a client to integrate an API in our systems it is important to test it to be sure we can handle every possible response. Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler. This tool provides a mock handler that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue.</description>
+    </item>
     
     <item>
       <title>Types of software testing</title>

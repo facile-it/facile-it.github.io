@@ -1,0 +1,1486 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>How to write a functional test with Symfony and Guzzle&#39;s mock handler</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="referrer" content="always">
+        <meta name="generator" content="Hugo 0.69.0" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+            
+        
+
+        
+    
+        <meta name="twitter:card" content="summary"/>
+        
+            <meta name="twitter:image:src" content="https://engineering.facile.it/images/cover.jpg"/>
+        
+    
+    
+    <meta name="twitter:title" content="How to write a functional test with Symfony and Guzzle&#39;s mock handler"/>
+    <meta name="twitter:description" content="Introduction When we write a client to integrate an API in our systems it is important to test it to be sure we can handle every possible response. Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler. This tool provides a mock handler that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue."/>
+    
+        
+            
+        
+    
+
+
+<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+
+        <meta property="og:title" content="How to write a functional test with Symfony and Guzzle&#39;s mock handler" />
+<meta property="og:description" content="Introduction When we write a client to integrate an API in our systems it is important to test it to be sure we can handle every possible response. Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler. This tool provides a mock handler that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/functional-testing-symfony-guzzle/" />
+<meta property="article:published_time" content="2021-06-10T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-06-10T00:00:00+00:00" />
+
+
+        
+            
+                <meta property="og:image" content="https://engineering.facile.it/images/cover.jpg">
+            
+        
+
+        <meta itemprop="name" content="How to write a functional test with Symfony and Guzzle&#39;s mock handler">
+<meta itemprop="description" content="Introduction When we write a client to integrate an API in our systems it is important to test it to be sure we can handle every possible response. Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler. This tool provides a mock handler that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue.">
+<meta itemprop="datePublished" content="2021-06-10T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2021-06-10T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="881">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/additional.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/monokai-sublime.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">Facile.it Engineering</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/authors/">
+                            <i class="fa fa-pencil">&nbsp;</i>Authors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/ita/careers/">
+                            <i class="fa fa-briefcase">&nbsp;</i>Careers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/eng/who-we-are/">
+                            <i class="fa fa-users">&nbsp;</i>Who we are
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/authors/">
+                            <h3>
+                                <i class="fa fa-pencil">&nbsp;</i>Authors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/ita/careers/">
+                            <h3>
+                                <i class="fa fa-briefcase">&nbsp;</i>Careers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/eng/who-we-are/">
+                            <h3>
+                                <i class="fa fa-users">&nbsp;</i>Who we are
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/functional-testing-symfony-guzzle/">How to write a functional test with Symfony and Guzzle&#39;s mock handler</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-06-10'>
+                                    June 10, 2021</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/careful-with-that-constant-developer/">Careful with that constant, developer</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-03-12'>
+                                    March 12, 2021</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/different-types-of-software-testing/">Types of software testing</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-03-04'>
+                                    March 4, 2021</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffunctional-testing-symfony-guzzle%2f&amp;text=How%20to%20write%20a%20functional%20test%20with%20Symfony%20and%20Guzzle%27s%20mock%20handler&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffunctional-testing-symfony-guzzle%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffunctional-testing-symfony-guzzle%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffunctional-testing-symfony-guzzle%2f&amp;title=How%20to%20write%20a%20functional%20test%20with%20Symfony%20and%20Guzzle%27s%20mock%20handler" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffunctional-testing-symfony-guzzle%2f&amp;title=How%20to%20write%20a%20functional%20test%20with%20Symfony%20and%20Guzzle%27s%20mock%20handler" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffunctional-testing-symfony-guzzle%2f&amp;title=How%20to%20write%20a%20functional%20test%20with%20Symfony%20and%20Guzzle%27s%20mock%20handler" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffunctional-testing-symfony-guzzle%2f&amp;description=How%20to%20write%20a%20functional%20test%20with%20Symfony%20and%20Guzzle%27s%20mock%20handler" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffunctional-testing-symfony-guzzle%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/eng/functional-testing-symfony-guzzle/">How to write a functional test with Symfony and Guzzle&#39;s mock handler</a></h1>
+            
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2021-06-10'>
+            10 June 2021
+        </time>
+
+        
+            <a href="/authors/carlo-cappai/" class="author">
+            
+                <span class="name">Carlo Cappai</span>
+                <img src="https://it.gravatar.com/userimage/76046552/12017dd0f6b3d41b3744c819cc53fb85" alt="Carlo Cappai avatar" />
+            
+            </a>
+        
+
+        
+            <p>5 minute read</p>
+        
+    </div>
+</header>
+
+
+  
+
+
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#a-real-use-case">A real use case</a></li>
+    <li><a href="#road-to-testing">Road to testing</a>
+      <ul>
+        <li><a href="#tests">Tests</a></li>
+        <li><a href="#test-2">Test 2</a></li>
+        <li><a href="#test-3">Test 3</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  
+
+  <div id="content">
+    <h1 id="introduction">Introduction</h1>
+<p>When we write a client to integrate an API in our systems it is important to test it to be sure we can handle every possible response.
+Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler. This tool provides a mock handler
+that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue.</p>
+<p>How does it work? Here’s an example provided by Guzzle documentation (<a href="https://docs.guzzlephp.org/en/stable/)">https://docs.guzzlephp.org/en/stable/)</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GuzzleHttp\Client</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GuzzleHttp\Handler\MockHandler</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GuzzleHttp\HandlerStack</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GuzzleHttp\Psr7\Response</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GuzzleHttp\Psr7\Request</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GuzzleHttp\Exception\RequestException</span>;
+
+<span style="color:#75715e">// Create a mock and queue two responses.
+</span><span style="color:#75715e"></span>$mock <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MockHandler</span>([
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#ae81ff">200</span>, [<span style="color:#e6db74">&#39;X-Foo&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;Bar&#39;</span>]),
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Response</span>(<span style="color:#ae81ff">202</span>, [<span style="color:#e6db74">&#39;Content-Length&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>]),
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">RequestException</span>(<span style="color:#e6db74">&#34;Error Communicating with Server&#34;</span>, <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Request</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;test&#39;</span>))
+]);
+
+$handler <span style="color:#f92672">=</span> <span style="color:#a6e22e">HandlerStack</span><span style="color:#f92672">::</span><span style="color:#a6e22e">create</span>($mock);
+$client <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Client</span>([<span style="color:#e6db74">&#39;handler&#39;</span> <span style="color:#f92672">=&gt;</span> $handler]);
+
+<span style="color:#75715e">// The first request is intercepted with the first response.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $client<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">request</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;/&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getStatusCode</span>();
+<span style="color:#75715e">//&gt; 200
+</span><span style="color:#75715e">// The second request is intercepted with the second response.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">echo</span> $client<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">request</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;/&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getStatusCode</span>();
+<span style="color:#75715e">//&gt; 202
+</span></code></pre></div><h1 id="a-real-use-case">A real use case</h1>
+<p>But how can we test our effective Symfony controller
+that has to handle all the responses?
+Let&rsquo;s suppose we have a controller that returns a JsonResponse with a different message and status code based on what
+it gets from the APIs</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\HttpFoundation\JsonResponse</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">MyNamespace\MyApiClient</span>;
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">apiControllerAction</span>(<span style="color:#a6e22e">MyApiClient</span> $client)
+    {
+     
+      $response <span style="color:#f92672">=</span> $client<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getFoo</span>();
+
+      <span style="color:#66d9ef">if</span>($response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getStatusCode</span>()<span style="color:#f92672">===</span><span style="color:#ae81ff">200</span>){
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">JsonResponse</span>(
+                [
+                    <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;ok&#39;</span>,
+                    <span style="color:#e6db74">&#39;message&#39;</span> <span style="color:#f92672">=&gt;</span> $response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getBody</span>()
+                ],
+                 <span style="color:#ae81ff">200</span>
+            );
+        }
+
+        <span style="color:#66d9ef">if</span>($response<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getStatusCode</span>()<span style="color:#f92672">===</span><span style="color:#ae81ff">404</span>){
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">JsonResponse</span>(
+                [
+                   <span style="color:#e6db74">&#39;status&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;error&#39;</span>,
+                   <span style="color:#e6db74">&#39;message&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;foo not found&#39;</span>
+                ],
+                 <span style="color:#ae81ff">404</span>
+            );
+        }
+
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">JsonResponse</span>(
+            [
+                <span style="color:#e6db74">&#39;status&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;error&#39;</span>,
+                <span style="color:#e6db74">&#39;message&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#e6db74">&#39;something went wrong&#39;</span>
+            ],
+            <span style="color:#ae81ff">500</span>
+        );
+
+    }
+</code></pre></div><p>MyApiClient has a constructor that initialize the HTTP client and a method who retrieves &ldquo;foo&rdquo; from the API.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">MyNamespace</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Psr\Http\Client\ClientInterface</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyApiClient</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#a6e22e">ClientInterface</span> $client)
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> $client;
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">getFoo</span>()
+    {
+        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;https://api-url/foo&#39;</span>);
+    }
+
+}
+</code></pre></div><p>Symfony will automatically inject MyApiClient in our controller, but to make sure
+it will inject ClientInterface in MyApiClient we have to modify services.yaml to
+look like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">Psr\Http\Client\ClientInterface</span>: <span style="color:#e6db74">&#39;@psr18.client&#39;</span>
+
+  <span style="color:#66d9ef">psr18.client</span>:
+    <span style="color:#66d9ef">class</span>: GuzzleHttp\Client
+</code></pre></div><p>This way we are telling Symfony to inject Guzzle HTTP Client in MyApiClient.</p>
+<h1 id="road-to-testing">Road to testing</h1>
+<p>Now we have to create the functional test for our controller. The test will expect 3 different responses according to API responses.
+But before creating our test however, a preliminary step is needed. We have to create a class that extends Guzzle in order to easily manage the mock responses.<br>
+It will look like this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Tests\Fake</span>;
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GuzzleHttp\Handler\MockHandler</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GuzzleHttp\HandlerStack</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GuzzleHttp\Client</span>;
+
+<span style="color:#e6db74">/**
+</span><span style="color:#e6db74"> * Class ClientFake
+</span><span style="color:#e6db74"> */</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClientFake</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Client</span>
+{
+    <span style="color:#e6db74">/** @var MockHandler */</span>
+    <span style="color:#66d9ef">protected</span> $mockHandler;
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * ClientFake constructor.
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct()
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">mockHandler</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MockHandler</span>();
+        $handler <span style="color:#f92672">=</span> <span style="color:#a6e22e">HandlerStack</span><span style="color:#f92672">::</span><span style="color:#a6e22e">create</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">mockHandler</span>);
+        <span style="color:#66d9ef">parent</span><span style="color:#f92672">::</span><span style="color:#a6e22e">__construct</span>([<span style="color:#e6db74">&#39;handler&#39;</span> <span style="color:#f92672">=&gt;</span> $handler]);
+    }
+
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @param $responses
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">appendResponse</span>($responses)<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">mockHandler</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">append</span>(<span style="color:#f92672">...</span>$responses);
+    }
+}
+</code></pre></div><p>This is not enough yet. We have to tell Symfony to use our <code>ClientFake</code> instead of
+GuzzleHttp\Client when we are running our test. So we open our services_test.yml and we add following lines:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">psr18.client</span>:
+    <span style="color:#66d9ef">public</span>: <span style="color:#66d9ef">true</span>
+    <span style="color:#66d9ef">class</span>: Tests\Fake\ClientFake
+</code></pre></div><p>When we are running our tests, Symfony will inject ClientFake in MyApiClient instead of real GuzzleClient.
+Are we ready to write our test now?
+Almost! We have to write a test case to initialize all the stuff we need.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">namespace</span> <span style="color:#a6e22e">Test</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Bundle\FrameworkBundle\Client</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Bundle\FrameworkBundle\Test\WebTestCase</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MockHandlerTestCase</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">WebTestCase</span>
+{
+    <span style="color:#e6db74">/**
+</span><span style="color:#e6db74">     * @var Tests\Fake\ClientFake
+</span><span style="color:#e6db74">     */</span>
+    <span style="color:#66d9ef">protected</span> $clientInterface;
+
+    <span style="color:#e6db74">/** @var Client */</span>
+    <span style="color:#66d9ef">protected</span> $client;
+
+    <span style="color:#e6db74">/** @var \Symfony\Component\DependencyInjection\ContainerInterface|null */</span>
+    <span style="color:#66d9ef">protected</span> $Container;
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct(<span style="color:#f92672">?</span><span style="color:#a6e22e">string</span> $name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>, <span style="color:#66d9ef">array</span> $data <span style="color:#f92672">=</span> [], <span style="color:#a6e22e">string</span> $dataName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>)
+    {
+        <span style="color:#66d9ef">parent</span><span style="color:#f92672">::</span><span style="color:#a6e22e">__construct</span>($name, $data, $dataName);
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">static</span><span style="color:#f92672">::</span><span style="color:#a6e22e">createClient</span>();
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">Container</span> <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getContainer</span>();
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">clientInterface</span> <span style="color:#f92672">=</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">Container</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;psr18.client&#39;</span>);
+    }
+
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">prepareMock</span>($response)
+    {
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">clientInterface</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">appendResponse</span>([$response]);
+    }
+}
+</code></pre></div><h2 id="tests">Tests</h2>
+<p>And now we can finally write our tests.</p>
+<p>##Test 1
+In the first one we simulate that APIs returns us a 200 code with a simple body.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Tests\MockHandlerTestCase</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">GuzzleHttp\Psr7\Response</span> <span style="color:#66d9ef">as</span> <span style="color:#a6e22e">ClientResponse</span>;
+<span style="color:#66d9ef">use</span> <span style="color:#a6e22e">Symfony\Component\HttpFoundation\Response</span>;
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">apiControllerTest</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">MockHandlerTestCase</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> __construct($name <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>, <span style="color:#66d9ef">array</span> $data <span style="color:#f92672">=</span> [], $dataName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>)
+    {
+        <span style="color:#66d9ef">parent</span><span style="color:#f92672">::</span><span style="color:#a6e22e">__construct</span>($name, $data, $dataName);
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testOK</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
+    {
+        <span style="color:#75715e">//we set up our API mock response
+</span><span style="color:#75715e"></span>        $response200 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ClientResponse</span>(<span style="color:#a6e22e">Response</span><span style="color:#f92672">::</span><span style="color:#a6e22e">HTTP_OK</span>, [], <span style="color:#a6e22e">json_encode</span>([<span style="color:#e6db74">&#39;foo&#39;</span><span style="color:#f92672">=&gt;</span><span style="color:#e6db74">&#39;bar&#39;</span>]));
+        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">prepareMock</span>($response200);
+
+        <span style="color:#75715e">//we navigate to our route
+</span><span style="color:#75715e"></span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">request</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;/routeToApiController&#39;</span>);
+
+        <span style="color:#75715e">//we expect a 200 (from controller - not from api)
+</span><span style="color:#75715e"></span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#ae81ff">200</span>, $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getResponse</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getStatusCode</span>());
+
+        <span style="color:#75715e">//we put controller&#39;s response in a variable
+</span><span style="color:#75715e"></span>        $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">\json_decode</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getResponse</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getContent</span>(), <span style="color:#66d9ef">true</span>);
+
+        <span style="color:#75715e">//we check that controller give us what we expect
+</span><span style="color:#75715e"></span>        $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#e6db74">&#39;ok&#39;</span>, $result[<span style="color:#e6db74">&#39;status&#39;</span>]);
+    }
+
+}
+</code></pre></div><h2 id="test-2">Test 2</h2>
+<p>It will test a 404 response.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testNotFound</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
+{
+    <span style="color:#75715e">//we set up our API mock response
+</span><span style="color:#75715e"></span>    $response404 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ClientResponse</span>(<span style="color:#a6e22e">Response</span><span style="color:#f92672">::</span><span style="color:#a6e22e">HTTP_NOT_FOUND</span>);
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">prepareMock</span>($response404);
+
+    <span style="color:#75715e">//we navigate to our route
+</span><span style="color:#75715e"></span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">request</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;/routeToApiController&#39;</span>);
+
+    <span style="color:#75715e">//we expect a 404 (from controller - not from api)
+</span><span style="color:#75715e"></span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#ae81ff">404</span>, $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getResponse</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getStatusCode</span>());
+
+    <span style="color:#75715e">//we put controller&#39;s response in a variable
+</span><span style="color:#75715e"></span>    $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">\json_decode</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getResponse</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getContent</span>(), <span style="color:#66d9ef">true</span>);
+
+    <span style="color:#75715e">//we check that controller give us what we expect
+</span><span style="color:#75715e"></span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#e6db74">&#39;error&#39;</span>, $result[<span style="color:#e6db74">&#39;status&#39;</span>]);
+}
+</code></pre></div><h2 id="test-3">Test 3</h2>
+<p>In the last one we simulate a 500 answer.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#75715e">&lt;?php</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">testGenericError</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">void</span>
+{
+    <span style="color:#75715e">//we set up our API mock response
+</span><span style="color:#75715e"></span>    $response500 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">ClientResponse</span>(<span style="color:#a6e22e">Response</span><span style="color:#f92672">::</span><span style="color:#a6e22e">HTTP_INTERNAL_SERVER_ERROR</span>);
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">prepareMock</span>($response500);
+
+    <span style="color:#75715e">//we navigate to our route
+</span><span style="color:#75715e"></span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">request</span>(<span style="color:#e6db74">&#39;GET&#39;</span>, <span style="color:#e6db74">&#39;/routeToApiController&#39;</span>);
+
+    <span style="color:#75715e">//we expect a 500 (from controller - not from api)
+</span><span style="color:#75715e"></span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#ae81ff">500</span>, $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getResponse</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getStatusCode</span>());
+
+    <span style="color:#75715e">//we put controller&#39;s response in a variable
+</span><span style="color:#75715e"></span>    $result <span style="color:#f92672">=</span> <span style="color:#a6e22e">\json_decode</span>($this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">client</span><span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getResponse</span>()<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">getContent</span>(), <span style="color:#66d9ef">true</span>);
+
+    <span style="color:#75715e">//we check that controller give us what we expect
+</span><span style="color:#75715e"></span>    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#e6db74">&#39;error&#39;</span>, $result[<span style="color:#e6db74">&#39;status&#39;</span>]);
+    $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">assertEquals</span>(<span style="color:#e6db74">&#39;something went wrong&#39;</span>, $result[<span style="color:#e6db74">&#39;message&#39;</span>]);
+}
+</code></pre></div><p>That’s all folks!</p>
+
+  </div>
+
+  
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/php">PHP</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/testing">Testing</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/symfony">Symfony</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/guzzle">Guzzle</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/eng/careful-with-that-constant-developer/"
+                class="button big previous">Careful with that constant, developer</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo_engineering.png" width="100%" alt="Facile.it Engineering" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>News, repos, tips & trends from the Facile.it Engineering team!</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section id="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/carlo-cappai/" class="author" title="See other posts from Carlo Cappai">
+                      <img src="https://it.gravatar.com/userimage/76046552/12017dd0f6b3d41b3744c819cc53fb85" alt="Carlo Cappai avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/functional-testing-symfony-guzzle/">How to write a functional test with Symfony and Guzzle&#39;s mock handler</a>
+              </h3>
+              
+              <time class="published" datetime='2021-06-10'>
+                10 June 2021
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/amaccis/" class="author" title="See other posts from Andrea Maccis">
+                      <img src="https://www.gravatar.com/avatar/d1a3ea36d64923e8e14295dbdf89e167" alt="Andrea Maccis avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/careful-with-that-constant-developer/">Careful with that constant, developer</a>
+              </h3>
+              
+              <time class="published" datetime='2021-03-12'>
+                12 March 2021
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/andrea-gubellini/" class="author" title="See other posts from Andrea Gubellini">
+                      <img src="/images/avatar-agubellini.jpg" alt="Andrea Gubellini avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/different-types-of-software-testing/">Types of software testing</a>
+              </h3>
+              
+              <time class="published" datetime='2021-03-04'>
+                4 March 2021
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Top categories</a></h3>
+      </header>
+        
+          
+        
+
+        
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/english/">English</a>
+                <span style="float:right;">37</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
+                <span style="float:right;">34</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/oop/">OOP</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
+                <span style="float:right;">23</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/software-testing/">Software Testing</a>
+                <span style="float:right;">7</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/symfony/">Symfony</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+        <p>
+            <a href="/categories/" class="button">View more categories</a>
+        </p>
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h1>
+      <p>Facile.it relies on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. This blog allows our developers to share tips and direct experiences with new technologies.</p>
+      <a href="/ita/chi-siamo/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2021
+        
+          Facile.it Engineering
+        
+      .
+      <a href="/ita/disclaimer/" rel="nofollow">Disclaimer</a><br>
+      Design <a href="http://html5up.net" rel="nofollow" target="_blank">HTML5 UP</a><br>
+      Ported by <a href="//github.com/jpescador" rel="nofollow" target="_blank">Julio Pescador</a><br>
+      Modified by <a href="//github.com/Jean85" rel="nofollow" target="_blank">Alessandro Lai</a><br>
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/objectivec.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/swift.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+      <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        $(function() {
+            $('.lazy').Lazy();
+        });
+    </script>
+  </body>
+</html>
+

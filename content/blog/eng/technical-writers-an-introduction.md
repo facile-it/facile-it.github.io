@@ -59,21 +59,21 @@ Now let's try to understand what actions a tech writer usually performs. Of cour
 
 # What are the hard skills needed by a tech writer? 
 
-As mentioned earlier, hard skills change by industry. However, in general for a technical writer it is helpful to:
-- Know how to use CMSs and editing tools that are specific to technical writing (e.g. Flare, Paligo, Confluence, Oxygen, FrameMaker, etc.)
-- Know how to use image and video editing tools (e.g. Snagit, Illustrator, Photoshop etc.)
-- Know HTML, XML, and CSS. A basic knowledge may be sufficient.
-- Have an excellent level of English, if you are not a native speaker.
+As mentioned earlier, hard skills change by industry. However, **in general** for a technical writer it is helpful to:
+- Know how to use **CMSs and text editing tools** that are specific to technical writing (e.g. Flare, Paligo, Confluence, Oxygen, FrameMaker, etc.)
+- Know how to use **image and video editing tools** (e.g. Snagit, Illustrator, Photoshop etc.)
+- Know **HTML, XML, and CSS**. A basic knowledge may be sufficient.
+- Have an **excellent level of English**, if you are not a native speaker.
 - Know the rules of [Simplified Technical English](http://www.asd-ste100.org/) and other controlled languages (e.g. [Italiano Tecnico Semplificato](https://www.italianotecnicosemplificato.it/cose-its/#page-content)).
-- Have good project management skills.
+- Have good **project management skills**.
 
-For technical writers working in the IT industry, it is also helpful to:
+For technical writers working in the **IT industry**, it is also helpful to:
 
-- Know Markdown and/or reStructuredText.
-- Know Git and the Docs-as-Code approach, a basic knowledge of Git may be sufficient.
-- Know how to write API documentation.
-- Know some modelling languages (e.g. UML, C4, BPMN).
-- Know how to work with Agile methodology.
+- Know **Markdown** and/or **reStructuredText**.
+- Know **Git** and the Docs-as-Code approach, a basic knowledge of Git may be sufficient.
+- Know how to write **API documentation**.
+- Know some **modelling standards** (e.g. UML, C4, BPMN).
+- Know how to work with **Agile methodology**.
 
 Obviously, each person possesses and practices each skill at different levels, depending on their aptitude and personal tastes. It is not necessary to have perfect knowledge of everything listed above. 
 
@@ -83,9 +83,9 @@ Certainly, as with many other jobs, two key aspects of a technical writer's prof
 
 After talking about purely technical aspects, let's try to focus on personal qualities and see what soft skills technical writers must possess. It goes without saying that even in terms of soft skills, a technical writer is not expected to master all of these skills to the highest level. 
 
-Whatever industry they work in, these are the main soft skills that are useful to technical writers:
+**Whatever the industry** they work in, these are the **main soft skills** that are useful to technical writers:
 
-- Ability to create and maintain relationships 
+- Ability to create and maintain relationships
 - Ability to mediate
 - Ability to learn quickly
 - Curiosity
@@ -112,10 +112,10 @@ Our team is part of the IT department, more specifically we are part of a bigger
 
 These are the main activities we handle:
 
-- Recover the documentation debt on old projects, when needed for refactoring and decision making.
-- Create documentation for new projects.
+- Recover the documentation debt for old projects, when needed for refactoring and decision making.
+- Create documentation for new projects. These documentation can be strictly technical but can also include business aspects.
 - Create ready-to-use standard indexes and templates for colleagues (e.g. an index for software project documentation, a template for the documentation of microservices).
-- Provide consulting to colleagues who ask us for information and advice.
+- Provide consulting to colleagues who ask us for advice by giving them suggestions and links to tools that may be useful.
 
 ## What we do not do
 

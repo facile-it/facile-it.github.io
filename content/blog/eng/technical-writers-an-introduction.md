@@ -4,10 +4,12 @@ comments: true
 date: "2021-09-15"
 draft: true
 share: true
-categories: [English, Technical Writing, Technical Communication]
+categories: [English, Technical Writing, Documentation]
 title: "Technical Writers: the mystery unveiled"
 languageCode: "en-US"
 type: "post"
+twitterLargeImage: '/images/technical-writers-an-introduction/amanuensis.jpg'
+toc: true
 ---
 
 

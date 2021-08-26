@@ -1,7 +1,7 @@
 ---
 authors: ["marta-gilberti"]
 comments: true
-date: "2021-09-15"
+date: "2021-08-26"
 draft: true
 share: true
 categories: [English, Technical Writing, Documentation]
@@ -34,7 +34,7 @@ However, it possible to define a generic profile of the tech writer despite thes
 What follows is an effort by the Technical Writing team at Facile.it to get our professionalism known and to unveil a few mysteries by providing a little introduction to the technical writer role.
 
 
-# Main goals of a tech writer
+# Main goals of a technical writer
 
 Regardless of what industry you work in and what product you write about, one of the main goals of a tech writer is to make complexity (of a product, process, etc.) less complex. 
 
@@ -60,7 +60,7 @@ Now let's try to understand what actions a tech writer usually performs. Of cour
 11. Publish documentation.
 
 
-# What are the hard skills needed by a tech writer? 
+# What are the hard skills needed by a technical writer? 
 
 As mentioned earlier, hard skills change by industry. However, **in general** for a technical writer it is helpful to:
 - Know how to use **CMSs and text editing tools** that are specific to technical writing (e.g. Flare, Paligo, Confluence, ClickHelp, Oxygen, FrameMaker, etc.)
@@ -68,7 +68,7 @@ As mentioned earlier, hard skills change by industry. However, **in general** fo
 - Know **HTML, XML, and CSS**. A basic knowledge may be sufficient.
 - Possess **excellent knowledge of English language and grammar**, for both native and non-native speakers. Yep, being a native speaker doesn't mean mastering the language perfectly.
 - Possess **excellent knowledge of another possible language** in which documentation could be written (e.g. Italian for us).
-- Know the rules of [Simplified Technical English](http://www.asd-ste100.org/) and other controlled languages (e.g. [Italiano Tecnico Semplificato](https://www.italianotecnicosemplificato.it/cose-its/#page-content)).
+- Know the rules of **[Simplified Technical English](http://www.asd-ste100.org/)** and other **controlled languages** (e.g. [Italiano Tecnico Semplificato](https://www.italianotecnicosemplificato.it/cose-its/#page-content)).
 - Have good **project management skills**.
 
 For technical writers working in the **IT industry**, it is also helpful to:
@@ -83,7 +83,7 @@ Obviously, each person possesses and practices each skill at different levels, d
 
 Certainly, as with many other jobs, two key aspects of a technical writer's professional life are training and keeping up to date with industry news. There are many ways to achieve these goals, for example: online courses, attending conferences, joining industry associations, reading trade journals.
 
-# What are the soft skills needed by a tech writer? 
+# What are the soft skills needed by a technical writer? 
 
 After talking about purely technical aspects, let's try to focus on personal qualities and see what soft skills technical writers must possess. It goes without saying that even in terms of soft skills, a technical writer is not expected to master all of these skills to the highest level. 
 
@@ -100,9 +100,9 @@ After talking about purely technical aspects, let's try to focus on personal qua
 - Courage...to ask for help when necessary
 
 
-# Tech writers @ Facile.it
+# Technical writers @ Facile.it
 
-we will conclude by describing the reality in which we work on a daily basis. We will briefly tell you about the technical writing team of Facile.it. 
+We will conclude by describing the reality in which we work on a daily basis. We will briefly tell you about the technical writing team of Facile.it. 
 
 Since Facile.it is constantly evolving and growing, also our team and its organization will surely change in the future. In fact our goal, as well as that of the company, is to constantly improve. Therefore, we do not claim to be a perfect model, we are constantly self-critical and we are aware that there are many realities out there from which we can learn. 
 
@@ -122,7 +122,8 @@ These are the main activities we handle:
 - Create documentation for new projects. These documentation can either be strictly technical or it can also deal with business aspects.
 - Create ready-to-use standard indexes and templates for colleagues (e.g. an index for software project documentation, a template for the documentation of microservices).
 - Provide consulting to colleagues who ask us for advice by giving them suggestions and links to tools that may be useful.
-- We keep up to date through courses and conferences and we research tools and methods to improve our work.
+- Review the articles on this blog from a formal and linguistic standpoint.
+- Keep up to date through courses and conferences and research tools and methods to improve our work.
 
 
 ## What we do not do

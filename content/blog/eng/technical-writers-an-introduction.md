@@ -38,7 +38,7 @@ What follows is an effort by the Technical Writing team at Facile.it to get our 
 
 Regardless of what industry you work in and what product you write about, one of the main goals of a tech writer is to make complexity (of a product, process, etc.) less complex. 
 
-However, we believe that simplifying complexity is a necessary step toward achieving a greater goal, perhaps **the** goal of technical writers, which is to help other colleagues, the users of a product, or anyone who might benefit from documentation. The primary goal of our work should always be to relieve people of the difficulty and frustration that comes from a lack of knowledge sharing. We like to think that the technical writer's work, in its own way, is altruistic work. 
+We believe that simplifying complexity is a necessary step toward achieving a greater goal, perhaps **the** goal of technical writers, which is to help other colleagues, the users of a product, or anyone who might benefit from documentation. The primary goal of our work should always be to relieve people of the difficulty and frustration that comes from a lack of knowledge sharing. We like to think that the technical writer's work, in its own way, is altruistic work. 
 
 We talked about _knowledge_ above because, if we wanted to summarize our work, we could say that our mission is to capture the knowledge of said products or processes and make it available to colleagues or to external users (e.g. partners or customers). In fact, this knowledge is often scattered within the company and often relies on oral tradition. This creates disaffection among a company's employees, among its partners, and among its customers.
 
@@ -81,7 +81,25 @@ For technical writers working in the **IT industry**, it is also helpful to:
 
 Obviously, each person possesses and practices each skill at different levels, depending on their aptitude and personal tastes. It is not necessary to have perfect knowledge of everything listed above. 
 
-Certainly, as with many other jobs, two key aspects of a technical writer's professional life are training and keeping up to date with industry news. There are many ways to achieve these goals, for example: online courses, attending conferences, joining industry associations, reading trade journals.
+Certainly, as with many other jobs, two key aspects of a technical writer's professional life are training and keeping up to date with industry news. There are many ways to achieve these goals, for example: taking courses (both online and in-presence), attending conferences, joining industry associations and communities, reading trade journals and blogs. Below are some references that can help you navigate the jungle of technical writing.
+
+## Courses
+
+Courses are available on major platforms dedicated to training (e.g. **[Udemy](https://www.udemy.com/)** and **[Coursera](https://www.coursera.org/)**) or you can purchase them from **specialized companies that sell their courses**. You can often find courses on many useful topics at affordable prices. In addition, **industry associations offer courses and workshops**. In most cases it is convenient to pay a membership fee in order to benefit from these courses and workshops at a discount from list prices. Industry associations also organize courses aimed at obtaining official certifications.
+
+## Conferences
+
+As for industry conferences, we will mention only the main ones which are: **[Write The Docs conferences](https://www.writethedocs.org/conf/)**, **[soap!](http://soapconf.com/)**, **[STC Summit](https://summit.stc.org/)**, **[tcworld conference](https://tcworldconference.tekom.de/)**, **[Evolution of TC](https://evolution-of-tc.com/)**, and **[COMtecnica](https://www.comtecnica.eu/en/)**. We suggest evaluating the conference programs and choosing the one most relevant to your industry.
+
+## Industry associations and communities
+
+Also in terms of industry associations and communities, we will only mention the main ones which, as you can imagine, are the ones that organize some of the conferences mentioned above. These associations or communities are: **[STC](https://www.stc.org/)**, **[Tekom](https://www.technical-communication.org/)**, **[Write The Docs](https://www.writethedocs.org/)**, and **[COM & TEC](https://www.comtec-italia.org/)**. We also suggest joining **groups on LinkedIn or other social networks**.
+
+## Journals and blogs
+
+Some interesting magazines and journals in this field are: **[tcworld magazine](https://www.tcworld.info/e-magazine/technical-writing/)**, **[technische kommunikation](https://technischekommunikation.info/)** (in German only), **[Intercom](https://www.stc.org/intercom/)**, **[Technical Communication](https://www.stc.org/techcomm/)**, and **[The Journal of Technical Writing and Communication](https://journals.sagepub.com/description/jtw)**.
+
+Some of the blogs we recommend following are: **[I'd Rather Be Writing](https://idratherbewriting.com/)**, **[ClickHelp Technical Writing Blog](https://clickhelp.com/clickhelp-technical-writing-blog/)**, **[Scriptorium](https://www.scriptorium.com/blog/)**, and **[TechWhirl](https://techwhirl.com/)**. Also, you can find noteworthy articles on blogging platforms (e.g. **[Medium](https://medium.com/)**).
 
 # What are the soft skills needed by a technical writer? 
 

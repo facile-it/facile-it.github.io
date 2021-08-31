@@ -1,7 +1,7 @@
 ---
 authors: ["marta-gilberti"]
 comments: true
-date: "2021-08-26"
+date: "2021-08-31"
 draft: true
 share: true
 categories: [English, Technical Writing, Documentation]
@@ -15,10 +15,10 @@ toc: true
 
 # The technical writer, this mysterious character
 
-Let's face it, being a technical writer (especially in Italy) makes you feel a bit like [Barney Stinson from How I Met Your Mother](https://en.wikipedia.org/wiki/Barney_Stinson): no one knows what your real job is. If you're a tech writer, We bet you have at least one relative who, at every family gathering, asks you "What do you exactly do for a living?". In the most desperate cases, even your mom doesn't know what your job is!
+Let's face it, being a technical writer (especially in Italy) makes you feel a bit like [Barney Stinson from How I Met Your Mother](https://en.wikipedia.org/wiki/Barney_Stinson): no one knows what your real job is. If you're a tech writer, we bet you have at least one relative who, at every family gathering, asks you "What do you exactly do for a living?". In the most desperate cases, even your mom doesn't know what your job is!
 
 
-Therefore, in this post we will try to profile technical writers. We will talk about the main objectives, the working method, the necessary skills of a technical writer. Finally, we will briefly describe the figure of the Technical Writer @ Facile.it.
+Therefore, in this article we will try to profile technical writers. We will talk about the main objectives, the working method, the necessary skills of a technical writer. Finally, we will briefly describe the figure of the Technical Writer @ Facile.it.
 
 
 # Foreword
@@ -49,7 +49,7 @@ Now let's try to understand what actions a tech writer usually performs. Of cour
 
 1. Gather materials needed for the task/project.
 2. Plan the work for the task/project.
-3. Study the material available.
+3. Study the available material.
 4. If necessary, "play around" with the product to analyze it and begin to learn about it.
 5. Interview Subject Matter Experts (SME) to understand how the product/process to be documented works.
 6. Interview some of the possible users and stakeholders of the documentation to learn about their needs.
@@ -64,7 +64,7 @@ Now let's try to understand what actions a tech writer usually performs. Of cour
 
 As mentioned earlier, hard skills change by industry. However, **in general** for a technical writer it is helpful to:
 - Know how to use **CMSs and text editing tools** that are specific to technical writing (e.g. Flare, Paligo, Confluence, ClickHelp, Oxygen, FrameMaker, etc.)
-- Know how to use **image and video editing tools** (e.g. Snagit, Illustrator, Photoshop etc.)
+- Know how to use **image and video editing tools** (e.g. Snagit, Illustrator, Photoshop, etc.)
 - Know **HTML, XML, and CSS**. A basic knowledge may be sufficient.
 - Possess **excellent knowledge of English language and grammar**, for both native and non-native speakers. Yep, being a native speaker doesn't mean mastering the language perfectly.
 - Possess **excellent knowledge of another possible language** in which documentation could be written (e.g. Italian for us).
@@ -74,10 +74,11 @@ As mentioned earlier, hard skills change by industry. However, **in general** fo
 For technical writers working in the **IT industry**, it is also helpful to:
 
 - Know **Markdown** and/or **reStructuredText**.
-- Know **Git** and the Docs-as-Code approach, a basic knowledge of Git may be sufficient.
+- Know **Git** and the Docs-as-Code approach. A basic knowledge of Git may be sufficient.
+- Be familiar with some of the **programming languages used in the company** (e.g. JavaScript, PHP, Phyton, etc.). A basic knowledge may be sufficient.
 - Know how to write **API documentation**.
 - Know some **modelling standards** (e.g. UML, C4, BPMN).
-- Know how to work with **Agile methodology**.
+- Know how to work with **Agile methodology and tools (e.g. Jira, Trello, etc.)**
 
 Obviously, each person possesses and practices each skill at different levels, depending on their aptitude and personal tastes. It is not necessary to have perfect knowledge of everything listed above. 
 
@@ -129,7 +130,7 @@ However, in the meantime we are pleased to introduce ourselves and tell you a li
 
 ## Our team within the company
 
-Our team is part of the IT department, more specifically we are part of a bigger cross-functional team called _Platform Team_.  From our positioning within the company, it is easy to understand that we work in support of the other teams in the IT department and that we are a link between the IT department and other "worlds" within the company, for example the Marketing, Product, and Business departments.
+Our team is part of the IT department, more specifically we are part of a bigger cross-functional team called _Platform Team_. From our positioning within the company, it is easy to understand that we work in support of the other teams in the IT department and that we are a link between the IT department and other "worlds" within the company, for example the Marketing, Product, and Business departments.
 
 
 ## What we do 
@@ -139,6 +140,7 @@ These are the main activities we handle:
 - Recover the documentation debt for old projects, when needed for refactoring and decision making.
 - Create documentation for new projects. These documentation can either be strictly technical or it can also deal with business aspects.
 - Create ready-to-use standard indexes and templates for colleagues (e.g. an index for software project documentation, a template for the documentation of microservices).
+- Cover the lack of documentation of third-party applications used within the company. We are available to document custom integrations developed internally, but we do not write full user-manuals of external applications.
 - Provide consulting to colleagues who ask us for advice by giving them suggestions and links to tools that may be useful.
 - Review the articles on this blog from a formal and linguistic standpoint.
 - Keep up to date through courses and conferences and research tools and methods to improve our work.
@@ -151,6 +153,7 @@ On the other hand, these are the activities we do **not** handle:
 - Create day-by-day documentation that is in charge of each team (e.g. meeting notes, minutes of retrospectives, maintenance documentation, release notes).
 - Proofreading and editing. We are available for suggestions and minor changes to documents written by others but we do not carry out review projects.
 - Create documentation for marketing/commercial communication.
+- Translate documents written by others from Italian into English and vice versa. When necessary, we translate documents written by us.
 
 
 ## How we plan and organize our activities
@@ -159,7 +162,7 @@ Our team plans quarter-by-quarter activities, trying to align with business need
 
 However, as we said above, the company is constantly evolving and growing, and we can't deny that sudden changes have sometimes interfered with the planning of our activities. We didn't lose heart over it, though. We spent a team retrospective to figure out how we could improve our processes and anticipate needs in the best possible way. 
 
-Therefore, we created a form through which technical writing requests can be submitted and we provided instructions on how to fill it out.  Through this form it is possible to request the creation, updating, and correction of documentation. The requests received will be analyzed and discussed by the team before being taken up, put on hold or rejected. Currently, we plan to activate the form for two weeks straddling two quarters. 
+Therefore, we created a form through which technical writing requests can be submitted and we provided instructions on how to fill it out. Through this form it is possible to request the creation, updating, and correction of documentation. The requests received will be analyzed and discussed by the team before being taken up, put on hold or rejected. Currently, we plan to activate the form for two weeks straddling two quarters. 
 
 We chose to follow this approach because the current size of the Technical Writing team does not yet allow to allocate a technical writer to one or a few IT teams. Not being able to follow the daily activities of a team, we looked for a solution that would allow us to know the "macro-needs" of our colleagues in advance. 
 Is this the best approach ever? Probably not but it is the approach that best fits the current organization and structure of our team within the company. 
@@ -168,7 +171,7 @@ Is this the best approach ever? Probably not but it is the approach that best fi
 # Conclusion
 
 Through our daily activities, we are proud to contribute to the simplification and dissemination of knowledge in the company. 
-Therefore, we hope that this article helped you learn more about our profession and made you a little curious since the acknowledgement of the technical writer's role and support from colleagues is critical to doing this job well.
+Therefore, we hope that this article helped you learn more about our profession and made you a little curious since the acknowledgement of the technical writer's role and support from colleagues is critical to do this job well.
 
 Of course the article cannot be exhaustive since, as you may have noticed, there are many shades and points of view to consider.
 However, we are pleased to contribute to the definition and knowledge of this profession that can offer many opportunities and is constantly growing and evolving.

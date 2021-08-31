@@ -140,7 +140,6 @@ These are the main activities we handle:
 - Recover the documentation debt for old projects, when needed for refactoring and decision making.
 - Create documentation for new projects. These documentation can either be strictly technical or it can also deal with business aspects.
 - Create ready-to-use standard indexes and templates for colleagues (e.g. an index for software project documentation, a template for the documentation of microservices).
-- Cover the lack of documentation of third-party applications used within the company. We are available to document custom integrations developed internally, but we do not write full user-manuals of external applications.
 - Provide consulting to colleagues who ask us for advice by giving them suggestions and links to tools that may be useful.
 - Review the articles on this blog from a formal and linguistic standpoint.
 - Keep up to date through courses and conferences and research tools and methods to improve our work.
@@ -153,6 +152,7 @@ On the other hand, these are the activities we do **not** handle:
 - Create day-by-day documentation that is in charge of each team (e.g. meeting notes, minutes of retrospectives, maintenance documentation, release notes).
 - Proofreading and editing. We are available for suggestions and minor changes to documents written by others but we do not carry out review projects.
 - Create documentation for marketing/commercial communication.
+- Cover the lack of documentation of third-party applications used within the company. We are available to document custom integrations developed internally, but we do not write full user-manuals of external applications.
 - Translate documents written by others from Italian into English and vice versa. When necessary, we translate documents written by us.
 
 

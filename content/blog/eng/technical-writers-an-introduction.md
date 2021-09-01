@@ -1,8 +1,8 @@
 ---
 authors: ["marta-gilberti"]
 comments: true
-date: "2021-08-31"
-draft: true
+date: "2021-09-01"
+draft: false
 share: true
 categories: [English, Technical Writing, Documentation]
 title: "Technical Writers: the mystery unveiled"

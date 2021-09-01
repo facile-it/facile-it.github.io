@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>marta-gilberti on Facile.it Engineering</title>
+    <link>https://engineering.facile.it/authors/marta-gilberti/</link>
+    <description>Recent content in marta-gilberti on Facile.it Engineering</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.facile.it/authors/marta-gilberti/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Technical Writers: the mystery unveiled</title>
+      <link>https://engineering.facile.it/blog/eng/technical-writers-an-introduction/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/technical-writers-an-introduction/</guid>
+      <description>The technical writer, this mysterious character Let&amp;rsquo;s face it, being a technical writer (especially in Italy) makes you feel a bit like Barney Stinson from How I Met Your Mother: no one knows what your real job is. If you&amp;rsquo;re a tech writer, we bet you have at least one relative who, at every family gathering, asks you &amp;ldquo;What do you exactly do for a living?&amp;quot;. In the most desperate cases, even your mom doesn&amp;rsquo;t know what your job is!</description>
+    </item>
+    
+  </channel>
+</rss>

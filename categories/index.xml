@@ -6,17 +6,35 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Documentation</title>
+      <link>https://engineering.facile.it/categories/documentation/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/documentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>English</title>
       <link>https://engineering.facile.it/categories/english/</link>
-      <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technical Writing</title>
+      <link>https://engineering.facile.it/categories/technical-writing/</link>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/technical-writing/</guid>
       <description></description>
     </item>
     

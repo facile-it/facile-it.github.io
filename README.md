@@ -63,5 +63,3 @@ git commit [...] # to save it it
 `ita` or `eng`: the file name of the article of the opposite language, to obtain cross-linking between translations;
 
 `twitterImage`: used for the twitter cards when sharing the url of this page; needs to be at least 120x120, will be cropped to square. If not specified, the ENGR logo will be used;
-
-`twitterLargeImage`: used for the twitter cards too; needs to be at least 280x150px.

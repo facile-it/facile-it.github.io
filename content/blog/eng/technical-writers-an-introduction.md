@@ -8,7 +8,7 @@ categories: [English, Technical Writing, Documentation]
 title: "Technical Writers: the mystery unveiled"
 languageCode: "en-US"
 type: "post"
-twitterLargeImage: '/images/technical-writers-an-introduction/amanuensis.jpg'
+twitterImage: '/images/technical-writers-an-introduction/amanuensis.jpg'
 toc: true
 ---
 

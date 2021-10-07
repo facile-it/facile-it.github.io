@@ -23,7 +23,7 @@ Siamo più di 100 programmatori e gestiamo numerosi progetti con differenti stac
 * Piani di inserimento e crescita personalizzati
 * 1 venerdì al mese dedicato alla condivisione ed allo studio con il team
 * Budget formazione personale
-* Smart Working 4 giorni a settimana
+* Smart Working 4 giorni a settimana e la possibilità di lavorare in Full Remote Working
 * Biblioteca di libri di tecnologia con più di 100 titoli   
 * Partecipazione ad eventi di tecnologia
 * Ufficio in centro a Milano (MM3 Lodi T.I.B.B.) con sala relax con sofà, ping-pong e calcetto

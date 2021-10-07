@@ -26,7 +26,7 @@ Siamo più di 100 programmatori e gestiamo numerosi progetti con differenti stac
 * Smart Working 4 giorni a settimana e la possibilità di lavorare in Full Remote Working
 * Biblioteca di libri di tecnologia con più di 100 titoli   
 * Partecipazione ad eventi di tecnologia
-* Ufficio in centro a Milano (MM3 Lodi T.I.B.B.) con sala relax con sofà, ping-pong e calcetto
+* Ufficio in centro a Milano (MM3 Lodi T.I.B.B.) con sala relax
 * Convenzioni (bar, ristoranti, palestre, etc.), ticket Restaurant, caffè e acqua
 * La possibilità di fare il lavoro che ami in una realtà italiana di successo con un team d’eccellenza al tuo fianco
 

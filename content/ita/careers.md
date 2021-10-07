@@ -14,7 +14,7 @@ twitterlargeimage: "/images/careers/banner.png"
 
 **Facile.it** è in costante crescita e siamo sempre alla ricerca di programmatori da aggiungere al nostro team.
 Questa proposta è rivolta a sviluppatori di grande esperienza, che credono nell’innovazione e sono sempre attenti alle nuove tecnologie e non vedono l’ora di metterle in pratica. Siamo un gruppo di lavoro dinamico, giovane e divertente.
-Siamo in totale quasi 100 programmatori e gestiamo numerosi progetti con differenti stack tecnologici.
+Siamo più di 100 programmatori e gestiamo numerosi progetti con differenti stack tecnologici.
  
 # Cosa offriamo in Facile.it:
 

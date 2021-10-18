@@ -1,14 +1,13 @@
 ---
 authors: ["marta-gilberti"]
 comments: true
-date: "2021-10-11"
+date: "2021-10-18"
 draft: true
 share: true
 categories: [English, Technical Writing, Documentation, Conference]
 title: "Write the Docs Prague 2021"
 languageCode: "en-US"
 type: "post"
-twitterLargeImage: 'to dooooooooooooooooooooooo'
 toc: true
 ---
 
@@ -43,9 +42,9 @@ Here are some numbers related to the 2021 edition:
 
 # Why we recommend all documentarians to attend
 
-We of the Technical Writing team of Facile.it recommend to all fellow documentarians to attend Write the Docs Prague (or the other conferences organized by the Write the Docs community) for the following reasons:
+We of Facile.it's Technical Writing team recommend to all fellow documentarians to attend Write the Docs Prague (or the other conferences organized by the Write the Docs community) for the following reasons:
 
-- The topic of **documentation** is approached **from many different perspectives**: technical, human, creative, professional, etc.
+- The theme of **documentation** is approached **from many different perspectives**: technical, human, creative, professional, etc.
 - The conference is attended by **colleagues from all over Europe (and beyond)**, so it's a great way to get out of your comfort zone and find out what's going on out there. 
 - There are many opportunities to make new acquaintances and **expand your network of contacts**.
 - The **topics** that are covered are very **innovative and in step with the needs of the market**.
@@ -58,3 +57,7 @@ Our **[tickets](https://www.writethedocs.org/conf/prague/2021/tickets/)** for at
 However, **Write the Docs offers discounted tickets** for freelancers, non-profit organizations, students, and unemployed people. Moreover, if you don't belong to any of these categories, **you can apply for a grant program**. So don't worry, access to the conference is very democratic and everyone is welcome!
 
 We suggest buying tickets a bit in advance, especially if the next editions will be held in person again. Furthermore, **if you are applying for a grant program, make sure you are aware of the application deadline**, which is usually about 2 months before the event.
+
+# In case you missed it
+
+You can find the talks, the following Q&A sessions, and the lighting talks from the 2021 edition [here on YouTube](https://youtube.com/playlist?list=PLZAeFn6dfHpnaoiOQyd9BYbQbprDGQjQ9). Enjoy them and...we hope to see you next year!

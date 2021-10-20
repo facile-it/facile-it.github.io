@@ -8,7 +8,6 @@ categories: [English, Technical Writing, Documentation, Conference]
 title: "Write the Docs Prague 2021"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/engineering.jpg'
 toc: true
 ---
 

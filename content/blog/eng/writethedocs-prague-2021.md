@@ -1,13 +1,14 @@
 ---
 authors: ["marta-gilberti"]
 comments: true
-date: "2021-10-18"
+date: "2021-10-20"
 draft: false
 share: true
 categories: [English, Technical Writing, Documentation, Conference]
 title: "Write the Docs Prague 2021"
 languageCode: "en-US"
 type: "post"
+twitterImage: '/images/engineering.jpg'
 toc: true
 ---
 

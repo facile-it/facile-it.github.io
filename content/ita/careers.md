@@ -18,12 +18,12 @@ We are more than 100 programmers and manage numerous projects with different tec
 
 # What we offer at Facile.it:
 
-* Permanent employment with remuneration commensurate with experience and supplementary health fund
+* Permanent employment with remuneration commensurate to your experience level, and supplementary health fund
 * A young and dynamic IT team with an open mind to new technologies and processes
-* Personalized induction and growth plans
-* 1 Friday per month dedicated to sharing and studying with the team
+* Personalized introduction and growth plans
+* 1 Friday per month dedicated to learning, sharing and studying with the whole IT department
 * Personal study budget
-* Smart Working 4 days a week and the possibility of working in Full Remote Working
+* Smart Working 4 days a week or the possibility of working full remote
 * Tech book library with more than 100 titles
 * Participation in technology events
 * Office in the center of Milan (MM3 Lodi T.I.B.B.) with relaxation room and five-a-side football

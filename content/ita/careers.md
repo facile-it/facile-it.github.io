@@ -1,6 +1,6 @@
 ---
 comments: false
-date: "2016-03-24"
+date: "2021-11-30"
 draft: false
 share: true
 title: "Careers"
@@ -12,17 +12,22 @@ twitterlargeimage: "/images/careers/banner.png"
 
 ![Facile.it - lavora con noi!](/images/careers/banner.png)
 
-**Facile.it** è in costante crescita e siamo sempre alla ricerca di programmatori da aggiungere al nostro team. Questa proposta è rivolta a sviluppatori di grande esperienza, che credono nell’innovazione e sono sempre attenti alle nuove tecnologie e non vedono l’ora di metterle in pratica. Siamo un gruppo di lavoro dinamico, giovane e divertente. Siamo in totale quasi 80 programmatori e gestiamo numerosi progetti con differenti stack tecnologici.
+**Facile.it** is constantly growing and we are always looking for IT professionals to join our team.
+This proposal is aimed at experienced developers who believe in innovation and are always on the lookout for new technologies and can't wait to put them to work. We are a dynamic, young and fun team.
+We are more than 100 professionals and manage numerous projects with different technology stacks.
 
-# Cosa offriamo in Facile.it:
+# What we offer at Facile.it:
 
- * Assunzione a tempo indeterminato con RAL in base alla tua esperienza + fondo salute integrativo
- * Possibilità di crescita economica in base alle nuove competenze acquisite
- * Un venerdì al mese dedicato alla formazione e al team building
- * Biblioteca di libri di tecnologia con più di 100 titoli
- * Partecipazione ad eventi di tecnologia a nostro carico (SymfonyCon, phpDay, Codemotion, etc.)
- * Ufficio in centro a Milano (MM3 Missori) con sala relax, sofà, ping-pong e calcetto
- * Convenzioni (bar, ristoranti, palestre e molto altro), Ticket Restaurant, caffè, acqua e frutta fresca ogni giorno
- * Fare il lavoro che ami in una realtà italiana di successo con un top team al tuo fianco
+* Permanent employment with remuneration commensurate to your experience level, and supplementary health fund.
+* A young, dynamic IT team that is open to new technologies and processes.
+* Personalized onboarding and career plan.
+* One Friday a month dedicated to learning, sharing and studying with colleagues in the IT department.
+* Personal budget for training and professional learning.
+* Remote work 4 days a week or 100% of the time (based on agreement).
+* Tech book library with more than 100 titles.
+* Participation in technology events.
+* Office in the center of Milan (MM3 Lodi T.I.B.B.) with relax room and football table.
+* Conventions (with bars, restaurants, gyms, etc.), meal vouchers, free coffee and water.
+* The opportunity to do the job you love in a successful Italian company with a team of excellence by your side.
 
-Se sei interessato, dai uno sguardo alle nostre {{< url-link "offerte di lavoro »" "https://facile.jobs.personio.de/#department-538752" "_blank">}}.
+If you are interested, take a look at ours {{< url-link "Job openings »" "https://facile.jobs.personio.de/#department-538752" "_blank">}}.

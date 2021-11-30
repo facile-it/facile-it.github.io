@@ -6,19 +6,19 @@
     <description>Recent content on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Write the Docs Prague 2021</title>
-      <link>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</link>
-      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      <title>Careers</title>
+      <link>https://engineering.facile.it/ita/careers/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</guid>
-      <description>Introduction Facile.it&amp;rsquo;s Technical Writing team attended the Write the Docs Prague 2021 conference which was held from 3rd to 5th October 2021. While the conference was usually held in the capital of the Czech Republic, for the second year in a row it was held remotely due to Covid-19 restrictions. In this article we will provide a quick overview of the event.
-What is Write the Docs Prague Write the Docs Prague is the annual European conference organized by the Write the Docs community.</description>
+      <guid>https://engineering.facile.it/ita/careers/</guid>
+      <description>Facile.it is constantly growing and we are always looking for IT professionals to join our team. This proposal is aimed at experienced developers who believe in innovation and are always on the lookout for new technologies and can&amp;rsquo;t wait to put them to work. We are a dynamic, young and fun team. We are more than 100 professionals and manage numerous projects with different technology stacks.
+What we offer at Facile.</description>
     </item>
     
     <item>
@@ -347,16 +347,6 @@ What we were searching for Before, we were using an hosted CMS to run the blog, 
       
       <guid>https://engineering.facile.it/blog/eng/json-web-tokens/</guid>
       <description>When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability. I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy. Imagine for example a web application where a user can login and obtain a &amp;ldquo;pass&amp;rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted.</description>
-    </item>
-    
-    <item>
-      <title>Careers</title>
-      <link>https://engineering.facile.it/ita/careers/</link>
-      <pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/ita/careers/</guid>
-      <description>Facile.it è in costante crescita e siamo sempre alla ricerca di programmatori da aggiungere al nostro team. Questa proposta è rivolta a sviluppatori di grande esperienza, che credono nell’innovazione e sono sempre attenti alle nuove tecnologie e non vedono l’ora di metterle in pratica. Siamo un gruppo di lavoro dinamico, giovane e divertente. Siamo in totale quasi 80 programmatori e gestiamo numerosi progetti con differenti stack tecnologici.
-Cosa offriamo in Facile.</description>
     </item>
     
     <item>

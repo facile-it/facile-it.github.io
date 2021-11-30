@@ -6,20 +6,10 @@
     <description>Recent content in Blogs on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/blog/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Write the Docs Prague 2021</title>
-      <link>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</link>
-      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</guid>
-      <description>Introduction Facile.it&amp;rsquo;s Technical Writing team attended the Write the Docs Prague 2021 conference which was held from 3rd to 5th October 2021. While the conference was usually held in the capital of the Czech Republic, for the second year in a row it was held remotely due to Covid-19 restrictions. In this article we will provide a quick overview of the event.
-What is Write the Docs Prague Write the Docs Prague is the annual European conference organized by the Write the Docs community.</description>
-    </item>
     
     <item>
       <title>Technical Writers: the mystery unveiled</title>

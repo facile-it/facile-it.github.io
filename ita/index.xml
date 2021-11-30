@@ -6,10 +6,20 @@
     <description>Recent content in Ita on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Sep 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/ita/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Careers</title>
+      <link>https://engineering.facile.it/ita/careers/</link>
+      <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/ita/careers/</guid>
+      <description>Facile.it is constantly growing and we are always looking for IT professionals to join our team. This proposal is aimed at experienced developers who believe in innovation and are always on the lookout for new technologies and can&amp;rsquo;t wait to put them to work. We are a dynamic, young and fun team. We are more than 100 professionals and manage numerous projects with different technology stacks.
+What we offer at Facile.</description>
+    </item>
     
     <item>
       <title>Disclaimer</title>
@@ -20,16 +30,6 @@
       <description>Questo blog non rappresenta una testata giornalistica e viene aggiornato senza alcuna periodicità. Non può pertanto considerarsi un prodotto editoriale ai sensi della Legge n. 62 del 07/03/2001.
 Facile.it S.p.A. non ha e non si assume alcuna responsabilità per l&amp;rsquo;attualità, la correttezza, la completezza o la qualità delle informazioni messe a disposizione, ivi compresi i contenuti dei siti collegati e/o citati.
 Facile.it, inoltre, si riserva il diritto e la facoltà di rimuovere le informazioni proprie e/o fornite da terzi senza alcun preavviso.</description>
-    </item>
-    
-    <item>
-      <title>Careers</title>
-      <link>https://engineering.facile.it/ita/careers/</link>
-      <pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/ita/careers/</guid>
-      <description>Facile.it è in costante crescita e siamo sempre alla ricerca di programmatori da aggiungere al nostro team. Questa proposta è rivolta a sviluppatori di grande esperienza, che credono nell’innovazione e sono sempre attenti alle nuove tecnologie e non vedono l’ora di metterle in pratica. Siamo un gruppo di lavoro dinamico, giovane e divertente. Siamo in totale quasi 80 programmatori e gestiamo numerosi progetti con differenti stack tecnologici.
-Cosa offriamo in Facile.</description>
     </item>
     
     <item>

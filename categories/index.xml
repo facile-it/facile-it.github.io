@@ -6,33 +6,15 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Sep 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>C</title>
-      <link>https://engineering.facile.it/categories/c/</link>
-      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Conference</title>
-      <link>https://engineering.facile.it/categories/conference/</link>
-      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/conference/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Documentation</title>
       <link>https://engineering.facile.it/categories/documentation/</link>
-      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/documentation/</guid>
       <description></description>
@@ -41,7 +23,7 @@
     <item>
       <title>English</title>
       <link>https://engineering.facile.it/categories/english/</link>
-      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/english/</guid>
       <description></description>
@@ -50,7 +32,7 @@
     <item>
       <title>Technical Writing</title>
       <link>https://engineering.facile.it/categories/technical-writing/</link>
-      <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/technical-writing/</guid>
       <description></description>
@@ -152,6 +134,24 @@
       <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/scrum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://engineering.facile.it/categories/c/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conference</title>
+      <link>https://engineering.facile.it/categories/conference/</link>
+      <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/conference/</guid>
       <description></description>
     </item>
     

@@ -19,41 +19,56 @@
   
   <url>
     <loc>https://engineering.facile.it/authors/</loc>
-    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/blog/</loc>
-    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/c/</loc>
+    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/categories/</loc>
-    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/conference/</loc>
+    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/categories/documentation/</loc>
-    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/categories/english/</loc>
-    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/authors/marta-gilberti/</loc>
-    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/blog/eng/technical-writers-an-introduction/</loc>
-    <lastmod>2021-09-01T00:00:00+00:00</lastmod>
+    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/categories/technical-writing/</loc>
+    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</loc>
+    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/eng/technical-writers-an-introduction/</loc>
     <lastmod>2021-09-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -164,16 +179,6 @@
   
   <url>
     <loc>https://engineering.facile.it/authors/andrea-ceccarelli/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/c/</loc>
-    <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/conference/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
   </url>
   

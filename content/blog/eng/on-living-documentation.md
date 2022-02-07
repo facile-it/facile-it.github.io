@@ -58,7 +58,7 @@ And that’s why this is not a book about end-user documentation: not every audi
 
 #Written documentation is not always the correct answer
 
-The book follows the track of the agile / TDD / DDD / BTD development and builds on their pillars.
+The book follows the track of the agile / TDD / BDD development and builds on their pillars.
 
 > With TDD, the tests are first considered as specifications. With DDD, we identify the code and the model of the business domain […]. … we expect the code to tell the whole story about the domain.
 > 

@@ -13,44 +13,45 @@ type: "post"
 Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, **[Living Documentation: continuous knowledge sharing by design](https://www.pearson.com/store/p/living-documentation-continuous-knowledge-sharing-by-design/P100000797747/9780134689326)**, published by Pearson.
 
 # The need for documentation
+
 Documentation supplements the knowledge we might not have.
-Lack of knowledge manifests in
-- wasted time (finding the missing points or guessing them)
-- biased decisions due to this lack
+Lack of knowledge manifests in:
+- Wasted time (finding the missing points or guessing them).
+- Biased decisions due to this lack.
 
-- Hint: when you don’t know something, you usually don’t know of not knowing ;)
+- Hint: when you don’t know something, you are usually not aware that you don't know it ;)
 
-So the time spent on harvesting knowledge should be considered helping build the stakeholders’ application mental model. And this is important because is that model that developers will use to augment the code, product owners will use to describe the stories to implements, and business owners will use to describe their objectives and key results….
+Therefore, the time spent harvesting knowledge should be considered as helping to build the stakeholders' application mental model. This is important because that's the mental model that developers will use to augment the code, that product owners will use to describe the stories to implement, and that business owners will use to describe their key goals and outcomes.
 
-Let’s hope that every stakeholder has a shareable and overlapping mental model!
+At least I hope every stakeholder has a shareable and overlapping mental model!
 
 #A little confession and the need for something better
 
-I confess: I like to write documentation.
+I confess: I like writing documentation.
 
-I admit: I am (sometimes) dedicated to the antipattern: human dedication (see page 32).
+I admit: I am (sometimes) dedicated to the antipattern, human dedication (see page 32).
 
-Sometimes I need to sketch up things while following the execution of the code, and it’s a pity to throw away those findings.
+Sometimes I need to sketch things out while following the code execution, and it's a pity to throw those findings away.
 
 Other times I need to clear up my mind over some convoluted code.
 
 In any case, I resort to the tool that the company I work for offers: Confluence pages.
 
-Once I’ve done writing the article, that article begins to age, eventually reaching, as the author says, the information graveyard.
+Once I am done writing an article, that article begins to age and eventually reaches, as the author says, the information graveyard.
 
 If I’m lucky enough, I can intercept changes to the code and amend the docs accordingly.
 
-But not everyone is so fond of writing documentation.
+But not everyone is as fond of writing documentation as I am.
 
 And that’s where this book comes in handy: ideas on automating the generation of documentation.
 
 #What this book is about and what it is not
 
-This book is not about the end-user documentation, nor does aim to bookish-style, well-refined output.
+This book is not about the end-user documentation, it aim at a well-finished bookish output.
 
-This book is about sharing of knowledge and making it available in the right place, right on time.
+This book is about the sharing of knowledge and making it available in the right place, right on time.
 
-By doing this, it hopes to shed a light on the overall design of the application being documented, eventually triggering an opportunity for refactoring.
+By doing so, it hopes to shed a light on the overall design of the application being documented, eventually triggering an opportunity for refactoring.
 
 Overall, it wishes the code to be so clear and self-documented that the additional documentation became useless and redundant.
 
@@ -64,25 +65,27 @@ The book follows the track of the agile / TDD / BDD development and builds on th
 > 
 > <cite>Source: the book, page 12</cite>
 
-Since the purpose of the documentation is a transfer of knowledge, in many cases the preferable and more convenient way to achieve this is by having conversations, which is another way of saying
+Since the purpose of documentation is a transfer of knowledge, in many cases the preferable and more convenient way to achieve this is by having conversations, which is another way of saying
 
 > The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.
 >
 > <cite>>Source: the Agile Manifesto, https://agilemanifesto.org/iso/en/principles.html**
 
-Fact is that even when we favour “conversation over documentation”, sometimes we need to summarize that we have discovered. That summary will be less wordy and up-to-the-point since all the assumptions and agreements have already been discussed.
+Fact is that even when we favour “conversation over documentation”, sometimes we need to summarize what we have discovered. That summary will be less wordy and up-to-the-point since all the assumptions and agreements have already been discussed.
 
-(For instance, we might have decided to adopt the hexagonal architecture. Via some conversations, we might have discussed it amongst several alternatives. In the documentation, we can explain why we chose that architecture and the rationale for having discarded the other choices, without discussing what hexagonal architecture is. This is in fact a well-established knowledge that is not worth documenting again: to establish a common ground for those readers who haven’t got the chance to participate in the conversation we can effortlessly link to an external resource).
+For instance, we might have decided to adopt the hexagonal architecture. Via some conversations, we might have discussed it amongst several alternatives. In the documentation, we can explain why we chose that architecture and the rationale for having discarded the other choices, without discussing what hexagonal architecture is. This is in fact a well-established knowledge that is not worth documenting again: to establish a common ground for those readers who haven’t got the chance to participate in the conversation we can effortlessly link to an external resource.
 
 - Hint: as the author says (p. 13): we have conversations even with machines, and we call that experiments.
 
 #What to document (in a written form)
 
-- When in doubt about its usefulness, don’t document.
+Here are some tips for figuring out what to document (and what not to):
+
+- When in doubt about the usefulness of the information, don't document it.
 - If some information will be relevant for a very long period of time, document it.
 - If some information should be spread to a large audience, document it.
 - If some information is considered valuable or critical, document it.
-- Anything that makes an application hard or expensive to change should be documented
+- Anything that makes an application hard or expensive to change should be documented.
 
 > Avoid speculating on what should be documented. Instead, pay attention to all questions asked or questions that were not asked but that should have been asked, as signals that some knowledge needs to be documented.
 >
@@ -90,9 +93,9 @@ Fact is that even when we favour “conversation over documentation”, sometime
 
 #Knowledge is around us (and in us)
 
-One aspect the book states clearly and several times is that often the documentation is already there, you need only to recognize it as a source to draw information from.
+One aspect that the book states clearly and repeatedly is that the documentation is often already there, you just need to recognize it as a source from which to draw information.
 
-Consider for instance the followings:
+Consider, for instance, the following items:
 
 - Tests written for behavior-driven-development
 - Configuration files
@@ -102,9 +105,9 @@ Consider for instance the followings:
 
 The point is that every kind of information that “decorates” the code, gives it some context, and functions as a way to transfer knowledge (even from yourself of today to yourself of the future) is documentation.
 
-Moreover, since most of this stuff needs always to be up-to-date because it is needed by the application to run (or to deploy), you can be assured that it will be always accurate and can become the single source of truth.
+Moreover, since most of this stuff always needs to be up-to-date because the application needs it to run (or be deployed), you can be assured that it will always be accurate and may become the single source of truth.
 
-If anything, the problem of this kind of knowledge is its fragmentation and / or obfuscation. Not to mention the worst case scenario, that that knowledge is only in the developer’s mind and in the code we can read only its consequences.
+If anything, the problem with this kind of knowledge is its fragmentation and/or obfuscation. Not to mention the worst case scenario, which is when that knowledge is only in the developer's mind and we can only read its consequences in the code.
 
 > Documentation accelerates delivery because it shortens the time to rebuild your mental model of the system to work on.
 > 
@@ -112,14 +115,14 @@ If anything, the problem of this kind of knowledge is its fragmentation and / or
 
 #Internal vs external documentation
 
-The author distinguishes between internal documentation (placed in the code, for example via annotations or codes or near it, i.e. with README.md files) and external documentation. This kind of documentation can be leveraged even with the most sophisticated IDEs.
+The author distinguishes between internal documentation, i.e. placed in the code (e.g. by annotations or codes) or near the code (e.g. by README.md files), and external documentation. The former can be leveraged even with the most sophisticated IDEs.
 
-External documentation is something built from internal documentation but:
+External documentation is something built from internal documentation but that is:
 
-- embellished (maybe following the company’s guidelines, with the company logo, and so on)
-- filtered: not every documentation should pass the code level because sometimes information is relevant only at a micro-level but becomes useless or distracting at upper levels. Moreover, what will be considered important for a particular audience would be noise for another.
-- sometimes transformed to speak the language of the targeted audience (thas made more readable)
-- published somewhere (thus made more searchable)
+- Embellished (maybe following the company’s guidelines, with the company logo, and so on).
+- Filtered: not every documentation should pass the code level because sometimes information is relevant only at a micro-level but becomes useless or distracting at upper levels. Moreover, what will be considered important for a particular audience would be noise for another.
+- Sometimes transformed to speak the language of the targeted audience (thus made more readable).
+- Published somewhere (thus made more searchable).
 
 #So, what’s living documentation?
 
@@ -141,7 +144,7 @@ Of course, no one will ever automate the first step: writing and/or assembling t
 > 
 > <cite>Source: the book, p. 199</cite>
 
-Moreover, sometimes the application is the only source of truth: think of legacy systems where no ona have prior knowledge of them. But
+Moreover, sometimes the application is the only source of truth: think of legacy systems where no one has prior knowledge of them. But
 
 > don’t fall for the fallacy that the legacy system is in itself a sufficient description of the new system to be rebuilt. Take the opportunity of the rewriting to challenge every aspect from the legacy system.
 >
@@ -157,37 +160,37 @@ The author defines such kind of documentation “evergreen documentation” (see
 
 #Some guidelines and suggestions
 
-- Only one single source of truth is allowed: if you need to make it accessible somewhere else, use references (i.e. links or annotations that, in the publication phase, will copy from the source on the destination).
-- Of course, with every publication, we provide an up-to-date snapshot of what was current at the time of the information harvesting. That’s why we should clearly version the documentation every time we publish it.
+- Only one source of truth is allowed: if you need to make it accessible somewhere else, use references (i.e., links or annotations that will copy from the source to the destination during publication).
+- Of course, with each publication we provide an up-to-date snapshot of what was current at the time the information was gathered. This is why we should clearly version the documentation each time we publish it.
 - Every published document should be considered read-only: if you need to amend it, publish another version.
-- Use annotations to augment your code: the code tells the how, the annotations could tell the why, aka the rationale (see p. 122)
-- Annotations can be used to mark security issues (@securityIssue(name=’blaBla’, jira=’<link to jira>’), or to declare that a class should have not setters
-- Stick to one of these styles: declare @ Immutable, @NotNullable vs @ Mutable and @ Nullable. Don’t mix styles to avoid inconsistencies. [I put a space between @ and the annotation not to tag anyone ]
+- Use annotations to augment your code: the code tells the how, the annotations could tell the why, aka the rationale (see p. 122).
+- Annotations can be used to mark security issues (@securityIssue(name=’blaBla’, jira=’<link to jira>’), or to declare that a class should have not setters.
+- Stick to one of these styles: declare @Immutable, @NotNullable vs @Mutable and @Nullable. Don’t mix styles to avoid inconsistencies. [I put a space between @ and the annotation not to tag anyone ]
 - Annotate elements with only intrinsic information (to explain this, the author uses the car example: its color and engine are intrinsic properties, while its location and owner are extrinsic, see p. 118). When used this way, if an element disappears from the code, all the relevant documentation goes with it, without side-effects in other parts of the documentation.
-- If you link something directly in your documentation, you should prove their existence in life every time you publish your documentation. Another approach is to link to a google search that likely will show your desired first choice at the top of the list
-- Consider a link registry
-- You can use annotation also to highlight some best practices you find on the code
-- 1You could create a glossary out of your entities or entity properties, maybe (but don’t create a Glossary annotation, use instead CoreConcept, see p. 164)
-- You could create guided tours of particular sections of your code
-- You could integrated also some diagrams (see **[Graphviz](https://graphviz.org/)** and “Living diagrams” and following, page 170).
+-If you link something directly in your documentation, you should prove its existence in life every time you publish your documentation. Another approach is to link a Google search that will likely show your first desired choice at the top of the list.
+- Consider creating a link registry
+- You can use annotation also to highlight some best practices you find on the code.
+- You could create a glossary out of your entities or entity properties, maybe (but don’t create a Glossary annotation, use instead CoreConcept, see p. 164).
+- You could create guided tours of particular sections of your code.
+- You could integrated also some diagrams (see **[Graphviz](https://graphviz.org/)** and “Living diagrams” and following, p. 170).
 - Don’t use primitive types, create your own: types don’t lie, and if you don’t use them properly, the pipeline will be red!
-- Use tools to enforce the decisions made into guidelines (p. 301): they provide knowledge just in time where is needed (when someone violets them).
+- Use tools to enforce the decisions made into guidelines (p. 301): they provide knowledge just in time where is needed (when someone violates them).
 
 #Conclusion
 
 That's (a lot) more than living documentation inside this book.
 
-It goes on talking about code quality and code design techniques: for example, even when naming a method we could introduce a burden on the shoulders of the next developer or alleviate her voyage.
+It continues by talking about code quality and code design techniques. For example, even when we name a method we might introduce a burden on the shoulders of the next developer or ease her journey.
 
 It touches code organization (aka, in which folder should I put this kind of files?), refactoring, architecture, agile, test-driven development…
 
-I think it touches a lot of the aspects that make software development a craftmanship.
+I think it deals with a lot of the aspects that make software development a craftmanship.
 
 And I think several kinds of audiences would benefit from reading this book.
 
-Besides developers, I think product owners would benefit because, apart from answering the questions "why we should document?' and "what?", it gives hints on how to write stories on Jira (which are indeed, some kind of documentation too).
+Besides developers, I think product owners would benefit because, apart from answering the questions "why should we document?' and "what?", it gives hints on how to write stories on Jira (which are indeed, some kind of documentation too).
 
-I think some aspects touched in the book (decision logs, for instance) could be applied to any level of a company, of course with different kinds of granularity.
+I think some aspects discussed in the book (decision logs, for instance) could be applied to any level of a company, of course with different kinds of granularity.
 
 In summary, I really loved this book and would recommend it to anyone even slightly interested in documentation.
 

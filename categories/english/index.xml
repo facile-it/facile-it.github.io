@@ -6,10 +6,23 @@
     <description>Recent content in English on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 16 Mar 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/english/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>On Living Documentation</title>
+      <link>https://engineering.facile.it/blog/eng/on-living-documentation/</link>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/on-living-documentation/</guid>
+      <description>Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, Living Documentation: continuous knowledge sharing by design, published by Pearson.
+The need for documentation Documentation supplements the knowledge we might not have. Lack of knowledge manifests in:
+  Wasted time (finding the missing points or guessing them).
+  Biased decisions due to this lack.
+  Hint: when you don’t know something, you are usually not aware that you don&amp;rsquo;t know it ;)</description>
+    </item>
     
     <item>
       <title>Write the Docs Prague 2021</title>

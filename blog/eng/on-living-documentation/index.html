@@ -1,0 +1,1385 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>On Living Documentation</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="referrer" content="always">
+        <meta name="generator" content="Hugo 0.69.0" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+            
+        
+
+        
+    
+        <meta name="twitter:card" content="summary"/>
+        
+            <meta name="twitter:image:src" content="https://engineering.facile.it/images/technical-writers-an-introduction/amanuensis.jpg"/>
+        
+    
+    
+    <meta name="twitter:title" content="On Living Documentation"/>
+    <meta name="twitter:description" content="Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, Living Documentation: continuous knowledge sharing by design, published by Pearson.
+The need for documentation Documentation supplements the knowledge we might not have. Lack of knowledge manifests in:
+  Wasted time (finding the missing points or guessing them).
+  Biased decisions due to this lack.
+  Hint: when you don’t know something, you are usually not aware that you don&rsquo;t know it ;)"/>
+    
+        
+            <meta name="twitter:creator" content="@zolletta"/>
+        
+    
+
+
+<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+
+        <meta property="og:title" content="On Living Documentation" />
+<meta property="og:description" content="Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, Living Documentation: continuous knowledge sharing by design, published by Pearson.
+The need for documentation Documentation supplements the knowledge we might not have. Lack of knowledge manifests in:
+  Wasted time (finding the missing points or guessing them).
+  Biased decisions due to this lack.
+  Hint: when you don’t know something, you are usually not aware that you don&rsquo;t know it ;)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/on-living-documentation/" />
+<meta property="article:published_time" content="2022-03-16T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-03-16T00:00:00+00:00" />
+
+
+        
+            
+                <meta property="og:image" content="https://engineering.facile.it/images/technical-writers-an-introduction/amanuensis.jpg">
+            
+        
+
+        <meta itemprop="name" content="On Living Documentation">
+<meta itemprop="description" content="Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, Living Documentation: continuous knowledge sharing by design, published by Pearson.
+The need for documentation Documentation supplements the knowledge we might not have. Lack of knowledge manifests in:
+  Wasted time (finding the missing points or guessing them).
+  Biased decisions due to this lack.
+  Hint: when you don’t know something, you are usually not aware that you don&rsquo;t know it ;)">
+<meta itemprop="datePublished" content="2022-03-16T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-03-16T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2012">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/additional.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/monokai-sublime.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">Facile.it Engineering</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/authors/">
+                            <i class="fa fa-pencil">&nbsp;</i>Authors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/ita/careers/">
+                            <i class="fa fa-briefcase">&nbsp;</i>Careers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/eng/who-we-are/">
+                            <i class="fa fa-users">&nbsp;</i>Who we are
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/authors/">
+                            <h3>
+                                <i class="fa fa-pencil">&nbsp;</i>Authors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/ita/careers/">
+                            <h3>
+                                <i class="fa fa-briefcase">&nbsp;</i>Careers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/eng/who-we-are/">
+                            <h3>
+                                <i class="fa fa-users">&nbsp;</i>Who we are
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2022-03-16'>
+                                    March 16, 2022</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/writethedocs-prague-2021/">Write the Docs Prague 2021</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-10-20'>
+                                    October 20, 2021</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/technical-writers-an-introduction/">Technical Writers: the mystery unveiled</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-09-01'>
+                                    September 1, 2021</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fon-living-documentation%2f&amp;text=On%20Living%20Documentation&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fon-living-documentation%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fon-living-documentation%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fon-living-documentation%2f&amp;title=On%20Living%20Documentation" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fon-living-documentation%2f&amp;title=On%20Living%20Documentation" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fon-living-documentation%2f&amp;title=On%20Living%20Documentation" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fon-living-documentation%2f&amp;description=On%20Living%20Documentation" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fon-living-documentation%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h1>
+            
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2022-03-16'>
+            16 March 2022
+        </time>
+
+        
+            <a href="/authors/veronica-bolognesi/" class="author">
+            
+                <span class="name">Veronica Bolognesi</span>
+                <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" />
+            
+            </a>
+        
+
+        
+            <p>10 minute read</p>
+        
+    </div>
+</header>
+
+
+  
+
+
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-need-for-documentation">The need for documentation</a></li>
+    <li><a href="#a-little-confession-and-the-need-for-something-better">A little confession and the need for something better</a></li>
+    <li><a href="#what-this-book-is-about-and-what-it-is-not">What this book is about and what it is not</a></li>
+    <li><a href="#written-documentation-is-not-always-the-correct-answer">Written documentation is not always the correct answer</a></li>
+    <li><a href="#what-to-document-in-a-written-form">What to document (in a written form)</a></li>
+    <li><a href="#knowledge-is-around-us-and-in-us">Knowledge is around us (and in us)</a></li>
+    <li><a href="#internal-vs-external-documentation">Internal vs external documentation</a></li>
+    <li><a href="#so-whats-living-documentation">So, what’s living documentation?</a></li>
+    <li><a href="#not-everything-should-be-made-alive">Not everything should be made alive</a></li>
+    <li><a href="#some-guidelines-and-suggestions">Some guidelines and suggestions</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+  
+
+  <div id="content">
+    <p>Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, <strong><a href="https://www.pearson.com/store/p/living-documentation-continuous-knowledge-sharing-by-design/P100000797747/9780134689326">Living Documentation: continuous knowledge sharing by design</a></strong>, published by Pearson.</p>
+<h1 id="the-need-for-documentation">The need for documentation</h1>
+<p>Documentation supplements the knowledge we might not have.
+Lack of knowledge manifests in:</p>
+<ul>
+<li>
+<p>Wasted time (finding the missing points or guessing them).</p>
+</li>
+<li>
+<p>Biased decisions due to this lack.</p>
+</li>
+<li>
+<p>Hint: when you don’t know something, you are usually not aware that you don&rsquo;t know it ;)</p>
+</li>
+</ul>
+<p>Therefore, the time spent harvesting knowledge should be considered as helping to build the stakeholders&rsquo; application mental model. This is important because that&rsquo;s the mental model that developers will use to augment the code, that product owners will use to describe the stories to implement, and that business owners will use to describe their key goals and outcomes.</p>
+<p>At least I hope every stakeholder has a shareable and overlapping mental model!</p>
+<h1 id="a-little-confession-and-the-need-for-something-better">A little confession and the need for something better</h1>
+<p>I confess: I like writing documentation.</p>
+<p>I admit: I am (sometimes) dedicated to the antipattern, human dedication (see page 32).</p>
+<p>Sometimes I need to sketch things out while following the code execution, and it&rsquo;s a pity to throw those findings away.</p>
+<p>Other times I need to clear up my mind over some convoluted code.</p>
+<p>In any case, I resort to the tool that the company I work for offers: Confluence pages.</p>
+<p>Once I am done writing an article, that article begins to age and eventually reaches, as the author says, the information graveyard.</p>
+<p>If I’m lucky enough, I can intercept changes to the code and amend the docs accordingly.</p>
+<p>But not everyone is as fond of writing documentation as I am.</p>
+<p>And that’s where this book comes in handy: ideas on automating the generation of documentation.</p>
+<h1 id="what-this-book-is-about-and-what-it-is-not">What this book is about and what it is not</h1>
+<p>This book is not about the end-user documentation, it aim at a well-finished bookish output.</p>
+<p>This book is about the sharing of knowledge and making it available in the right place, right on time.</p>
+<p>By doing so, it hopes to shed a light on the overall design of the application being documented, eventually triggering an opportunity for refactoring.</p>
+<p>Overall, it wishes the code to be so clear and self-documented that the additional documentation became useless and redundant.</p>
+<p>And that’s why this is not a book about end-user documentation: not every audience is able/willing to read the code, nor that every audience should do it.</p>
+<h1 id="written-documentation-is-not-always-the-correct-answer">Written documentation is not always the correct answer</h1>
+<p>The book follows the track of the agile / TDD / BDD development and builds on their pillars.</p>
+<blockquote>
+<p>With TDD, the tests are first considered as specifications. With DDD, we identify the code and the model of the business domain […]. … we expect the code to tell the whole story about the domain.</p>
+<p><!-- raw HTML omitted -->Source: the book, page 12<!-- raw HTML omitted --></p>
+</blockquote>
+<p>Since the purpose of documentation is a transfer of knowledge, in many cases the preferable and more convenient way to achieve this is by having conversations, which is another way of saying</p>
+<blockquote>
+<p>The most efficient and effective method of conveying information to and within a development team is face-to-face conversation.</p>
+<p><!-- raw HTML omitted -->&gt;Source: the Agile Manifesto, <a href="https://agilemanifesto.org/iso/en/principles.html">https://agilemanifesto.org/iso/en/principles.html</a>**</p>
+</blockquote>
+<p>Fact is that even when we favour “conversation over documentation”, sometimes we need to summarize what we have discovered. That summary will be less wordy and up-to-the-point since all the assumptions and agreements have already been discussed.</p>
+<p>For instance, we might have decided to adopt the hexagonal architecture. Via some conversations, we might have discussed it amongst several alternatives. In the documentation, we can explain why we chose that architecture and the rationale for having discarded the other choices, without discussing what hexagonal architecture is. This is in fact a well-established knowledge that is not worth documenting again: to establish a common ground for those readers who haven’t got the chance to participate in the conversation we can effortlessly link to an external resource.</p>
+<ul>
+<li>Hint: as the author says (p. 13): we have conversations even with machines, and we call that experiments.</li>
+</ul>
+<h1 id="what-to-document-in-a-written-form">What to document (in a written form)</h1>
+<p>Here are some tips for figuring out what to document (and what not to):</p>
+<ul>
+<li>When in doubt about the usefulness of the information, don&rsquo;t document it.</li>
+<li>If some information will be relevant for a very long period of time, document it.</li>
+<li>If some information should be spread to a large audience, document it.</li>
+<li>If some information is considered valuable or critical, document it.</li>
+<li>Anything that makes an application hard or expensive to change should be documented.</li>
+</ul>
+<blockquote>
+<p>Avoid speculating on what should be documented. Instead, pay attention to all questions asked or questions that were not asked but that should have been asked, as signals that some knowledge needs to be documented.</p>
+<p><!-- raw HTML omitted -->Source: the book, page 202<!-- raw HTML omitted --></p>
+</blockquote>
+<h1 id="knowledge-is-around-us-and-in-us">Knowledge is around us (and in us)</h1>
+<p>One aspect that the book states clearly and repeatedly is that the documentation is often already there, you just need to recognize it as a source from which to draw information.</p>
+<p>Consider, for instance, the following items:</p>
+<ul>
+<li>Tests written for behavior-driven-development</li>
+<li>Configuration files</li>
+<li>Some README.md that you might have written times ago</li>
+<li>Annotations you already use for documenting routes, or for your ORM (like Doctrine) …</li>
+<li>…</li>
+</ul>
+<p>The point is that every kind of information that “decorates” the code, gives it some context, and functions as a way to transfer knowledge (even from yourself of today to yourself of the future) is documentation.</p>
+<p>Moreover, since most of this stuff always needs to be up-to-date because the application needs it to run (or be deployed), you can be assured that it will always be accurate and may become the single source of truth.</p>
+<p>If anything, the problem with this kind of knowledge is its fragmentation and/or obfuscation. Not to mention the worst case scenario, which is when that knowledge is only in the developer&rsquo;s mind and we can only read its consequences in the code.</p>
+<blockquote>
+<p>Documentation accelerates delivery because it shortens the time to rebuild your mental model of the system to work on.</p>
+<p><!-- raw HTML omitted -->Source: book, page 341<!-- raw HTML omitted --></p>
+</blockquote>
+<h1 id="internal-vs-external-documentation">Internal vs external documentation</h1>
+<p>The author distinguishes between internal documentation, i.e. placed in the code (e.g. by annotations or codes) or near the code (e.g. by README.md files), and external documentation. The former can be leveraged even with the most sophisticated IDEs.</p>
+<p>External documentation is something built from internal documentation but that is:</p>
+<ul>
+<li>Embellished (maybe following the company’s guidelines, with the company logo, and so on).</li>
+<li>Filtered: not every documentation should pass the code level because sometimes information is relevant only at a micro-level but becomes useless or distracting at upper levels. Moreover, what will be considered important for a particular audience would be noise for another.</li>
+<li>Sometimes transformed to speak the language of the targeted audience (thus made more readable).</li>
+<li>Published somewhere (thus made more searchable).</li>
+</ul>
+<h1 id="so-whats-living-documentation">So, what’s living documentation?</h1>
+<p>Living documentation is documentation that it is not a burden to maintain and that is always kept in sync with its sources of truth, eventually failing the CI/CD if they fail to synchronize.</p>
+<p>Once the documentation is extracted, it can also be published in a format of your choice (say via Confluence API).</p>
+<p>Of course, no one will ever automate the first step: writing and/or assembling the <em>automatable</em> documentation.</p>
+<blockquote>
+<p>Developers don’t own the documentation, they just own the technical responsibility to deal with it.</p>
+<p><!-- raw HTML omitted -->(Source: the book, p. 22<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p>Living documentation is all about making each decision explicit, with not only the consequences in code but also the rationale, the context, and the associated business stakes expressed (or perhaps modeled) using all the expressiveness of the code as a documentation medium.</p>
+<p><!-- raw HTML omitted -->Source: the book, p. 50<!-- raw HTML omitted --></p>
+</blockquote>
+<blockquote>
+<p>Anything that can answer a question can be considered documentation. If you can answer questions by using an application, then the application is part of the documentation.</p>
+<p><!-- raw HTML omitted -->Source: the book, p. 199<!-- raw HTML omitted --></p>
+</blockquote>
+<p>Moreover, sometimes the application is the only source of truth: think of legacy systems where no one has prior knowledge of them. But</p>
+<blockquote>
+<p>don’t fall for the fallacy that the legacy system is in itself a sufficient description of the new system to be rebuilt. Take the opportunity of the rewriting to challenge every aspect from the legacy system.</p>
+<p><!-- raw HTML omitted -->Source: the book, p. 403<!-- raw HTML omitted --></p>
+</blockquote>
+<h1 id="not-everything-should-be-made-alive">Not everything should be made alive</h1>
+<p>If the burden of implementing the automation is not worth the time it takes, because the knowledge won’t change much, maybe the traditional way is preferable. In other words:
+<strong><a href="https://en.wikipedia.org/wiki/KISS_principle">keep it simple, stupid</a></strong></p>
+<p>The author defines such kind of documentation “evergreen documentation” (see p. 246).</p>
+<h1 id="some-guidelines-and-suggestions">Some guidelines and suggestions</h1>
+<ul>
+<li>Only one source of truth is allowed: if you need to make it accessible somewhere else, use references (i.e., links or annotations that will copy from the source to the destination during publication).</li>
+<li>Of course, with each publication we provide an up-to-date snapshot of what was current at the time the information was gathered. This is why we should clearly version the documentation each time we publish it.</li>
+<li>Every published document should be considered read-only: if you need to amend it, publish another version.</li>
+<li>Use annotations to augment your code: the code tells the how, the annotations could tell the why, aka the rationale (see p. 122).</li>
+<li>Annotations can be used to mark security issues (@securityIssue(name=’blaBla’, jira=’<!-- raw HTML omitted -->’), or to declare that a class should have not setters.</li>
+<li>Stick to one of these styles: declare @Immutable, @NotNullable vs @Mutable and @Nullable. Don’t mix styles to avoid inconsistencies. [I put a space between @ and the annotation not to tag anyone ]</li>
+<li>Annotate elements with only intrinsic information (to explain this, the author uses the car example: its color and engine are intrinsic properties, while its location and owner are extrinsic, see p. 118). When used this way, if an element disappears from the code, all the relevant documentation goes with it, without side-effects in other parts of the documentation.
+-If you link something directly in your documentation, you should prove its existence in life every time you publish your documentation. Another approach is to link a Google search that will likely show your first desired choice at the top of the list.</li>
+<li>Consider creating a link registry</li>
+<li>You can use annotation also to highlight some best practices you find on the code.</li>
+<li>You could create a glossary out of your entities or entity properties, maybe (but don’t create a Glossary annotation, use instead CoreConcept, see p. 164).</li>
+<li>You could create guided tours of particular sections of your code.</li>
+<li>You could integrated also some diagrams (see <strong><a href="https://graphviz.org/">Graphviz</a></strong> and “Living diagrams” and following, p. 170).</li>
+<li>Don’t use primitive types, create your own: types don’t lie, and if you don’t use them properly, the pipeline will be red!</li>
+<li>Use tools to enforce the decisions made into guidelines (p. 301): they provide knowledge just in time where is needed (when someone violates them).</li>
+</ul>
+<h1 id="conclusion">Conclusion</h1>
+<p>That&rsquo;s (a lot) more than living documentation inside this book.</p>
+<p>It continues by talking about code quality and code design techniques. For example, even when we name a method we might introduce a burden on the shoulders of the next developer or ease her journey.</p>
+<p>It touches code organization (aka, in which folder should I put this kind of files?), refactoring, architecture, agile, test-driven development…</p>
+<p>I think it deals with a lot of the aspects that make software development a craftmanship.</p>
+<p>And I think several kinds of audiences would benefit from reading this book.</p>
+<p>Besides developers, I think product owners would benefit because, apart from answering the questions &ldquo;why should we document?&rsquo; and &ldquo;what?&quot;, it gives hints on how to write stories on Jira (which are indeed, some kind of documentation too).</p>
+<p>I think some aspects discussed in the book (decision logs, for instance) could be applied to any level of a company, of course with different kinds of granularity.</p>
+<p>In summary, I really loved this book and would recommend it to anyone even slightly interested in documentation.</p>
+<p>If you&rsquo;re like me, you&rsquo;ll end up full of ideas…. and the book gives also advice on how to sell the living documentation approach to your colleagues and boss :)</p>
+
+  </div>
+
+  
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/agile">Agile</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/tdd">TDD</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/bdd">BDD</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/documentation">Documentation</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/eng/writethedocs-prague-2021/"
+                class="button big previous">Write the Docs Prague 2021</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo_engineering.png" width="100%" alt="Facile.it Engineering" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>News, repos, tips & trends from the Facile.it Engineering team!</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section id="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
+                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/on-living-documentation/">On Living Documentation</a>
+              </h3>
+              
+              <time class="published" datetime='2022-03-16'>
+                16 March 2022
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/marta-gilberti/" class="author" title="See other posts from Marta Gilberti">
+                      <img src="/images/avatar-mgilberti.jpg" alt="Marta Gilberti avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/writethedocs-prague-2021/">Write the Docs Prague 2021</a>
+              </h3>
+              
+              <time class="published" datetime='2021-10-20'>
+                20 October 2021
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/marta-gilberti/" class="author" title="See other posts from Marta Gilberti">
+                      <img src="/images/avatar-mgilberti.jpg" alt="Marta Gilberti avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/technical-writers-an-introduction/">Technical Writers: the mystery unveiled</a>
+              </h3>
+              
+              <time class="published" datetime='2021-09-01'>
+                1 September 2021
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Top categories</a></h3>
+      </header>
+        
+          
+        
+
+        
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/english/">English</a>
+                <span style="float:right;">40</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
+                <span style="float:right;">34</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/oop/">OOP</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
+                <span style="float:right;">23</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/software-testing/">Software Testing</a>
+                <span style="float:right;">7</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/symfony/">Symfony</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+        <p>
+            <a href="/categories/" class="button">View more categories</a>
+        </p>
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h1>
+      <p>Facile.it relies on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. This blog allows our developers to share tips and direct experiences with new technologies.</p>
+      <a href="/ita/chi-siamo/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2022
+        
+          Facile.it Engineering
+        
+      .
+      <a href="/ita/disclaimer/" rel="nofollow">Disclaimer</a><br>
+      Design <a href="http://html5up.net" rel="nofollow" target="_blank">HTML5 UP</a><br>
+      Ported by <a href="//github.com/jpescador" rel="nofollow" target="_blank">Julio Pescador</a><br>
+      Modified by <a href="//github.com/Jean85" rel="nofollow" target="_blank">Alessandro Lai</a><br>
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/objectivec.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/swift.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+      <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        $(function() {
+            $('.lazy').Lazy();
+        });
+    </script>
+  </body>
+</html>
+

@@ -3,12 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://engineering.facile.it/ita/careers/</loc>
-    <lastmod>2021-11-30T00:00:00+00:00</lastmod>
+    <loc>https://engineering.facile.it/categories/agile/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/bdd/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/documentation/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/english/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/eng/on-living-documentation/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/tdd/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/veronica-bolognesi/</loc>
+    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/ita/careers/</loc>
     <lastmod>2021-11-30T00:00:00+00:00</lastmod>
   </url>
   
@@ -18,37 +68,12 @@
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/authors/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/blog/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/categories/c/</loc>
     <lastmod>2021-10-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/categories/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/categories/conference/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/documentation/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/english/</loc>
     <lastmod>2021-10-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -153,11 +178,6 @@
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/categories/agile/</loc>
-    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/categories/kanban/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
   </url>
@@ -169,11 +189,6 @@
   
   <url>
     <loc>https://engineering.facile.it/categories/scrum/</loc>
-    <lastmod>2020-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/authors/veronica-bolognesi/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -514,11 +529,6 @@
   
   <url>
     <loc>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</loc>
-    <lastmod>2016-06-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/tdd/</loc>
     <lastmod>2016-06-07T00:00:00+00:00</lastmod>
   </url>
   

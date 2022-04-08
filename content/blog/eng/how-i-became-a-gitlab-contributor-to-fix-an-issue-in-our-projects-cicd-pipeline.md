@@ -322,3 +322,7 @@ If we consider the issues mentioned in our [first workaround](#a-first-workaroun
 # Conclusions
 
 The goal of this post has been to show how an issue in everyday activities, coupled with a winning **opensource** culture, can be turned into an opportunity to grow up as a professional and to become a contributor to one of the world's biggest **DevOps** platforms. Usually we're somehow "limited" by our tooling when it comes to issues, and this means that we're kind of forced to find "hacky" workarounds to overcome them. By relying on widely supported **opensource** software, however, not only we can easily find a better solution to our problems, but we also have the chance to become part of the movement that enables our everyday tasks as IT professionals.
+
+(finally, as a side note, being a **GitLab** contributor has some small perks too!)
+
+![GitLab Mug](/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/gitlab-mug.png)

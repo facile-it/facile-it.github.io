@@ -20,7 +20,7 @@ During these months in Facile.it I had to face many challenges regarding the imp
 
 Following [this post](../continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker) from 2018, my team ended up having a **CI/CD** pipeline that fully relied on **Docker Compose** for every job besides the deployment ones.
 
-Using **Docker Compose** has many advantages, mainly because it allows developers to use the very same configuration for both their local setups and the **CI/CD** jobs (e.g. `environment variables` and `services`). However, this comes with something that I believe to be a major drawback: job execution time using **Docker Compose** is not ideal at all, making our pipelines few times slower than an equivalent solution that doesn't use **Docker Compose**!
+Using **Docker Compose** has many advantages, mainly because it allows developers to use the very same configuration for both their local setups and the **CI/CD** jobs (e.g. `environment variables` and `services`). However, this comes with something that I believe to be a major drawback: job execution time using **Docker Compose** is not ideal at all, making our pipelines few times slower than an equivalent solution that doesn't use it!
 
 This blog entry is not meant as a comparison between **Docker Compose** and other alternatives so I won't dive deep into numbers and details, but given the performances focus described in the first paragraph I decided to tackle this issue and to move forward from **Docker Compose** into a more "native" solution.
 
@@ -95,7 +95,9 @@ But what happens if we replace **Docker Compose** with **GitLab**'s "native" `se
 
 **GitLab**'s `services` are a clever way to provide additional capabilities to your **CI/CD** job. These capabilities are usually external dependencies such as a database, or even a `docker-in-docker` helper that enables building **Docker** images from a running **Docker** container.
 
-> ℹ️ If you want to know more about **GitLab**'s `services`, their [documentation](https://docs.gitlab.com/ee/ci/services/) is a great starting point.
+>ℹ️
+>
+>If you want to know more about **GitLab**'s `services`, their [documentation](https://docs.gitlab.com/ee/ci/services/) is a great starting point.
 
 Given their nature, **GitLab**'s `services` can be naturally mapped from the **Docker Compose** ones, or at least that's what I thought when I started with this task.
 
@@ -143,7 +145,7 @@ Upon `service` startup the `entrypoint` is executed, leading to the following ou
 >
 >`service` output is printed at the beginning of your `job`'s output on **GitLab**. Additionaly, it can be extracted from **Docker** or **Kubernetes** container logs based on where your **GitLab Runner** is installed.
 
-While this seem to work correctly, we have to remind about the warning that I mentioned in the previous chapter: we're using a single **mock server** which is configured using a set of `environment variables`, so each instance of the **mock server** requires exactly the very same `variables`.
+While this seems to work correctly, we have to remind about the warning that I mentioned in the previous chapter: we're using a single **mock server** which is configured using a set of `environment variables`, so each instance of the **mock server** requires exactly the very same `variables`.
 
 Following from the previous example, let's move to something closer to our scenario by tanslating the `docker-compose.yaml` file into a `.gitlab-ci.yml` one:
 
@@ -209,9 +211,9 @@ We basically replaced the startup process for each of our `services` in order to
 
 ⚠️ Being this a workaround, however, there are some implications that need to be considered:
 
-* We can't define the `variables` as plain `YAML` properties as we did with **Docker Compose**
-* We still need to define a shared `variable` for each `service` at `job` level, meaning that `company-2-mock` can do `echo $COMPANY_1_ENVIRONMENT` and retrieve all the values for the other **mock server**, thus breaking the isolation between `services`
-* We need to manually add the original **Docker** `command` at the end of our overriden one, meaning that we need to keep it updated in case the base **Docker** image changes
+* we can't define the `variables` as plain `YAML` properties as we did with **Docker Compose**
+* we still need to define a shared `variable` for each `service` at `job` level, meaning that `company-2-mock` can do `echo $COMPANY_1_ENVIRONMENT` and retrieve all the values for the other **mock server**, thus breaking the isolation between `services`
+* we need to manually add the original **Docker** `command` at the end of our overriden one, meaning that we need to keep it updated in case the base **Docker** image changes
 
 To overcome these issues we need a less "hacky" way to deal with our scenario, even if **GitLab** is not supporting it. Luckily **GitLab** is an **opensource** software, and this allows people to contribute to their code-base even if not directly employed by **GitLab** itself.
 
@@ -223,7 +225,7 @@ As I said before I'm not a developer anymore, but I decided to go ahead and took
 >
 >To develop on **GitLab**'s platform you need the [GitLab Development Kit](https://gitlab.com/gitlab-org/gitlab-development-kit). The kit is well documented so I won't go into the details of the workflow.
 
-If you're not familiar with **GitLab**'s code-base, the initial experience will be daunting at best as their repository is quite huge. Lacking experience with **Ruby** didn't help either, but eventually I got a grip of wich classes I needed to fiddle with in order to have my feature working.
+If you're not familiar with **GitLab**'s code-base, the initial experience will be daunting at best as their repository is quite huge. Lacking experience with **Ruby** didn't help either, but eventually I got a grip of which classes I needed to fiddle with in order to have my feature working.
 
 The feature proposal was to extend `services` definition by adding the same `variable` property that was already available for `jobs`, so that the validation logic and `variables` handling could be reused.
 
@@ -250,11 +252,11 @@ Implementing this was easier than I thought, as I only had to copy the `variable
 >
 >The complete history of my changes is tracked in the [merge request #72025](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/72025) on **GitLab**.
 
-This small **merge request** was not enough however, as `services` are handled differently by each underlying provider (**Docker** and **Kubernetes**). These provider are implemented by the **GitLab Runner** project, which provides an executable that's responsible for getting and executing `jobs` from a registered **GitLab** instance.
+This small **merge request** was not enough however, as `services` are handled differently by each underlying provider (**Docker** and **Kubernetes**). These providers are implemented by the **GitLab Runner** project, which provides an executable that's responsible for getting and executing `jobs` from a registered **GitLab** instance.
 
 This means that I had to add a specific logic to both the providers so that they could correctly deal with the new `variables` property defined in the `service` object.
 
-While the changes on **GitLab** itself wasn't really challenging, the way **GitLab Runner** handles `environment variables` made everything a lot more difficult. Without diving deep into details, **GitLab Runner** is responsible for variables expansion at shell level, so this new feature must not break the existing workflow.
+While the changes on **GitLab** itself weren't really challenging, the way **GitLab Runner** handles `environment variables` made everything a lot more difficult. Without diving deep into details, **GitLab Runner** is responsible for variables expansion at shell level, so this new feature must not break the existing workflow.
 
 The issue is better explained by [Arran Walker](https://gitlab.com/ajwalker), who reviewed my **merge request**:
 
@@ -280,7 +282,7 @@ The issue is better explained by [Arran Walker](https://gitlab.com/ajwalker), wh
 >
 > -- <cite>https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3158#note_740206844</cite>
 
-After few months of back and forth with **GitLab Runner**'s team, we ended up finding a solution that enabled my use case while still retaining the correct variable expansion logic as nobody wanted to introduce a breaking-change on such a big platform.
+After few months of back and forth with **GitLab Runner**'s team, we ended up finding a solution that enabled my use case while still retaining the correct variable expansion logic, as nobody wanted to introduce a breaking-change on such a big platform.
 
 >ℹ️
 >
@@ -313,9 +315,9 @@ job-1:
 
 If we consider the issues mentioned in our [first workaround](#a-first-workaround), we can see that with this solution we were able to fix them all:
 
-* ~~We can't define the `variables` as plain `YAML` properties as we did with **Docker Compose**~~ `variables` are now defined as plain `YAML` properties✅
-* ~~We still need to define a shared `variable` for each `service` at `job` level, meaning that `company-2-mock` can do `echo $COMPANY_1_ENVIRONMENT` and retrieve all the values for the other **mock server**, thus breaking the isolation between `services`~~ `variables` are now defined on a `service` basis, thus they're not shared anymore✅
-* ~~We need to manually add the original **Docker** `command` at the end of our overriden one, meaning that we need to keep it updated in case the base **Docker** image changes~~ we don't need to override the `entrypoint` and `command` for the `service` **Docker** image✅
+* ~~we can't define the `variables` as plain `YAML` properties as we did with **Docker Compose**~~ `variables` are now defined as plain `YAML` properties✅
+* ~~we still need to define a shared `variable` for each `service` at `job` level, meaning that `company-2-mock` can do `echo $COMPANY_1_ENVIRONMENT` and retrieve all the values for the other **mock server**, thus breaking the isolation between `services`~~ `variables` are now defined on a `service` basis, thus they're not shared anymore✅
+* ~~we need to manually add the original **Docker** `command` at the end of our overriden one, meaning that we need to keep it updated in case the base **Docker** image changes~~ we don't need to override the `entrypoint` and `command` for the `service` **Docker** image✅
 
 # Conclusions
 

@@ -49,7 +49,137 @@ Since **unit tests** are not meant to depend on external systems, however, we de
 
 Here's a quick chart showing a simplified version of our testing process including just two companies (I promise it's not that hard, it's just Mermaid some issues with circular layouts 🙂):
 
-[![](https://mermaid.ink/img/pako:eNqVVFFvmzAY_CuWnwsd3tZuedhUkaqK0pZIqyZNsAcPvjRWAVPbtIpC_vs-Y6CUJp3Gk7k7H9zHmR1NZQZ0Ru8Vrzbkbp6UBK-L1SoWpfbuuYFnvv3t0PnlzziDJ8hlBeoFY2_Aq8VdfCXMNf_TAeEiDhen4by7vYnCZRAXMn3wUllUvNx6wYhirynWUdEyNqANsXgOBrIOX0aBI9Zc5JCRqeUyYgf53jeMblYXt7_iDie6glSsRcqNkKVG0ZCUeN63JvBJVetNY1MOcVuG-UTVZYNp-9Qt_LGDbbQpYd-rseMe5k48H6lPuAce6z5uG8c5BP9WMqdko2E77Wer1RWmgrHt8Ph213Epm74p6s588sRzkWFRDnp3pFTBTmh3933_HxZsZMHeWLy4t05b0A3W5CBXysY2ZcKxd_ax0T7WtwAtWvjczqeSCr-ePQJD046TdtWyXyxrlMBD0_Tlm0i--qSu7EBetcZJjwvsylX0w6ij9IQWoAouMjzmO6tMqNlAAQmd4TLj6iGhSblHnbO8zASmp7M1zzWcUF4b-WNbpnRmVA29aC44_jKKTrX_C-c4VcU)](https://mermaid.live/edit#pako:eNqVVFFvmzAY_CuWnwsd3tZuedhUkaqK0pZIqyZNsAcPvjRWAVPbtIpC_vs-Y6CUJp3Gk7k7H9zHmR1NZQZ0Ru8Vrzbkbp6UBK-L1SoWpfbuuYFnvv3t0PnlzziDJ8hlBeoFY2_Aq8VdfCXMNf_TAeEiDhen4by7vYnCZRAXMn3wUllUvNx6wYhirynWUdEyNqANsXgOBrIOX0aBI9Zc5JCRqeUyYgf53jeMblYXt7_iDie6glSsRcqNkKVG0ZCUeN63JvBJVetNY1MOcVuG-UTVZYNp-9Qt_LGDbbQpYd-rseMe5k48H6lPuAce6z5uG8c5BP9WMqdko2E77Wer1RWmgrHt8Ph213Epm74p6s588sRzkWFRDnp3pFTBTmh3933_HxZsZMHeWLy4t05b0A3W5CBXysY2ZcKxd_ax0T7WtwAtWvjczqeSCr-ePQJD046TdtWyXyxrlMBD0_Tlm0i--qSu7EBetcZJjwvsylX0w6ij9IQWoAouMjzmO6tMqNlAAQmd4TLj6iGhSblHnbO8zASmp7M1zzWcUF4b-WNbpnRmVA29aC44_jKKTrX_C-c4VcU)
+<!-- Generated with MermaidJS
+
+Arrows are escaped as -\->> to avoid breaking HTML comments.
+
+sequenceDiagram
+    actor dev as Developer
+    participant git as GitLab
+    participant ci as GitLab CI
+    participant app as ins-gateway
+    participant mock1 as mock-company-1
+    participant mock2 as mock-company-2
+    participant validator as Response validator
+    participant company as Company specifications
+
+    activate company
+    activate git
+
+    loop Until tests are passed
+        dev ->> git: push    
+        git ->>+ ci: run
+        ci -\->> git: return
+
+        par Start a mock server for each company
+            ci ->>+ mock1: run
+            activate mock1
+            mock1 -\->> ci: started
+        and
+            ci ->>+ mock2: run
+            activate mock2
+            mock2 -\->> ci: started
+        end        
+
+        ci ->>+ app: test
+        activate validator
+
+        par Send a test request to each mock
+            app ->> mock1: request
+            mock1 -\->>- app: response
+            app ->> validator: validate response for company-1
+            validator -\->> app: validation response                                
+        and
+            app ->> mock2: request
+            mock2 -\->>- app: response
+            app ->> validator: validate response for company-2
+            validator -\->> app: validation response
+        end
+        
+        deactivate validator
+
+        loop For each validation response
+            alt Response is invalid
+                app -\->>- ci: Script failed
+                ci -\->>- git: Pipeline failed
+                git -\->> dev: Test failed
+            end
+        end
+
+        alt At least one response is invalid
+            dev ->> company: request updated specifications
+            company -\->> dev: receive updates specifications
+        end
+    end
+
+    deactivate git
+    deactivate company
+
+ -->
+
+![Testing sequence diagram](/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/sequence.png)
+
+
+<!--
+Generated with PlantUML
+
+@startuml
+
+start
+
+while (Push code on **GitLab**)
+  
+  partition " **GitLab** CI job " {
+    fork
+      :Start ""ins-gateway"";
+    fork again
+      fork
+        :Start ""mock-server-1"";
+      fork again
+        :Start ""mock-server-N"";
+      end merge
+      floating note
+        Start a <b>mock server</b>
+        for each //company//
+      end note
+    end merge
+    
+    partition "**NodeJS** Unit tests" {
+      :Call ""ins-gateway"" tests;
+      partition "**ins-gateway**" {
+        fork
+          :Send request to ""mock-server-1""|
+          :Receive response from ""mock-server-1""|
+        fork again
+          :Send request to ""mock-server-N""|
+          :Receive response from ""mock-server-N""|
+        end merge
+        
+        :Validate received responses;
+        
+        if (Are all responses valid?) then (  yes  )
+          stop
+        else (no)
+        endif
+      }
+      
+      :**NodeJS** unit tests failed;
+    }
+    
+  :**GitLab** CI //job// failed;
+  }
+
+:Update **mock servers** from
+//companies// specifications;
+
+endwhile
+-[hidden]->
+detach
+
+@enduml
+-->
+
+![Testing activity diagram](/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/activity.png)
 
 While this is a simplified version of the process, the important thing to notice is that we have a single **mock server** even if we have two companies!
 

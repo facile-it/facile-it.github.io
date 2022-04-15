@@ -47,78 +47,7 @@ In our scenario this means that we defined these **unit tests** in order to vali
 
 Since **unit tests** are not meant to depend on external systems, however, we decided to build another layer: **mock servers**.
 
-Here's a quick chart showing a simplified version of our testing process including just two companies (I promise it's not that hard, it's just Mermaid some issues with circular layouts 🙂):
-
-<!-- Generated with MermaidJS
-
-Arrows are escaped as -\->> to avoid breaking HTML comments.
-
-sequenceDiagram
-    actor dev as Developer
-    participant git as GitLab
-    participant ci as GitLab CI
-    participant app as ins-gateway
-    participant mock1 as mock-company-1
-    participant mock2 as mock-company-2
-    participant validator as Response validator
-    participant company as Company specifications
-
-    activate company
-    activate git
-
-    loop Until tests are passed
-        dev ->> git: push    
-        git ->>+ ci: run
-        ci -\->> git: return
-
-        par Start a mock server for each company
-            ci ->>+ mock1: run
-            activate mock1
-            mock1 -\->> ci: started
-        and
-            ci ->>+ mock2: run
-            activate mock2
-            mock2 -\->> ci: started
-        end        
-
-        ci ->>+ app: test
-        activate validator
-
-        par Send a test request to each mock
-            app ->> mock1: request
-            mock1 -\->>- app: response
-            app ->> validator: validate response for company-1
-            validator -\->> app: validation response                                
-        and
-            app ->> mock2: request
-            mock2 -\->>- app: response
-            app ->> validator: validate response for company-2
-            validator -\->> app: validation response
-        end
-        
-        deactivate validator
-
-        loop For each validation response
-            alt Response is invalid
-                app -\->>- ci: Script failed
-                ci -\->>- git: Pipeline failed
-                git -\->> dev: Test failed
-            end
-        end
-
-        alt At least one response is invalid
-            dev ->> company: request updated specifications
-            company -\->> dev: receive updates specifications
-        end
-    end
-
-    deactivate git
-    deactivate company
-
- -->
-
-![Testing sequence diagram](/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/sequence.png)
-
+Here's a quick chart showing a simplified version of our testing process including just two companies:
 
 <!--
 Generated with PlantUML
@@ -179,7 +108,7 @@ detach
 @enduml
 -->
 
-![Testing activity diagram](/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/activity.png)
+{{< figure src="/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/activity.png" alt="Activity diagram for testing workflow" class="image featured" >}}
 
 While this is a simplified version of the process, the important thing to notice is that we have a single **mock server** even if we have two companies!
 
@@ -420,7 +349,7 @@ After few months of back and forth with **GitLab Runner**'s team, we ended up fi
 
 My contributions were merged to **GitLab** with version **14.5** and to **GitLab Runner** with version **14.8**, making me a contributor to their platform!
 
-![My contributor badge on GitLab](/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/contributor.png)
+{{< figure src="/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/contributor.png" alt="My contributor badge on GitLab" class="image featured" >}}
 
 ## Our final **CI/CD** pipeline
 
@@ -455,4 +384,4 @@ The goal of this post has been to show how an issue in everyday activities, coup
 
 (finally, as a side note, being a **GitLab** contributor has some small perks too!)
 
-![GitLab Mug](/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/gitlab-mug.png)
+{{< figure src="/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/gitlab-mug.png" alt="My shiny GitLab mug" class="image featured" >}}

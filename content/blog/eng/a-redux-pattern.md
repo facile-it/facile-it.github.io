@@ -90,11 +90,9 @@ Let's consider the case of an [autocomplete field](https://mui.com/components/au
 
 The underlying idea is that components render while reducers and sagas manage the business logic. Components don't need to add additional checks. Every saga is responsible for a unique part of the business logic. In this specific case, it would be retrieving the list of the cities of a country area. This moves our problem to sagas and how they should be used. A saga has an open-ended logic and it includes the lifecycle of a business process.
 
-# Processes
+**A saga is a process manager which contains the business logic**. A saga dispatches commands and events following business rules. A saga manages a specific part of the state.
 
-**A process is a saga which contains the business logic**. A process dispatches commands and events following business rules. A process manages a specific part of the state.
-
-Every process should start with a `start` command and end with a `stop` command. Components dispatch these two commands with a `useEffect`:
+Every saga should start with a `start` command and end with a `stop` command. Components dispatch these two commands with a `useEffect`:
 
 ```
 import React, { useEffect } from 'react'
@@ -116,15 +114,15 @@ const MyComponent = () => {
 
 The `start` and the `stop` commands generate the two equivalent events: `Started` and `Stopped`. A `Started` event reflects the initial state of the reducer. The most interesting part relates to the `Stopped` event. It represents the end of the process. This event resets the reducer to its initial state. When the event is dispatched, it's expected that every other running event will be canceled. A `cancel` effect, provided by Redux-Saga, achieves this.
 
-A process is not bound to components. Components start the process and trigger commands. A process has the responsibility to manage a slice of the state. Sagas are process managers which dispatch commands and events. Sagas watch for commands, dispatched by components, during their lifecycle. When a `stop` command interrupts a saga, the process ends. As mentioned before, Redux-Saga does task cancellation through the `cancel` effect.
+A saga is not bound to components. Components start the saga and trigger commands. A saga has the responsibility to manage a slice of the state. Sagas watch for commands, dispatched by components, during their lifecycle. When a `stop` command interrupts a saga, the process ends. As mentioned before, Redux-Saga does task cancellation through the `cancel` effect.
 
 ![Commands and events](/images/a-redux-pattern/commands-events.gif)
 
 In the picture there is an example of a process. It starts from a component which dispatches a command. The saga takes into account the command dispatched by the component. As result, the saga dispatches an event which updates the state. It could be the right moment to display a loader in the user interface. At this moment, we don't know whether the request is successful or not. The next step for the saga is to make an API request. When the backend sends the response, the saga dispatches an event. After the state is updated, the component rerenders, if necessary. We're ready to display the response if it's successful. If the request failed, we can show an error with more details about it.
 
-Let's consider the process related to the elevator example. The process starts when a component (`Elevator`) dispatches a command (`start`) which starts a saga called `ElevatorSaga`.
+Back to the elevator example. The saga starts when a component (`Elevator`) dispatches a command (`start`) which starts a saga called `ElevatorSaga`.
 
-The process is responsible for the following slice of state:
+The saga is responsible for the following slice of state:
 
 ```
 type Status = "busy" | "ready" | "out of service";
@@ -136,7 +134,7 @@ interface ElevatorState {
 }
 ```
 
-where `status` is the current status of the elevator. `history` is the list of the previous statuses of the elevator. The commands of the process are: `start`, `stop` and `callElevator`. The events of the process are: `ElevatorFreed`, `ElevatorOccupied` and `ElevatorBroken`.
+where `status` is the current status of the elevator. `history` is the list of the previous statuses of the elevator. The commands of the saga are: `start`, `stop` and `callElevator`. The events of the saga are: `ElevatorFreed`, `ElevatorOccupied` and `ElevatorBroken`.
 
 Let's focus on the saga:
 
@@ -156,7 +154,7 @@ export function* ElevatorSaga() {
 }
 ```
 
-As soon as the component `Elevator` dispatches the `start` command, the process dispatches the event `Started`. At this point, the saga watches for `callElevator` command. When the `Elevator` component dispatches the command `callElevator`, `takeElevator`, a generator function, is called:
+As soon as the component `Elevator` dispatches the `start` command, the saga dispatches the event `Started`. At this point, the saga watches for `callElevator` command. When the `Elevator` component dispatches the command `callElevator`, `takeElevator`, a generator function, is called:
 
 ```
 function* takeElevator(action: ReturnType<typeof $Elevator["callElevator"]>) {
@@ -174,11 +172,11 @@ function* takeElevator(action: ReturnType<typeof $Elevator["callElevator"]>) {
 }
 ```
 
-If the elevator is `ready`, the saga dispatches an event. `ElevatorOccupied` updates the status of the elevator to `busy`. `delay` simulates the time of taking the elevator. As soon as the time passes, an event is dispatched. `ElevatorFreed` updates the state and the elevator is `ready` again. If there is any error, the event `ElevatorBroken` updates the state and the elevator is `out of service`.
+If the elevator is `ready`, the saga dispatches an event. `ElevatorOccupied` set the status of the elevator to `busy`. `delay` simulates the time of taking the elevator. As soon as the time passes, an event is dispatched. `ElevatorFreed` updates the state and the elevator is `ready` again. If there is any error, the event `ElevatorBroken` updates the state and the elevator is `out of service`.
 
-When the component unmounts, the `stop` commands is dispathed and the saga stops. From now on, if a component or a saga dispatches the command `callElevator`, there won't be a saga to listen to it.
+When the component unmounts, the `stop` commands is dispathed and the saga stops. From now on, if a component dispatches the command `callElevator`, there won't be a saga to listen to it.
 
-You can find the full example here:
+You can find the full example on [Github](https://github.com/pierroberto/a-redux-pattern) and here:
 
 [![Edit elevator](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/elevator-j5231w?fontsize=14&hidenavigation=1&theme=dark)
 

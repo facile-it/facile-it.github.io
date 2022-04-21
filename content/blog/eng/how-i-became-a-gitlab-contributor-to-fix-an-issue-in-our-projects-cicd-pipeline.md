@@ -10,7 +10,9 @@ toc: true
 languageCode: "en-EN"
 type: "post"
 ---
-During these months in Facile.it I had to face many challenges regarding the improvement of the **CI/CD** pipelines for the *Insurance* team, with a strong focus on performances and reusability. This kind of focus is very important as it enables us to follow **GitLab**'s best practices for **CI/CD** such as the *fail fast principle*.
+# Introduction
+
+During these months at Facile.it I had to face many challenges regarding the improvement of **CI/CD** pipelines for the _Insurance_ team, with a strong focus on performance and reusability. The focus on these topics is very important as it allows us to follow **GitLab** best practices for **CI/CD** such as the _fail fast principle_.
 
 >💬
 >
@@ -20,34 +22,36 @@ During these months in Facile.it I had to face many challenges regarding the imp
 
 Following [this post](../continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker) from 2018, my team ended up having a **CI/CD** pipeline that fully relied on **Docker Compose** for every job besides the deployment ones.
 
-Using **Docker Compose** has many advantages, mainly because it allows developers to use the very same configuration for both their local setups and the **CI/CD** jobs (e.g. `environment variables` and `services`). However, this comes with something that I believe to be a major drawback: job execution time using **Docker Compose** is not ideal at all, making our pipelines few times slower than an equivalent solution that doesn't use it!
+Using **Docker Compose** has many advantages, mainly because it allows developers to use the very same configuration for both their local setups and the **CI/CD** jobs (e.g. `environment variables` and `services`). However, this comes with something that I believe to be a major drawback: the job execution time using **Docker Compose** is less than ideal, this makes our pipelines a few times slower than an equivalent solution that does not use it!
 
-This blog entry is not meant as a comparison between **Docker Compose** and other alternatives so I won't dive deep into numbers and details, but given the performances focus described in the first paragraph I decided to tackle this issue and to move forward from **Docker Compose** into a more "native" solution.
+This blog post is not meant as a comparison between **Docker Compose** and other alternatives, so I will not dive deep into the numbers and details. However, given the focus on performance I mentioned above, I decided to tackle this issue and move from **Docker Compose** to a more "native" solution.
 
 # Anatomy of our project
 
-To better understand what made moving from **Docker Compose** way harder than I expected, we need to provide a brief overview on the project's structure and how the application that we're building is supposed to work.
+## Scope and goals
 
-The main idea behind this application (we'll call it `ins-gateway` from now on) is to act as some kind of gateway between our core services and multiple insurance companies. We can see it as an abstraction layer that is used to uniform both requests and responses so that we can conver them in our custom format, as every company may have a specific protocol/format.
+To better understand what made the transition from **Docker Compose** way harder than I expected, we need to provide a brief overview on the project's structure and how the application that we're building is supposed to work.
+
+The main idea behind this application, which we will call `ins-gateway` from now on, is to act as a kind of gateway between our core services and multiple insurance companies. We can see it as an abstraction layer that is used to standardize both requests and responses so that we can convert them into our custom format. This layer is required since each company may have a specific communication protocol/format.
 
 Having to deal with a large amount of different protocols/formats makes everything error-prone: what if a certain company decides that a property is now a `number` instead of a `string` but they fail to let us know that their specifications changed?
 
-We can't afford throwing errors to the end user because of such a small change, so we need a better way to be somehow proactive and intercept those changes before they reach our production systems.
+We can't to project errors onto the end user because of such a small change, so we need a better way to be somehow proactive and intercept those changes before they reach our production systems.
 
-For this reason we have a set of multiple tests that run in our **CI/CD** environment and that help us keeping everything in check.
-Today we're going to focus on **unit tests** only.
+That's why we have a set of multiple tests running in our **CI/CD** environment that help us keep everything under control.
+In this post, we're only going to focus only on **unit tests**.
 
 ## Unit tests and **Docker Compose**
 
 In **DevOps** world, **unit tests** can be seen as an automated way to do **regression testing**, meaning that we can use them to guarantee that our new commit didn't break an already working feature.
 
-This is extremely useful for projects that start to outgrow their team and that would require a significant effort to manually verify everything before committing.
+This is extremely useful for projects that are starting to outgrow the resources of the dedicated team and would require significant effort to manually verify everything before committing.
 
-In our scenario this means that we defined these **unit tests** in order to validate the request/response pair's format for each insurance company, thus being able to quickly react to their changes.
+In our scenario, this means that we defined these **unit tests** to validate the format of the request/response pair for each insurance company, thus being able to quickly react to their changes.
 
-Since **unit tests** are not meant to depend on external systems, however, we decided to build another layer: **mock servers**.
+However, since **unit tests** are not meant to depend on external systems, we decided to build another layer: **mock servers**.
 
-Here's a quick chart showing a simplified version of our testing process including just two companies:
+Here's a quick diagram showing a simplified version of our testing process that includes only two companies:
 
 <!--
 Generated with PlantUML
@@ -110,9 +114,9 @@ detach
 
 {{< figure src="/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/activity.png" alt="Activity diagram for testing workflow" class="image featured" >}}
 
-While this is a simplified version of the process, the important thing to notice is that we have a single **mock server** even if we have two companies!
+While this is a simplified version of the process, the important thing to notice is that we have a single **mock server** even though we deal with two companies!
 
-<ins>To avoid dealing with multiple code-bases we decided to build a generic **mock server** that is configured at runtime with the specific protocol/format used by a given company, and this configuration happens through `environment variables`.</ins>
+To avoid dealing with multiple codebases, we decided to build a generic **mock server** that is configured at runtime with the specific protocol/format used by a given company. This configuration is done through the `environment variables`.
 
 If you're not already seeing the issue here, allow me to introduce **Docker Compose** in the current scenario by showing some of the contents of our old `docker-compose.yaml` file:
 
@@ -146,11 +150,13 @@ As you can see, in the `docker-compose.yaml` file we defined two different `serv
 > PROTOCOL_VERSION=...
 > ```
 
-This works because of how **Docker Compose** work: every `service` has its own "context" and a set of `environment variables` that are not shared with the other `services`, meaning that there's no name collision.
+This works because of how **Docker Compose** works: each `service` has its own "context" and a set of `environment variables` that are not shared with other `services`, which means there is no name collision.
 
 But what happens if we replace **Docker Compose** with **GitLab**'s "native" `services`? Well, that's a completely different story.
 
-# Moving away from **Docker Compose**: introducing **GitLab**'s `services`
+# Moving away from **Docker Compose**
+
+## **GitLab**'s `services` and their relation with **Docker Compose**
 
 **GitLab**'s `services` are a clever way to provide additional capabilities to your **CI/CD** job. These capabilities are usually external dependencies such as a database, or even a `docker-in-docker` helper that enables building **Docker** images from a running **Docker** container.
 
@@ -158,7 +164,7 @@ But what happens if we replace **Docker Compose** with **GitLab**'s "native" `se
 >
 >If you want to know more about **GitLab**'s `services`, their [documentation](https://docs.gitlab.com/ee/ci/services/) is a great starting point.
 
-Given their nature, **GitLab**'s `services` can be naturally mapped from the **Docker Compose** ones, or at least that's what I thought when I started with this task.
+Given their nature, **GitLab**'s `services` can naturally be mapped from those of **Docker Compose**, or at least that's what I thought when I started this task.
 
 Just like in **Docker Compose**, **GitLab**'s `services` are defined as:
 
@@ -169,7 +175,7 @@ entrypoint: # optional override for the Docker entrypoint
 command: # optional ovveride for the Docker entrypoint
 ```
 
-**But... Isn't there something missing from what we had in our `docker-compose.yaml` file?**
+**_But...isn't something missing from what we had in our `docker-compose.yaml` file?_**
 
 The answer is yes: before [**GitLab** 14.8](https://about.gitlab.com/releases/2022/02/22/gitlab-14-8-released/), `services` couldn't specify a set of custom `environment variables` (as reported in [issue #23671](https://gitlab.com/gitlab-org/gitlab/-/issues/23671) on **GitLab**).
 
@@ -204,7 +210,7 @@ Upon `service` startup the `entrypoint` is executed, leading to the following ou
 >
 >`service` output is printed at the beginning of your `job`'s output on **GitLab**. Additionaly, it can be extracted from **Docker** or **Kubernetes** container logs based on where your **GitLab Runner** is installed.
 
-While this seems to work correctly, we have to remind about the warning that I mentioned in the previous chapter: we're using a single **mock server** which is configured using a set of `environment variables`, so each instance of the **mock server** requires exactly the very same `variables`.
+While this seems to work correctly, we have to remind about the warning that I mentioned in the previous chapter: we're using a single **mock server** which is configured using a set of `environment variables`. Therefore, each instance of the **mock server** requires exactly the same `variables`.
 
 Following from the previous example, let's move to something closer to our scenario by tanslating the `docker-compose.yaml` file into a `.gitlab-ci.yml` one:
 
@@ -231,15 +237,15 @@ Well, we can't, and that's because `environment variables` are passed at `job` l
 
 ## A first workaround
 
-Once getting to this issue I quickly realized that the task was about to get way more complicated than what I thought, because I got to a point in which I was limited by the lack of a feature on **GitLab**.
+Once getting to this issue I quickly realized that the task was about to get way more complicated than what I thought, because I got to a point where I was limited by the lack of a feature on **GitLab**.
 
 I'm not a developer anymore and I never had the chance to work with **Ruby** (which is the main backend language for **GitLab**), so I didn't feel confident enough to try and see if I could solve this by myself.
 
 I decided to implement an "hacky" workaround that allowed my **CI/CD** pipeline to move away from **Docker Compose** while still keeping the ability to use multiple instances of the same **GitLab** `service`.
 
-The workaround revolves around a fairly simple idea: as we already saw before, **GitLab**'s `services` support the override of both **Docker** image's `entrypoint` and `command`, and this can be used to provide additional logic that needs to be executed on the image's startup.
+The workaround revolves around a fairly simple idea: as we have seen before, **GitLab** `services` support the override of both the `entrypoint` and `command` of the **Docker** image. This can be used to provide additional logic that must be executed when the image is started.
 
-This, coupled with the shared `variables` between `jobs` and `services`, enabled me to provide some kind of "scoped" `variables` to each **mock server** instance in the following way:
+This fact, coupled with the `variables` shared between `jobs` and `services`, enabled me to provide some kind of "scoped" `variables` to each **mock server** instance in the following way:
 
 ```yaml
 job-1:
@@ -266,15 +272,15 @@ job-1:
 
 **Success, it works! ✅**
 
-We basically replaced the startup process for each of our `services` in order to load the `variables` from a local file, and every `service` is provided with a different file. This kind of works like the `env_file` directive in the `docker-compose.yaml` file that we've seen before.
+We basically replaced the startup process for each of our `services` to load the `variables` from a local file, and each `service` has a different file. This works a bit like the `env_file` directive in the `docker-compose.yaml` file we have seen above.
 
-⚠️ Being this a workaround, however, there are some implications that need to be considered:
+⚠️ However, since this is a workaround, there are some implications that need to be considered:
 
-* we can't define the `variables` as plain `YAML` properties as we did with **Docker Compose**
-* we still need to define a shared `variable` for each `service` at `job` level, meaning that `company-2-mock` can do `echo $COMPANY_1_ENVIRONMENT` and retrieve all the values for the other **mock server**, thus breaking the isolation between `services`
-* we need to manually add the original **Docker** `command` at the end of our overriden one, meaning that we need to keep it updated in case the base **Docker** image changes
+* We can't define the `variables` as plain `YAML` properties as we did with **Docker Compose**.
+* We still need to define a shared `variable` for each `service` at `job` level, meaning that `company-2-mock` can do `echo $COMPANY_1_ENVIRONMENT` and retrieve all the values for the other **mock server**, thus breaking the isolation between `services`.
+* We need to manually add the original **Docker** `command` at the end of our overriden one, meaning that we need to keep it updated in case the base **Docker** image changes.
 
-To overcome these issues we need a less "hacky" way to deal with our scenario, even if **GitLab** is not supporting it. Luckily **GitLab** is an **opensource** software, and this allows people to contribute to their code-base even if not directly employed by **GitLab** itself.
+To overcome these issues we need a less "hacky" way to deal with our scenario, even if **GitLab** is not supporting it. Luckily, **GitLab** is **opensource** software and this allows people to contribute to their codebase even if they are not directly employed by **GitLab** itself.
 
 As I said before I'm not a developer anymore, but I decided to go ahead and took my chance at adding the feature that we needed to improve our **CI/CD** pipelines.
 
@@ -284,7 +290,7 @@ As I said before I'm not a developer anymore, but I decided to go ahead and took
 >
 >To develop on **GitLab**'s platform you need the [GitLab Development Kit](https://gitlab.com/gitlab-org/gitlab-development-kit). The kit is well documented so I won't go into the details of the workflow.
 
-If you're not familiar with **GitLab**'s code-base, the initial experience will be daunting at best as their repository is quite huge. Lacking experience with **Ruby** didn't help either, but eventually I got a grip of which classes I needed to fiddle with in order to have my feature working.
+If you're not familiar with **GitLab**'s codebase, the initial experience will be daunting at best, as their repository is quite large. Furthermore, the lack of experience with **Ruby** didn't help, but eventually I got a grip on which classes I needed to fiddle with to make my feature work.
 
 The feature proposal was to extend `services` definition by adding the same `variable` property that was already available for `jobs`, so that the validation logic and `variables` handling could be reused.
 
@@ -305,13 +311,13 @@ job-1:
 
 As you can see, `SVC_VAR` was now moved as a child of the `service` definition, meaning that it's not shared at the `job` level as before.
 
-Implementing this was easier than I thought, as I only had to copy the `variables` keyword from the `job` definitions (e.g. endpoints and internal data models) to their `service` counterparts. Between these changes, **GitLab**'s documentation and some **unit testing** I had only 20 added lines and 5 removed.
+Implementing this was easier than I thought, as I only had to copy the `variables` keyword from the `job` definitions (e.g. endpoints and internal data models) to their `service` counterparts. Considering these changes, **GitLab** documentation, and some **unit testing** I only had 20 lines added and 5 removed.
 
 >ℹ️
 >
 >The complete history of my changes is tracked in the [merge request #72025](https://gitlab.com/gitlab-org/gitlab/-/merge_requests/72025) on **GitLab**.
 
-This small **merge request** was not enough however, as `services` are handled differently by each underlying provider (**Docker** and **Kubernetes**). These providers are implemented by the **GitLab Runner** project, which provides an executable that's responsible for getting and executing `jobs` from a registered **GitLab** instance.
+However, this small **merge request** was not enough, as `services` are handled differently by each underlying provider (**Docker** and **Kubernetes**). These providers are implemented by the **GitLab Runner** project, which provides an executable that's responsible for getting and executing `jobs` from a registered **GitLab** instance.
 
 This means that I had to add a specific logic to both the providers so that they could correctly deal with the new `variables` property defined in the `service` object.
 
@@ -341,7 +347,7 @@ The issue is better explained by [Arran Walker](https://gitlab.com/ajwalker), wh
 >
 > -- <cite>https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3158#note_740206844</cite>
 
-After few months of back and forth with **GitLab Runner**'s team, we ended up finding a solution that enabled my use case while still retaining the correct variable expansion logic, as nobody wanted to introduce a breaking-change on such a big platform.
+After a few months of back and forth with the **GitLab Runner** team, we ended up finding a solution that enabled my use case while still retaining the correct variable expansion logic, as nobody wanted to introduce a breaking-change on such a big platform.
 
 >ℹ️
 >
@@ -353,7 +359,7 @@ My contributions were merged to **GitLab** with version **14.5** and to **GitLab
 
 ## Our final **CI/CD** pipeline
 
-At the end of this process, we were finally able to move away from **Docker Compose** while still having a **CI/CD** pipeline which didn't need workarounds or hacks to be fully functioning. With **GitLab** 14.8, our example pipeline can now be modified as it follows:
+At the end of this process, we were finally able to move away from **Docker Compose** while still having a **CI/CD** pipeline that didn't need any workarounds or hacks to be fully functioning. With **GitLab** 14.8, our sample pipeline can now be modified as follows:
 
 ```yaml
 job-1:
@@ -374,13 +380,13 @@ job-1:
 
 If we consider the issues mentioned in our [first workaround](#a-first-workaround), we can see that with this solution we were able to fix them all:
 
-* ~~we can't define the `variables` as plain `YAML` properties as we did with **Docker Compose**~~ `variables` are now defined as plain `YAML` properties✅
-* ~~we still need to define a shared `variable` for each `service` at `job` level, meaning that `company-2-mock` can do `echo $COMPANY_1_ENVIRONMENT` and retrieve all the values for the other **mock server**, thus breaking the isolation between `services`~~ `variables` are now defined on a `service` basis, thus they're not shared anymore✅
-* ~~we need to manually add the original **Docker** `command` at the end of our overriden one, meaning that we need to keep it updated in case the base **Docker** image changes~~ we don't need to override the `entrypoint` and `command` for the `service` **Docker** image✅
+* ~~We can't define the `variables` as plain `YAML` properties as we did with **Docker Compose**~~ `variables` are now defined as plain `YAML` properties.✅
+* ~~We still need to define a shared `variable` for each `service` at `job` level, meaning that `company-2-mock` can do `echo $COMPANY_1_ENVIRONMENT` and retrieve all the values for the other **mock server**, thus breaking the isolation between `services`~~ `variables` are now defined on a `service` basis, thus they're not shared anymore.✅
+* ~~We need to manually add the original **Docker** `command` at the end of our overriden one, meaning that we need to keep it updated in case the base **Docker** image changes~~ we don't need to override the `entrypoint` and `command` for the `service` **Docker** image.✅
 
 # Conclusions
 
-The goal of this post has been to show how an issue in everyday activities, coupled with a winning **opensource** culture, can be turned into an opportunity to grow up as a professional and to become a contributor to one of the world's biggest **DevOps** platforms. Usually we're somehow "limited" by our tooling when it comes to issues, and this means that we're kind of forced to find "hacky" workarounds to overcome them. By relying on widely supported **opensource** software, however, not only we can easily find a better solution to our problems, but we also have the chance to become part of the movement that enables our everyday tasks as IT professionals.
+The goal of this post was to show how a problem in daily tasks, coupled with a winning **opensource** culture, can be turned into an opportunity to grow as a professional and become a contributor to one of the largest **DevOps** platforms in the world. We're usually somehow "limited" by our tools when it comes to problems, and that means we're somehow forced to find "hacky" workarounds to overcome them. However, by relying on widely supported **opensource** software, not only can we easily find a better solution to our problems, but we also have the opportunity to become part of the movement that enables our daily tasks as IT professionals.
 
 (finally, as a side note, being a **GitLab** contributor has some small perks too!)
 

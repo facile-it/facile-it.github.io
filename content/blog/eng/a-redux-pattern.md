@@ -9,6 +9,7 @@ title: "A Redux pattern"
 languageCode: "en-EN"
 type: "post"
 toc: true
+twitterImage: /images/a-redux-pattern/elevator.jpg
 ---
 
 # Introduction

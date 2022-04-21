@@ -1,7 +1,7 @@
 ---
 authors: ["pierroberto-lucisano"]
 comments: true
-date: "2022-04-13"
+date: "2022-04-21"
 draft: true
 share: true
 categories: [Design patterns, Javascript]
@@ -62,15 +62,7 @@ _When you hit the call button, you're sending important information to the eleva
 
 A command is not used to mutate the state, but it provides the saga with the information to make a decision. The signature of a command is the same signature of an action.
 
-In our example, a good name for the command would be `callElevator`. This command could take the following shape:
-
-```
-import { PayloadAction } from '@reduxjs/toolkit'
-
-const callElevator: PayloadAction<number> = { type: 'callElevator', payload: n }
-```
-
-where `n` is the floor number requested by the user.
+In our example, a good name for the is `callElevator`.
 
 [Redux style guide documentation](https://redux.js.org/style-guide/style-guide#model-actions-as-events-not-setters) strongly suggests to use events as naming convention for actions. Unfortunately, it cannot always be done. A click on a button is an attempt which triggers an event at a certain point. When a user clicks on a button there is no way to know if that request can be handled.
 
@@ -84,7 +76,7 @@ _Hitting the button doesn't mean that you will take the elevator. There are two 
 
 **An event represents an update to the state**. It's an action, written with the past tense and in Pascal case. An event has an optional payload. It contains the information useful to update the state. Its signature is the same as a Redux action.
 
-Let's try to find valid event names. `ElevatorRequested` is the event for the successful request. It's right after the first hit to the button. `ElevatorCalled` occurs when a red light appears around the button. With `ElevatorReady` the elevator reaches the floor and the doors open. `ElevatorOccupied` happens when the request fails and a red light already surrounds the button.
+Let's try to find valid event names. `ElevatorBusy` is the event for the successful request. It's right after the first hit to the button. `ElevatorBusy` happens when the request fails and a red light surrounds the button. With `ElevatorReady` the elevator reaches the floor and the doors open.
 
 This is a simplified version of the scenarios that can happen. The elevator might be broken, or it might break during its move. There are many events that we can take into account. The events we consider depend on how much we go deep into the process.
 
@@ -96,9 +88,13 @@ A saga contains the business logic of the whole process. A saga decides whether 
 
 Let's consider the case of an [autocomplete field](https://mui.com/components/autocomplete/). The goal is to fetch an updated list of cities and to render the elements of the list as items of the select. The list is filtered as the user starts typing inside the field. Every time a user types a letter, we dispatch a command (`fetchCities`). The autocomplete component will dispatch this command every time the input changes. This means making an API call for each letter which the user types. Making multiple API calls implies bad performances and a poor user experience. We need to filter out in some way the extra requests coming from the component. One way could be to add a check in the `onChange` function of the autocomplete component. We could add a debounce function which helps avoid many requests. As pointed out before a component should only render and add styles to the UI. Following this reasoning, a saga, which keeps the logic of the autocomplete, should do this check. For our specific need, Redux-Saga comes with a helper, named [debounce](https://redux-saga.js.org/docs/recipes/#debouncing), which does exactly what we expect. Commands, dispatched by components, don't affect the state of our application. It's the saga which decides how to deal with the commands. In this case, the `debounce` helper resolves this problem.
 
-The underlying idea is that components render while reducers and sagas manage the business logic. Components don't need to add additional checks. Every saga is responsible for a unique part of the business logic. In this specific case, it would be retrieving the list of the cities of a country area.
+The underlying idea is that components render while reducers and sagas manage the business logic. Components don't need to add additional checks. Every saga is responsible for a unique part of the business logic. In this specific case, it would be retrieving the list of the cities of a country area. This moves our problem to sagas and how they should be used. A saga has an open-ended logic and it includes the lifecycle of a business process.
 
-This moves our problem to sagas and how they should be used. A saga has an open-ended logic and it includes the lifecycle of a business process. Every saga should start with a `start` command and end with a `stop` command. Components will dispatch these two commands with a `useEffect`:
+# Processes
+
+**A process is a saga which contains the business logic**. A process dispatches commands and events following business rules. A process manages a specific part of the state.
+
+Every process should start with a `start` command and end with a `stop` command. Components dispatch these two commands with a `useEffect`:
 
 ```
 import React, { useEffect } from 'react'
@@ -118,11 +114,75 @@ const MyComponent = () => {
 }
 ```
 
-The `start` and the `stop` commands generate the two equivalent events: `Started` and `Stopped`. A `Started` event reflects the initial state of the reducer. The most interesting part relates to the `Stopped` event. It represents the end of the saga. This event resets the reducer to its initial state. When the event is dispatched, it's expected that every other running event will be canceled. A `cancel` effect, provided by Redux-Saga, achieves this.
+The `start` and the `stop` commands generate the two equivalent events: `Started` and `Stopped`. A `Started` event reflects the initial state of the reducer. The most interesting part relates to the `Stopped` event. It represents the end of the process. This event resets the reducer to its initial state. When the event is dispatched, it's expected that every other running event will be canceled. A `cancel` effect, provided by Redux-Saga, achieves this.
+
+A process is not bound to components. Components start the process and trigger commands. A process has the responsibility to manage a slice of the state. Sagas are process managers which dispatch commands and events. Sagas watch for commands, dispatched by components, during their lifecycle. When a `stop` command interrupts a saga, the process ends. As mentioned before, Redux-Saga does task cancellation through the `cancel` effect.
 
 ![Commands and events](/images/a-redux-pattern/commands-events.gif)
 
-In the picture there is an example of a process. It starts from a component which dispatches a command. Then the saga dispatches an event which updates the state. The state is updated and the component rerendered. Meanwhile, the saga makes an API request. When the backend sends a response, the saga dispatches another event containing the response. After the state is updated, the component rerenders, if necessary.
+In the picture there is an example of a process. It starts from a component which dispatches a command. The saga takes into account the command dispatched by the component. As result, the saga dispatches an event which updates the state. It could be the right moment to display a loader in the user interface. At this moment, we don't know whether the request is successful or not. The next step for the saga is to make an API request. When the backend sends the response, the saga dispatches an event. After the state is updated, the component rerenders, if necessary. We're ready to display the response if it's successful. If the request failed, we can show an error with more details about it.
+
+Let's consider the process related to the elevator example. The process starts when a component (`Elevator`) dispatches a command (`start`) which starts a saga called `ElevatorSaga`.
+
+The process is responsible for the following slice of state:
+
+```
+type Status = "busy" | "ready" | "out of service";
+
+interface ElevatorState {
+  error: unknown | null;
+  status: Status;
+  history: Array<Status>;
+}
+```
+
+where `status` is the current status of the elevator. `history` is the list of the previous statuses of the elevator. The commands of the process are: `start`, `stop` and `callElevator`. The events of the process are: `ElevatorFreed`, `ElevatorOccupied` and `ElevatorBroken`.
+
+Let's focus on the saga:
+
+```
+export function* ElevatorSaga() {
+  yield* takeLeading($Elevator.start, function* () {
+    yield* put($Elevator.Started());
+
+    const task = yield* takeLeading($Elevator.callElevator, takeElevator);
+
+    yield* take($Elevator.stop);
+
+    yield* cancel(task);
+
+    yield* put($Elevator.Stopped());
+  });
+}
+```
+
+As soon as the component `Elevator` dispatches the `start` command, the process dispatches the event `Started`. At this point, the saga watches for `callElevator` command. When the `Elevator` component dispatches the command `callElevator`, `takeElevator`, a generator function, is called:
+
+```
+function* takeElevator(action: ReturnType<typeof $Elevator["callElevator"]>) {
+  try {
+    if (action.payload === "ready") {
+      yield* put($Elevator.ElevatorOccupied());
+      // you take the elevator
+      yield* delay(5000);
+      // you leave the elevator
+      yield* put($Elevator.ElevatorFreed());
+    }
+  } catch (e) {
+    yield* put($Elevator.ElevatorBroken(e));
+  }
+}
+```
+
+If the elevator is `ready`, the saga dispatches an event. `ElevatorOccupied` updates the status of the elevator to `busy`. `delay` simulates the time of taking the elevator. As soon as the time passes, an event is dispatched. `ElevatorFreed` updates the state and the elevator is `ready` again. If there is any error, the event `ElevatorBroken` updates the state and the elevator is `out of service`.
+
+When the component unmounts, the `stop` commands is dispathed and the saga stops. From now on, if a component or a saga dispatches the command `callElevator`, there won't be a saga to listen to it.
+
+You can find the full example here:
+
+[![Edit elevator](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/elevator-j5231w?fontsize=14&hidenavigation=1&theme=dark)
+
+# Conclusion
 
 To sum up, this pattern suggests to use actions in two different ways. The first way is through commands. They don't mutate the state since they represent an attempt to mutate it. The second way is through events. Events mutate the state and represent something that happened. Grouping actions in two different types allow us to find a predictable way to mutate the state. We have a consistent state which only mutates when events occur.
 
@@ -142,4 +202,5 @@ Here some useful resources:
 - https://github.com/gaearon/ama/issues/110#issuecomment-230331314
 - https://github.com/reduxjs/redux/blob/master/src/types/actions.ts
 - https://redux.js.org/understanding/thinking-in-redux/motivation
+- https://www.infoq.com/news/2017/07/process-managers-event-flows/
 - https://github.com/xzhavilla/escqrs

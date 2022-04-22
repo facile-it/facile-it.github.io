@@ -162,9 +162,7 @@ function* takeElevator(action: ReturnType<typeof $Elevator["callElevator"]>) {
   try {
     if (action.payload === "ready") {
       yield* put($Elevator.ElevatorOccupied());
-      // you take the elevator
       yield* delay(5000);
-      // you leave the elevator
       yield* put($Elevator.ElevatorFreed());
     }
   } catch (e) {

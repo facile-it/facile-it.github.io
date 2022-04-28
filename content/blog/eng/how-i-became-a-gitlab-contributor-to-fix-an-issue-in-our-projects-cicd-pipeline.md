@@ -1,7 +1,7 @@
 ---
 authors: ["stapps"]
 comments: true
-date: "2022-04-23"
+date: "2022-04-28"
 draft: false
 share: true
 categories: [English, Continuous integration, Continuous deployment, Docker, GitLab, Kubernetes, Opensource]

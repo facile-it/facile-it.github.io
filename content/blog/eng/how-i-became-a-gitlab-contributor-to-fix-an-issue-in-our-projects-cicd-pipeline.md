@@ -2,7 +2,7 @@
 authors: ["stapps"]
 comments: true
 date: "2022-04-23"
-draft: true
+draft: false
 share: true
 categories: [English, Continuous integration, Continuous deployment, Docker, GitLab, Kubernetes, Opensource]
 title: "How I became a GitLab contributor to fix an issue in our project's CI/CD pipeline"

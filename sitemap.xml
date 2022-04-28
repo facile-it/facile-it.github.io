@@ -3,12 +3,82 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://engineering.facile.it/categories/agile/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
+    <loc>https://engineering.facile.it/authors/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/authors/</loc>
+    <loc>https://engineering.facile.it/blog/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/c/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/continuous-deployment/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/continuous-integration/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/docker/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/english/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/git/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/gitlab/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/kubernetes/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/opensource/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/stapps/</loc>
+    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/agile/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -18,27 +88,7 @@
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/blog/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/categories/documentation/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/english/</loc>
-    <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
   </url>
   
@@ -65,11 +115,6 @@
   <url>
     <loc>https://engineering.facile.it/ita/</loc>
     <lastmod>2021-11-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/c/</loc>
-    <lastmod>2021-10-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -278,42 +323,12 @@
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/categories/continuous-deployment/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</loc>
     <lastmod>2018-02-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/categories/continuous-integration/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/docker/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/git/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/gitlab/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/authors/jean/</loc>
-    <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/kubernetes/</loc>
     <lastmod>2018-02-06T00:00:00+00:00</lastmod>
   </url>
   

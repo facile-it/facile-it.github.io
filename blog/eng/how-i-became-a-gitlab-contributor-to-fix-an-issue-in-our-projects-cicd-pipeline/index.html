@@ -1,0 +1,1488 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="referrer" content="always">
+        <meta name="generator" content="Hugo 0.69.0" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+            
+        
+
+        
+    
+        <meta name="twitter:card" content="summary"/>
+        
+            <meta name="twitter:image:src" content="https://engineering.facile.it/images/social/twitter-card-logo.png"/>
+        
+    
+    
+    <meta name="twitter:title" content="How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline"/>
+    <meta name="twitter:description" content="Introduction During these months at Facile.it I had to face many challenges regarding the improvement of CI/CD pipelines for the Insurance team, with a strong focus on performance and reusability. The focus on these topics is very important as it allows us to follow GitLab best practices for CI/CD such as the fail fast principle.
+ 💬
+Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds."/>
+    
+        
+            
+        
+    
+
+
+<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+
+        <meta property="og:title" content="How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline" />
+<meta property="og:description" content="Introduction During these months at Facile.it I had to face many challenges regarding the improvement of CI/CD pipelines for the Insurance team, with a strong focus on performance and reusability. The focus on these topics is very important as it allows us to follow GitLab best practices for CI/CD such as the fail fast principle.
+ 💬
+Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/" />
+<meta property="article:published_time" content="2022-04-28T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-04-28T00:00:00+00:00" />
+
+
+        
+            
+                
+                <meta property="og:image" content="https://engineering.facile.it/images/logo.png">
+                
+            
+        
+
+        <meta itemprop="name" content="How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline">
+<meta itemprop="description" content="Introduction During these months at Facile.it I had to face many challenges regarding the improvement of CI/CD pipelines for the Insurance team, with a strong focus on performance and reusability. The focus on these topics is very important as it allows us to follow GitLab best practices for CI/CD such as the fail fast principle.
+ 💬
+Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds.">
+<meta itemprop="datePublished" content="2022-04-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-04-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2826">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/additional.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/monokai-sublime.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">Facile.it Engineering</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/authors/">
+                            <i class="fa fa-pencil">&nbsp;</i>Authors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/ita/careers/">
+                            <i class="fa fa-briefcase">&nbsp;</i>Careers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/eng/who-we-are/">
+                            <i class="fa fa-users">&nbsp;</i>Who we are
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/authors/">
+                            <h3>
+                                <i class="fa fa-pencil">&nbsp;</i>Authors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/ita/careers/">
+                            <h3>
+                                <i class="fa fa-briefcase">&nbsp;</i>Careers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/eng/who-we-are/">
+                            <h3>
+                                <i class="fa fa-users">&nbsp;</i>Who we are
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/">How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2022-04-28'>
+                                    April 28, 2022</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2022-03-16'>
+                                    March 16, 2022</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/writethedocs-prague-2021/">Write the Docs Prague 2021</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2021-10-20'>
+                                    October 20, 2021</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fhow-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline%2f&amp;text=How%20I%20became%20a%20GitLab%20contributor%20to%20fix%20an%20issue%20in%20our%20project%27s%20CI%2fCD%20pipeline&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fhow-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fhow-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fhow-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline%2f&amp;title=How%20I%20became%20a%20GitLab%20contributor%20to%20fix%20an%20issue%20in%20our%20project%27s%20CI%2fCD%20pipeline" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fhow-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline%2f&amp;title=How%20I%20became%20a%20GitLab%20contributor%20to%20fix%20an%20issue%20in%20our%20project%27s%20CI%2fCD%20pipeline" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fhow-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline%2f&amp;title=How%20I%20became%20a%20GitLab%20contributor%20to%20fix%20an%20issue%20in%20our%20project%27s%20CI%2fCD%20pipeline" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fhow-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline%2f&amp;description=How%20I%20became%20a%20GitLab%20contributor%20to%20fix%20an%20issue%20in%20our%20project%27s%20CI%2fCD%20pipeline" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fhow-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/">How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline</a></h1>
+            
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2022-04-28'>
+            28 April 2022
+        </time>
+
+        
+            <a href="/authors/stapps/" class="author">
+            
+                <span class="name">Stefano Tenuta</span>
+                <img src="https://www.gravatar.com/avatar/00b617d37765216be50784d835299dff" alt="Stefano Tenuta avatar" />
+            
+            </a>
+        
+
+        
+            <p>14 minute read</p>
+        
+    </div>
+</header>
+
+
+  
+
+
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#anatomy-of-our-project">Anatomy of our project</a>
+      <ul>
+        <li><a href="#scope-and-goals">Scope and goals</a></li>
+        <li><a href="#unit-tests-and-docker-compose">Unit tests and <strong>Docker Compose</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#moving-away-from-docker-compose">Moving away from <strong>Docker Compose</strong></a>
+      <ul>
+        <li><a href="#gitlabs-services-and-their-relation-with-docker-compose"><strong>GitLab</strong>&lsquo;s <code>services</code> and their relation with <strong>Docker Compose</strong></a></li>
+        <li><a href="#a-first-workaround">A first workaround</a></li>
+        <li><a href="#becoming-a-gitlab-contributor-to-solve-our-issue-with-cicd">Becoming a GitLab contributor to solve our issue with CI/CD</a></li>
+        <li><a href="#our-final-cicd-pipeline">Our final <strong>CI/CD</strong> pipeline</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusions">Conclusions</a></li>
+  </ul>
+</nav>
+  
+
+  <div id="content">
+    <h1 id="introduction">Introduction</h1>
+<p>During these months at Facile.it I had to face many challenges regarding the improvement of <strong>CI/CD</strong> pipelines for the <em>Insurance</em> team, with a strong focus on performance and reusability. The focus on these topics is very important as it allows us to follow <strong>GitLab</strong> best practices for <strong>CI/CD</strong> such as the <em>fail fast principle</em>.</p>
+<blockquote>
+<p>💬</p>
+<p>Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds. The idea of “fail fast” helps reduce developer context switching too, which makes for happier DevOps professionals.</p>
+<p>&ndash; <!-- raw HTML omitted --><a href="https://about.gitlab.com/blog/2022/02/03/how-to-keep-up-with-ci-cd-best-practices/#what-are-the-best-practices-for-cicd">How to keep up with CI/CD best practices - GitLab Blog</a><!-- raw HTML omitted --></p>
+</blockquote>
+<p>Following <a href="../continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker">this post</a> from 2018, my team ended up having a <strong>CI/CD</strong> pipeline that fully relied on <strong>Docker Compose</strong> for every job besides the deployment ones.</p>
+<p>Using <strong>Docker Compose</strong> has many advantages, mainly because it allows developers to use the very same configuration for both their local setups and the <strong>CI/CD</strong> jobs (e.g. <code>environment variables</code> and <code>services</code>). However, this comes with something that I believe to be a major drawback: the job execution time using <strong>Docker Compose</strong> is less than ideal, this makes our pipelines a few times slower than an equivalent solution that does not use it!</p>
+<p>This blog post is not meant as a comparison between <strong>Docker Compose</strong> and other alternatives, so I will not dive deep into the numbers and details. However, given the focus on performance I mentioned above, I decided to tackle this issue and move from <strong>Docker Compose</strong> to a more &ldquo;native&rdquo; solution.</p>
+<h1 id="anatomy-of-our-project">Anatomy of our project</h1>
+<h2 id="scope-and-goals">Scope and goals</h2>
+<p>To better understand what made the transition from <strong>Docker Compose</strong> way harder than I expected, we need to provide a brief overview on the project&rsquo;s structure and how the application that we&rsquo;re building is supposed to work.</p>
+<p>The main idea behind this application, which we will call <code>ins-gateway</code> from now on, is to act as a kind of gateway between our core services and multiple insurance companies. We can see it as an abstraction layer that is used to standardize both requests and responses so that we can convert them into our custom format. This layer is required since each company may have a specific communication protocol/format.</p>
+<p>Having to deal with a large amount of different protocols/formats makes everything error-prone: what if a certain company decides that a property is now a <code>number</code> instead of a <code>string</code> but they fail to let us know that their specifications changed?</p>
+<p>We can&rsquo;t to project errors onto the end user because of such a small change, so we need a better way to be somehow proactive and intercept those changes before they reach our production systems.</p>
+<p>That&rsquo;s why we have a set of multiple tests running in our <strong>CI/CD</strong> environment that help us keep everything under control.
+In this post, we&rsquo;re only going to focus only on <strong>unit tests</strong>.</p>
+<h2 id="unit-tests-and-docker-compose">Unit tests and <strong>Docker Compose</strong></h2>
+<p>In <strong>DevOps</strong> world, <strong>unit tests</strong> can be seen as an automated way to do <strong>regression testing</strong>, meaning that we can use them to guarantee that our new commit didn&rsquo;t break an already working feature.</p>
+<p>This is extremely useful for projects that are starting to outgrow the resources of the dedicated team and would require significant effort to manually verify everything before committing.</p>
+<p>In our scenario, this means that we defined these <strong>unit tests</strong> to validate the format of the request/response pair for each insurance company, thus being able to quickly react to their changes.</p>
+<p>However, since <strong>unit tests</strong> are not meant to depend on external systems, we decided to build another layer: <strong>mock servers</strong>.</p>
+<p>Here&rsquo;s a quick diagram showing a simplified version of our testing process that includes only two companies:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<figure class="image featured">
+    <img src="/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/activity.png"
+         alt="Activity diagram for testing workflow"/> 
+</figure>
+
+<p>While this is a simplified version of the process, the important thing to notice is that we have a single <strong>mock server</strong> even though we deal with two companies!</p>
+<p>To avoid dealing with multiple codebases, we decided to build a generic <strong>mock server</strong> that is configured at runtime with the specific protocol/format used by a given company. This configuration is done through the <code>environment variables</code>.</p>
+<p>If you&rsquo;re not already seeing the issue here, allow me to introduce <strong>Docker Compose</strong> in the current scenario by showing some of the contents of our old <code>docker-compose.yaml</code> file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">version</span>: <span style="color:#e6db74">&#39;3.7&#39;</span>
+
+<span style="color:#66d9ef">services</span>:
+  ...
+
+  <span style="color:#66d9ef">mock-company-1</span>:
+    <span style="color:#66d9ef">image</span>: $MOCK_IMAGE:$COMMIT_ID
+    <span style="color:#66d9ef">env_file</span>:
+      - ./company<span style="color:#ae81ff">-1</span>/default.env
+
+  <span style="color:#66d9ef">mock-company-2</span>:
+    <span style="color:#66d9ef">image</span>: $MOCK_IMAGE:$COMMIT_ID
+    <span style="color:#66d9ef">env_file</span>:
+      - ./company<span style="color:#ae81ff">-2</span>/default.env
+</code></pre></div><p>As you can see, in the <code>docker-compose.yaml</code> file we defined two different <code>services</code> with the very same <strong>Docker</strong> image and different <code>env_file</code>s to provide the specific configuration.</p>
+<blockquote>
+<p>⚠️</p>
+<p>The <code>env_file</code> contains the very same <code>environment variables</code> for both the <code>services</code> but with different values, and this is the root cause of the issue that I had to solve while moving away from <strong>Docker Compose</strong>!</p>
+<p>This is a quick sample of an <code>env_file</code> for our <strong>mock servers</strong></p>
+<pre><code>APP_PORT=3000
+COMPANY_NAME=...
+PROTOCOL_VERSION=...
+</code></pre></blockquote>
+<p>This works because of how <strong>Docker Compose</strong> works: each <code>service</code> has its own &ldquo;context&rdquo; and a set of <code>environment variables</code> that are not shared with other <code>services</code>, which means there is no name collision.</p>
+<p>But what happens if we replace <strong>Docker Compose</strong> with <strong>GitLab</strong>&lsquo;s &ldquo;native&rdquo; <code>services</code>? Well, that&rsquo;s a completely different story.</p>
+<h1 id="moving-away-from-docker-compose">Moving away from <strong>Docker Compose</strong></h1>
+<h2 id="gitlabs-services-and-their-relation-with-docker-compose"><strong>GitLab</strong>&lsquo;s <code>services</code> and their relation with <strong>Docker Compose</strong></h2>
+<p><strong>GitLab</strong>&lsquo;s <code>services</code> are a clever way to provide additional capabilities to your <strong>CI/CD</strong> job. These capabilities are usually external dependencies such as a database, or even a <code>docker-in-docker</code> helper that enables building <strong>Docker</strong> images from a running <strong>Docker</strong> container.</p>
+<blockquote>
+<p>ℹ️</p>
+<p>If you want to know more about <strong>GitLab</strong>&lsquo;s <code>services</code>, their <a href="https://docs.gitlab.com/ee/ci/services/">documentation</a> is a great starting point.</p>
+</blockquote>
+<p>Given their nature, <strong>GitLab</strong>&lsquo;s <code>services</code> can naturally be mapped from those of <strong>Docker Compose</strong>, or at least that&rsquo;s what I thought when I started this task.</p>
+<p>Just like in <strong>Docker Compose</strong>, <strong>GitLab</strong>&lsquo;s <code>services</code> are defined as:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: <span style="color:#75715e"># Docker image to be used as service</span>
+<span style="color:#66d9ef">alias</span>: <span style="color:#75715e"># optional hostname for your service in the internal networking</span>
+<span style="color:#66d9ef">entrypoint</span>: <span style="color:#75715e"># optional override for the Docker entrypoint</span>
+<span style="color:#66d9ef">command</span>: <span style="color:#75715e"># optional ovveride for the Docker entrypoint</span>
+</code></pre></div><p><strong><em>But&hellip;isn&rsquo;t something missing from what we had in our <code>docker-compose.yaml</code> file?</em></strong></p>
+<p>The answer is yes: before <a href="https://about.gitlab.com/releases/2022/02/22/gitlab-14-8-released/"><strong>GitLab</strong> 14.8</a>, <code>services</code> couldn&rsquo;t specify a set of custom <code>environment variables</code> (as reported in <a href="https://gitlab.com/gitlab-org/gitlab/-/issues/23671">issue #23671</a> on <strong>GitLab</strong>).</p>
+<blockquote>
+<p>ℹ️</p>
+<p>This change is not mentioned in the 14.8 release notes because it&rsquo;s been split over multiple releases, but you can refer to both <a href="https://gitlab.com/gitlab-org/gitlab/-/blob/master/CHANGELOG.md#1450-2021-11-19"><strong>GitLab</strong> 14.5 changelog</a> and <a href="https://gitlab.com/gitlab-org/gitlab-runner/blob/14-8-stable/CHANGELOG.md#new-features"><strong>GitLab Runner</strong> 14.8 changelog</a></p>
+</blockquote>
+<p>So, how are we supposed to add <code>environment variables</code> to our <strong>GitLab</strong>&lsquo;s <code>services</code>?
+<strong>GitLab</strong> <code>jobs</code> support the <code>variables</code> property which allows us to define a set of <code>environment variables</code> as a <code>YAML hash</code>, and <code>services</code> inherit all the variables defined in their parent <code>job</code>.</p>
+<p>Let&rsquo;s make a quick example of what this means:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">job-1</span>:
+    <span style="color:#66d9ef">variables</span>:
+        <span style="color:#66d9ef">VAR</span>: Job variable <span style="color:#75715e"># This is meant as a variable to be used in job&#39;s script</span>
+        <span style="color:#66d9ef">SVC_VAR</span>: Service variable <span style="color:#75715e"># This is meant as a variable to be used EXCLUSIVELY by the service</span>
+    <span style="color:#66d9ef">services</span>:
+        - <span style="color:#66d9ef">name</span>: busybox:latest <span style="color:#75715e"># Use a simple Busybox image so that we can a shell and just echo some variables</span>
+          <span style="color:#66d9ef">entrypoint</span>: [ <span style="color:#e6db74">&#34;sh&#34;</span>, <span style="color:#e6db74">&#34;-c&#34;</span>, <span style="color:#e6db74">&#34;echo $VAR, $SVC_VAR&#34;</span> ]
+    <span style="color:#66d9ef">script</span>:
+        - ...
+</code></pre></div><p>Upon <code>service</code> startup the <code>entrypoint</code> is executed, leading to the following output:</p>
+<pre><code>2022-04-04T12:56:48.722815200Z Job variable, Service variable
+</code></pre><blockquote>
+<p>ℹ️</p>
+<p><code>service</code> output is printed at the beginning of your <code>job</code>'s output on <strong>GitLab</strong>. Additionaly, it can be extracted from <strong>Docker</strong> or <strong>Kubernetes</strong> container logs based on where your <strong>GitLab Runner</strong> is installed.</p>
+</blockquote>
+<p>While this seems to work correctly, we have to remind about the warning that I mentioned in the previous chapter: we&rsquo;re using a single <strong>mock server</strong> which is configured using a set of <code>environment variables</code>. Therefore, each instance of the <strong>mock server</strong> requires exactly the same <code>variables</code>.</p>
+<p>Following from the previous example, let&rsquo;s move to something closer to our scenario by tanslating the <code>docker-compose.yaml</code> file into a <code>.gitlab-ci.yml</code> one:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">job-1</span>:
+    <span style="color:#66d9ef">services</span>:
+        - <span style="color:#66d9ef">name</span>: $MOCK_IMAGE:$COMMIT_ID
+          <span style="color:#66d9ef">alias</span>: company<span style="color:#ae81ff">-1</span>-mock
+        - <span style="color:#66d9ef">name</span>: $MOCK_IMAGE:$COMMIT_ID
+          <span style="color:#66d9ef">alias</span>: company<span style="color:#ae81ff">-2</span>-mock
+    <span style="color:#66d9ef">script</span>:
+        - npm run tests <span style="color:#75715e"># Generic wrapper to test all the companies</span>
+    <span style="color:#66d9ef">variables</span>:
+        <span style="color:#66d9ef">COMPANY_NAME</span>: company<span style="color:#ae81ff">-1</span> ⚠️
+        <span style="color:#66d9ef">COMPANY_NAME</span>: company<span style="color:#ae81ff">-2</span> ⚠️
+        ...
+</code></pre></div><p>Hold on!</p>
+<p>If both <code>company-1-mock</code> and <code>company-2-mock</code> use the same <code>COMPANY_NAME</code> variable, how can we pass the value <code>company-1</code> to <code>company-1-mock</code> and <code>company-2</code> to <code>company-2-mock</code>?</p>
+<p>Well, we can&rsquo;t, and that&rsquo;s because <code>environment variables</code> are passed at <code>job</code> level and shared with all the linked <code>services</code>. The above snippet will still work, but both the <strong>mock servers</strong> will receive the latest value set for each variable, so they will both initialized with <code>COMPANY_NAME = company-2</code>, which is not what we want.</p>
+<h2 id="a-first-workaround">A first workaround</h2>
+<p>Once getting to this issue I quickly realized that the task was about to get way more complicated than what I thought, because I got to a point where I was limited by the lack of a feature on <strong>GitLab</strong>.</p>
+<p>I&rsquo;m not a developer anymore and I never had the chance to work with <strong>Ruby</strong> (which is the main backend language for <strong>GitLab</strong>), so I didn&rsquo;t feel confident enough to try and see if I could solve this by myself.</p>
+<p>I decided to implement an &ldquo;hacky&rdquo; workaround that allowed my <strong>CI/CD</strong> pipeline to move away from <strong>Docker Compose</strong> while still keeping the ability to use multiple instances of the same <strong>GitLab</strong> <code>service</code>.</p>
+<p>The workaround revolves around a fairly simple idea: as we have seen before, <strong>GitLab</strong> <code>services</code> support the override of both the <code>entrypoint</code> and <code>command</code> of the <strong>Docker</strong> image. This can be used to provide additional logic that must be executed when the image is started.</p>
+<p>This fact, coupled with the <code>variables</code> shared between <code>jobs</code> and <code>services</code>, enabled me to provide some kind of &ldquo;scoped&rdquo; <code>variables</code> to each <strong>mock server</strong> instance in the following way:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">job-1</span>:
+    <span style="color:#66d9ef">services</span>:
+        - <span style="color:#66d9ef">name</span>: $MOCK_IMAGE:$COMMIT_ID
+          <span style="color:#66d9ef">alias</span>: company<span style="color:#ae81ff">-1</span>-mock
+          <span style="color:#66d9ef">entrypoint</span>: [<span style="color:#e6db74">&#34;/bin/sh&#34;</span>]
+          <span style="color:#66d9ef">command</span>: [<span style="color:#e6db74">&#34;-c&#34;</span>, <span style="color:#e6db74">&#34;echo \&#34;$COMPANY_1_ENVIRONMENT\&#34; &gt; init.env &amp;&amp; source init.env; &lt;original Docker command&gt;&#34;</span>]
+        - <span style="color:#66d9ef">name</span>: $MOCK_IMAGE:$COMMIT_ID
+          <span style="color:#66d9ef">alias</span>: company<span style="color:#ae81ff">-2</span>-mock
+          <span style="color:#66d9ef">entrypoint</span>: [<span style="color:#e6db74">&#34;/bin/sh&#34;</span>]
+          <span style="color:#66d9ef">command</span>: [<span style="color:#e6db74">&#34;-c&#34;</span>, <span style="color:#e6db74">&#34;echo \&#34;$COMPANY_2_ENVIRONMENT\&#34; &gt; init.env &amp;&amp; source init.env; &lt;original Docker command&gt;&#34;</span>]
+    <span style="color:#66d9ef">script</span>:
+        - npm run tests <span style="color:#75715e"># Generic wrapper to test all the companies</span>
+    <span style="color:#66d9ef">variables</span>:
+        <span style="color:#66d9ef">COMPANY_1_ENVIRONMENT</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">            export COMPANY_NAME=company-1</span>
+            export OTHER_VAR=...
+        <span style="color:#66d9ef">COMPANY_2_ENVIRONMENT</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">            export COMPANY_NAME=company-2</span>
+            export OTHER_VAR=...
+        ...
+</code></pre></div><p><strong>Success, it works! ✅</strong></p>
+<p>We basically replaced the startup process for each of our <code>services</code> to load the <code>variables</code> from a local file, and each <code>service</code> has a different file. This works a bit like the <code>env_file</code> directive in the <code>docker-compose.yaml</code> file we have seen above.</p>
+<p>⚠️ However, since this is a workaround, there are some implications that need to be considered:</p>
+<ul>
+<li>We can&rsquo;t define the <code>variables</code> as plain <code>YAML</code> properties as we did with <strong>Docker Compose</strong>.</li>
+<li>We still need to define a shared <code>variable</code> for each <code>service</code> at <code>job</code> level, meaning that <code>company-2-mock</code> can do <code>echo $COMPANY_1_ENVIRONMENT</code> and retrieve all the values for the other <strong>mock server</strong>, thus breaking the isolation between <code>services</code>.</li>
+<li>We need to manually add the original <strong>Docker</strong> <code>command</code> at the end of our overriden one, meaning that we need to keep it updated in case the base <strong>Docker</strong> image changes.</li>
+</ul>
+<p>To overcome these issues we need a less &ldquo;hacky&rdquo; way to deal with our scenario, even if <strong>GitLab</strong> is not supporting it. Luckily, <strong>GitLab</strong> is <strong>opensource</strong> software and this allows people to contribute to their codebase even if they are not directly employed by <strong>GitLab</strong> itself.</p>
+<p>As I said before I&rsquo;m not a developer anymore, but I decided to go ahead and took my chance at adding the feature that we needed to improve our <strong>CI/CD</strong> pipelines.</p>
+<h2 id="becoming-a-gitlab-contributor-to-solve-our-issue-with-cicd">Becoming a GitLab contributor to solve our issue with CI/CD</h2>
+<blockquote>
+<p>ℹ️</p>
+<p>To develop on <strong>GitLab</strong>&lsquo;s platform you need the <a href="https://gitlab.com/gitlab-org/gitlab-development-kit">GitLab Development Kit</a>. The kit is well documented so I won&rsquo;t go into the details of the workflow.</p>
+</blockquote>
+<p>If you&rsquo;re not familiar with <strong>GitLab</strong>&lsquo;s codebase, the initial experience will be daunting at best, as their repository is quite large. Furthermore, the lack of experience with <strong>Ruby</strong> didn&rsquo;t help, but eventually I got a grip on which classes I needed to fiddle with to make my feature work.</p>
+<p>The feature proposal was to extend <code>services</code> definition by adding the same <code>variable</code> property that was already available for <code>jobs</code>, so that the validation logic and <code>variables</code> handling could be reused.</p>
+<p>This is the proposed structure, following the previous examples:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">job-1</span>:
+    <span style="color:#66d9ef">variables</span>:
+        <span style="color:#66d9ef">VAR</span>: Job variable <span style="color:#75715e"># This is meant as a variable to be used in job&#39;s script        </span>
+    <span style="color:#66d9ef">services</span>:
+        - <span style="color:#66d9ef">name</span>: busybox:latest <span style="color:#75715e"># Use a simple Busybox image so that we can a shell and just echo some variables</span>
+          <span style="color:#66d9ef">variables</span>:
+            <span style="color:#66d9ef">SVC_VAR</span>: Service variable <span style="color:#75715e"># This is meant as a variable to be used EXCLUSIVELY by the service</span>
+          <span style="color:#66d9ef">entrypoint</span>: [ <span style="color:#e6db74">&#34;sh&#34;</span>, <span style="color:#e6db74">&#34;-c&#34;</span>, <span style="color:#e6db74">&#34;echo $VAR, $SVC_VAR&#34;</span> ]
+    <span style="color:#66d9ef">script</span>:
+        - echo $VAR, $SVC_VAR
+</code></pre></div><p>As you can see, <code>SVC_VAR</code> was now moved as a child of the <code>service</code> definition, meaning that it&rsquo;s not shared at the <code>job</code> level as before.</p>
+<p>Implementing this was easier than I thought, as I only had to copy the <code>variables</code> keyword from the <code>job</code> definitions (e.g. endpoints and internal data models) to their <code>service</code> counterparts. Considering these changes, <strong>GitLab</strong> documentation, and some <strong>unit testing</strong> I only had 20 lines added and 5 removed.</p>
+<blockquote>
+<p>ℹ️</p>
+<p>The complete history of my changes is tracked in the <a href="https://gitlab.com/gitlab-org/gitlab/-/merge_requests/72025">merge request #72025</a> on <strong>GitLab</strong>.</p>
+</blockquote>
+<p>However, this small <strong>merge request</strong> was not enough, as <code>services</code> are handled differently by each underlying provider (<strong>Docker</strong> and <strong>Kubernetes</strong>). These providers are implemented by the <strong>GitLab Runner</strong> project, which provides an executable that&rsquo;s responsible for getting and executing <code>jobs</code> from a registered <strong>GitLab</strong> instance.</p>
+<p>This means that I had to add a specific logic to both the providers so that they could correctly deal with the new <code>variables</code> property defined in the <code>service</code> object.</p>
+<p>While the changes on <strong>GitLab</strong> itself weren&rsquo;t really challenging, the way <strong>GitLab Runner</strong> handles <code>environment variables</code> made everything a lot more difficult. Without diving deep into details, <strong>GitLab Runner</strong> is responsible for variables expansion at shell level, so this new feature must not break the existing workflow.</p>
+<p>The issue is better explained by <a href="https://gitlab.com/ajwalker">Arran Walker</a>, who reviewed my <strong>merge request</strong>:</p>
+<blockquote>
+<p>💬</p>
+<p>My main concern was that we want a service&rsquo;s variables expanded when they reference a variable that is available to the main job too.</p>
+<p>For example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">variables</span>:
+ <span style="color:#66d9ef">TOP_LEVEL_VAR</span>: <span style="color:#e6db74">&#34;hello&#34;</span>
+
+<span style="color:#66d9ef">job</span>:
+ <span style="color:#66d9ef">variables</span>:
+   <span style="color:#66d9ef">JOB_LEVEL_VAR</span>: <span style="color:#e6db74">&#34;world&#34;</span>
+ <span style="color:#66d9ef">service</span>:
+   - <span style="color:#66d9ef">image</span>: docker:dind
+     <span style="color:#66d9ef">variables</span>:
+       <span style="color:#66d9ef">SERVICE_LEVEL_VAR</span>: <span style="color:#e6db74">&#34;$TOP_LEVEL_VAR $JOB_LEVEL_VAR&#34;</span>
+</code></pre></div><p><code>SERVICE_LEVEL_VAR</code> should be able to reference <code>TOP_LEVEL_VAR</code> and <code>JOB_LEVEL_VAR</code>. Expanding the service variables on their own won&rsquo;t achieve this.</p>
+<p>&ndash; <!-- raw HTML omitted --><a href="https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3158#note_740206844">https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3158#note_740206844</a><!-- raw HTML omitted --></p>
+</blockquote>
+<p>After a few months of back and forth with the <strong>GitLab Runner</strong> team, we ended up finding a solution that enabled my use case while still retaining the correct variable expansion logic, as nobody wanted to introduce a breaking-change on such a big platform.</p>
+<blockquote>
+<p>ℹ️</p>
+<p>The complete history of my changes is tracked in the <a href="https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3158">merge request #3158</a> on <strong>GitLab Runner</strong>.</p>
+</blockquote>
+<p>My contributions were merged to <strong>GitLab</strong> with version <strong>14.5</strong> and to <strong>GitLab Runner</strong> with version <strong>14.8</strong>, making me a contributor to their platform!</p>
+<figure class="image featured">
+    <img src="/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/contributor.png"
+         alt="My contributor badge on GitLab"/> 
+</figure>
+
+<h2 id="our-final-cicd-pipeline">Our final <strong>CI/CD</strong> pipeline</h2>
+<p>At the end of this process, we were finally able to move away from <strong>Docker Compose</strong> while still having a <strong>CI/CD</strong> pipeline that didn&rsquo;t need any workarounds or hacks to be fully functioning. With <strong>GitLab</strong> 14.8, our sample pipeline can now be modified as follows:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">job-1</span>:
+    <span style="color:#66d9ef">services</span>:
+        - <span style="color:#66d9ef">name</span>: $MOCK_IMAGE:$COMMIT_ID
+          <span style="color:#66d9ef">alias</span>: company<span style="color:#ae81ff">-1</span>-mock
+          <span style="color:#66d9ef">variables</span>:
+            <span style="color:#66d9ef">COMPANY_NAME</span>: company<span style="color:#ae81ff">-1</span>
+            <span style="color:#66d9ef">OTHER_VAR</span>: ...
+        - <span style="color:#66d9ef">name</span>: $MOCK_IMAGE:$COMMIT_ID
+          <span style="color:#66d9ef">alias</span>: company<span style="color:#ae81ff">-2</span>-mock
+          <span style="color:#66d9ef">variables</span>:
+            <span style="color:#66d9ef">COMPANY_NAME</span>: company<span style="color:#ae81ff">-1</span>
+            <span style="color:#66d9ef">OTHER_VAR</span>: ...
+    <span style="color:#66d9ef">script</span>:
+        - npm run tests <span style="color:#75715e"># Generic wrapper to test all the companies</span>
+</code></pre></div><p>If we consider the issues mentioned in our <a href="#a-first-workaround">first workaround</a>, we can see that with this solution we were able to fix them all:</p>
+<ul>
+<li><del>We can&rsquo;t define the <code>variables</code> as plain <code>YAML</code> properties as we did with <strong>Docker Compose</strong></del> <code>variables</code> are now defined as plain <code>YAML</code> properties.✅</li>
+<li><del>We still need to define a shared <code>variable</code> for each <code>service</code> at <code>job</code> level, meaning that <code>company-2-mock</code> can do <code>echo $COMPANY_1_ENVIRONMENT</code> and retrieve all the values for the other <strong>mock server</strong>, thus breaking the isolation between <code>services</code></del> <code>variables</code> are now defined on a <code>service</code> basis, thus they&rsquo;re not shared anymore.✅</li>
+<li><del>We need to manually add the original <strong>Docker</strong> <code>command</code> at the end of our overriden one, meaning that we need to keep it updated in case the base <strong>Docker</strong> image changes</del> we don&rsquo;t need to override the <code>entrypoint</code> and <code>command</code> for the <code>service</code> <strong>Docker</strong> image.✅</li>
+</ul>
+<h1 id="conclusions">Conclusions</h1>
+<p>The goal of this post was to show how a problem in daily tasks, coupled with a winning <strong>opensource</strong> culture, can be turned into an opportunity to grow as a professional and become a contributor to one of the largest <strong>DevOps</strong> platforms in the world. We&rsquo;re usually somehow &ldquo;limited&rdquo; by our tools when it comes to problems, and that means we&rsquo;re somehow forced to find &ldquo;hacky&rdquo; workarounds to overcome them. However, by relying on widely supported <strong>opensource</strong> software, not only can we easily find a better solution to our problems, but we also have the opportunity to become part of the movement that enables our daily tasks as IT professionals.</p>
+<p>(finally, as a side note, being a <strong>GitLab</strong> contributor has some small perks too!)</p>
+<figure class="image featured">
+    <img src="/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/gitlab-mug.png"
+         alt="My shiny GitLab mug"/> 
+</figure>
+
+
+  </div>
+
+  
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/continuous-integration">Continuous integration</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/continuous-deployment">Continuous deployment</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/docker">Docker</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/gitlab">GitLab</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/kubernetes">Kubernetes</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/opensource">Opensource</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/eng/on-living-documentation/"
+                class="button big previous">On Living Documentation</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo_engineering.png" width="100%" alt="Facile.it Engineering" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>News, repos, tips & trends from the Facile.it Engineering team!</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section id="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/stapps/" class="author" title="See other posts from Stefano Tenuta">
+                      <img src="https://www.gravatar.com/avatar/00b617d37765216be50784d835299dff" alt="Stefano Tenuta avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/">How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline</a>
+              </h3>
+              
+              <time class="published" datetime='2022-04-28'>
+                28 April 2022
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
+                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/on-living-documentation/">On Living Documentation</a>
+              </h3>
+              
+              <time class="published" datetime='2022-03-16'>
+                16 March 2022
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/marta-gilberti/" class="author" title="See other posts from Marta Gilberti">
+                      <img src="/images/avatar-mgilberti.jpg" alt="Marta Gilberti avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/writethedocs-prague-2021/">Write the Docs Prague 2021</a>
+              </h3>
+              
+              <time class="published" datetime='2021-10-20'>
+                20 October 2021
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Top categories</a></h3>
+      </header>
+        
+          
+        
+
+        
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/english/">English</a>
+                <span style="float:right;">41</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
+                <span style="float:right;">34</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/oop/">OOP</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
+                <span style="float:right;">23</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/software-testing/">Software Testing</a>
+                <span style="float:right;">7</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/symfony/">Symfony</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+        <p>
+            <a href="/categories/" class="button">View more categories</a>
+        </p>
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h1>
+      <p>Facile.it relies on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. This blog allows our developers to share tips and direct experiences with new technologies.</p>
+      <a href="/ita/chi-siamo/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2022
+        
+          Facile.it Engineering
+        
+      .
+      <a href="/ita/disclaimer/" rel="nofollow">Disclaimer</a><br>
+      Design <a href="http://html5up.net" rel="nofollow" target="_blank">HTML5 UP</a><br>
+      Ported by <a href="//github.com/jpescador" rel="nofollow" target="_blank">Julio Pescador</a><br>
+      Modified by <a href="//github.com/Jean85" rel="nofollow" target="_blank">Alessandro Lai</a><br>
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/objectivec.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/swift.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+      <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        $(function() {
+            $('.lazy').Lazy();
+        });
+    </script>
+  </body>
+</html>
+

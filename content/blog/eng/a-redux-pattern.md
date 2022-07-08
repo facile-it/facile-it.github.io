@@ -100,20 +100,36 @@ The underlying idea is that components render while reducers and sagas manage th
 Every saga should start with a `start` command and end with a `stop` command. Components dispatch these two commands with a `useEffect`:
 
 ```
-import React, { useEffect } from 'react'
-import { dispatch } from '@reduxjs/toolkit'
+import React, { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { take, takeLeading } from "typed-redux-saga"
 
-const MyComponent = () => {
+// commands
+const start = () => ({ type: "start", payload: undefined })
+const stop = () => ({ type: "stop", payload: undefined })
 
- useEffect(() => {
-  dispatch(saga.start())
+// saga
+export function* saga() {
+  yield* takeLeading(start, function* () {
+    // ...
+    yield* take(stop)
+    // ...
+  });
+}
 
-  return () => {
-    dispatch(saga.stop())
-  }
- }, [])
+// React component
+export const MyComponent = () => {
+  const dispatch = useDispatch()
 
- return null
+  useEffect(() => {
+    dispatch(start())
+
+    return () => {
+      dispatch(stop())
+    }
+  }, [dispatch])
+
+  return null
 }
 ```
 

@@ -22,7 +22,7 @@ Why should we treat actions as events rather than setters? Dan Abramov, founder 
 
 In this article I'll talk about a design pattern for Redux. I'll show you how it can help resolve some known problems. In particular, I'll try to find a way to describe how to treat actions. This will lead us to deal better with the asynchronicity and the mutation problems. The main goal is to get a consistent state for our application. To achieve that, we'll look for a predictable way to mutate the state of the application.
 
-# Prerequesites
+# Prerequisites
 
 This article requires a basic knowledge of Redux. In particular, I use Redux Toolkit, a toolset for Redux developement. It's not necessary to know Redux Toolkit as far as you know Redux. Examples use React. It's fundamental to know what a `useEffect` is. `useEffect` comes with [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html). If you work with a previous version of React, you can use [component's lifecycle methods](https://www.w3schools.com/react/react_lifecycle.asp#:~:text=Each%20component%20in%20React%20has,Mounting%2C%20Updating%2C%20and%20Unmounting.). With older React versions, you can use `componentDidMount` and `componentWillUnmount` methods. I used Redux Saga as I found easier to explain sagas. You can use other libraries to achieve the same result.
 

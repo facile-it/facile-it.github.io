@@ -20,9 +20,11 @@ There is inconsistency in the Redux community on how to use actions. Redux Toolk
 
 Why should we treat actions as events rather than setters? Dan Abramov, founder of Redux, said that Redux doesn't reinvent event sourcing. It's up to people how to use it. It's clear that there isn't a well accepted approach about how to use actions.
 
-In this article I'll talk about a design pattern for Redux. I'll show you how it can help resolve some known problems. In particular, I'll try to find a way to describe how to treat actions. This we'll lead us to deal better with the asynchronicity and the mutation problems. The main goal is to get a consistent state for our application. To achieve that, we'll look for a predictable way to mutate the state of the application.
+In this article I'll talk about a design pattern for Redux. I'll show you how it can help resolve some known problems. In particular, I'll try to find a way to describe how to treat actions. This will lead us to deal better with the asynchronicity and the mutation problems. The main goal is to get a consistent state for our application. To achieve that, we'll look for a predictable way to mutate the state of the application.
 
-This article requires a basic knowledge of Redux. In particular, I use Redux Toolkit, a toolset for Redux developement. It's not necessary to know Redux Toolkit as far as you know Redux. Examples use React. It's fundamental to know what a `useEffect` is. `useEffect` comes with [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html). If you work with a previous version of React the same concepts apply. In this case, you need to use [component's lifecycle methods](https://www.w3schools.com/react/react_lifecycle.asp#:~:text=Each%20component%20in%20React%20has,Mounting%2C%20Updating%2C%20and%20Unmounting.). With older React versions, you can use `componentDidMount` and `componentWillUnmount` methods. I used Redux Saga as I found easier to explain sagas. You can use other libraries to achieve the same result.
+# Prerequesites
+
+This article requires a basic knowledge of Redux. In particular, I use Redux Toolkit, a toolset for Redux developement. It's not necessary to know Redux Toolkit as far as you know Redux. Examples use React. It's fundamental to know what a `useEffect` is. `useEffect` comes with [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html). If you work with a previous version of React, you can use [component's lifecycle methods](https://www.w3schools.com/react/react_lifecycle.asp#:~:text=Each%20component%20in%20React%20has,Mounting%2C%20Updating%2C%20and%20Unmounting.). With older React versions, you can use `componentDidMount` and `componentWillUnmount` methods. I used Redux Saga as I found easier to explain sagas. You can use other libraries to achieve the same result.
 
 # Actions
 
@@ -65,7 +67,7 @@ _When you hit the call button, you're sending important information to the eleva
 
 A command is not used to mutate the state, but it provides the saga with the information to make a decision. The signature of a command is the same signature of an action.
 
-In our example, a good name for the is `callElevator`.
+In our example, a good name for the command is `callElevator`.
 
 [Redux style guide documentation](https://redux.js.org/style-guide/style-guide#model-actions-as-events-not-setters) strongly suggests to use events as naming convention for actions. Unfortunately, it cannot always be done. A click on a button is an attempt which triggers an event at a certain point. When a user clicks on a button there is no way to know if that request can be handled.
 
@@ -180,6 +182,10 @@ When the component unmounts, the `stop` commands is dispathed and the saga stops
 You can find the full example on [Github](https://github.com/pierroberto/a-redux-pattern) and here:
 
 [![Edit elevator](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/elevator-j5231w?fontsize=14&hidenavigation=1&theme=dark)
+
+# Performance trade off
+
+A quick note about performances issue. This pattern leads to state verbosity. You can end up with different state slices. On the other side, it's easier to understand the purpose of each slice. Each slice of the state contains only the information that components need. Taking the pattern all the way may lead to extra API calls because of the modularity of each saga. It's up to you looking for a decent trade off. This pattern relies on business logic of the application.
 
 # Conclusion
 

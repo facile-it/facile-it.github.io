@@ -24,7 +24,7 @@ In this article I'll talk about a design pattern for Redux. I'll show you how it
 
 # Prerequisites
 
-This article requires a basic knowledge of Redux. In particular, I use Redux Toolkit, a toolset for Redux developement. It's not necessary to know Redux Toolkit as far as you know Redux. Examples use React. It's fundamental to know what a `useEffect` is. `useEffect` comes with [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html). If you work with a previous version of React, you can use [component's lifecycle methods](https://www.w3schools.com/react/react_lifecycle.asp#:~:text=Each%20component%20in%20React%20has,Mounting%2C%20Updating%2C%20and%20Unmounting.). With older React versions, you can use `componentDidMount` and `componentWillUnmount` methods. I used Redux Saga as I found easier to explain sagas. You can use other libraries to achieve the same result.
+This article requires a basic knowledge of Redux. In particular, I use Redux Toolkit, a toolset for Redux developement. It's not necessary to know Redux Toolkit as far as you know Redux. Examples use React. It's essential to know what a `useEffect` is. `useEffect` comes with [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html). If you work with a previous version of React, you can use [component's lifecycle methods](https://www.w3schools.com/react/react_lifecycle.asp#:~:text=Each%20component%20in%20React%20has,Mounting%2C%20Updating%2C%20and%20Unmounting.). With older React versions, you can use `componentDidMount` and `componentWillUnmount` methods. I used Redux Saga as I found easier to explain sagas. You can use other libraries to achieve the same result.
 
 # Actions
 
@@ -81,9 +81,7 @@ _Hitting the button doesn't mean that you will take the elevator. There are two 
 
 **An event represents an update to the state**. It's an action, written with the past tense and in Pascal case. An event has an optional payload. It contains the information useful to update the state. Its signature is the same as a Redux action.
 
-Let's try to find valid event names. `ElevatorBusy` is the event for the successful request. It's right after the first hit to the button. `ElevatorBusy` happens when the request fails and a red light surrounds the button. With `ElevatorReady` the elevator reaches the floor and the doors open.
-
-This is a simplified version of the scenarios that can happen. The elevator might be broken, or it might break during its move. There are many events that we can take into account. The events we consider depend on how much we go deep into the process.
+Some events occur in the first scenario. The elevator is free at the first hit to the button. Right after the hit, the elevator heads to a specific floor. It's occupied indeed. A proper name for this event could be `ElevatorOccupied`. As soon as the elevator reaches the floor, there is another event `ElevatorFreed`. This event means that the elevator is available and it can be used. This is a simplified scenario. There could be many other factors which generate different events. For example, the elevator might be broken, or it might break during its move. This event could be `ElevatorBroken`. The events we consider depend on how much we go deep into the process.
 
 To sum up, an event has the same signature of an action. It's written with a specific notation (Pascal case) and with a specific verbal form (past tense).
 

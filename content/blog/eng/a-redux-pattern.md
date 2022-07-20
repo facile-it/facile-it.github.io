@@ -197,10 +197,6 @@ You can find the full example on [Github](https://github.com/pierroberto/a-redux
 
 [![Edit elevator](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/elevator-j5231w?fontsize=14&hidenavigation=1&theme=dark)
 
-# Performance trade off
-
-A quick note about performances issue. This pattern leads to state verbosity. You can end up with different state slices. On the other side, it's easier to understand the purpose of each slice. Each slice of the state contains only the information that components need. Taking the pattern all the way may lead to extra API calls because of the modularity of each saga. It's up to you looking for a decent trade off. This pattern relies on business logic of the application.
-
 # Conclusion
 
 To sum up, this pattern suggests to use actions in two different ways. The first way is through commands. They don't mutate the state since they represent an attempt to mutate it. The second way is through events. Events mutate the state and represent something that happened. Grouping actions in two different types allow us to find a predictable way to mutate the state. We have a consistent state which only mutates when events occur.

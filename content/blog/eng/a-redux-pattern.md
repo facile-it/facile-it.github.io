@@ -153,7 +153,7 @@ interface ElevatorState {
 }
 ```
 
-where `status` is the current status of the elevator. `history` is the list of the previous statuses of the elevator. The commands of the saga are: `start`, `stop` and `callElevator`. The events of the saga are: `ElevatorFreed`, `ElevatorOccupied` and `ElevatorBroken`.
+where `status` is the current status of the elevator. `history` is the list of the previous statuses of the elevator. The commands of the saga are: `start`, `stop` and `callElevator`. The events of the saga are: `Started`, `Stopped`, `ElevatorFreed`, `ElevatorOccupied` and `ElevatorBroken`.
 
 Let's focus on the saga:
 

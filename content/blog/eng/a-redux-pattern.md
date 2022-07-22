@@ -30,23 +30,33 @@ This article requires a basic knowledge of Redux. In particular, I use Redux Too
 
 Starting from the basics, a Redux action has the following signature:
 
-```
+```typescript
 export interface Action<T = any> {
- type: T
+  type: T;
 }
 ```
 
 An action is a plain object. It has a type, and it's `any` by default. This definition is general and not sufficient. We don't like to use `any` as a type. It would be better to have something more specific. Redux Toolkit (RTK) is a package intended to be the standard way to write Redux logic. RTK provides a set of tools which help write Redux logic. Among these tools, there are more specific types and that's why RTK is going to be our main reference for our journey. An action has the following signature:
 
-```
-export declare type PayloadAction<P = void, T extends string = string, M = never, E = never> = {
- payload: P;
- type: T;
-} & ([M] extends [never] ? {} : {
- meta: M;
-}) & ([E] extends [never] ? {} : {
- error: E;
-});
+```typescript
+export declare type PayloadAction<
+  P = void,
+  T extends string = string,
+  M = never,
+  E = never
+> = {
+  payload: P;
+  type: T;
+} & ([M] extends [never]
+  ? {}
+  : {
+      meta: M;
+    }) &
+  ([E] extends [never]
+    ? {}
+    : {
+        error: E;
+      });
 ```
 
 An action is an object. It can have some optional properties such as `payload`. The `type` property is `string` by default. Documentation suggests keeping the `type` property as a string because it's easier to serialize it.
@@ -97,38 +107,38 @@ The underlying idea is that components render while reducers and sagas manage th
 
 Every saga should start with a `start` command and end with a `stop` command. Components dispatch these two commands with a `useEffect`:
 
-```
-import React, { useEffect } from "react"
-import { useDispatch } from "react-redux"
-import { take, takeLeading } from "typed-redux-saga"
+```typescript
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { take, takeLeading } from "typed-redux-saga";
 
 // commands
-const start = () => ({ type: "start", payload: undefined })
-const stop = () => ({ type: "stop", payload: undefined })
+const start = () => ({ type: "start", payload: undefined });
+const stop = () => ({ type: "stop", payload: undefined });
 
 // saga
 export function* saga() {
   yield* takeLeading(start, function* () {
     // ...
-    yield* take(stop)
+    yield* take(stop);
     // ...
   });
 }
 
 // React component
 export const MyComponent = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(start())
+    dispatch(start());
 
     return () => {
-      dispatch(stop())
-    }
-  }, [dispatch])
+      dispatch(stop());
+    };
+  }, [dispatch]);
 
-  return null
-}
+  return null;
+};
 ```
 
 The `start` and the `stop` commands generate the two equivalent events: `Started` and `Stopped`. A `Started` event reflects the initial state of the reducer. The most interesting part relates to the `Stopped` event. It represents the end of the process. This event resets the reducer to its initial state. When the event is dispatched, it's expected that every other running event will be canceled. A `cancel` effect, provided by Redux-Saga, achieves this.
@@ -143,7 +153,7 @@ Back to the elevator example. The saga starts when a component (`Elevator`) disp
 
 The saga is responsible for the following slice of state:
 
-```
+```typescript
 type Status = "busy" | "ready" | "out of service";
 
 interface ElevatorState {
@@ -157,7 +167,7 @@ where `status` is the current status of the elevator. `history` is the list of t
 
 Let's focus on the saga:
 
-```
+```typescript
 export function* ElevatorSaga() {
   yield* takeLeading($Elevator.start, function* () {
     yield* put($Elevator.Started());
@@ -175,7 +185,7 @@ export function* ElevatorSaga() {
 
 As soon as the component `Elevator` dispatches the `start` command, the saga dispatches the event `Started`. At this point, the saga watches for `callElevator` command. When the `Elevator` component dispatches the command `callElevator`, `takeElevator`, a generator function, is called:
 
-```
+```typescript
 function* takeElevator(action: ReturnType<typeof $Elevator["callElevator"]>) {
   try {
     if (action.payload === "ready") {

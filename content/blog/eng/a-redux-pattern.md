@@ -4,7 +4,7 @@ comments: true
 date: "2022-04-21"
 draft: true
 share: true
-categories: [Design patterns, Javascript]
+categories: [Redux, React, TypeScript, Javascript]
 title: "A Redux pattern"
 languageCode: "en-EN"
 type: "post"

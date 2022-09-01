@@ -18,9 +18,9 @@ There is inconsistency in the Redux community on how to use actions. Redux Toolk
 
 > [...] we recommend trying to treat actions more as "describing events that occurred", rather than "setters".
 
-Why should we treat actions as events rather than setters? Dan Abramov, founder of Redux, said that Redux doesn't reinvent event sourcing. It's up to people how to use it. It's clear that there isn't a well accepted approach about how to use actions.
+Why should we treat actions as events rather than setters? Dan Abramov, the founder of Redux, said that Redux doesn't reinvent event sourcing. It's up to people how to use it. It's clear that there isn't a well-accepted approach towards how to use actions.
 
-In this article I'll talk about a design pattern for Redux. I'll show you how it can help resolve some known problems. In particular, I'll try to find a way to describe how to treat actions. This will lead us to deal better with the asynchronicity and the mutation problems. The main goal is to get a consistent state for our application. To achieve that, we'll look for a predictable way to mutate the state of the application.
+In this article, I'll talk about a design pattern for Redux. I'll show you how it can help resolve some known problems. In particular, I'll try to find a way to describe how to treat actions. This will lead us to deal better with the asynchronicity and mutation problems. The main goal is to get a consistent state for our application. To achieve that, we'll look for a predictable way to mutate the state of the application.
 
 # Prerequisites
 
@@ -79,7 +79,7 @@ A command is not used to mutate the state, but it provides the saga with the inf
 
 In our example, a good name for the command is `callElevator`.
 
-[Redux style guide documentation](https://redux.js.org/style-guide/style-guide#model-actions-as-events-not-setters) strongly suggests to use events as naming convention for actions. Unfortunately, it cannot always be done. A click on a button is an attempt which triggers an event at a certain point. When a user clicks on a button there is no way to know if that request can be handled.
+[Redux style guide documentation](https://redux.js.org/style-guide/style-guide#model-actions-as-events-not-setters) strongly suggests to use events as naming convention for actions. Unfortunately, it cannot always be done. A click of a button is an attempt which triggers an event at a certain point. When a user clicks a button there is no way to know if that request can be handled.
 
 To sum up, commands are Redux actions triggered by components and sagas. They don't mutate the state and they don't resolve the asynchronicity problem yet. Next step is to understand how sagas manage events.
 
@@ -97,7 +97,7 @@ To sum up, an event has the same signature of an action. It's written with a spe
 
 # Sagas
 
-A saga contains the business logic of the whole process. A saga decides whether to execute a command or not. A saga dispatches events and commands. A saga matches the same concept of saga used in [Redux-Saga](https://redux-saga.js.org/). A saga manages asynchronous flows and side effects. It tackles parallel execution, task concurrency, task racing, task cancellation and more.
+A saga contains the business logic of the whole process. A saga decides whether to execute a command or not. A saga dispatches events and commands. A saga matches the same concept of a saga used in [Redux-Saga](https://redux-saga.js.org/). A saga manages asynchronous flows and side effects. It tackles parallel execution, task concurrency, task racing, task cancellation and more.
 
 Let's consider the case of an [autocomplete field](https://mui.com/components/autocomplete/). The goal is to fetch an updated list of cities and to render the elements of the list as items of the select. The list is filtered as the user starts typing inside the field. Every time a user types a letter, we dispatch a command (`fetchCities`). The autocomplete component will dispatch this command every time the input changes. This means making an API call for each letter which the user types. Making multiple API calls implies bad performances and a poor user experience. We need to filter out in some way the extra requests coming from the component. One way could be to add a check in the `onChange` function of the autocomplete component. We could add a debounce function which helps avoid many requests. As pointed out before a component should only render and add styles to the UI. Following this reasoning, a saga, which keeps the logic of the autocomplete, should do this check. For our specific need, Redux-Saga comes with a helper, named [debounce](https://redux-saga.js.org/docs/recipes/#debouncing), which does exactly what we expect. Commands, dispatched by components, don't affect the state of our application. It's the saga which decides how to deal with the commands. In this case, the `debounce` helper resolves this problem.
 
@@ -151,7 +151,7 @@ In the picture there is an example of a process. It starts from a component whic
 
 Back to the elevator example. The saga starts when a component (`Elevator`) dispatches a command (`start`) which starts a saga called `ElevatorSaga`.
 
-The saga is responsible for the following slice of state:
+The saga is responsible for the following slice of the state:
 
 ```typescript
 type Status = "busy" | "ready" | "out of service";
@@ -163,7 +163,7 @@ interface ElevatorState {
 }
 ```
 
-where `status` is the current status of the elevator. `history` is the list of the previous statuses of the elevator. The commands of the saga are: `start`, `stop` and `callElevator`. The events of the saga are: `Started`, `Stopped`, `ElevatorFreed`, `ElevatorOccupied` and `ElevatorBroken`.
+Here, `status` indicates the current status of the elevator, and `history` is the list of the previous statuses of the elevator. The commands of the saga are: `start`, `stop` and `callElevator`. The events of the saga are: `Started`, `Stopped`, `ElevatorFreed`, `ElevatorOccupied` and `ElevatorBroken`.
 
 Let's focus on the saga:
 

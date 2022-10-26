@@ -5,11 +5,11 @@ date: "2022-04-21"
 draft: true
 share: true
 categories: [Redux, React, TypeScript, Javascript]
-title: "A Redux pattern"
+title: "Building a scalable Redux web app"
 languageCode: "en-EN"
 type: "post"
 toc: true
-twitterImage: /images/a-redux-pattern/elevator.jpg
+twitterImage: /images/building-a-scalable-redux-web-app/elevator.jpg
 ---
 
 # Introduction
@@ -145,7 +145,7 @@ The `start` and the `stop` commands generate the two equivalent events: `Started
 
 A saga is not bound to components. Components start the saga and trigger commands. A saga has the responsibility to manage a slice of the state. Sagas watch for commands, dispatched by components, during their lifecycle. When a `stop` command interrupts a saga, the process ends. As mentioned before, Redux-Saga does task cancellation through the `cancel` effect.
 
-![Commands and events](/images/a-redux-pattern/commands-events.gif)
+![Commands and events](/images/building-a-scalable-redux-web-app/commands-events.gif)
 
 In the picture there is an example of a process. It starts from a component which dispatches a command. The saga takes into account the command dispatched by the component. As result, the saga dispatches an event which updates the state. It could be the right moment to display a loader in the user interface. At this moment, we don't know whether the request is successful or not. The next step for the saga is to make an API request. When the backend sends the response, the saga dispatches an event. After the state is updated, the component rerenders, if necessary. We're ready to display the response if it's successful. If the request failed, we can show an error with more details about it.
 

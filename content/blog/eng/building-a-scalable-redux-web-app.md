@@ -24,11 +24,11 @@ In this article, I'll talk about a design pattern for Redux. I'll show you how i
 
 # Prerequisites
 
-This article requires a basic knowledge of Redux. In particular, I use Redux Toolkit, a toolset for Redux developement. It's not necessary to know Redux Toolkit as far as you know Redux. Examples use React. It's essential to know what a `useEffect` is. `useEffect` comes with [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html). If you work with a previous version of React, you can use [component's lifecycle methods](https://www.w3schools.com/react/react_lifecycle.asp#:~:text=Each%20component%20in%20React%20has,Mounting%2C%20Updating%2C%20and%20Unmounting.). With older React versions, you can use `componentDidMount` and `componentWillUnmount` methods. I used Redux Saga as I found easier to explain sagas. You can use other libraries to achieve the same result.
+This article requires a basic knowledge of Redux. In particular, I use Redux Toolkit, a toolset for Redux development. It's not necessary to be familiar with Redux Toolkit as far as you understand Redux. Examples use React. It's essential to know what a `useEffect` is. `useEffect` comes with [React 16.8](https://reactjs.org/blog/2019/02/06/react-v16.8.0.html). If you work with a previous version of React, you can use the [component's lifecycle methods](https://www.w3schools.com/react/react_lifecycle.asp#:~:text=Each%20component%20in%20React%20has,Mounting%2C%20Updating%2C%20and%20Unmounting.). With older React versions, you can use `componentDidMount` and `componentWillUnmount` methods. I used Redux Saga as I found it easier to explain sagas. You can use other libraries to achieve the same result.
 
 # Actions
 
-Starting from the basics, a Redux action has the following signature:
+Starting with the basics, a Redux action has the following signature:
 
 ```typescript
 export interface Action<T = any> {
@@ -36,7 +36,7 @@ export interface Action<T = any> {
 }
 ```
 
-An action is a plain object. It has a type, and it's `any` by default. This definition is general and not sufficient. We don't like to use `any` as a type. It would be better to have something more specific. Redux Toolkit (RTK) is a package intended to be the standard way to write Redux logic. RTK provides a set of tools which help write Redux logic. Among these tools, there are more specific types and that's why RTK is going to be our main reference for our journey. An action has the following signature:
+An action is a plain object. It has a type, and it's `any` by default. This definition is general and not sufficient. We don't like to use `any` as a type. It would be better to have something more specific. Redux Toolkit (RTK) is a package intended to be the standard way to write Redux logic. RTK provides a set of tools which help write Redux logic. Among these tools, there are more specific types, and that's why RTK is going to be our main reference for our journey. An action has the following signature:
 
 ```typescript
 export declare type PayloadAction<
@@ -63,9 +63,9 @@ An action is an object. It can have some optional properties such as `payload`. 
 
 # Commands
 
-We know the signature of an action and we're ready to go deeper. Let's consider a real-life example.
+We have introduced the signature of an action and we're ready to go deeper. Let's consider a real-life example.
 
-_You're getting out of a building and ready to take the elevator. You're in a hurry and start to hit the call button many times. The hope is to make the wait shorter. Hitting the button multiple times doesn't make the elevator either coming to you faster or coming at all. Indeed, it may be occupied or even out of service. At this point, there are two possible scenarios happening. Good scenario: the elevator arrives and you leave the building. Bad scenario: the elevator doesn't arrive. Then you decide to go down stairs on foot (hopefully you're not at the last floor of Burj Khalifa)._
+_You're getting out of a building and ready to take the elevator. You're in a hurry and start to hit the call button many times. The hope is to make the wait shorter. Hitting the button multiple times doesn't make the elevator either come to you faster or come at all. Indeed, it may be occupied or even out of service. At this point, there are two possible scenarios happening. Good scenario: the elevator arrives and you leave the building. Bad scenario: the elevator doesn't arrive. Then you decide to go downstairs on foot (hopefully you're not on the top floor of Burj Khalifa)._
 
 **A command is an attempt to update the state**. Components and sagas (more about them later) execute commands. A command can be dispatched one or multiple times. This definition matches the first part of the Redux official definition of action:
 
@@ -73,7 +73,7 @@ _You're getting out of a building and ready to take the elevator. You're in a hu
 
 A command has the form of present tense imperative. It's written in lower camel case notation. **A command doesn't mutate the state**. It represents an attempt to mutate the state in a way which can't be predicted by the command itself. A command doesn't have the knowledge of the state of the application. It can have an optional payload containing information useful to make decisions.
 
-_When you hit the call button, you're sending important information to the elevator. In particular, your floor number and the direction it has to take. This information can only be sent by the person who hit the button. The elevator itself doesn't know where to go, either up or down. The elevator knows only where it's located. Hitting the button multiple times doesn't affect the behavior of the elevator. Indeed, it will ignore any extra request._
+_When you hit the call button, you're sending important information to the elevator. In particular, your floor number and the direction it has to take. This information can only be sent by the person who hit the button. The elevator itself doesn't know where to go, either up or down. The elevator knows only where it's located. Hitting the button multiple times doesn't affect the behavior of the elevator. Indeed, it will ignore any extra requests._
 
 A command is not used to mutate the state, but it provides the saga with the information to make a decision. The signature of a command is the same signature of an action.
 
@@ -81,17 +81,17 @@ In our example, a good name for the command is `callElevator`.
 
 [Redux style guide documentation](https://redux.js.org/style-guide/style-guide#model-actions-as-events-not-setters) strongly suggests to use events as naming convention for actions. Unfortunately, it cannot always be done. A click of a button is an attempt which triggers an event at a certain point. When a user clicks a button there is no way to know if that request can be handled.
 
-To sum up, commands are Redux actions triggered by components and sagas. They don't mutate the state and they don't resolve the asynchronicity problem yet. Next step is to understand how sagas manage events.
+To sum up, commands are Redux actions triggered by components and sagas. They don't mutate the state and they don't resolve the asynchronicity problem yet. The next step is to understand how sagas manage events.
 
 # Events
 
 Back to our example.
 
-_Hitting the button doesn't mean that you will take the elevator. There are two possible scenarios. In the first scenario, the elevator is free and ready to get you. The button changes color, becoming red. In the opposite situation, the elevator is occupied. A red light indicates that it's occupied and moving to get someone else. In this case hitting the button would have no effect on the elevator._
+_In this case, hitting the button doesn't mean that you will take the elevator. There are two possible scenarios. In the first scenario, the elevator is free and ready to get you. The button changes color, becoming red. In the opposite situation, the elevator is occupied. A red light indicates that it's occupied and moving to get someone else. In this case hitting the button would have no effect on the elevator._
 
-**An event represents an update to the state**. It's an action, written with the past tense and in Pascal case. An event has an optional payload. It contains the information useful to update the state. Its signature is the same as a Redux action.
+**An event represents an update to the state**. It's an action, written in the past tense and Pascal case. An event has an optional payload. It contains the information useful to update the state. Its signature is the same as a Redux action.
 
-Some events occur in the first scenario. The elevator is free at the first hit to the button. Right after the hit, the elevator heads to a specific floor. It's occupied indeed. A proper name for this event could be `ElevatorOccupied`. As soon as the elevator reaches the floor, there is another event `ElevatorFreed`. This event means that the elevator is available and it can be used. This is a simplified scenario. There could be many other factors which generate different events. For example, the elevator might be broken, or it might break during its move. This event could be `ElevatorBroken`. The events we consider depend on how much we go deep into the process.
+Some events occur in the first scenario. The elevator is free at the first hit of the button. Right after the hit, the elevator heads to a specific floor. It's occupied indeed. A proper name for this event could be `ElevatorOccupied`. As soon as the elevator reaches the floor, there is another event `ElevatorFreed`. This event means that the elevator is available and can be used. This is a simplified scenario. There could be many other factors which generate different events. For example, the elevator might be broken, or it might break during its move. This event could be `ElevatorBroken`. The events we consider depend on how much we go deep into the process.
 
 To sum up, an event has the same signature of an action. It's written with a specific notation (Pascal case) and with a specific verbal form (past tense).
 
@@ -147,7 +147,7 @@ A saga is not bound to components. Components start the saga and trigger command
 
 ![Commands and events](/images/building-a-scalable-redux-web-app/commands-events.gif)
 
-In the picture there is an example of a process. It starts from a component which dispatches a command. The saga takes into account the command dispatched by the component. As result, the saga dispatches an event which updates the state. It could be the right moment to display a loader in the user interface. At this moment, we don't know whether the request is successful or not. The next step for the saga is to make an API request. When the backend sends the response, the saga dispatches an event. After the state is updated, the component rerenders, if necessary. We're ready to display the response if it's successful. If the request failed, we can show an error with more details about it.
+In the picture, there is an example of a process. It starts from a component which dispatches a command. The saga takes into account the command dispatched by the component. As result, the saga dispatches an event which updates the state. It could be the right moment to display a loader in the user interface. At this moment, we don't know whether the request is successful or not. The next step for the saga is to make an API request. When the backend sends the response, the saga dispatches an event. After the state is updated, the component rerenders, if necessary. We're ready to display the response if it's successful. If the request failed, we can show an error with more details about it.
 
 Back to the elevator example. The saga starts when a component (`Elevator`) dispatches a command (`start`) which starts a saga called `ElevatorSaga`.
 
@@ -183,7 +183,7 @@ export function* ElevatorSaga() {
 }
 ```
 
-As soon as the component `Elevator` dispatches the `start` command, the saga dispatches the event `Started`. At this point, the saga watches for `callElevator` command. When the `Elevator` component dispatches the command `callElevator`, `takeElevator`, a generator function, is called:
+As soon as the component `Elevator` dispatches the `start` command, the saga dispatches the event `Started`. At this point, the saga watches for the `callElevator` command. When the `Elevator` component dispatches the command `callElevator`, a generator function `takeElevator` is called:
 
 ```typescript
 function* takeElevator(action: ReturnType<typeof $Elevator["callElevator"]>) {
@@ -201,7 +201,7 @@ function* takeElevator(action: ReturnType<typeof $Elevator["callElevator"]>) {
 
 If the elevator is `ready`, the saga dispatches an event. `ElevatorOccupied` set the status of the elevator to `busy`. `delay` simulates the time of taking the elevator. As soon as the time passes, an event is dispatched. `ElevatorFreed` updates the state and the elevator is `ready` again. If there is any error, the event `ElevatorBroken` updates the state and the elevator is `out of service`.
 
-When the component unmounts, the `stop` commands is dispathed and the saga stops. From now on, if a component dispatches the command `callElevator`, there won't be a saga to listen to it.
+When the component unmounts, the `stop` command is dispatched and the saga stops. From now on, if a component dispatches the command `callElevator`, there won't be a saga to listen to it.
 
 You can find the full example on [Github](https://github.com/pierroberto/a-redux-pattern) and here:
 
@@ -209,7 +209,7 @@ You can find the full example on [Github](https://github.com/pierroberto/a-redux
 
 # Conclusion
 
-To sum up, this pattern suggests to use actions in two different ways. The first way is through commands. They don't mutate the state since they represent an attempt to mutate it. The second way is through events. Events mutate the state and represent something that happened. Grouping actions in two different types allow us to find a predictable way to mutate the state. We have a consistent state which only mutates when events occur.
+To sum up, this pattern suggests using actions in two different ways. The first way is through commands. They don't mutate the state since they represent an attempt to mutate it. The second way is through events. Events mutate the state and represent something that happened. Grouping actions into two different types allow us to find a predictable way to mutate the state. We have a consistent state which only mutates when events occur.
 
 Here some useful resources:
 

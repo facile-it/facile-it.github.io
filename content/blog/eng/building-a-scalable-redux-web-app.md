@@ -71,7 +71,7 @@ _You're getting out of a building and ready to take the elevator. You're in a hu
 
 > An action is a plain object that represents an intention to change the state.
 
-A command has the form of present tense imperative. It's written in lower camel case notation. **A command doesn't mutate the state**. It represents an attempt to mutate the state in a way which can't be predicted by the command itself. A command doesn't have the knowledge of the state of the application. It can have an optional payload containing information useful to make decisions.
+A command has the form of present tense imperative. It's written in lower camel case notation. **A command doesn't mutate the state**. It represents an attempt to mutate the state in a way which can't be predicted by the command itself. A command has no knowledge of the state of the application. It can have an optional payload containing information useful to make decisions.
 
 _When you hit the call button, you're sending important information to the elevator. In particular, your floor number and the direction it has to take. This information can only be sent by the person who hit the button. The elevator itself doesn't know where to go, either up or down. The elevator knows only where it's located. Hitting the button multiple times doesn't affect the behavior of the elevator. Indeed, it will ignore any extra requests._
 
@@ -79,7 +79,7 @@ A command is not used to mutate the state, but it provides the saga with the inf
 
 In our example, a good name for the command is `callElevator`.
 
-[Redux style guide documentation](https://redux.js.org/style-guide/style-guide#model-actions-as-events-not-setters) strongly suggests to use events as naming convention for actions. Unfortunately, it cannot always be done. A click of a button is an attempt which triggers an event at a certain point. When a user clicks a button there is no way to know if that request can be handled.
+[Redux style guide documentation](https://redux.js.org/style-guide/style-guide#model-actions-as-events-not-setters) strongly suggests using events as the naming convention for actions. Unfortunately, it cannot always be done. A click of a button is an attempt which triggers an event at a certain point. When a user clicks a button there is no way to know if that request can be handled.
 
 To sum up, commands are Redux actions triggered by components and sagas. They don't mutate the state and they don't resolve the asynchronicity problem yet. The next step is to understand how sagas manage events.
 
@@ -93,7 +93,7 @@ _In this case, hitting the button doesn't mean that you will take the elevator. 
 
 Some events occur in the first scenario. The elevator is free at the first hit of the button. Right after the hit, the elevator heads to a specific floor. It's occupied indeed. A proper name for this event could be `ElevatorOccupied`. As soon as the elevator reaches the floor, there is another event `ElevatorFreed`. This event means that the elevator is available and can be used. This is a simplified scenario. There could be many other factors which generate different events. For example, the elevator might be broken, or it might break during its move. This event could be `ElevatorBroken`. The events we consider depend on how much we go deep into the process.
 
-To sum up, an event has the same signature of an action. It's written with a specific notation (Pascal case) and with a specific verbal form (past tense).
+To sum up, an event has the same signature as an action. It's written with a specific notation (Pascal case) and with a specific verbal form (past tense).
 
 # Sagas
 
@@ -203,7 +203,7 @@ If the elevator is `ready`, the saga dispatches an event. `ElevatorOccupied` set
 
 When the component unmounts, the `stop` command is dispatched and the saga stops. From now on, if a component dispatches the command `callElevator`, there won't be a saga to listen to it.
 
-You can find the full example on [Github](https://github.com/pierroberto/a-redux-pattern) and here:
+You can find the full example on [GitHub](https://github.com/pierroberto/a-redux-pattern) and here:
 
 [![Edit elevator](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/elevator-j5231w?fontsize=14&hidenavigation=1&theme=dark)
 
@@ -211,7 +211,7 @@ You can find the full example on [Github](https://github.com/pierroberto/a-redux
 
 To sum up, this pattern suggests using actions in two different ways. The first way is through commands. They don't mutate the state since they represent an attempt to mutate it. The second way is through events. Events mutate the state and represent something that happened. Grouping actions into two different types allow us to find a predictable way to mutate the state. We have a consistent state which only mutates when events occur.
 
-Here some useful resources:
+Here are some useful resources:
 
 - https://martinfowler.com/bliki/CQRS.html
 - https://udidahan.com/2009/12/09/clarified-cqrs/

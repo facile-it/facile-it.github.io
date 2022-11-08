@@ -1,10 +1,10 @@
 ---
 authors: ["pierroberto-lucisano"]
 comments: true
-date: "2022-04-21"
-draft: true
+date: "2022-11-08"
+draft: false
 share: true
-categories: [Redux, React, TypeScript, Javascript]
+categories: [Redux, React, TypeScript, JavaScript]
 title: "Building a scalable Redux web app"
 languageCode: "en-EN"
 type: "post"

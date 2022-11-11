@@ -6,10 +6,55 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Apr 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Nov 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java</title>
+      <link>https://engineering.facile.it/categories/java/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://engineering.facile.it/categories/javascript/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://engineering.facile.it/categories/react/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Redux</title>
+      <link>https://engineering.facile.it/categories/redux/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/redux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TypeScript</title>
+      <link>https://engineering.facile.it/categories/typescript/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/typescript/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>C</title>
@@ -390,15 +435,6 @@
     </item>
     
     <item>
-      <title>Java</title>
-      <link>https://engineering.facile.it/categories/java/</link>
-      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/java/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>JVM</title>
       <link>https://engineering.facile.it/categories/jvm/</link>
       <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
@@ -422,15 +458,6 @@
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/angular/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Javascript</title>
-      <link>https://engineering.facile.it/categories/javascript/</link>
-      <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/javascript/</guid>
       <description></description>
     </item>
     

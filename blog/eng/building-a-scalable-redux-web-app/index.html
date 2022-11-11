@@ -1,0 +1,1394 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Building a scalable Redux web app</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="referrer" content="always">
+        <meta name="generator" content="Hugo 0.69.0" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+            
+        
+
+        
+    
+        <meta name="twitter:card" content="summary"/>
+        
+            <meta name="twitter:image:src" content="https://engineering.facile.it/images/building-a-scalable-redux-web-app/elevator.jpg"/>
+        
+    
+    
+    <meta name="twitter:title" content="Building a scalable Redux web app"/>
+    <meta name="twitter:description" content="Introduction There is inconsistency in the Redux community on how to use actions. Redux Toolkit documentation suggests the following approach:
+ [&hellip;] we recommend trying to treat actions more as &ldquo;describing events that occurred&rdquo;, rather than &ldquo;setters&rdquo;.
+ Why should we treat actions as events rather than setters? Dan Abramov, the founder of Redux, said that Redux doesn&rsquo;t reinvent event sourcing. It&rsquo;s up to people how to use it. It&rsquo;s clear that there isn&rsquo;t a well-accepted approach towards how to use actions."/>
+    
+        
+            
+        
+    
+
+
+<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+
+        <meta property="og:title" content="Building a scalable Redux web app" />
+<meta property="og:description" content="Introduction There is inconsistency in the Redux community on how to use actions. Redux Toolkit documentation suggests the following approach:
+ [&hellip;] we recommend trying to treat actions more as &ldquo;describing events that occurred&rdquo;, rather than &ldquo;setters&rdquo;.
+ Why should we treat actions as events rather than setters? Dan Abramov, the founder of Redux, said that Redux doesn&rsquo;t reinvent event sourcing. It&rsquo;s up to people how to use it. It&rsquo;s clear that there isn&rsquo;t a well-accepted approach towards how to use actions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/building-a-scalable-redux-web-app/" />
+<meta property="article:published_time" content="2022-11-08T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-08T00:00:00+00:00" />
+
+
+        
+            
+                <meta property="og:image" content="https://engineering.facile.it/images/building-a-scalable-redux-web-app/elevator.jpg">
+            
+        
+
+        <meta itemprop="name" content="Building a scalable Redux web app">
+<meta itemprop="description" content="Introduction There is inconsistency in the Redux community on how to use actions. Redux Toolkit documentation suggests the following approach:
+ [&hellip;] we recommend trying to treat actions more as &ldquo;describing events that occurred&rdquo;, rather than &ldquo;setters&rdquo;.
+ Why should we treat actions as events rather than setters? Dan Abramov, the founder of Redux, said that Redux doesn&rsquo;t reinvent event sourcing. It&rsquo;s up to people how to use it. It&rsquo;s clear that there isn&rsquo;t a well-accepted approach towards how to use actions.">
+<meta itemprop="datePublished" content="2022-11-08T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2022-11-08T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="2314">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/additional.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/monokai-sublime.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">Facile.it Engineering</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/authors/">
+                            <i class="fa fa-pencil">&nbsp;</i>Authors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/ita/careers/">
+                            <i class="fa fa-briefcase">&nbsp;</i>Careers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/eng/who-we-are/">
+                            <i class="fa fa-users">&nbsp;</i>Who we are
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/authors/">
+                            <h3>
+                                <i class="fa fa-pencil">&nbsp;</i>Authors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/ita/careers/">
+                            <h3>
+                                <i class="fa fa-briefcase">&nbsp;</i>Careers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/eng/who-we-are/">
+                            <h3>
+                                <i class="fa fa-users">&nbsp;</i>Who we are
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/building-a-scalable-redux-web-app/">Building a scalable Redux web app</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2022-11-08'>
+                                    November 8, 2022</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/">How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2022-04-28'>
+                                    April 28, 2022</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2022-03-16'>
+                                    March 16, 2022</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fbuilding-a-scalable-redux-web-app%2f&amp;text=Building%20a%20scalable%20Redux%20web%20app&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fbuilding-a-scalable-redux-web-app%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fbuilding-a-scalable-redux-web-app%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fbuilding-a-scalable-redux-web-app%2f&amp;title=Building%20a%20scalable%20Redux%20web%20app" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fbuilding-a-scalable-redux-web-app%2f&amp;title=Building%20a%20scalable%20Redux%20web%20app" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fbuilding-a-scalable-redux-web-app%2f&amp;title=Building%20a%20scalable%20Redux%20web%20app" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fbuilding-a-scalable-redux-web-app%2f&amp;description=Building%20a%20scalable%20Redux%20web%20app" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fbuilding-a-scalable-redux-web-app%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/eng/building-a-scalable-redux-web-app/">Building a scalable Redux web app</a></h1>
+            
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2022-11-08'>
+            8 November 2022
+        </time>
+
+        
+            <a href="/authors/pierroberto-lucisano/" class="author">
+            
+                <span class="name">Pier Roberto Lucisano</span>
+                <img src="https://www.gravatar.com/avatar/1d3945cffeceea675e0ca869281dcba5" alt="Pier Roberto Lucisano avatar" />
+            
+            </a>
+        
+
+        
+            <p>11 minute read</p>
+        
+    </div>
+</header>
+
+
+  
+
+
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
+    <li><a href="#actions">Actions</a></li>
+    <li><a href="#commands">Commands</a></li>
+    <li><a href="#events">Events</a></li>
+    <li><a href="#sagas">Sagas</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+  
+
+  <div id="content">
+    <h1 id="introduction">Introduction</h1>
+<p>There is inconsistency in the Redux community on how to use actions. Redux Toolkit documentation suggests the following approach:</p>
+<blockquote>
+<p>[&hellip;] we recommend trying to treat actions more as &ldquo;describing events that occurred&rdquo;, rather than &ldquo;setters&rdquo;.</p>
+</blockquote>
+<p>Why should we treat actions as events rather than setters? Dan Abramov, the founder of Redux, said that Redux doesn&rsquo;t reinvent event sourcing. It&rsquo;s up to people how to use it. It&rsquo;s clear that there isn&rsquo;t a well-accepted approach towards how to use actions.</p>
+<p>In this article, I&rsquo;ll talk about a design pattern for Redux. I&rsquo;ll show you how it can help resolve some known problems. In particular, I&rsquo;ll try to find a way to describe how to treat actions. This will lead us to deal better with the asynchronicity and mutation problems. The main goal is to get a consistent state for our application. To achieve that, we&rsquo;ll look for a predictable way to mutate the state of the application.</p>
+<h1 id="prerequisites">Prerequisites</h1>
+<p>This article requires a basic knowledge of Redux. In particular, I use Redux Toolkit, a toolset for Redux development. It&rsquo;s not necessary to be familiar with Redux Toolkit as far as you understand Redux. Examples use React. It&rsquo;s essential to know what a <code>useEffect</code> is. <code>useEffect</code> comes with <a href="https://reactjs.org/blog/2019/02/06/react-v16.8.0.html">React 16.8</a>. If you work with a previous version of React, you can use the <a href="https://www.w3schools.com/react/react_lifecycle.asp#:~:text=Each%20component%20in%20React%20has,Mounting%2C%20Updating%2C%20and%20Unmounting.">component&rsquo;s lifecycle methods</a>. With older React versions, you can use <code>componentDidMount</code> and <code>componentWillUnmount</code> methods. I used Redux Saga as I found it easier to explain sagas. You can use other libraries to achieve the same result.</p>
+<h1 id="actions">Actions</h1>
+<p>Starting with the basics, a Redux action has the following signature:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Action</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">T</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">any</span><span style="color:#f92672">&gt;</span> {
+  <span style="color:#a6e22e">type</span>: <span style="color:#66d9ef">T</span>;
+}
+</code></pre></div><p>An action is a plain object. It has a type, and it&rsquo;s <code>any</code> by default. This definition is general and not sufficient. We don&rsquo;t like to use <code>any</code> as a type. It would be better to have something more specific. Redux Toolkit (RTK) is a package intended to be the standard way to write Redux logic. RTK provides a set of tools which help write Redux logic. Among these tools, there are more specific types, and that&rsquo;s why RTK is going to be our main reference for our journey. An action has the following signature:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">declare</span> <span style="color:#a6e22e">type</span> <span style="color:#a6e22e">PayloadAction</span><span style="color:#f92672">&lt;</span>
+  <span style="color:#a6e22e">P</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">void</span>,
+  <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">extends</span> <span style="color:#66d9ef">string</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">string</span>,
+  <span style="color:#a6e22e">M</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">never</span>,
+  <span style="color:#a6e22e">E</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">never</span>
+<span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">payload</span>: <span style="color:#66d9ef">P</span>;
+  <span style="color:#a6e22e">type</span>: <span style="color:#66d9ef">T</span>;
+} <span style="color:#f92672">&amp;</span> ([<span style="color:#a6e22e">M</span>] <span style="color:#66d9ef">extends</span> [<span style="color:#a6e22e">never</span>]
+  <span style="color:#f92672">?</span> {}
+  <span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">meta</span>: <span style="color:#66d9ef">M</span>;
+    }) <span style="color:#f92672">&amp;</span>
+  ([<span style="color:#a6e22e">E</span>] <span style="color:#66d9ef">extends</span> [<span style="color:#a6e22e">never</span>]
+    <span style="color:#f92672">?</span> {}
+    <span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">error</span>: <span style="color:#66d9ef">E</span>;
+      });
+</code></pre></div><p>An action is an object. It can have some optional properties such as <code>payload</code>. The <code>type</code> property is <code>string</code> by default. Documentation suggests keeping the <code>type</code> property as a string because it&rsquo;s easier to serialize it.</p>
+<h1 id="commands">Commands</h1>
+<p>We have introduced the signature of an action and we&rsquo;re ready to go deeper. Let&rsquo;s consider a real-life example.</p>
+<p><em>You&rsquo;re getting out of a building and ready to take the elevator. You&rsquo;re in a hurry and start to hit the call button many times. The hope is to make the wait shorter. Hitting the button multiple times doesn&rsquo;t make the elevator either come to you faster or come at all. Indeed, it may be occupied or even out of service. At this point, there are two possible scenarios happening. Good scenario: the elevator arrives and you leave the building. Bad scenario: the elevator doesn&rsquo;t arrive. Then you decide to go downstairs on foot (hopefully you&rsquo;re not on the top floor of Burj Khalifa).</em></p>
+<p><strong>A command is an attempt to update the state</strong>. Components and sagas (more about them later) execute commands. A command can be dispatched one or multiple times. This definition matches the first part of the Redux official definition of action:</p>
+<blockquote>
+<p>An action is a plain object that represents an intention to change the state.</p>
+</blockquote>
+<p>A command has the form of present tense imperative. It&rsquo;s written in lower camel case notation. <strong>A command doesn&rsquo;t mutate the state</strong>. It represents an attempt to mutate the state in a way which can&rsquo;t be predicted by the command itself. A command has no knowledge of the state of the application. It can have an optional payload containing information useful to make decisions.</p>
+<p><em>When you hit the call button, you&rsquo;re sending important information to the elevator. In particular, your floor number and the direction it has to take. This information can only be sent by the person who hit the button. The elevator itself doesn&rsquo;t know where to go, either up or down. The elevator knows only where it&rsquo;s located. Hitting the button multiple times doesn&rsquo;t affect the behavior of the elevator. Indeed, it will ignore any extra requests.</em></p>
+<p>A command is not used to mutate the state, but it provides the saga with the information to make a decision. The signature of a command is the same signature of an action.</p>
+<p>In our example, a good name for the command is <code>callElevator</code>.</p>
+<p><a href="https://redux.js.org/style-guide/style-guide#model-actions-as-events-not-setters">Redux style guide documentation</a> strongly suggests using events as the naming convention for actions. Unfortunately, it cannot always be done. A click of a button is an attempt which triggers an event at a certain point. When a user clicks a button there is no way to know if that request can be handled.</p>
+<p>To sum up, commands are Redux actions triggered by components and sagas. They don&rsquo;t mutate the state and they don&rsquo;t resolve the asynchronicity problem yet. The next step is to understand how sagas manage events.</p>
+<h1 id="events">Events</h1>
+<p>Back to our example.</p>
+<p><em>In this case, hitting the button doesn&rsquo;t mean that you will take the elevator. There are two possible scenarios. In the first scenario, the elevator is free and ready to get you. The button changes color, becoming red. In the opposite situation, the elevator is occupied. A red light indicates that it&rsquo;s occupied and moving to get someone else. In this case hitting the button would have no effect on the elevator.</em></p>
+<p><strong>An event represents an update to the state</strong>. It&rsquo;s an action, written in the past tense and Pascal case. An event has an optional payload. It contains the information useful to update the state. Its signature is the same as a Redux action.</p>
+<p>Some events occur in the first scenario. The elevator is free at the first hit of the button. Right after the hit, the elevator heads to a specific floor. It&rsquo;s occupied indeed. A proper name for this event could be <code>ElevatorOccupied</code>. As soon as the elevator reaches the floor, there is another event <code>ElevatorFreed</code>. This event means that the elevator is available and can be used. This is a simplified scenario. There could be many other factors which generate different events. For example, the elevator might be broken, or it might break during its move. This event could be <code>ElevatorBroken</code>. The events we consider depend on how much we go deep into the process.</p>
+<p>To sum up, an event has the same signature as an action. It&rsquo;s written with a specific notation (Pascal case) and with a specific verbal form (past tense).</p>
+<h1 id="sagas">Sagas</h1>
+<p>A saga contains the business logic of the whole process. A saga decides whether to execute a command or not. A saga dispatches events and commands. A saga matches the same concept of a saga used in <a href="https://redux-saga.js.org/">Redux-Saga</a>. A saga manages asynchronous flows and side effects. It tackles parallel execution, task concurrency, task racing, task cancellation and more.</p>
+<p>Let&rsquo;s consider the case of an <a href="https://mui.com/components/autocomplete/">autocomplete field</a>. The goal is to fetch an updated list of cities and to render the elements of the list as items of the select. The list is filtered as the user starts typing inside the field. Every time a user types a letter, we dispatch a command (<code>fetchCities</code>). The autocomplete component will dispatch this command every time the input changes. This means making an API call for each letter which the user types. Making multiple API calls implies bad performances and a poor user experience. We need to filter out in some way the extra requests coming from the component. One way could be to add a check in the <code>onChange</code> function of the autocomplete component. We could add a debounce function which helps avoid many requests. As pointed out before a component should only render and add styles to the UI. Following this reasoning, a saga, which keeps the logic of the autocomplete, should do this check. For our specific need, Redux-Saga comes with a helper, named <a href="https://redux-saga.js.org/docs/recipes/#debouncing">debounce</a>, which does exactly what we expect. Commands, dispatched by components, don&rsquo;t affect the state of our application. It&rsquo;s the saga which decides how to deal with the commands. In this case, the <code>debounce</code> helper resolves this problem.</p>
+<p>The underlying idea is that components render while reducers and sagas manage the business logic. Components don&rsquo;t need to add additional checks. Every saga is responsible for a unique part of the business logic. In this specific case, it would be retrieving the list of the cities of a country area. This moves our problem to sagas and how they should be used. A saga has an open-ended logic and it includes the lifecycle of a business process.</p>
+<p><strong>A saga is a process manager which contains the business logic</strong>. A saga dispatches commands and events following business rules. A saga manages a specific part of the state.</p>
+<p>Every saga should start with a <code>start</code> command and end with a <code>stop</code> command. Components dispatch these two commands with a <code>useEffect</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, { <span style="color:#a6e22e">useEffect</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useDispatch</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react-redux&#34;</span>;
+<span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">take</span>, <span style="color:#a6e22e">takeLeading</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;typed-redux-saga&#34;</span>;
+
+<span style="color:#75715e">// commands
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">start</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> ({ <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;start&#34;</span>, <span style="color:#a6e22e">payload</span>: <span style="color:#66d9ef">undefined</span> });
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stop</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> ({ <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;stop&#34;</span>, <span style="color:#a6e22e">payload</span>: <span style="color:#66d9ef">undefined</span> });
+
+<span style="color:#75715e">// saga
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">saga() {</span>
+  <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">takeLeading</span>(<span style="color:#a6e22e">start</span>, <span style="color:#66d9ef">function</span><span style="color:#f92672">*</span> () {
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">take</span>(<span style="color:#a6e22e">stop</span>);
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>  });
+}
+
+<span style="color:#75715e">// React component
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MyComponent</span> <span style="color:#f92672">=</span> () <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dispatch</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useDispatch</span>();
+
+  <span style="color:#a6e22e">useEffect</span>(() <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">start</span>());
+
+    <span style="color:#66d9ef">return</span> () <span style="color:#f92672">=&gt;</span> {
+      <span style="color:#a6e22e">dispatch</span>(<span style="color:#a6e22e">stop</span>());
+    };
+  }, [<span style="color:#a6e22e">dispatch</span>]);
+
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+};
+</code></pre></div><p>The <code>start</code> and the <code>stop</code> commands generate the two equivalent events: <code>Started</code> and <code>Stopped</code>. A <code>Started</code> event reflects the initial state of the reducer. The most interesting part relates to the <code>Stopped</code> event. It represents the end of the process. This event resets the reducer to its initial state. When the event is dispatched, it&rsquo;s expected that every other running event will be canceled. A <code>cancel</code> effect, provided by Redux-Saga, achieves this.</p>
+<p>A saga is not bound to components. Components start the saga and trigger commands. A saga has the responsibility to manage a slice of the state. Sagas watch for commands, dispatched by components, during their lifecycle. When a <code>stop</code> command interrupts a saga, the process ends. As mentioned before, Redux-Saga does task cancellation through the <code>cancel</code> effect.</p>
+<p><img src="/images/building-a-scalable-redux-web-app/commands-events.gif" alt="Commands and events"></p>
+<p>In the picture, there is an example of a process. It starts from a component which dispatches a command. The saga takes into account the command dispatched by the component. As result, the saga dispatches an event which updates the state. It could be the right moment to display a loader in the user interface. At this moment, we don&rsquo;t know whether the request is successful or not. The next step for the saga is to make an API request. When the backend sends the response, the saga dispatches an event. After the state is updated, the component rerenders, if necessary. We&rsquo;re ready to display the response if it&rsquo;s successful. If the request failed, we can show an error with more details about it.</p>
+<p>Back to the elevator example. The saga starts when a component (<code>Elevator</code>) dispatches a command (<code>start</code>) which starts a saga called <code>ElevatorSaga</code>.</p>
+<p>The saga is responsible for the following slice of the state:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">type</span> <span style="color:#a6e22e">Status</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;busy&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;ready&#34;</span> <span style="color:#f92672">|</span> <span style="color:#e6db74">&#34;out of service&#34;</span>;
+
+<span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ElevatorState</span> {
+  <span style="color:#a6e22e">error</span>: <span style="color:#66d9ef">unknown</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">null</span>;
+  <span style="color:#a6e22e">status</span>: <span style="color:#66d9ef">Status</span>;
+  <span style="color:#a6e22e">history</span>: <span style="color:#66d9ef">Array</span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Status</span><span style="color:#f92672">&gt;</span>;
+}
+</code></pre></div><p>Here, <code>status</code> indicates the current status of the elevator, and <code>history</code> is the list of the previous statuses of the elevator. The commands of the saga are: <code>start</code>, <code>stop</code> and <code>callElevator</code>. The events of the saga are: <code>Started</code>, <code>Stopped</code>, <code>ElevatorFreed</code>, <code>ElevatorOccupied</code> and <code>ElevatorBroken</code>.</p>
+<p>Let&rsquo;s focus on the saga:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">ElevatorSaga() {</span>
+  <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">takeLeading</span>(<span style="color:#a6e22e">$Elevator</span>.<span style="color:#a6e22e">start</span>, <span style="color:#66d9ef">function</span><span style="color:#f92672">*</span> () {
+    <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">put</span>(<span style="color:#a6e22e">$Elevator</span>.<span style="color:#a6e22e">Started</span>());
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">task</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">takeLeading</span>(<span style="color:#a6e22e">$Elevator</span>.<span style="color:#a6e22e">callElevator</span>, <span style="color:#a6e22e">takeElevator</span>);
+
+    <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">take</span>(<span style="color:#a6e22e">$Elevator</span>.<span style="color:#a6e22e">stop</span>);
+
+    <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">cancel</span>(<span style="color:#a6e22e">task</span>);
+
+    <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">put</span>(<span style="color:#a6e22e">$Elevator</span>.<span style="color:#a6e22e">Stopped</span>());
+  });
+}
+</code></pre></div><p>As soon as the component <code>Elevator</code> dispatches the <code>start</code> command, the saga dispatches the event <code>Started</code>. At this point, the saga watches for the <code>callElevator</code> command. When the <code>Elevator</code> component dispatches the command <code>callElevator</code>, a generator function <code>takeElevator</code> is called:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">function</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">takeElevator</span>(<span style="color:#a6e22e">action</span>: <span style="color:#66d9ef">ReturnType</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">$Elevator</span>[<span style="color:#e6db74">&#34;callElevator&#34;</span>]<span style="color:#f92672">&gt;</span>) {
+  <span style="color:#66d9ef">try</span> {
+    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">action</span>.<span style="color:#a6e22e">payload</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#34;ready&#34;</span>) {
+      <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">put</span>(<span style="color:#a6e22e">$Elevator</span>.<span style="color:#a6e22e">ElevatorOccupied</span>());
+      <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">5000</span>);
+      <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">put</span>(<span style="color:#a6e22e">$Elevator</span>.<span style="color:#a6e22e">ElevatorFreed</span>());
+    }
+  } <span style="color:#66d9ef">catch</span> (<span style="color:#a6e22e">e</span>) {
+    <span style="color:#a6e22e">yield</span><span style="color:#f92672">*</span> <span style="color:#a6e22e">put</span>(<span style="color:#a6e22e">$Elevator</span>.<span style="color:#a6e22e">ElevatorBroken</span>(<span style="color:#a6e22e">e</span>));
+  }
+}
+</code></pre></div><p>If the elevator is <code>ready</code>, the saga dispatches an event. <code>ElevatorOccupied</code> set the status of the elevator to <code>busy</code>. <code>delay</code> simulates the time of taking the elevator. As soon as the time passes, an event is dispatched. <code>ElevatorFreed</code> updates the state and the elevator is <code>ready</code> again. If there is any error, the event <code>ElevatorBroken</code> updates the state and the elevator is <code>out of service</code>.</p>
+<p>When the component unmounts, the <code>stop</code> command is dispatched and the saga stops. From now on, if a component dispatches the command <code>callElevator</code>, there won&rsquo;t be a saga to listen to it.</p>
+<p>You can find the full example on <a href="https://github.com/pierroberto/a-redux-pattern">GitHub</a> and here:</p>
+<p><a href="https://codesandbox.io/s/elevator-j5231w?fontsize=14&amp;hidenavigation=1&amp;theme=dark"><img src="https://codesandbox.io/static/img/play-codesandbox.svg" alt="Edit elevator"></a></p>
+<h1 id="conclusion">Conclusion</h1>
+<p>To sum up, this pattern suggests using actions in two different ways. The first way is through commands. They don&rsquo;t mutate the state since they represent an attempt to mutate it. The second way is through events. Events mutate the state and represent something that happened. Grouping actions into two different types allow us to find a predictable way to mutate the state. We have a consistent state which only mutates when events occur.</p>
+<p>Here are some useful resources:</p>
+<ul>
+<li><a href="https://martinfowler.com/bliki/CQRS.html">https://martinfowler.com/bliki/CQRS.html</a></li>
+<li><a href="https://udidahan.com/2009/12/09/clarified-cqrs/">https://udidahan.com/2009/12/09/clarified-cqrs/</a></li>
+<li><a href="https://www.quirksmode.org/blog/archives/2015/07/stop_pushing_th.html">https://www.quirksmode.org/blog/archives/2015/07/stop_pushing_th.html</a></li>
+<li><a href="https://martinfowler.com/bliki/DomainDrivenDesign.html">https://martinfowler.com/bliki/DomainDrivenDesign.html</a></li>
+<li><a href="https://engineering.tableau.com/redux-command-bus-or-event-store-2c4c044cd481">https://engineering.tableau.com/redux-command-bus-or-event-store-2c4c044cd481</a></li>
+<li><a href="https://martinfowler.com/eaaDev/EventSourcing.html">https://martinfowler.com/eaaDev/EventSourcing.html</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing">https://docs.microsoft.com/en-us/azure/architecture/patterns/event-sourcing</a></li>
+<li><a href="https://kickstarter.engineering/event-sourcing-made-simple-4a2625113224">https://kickstarter.engineering/event-sourcing-made-simple-4a2625113224</a></li>
+<li><a href="https://www.innoq.com/en/blog/domain-events-versus-event-sourcing/">https://www.innoq.com/en/blog/domain-events-versus-event-sourcing/</a></li>
+<li><a href="https://serialized.io/ddd/domain-event/">https://serialized.io/ddd/domain-event/</a></li>
+<li><a href="https://khalilstemmler.com/blogs/camel-case-snake-case-pascal-case/">https://khalilstemmler.com/blogs/camel-case-snake-case-pascal-case/</a></li>
+<li><a href="https://github.com/gaearon/ama/issues/110#issuecomment-230331314">https://github.com/gaearon/ama/issues/110#issuecomment-230331314</a></li>
+<li><a href="https://github.com/reduxjs/redux/blob/master/src/types/actions.ts">https://github.com/reduxjs/redux/blob/master/src/types/actions.ts</a></li>
+<li><a href="https://redux.js.org/understanding/thinking-in-redux/motivation">https://redux.js.org/understanding/thinking-in-redux/motivation</a></li>
+<li><a href="https://www.infoq.com/news/2017/07/process-managers-event-flows/">https://www.infoq.com/news/2017/07/process-managers-event-flows/</a></li>
+<li><a href="https://github.com/xzhavilla/escqrs">https://github.com/xzhavilla/escqrs</a></li>
+</ul>
+
+  </div>
+
+  
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/redux">Redux</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/react">React</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/typescript">TypeScript</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/javascript">JavaScript</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/"
+                class="button big previous">How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline</a></li>
+    
+
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo_engineering.png" width="100%" alt="Facile.it Engineering" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>News, repos, tips & trends from the Facile.it Engineering team!</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section id="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/pierroberto-lucisano/" class="author" title="See other posts from Pier Roberto Lucisano">
+                      <img src="https://www.gravatar.com/avatar/1d3945cffeceea675e0ca869281dcba5" alt="Pier Roberto Lucisano avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/building-a-scalable-redux-web-app/">Building a scalable Redux web app</a>
+              </h3>
+              
+              <time class="published" datetime='2022-11-08'>
+                8 November 2022
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/stapps/" class="author" title="See other posts from Stefano Tenuta">
+                      <img src="https://www.gravatar.com/avatar/00b617d37765216be50784d835299dff" alt="Stefano Tenuta avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/">How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline</a>
+              </h3>
+              
+              <time class="published" datetime='2022-04-28'>
+                28 April 2022
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
+                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/on-living-documentation/">On Living Documentation</a>
+              </h3>
+              
+              <time class="published" datetime='2022-03-16'>
+                16 March 2022
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Top categories</a></h3>
+      </header>
+        
+          
+        
+
+        
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/english/">English</a>
+                <span style="float:right;">41</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
+                <span style="float:right;">34</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/oop/">OOP</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
+                <span style="float:right;">23</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/software-testing/">Software Testing</a>
+                <span style="float:right;">7</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/symfony/">Symfony</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+        <p>
+            <a href="/categories/" class="button">View more categories</a>
+        </p>
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h1>
+      <p>Facile.it relies on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. This blog allows our developers to share tips and direct experiences with new technologies.</p>
+      <a href="/ita/chi-siamo/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2022
+        
+          Facile.it Engineering
+        
+      .
+      <a href="/ita/disclaimer/" rel="nofollow">Disclaimer</a><br>
+      Design <a href="http://html5up.net" rel="nofollow" target="_blank">HTML5 UP</a><br>
+      Ported by <a href="//github.com/jpescador" rel="nofollow" target="_blank">Julio Pescador</a><br>
+      Modified by <a href="//github.com/Jean85" rel="nofollow" target="_blank">Alessandro Lai</a><br>
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/objectivec.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/swift.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+      <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        $(function() {
+            $('.lazy').Lazy();
+        });
+    </script>
+  </body>
+</html>
+

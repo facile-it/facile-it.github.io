@@ -6,10 +6,21 @@
     <description>Recent content in Javascript on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Nov 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Building a scalable Redux web app</title>
+      <link>https://engineering.facile.it/blog/eng/building-a-scalable-redux-web-app/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/building-a-scalable-redux-web-app/</guid>
+      <description>Introduction There is inconsistency in the Redux community on how to use actions. Redux Toolkit documentation suggests the following approach:
+ [&amp;hellip;] we recommend trying to treat actions more as &amp;ldquo;describing events that occurred&amp;rdquo;, rather than &amp;ldquo;setters&amp;rdquo;.
+ Why should we treat actions as events rather than setters? Dan Abramov, the founder of Redux, said that Redux doesn&amp;rsquo;t reinvent event sourcing. It&amp;rsquo;s up to people how to use it. It&amp;rsquo;s clear that there isn&amp;rsquo;t a well-accepted approach towards how to use actions.</description>
+    </item>
     
     <item>
       <title>Angular Components: from AngularJS to &#34;just Angular&#34;</title>

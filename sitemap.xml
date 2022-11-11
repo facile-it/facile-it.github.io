@@ -4,21 +4,61 @@
   
   <url>
     <loc>https://engineering.facile.it/authors/</loc>
-    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/blog/</loc>
-    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/categories/c/</loc>
-    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
+    <loc>https://engineering.facile.it/blog/eng/building-a-scalable-redux-web-app/</loc>
+    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/categories/</loc>
+    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/</loc>
+    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/java/</loc>
+    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/javascript/</loc>
+    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/pierroberto-lucisano/</loc>
+    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/react/</loc>
+    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/redux/</loc>
+    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/typescript/</loc>
+    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/c/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -39,11 +79,6 @@
   
   <url>
     <loc>https://engineering.facile.it/categories/english/</loc>
-    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -418,11 +453,6 @@
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/categories/java/</loc>
-    <lastmod>2017-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/categories/jvm/</loc>
     <lastmod>2017-02-08T00:00:00+00:00</lastmod>
   </url>
@@ -444,11 +474,6 @@
   
   <url>
     <loc>https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</loc>
-    <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/javascript/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
   </url>
   

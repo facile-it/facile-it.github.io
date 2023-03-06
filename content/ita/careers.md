@@ -30,4 +30,4 @@ We are more than 100 professionals and manage numerous projects with different t
 * Conventions (with bars, restaurants, gyms, etc.), meal vouchers, free coffee and water.
 * The opportunity to do the job you love in a successful Italian company with a team of excellence by your side.
 
-If you are interested, take a look at ours {{< url-link "Job openings »" "https://facile.jobs.personio.de/#department-538752" "_blank">}}.
+If you are interested, take a look at ours {{< url-link "Job openings »" "https://jobs.facile.it/" "_blank">}}.

@@ -6,7 +6,7 @@ Developing a project or a product implies, for the engineering teams, the need t
 What to capture and why?
 ------------------------
 
-![Significant decision context](blob:https://facile.atlassian.net/5263996e-1f9f-4a7b-b5e9-6ecb56887984#media-blob-url=true&id=ec70a530-0d56-46db-94a6-cd1b7275845e&collection=contentId-467304496&contextId=467304496&height=179&width=245&alt=Significant%20decision%20context)
+![Significant decision context](https://facile.atlassian.net/5263996e-1f9f-4a7b-b5e9-6ecb56887984#media-blob-url=true&id=ec70a530-0d56-46db-94a6-cd1b7275845e&collection=contentId-467304496&contextId=467304496&height=179&width=245&alt=Significant%20decision%20context)
 
 In the article [*Architectural Decisions --- The Making Of*](https://ozimmer.ch/practices/2020/04/27/ArchitectureDecisionMaking.html "https://ozimmer.ch/practices/2020/04/27/ArchitectureDecisionMaking.html"), Olaf Zimmermann addresses the need to understand which decisions are significant enough to be recorded and defines significant decisions as *"*the ones that are hard and costly to change"*.* These decisions are most likely to surface when talking about integrating dependencies, implementing interface solutions, adopting construction techniques, and introducing structural elements or non-functional requirements. Decisions made in these instances are rarely self-explanatory, nor deductible from the code. If we fail to record the reasoning behind them, we might encounter a *Why?* question later on from a new team member or our future selves.
 

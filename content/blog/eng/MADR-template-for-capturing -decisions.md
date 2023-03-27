@@ -1,6 +1,6 @@
 MADR template for capturing decisions
 =====================================
-
+ 
 <img src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/crossr.jpg?raw=true" style="width:100px;" />
 
 Developing a project or a product implies, for the engineering teams, the need to make many decisions to reach their goals. Therefore, the teams are often faced with an inevitable and usually not-so-exciting step: capturing and recording significant decisions. This article will give you a taste of what it takes to make decisions during project or product development and will provide you with a standard that can be used in different contexts.

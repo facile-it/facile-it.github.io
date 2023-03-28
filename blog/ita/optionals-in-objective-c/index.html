@@ -239,6 +239,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2023-03-28'>
+                                    March 28, 2023</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/building-a-scalable-redux-web-app/">Building a scalable Redux web app</a></h3>
                                 
                                 <time class="published" datetime=
@@ -256,18 +268,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2022-04-28'>
                                     April 28, 2022</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2022-03-16'>
-                                    March 16, 2022</time>
                             </header>
                             
 
@@ -429,12 +429,12 @@ if (!doNotTrack) {
 <li><a href="#esempio-un-parser-json">Esempio: un parser JSON</a></li>
 <li><a href="#conclusione">Conclusione</a></li>
 </ul>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="il-tipo-optional"></a></p>
 <h2 id="il-tipo-optional">Il tipo <code>Optional</code></h2>
 <p>Il tipo <code>Optional</code> è un tipo <em>generico</em> (o, più propriamente, <em>parametrico</em>), dipendente da un <strong>tipo secondario</strong>: è possibile ad esempio definire un <code>Optional&lt;String&gt;</code> oppure un <code>Optional&lt;Int&gt;</code>: la sintassi di Swift permette di scrivere i tipi appena indicati con <code>String?</code> e <code>Int?</code>. Ma cos'è esattamente un <code>Optional</code>?. È un tipo particolare che serve a rappresentare un dato che <em>potrebbe</em> esistere, ed essere quindi di un certo tipo secondario, o potrebbe non esistere, ed essere quindi <strong>nil</strong>: <em>inscatolando</em> il valore opzionale in un <code>Optional</code>, il compilatore di Swift saprà che quel valore potrà essere nil, e emettere un errore nei casi in cui stiamo usando un <code>Optional</code> dove ci si aspetta un valore <strong>sempre</strong> presente. Questa semplice funzionalità ci garantisce notevole rigore nella definizione dei nostri tipi di dato e funzione: ad esempio, in Swift non possiamo inizializzare un valore non opzionale con nil, e considerando che, per il compilatore, un valore non può essere usato prima di essere istanziato, se assegniamo il tipo <code>String</code> a un valore, siamo sicuri al 100% che quel valore sarà <strong>sempre a comunque</strong> una stringa.</p>
 <p>Al contrario, in Objective-C un oggetto può essere sempre nil, e spesso siamo costretti a controllare l&rsquo;effettiva presenza di un oggetto ogni volta in cui abbiamo bisogno di un&rsquo;istanza che non sia nil. In realtà non si tratta di un grosso problema: è un classico <strong>compromesso</strong> dei linguaggi dinamici, e il fatto che posso sempre inviare un messaggio a un riferimento nil può essere anche considerato una <em>feature</em>: usando un linguaggio dinamico, ci si aspetta che progettiamo le nostre API tenendo sempre in considerazione il concetto di <a href="https://en.wikipedia.org/wiki/Late_binding">late-binding</a>. Inoltre, i nuovi <a href="https://developer.apple.com/swift/blog/?id=25"><em>nullability specifiers</em></a> di Objective-C aiutano il compilatore a emettere avvisi quando stiamo passando nil a un metodo o una <em>property</em> che richiedono invece che il parametro sia <code>nonnull</code>. Ma il problema rimane: abbiamo bisogno di molto <em>boilerplate</em> per verificare se qualcosa è nil, e ciò può portare a codice poco leggibile e comprensibile, soggetto ad errori. Swift non ha tipicamente bisogno di questo <em>boilerplate</em> grazie alla natura stessa del tipo <code>Optional</code>: esso ha le stesse caratteristiche del tipo <code>Maybe</code> in Haskell, o del tipo <code>Option</code> in Scala, cioè <code>Optional</code> è in realtà un <strong>monad</strong>.</p>
 <p>Il concetto di <em>monad</em> è ereditato, in programmazione funzionale, dalla <a href="https://it.wikipedia.org/wiki/Teoria_delle_categorie">teoria delle categorie</a>, ed è facile trovare <a href="https://wiki.haskell.org/Monad">molti</a> <a href="https://www.haskell.org/tutorial/monads.html">testi</a> <a href="http://learnyouahaskell.com/a-fistful-of-monads">introduttivi</a> sul tema, quindi non approfondirò ulteriormente: dirò solo che un <em>monad</em> è un <em>contesto computazionale</em>, quindi una <em>specifica</em> per il modo in cui una espressione deve essere valutata. Applicare una certa trasformazione a un <em>monad</em> avrà come risultato un&rsquo;altra istanza dello stesso <em>monad</em> differente dalla prima, a seconda dello specifico tipo di <em>monad</em>. Ad esempio, applicare una trasformazione a un <code>Optional</code> risulterà nell&rsquo;applicazione della stessa trasformazione al valore <em>contenuto</em>, se presente, o assolutamente niente se l'<code>Optional</code> contiene nil: in entrambi i casi, il risultato della trasformazione sarà un nuovo <code>Optional</code>, possibilmente con un tipo secondario diverso.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="optionals-in-swift"></a></p>
 <h2 id="optionals-in-swift">Optionals in Swift</h2>
 <p>Consideriamo il seguente codice Swift:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Swift" data-lang="Swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeOptionalIntFrom</span>(value: Int, ifTrue: Bool) -&gt; Int?  
@@ -482,7 +482,7 @@ print(optionalDoubledString.<span style="color:#66d9ef">dynamicType</span>) <spa
 <span style="color:#75715e">/// funziona</span>
 </code></pre></div><p>Quindi, per quanto riguarda il tipo <code>Optional</code>, <code>flatMap</code> è simile a <code>map</code>, ma deve essere usato per il <em>lifting</em> di funzioni che generano altri valori opzionali. Nel leggere il codice, <code>map</code> e <code>flatMap</code> possono sostanzialmente essere letti nello stesso modo: indicano entrambi una trasformazione, e il fatto che le funzioni passate a <code>flatMap</code> abbiano un tipo diverso può essere considerato un dettaglio di implementazione.</p>
 <p>In realtà Swift tratta questi tipi di dato <strong>in maniera differente</strong> rispetto ad altri linguaggi: ad esempio, nei linguaggi <em>funzionali</em> <code>map</code> e <code>flatMap</code> sono di norma <em>funzioni libere</em>, mentre in Swift sono <strong>metodi</strong>. In generale, Swift incoraggia l&rsquo;uso dei metodi, e del loro <strong>concatenamento</strong>, invece di funzioni libere, composte con operatori speciali: si tratta, più che altro, di una questione filosofica, ma nel trasportare queste feature in Objective-C l&rsquo;approccio basato sui metodi tornerà utile poiché non c'è un modo semplice di rappresentare funzioni libere nel linguaggio, mentre i metodi hanno la classica sintassi alla quale siamo abituati.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="torniamo-a-objective-c"></a></p>
 <h2 id="torniamo-a-objective-c">Torniamo a Objective-C</h2>
 <p>Implementiamo la classe <code>Optional</code> in Objective-C:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Optional.h
@@ -613,7 +613,7 @@ NS_ASSUME_NONNULL_END
 }
 </code></pre></div><p>Come si può vedere, il metodo <code>getOrElse:</code> <strong>non</strong> ritorna un oggetto <code>_Nullable</code>: in effetti non stiamo passando l&rsquo;oggetto, ma un block che &ldquo;produrrà&rdquo; l&rsquo;oggetto una volta invocato; in questo modo riusciamo a ottenere l&rsquo;oggetto di default in maniera <strong>lazy</strong>, perché se l&rsquo;oggetto contenuto è presente, non è necessario generare l&rsquo;oggetto di default.</p>
 <p>Per il resto dell&rsquo;articolo lavoreremo su un esempio più concreto, e implementeremo diverse funzionalità per la classe <code>Optional</code>, rendendola via via più utile e potente.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="esempio-un-parser-json"></a></p>
 <h2 id="esempio-un-parser-json">Esempio: un parser JSON</h2>
 <p>Supponiamo di voler realizzare un&rsquo;app che mostra informazioni sui film: possiamo ottenerle in formato JSON da un sito come <a href="http://api.myapifilms.com/index.do">myapifilms</a>. La rappresentazione JSON di ogni film è del tipo seguente:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
@@ -825,7 +825,7 @@ NS_ASSUME_NONNULL_END
 
    getOrElse:<span style="color:#f92672">^</span>NSNumber<span style="color:#f92672">*</span>{ <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">@0</span>; }];
 </code></pre></div><p>Come possiamo vedere, lavorando con la classe <code>Optional</code>, aggiungere una condizione significa semplicemente <strong>aggiungere uno step</strong> nella sequenza lineare di espressioni.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="conclusione"></a></p>
 <h2 id="conclusione">Conclusione</h2>
 <p>Implementare la classe <code>Optional</code> in Objective-C ci ha permesso di parsare un JSON, cosa spesso difficile da mantenere e soggetta a errori, in un modo semplice e lineare. In realtà ci sono <strong>molti casi</strong> in cui lavorare con gli <em>optionals</em> ci può dare gli stessi vantaggi: componendo operazioni di tipo <code>map</code>, <code>flatMap</code> e <code>filter</code> possiamo esprimere il nostro intento in maniera chiara e leggibile. Ma tutto questo non riguarda solo il tipo <code>Optional</code>: alcuni lettori avranno probabilmente notato che molti linguaggi (incluso Swift) permettono operazioni dell stesso tipo su liste e array, e il loro significato è identico: <code>map</code> e <code>flatMap</code>, in particolare, sono <strong>concetti generici</strong> legati ai <em>monad</em> (in effetti, anche il tipo <code>Array</code> è un <em>monad</em>), e riguarda la composizione dichiarativa di trasformazioni. Questo concetto è alla base della <strong>programmazione funzionale</strong>, e penso ci siano molti motivi per applicare concetti simili ad ambienti più <em>object-oriented</em>, perché aiuterebbero il programmatore a ragionare sul codice ed esprimere l&rsquo;intento in maniera più dichiarativa.</p>
 <p>Il codice per la classe <code>Optional</code> mostrata nell&rsquo;articolo è reperibile su <a href="https://gist.github.com/broomburgo/e318228a5f7d6a605e82">GitHub Gist</a>.</p>
@@ -1048,6 +1048,30 @@ NS_ASSUME_NONNULL_END
               <div class="author-avatars">
                 
                   
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a>
+              </h3>
+              
+              <time class="published" datetime='2023-03-28'>
+                28 March 2023
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
                     <a href="/authors/pierroberto-lucisano/" class="author" title="See other posts from Pier Roberto Lucisano">
                       <img src="https://www.gravatar.com/avatar/1d3945cffeceea675e0ca869281dcba5" alt="Pier Roberto Lucisano avatar" class="author-avatar"/>
                     </a>
@@ -1091,30 +1115,6 @@ NS_ASSUME_NONNULL_END
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
-                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/on-living-documentation/">On Living Documentation</a>
-              </h3>
-              
-              <time class="published" datetime='2022-03-16'>
-                16 March 2022
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -1142,6 +1142,8 @@ NS_ASSUME_NONNULL_END
         
 
         
+            
+    
             
     
             
@@ -1318,6 +1320,8 @@ NS_ASSUME_NONNULL_END
             
     
             
+    
+            
         <p>
           <article>
             <header>
@@ -1363,6 +1367,8 @@ NS_ASSUME_NONNULL_END
           </article>
         </p>
         
+    
+            
     
             
     
@@ -1588,7 +1594,7 @@ NS_ASSUME_NONNULL_END
     
     <p class="copyright">
       
-        &copy; 2022
+        &copy; 2023
         
           Facile.it Engineering
         

@@ -239,6 +239,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2023-03-28'>
+                                    March 28, 2023</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/building-a-scalable-redux-web-app/">Building a scalable Redux web app</a></h3>
                                 
                                 <time class="published" datetime=
@@ -256,18 +268,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2022-04-28'>
                                     April 28, 2022</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2022-03-16'>
-                                    March 16, 2022</time>
                             </header>
                             
 
@@ -436,7 +436,7 @@ if (!doNotTrack) {
 <li><a href="#una-verifica-empirica">Una verifica empirica</a></li>
 <li><a href="#conclusioni">Conclusioni</a></li>
 </ul>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="l-importanza-dell-astrazione"></a></p>
 <h2 id="limportanza-dellastrazione">L&rsquo;importanza dell&rsquo;astrazione</h2>
 <p>Come abbiamo visto in un <a href="http://engineering.facile.it/programmazione-funzionale-perche-preoccuparsi/">precedente articolo</a>, più che della complessità intrinseca legata alla logica del nostro software, dobbiamo preoccuparci della <a href="http://shaffner.us/cs/papers/tarpit.pdf">complessità accidentale</a> che introduciamo adottando <strong>soluzioni non ottimali e inutilmente complicate</strong>: l&rsquo;utilizzo eccessivo di strutture di controllo <em>if-else-for-switch</em> tende a rendere il codice difficile da comprendere, da mantenere e da testare; si veda ad esempio il noto <a href="http://c2.com/cgi/wiki?ArrowAntiPattern">Arrow Anti-Pattern</a>. È da notare che l&rsquo;introduzione della <a href="https://en.wikipedia.org/wiki/Structured_programming">programmazione <em>strutturata</em></a>, cioè quella basata proprio sulle strutture di controllo appena citate, ha rappresentato <strong>un grande passo avanti</strong> nello sviluppo del software a cavallo tra gli anni &lsquo;60 e &lsquo;70: essa ha permesso di programmare a un più alto livello di astrazione rispetto allo stile precedente, rimuovendo la necessità di gestire manualmente l&rsquo;ordine di esecuzione del codice con il <a href="https://www.cs.utexas.edu/users/EWD/ewd02xx/EWD215.PDF">famigerato</a> comando <code>goto</code>.</p>
 <p>I paradigmi di sviluppo cambiano quando i programmatori si ritrovano a dover gestire progetti sempre più corposi e complessi: per evitare di essere imbrigliati dalla eccessiva complessità del proprio codice, o del codice scritto altri che ci troviamo comunque a mantenere, dobbiamo lavorare a <strong>più alti livelli di astrazione</strong>. Quanto alti? Una buona risposta a questa domanda potrebbe essere la seguente:</p>
@@ -491,7 +491,7 @@ if (!doNotTrack) {
 	<span style="color:#66d9ef">return</span> cond1 <span style="color:#f92672">!=</span> cond2 ? value : <span style="color:#66d9ef">nil</span>
 }
 </code></pre></div><p>Abbiamo semplificato molto la funzione, rendendola più facile da comprendere: ora <strong>basta un&rsquo;occhiata</strong> per capire cosa fa. Ma in un caso più complesso, con tante diverse condizioni e percorsi possibili, può non bastare semplificare le condizioni.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="misurare-la-complessita"></a></p>
 <h2 id="misurare-la-complessità">Misurare la complessità</h2>
 <p>Un&rsquo;unità di misura presa spesso in considerazione nel valutare la complessità di un metodo o una funzione è la <a href="https://en.wikipedia.org/wiki/Cyclomatic_complexity">complessità ciclomatica</a> (CC): essa rappresenta il livello di complessità generato dall&rsquo;uso di molteplici strutture di controllo in un metodo o una funzione. È possibile calcolare il numero di CC per una procedura strutturata rappresentando quest&rsquo;ultima con un <a href="https://en.wikipedia.org/wiki/Directed_graph">grafo diretto</a> e contando il numero di archi e nodi. Ad esempio, possiamo rappresentare la funzione <code>optionalValue1</code> con il seguente grafo:</p>
 <pre><code>[(value,cond1,cond2)]
@@ -522,7 +522,7 @@ if (!doNotTrack) {
 }
 </code></pre></div><p>In questo caso possiamo avere un gran numero di condizioni legate a un valore di tipo <code>A</code>, e potrebbe essere necessario valutare ciascuna di queste con diversi <em>if-else</em> e/o <em>switch</em> annidati. Un modo per risolvere questo problema può consistere nell&rsquo;<em>astrarre</em> il concetto stesso di <em>condizione</em>, trasformandolo in una <em>relazione statica</em> tra un qualche parametro e un valore di tipo <code>A</code>: dovremmo quindi realizzare un sistema che sia in grado di <em>risolvere</em> un qualunque numero di relazioni, possibilmente in un <strong>qualunque ordine</strong>, e in base ad esse dedurre il valore risultante.</p>
 <p>Vediamo un esempio pratico.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="esempio-soluzione-strutturata"></a></p>
 <h2 id="esempio-soluzione-strutturata">Esempio: soluzione strutturata</h2>
 <p>Una persona si reca all&rsquo;ufficio di collocamento per cercare lavoro: in base ad alcuni attributi (preferenze, giovane/anziano, numero di figli di età inferiore ai 18 anni) essa può essere inviata a un certo sportello per selezionare un impiego tra i vari disponibili, oppure mandata fuori dall&rsquo;ufficio nel caso in cui il set di attributi non generi una lista di lavori accettabili. Ecco la procedura completa (non è importante il realismo, è solo un esempio):</p>
 <p>Un persona <strong>p1</strong> arriva allo sportello <strong>d1</strong> per cercare un impiego; <strong>p1</strong> ha una lista di preferenze lavorative, ma potrebbe accettare anche altri lavori fuori lista; <strong>p1</strong> ha inoltre una lista di lavori che di sicuro non accetterebbe mai;</p>
@@ -572,7 +572,7 @@ if (!doNotTrack) {
 </ul>
 <p>È una strada relativamente lunga per capire una cosa semplice, ed è da notare che se volessimo fare delle modifiche, dovremmo sempre scorrere nuovamente l&rsquo;intera procedura per verificare che abbiamo coperto tutti i casi possibili, e che non ci siano conflitti o ambiguità.</p>
 <p>Possiamo fare di meglio.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="esempio-soluzione-oo"></a></p>
 <h2 id="esempio-soluzione-oo">Esempio: soluzione OO</h2>
 <p>Progettare una soluzione a oggetti è spesso un&rsquo;operazione <strong>tanto razionale quanto creativa</strong>: in genere è possibile immaginare moltissimi design OO per risolvere uno stesso problema. Come detto, il nostro intento è di <em>astrarre</em> il concetto di <em>condizione</em>; basandoci su questo approccio, proviamo fissare qualche punto, in modo da identificare le responsabilità e i comportamenti da assegnare alla classi:</p>
 <ul>
@@ -611,7 +611,7 @@ if (!doNotTrack) {
     }
 }
 </code></pre></div><p>L&rsquo;oggetto <code>structure</code> definito nel file <code>main.swift</code> presenta la lista delle condizioni, sotto forma di oggetti adeguatamente configurati; come si può vedere, la lista è ben leggibile e le condizioni sono chiare: siamo quindi riusciti a <em>dichiarare</em> l&rsquo;intento in maniera semplice e separata dai dettagli di implementazione.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="esempio-soluzione-funzionale"></a></p>
 <h2 id="esempio-soluzione-funzionale">Esempio: soluzione funzionale</h2>
 <p>Nello strutturare la soluzione OO abbiamo adottato un <strong>principio di composizione</strong>: oggetti dal comportamento semplice, adeguatamente preparati, composti tra loro per poter ottenere strutture più complesse. In particolare ciascuno dei nostri oggetti rappresenta uno specifico <em>comportamento unitario</em>, e i vari <em>comportamenti</em> sono combinati per ottenere un <em>comportamento composto</em>. <strong>L&rsquo;astrazione regge</strong>, e riusciamo ad accettare il fatto che gli oggetti <em>check</em> siano scatole chiuse che incapsulano una singola decisione su una persona: creando una scatola più grande, con dentro scatole più piccole, possiamo rappresentare una condizione più complessa. Tuttavia ci sono due problemi tipici dell&rsquo;approccio OO:</p>
 <ul>
@@ -641,7 +641,7 @@ if (!doNotTrack) {
 <li><code>checkExtendedJobs(availableJobsElderly)</code>: l&rsquo;insieme dei lavori adatti agli anziani e l&rsquo;insieme dei lavori preferiti dalla persona devono avere una qualche intersezione;</li>
 </ul>
 <p>A un primo impatto lo stile funzionale può risultare poco comprensibile, ma è sufficiente capire le astrazioni di base sulle quali è realizzata la composizione funzionale per poterne apprezzare <strong>la potenza e l&rsquo;espressività</strong>. L&rsquo;array <code>nodes</code>, nel file <code>main.swift</code>, contiene tutti i nodi del problema, rappresentati come funzioni: rispetto  alla soluzione a oggetti contenuta in <code>structure</code>, quella funzionale appare più chiara e leggibile.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="una-verifica-empirica"></a></p>
 <h2 id="una-verifica-empirica">Una verifica empirica</h2>
 <p>Nel progettare le soluzioni &ldquo;OO&rdquo; e &ldquo;funzionale&rdquo; si è specificamente scelto di costruire strutture di verifica nelle quali l&rsquo;ordine con il quale i check sono eseguiti fosse irrilevante: in questo modo rimuoviamo una nota causa di complessità accidentale, quella del &ldquo;controllo&rdquo;, e cioè dell&rsquo;<strong>ordine</strong> con il quale le operazioni sono eseguite (ne abbiamo parlato <a href="http://engineering.facile.it/programmazione-funzionale-perche-preoccuparsi/#cause-di-complessita">qui</a>). Per fare ciò è tuttavia necessario che i check presenti nella lista <strong>non siano ambigui</strong>: al massimo un solo check deve poter passare per una certa persona. Probabilmente sarebbe possibile impostare un <strong>metodo formale</strong> per poter provare che un determinato set di condizioni sia non-ambiguo, e scrivere quindi un test unitario basato su tale prova, ma in questo caso un approccio <em>empirico</em> sembra più adatto, e <strong>più semplice</strong>.</p>
 <p>Si è quindi scelto di procedere seguendo il metodo <a href="https://hackage.haskell.org/package/QuickCheck">QuickCheck</a>: si tratta di una libreria scritta per il linguaggio <a href="https://www.haskell.org">Haskell</a> che permette di testare in modo automatico che le funzioni rispettino determinate <em>proprietà</em>. L&rsquo;idea è quella di verificare che una funzione si comporti sempre nello stesso modo, testandola con <strong>un gran numero di input casuali</strong>: nel nostro caso la funzione è proprio la lista di check, e l&rsquo;input è un valore di tipo <code>Person</code>. Per verificare che i check non siano ambigui possiamo semplicemente provarli con un gran numero di <code>Person</code> generate casualmente: se per un certo valore di <code>Person</code> due o più check risultano positivi, l&rsquo;esecuzione del test si interrompe e sono stampati in console i nomi dei check incriminati. Se i check ambigui sono due, sarà sufficiente rendere uno di essi più specifico, ad esempio richiedendo che l&rsquo;altro fallisca. Useremo qui il termine <em>QuickCheck</em> per indicare il test empirico implementato, ma in realtà la libreria originale fa molto di più: rimando alla pagina <a href="https://hackage.haskell.org/package/QuickCheck">linkata</a> per tutte le informazioni.</p>
@@ -649,7 +649,7 @@ if (!doNotTrack) {
 <pre><code>ambiguous nodes: [1 child, 1 child old]
 </code></pre><p>QuickCheck ci sta informando che i nodi chiamati &ldquo;1 child&rdquo; e &ldquo;1 child old&rdquo; sono <strong>ambigui</strong>: in effetti, se la <code>Person</code> ha un figlio ed è anziana, passeranno i check per entrambi i nodi. Per risolvere il problema sarà sufficiente introdurre una condizione di fallimento nel nodo &ldquo;1 child&rdquo;: perché esso passi, deve fallire il check di anzianità.</p>
 <p>Nel progetto è implementata anche una funzione <code>quickCheck_consistency</code> che esegue un test di sicurezza del tipo <em>sanity check</em>: verifica infatti che lo sportello di destinazione di un gran numero di <code>Person</code> generate casualmente rimanga lo stesso nei 3 metodi implementati.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="conclusioni"></a></p>
 <h2 id="conclusioni">Conclusioni</h2>
 <p>Abbiamo visto tre metodi per risolvere uno stesso problema relativamente complesso, e in due di essi siamo riusciti a ottenere un sistema <strong>più facilmente gestibile</strong>, estendibile e modificabile in sicurezza, lavorando a un <strong>più alto livello di astrazione</strong>. In particolare il metodo &ldquo;funzionale&rdquo; ci ha permesso di scrivere codice più compatto, caratterizzato da un intento più evidente, al costo (basso) di un passo iniziale di astrazione in più, rappresentato dagli operatori personalizzati. Ma la chiave di lettura dell&rsquo;intero processo è ancora una volta da ricercarsi nella già citata frase presente in <em>Structure and Interpretation of Computer Programs</em>, che riporto nuovamente:</p>
 <blockquote>
@@ -876,6 +876,30 @@ if (!doNotTrack) {
               <div class="author-avatars">
                 
                   
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a>
+              </h3>
+              
+              <time class="published" datetime='2023-03-28'>
+                28 March 2023
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
                     <a href="/authors/pierroberto-lucisano/" class="author" title="See other posts from Pier Roberto Lucisano">
                       <img src="https://www.gravatar.com/avatar/1d3945cffeceea675e0ca869281dcba5" alt="Pier Roberto Lucisano avatar" class="author-avatar"/>
                     </a>
@@ -919,30 +943,6 @@ if (!doNotTrack) {
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
-                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/on-living-documentation/">On Living Documentation</a>
-              </h3>
-              
-              <time class="published" datetime='2022-03-16'>
-                16 March 2022
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -970,6 +970,8 @@ if (!doNotTrack) {
         
 
         
+            
+    
             
     
             
@@ -1146,6 +1148,8 @@ if (!doNotTrack) {
             
     
             
+    
+            
         <p>
           <article>
             <header>
@@ -1191,6 +1195,8 @@ if (!doNotTrack) {
           </article>
         </p>
         
+    
+            
     
             
     
@@ -1416,7 +1422,7 @@ if (!doNotTrack) {
     
     <p class="copyright">
       
-        &copy; 2022
+        &copy; 2023
         
           Facile.it Engineering
         

@@ -239,6 +239,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2023-03-28'>
+                                    March 28, 2023</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/building-a-scalable-redux-web-app/">Building a scalable Redux web app</a></h3>
                                 
                                 <time class="published" datetime=
@@ -256,18 +268,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2022-04-28'>
                                     April 28, 2022</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2022-03-16'>
-                                    March 16, 2022</time>
                             </header>
                             
 
@@ -429,12 +429,12 @@ if (!doNotTrack) {
 <li><a href="#example-a-json-parser">Example: a JSON parser</a></li>
 <li><a href="#conclusion">Conclusion</a></li>
 </ul>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="the-optional-type"></a></p>
 <h2 id="the-optional-type">The <code>Optional</code> type</h2>
 <p>A Optional is a <em>generic</em> type, that is, a type that&rsquo;s dependent  (actually, <em>parametric</em>) on another <strong>subtype</strong>, so whe can have, for example, a <code>Optional&lt;String&gt;</code> or a <code>Optional&lt;Int&gt;</code>: thanks to some syntactic sugar, those types are written in Swift as <code>String?</code> and <code>Int?</code>. So, what is an <code>Optional</code>? It&rsquo;s a representation   of a value that could be there, and be of a particular subtype, or could not, therefore being <strong>nil</strong>: by <em>wrapping</em> the subtype into an <code>Optional</code>, the Swift compiler knows that the value could be nil, and complain in the cases where we are using an <code>Optional</code> where a value that&rsquo;s <strong>never</strong> nil is expected. By itself, this simple feature grants us a lot of type-safety for free: for example, in Swift we can&rsquo;t initialize a non-optional value with nil, and considering that, for the Swift&rsquo;s compiler, a value cannot be used before being initialized, by saying that a value&rsquo;s type is <code>String</code> the compiler will assure us that the value will <strong>always</strong> be a string, no matter what.</p>
 <p>In contrast, Objective-C objects can always be nil, and if we expect something not to be nil, we are forced to check for the actual existence of everything at any time. But actually, that&rsquo;s not necessarily a big deal: it&rsquo;s a classic <strong>tradeoff</strong> of dynamic languages, and it can be even considered a <em>feature</em> by some people: in using a dynamically typed language, we are always expected to design our APIs with <a href="https://en.wikipedia.org/wiki/Late_binding">late binding</a> in mind. Also, the new <a href="https://developer.apple.com/swift/blog/?id=25">Objective-C nullability specifiers</a> will help the compiler trigger warnings when nil is passed to a property or method parameter when <code>nonnull</code> is expected. But the problem is still there: we need a lot of boilerplate to always check for <em>nullness</em>, and that can produce error-prone, less readable code. The need for this boilerplate is missing in Swift, and that&rsquo;s thanks to the nature of the <code>Optional</code> type: in fact, it works in the same way as the <code>Maybe</code> type in Haskell, or the <code>Option</code> type in Scala, that is, <code>Optional</code> is actually a <strong>monad</strong>.</p>
 <p>The concept of <em>monad</em> is inherited by functional programming from <a href="https://en.wikipedia.org/wiki/Category_theory">category theory</a> and there are plenty of <a href="https://wiki.haskell.org/Monad">introductions</a> <a href="https://www.haskell.org/tutorial/monads.html">about it</a> <a href="http://learnyouahaskell.com/a-fistful-of-monads">on the web</a>, so I&rsquo;m not going into the specifics here: let me just say that a monad is a <em>computational context</em>, that is, a specification for the way some <em>computations</em> need to be resolved. Applying a certain transformation to a monad will result in another instance of the same monad, different from the first, based on the specific kind of monad. For example, applying some transformation to an <code>Optional</code> monad will result in applying the same transformation to the contained value if it&rsquo;s there, or absolutely nothing if the <code>Optional</code> contains nil: in both cases, the transformation&rsquo;s output will be another <code>Optional</code>, possibly of different subtype.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="optionals-in-swift"></a></p>
 <h2 id="optionals-in-swift">Optionals in Swift</h2>
 <p>Consider the following Swift code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Swift" data-lang="Swift"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">makeOptionalIntFrom</span>(value: Int, ifTrue: Bool) -&gt; Int?
@@ -482,7 +482,7 @@ print(optionalDoubledString.<span style="color:#66d9ef">dynamicType</span>) <spa
 <span style="color:#75715e">/// this is fine</span>
 </code></pre></div><p>So, for the <code>Optional</code> type, <code>flatMap</code> works like <code>map</code> but for functions that transform the wrapped type into another <code>Optional</code>. In reading the code, <code>map</code> and <code>flatMap</code> can be basically treated as the same: they both indicate a transformation, and the fact that computations passed to <code>flatMap</code> are of slightly different type can be considered an implementation detail.</p>
 <p>Actually, Swift treats these types <strong>a little differently</strong> than in other languages: for example, <code>map</code> and <code>flatMap</code> are usually <em>free functions</em> in most <em>functional</em> languages, while in Swift they are <strong>methods</strong>. In general, Swift encourages the use of methods and <strong>method chaining</strong> instead of free functions composed with special operators: it&rsquo;s mostly a matter of philosophy, but in bringing these features back to Objective-C, the method-based approach is going to be really useful because there&rsquo;s no easy syntax for free functions in the language, while methods have the signature clean and readable syntax that we&rsquo;re used to.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="back-to-objective-c"></a></p>
 <h2 id="back-to-objective-c">Back to Objective-C</h2>
 <p>Let&rsquo;s implement the <code>Optional</code> class in Objective-C:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ObjectiveC" data-lang="ObjectiveC"><span style="color:#75715e">///Optional.h
@@ -613,7 +613,7 @@ NS_ASSUME_NONNULL_END
 }
 </code></pre></div><p>As we can see, <code>getOrElse:</code> will <strong>not</strong> return a <code>_Nullable</code> object, and that&rsquo;s thanks to <code>elseBlock</code>: we&rsquo;re not passing the actual default object here, but a block that will produce one; this way, we can get the default object <strong>lazily</strong>, because if the wrapped object is not nil, the default object doesn&rsquo;t need to be allocated.</p>
 <p>For the rest of the article we&rsquo;ll work on a more real-world example, and in doing so we&rsquo;ll add more features to the <code>Optional</code> class, making it more and more powerful.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="example-a-json-parser"></a></p>
 <h2 id="example-a-json-parser">Example: a JSON parser</h2>
 <p>Suppose we want to create an app that shows movie informations: we are retrieving those informations in JSON format from a website like <a href="http://api.myapifilms.com">myapifilms</a>. Each movie has a JSON representation like the following:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JSON" data-lang="JSON">{
@@ -825,7 +825,7 @@ NS_ASSUME_NONNULL_END
    
    getOrElse:<span style="color:#f92672">^</span>NSNumber<span style="color:#f92672">*</span>{ <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">@0</span>; }];
 </code></pre></div><p>As we can see, when we work with the <code>Optional</code> class, adding a condition simply means <strong>adding a step</strong> in the linear <strong>flow of expressions</strong>.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="conclusion"></a></p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Bringing back the <code>Optional</code> type from Swift to Objective-C allowed us to build a JSON parsing routine, often something hard to maintain and error-prone, in a simple, linear and readable way. Of course there&rsquo;s <strong>plenty of cases</strong> where working with optionals can give us the same advantages: by composing <code>map</code>, <code>flatMap</code> and <code>filter</code> operations we can express our intent in a clean and readable way. But this is not just about the <code>Optional</code> type: some readers may have probably noticed that many languages (including Swift) allow operations with the same names on lists and arrays, and the meanings are also the same: <code>map</code> and <code>flatMap</code>, in particular, are <strong>generic concepts</strong> related to monads (in fact, the array type is also a monad) and allow declarative compositions of transformations. This concept is at the core of <strong>functional programming</strong>, and I think there&rsquo;s plenty of reasons to apply similar concepts to a more object-oriented environment: they will help the programmer in reasoning about the code and express the intent in a more declarative way.</p>
 <p>The code for the <code>Optional</code> class used throughout the article can be found on <a href="https://gist.github.com/broomburgo/e318228a5f7d6a605e82">GitHub Gist</a>.</p>
@@ -1048,6 +1048,30 @@ NS_ASSUME_NONNULL_END
               <div class="author-avatars">
                 
                   
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a>
+              </h3>
+              
+              <time class="published" datetime='2023-03-28'>
+                28 March 2023
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
                     <a href="/authors/pierroberto-lucisano/" class="author" title="See other posts from Pier Roberto Lucisano">
                       <img src="https://www.gravatar.com/avatar/1d3945cffeceea675e0ca869281dcba5" alt="Pier Roberto Lucisano avatar" class="author-avatar"/>
                     </a>
@@ -1091,30 +1115,6 @@ NS_ASSUME_NONNULL_END
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
-                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/on-living-documentation/">On Living Documentation</a>
-              </h3>
-              
-              <time class="published" datetime='2022-03-16'>
-                16 March 2022
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -1142,6 +1142,8 @@ NS_ASSUME_NONNULL_END
         
 
         
+            
+    
             
     
             
@@ -1318,6 +1320,8 @@ NS_ASSUME_NONNULL_END
             
     
             
+    
+            
         <p>
           <article>
             <header>
@@ -1363,6 +1367,8 @@ NS_ASSUME_NONNULL_END
           </article>
         </p>
         
+    
+            
     
             
     
@@ -1588,7 +1594,7 @@ NS_ASSUME_NONNULL_END
     
     <p class="copyright">
       
-        &copy; 2022
+        &copy; 2023
         
           Facile.it Engineering
         

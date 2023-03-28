@@ -68,7 +68,7 @@ Fail fast: On the CI side, devs committing code need to know as quickly as possi
 Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds.">
 <meta itemprop="datePublished" content="2022-04-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2022-04-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2826">
+<meta itemprop="wordCount" content="2905">
 
 
 
@@ -242,6 +242,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2023-03-28'>
+                                    March 28, 2023</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/building-a-scalable-redux-web-app/">Building a scalable Redux web app</a></h3>
                                 
                                 <time class="published" datetime=
@@ -259,18 +271,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2022-04-28'>
                                     April 28, 2022</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2022-03-16'>
-                                    March 16, 2022</time>
                             </header>
                             
 
@@ -438,7 +438,7 @@ if (!doNotTrack) {
 <blockquote>
 <p>💬</p>
 <p>Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds. The idea of “fail fast” helps reduce developer context switching too, which makes for happier DevOps professionals.</p>
-<p>&ndash; <!-- raw HTML omitted --><a href="https://about.gitlab.com/blog/2022/02/03/how-to-keep-up-with-ci-cd-best-practices/#what-are-the-best-practices-for-cicd">How to keep up with CI/CD best practices - GitLab Blog</a><!-- raw HTML omitted --></p>
+<p>&ndash; <cite><a href="https://about.gitlab.com/blog/2022/02/03/how-to-keep-up-with-ci-cd-best-practices/#what-are-the-best-practices-for-cicd">How to keep up with CI/CD best practices - GitLab Blog</a></cite></p>
 </blockquote>
 <p>Following <a href="../continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker">this post</a> from 2018, my team ended up having a <strong>CI/CD</strong> pipeline that fully relied on <strong>Docker Compose</strong> for every job besides the deployment ones.</p>
 <p>Using <strong>Docker Compose</strong> has many advantages, mainly because it allows developers to use the very same configuration for both their local setups and the <strong>CI/CD</strong> jobs (e.g. <code>environment variables</code> and <code>services</code>). However, this comes with something that I believe to be a major drawback: the job execution time using <strong>Docker Compose</strong> is less than ideal, this makes our pipelines a few times slower than an equivalent solution that does not use it!</p>
@@ -457,8 +457,64 @@ In this post, we&rsquo;re only going to focus only on <strong>unit tests</strong
 <p>In our scenario, this means that we defined these <strong>unit tests</strong> to validate the format of the request/response pair for each insurance company, thus being able to quickly react to their changes.</p>
 <p>However, since <strong>unit tests</strong> are not meant to depend on external systems, we decided to build another layer: <strong>mock servers</strong>.</p>
 <p>Here&rsquo;s a quick diagram showing a simplified version of our testing process that includes only two companies:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+Generated with PlantUML
+
+@startuml
+
+start
+
+while (Push code on **GitLab**)
+  
+  partition " **GitLab** CI job " {
+    fork
+      :Start ""ins-gateway"";
+    fork again
+      fork
+        :Start ""mock-server-1"";
+      fork again
+        :Start ""mock-server-N"";
+      end merge
+      floating note
+        Start a <b>mock server</b>
+        for each //company//
+      end note
+    end merge
+    
+    partition "**NodeJS** Unit tests" {
+      :Call ""ins-gateway"" tests;
+      partition "**ins-gateway**" {
+        fork
+          :Send request to ""mock-server-1""|
+          :Receive response from ""mock-server-1""|
+        fork again
+          :Send request to ""mock-server-N""|
+          :Receive response from ""mock-server-N""|
+        end merge
+        
+        :Validate received responses;
+        
+        if (Are all responses valid?) then (  yes  )
+          stop
+        else (no)
+        endif
+      }
+      
+      :**NodeJS** unit tests failed;
+    }
+    
+  :**GitLab** CI //job// failed;
+  }
+
+:Update **mock servers** from
+//companies// specifications;
+
+endwhile
+-[hidden]->
+detach
+
+@enduml
+-->
 <figure class="image featured">
     <img src="/images/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/activity.png"
          alt="Activity diagram for testing workflow"/> 
@@ -625,7 +681,7 @@ PROTOCOL_VERSION=...
      <span style="color:#66d9ef">variables</span>:
        <span style="color:#66d9ef">SERVICE_LEVEL_VAR</span>: <span style="color:#e6db74">&#34;$TOP_LEVEL_VAR $JOB_LEVEL_VAR&#34;</span>
 </code></pre></div><p><code>SERVICE_LEVEL_VAR</code> should be able to reference <code>TOP_LEVEL_VAR</code> and <code>JOB_LEVEL_VAR</code>. Expanding the service variables on their own won&rsquo;t achieve this.</p>
-<p>&ndash; <!-- raw HTML omitted --><a href="https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3158#note_740206844">https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3158#note_740206844</a><!-- raw HTML omitted --></p>
+<p>&ndash; <cite><a href="https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3158#note_740206844">https://gitlab.com/gitlab-org/gitlab-runner/-/merge_requests/3158#note_740206844</a></cite></p>
 </blockquote>
 <p>After a few months of back and forth with the <strong>GitLab Runner</strong> team, we ended up finding a solution that enabled my use case while still retaining the correct variable expansion logic, as nobody wanted to introduce a breaking-change on such a big platform.</p>
 <blockquote>
@@ -893,6 +949,30 @@ PROTOCOL_VERSION=...
               <div class="author-avatars">
                 
                   
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a>
+              </h3>
+              
+              <time class="published" datetime='2023-03-28'>
+                28 March 2023
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
                     <a href="/authors/pierroberto-lucisano/" class="author" title="See other posts from Pier Roberto Lucisano">
                       <img src="https://www.gravatar.com/avatar/1d3945cffeceea675e0ca869281dcba5" alt="Pier Roberto Lucisano avatar" class="author-avatar"/>
                     </a>
@@ -936,30 +1016,6 @@ PROTOCOL_VERSION=...
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
-                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/on-living-documentation/">On Living Documentation</a>
-              </h3>
-              
-              <time class="published" datetime='2022-03-16'>
-                16 March 2022
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -987,6 +1043,8 @@ PROTOCOL_VERSION=...
         
 
         
+            
+    
             
     
             
@@ -1163,6 +1221,8 @@ PROTOCOL_VERSION=...
             
     
             
+    
+            
         <p>
           <article>
             <header>
@@ -1208,6 +1268,8 @@ PROTOCOL_VERSION=...
           </article>
         </p>
         
+    
+            
     
             
     
@@ -1433,7 +1495,7 @@ PROTOCOL_VERSION=...
     
     <p class="copyright">
       
-        &copy; 2022
+        &copy; 2023
         
           Facile.it Engineering
         

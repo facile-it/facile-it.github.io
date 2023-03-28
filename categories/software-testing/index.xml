@@ -38,7 +38,8 @@ This means that any usage of those classes in your project needs to be updated. 
       
       <guid>https://engineering.facile.it/blog/eng/visual-debt-typehints/</guid>
       <description>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
-After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.</description>
+Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is #PHP&amp;#39;s new spaces vs tabs
+&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017  After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading).</description>
     </item>
     
     <item>

@@ -77,7 +77,8 @@ This means that any usage of those classes in your project needs to be updated. 
       
       <guid>https://engineering.facile.it/blog/eng/visual-debt-typehints/</guid>
       <description>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
-After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.</description>
+Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is #PHP&amp;#39;s new spaces vs tabs
+&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017  After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading).</description>
     </item>
     
     <item>
@@ -98,8 +99,7 @@ We met a lot of new people and known fellow PHP developers, and like previous ye
       <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
       <description>The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
 Maybe we fear only one thing more than that: being interrupted.
-While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.
-My experience On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5.</description>
+[![Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)](/images/how-php-7-tdd-helped-me-sleep-better/interruption.png)](http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/) While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.</description>
     </item>
     
     <item>

@@ -65,7 +65,7 @@ After, I decided to start migrating a previous, internal project of mine to the 
 After, I decided to start migrating a previous, internal project of mine to the same approach, since it&rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, doing a rolling deployment with Kubernetes is surprisingly easy!">
 <meta itemprop="datePublished" content="2018-02-06T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2018-02-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="3799">
+<meta itemprop="wordCount" content="3826">
 
 
 
@@ -239,6 +239,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2023-03-28'>
+                                    March 28, 2023</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/building-a-scalable-redux-web-app/">Building a scalable Redux web app</a></h3>
                                 
                                 <time class="published" datetime=
@@ -256,18 +268,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2022-04-28'>
                                     April 28, 2022</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2022-03-16'>
-                                    March 16, 2022</time>
                             </header>
                             
 
@@ -444,7 +444,8 @@ if (!doNotTrack) {
     <p>In the last month, I&rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt <strong>GitLab CI</strong> for the build, since we use GitLab CE for our Git repositories; I then created a <strong>continuous deployment pipeline</strong> for the staging environment, directly to a <strong>Kubernetes cluster</strong>, leveraging <strong>Docker Compose</strong> to make the configuration easier.</p>
 <p>After, I decided to start migrating a previous, internal project of mine to the same approach, since it&rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, <strong>doing a rolling deployment with Kubernetes is surprisingly easy</strong>!</p>
 <p>A few days ago David Négrier‏ (<a href="https://twitter.com/david_negrier">@david_negrier</a>) published a blog posts about his way of doing continuous deployment from GitLab CI:</p>
-<!-- raw HTML omitted -->
+<blockquote class="twitter-tweet" data-lang="it"><p lang="en" dir="ltr">Just blogged: &quot;Continuous Delivery of a PHP application with <a href="https://twitter.com/gitlab?ref_src=twsrc%5Etfw">@gitlab</a>, <a href="https://twitter.com/Docker?ref_src=twsrc%5Etfw">@Docker</a> and <a href="https://twitter.com/traefikproxy?ref_src=twsrc%5Etfw">@traefikproxy</a> on a dedicated server&quot;<br>                 <br> <a href="https://t.co/6piVuNBa7x">https://t.co/6piVuNBa7x</a><br><br>// <a href="https://twitter.com/coding_machine?ref_src=twsrc%5Etfw">@coding_machine</a></p>&mdash; David Négrier (@david_negrier) <a href="https://twitter.com/david_negrier/status/954306019655593984?ref_src=twsrc%5Etfw">19 gennaio 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <p>This post immediately captured my attention, due to my current work: David in his post avoided the usage of Kubernetes to not add too much cognitive load, and wrote a very straightforward piece. On the other hand, in my case I wrote a kinda complicated pipeline, learning a few tricks and pitfalls in the process, so I decided to write this down and share my experience.</p>
 <h1 id="the-basic-ci-pipeline">The basic CI pipeline</h1>
 <p>This is how my basic pipeline looks like when it&rsquo;s building a branch while I&rsquo;m working on it:</p>
@@ -474,8 +475,8 @@ if (!doNotTrack) {
 <blockquote>
 <p>David&rsquo;s approach may be a bit <strong>faster</strong>, because the daemon is always the same and retains some build and image cache between jobs and builds, but <del>it requires to run <strong>privileged jobs</strong>, and</del> it&rsquo;s not isolated, so it may incur in some issues or slowdowns if <strong>multiple builds</strong> run at the same time, messing up image tags.</p>
 <p>My approach is a bit more <strong>robust</strong>, but it&rsquo;s overall <strong>slower</strong>, because each job is <strong>totally isolated</strong> (which is good), but on the downside it has no memory of previous builds, so no cache is available: we will have to <strong>pull from the registry each time</strong>.
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<br/>
+<br/>
 <strong>2018-02-07 ERRATA</strong>: <a href="https://twitter.com/storresi">Stefano Torresi</a> (privately) and <a href="https://www.reddit.com/r/kubernetes/comments/7vomn5/continuous_deployment_from_gitlab_ci_to/dttzc28/">/u/veloxlector</a> (on Reddit) made me realize that my approach still requires a privileged runner, so that doesn&rsquo;t change with my approach; the privileged execution is <a href="https://github.com/docker-library/docs/blob/master/docker/README.md#start-a-daemon-instance">always required when doing Docker-in-Docker</a>. This reduces my security claims, but my main aim was isolation.</p>
 </blockquote>
 <p>The <code>GIT_DEPTH</code> option makes the project clone process in each job a bit faster, pulling only the current commit, not the whole Git history.</p>
@@ -1021,6 +1022,30 @@ bin/docker-util/delete-image.sh <span style="color:#e6db74">${</span>OLD_IMAGE<s
               <div class="author-avatars">
                 
                   
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a>
+              </h3>
+              
+              <time class="published" datetime='2023-03-28'>
+                28 March 2023
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
                     <a href="/authors/pierroberto-lucisano/" class="author" title="See other posts from Pier Roberto Lucisano">
                       <img src="https://www.gravatar.com/avatar/1d3945cffeceea675e0ca869281dcba5" alt="Pier Roberto Lucisano avatar" class="author-avatar"/>
                     </a>
@@ -1064,30 +1089,6 @@ bin/docker-util/delete-image.sh <span style="color:#e6db74">${</span>OLD_IMAGE<s
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
-                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/on-living-documentation/">On Living Documentation</a>
-              </h3>
-              
-              <time class="published" datetime='2022-03-16'>
-                16 March 2022
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -1115,6 +1116,8 @@ bin/docker-util/delete-image.sh <span style="color:#e6db74">${</span>OLD_IMAGE<s
         
 
         
+            
+    
             
     
             
@@ -1291,6 +1294,8 @@ bin/docker-util/delete-image.sh <span style="color:#e6db74">${</span>OLD_IMAGE<s
             
     
             
+    
+            
         <p>
           <article>
             <header>
@@ -1336,6 +1341,8 @@ bin/docker-util/delete-image.sh <span style="color:#e6db74">${</span>OLD_IMAGE<s
           </article>
         </p>
         
+    
+            
     
             
     
@@ -1561,7 +1568,7 @@ bin/docker-util/delete-image.sh <span style="color:#e6db74">${</span>OLD_IMAGE<s
     
     <p class="copyright">
       
-        &copy; 2022
+        &copy; 2023
         
           Facile.it Engineering
         

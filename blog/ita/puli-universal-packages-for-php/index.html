@@ -239,6 +239,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2023-03-28'>
+                                    March 28, 2023</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/building-a-scalable-redux-web-app/">Building a scalable Redux web app</a></h3>
                                 
                                 <time class="published" datetime=
@@ -256,18 +268,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2022-04-28'>
                                     April 28, 2022</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2022-03-16'>
-                                    March 16, 2022</time>
                             </header>
                             
 
@@ -423,11 +423,11 @@ Attualmente Puli è in Beta, la versione stabile non è stata ancora annunciata 
 <strong>Puli è stato ideato per affiancare Composer</strong>.</p>
 <p>Puli lavora ad un livello più alto per fornire le seguenti funzionalità:</p>
 <ul>
-<li><!-- raw HTML omitted -->Gestione dei path virtuali per risorse non PHP<!-- raw HTML omitted -->;</li>
-<li><!-- raw HTML omitted -->Overriding dei path virtuali<!-- raw HTML omitted -->;</li>
-<li><!-- raw HTML omitted -->Interazione semplificata dei pacchetti con l&rsquo;uso di Binding Type<!-- raw HTML omitted -->;</li>
-<li><!-- raw HTML omitted -->Generazione automatica di URL per risorse pubbliche<!-- raw HTML omitted -->;</li>
-<li><!-- raw HTML omitted -->Installazione automatica delle risorse pubbliche nelle document root<!-- raw HTML omitted -->.</li>
+<li><a href="#puli-path">Gestione dei path virtuali per risorse non PHP</a>;</li>
+<li><a href="#override-puli-path">Overriding dei path virtuali</a>;</li>
+<li><a href="#binding-type">Interazione semplificata dei pacchetti con l&rsquo;uso di Binding Type</a>;</li>
+<li><a href="#url-generation">Generazione automatica di URL per risorse pubbliche</a>;</li>
+<li><a href="#assets-install">Installazione automatica delle risorse pubbliche nelle document root</a>.</li>
 </ul>
 <h2 id="le-componenti-di-puli">Le componenti di Puli</h2>
 <p>Puli offre svariate funzionalità organizzate nei seguenti componenti:</p>
@@ -466,7 +466,7 @@ Ciò consente di localizzare facilmente i file senza conoscere la loro effettiva
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$translationFileName = realpath(__DIR__ . &#39;/../vendor/acme/blog/resources/translation-it.xml&#39;);
 $translationContent = file_get_contents($translationFileName);
 </code></pre></div><p>Tale operazione fa uso di dettagli implementativi: il layout delle directory fornito da Composer. La soluzione non è riusabile nè configurabile.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="puli-path"></a></p>
 <h4 id="accesso-alle-risorse-con-puli">Accesso alle risorse con Puli</h4>
 <p>Ciascun pacchetto compatibile con Puli può registrare diversi <strong>Path Mapping</strong> utilizzati per tradurre i <strong>percorsi virtuali (Puli path)</strong> in <strong>percorsi reali</strong>.
 Tali Path Mapping sono elencati nel <code>puli.json</code> e normalmente sono modificati con il comando Puli CLI <code>map</code>.
@@ -477,14 +477,14 @@ Ad esempio, il maintainer di acme/blog può eseguire questo comando per definire
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$puliPath = &#39;/acme/blog/translation-it.xml&#39;;
 $translationContent = $puliRepository-&gt;get($puliPath)-&gt;getBody();
 </code></pre></div><p>È importante notare come i Path mapping siano definiti dal maintainer del pacchetto. Le altre componenti si limitano ad usarli per accedere alle risorse.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="override-puli-path"></a></p>
 <h4 id="resource-overriding">Resource overriding</h4>
 <p>È tuttavia presente un&rsquo;eccezione a questa regola, tale concetto è alla base del <strong>Resource overriding</strong>.
 Immaginiamo di dover lavorare con due pacchetti: A e B.
 Il pacchetto B è dipendente dal pacchetto A.
 B, tuttavia, vuole personalizzare alcune risorse fornite da A.
 Il maintainer di B può quindi rimpiazzare (<em>override</em>) tali risorse aggiungengo nuovi Path Mapping.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="binding-type"></a></p>
 <h3 id="discovery-service">Discovery service</h3>
 <p>Il componente discovery semplifica l&rsquo;interazione tra pacchetti: consente di condividere le risorse senza codice boilerplate attraverso l&rsquo;uso di <strong>Binding Type</strong>.</p>
 <p>Per il componente Discovery i pacchetti sono siddivisi in due categorie:</p>
@@ -523,7 +523,7 @@ $ puli bind /acme/blog/templates/markdown-header.twig acme/md2html/header-templa
 <li>Modificare l&rsquo;associazione al Binding Type <code>acme/md2html/header-template</code></li>
 <li>Sovrascrivere il Puli Path <code>/acme/blog/templates/markdown-header.twig</code> con il meccanismo dell&rsquo;overriding esaminato in precedenza.</li>
 </ul>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="url-generation"></a></p>
 <h3 id="public-resources-manager">Public resources manager</h3>
 <p>Puli gestisce anche le risorse pubbliche, gli assets. In particolare, è in grado di generare path e URL da usare nei template o nei fogli di stile.</p>
 <p>Come primo passo, è necessario <strong>registrare i server web che servono tali risorse</strong>.
@@ -539,7 +539,7 @@ $url = $puliGenerator-&gt;generateUrl($puliPath);
 echo $url; // -&gt; &#34;/blog/images/logo.png&#34;
 </code></pre></div><p>L&rsquo;ultima operazione può essere eseguita in un template Twig con l&rsquo;utilizzo dell&rsquo;estensione <code>puli/twig-extension</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-twig" data-lang="twig">&lt;img src=&#34;<span style="color:#75715e">{{</span> resource_url<span style="color:#f92672">(</span><span style="color:#e6db74">&#39;/acme/blog/public/images/logo.png&#39;</span><span style="color:#f92672">)</span> <span style="color:#75715e">}}</span>&#34; /&gt;
-</code></pre></div><p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+</code></pre></div><p><a name="assets-install"></a></p>
 <h4 id="installazione-delle-risorse">Installazione delle risorse</h4>
 <p>Puli può installare automaticamente le risorse pubbliche nella document root dei web server.</p>
 <p>Il comando è il seguente:</p>
@@ -763,6 +763,30 @@ Per approfondire, la documentazione ufficiale è molto chiara e completa ed è d
               <div class="author-avatars">
                 
                   
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a>
+              </h3>
+              
+              <time class="published" datetime='2023-03-28'>
+                28 March 2023
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
                     <a href="/authors/pierroberto-lucisano/" class="author" title="See other posts from Pier Roberto Lucisano">
                       <img src="https://www.gravatar.com/avatar/1d3945cffeceea675e0ca869281dcba5" alt="Pier Roberto Lucisano avatar" class="author-avatar"/>
                     </a>
@@ -806,30 +830,6 @@ Per approfondire, la documentazione ufficiale è molto chiara e completa ed è d
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
-                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/on-living-documentation/">On Living Documentation</a>
-              </h3>
-              
-              <time class="published" datetime='2022-03-16'>
-                16 March 2022
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -857,6 +857,8 @@ Per approfondire, la documentazione ufficiale è molto chiara e completa ed è d
         
 
         
+            
+    
             
     
             
@@ -1033,6 +1035,8 @@ Per approfondire, la documentazione ufficiale è molto chiara e completa ed è d
             
     
             
+    
+            
         <p>
           <article>
             <header>
@@ -1078,6 +1082,8 @@ Per approfondire, la documentazione ufficiale è molto chiara e completa ed è d
           </article>
         </p>
         
+    
+            
     
             
     
@@ -1303,7 +1309,7 @@ Per approfondire, la documentazione ufficiale è molto chiara e completa ed è d
     
     <p class="copyright">
       
-        &copy; 2022
+        &copy; 2023
         
           Facile.it Engineering
         

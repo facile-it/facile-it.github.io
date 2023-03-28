@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software Architecture on Facile.it Engineering</title>
+    <link>https://engineering.facile.it/categories/software-architecture/</link>
+    <description>Recent content in Software Architecture on Facile.it Engineering</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.facile.it/categories/software-architecture/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MADR template for capturing decisions</title>
+      <link>https://engineering.facile.it/blog/eng/madr-template-for-capturing-decisions/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/madr-template-for-capturing-decisions/</guid>
+      <description>MADR template for capturing decisions Developing a project or a product implies, for the engineering teams, the need to make many decisions to reach their goals. Therefore, the teams are often faced with an inevitable and usually not-so-exciting step: capturing and recording significant decisions. This article will give you a taste of what it takes to make decisions during project or product development and will provide you with a standard that can be used in different contexts.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -65,7 +65,7 @@ Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno de
 Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.">
 <meta itemprop="datePublished" content="2015-09-28T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-09-28T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="970">
+<meta itemprop="wordCount" content="1061">
 
 
 
@@ -239,6 +239,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2023-03-28'>
+                                    March 28, 2023</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/building-a-scalable-redux-web-app/">Building a scalable Redux web app</a></h3>
                                 
                                 <time class="published" datetime=
@@ -256,18 +268,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2022-04-28'>
                                     April 28, 2022</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2022-03-16'>
-                                    March 16, 2022</time>
                             </header>
                             
 
@@ -462,7 +462,101 @@ if (!doNotTrack) {
 
  come sottoprotocollo WebSocket, definisce uno <strong>standard aperto</strong> per lo scambio di <strong>messaggi in tempo reale</strong> tra applicazioni e componenti, e permette la creazione di architetture <strong>debolmente accoppiate</strong> basate su <strong>microservizi</strong>. Utilizza canali full-duplex ordinati ed è quindi adatto ad implementazioni basate su WebSocket, ma supporta allo stesso modo socket Unix, socket raw o long polling HTTP.</p>
 <p>Il protocollo risulta piuttosto <strong>completo ed adeguato</strong> a diversi scenari di utilizzo se comparato ad altri sistemi di messaggistica ed RPC.</p>
-<!-- raw HTML omitted -->
+<table>
+<tbody>
+<tr>
+<th>Technology</th>
+<th>PubSub</th>
+<th>RPC</th>
+<th>Routed RPC</th>
+<th>Web native</th>
+<th>Cross Language</th>
+<th>Open Standard</th>
+</tr>
+<tr>
+<td>WAMP</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>AJAX</td>
+<td></td>
+<td>✔</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>AMQP</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>REST</td>
+<td></td>
+<td>✔</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>SOAP</td>
+<td></td>
+<td>✔</td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>Socket.io</td>
+<td>✔</td>
+<td></td>
+<td></td>
+<td>✔</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>SockJS</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+</tr>
+<tr>
+<td>XMPP</td>
+<td>✔</td>
+<td></td>
+<td></td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+</tr>
+<tr>
+<td>ZeroMQ</td>
+<td>✔</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✔</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+*fonte: Wikipedia*
 <p>Può essere utilizzato con profitto per sviluppare una piattaforma di gioco <strong>online multiplayer</strong>, strumenti di <strong>business intelligence</strong> real time e <strong>piattaforme collaborative</strong> per numerosi utenti.</p>
 <p>Una piattaforma web di help desk ad esempio, può beneficiare di notifiche, chat, strumenti di scrittura multi-utente ed analisi dell’andamento in tempo reale  <strong>sullo stesso protocollo WAMP</strong>.</p>
 <p>Per funzionare WAMP necessità di uno o più server di <strong>routing centralizzati</strong>, allo stesso modo di <strong>RabbitMQ per AMQP</strong>.
@@ -518,7 +612,59 @@ Per quanto esistano diverse implementazioni di router, in diversi linguaggi, lo 
 
  dinamici.</p>
 <p>Nessuna delle altre implementazioni è poi al momento in grado di vantare le stesse <strong>prestazioni</strong> e la <strong>stabilità</strong> di Crossbar: una istanza del router è in grado di servire 1000 messaggi/secondo su Pub/Sub, a 1000 client, con una <strong>latenza di 25ms</strong> su una <strong>RaspberryPi</strong>!</p>
-<!-- raw HTML omitted -->
+<table>
+<tbody><tr>
+<th>Router</th>
+<th>Broker</th>
+<th>Dealer</th>
+<th>Advanced Profile</th>
+<th>Language</th>
+</tr>
+<tr>
+<td>Crossbar</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>Pyhton</td>
+</tr>
+<tr>
+<td>Thruway</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>PHP</td>
+</tr>
+<tr>
+<td>wamp.rt</td>
+<td>✔</td>
+<td>✔</td>
+<td>✔</td>
+<td>NodeJS</td>
+</tr>
+<tr>
+<td>jawampa</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+<td>Java</td>
+</tr>
+<tr>
+<td>WampSharp</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+<td>C#</td>
+</tr>
+<tr>
+<td>Erwa</td>
+<td>✔</td>
+<td>✔</td>
+<td></td>
+<td>Erlang</td>
+</tr>
+</tbody>
+</table>
+*fonte: WAMP.ws*
 <h2 id="e-php">..e PHP?</h2>
 <p>Diverse applicazioni web di backend usate presso Facile.it permettono ad un gran numero di operatori di lavorare sulle stesse pratiche in maniera collaborativa in <strong>tempo reale</strong>.
 Il protocollo WAMP è una tecnologia sulla quale è possibile sviluppare in maniera efficiente <strong>dashboard collaborative</strong> e realtime.. ma sarà anche in grado di funzionare adeguatamente assieme alle soluzioni PHP (spesso in Symfony 2) sviluppate in casa e <strong>non precedentemente disegnate per l&rsquo;uso con WebSocket</strong>?</p>
@@ -541,9 +687,11 @@ Il protocollo WAMP è una tecnologia sulla quale è possibile sviluppare in mani
 </strong> delle funzionalità Pub/Sub e RPC.</p>
 <p>In pratica, parlando ad esempio di Pub/Sub, è possibile <strong>pubblicare via HTTP</strong> (o HTTPS) su Crossbar messaggi che saranno inoltrati su topic ai <strong>client connessi via WebSocket</strong> in maniera trasparente. Altresì è possibile <strong>iscriversi ai topic</strong> fornendo un <strong>endpoint HTTP</strong> da chiamare per ricevere i messaggi pubblicati da client WebSocket.</p>
 <p>L&rsquo;esempio sottostante configura un router Crossbar in grado di accettare connessioni websocket, pubblicazioni via HTTP e che si occupa di forwardare alcuni messaggi ad un endpoint HTTPS:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<style type="text/css">
+  .gist-file
+  .gist-data {max-height: 500px;}
+</style>
+<script src="https://gist.github.com/peelandsee/51417b3c7c1dc400e85f.js"></script>
 <p>Il gist precedente può essere lanciato al volo con 
 
     
@@ -629,11 +777,11 @@ la libreria <strong>
 
  oramai!), Autobahn|JS è in grado di fornire un <strong>fallback automatico</strong> a long polling.</p>
 <p>Iscriversi ad un topic o pubblicare un messaggio richiede poche linee:</p>
-<!-- raw HTML omitted -->
+<script src="https://gist.github.com/peelandsee/c853bc3fd3971e78527c.js"></script>
 <p>Nell&rsquo;esempio sopra riportato, il client JS <strong>si iscrive</strong> al topic <code>com.myapp.hello</code> e passa i messaggi ricevuti ad una semplice funzione <code>console.log()</code>; inoltre <strong>pubblica un messaggio</strong> sul topic <code>com.myapp.topic1</code>. Quest&rsquo;ultimo, sarà anche <strong>forwardato da Crossbar sul nostro endpoint HTTPS</strong> <code>https://hostname/subscriptions</code>.</p>
 <p>Grazie alle <strong>funzionalità HTTP bridge</strong> di Crossabar l&rsquo;utilizzo di WAMP in ambito PHP, senza connessioni persistenti o consumer sempre accesi, è <strong>semplice ed immediato</strong>!</p>
 <p>Per un ulteriore <strong>approfondimento su WAMP</strong>, saranno inoltre utili le slide che seguono:</p>
-<!-- raw HTML omitted -->
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/MEmo82CFgt1xND" width="700" height="550" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>
 <h2 id="riferimenti">Riferimenti</h2>
 <ul>
 <li><a href="http://wamp.ws/">WAMP Protocol</a></li>
@@ -867,6 +1015,30 @@ la libreria <strong>
               <div class="author-avatars">
                 
                   
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a>
+              </h3>
+              
+              <time class="published" datetime='2023-03-28'>
+                28 March 2023
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
                     <a href="/authors/pierroberto-lucisano/" class="author" title="See other posts from Pier Roberto Lucisano">
                       <img src="https://www.gravatar.com/avatar/1d3945cffeceea675e0ca869281dcba5" alt="Pier Roberto Lucisano avatar" class="author-avatar"/>
                     </a>
@@ -910,30 +1082,6 @@ la libreria <strong>
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
-                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/on-living-documentation/">On Living Documentation</a>
-              </h3>
-              
-              <time class="published" datetime='2022-03-16'>
-                16 March 2022
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -961,6 +1109,8 @@ la libreria <strong>
         
 
         
+            
+    
             
     
             
@@ -1137,6 +1287,8 @@ la libreria <strong>
             
     
             
+    
+            
         <p>
           <article>
             <header>
@@ -1182,6 +1334,8 @@ la libreria <strong>
           </article>
         </p>
         
+    
+            
     
             
     
@@ -1407,7 +1561,7 @@ la libreria <strong>
     
     <p class="copyright">
       
-        &copy; 2022
+        &copy; 2023
         
           Facile.it Engineering
         

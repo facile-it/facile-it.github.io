@@ -6,10 +6,19 @@
     <description>Recent content in Blogs on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MADR template for capturing decisions</title>
+      <link>https://engineering.facile.it/blog/eng/madr-template-for-capturing-decisions/</link>
+      <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/madr-template-for-capturing-decisions/</guid>
+      <description>MADR template for capturing decisions Developing a project or a product implies, for the engineering teams, the need to make many decisions to reach their goals. Therefore, the teams are often faced with an inevitable and usually not-so-exciting step: capturing and recording significant decisions. This article will give you a taste of what it takes to make decisions during project or product development and will provide you with a standard that can be used in different contexts.</description>
+    </item>
     
     <item>
       <title>Building a scalable Redux web app</title>
@@ -193,7 +202,8 @@ This means that any usage of those classes in your project needs to be updated. 
       
       <guid>https://engineering.facile.it/blog/eng/visual-debt-typehints/</guid>
       <description>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
-After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.</description>
+Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is #PHP&amp;#39;s new spaces vs tabs
+&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017  After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading).</description>
     </item>
     
     <item>
@@ -321,8 +331,7 @@ This post would be a short recap of some talks in chronological order.</descript
       <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
       <description>The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
 Maybe we fear only one thing more than that: being interrupted.
-While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.
-My experience On my day job, I do all this mental juggling on a pretty big project, which is based on PHP 5.</description>
+[![Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)](/images/how-php-7-tdd-helped-me-sleep-better/interruption.png)](http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/) While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.</description>
     </item>
     
     <item>
@@ -446,7 +455,7 @@ Nonostante Composer si sia evoluto molto, in alcuni contesti le sue funzionalit�
       
       <guid>https://engineering.facile.it/blog/ita/facilehack-2015/</guid>
       <description>Sono stati due giorni ricchi di emozioni quelli trascorsi con i partecipanti di #FacileHack, il primo hackathon organizzato da Facile.it. Abbiamo visto impegno nella competizione, talenti diversi e complementari tra loro, passione per la tecnologia, serietà e molto caffè&amp;hellip; momenti che vogliamo rivivere insieme a voi con questo video.
-Grazie a tutti!</description>
+  Grazie a tutti!</description>
     </item>
     
     <item>

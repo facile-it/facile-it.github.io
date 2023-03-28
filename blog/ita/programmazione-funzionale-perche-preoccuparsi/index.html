@@ -236,6 +236,18 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2023-03-28'>
+                                    March 28, 2023</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/building-a-scalable-redux-web-app/">Building a scalable Redux web app</a></h3>
                                 
                                 <time class="published" datetime=
@@ -253,18 +265,6 @@ if (!doNotTrack) {
                                 <time class="published" datetime=
                                     '2022-04-28'>
                                     April 28, 2022</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/on-living-documentation/">On Living Documentation</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2022-03-16'>
-                                    March 16, 2022</time>
                             </header>
                             
 
@@ -418,7 +418,7 @@ if (!doNotTrack) {
 <li><a href="#pensare-ad-oggetti">Pensare ad oggetti</a></li>
 <li><a href="#un-vecchio-paradigma-programmazione-funzionale">Un vecchio paradigma: Programmazione Funzionale</a></li>
 </ul>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="la-software-crisis-nei-decenni"></a></p>
 <h2 id="la-software-crisis-nei-decenni">La <em>Software Crisis</em> nei decenni</h2>
 <p>Molti anni sono passati da allora, e la pratica dello sviluppo software ha attraversato varie evoluzioni e trasformazioni. Rispetto ai tempi di <a href="https://it.wikipedia.org/wiki/Fortran">FORTRAN</a> e <a href="https://en.wikipedia.org/wiki/ALGOL_60">Algol 60</a>, nuovi linguaggi di programmazione sono emersi e si sono affermati come standard; nuove tecniche e paradigmi, come la programmazione orientata agli oggetti, si sono diffuse nell&rsquo;industria del software dopo un lungo periodo di gestazione in <a href="https://en.wikipedia.org/wiki/Object-oriented_programming#History">università e centri di ricerca privati</a>; diversi modi di gestire il processo di realizzazione del software e il suo ciclo di vita sono stati elaborati nei decenni, dal classico modello <a href="https://en.wikipedia.org/wiki/Waterfall_model">Waterfall</a> alle moderne metodologie <a href="http://engineering.facile.it/un-flusso-di-lavoro-agile/">Agile</a>.</p>
 <p>Ma <strong>il problema di fondo</strong> espresso in <em>The humble programmer</em> è praticamente <strong>rimasto intatto</strong> nel corso dei decenni: lo sviluppo di funzionalità elaborate e la progettazione di strutture complesse portano al rilascio di software caratterizzato da molti <em>bug</em>, o per meglio dire, <strong>errori</strong> dovuti a una difficile, <strong>a volte apparentemente impossibile</strong>, gestione della complessità. La possibilità di rilasciare software rapidamente e in maniera iterativa ha portato a <strong>integrare</strong> del tutto questi errori nel processo di sviluppo e rilascio: questa integrazione è realizzata attraverso diverse tecniche, dal <em>debugging</em>, praticato già dai primissimi programmatori oltre mezzo secolo fa, al <a href="http://engineering.facile.it/tag/software-testing/"><em>software testing</em></a>, che permette, in maniera decisamente più efficace rispetto al <em>debugging</em>, di <strong>identificare gli errori commessi</strong> e porvi rimedio. Sfortunatamente il <em>testing</em>, pur essendo una pratica ottima per verificare se ci siano errori in un particolare software, non è sufficiente a <strong>garantire</strong> che questi errori non ci siano.</p>
@@ -427,7 +427,7 @@ if (!doNotTrack) {
 <blockquote>
 <p>Computing&rsquo;s core challenge is <strong>how not to make a mess of it</strong>. [&hellip;] Because we are dealing with artefacts, all unmastered complexity is of our own making; <strong>there is no one else to blame</strong> and so we had better learn how <strong>not to introduce the complexity in the first place</strong>.</p>
 </blockquote>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="cause-di-complessita"></a></p>
 <h2 id="cause-di-complessità">Cause di complessità</h2>
 <p>Ma quali sono le cause di tutta questa complessità? La fonte che, a mio parere, affronta in maniera più completa il problema della complessità nel software, proponendo soluzioni concrete, è il bellissimo (e lungo) articolo di Ben Moseley e Peter Marks &ldquo;Out of the Tar Pit&rdquo;(2006), reperibile <a href="https://www.dropbox.com/s/nov94b39ikijwqd/tarpit.pdf?dl=0">QUI</a>. Per poter identificare i punti principali dell&rsquo;articolo dobbiamo intanto dare <strong>una possibile definizione di &ldquo;complessità</strong>&quot;, almeno per quanto riguarda lo sviluppo software; un primo tentativo potrebbe essere il seguente:</p>
 <blockquote>
@@ -439,12 +439,12 @@ if (!doNotTrack) {
 <li>l&rsquo;<strong>ordine</strong> di esecuzione delle procedure</li>
 </ul>
 <p>In sintesi: la mente umana ha relativa difficoltà a tener traccia del modo in cui <strong>evolve nel tempo lo stato di molti parametri</strong> in base a vari processi di trasformazione, specialmente se tale stato dipende anche <strong>dall&rsquo;ordine in cui questi processi sono eseguiti</strong>. In realtà riusciamo tranquillamente a gestire processi relativamente semplici attraverso una serie di trasformazioni di stato, si pensi all&rsquo;atto di &ldquo;fare una torta&rdquo;: gli ingredienti di base &ldquo;diventano&rdquo; torta dopo una serie di stadi di trasformazione, che possiamo tranquillamente a tenere a mente, e se il risultato finale non è quello che ci aspettavamo riusciamo rapidamente a identificare l&rsquo;errore nella procedura (la torta è troppo cotta, o abbiamo usato il sale al posto dello zucchero). In effetti seguire l&rsquo;evoluzione di un processo di trasformazione costituito da una serie di procedure è assolutamente <strong>intuitivo</strong> per la mente umana ed è alla base del paradigma di programmazione noto come <strong>programmazione procedurale</strong>: nella mia breve esperienza personale ho potuto notare infatti che il metodo più frequentemente adottato nei corsi base di programmazione è proprio quello basato su alberi di scelte binarie <em>if-else</em>, iterazioni e cicli con una o più condizioni di uscita. Purtroppo è facile osservare che questo modo di ragionare, sebbene sia perfettamente adatto a risolvere molti problemi pratici nella vita di tutti i giorni, <strong>non costituisca una strategia particolarmente efficace</strong> quando si parla di programmi corposi e complessi, e con &ldquo;corposi&rdquo; intendo &ldquo;più lunghi di un centinaio di righe&rdquo;. È stato necessario introdurre nuove astrazioni, a più alto livello, per riuscire a superare la sempre incombente <em>software crisis</em>, abbandonando ciò che appare intuitivo in favore di qualcosa di maggiormente gestibile ed efficiente.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="pensare-ad-oggetti"></a></p>
 <h2 id="pensare-ad-oggetti">Pensare ad oggetti</h2>
 <p>Vediamo in sintesi come il problema della complessità sia affrontato, a grandi linee, dal più diffuso e importante paradigma di sviluppo software adottato a sostituzione di quello procedurale: la programmazione orientata agli oggetti (<em>Object-Oriented Programming</em>: <strong>OOP</strong>). OOP adotta il principio <strong>dell&rsquo;incapsulamento della complessità</strong>: le varie strutture computazionali del nostro software, individualmente più o meno complesse, sono suddivise in porzioni sufficientemente indipendenti, rinchiuse in contenitori stagni collegati tra loro da interfacce chiare e dichiarative. Si noti intanto che questo <strong>non è</strong> il modo in cui gli esseri umani agiscono; nel suo classico articolo <a href="http://c2.com/doc/oopsla89/paper.html">A Laboratory For Teaching Object-Oriented Thinking (1989)</a>, il celebre <a href="https://it.wikipedia.org/wiki/Kent_Beck">Kent Beck</a>, noto soprattutto per i fondamentali contributi alle metodologie <a href="https://it.wikipedia.org/wiki/Extreme_programming">Extreme Programming</a> e <a href="https://it.wikipedia.org/wiki/Test_driven_development">Test Driven Development</a>, affronta il problema che si incontra quando si cerca di <strong>insegnare agli studenti a &ldquo;pensare a oggetti&rdquo;</strong>: come essere umani siamo abituati a pensare allo stato globale di una situazione; a spostarci per comunicare direttamente con chiunque; ad affidarci al modo particolare in cui le persone che conosciamo svolgeranno un certo compito. OOP è invece basato su concetti opposti: ogni oggetto dovrebbe &ldquo;vedere&rdquo; solo i suoi vicini diretti, e di questi non dovrebbe comunque conoscere alcun dettaglio interno. Osserviamo quindi che <strong>il sistema di astrazioni</strong> su cui OOP è basato non ha nulla a che fare con la vita &ldquo;reale&rdquo; o con il nostro abituale modo di pensare agli oggetti &ldquo;fisici&rdquo;, e a ragione: un software è svariati ordini di grandezza più complesso rispetto a una qualsiasi struttura fisica, e richiede strumenti diversi per poter essere compreso e gestito.</p>
 <p>In effetti un presunto punto di forza di OOP, spesso citato per fornire una prova dell&rsquo;accessibilità di questo paradigma di programmazione, è costituito dall&rsquo;idea che sia possibile trattare gli oggetti nel software come se fossero oggetti reali. Ho potuto osservare, tuttavia, che impostando proprietà e metodi delle classi come se queste fossero <em>template</em> di oggetti reali, si tende a generare entità eccessivamente interdipendenti e poco flessibili. Questo porta a cadere in <strong>labirinti di complessità</strong> paragonabili a quelli ottenuti in programmazione procedurale, nei quali lo <strong>stato mutabile</strong> rende molto difficile la gestione, manutenzione e in generale la comprensibilità del sistema. Quindi spesso i concetti di &ldquo;classe&rdquo; e &ldquo;oggetto&rdquo; sono, purtroppo, <strong>usati in contesti sostanzialmente procedurali</strong>: non sono rari metodi lunghi centinaia di righe con molti <em>if-else</em> annidati, o riferimenti a dettagli di implementazione di altri oggetti, che dovrebbero rimanere &ldquo;nascosti&rdquo; al mondo esterno.</p>
 <p>Un tentativo di soluzione a questi problemi è rappresentato dai <strong>design patterns</strong>, cioè strutture di classi e interfacce che hanno dimostrato <strong>eccellente applicabilità e robustezza</strong> nell&rsquo;affrontare molti problemi pratici; ma essi sono appunto <em>pattern</em>, non sono teoremi, la loro capacità di risolvere problemi è verificata dal tempo e dall&rsquo;esperienza, ma essi non permettono in alcun modo di provare in maniera deterministica che un software sia corretto. Il problema di fondo è che, a causa della continua variazione di stato degli oggetti, la struttura di un software scritto in OOP non <strong>può essere rappresentata con un modello matematico</strong>: funzioni ed equazioni rappresentano relazioni statiche tra variabili dipendenti e indipendenti, con parametri costanti per ogni relazione; variando i parametri, cambia la relazione. Quindi il sistema di astrazioni su cui OOP si basa non può essere descritto dalla matematica. Ma la matematica è proprio l&rsquo;antico e potente strumento utilizzato in qualsiasi disciplina scientifica proprio quando è necessario <strong>fornire prove formali</strong> della correttezza di sistemi che non possono essere concepiti in maniera dettagliata dalla sola intuizione umana.</p>
-<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p><a name="un-vecchio-paradigma-programmazione-funzionale"></a></p>
 <h2 id="un-vecchio-paradigma-programmazione-funzionale">Un vecchio paradigma: Programmazione Funzionale</h2>
 <p>La &ldquo;programmazione funzionale&rdquo; (<em>Functional Programming</em>: <strong>FP</strong>) è un paradigma di sviluppo software in parte codificato già alla fine degli anni cinquanta, attraverso il noto linguaggio <a href="https://en.wikipedia.org/wiki/Lisp_(programming_language)">LISP</a>, e gode di solide basi matematiche nella <a href="https://en.wikipedia.org/wiki/Combinatory_logic">logica combinatoria</a> e nel <a href="https://en.wikipedia.org/wiki/Lambda_calculus">lambda calcolo</a>: malgrado ciò, ha trovato difficoltà nel diffondersi sia nei corsi universitari di base che nelle aziende, forse per <strong>un&rsquo;alta barriera d&rsquo;ingresso</strong>, dovuta appunto alle forti basi matematiche e alla manipolazione di concetti molto astratti e poco intuitivi.</p>
 <p>FP si basa sull&rsquo;idea che un software possa essere descritto attraverso l&rsquo;applicazione di tre tecniche principali:</p>
@@ -676,6 +676,30 @@ if (!doNotTrack) {
               <div class="author-avatars">
                 
                   
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/madr-template-for-capturing-decisions/">MADR template for capturing decisions</a>
+              </h3>
+              
+              <time class="published" datetime='2023-03-28'>
+                28 March 2023
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
                     <a href="/authors/pierroberto-lucisano/" class="author" title="See other posts from Pier Roberto Lucisano">
                       <img src="https://www.gravatar.com/avatar/1d3945cffeceea675e0ca869281dcba5" alt="Pier Roberto Lucisano avatar" class="author-avatar"/>
                     </a>
@@ -719,30 +743,6 @@ if (!doNotTrack) {
 
           </article>
         
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/veronica-bolognesi/" class="author" title="See other posts from Veronica Bolognesi">
-                      <img src="https://it.gravatar.com/userimage/192863746/c00990709aa6901824a579cfab4a6d2b.jpeg" alt="Veronica Bolognesi avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/on-living-documentation/">On Living Documentation</a>
-              </h3>
-              
-              <time class="published" datetime='2022-03-16'>
-                16 March 2022
-              </time>
-            </header>
-            
-
-          </article>
-        
       </div>
 
       
@@ -770,6 +770,8 @@ if (!doNotTrack) {
         
 
         
+            
+    
             
     
             
@@ -946,6 +948,8 @@ if (!doNotTrack) {
             
     
             
+    
+            
         <p>
           <article>
             <header>
@@ -991,6 +995,8 @@ if (!doNotTrack) {
           </article>
         </p>
         
+    
+            
     
             
     
@@ -1216,7 +1222,7 @@ if (!doNotTrack) {
     
     <p class="copyright">
       
-        &copy; 2022
+        &copy; 2023
         
           Facile.it Engineering
         

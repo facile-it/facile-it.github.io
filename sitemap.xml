@@ -3,27 +3,52 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://engineering.facile.it/categories/adr/</loc>
+    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/ana-radujko/</loc>
+    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://engineering.facile.it/authors/</loc>
-    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/blog/</loc>
-    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/blog/eng/building-a-scalable-redux-web-app/</loc>
-    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/categories/</loc>
-    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/</loc>
+    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/madr/</loc>
+    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/eng/madr-template-for-capturing-decisions/</loc>
+    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/software-architecture/</loc>
+    <lastmod>2023-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/eng/building-a-scalable-redux-web-app/</loc>
     <lastmod>2022-11-08T00:00:00+00:00</lastmod>
   </url>
   

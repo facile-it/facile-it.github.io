@@ -1,3 +1,17 @@
+---
+authors: ["ana-radujko"]
+comments: true
+date: "2023-03-28"
+draft: false
+share: true
+categories: [MADR, ADR, Software Architecture]
+title: "MADR template for capturing decisions"
+languageCode: "en-US"
+type: "post"
+twitterImage: '/images/madr/architectural-decisions.jpg'
+toc: true
+---
+
 MADR template for capturing decisions
 =====================================
 

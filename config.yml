@@ -119,3 +119,6 @@ markup:
     endLevel: 3
     ordered: false
     startLevel: 1
+  goldmark:
+    renderer:
+      unsafe: true

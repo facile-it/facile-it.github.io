@@ -46,18 +46,18 @@ Some of you might have even stumbled upon one of many articles and studies that 
 <img src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/madr.png?raw=true" style="width:190px;" />
 </p>
 
-These four letters reference one of the most widely adopted formats for capturing architectural and other important decisions, but do we know what they mean? Let's break them down. **M**arkdown is the syntax chosen for capturing these decisions. **A** stands for Any decision, but given its roots, it can often be limited to architectural decisions. A **D**ecision is a choice that has an impact on the software project or product, while a **R**ecordis a document thatcaptures a single decision, its context, and its rationale.
+These four letters reference one of the most widely adopted formats for capturing architectural and other important decisions, but do we know what they mean? Let's break them down. **M**arkdown is the syntax chosen for capturing these decisions. **A** stands for Any decision, but given its roots, it can often be limited to architectural decisions. A **D**ecision is a choice that has an impact on the software project or product, while a **R**ecord is a document that captures a single decision, its context, and its rationale.
 
 MADR: specifications and template
 ---------------------------------
 
-<img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/MADRlight_template1.png?raw=true" style="width:110px; margin-right: 0.5em" />
+<img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/MADRlight_template1.png?raw=true" style="width:120px; margin-right: 0.5em" />
 
 The consequence of  the MADR format is version 3.0 of the MADR template, available in the [MADR project on GitHub](https://github.com/adr/madr/blob/main/template/adr-template.md "https://github.com/adr/madr/blob/main/template/adr-template.md"). The template consists of a limited number of sections, dedicated to capturing different aspects of a single decision. The first two sections are reserved for the ADR title and its metadata. The core of the template reflects a typical decision-making journey. The initial steps involve the identification of the problem and its context, and the analysis of the goals and desires driving the decision. Next is the evaluation of different options and their pros and cons. Once the final decision is made and enforced, it is time to record its consequences, such as improvements and added efforts or risks and to evaluate its implementation through reviews and tests. The last two sections contain additional information. Here we find the pros and cons of considered options and information that traces the realization and outcome of the final decision, its links to other decisions, and other relevant details.
 
 The reduced version of the template, *MADR light,* puts an even major emphasis on the lean and agile approach to capturing decisions due to its condensed nature, while still recording all relevant information regarding the decision.  Let's now take a look at this version of the template and its sections.
 
-<img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/MADRlight_template.png?raw=true" style="width:110px; margin-right: 0.5em" />
+<img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/MADRlight_template.png?raw=true" style="width:120px; margin-right: 0.5em" />
 
 The **Title** of an ADR conveys the crux of the problem and the decision made to address it. The **Problem statement** is briefly described and placed within the **Context**. The other **Considered options**, later discarded, are listed. The final **Decision outcome** is clearly stated, complete with the **Justification** for its adoption. If we were to translate the template using another lean and widely adopted ADR standard, the Y-statement, the derived sentence would be: In the context of **A**, facing problem **B**, we neglected **C** and decided on **D**, because of **F**.
 

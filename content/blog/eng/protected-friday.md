@@ -101,12 +101,12 @@ At the beginning of this year, the Facile.it engineering teams adopted a new too
 
 In this talk, we had the opportunity to host a member of the Spotify engineering team and discuss the following:
 
--   Introduction to Backstage: What it is, what it is not, and how companies like Facile.it use Backstage
+-   Introduction to Backstage: What it is, what it is not, and how companies like Facile.it use Backstage.
 
 -   Extension points and potential of Backstage
 
 -   Invitation to Facile.it developers to contribute to the project
 
--   Broad development road map: discover some interesting new features we can expect in future releases
+-   Development road map: Discover new interesting features to expect in future releases.
 
 To learn more, go to [the official Backstage website](https://backstage.io/docs/overview/what-is-backstage/ "https://backstage.io/docs/overview/what-is-backstage/") or read one of the [articles about Backstage](https://medium.com/tag/backstage "https://medium.com/tag/backstage").

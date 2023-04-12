@@ -39,15 +39,15 @@ Here you can find the talks of each Protected Friday.
             <td rowspan=4>14/4/2023</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/anaradujko/facile-it.github.io/edit/anaradujko-firstblog/content/blog/eng/protected-friday.md#code-revolution">Code revolution</a></td>
+            <td><a href="#code-revolution">Code revolution</a></td>
             <td>Mirko Urru</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/anaradujko/facile-it.github.io/edit/anaradujko-firstblog/content/blog/eng/protected-friday.md#dynamic-forms">Dynamic forms</a></td>
+            <td><a href="#dynamic-forms">Dynamic forms</a></td>
             <td>Giovanni Fiorentino</td>
         </tr>
         <tr>
-            <td rowspan=2><a href="https://github.com/anaradujko/facile-it.github.io/edit/anaradujko-firstblog/content/blog/eng/protected-friday.md#backstage">Backstage</a></td>
+            <td rowspan=2><a href="#backstage">Backstage</a></td>
             <td>Lee Mills</td>
         </tr>
     </tbody>

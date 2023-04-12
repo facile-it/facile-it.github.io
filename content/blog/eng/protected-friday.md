@@ -1,5 +1,18 @@
-Protected Friday
-================
+---
+authors: ["engineering"]
+comments: true
+date: "2023-04-17"
+draft: false
+share: true
+categories: [Protected Friday]
+title: "Protected Friday"
+languageCode: "en-US"
+type: "post"
+twitterImage: '/images/protected-friday.png'
+toc: false
+---
+
+# Protected Friday
 
 ### What is it all about?
 
@@ -9,17 +22,21 @@ At Facile.it we strongly believe in sharing knowledge and experiences. Thus, we 
 
 Here you can find the talks of each Protected Friday.
 
-| Date        | Topic                               | Speaker              |
-| ----------- | ----------------------------------- | -------------------- |
-| 14/4/2023   | [Code revolution](#code-revolution) | Mirko Urru           |
-| 14/4/2023   | [Dynamic forms](#dynamic-forms)     | Giovanni Fiorentino  |
-| 14/4/2023   | [Backstage](#backstage)             | Lee Mills            |
+| Date        | Topic                                     | Speaker              |
+| ------------ | ----------------------------------------- | -------------------- |
+| 2023-04-14   | [Code revolution](#codebase-restructuring-with-clean-architecture-and-nestjs)       | Mirko Urru           |
+| 2023-04-14   | [Dynamic forms](#dynamic-forms)           | Giovanni Fiorentino  |
+| 2023-04-14   | [Backstage](#backstage)                   | Lee Mills            |    
+  
+<br>
 
-#### Protected Friday 14/4/2023
+## Protected Friday talks
 
-##### Code revolution 
+### Code revolution
 
-###### Codebase restructuring: Clean Architecture and NestJS
+#### Codebase restructuring with Clean Architecture and NestJS
+
+<sup>by Mirko Urru</sup>
 
 Ensuring code organization and scalability of the software regardless of the framework. If this is your goal, you as well might be interested in the topic of Clean Architecture and its application in the context of software development.
 
@@ -33,9 +50,13 @@ To learn more, read one of the articles about this topic:
 
 -   [The Clean Architecture --- Beginner's Guide](https://betterprogramming.pub/the-clean-architecture-beginners-guide-e4b7058c1165 "https://betterprogramming.pub/the-clean-architecture-beginners-guide-e4b7058c1165")
 
-##### Dynamic forms
+<br>
 
-###### Using React with in-house libraries
+### Dynamic forms
+
+#### Using React with in-house libraries
+
+<sup>by Giovanni Fiorentino</sup>
 
 Creating a simple yet flexible and powerful form structure is always a topic of interest in front-end development, especially during an intensive rewriting and refactoring of the codebase.
 
@@ -43,9 +64,13 @@ In this talk, we learned about a need that emerged during the migration to React
 
 The talk included some practical examples of the use of this common library and a mini-workshop during which we had the opportunity to design forms.
 
-##### Backstage
+<br>
 
-###### Spotify at [Facile.it](http://facile.it/ "http://Facile.it")
+### Backstage
+
+#### Spotify at [Facile.it](http://facile.it/ "http://Facile.it")
+
+<sup>by Lee Mills</sup>
 
 At the beginning of this year, the Facile.it engineering teams adopted a new tool: Backstage. Backstage is an open-source platform created at Spotify and used for building developer portals and creating a streamlined development environment.
 

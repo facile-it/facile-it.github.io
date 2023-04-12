@@ -18,15 +18,19 @@ toc: false
 
 At Facile.it we strongly believe in sharing knowledge and experiences. Thus, we dedicate one Friday a month to expanding our knowledge and learning among colleagues in the IT department. During Protected Friday, we welcome speakers and participate in talks on different IT-related topics. Speakers who bring to life Protected Fridays are colleagues or external guests.
 
+    
+    
 ## Curious to learn more?
 
 Here you can find the talks of each Protected Friday.
 
 | Date         | Topic                                     | Speaker              |
-| ------------ | ----------------------------------------- | -------------------- |
+| :----------- | :---------------------------------------- | :------------------- |
 | 2023-04-14   | [Code revolution](#code-revolution)       | Mirko Urru           |
 | 2023-04-14   | [Dynamic forms](#dynamic-forms)           | Giovanni Fiorentino  |
 | 2023-04-14   | [Backstage](#backstage)                   | Lee Mills            |    
+
+<br>
 
 ## Protected Friday talks
 

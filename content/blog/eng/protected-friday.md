@@ -24,11 +24,34 @@ At Facile.it we strongly believe in sharing knowledge and experiences. Thus, we 
 
 Here you can find the talks of each Protected Friday.
 
-| Date         | Topic                                     | Speaker              |
-| :----------- | :---------------------------------------- | :------------------- |
-| 2023-04-14   | [Code revolution](#code-revolution)       | Mirko Urru           |
-| 2023-04-14   | [Dynamic forms](#dynamic-forms)           | Giovanni Fiorentino  |
-| 2023-04-14   | [Backstage](#backstage)                   | Lee Mills            |    
+<table>
+    <thead>
+        <tr
+            align="left"
+            >
+            <th>Date</th>
+            <th>Topic</th>
+            <th>Speaker</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan=4>14/4/2023</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/anaradujko/facile-it.github.io/edit/anaradujko-firstblog/content/blog/eng/protected-friday.md#code-revolution">Code revolution</a></td>
+            <td>Mirko Urru</td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/anaradujko/facile-it.github.io/edit/anaradujko-firstblog/content/blog/eng/protected-friday.md#dynamic-forms">Dynamic forms</a></td>
+            <td>Giovanni Fiorentino</td>
+        </tr>
+        <tr>
+            <td rowspan=2><a href="https://github.com/anaradujko/facile-it.github.io/edit/anaradujko-firstblog/content/blog/eng/protected-friday.md#backstage">Backstage</a></td>
+            <td>Lee Mills</td>
+        </tr>
+    </tbody>
+</table>
 
 <br>
 

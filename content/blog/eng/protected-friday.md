@@ -61,7 +61,7 @@ Here you can find the talks of each Protected Friday.
 
 #### Codebase restructuring with Clean Architecture and NestJS
 
-<sup>by Mirko Urru & Stefano Giurgiano</sup>
+<sup>by [Mirko Urru](https://www.linkedin.com/in/mirkourru/) & [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/)</sup>
 
 Ensuring code organization and scalability of the software regardless of the framework. If this is your goal, you as well might be interested in the topic of Clean Architecture and its application in the context of software development.
 
@@ -81,7 +81,7 @@ To learn more, read one of the articles about this topic:
 
 #### Using React with in-house libraries
 
-<sup>by Giovanni Fiorentino</sup>
+<sup>by [Giovanni Fiorentino](https://www.linkedin.com/in/giovanni-fiorentino-25004b74/)</sup>
 
 Creating a simple yet flexible and powerful form structure is always a topic of interest in front-end development, especially during an intensive rewriting and refactoring of the codebase.
 
@@ -95,7 +95,7 @@ The talk included some practical examples of the use of this common library and 
 
 #### Spotify at [Facile.it](http://facile.it/ "http://Facile.it")
 
-<sup>by Lee Mills</sup>
+<sup>by [Lee Mills](https://www.linkedin.com/in/codetoy/)</sup>
 
 At the beginning of this year, the Facile.it engineering teams adopted a new tool: Backstage. Backstage is an open-source platform created at Spotify and used for building developer portals and creating a streamlined development environment.
 

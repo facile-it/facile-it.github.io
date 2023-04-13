@@ -31,7 +31,7 @@ Here you can find the talks of each Protected Friday.
             >
             <th>Date</th>
             <th>Topic</th>
-            <th>Speaker</th>
+            <th>Speakers</th>
         </tr>
     </thead>
     <tbody>
@@ -40,7 +40,7 @@ Here you can find the talks of each Protected Friday.
         </tr>
         <tr>
             <td><a href="#code-revolution">Code revolution</a></td>
-            <td>Mirko Urru</td>
+            <td>Mirko Urru & Stefano Giurgiano</td>
         </tr>
         <tr>
             <td><a href="#dynamic-forms">Dynamic forms</a></td>

@@ -61,7 +61,7 @@ Here you can find the talks of each Protected Friday.
 
 #### Codebase restructuring with Clean Architecture and NestJS
 
-<sup>by Mirko Urru</sup>
+<sup>by Mirko Urru & Stefano Giurgiano</sup>
 
 Ensuring code organization and scalability of the software regardless of the framework. If this is your goal, you as well might be interested in the topic of Clean Architecture and its application in the context of software development.
 

@@ -55,7 +55,7 @@ Here you can find the talks of each Venerdì Protetto.
 
 <br>
 
-## Protected Friday talks
+## Venerdì Protetto talks
 
 ### Code revolution
 

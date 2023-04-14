@@ -12,7 +12,11 @@ twitterImage: '/images/protected-friday.png'
 toc: false
 ---
 
-# Venerdì Protetto
+<div id="user-content-toc">
+  <ul>
+    <summary><h1 style="display: inline-block;">Venerdì Protetto</h1></summary>
+  </ul>
+</div>
 
 ## What is it all about?
 

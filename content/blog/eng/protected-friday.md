@@ -62,6 +62,22 @@ Here you can find the talks of each Venerdì Protetto.
 
 ## Venerdì Protetto talks
 
+### Dynamic forms
+
+#### Using React with in-house libraries
+
+<sup>by [Giovanni Fiorentino](https://www.linkedin.com/in/giovanni-fiorentino-25004b74/)</sup>
+
+Creating a simple yet flexible and powerful form structure is always a topic of interest in front-end development, especially during an intensive rewriting and refactoring of the codebase.
+
+In this talk, we learned about a need that emerged during the migration to React.js, carried out by our Gas & Power Team. In that circumstance, the team needed to create a set of forms for the Facile.it internal checkout. The forms had to have several similarities but also some differences, depending on the company and the offer. Rather than having many similar components or one that was too complex, our engineers chose to describe the forms through a unique configuration. They consequently built a component capable of designing the modules according to that unique configuration. For this purpose, they used two libraries of the Facile.it design system: Full Metal UI (FMUI) for components and Bilden for validation. This approach to creating forms was successfully applied to the internal checkout and the code was imported into a common library.
+
+The talk included some practical examples of the use of this common library and a mini-workshop during which we had the opportunity to design forms.
+
+<br>
+
+$${\color{lightgrey}***}$$ 
+
 ### Code revolution
 
 #### Codebase restructuring with Clean Architecture and NestJS
@@ -83,22 +99,6 @@ To learn more, read one of the articles about this topic:
 <br>
 
 $${\color{lightgrey}***}$$  
-
-### Dynamic forms
-
-#### Using React with in-house libraries
-
-<sup>by [Giovanni Fiorentino](https://www.linkedin.com/in/giovanni-fiorentino-25004b74/)</sup>
-
-Creating a simple yet flexible and powerful form structure is always a topic of interest in front-end development, especially during an intensive rewriting and refactoring of the codebase.
-
-In this talk, we learned about a need that emerged during the migration to React.js, carried out by our Gas & Power Team. In that circumstance, the team needed to create a set of forms for the Facile.it internal checkout. The forms had to have several similarities but also some differences, depending on the company and the offer. Rather than having many similar components or one that was too complex, our engineers chose to describe the forms through a unique configuration. They consequently built a component capable of designing the modules according to that unique configuration. For this purpose, they used two libraries of the Facile.it design system: Full Metal UI (FMUI) for components and Bilden for validation. This approach to creating forms was successfully applied to the internal checkout and the code was imported into a common library.
-
-The talk included some practical examples of the use of this common library and a mini-workshop during which we had the opportunity to design forms.
-
-<br>
-
-$${\color{lightgrey}***}$$ 
 
 ### Backstage 
 

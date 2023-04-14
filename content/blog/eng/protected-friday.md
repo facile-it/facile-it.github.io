@@ -2,10 +2,10 @@
 authors: ["engineering"]
 comments: true
 date: "2023-04-17"
-draft: false
+draft: true
 share: true
 categories: [Venerdì Protetto]
-title: "Protected Friday"
+title: "Venerdì Protetto"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/protected-friday.png'

@@ -4,7 +4,7 @@ comments: true
 date: "2023-04-17"
 draft: false
 share: true
-categories: [Protected Friday]
+categories: [Venerdì Protetto]
 title: "Protected Friday"
 languageCode: "en-US"
 type: "post"
@@ -12,11 +12,11 @@ twitterImage: '/images/protected-friday.png'
 toc: false
 ---
 
-# Protected Friday
+# Venerdì Protetto
 
 ## What is it all about?
 
-At Facile.it we strongly believe in sharing knowledge and experiences. Thus, we dedicate one Friday a month to expanding our knowledge and learning among colleagues in the IT department. During Protected Friday, we welcome speakers and participate in talks on different IT-related topics. Speakers who bring to life Protected Fridays are colleagues or external guests.
+At Facile.it we strongly believe in sharing knowledge and experiences. Thus, we dedicate one Friday a month to expanding our knowledge and learning among colleagues in the IT department. During these Protected Fridays, we welcome speakers and participate in talks on different IT-related topics. Speakers who bring to life Protected Fridays are colleagues or external guests.
 
     
     
@@ -91,22 +91,25 @@ The talk included some practical examples of the use of this common library and 
 
 <br>
 
-### Backstage
+### Backstage 
 
-#### Spotify at [Facile.it](http://facile.it/ "http://Facile.it")
+#### An introduction to Backstage, managing the chaos
 
 <sup>by [Lee Mills](https://www.linkedin.com/in/codetoy/)</sup>
 
-At the beginning of this year, the Facile.it engineering teams adopted a new tool: Backstage. Backstage is an open-source platform created at Spotify and used for building developer portals and creating a streamlined development environment.
+At the beginning of this year, the Facile.it engineering teams adopted a new tool: Backstage, an open-source platform for building developer portals created at Spotify. During this Protected Friday, we had the opportunity to host Lee Mills, a member of the Spotify engineering team. Here is a word from our guest:  
 
-In this talk, we had the opportunity to host a member of the Spotify engineering team and discuss the following:
+> At Spotify, we've always believed in the speed and ingenuity that comes from having autonomous development teams. But as we learned firsthand, the faster you grow, the more fragmented and complex your software ecosystem becomes. And then everything slows down again. Introducing Backstage, a developer portal designed to tame the chaos, bring consistency, and do it all while empowering autonomy and you to make decisions.
+>
 
--   Introduction to Backstage: What it is, what it is not, and how companies like Facile.it use Backstage.
+During the talk we discussed the following:
+
+-   An introduction to Backstage: what it is, what it is not, and how companies use Backstage.
 
 -   Extension points and potential of Backstage
 
--   Invitation to Facile.it developers to contribute to the project
+-   An invitation to Facile.it developers to contribute to the project
 
--   Development road map: Discover new interesting features to expect in future releases.
+-   Development road map: new intriguing features to expect in future releases
 
-To learn more, go to [the official Backstage website](https://backstage.io/docs/overview/what-is-backstage/ "https://backstage.io/docs/overview/what-is-backstage/") or read one of the [articles about Backstage](https://medium.com/tag/backstage "https://medium.com/tag/backstage").
+To learn more about Backstage, go to [the official Backstage website](https://backstage.io/docs/overview/what-is-backstage/ "https://backstage.io/docs/overview/what-is-backstage/").

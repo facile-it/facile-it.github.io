@@ -18,6 +18,7 @@ toc: false
   </ul>
 </div>
 
+
 ## What is it all about?
 
 At Facile.it we strongly believe in sharing knowledge and experiences. Thus, we dedicate one Friday a month to expanding our knowledge and learning among colleagues in the IT department. During these protected Fridays, better known as Venerdì Protetto, we welcome speakers and participate in talks on different IT-related topics. Speakers who bring to life Venerdì Protetto are colleagues or external guests.
@@ -77,9 +78,11 @@ To learn more, read one of the articles about this topic:
 
 -   [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html")
 
--   [The Clean Architecture - Beginner's Guide](https://betterprogramming.pub/the-clean-architecture-beginners-guide-e4b7058c1165 "https://betterprogramming.pub/the-clean-architecture-beginners-guide-e4b7058c1165")
+-   [The Clean Architecture - Beginner's Guide](https://betterprogramming.pub/the-clean-architecture-beginners-guide-e4b7058c1165 "https://betterprogramming.pub/the-clean-architecture-beginners-guide-e4b7058c1165")  
 
 <br>
+
+$${\color{grey}***}$$  
 
 ### Dynamic forms
 
@@ -94,6 +97,8 @@ In this talk, we learned about a need that emerged during the migration to React
 The talk included some practical examples of the use of this common library and a mini-workshop during which we had the opportunity to design forms.
 
 <br>
+
+$${\color{grey}***}$$ 
 
 ### Backstage 
 

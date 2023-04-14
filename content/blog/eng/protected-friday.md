@@ -102,7 +102,7 @@ At the beginning of this year, the Facile.it engineering teams adopted a new too
 > At Spotify, we've always believed in the speed and ingenuity that comes from having autonomous development teams. But as we learned firsthand, the faster you grow, the more fragmented and complex your software ecosystem becomes. And then everything slows down again. Introducing Backstage, a developer portal designed to tame the chaos, bring consistency, and do it all while empowering autonomy and you to make decisions.
 >
 
-During the talk we discussed the following:
+During the talk, we discussed the following:
 
 -   An introduction to Backstage: what it is, what it is not, and how companies use Backstage.
 

@@ -82,7 +82,7 @@ To learn more, read one of the articles about this topic:
 
 <br>
 
-$${\color{grey}***}$$  
+$${\color{lightgrey}***}$$  
 
 ### Dynamic forms
 
@@ -98,7 +98,7 @@ The talk included some practical examples of the use of this common library and 
 
 <br>
 
-$${\color{grey}***}$$ 
+$${\color{lightgrey}***}$$ 
 
 ### Backstage 
 

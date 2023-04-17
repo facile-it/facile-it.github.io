@@ -2,7 +2,7 @@
 authors: ["engineering"]
 comments: true
 date: "2023-04-17"
-draft: true
+draft: false
 share: true
 categories: [Venerdì Protetto]
 title: "Venerdì Protetto"

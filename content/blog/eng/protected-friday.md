@@ -8,7 +8,7 @@ categories: [Venerdì Protetto]
 title: "Venerdì Protetto"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/protected-friday.png'
+twitterImage: '/images/logo_engineering.png'
 toc: false
 ---
 

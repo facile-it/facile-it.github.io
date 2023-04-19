@@ -20,7 +20,7 @@ toc: false
 
 ## What is it all about?
 
-At Facile.it, we strongly believe in sharing knowledge and experiences. Thus, we dedicate one Friday a month to expanding our knowledge and learning among colleagues in the IT department. During so-called Venerdì Protetto, i. e. Protected Friday, we welcome speakers and participate in talks on IT-related topics. Speakers are colleagues or external guests.
+At Facile.it, we strongly believe in sharing knowledge and experiences. Thus, we dedicate one Friday a month to expanding our knowledge and learning among colleagues in the IT department. During the so-called Venerdì Protetto, i. e. Protected Friday, we welcome speakers and participate in talks on IT-related topics. Speakers are colleagues or external guests.
 
     
     

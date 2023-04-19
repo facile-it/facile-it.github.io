@@ -14,9 +14,7 @@ toc: false
 
 # Venerdì Protetto 14/4/2023
 
-Here you can find the talks held on Friday, April 14, 2023.
-
-To learn about the event and browse the library of talks and speakers, go to [Venerdì Protetto](https://engineering.facile.it/blog/eng/venerdì-protetto/).
+This page contains the abstracts of the talks held during the Venerdì Protetto on April 14, 2023. 
 
 ## Backstage 
 
@@ -86,3 +84,4 @@ To learn more about this topic, take a look at these resources:
 - [Customising JSON Forms](https://kukshalkanishka.medium.com/customising-json-forms-7fc75f627fff)
 
 - [JSON Forms](https://jsonforms.io/)
+

@@ -9,10 +9,10 @@ title: "Venerdì Protetto 14/4/2023"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/logo_engineering.png'
-toc: false
+toc: true
 ---
 
-# Venerdì Protetto 2023-04-14
+# Venerdì Protetto 14 April 2023
 
 This page contains the abstracts of the talks held during the Venerdì Protetto on April 14, 2023. 
 
@@ -39,9 +39,6 @@ During the talk, we discussed the following points:
 
 To learn more about Backstage, visit [the official Backstage website](https://backstage.io/docs/overview/what-is-backstage/ "https://backstage.io/docs/overview/what-is-backstage/").
 
-
-$${\color{lightgrey}***}$$ 
-
 <br>
 
 ## Code revolution
@@ -61,9 +58,6 @@ To learn more, read one of the articles about this topic:
 -   [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html")
 
 -   [The Clean Architecture - Beginner's Guide](https://betterprogramming.pub/the-clean-architecture-beginners-guide-e4b7058c1165 "https://betterprogramming.pub/the-clean-architecture-beginners-guide-e4b7058c1165")  
-
-
-$${\color{lightgrey}***}$$ 
 
 <br>
 
@@ -85,9 +79,6 @@ To learn more about this topic, take a look at these resources:
 
 - [JSON Forms](https://jsonforms.io/)
 
-
-$${\color{lightgrey}***}$$ 
-
 <br>
 
-The overview of all the Venerdì protetto talks is available [here](https://engineering.facile.it/blog/eng/venerdi-protetto-presentation/).
+The overview of Venerdì Protetto is available [here](https://engineering.facile.it/categories/venerdi-protetto/).

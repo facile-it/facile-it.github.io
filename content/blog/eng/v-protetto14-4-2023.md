@@ -14,14 +14,9 @@ toc: false
 
 # Venerdì Protetto 14/4/2023
 
-**Talks:** Backstage, Code revolution, Dynamic Forms
-
-**Speakers:** Lee Mills from Spotify, Mirko Urru, Stefano Giurgiano, Giovanni Fiorentino
+Here you can find the talks held on Friday, April 14, 2023.
 
 To learn about the event and browse the library of talks and speakers, go to [Venerdì Protetto](https://engineering.facile.it/blog/eng/venerdì-protetto/).
-
-<br>
-
 
 ## Backstage 
 

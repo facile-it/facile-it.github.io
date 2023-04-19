@@ -14,7 +14,7 @@ toc: false
 
 <div id="user-content-toc">
   <ul>
-    <summary><h1 style="display: inline-block;">Venerdì Protetto</h1></summary>
+    <summary><h1 style="display: inline-block;">Venerdì Protetto presentation</h1></summary>
   </ul>
 </div>
 
@@ -41,7 +41,7 @@ Click the links to find the talks of each Venerdì Protetto.
     </thead>
     <tbody>
         <tr>
-            <td rowspan=4><a href="[VP]14-4-2023.md" title="Venerdì Protetto 14/4/2023">14/4/2023</a></td>
+            <td rowspan=4><a href="https://engineering.facile.it/blog/eng/venerdi-protetto-14-04-2023/" title="Venerdì Protetto 14-04-2023">14/4/2023</a></td>
         </tr>
         <tr>
             <td><strong>Backstage</strong></td>

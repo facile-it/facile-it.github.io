@@ -26,37 +26,12 @@ At Facile.it, we strongly believe in sharing knowledge and experiences. Thus, we
     
 ## Curious to learn more?
 
-Click the links to find the talks of each Venerdì Protetto.
+[Venerdì Protetto 14 April 2023](https://engineering.facile.it/blog/eng/venerdi-protetto-14-april-2023/)
 
-<table>
-    <thead>
-        <tr
-            align="left"
-            >
-            <th>Date</th>
-            <th>Topic</th>
-            <th>Speakers</th>
-            <th>Company</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td rowspan=4><a href="https://engineering.facile.it/blog/eng/venerdi-protetto-14-04-2023/" title="Venerdì Protetto 14-04-2023">14/4/2023</a></td>
-        </tr>
-        <tr>
-            <td><strong>Backstage</strong></td>
-            <td>Lee Mills</td>
-            <td>Spotify</td>
-        </tr>
-        <tr>
-            <td><strong>Code revolution</strong></td>
-            <td>Mirko Urru & Stefano Giurgiano</td>
-            <td>Facile.it</td>
-        </tr>
-        <tr>
-            <td rowspan=2><strong>Dynamic forms</strong></td>
-            <td>Giovanni Fiorentino</td>
-            <td>Facile.it</td>
-        </tr>
-    </tbody>
-</table>
+| **<sub>Topic<sub>** | **<sub>Speaker<sub>** | **<sub>Company<sub>** |  
+|:--------------------|:----------------------|:----------------------|
+| <sub>Backstage<sub>	| <sub>Lee Mills<sub> | <sub>Spotify<sub> |
+| <sub>Code revolution<sub>	| <sub>Mirko Urru & Stefano Giurgiano<sub> | <sub>Facile.it<sub> |
+| <sub>Dynamic forms<sub>	| <sub>Giovanni Fiorentino<sub> | <sub>Facile.it<sub> |
+  
+The archive of all Venerdì Protetto talks is available [here](https://engineering.facile.it/categories/venerdi-protetto/).

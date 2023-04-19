@@ -5,14 +5,12 @@ date: "2023-04-18"
 draft: false
 share: true
 categories: [Venerdì Protetto]
-title: "Venerdì Protetto 14/4/2023"
+title: "Venerdì Protetto 14 April 2023"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/logo_engineering.png'
 toc: true
 ---
-
-# Venerdì Protetto 14 April 2023
 
 This page contains the abstracts of the talks held during the Venerdì Protetto on April 14, 2023. 
 
@@ -20,7 +18,7 @@ This page contains the abstracts of the talks held during the Venerdì Protetto 
 
 ### An introduction to Backstage, managing the chaos
 
-<sup>by [Lee Mills](https://www.linkedin.com/in/codetoy/)</sup>
+<sup>by [Lee Mills](https://www.linkedin.com/in/codetoy/), Spotify</sup>
 
 At the beginning of this year, our engineering teams adopted a new tool: Backstage, an open-source platform for building developer portals created at Spotify. During this Venerdì Protetto, we had the opportunity to host Lee Mills, a member of the Spotify engineering team. Here is a word from our guest:  
 
@@ -45,7 +43,7 @@ To learn more about Backstage, visit [the official Backstage website](https://ba
 
 ### Codebase restructuring with Clean Architecture and NestJS
 
-<sup>by [Mirko Urru](https://www.linkedin.com/in/mirkourru/) & [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/)</sup>
+<sup>by [Mirko Urru](https://www.linkedin.com/in/mirkourru/) & [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/), Facile.it</sup>
 
 Ensuring code organization and scalability of the software regardless of the framework. If this is your goal, you as well might be interested in the topic of Clean Architecture and its application in the context of software development.
 
@@ -65,7 +63,7 @@ To learn more, read one of the articles about this topic:
 
 ### Using React with in-house libraries
 
-<sup>by [Giovanni Fiorentino](https://www.linkedin.com/in/giovanni-fiorentino-25004b74/)</sup>
+<sup>by [Giovanni Fiorentino](https://www.linkedin.com/in/giovanni-fiorentino-25004b74/), Facile.it</sup>
 
 Creating a simple yet flexible and powerful form structure is always a topic of interest in front-end development, especially during an intensive rewriting and refactoring of the codebase.
 

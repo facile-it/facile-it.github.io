@@ -14,7 +14,14 @@ toc: false
 
 # Venerdì Protetto 14/4/2023
 
-To find out more about the event and browse the library of talks and speakers, go to [Venerdì Protetto](https://engineering.facile.it/blog/eng/venerdì-protetto/).
+**Talks:** Backstage, Code revolution, Dynamic Forms
+
+**Speakers:** Lee Mills from Spotify, Mirko Urru, Stefano Giurgiano, Giovanni Fiorentino
+
+To learn about the event and browse the library of talks and speakers, go to [Venerdì Protetto](https://engineering.facile.it/blog/eng/venerdì-protetto/).
+
+<br>
+
 
 ## Backstage 
 
@@ -43,7 +50,6 @@ To learn more about Backstage, visit [the official Backstage website](https://ba
 
 $${\color{lightgrey}***}$$ 
 
-<br>
 
 ## Code revolution
 
@@ -67,7 +73,6 @@ To learn more, read one of the articles about this topic:
 
 $${\color{lightgrey}***}$$ 
 
-<br>
 
 ## Dynamic forms
 

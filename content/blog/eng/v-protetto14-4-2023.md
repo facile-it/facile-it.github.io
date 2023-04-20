@@ -14,9 +14,7 @@ toc: false
 
 This page contains the abstracts of the talks held during the latest Venerdì Protetto on April 14, 2023. 
 
-**Topics:** [Backstage](#backstage), [Code revolution](#code-revolution), [Dynamic forms](#dynamic-forms)
-
-**Speakers:** [Lee Mills](https://www.linkedin.com/in/codetoy/), [Mirko Urru](https://www.linkedin.com/in/mirkourru/), [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/), [Giovanni Fiorentino](https://www.linkedin.com/in/giovanni-fiorentino-25004b74/)
+Topics: [Backstage](#backstage) by Lee Mills, [Code revolution](#code-revolution) by Mirko Urru & Stefano Giurgiano, [Dynamic forms](#dynamic-forms) by Giovanni Fiorentino
 
 <br>
 

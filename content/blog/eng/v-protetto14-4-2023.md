@@ -1,7 +1,7 @@
 ---
 authors: ["engineering"]
 comments: true
-date: "2023-04-18"
+date: "2023-04-20 17:02:00"
 draft: false
 share: true
 categories: [Venerdì Protetto]
@@ -9,10 +9,16 @@ title: "Venerdì Protetto 14 April 2023"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/logo_engineering.png'
-toc: true
+toc: false
 ---
 
-This page contains the abstracts of the talks held during the Venerdì Protetto on April 14, 2023. 
+This page contains the abstracts of the talks held during the latest Venerdì Protetto on April 14, 2023. 
+
+**Topics:** [Backstage](#backstage), [Code revolution](#code-revolution), [Dynamic forms](#dynamic-forms)
+
+**Speakers:** [Lee Mills](https://www.linkedin.com/in/codetoy/), [Mirko Urru](https://www.linkedin.com/in/mirkourru/), [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/), [Giovanni Fiorentino](https://www.linkedin.com/in/giovanni-fiorentino-25004b74/)
+
+<br>
 
 ## Backstage 
 
@@ -35,7 +41,7 @@ During the talk, we discussed the following points:
 
 -   Development road map and new intriguing features to expect in future releases
 
-To learn more about Backstage, visit [the official Backstage website](https://backstage.io/docs/overview/what-is-backstage/ "https://backstage.io/docs/overview/what-is-backstage/").
+To learn more about Backstage, visit the official [Backstage website](https://backstage.io/docs/overview/what-is-backstage/ "https://backstage.io/docs/overview/what-is-backstage/").
 
 <br>
 

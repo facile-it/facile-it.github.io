@@ -14,7 +14,11 @@ toc: false
 
 This page contains the abstracts of the talks held during the latest Venerdì Protetto on April 14, 2023. 
 
-Topics: [Backstage](#backstage) by Lee Mills, [Code revolution](#code-revolution) by Mirko Urru & Stefano Giurgiano, [Dynamic forms](#dynamic-forms) by Giovanni Fiorentino
+Topics: 
+
+- [Backstage](#backstage) by Lee Mills  
+- [Code revolution](#code-revolution) by Mirko Urru & Stefano Giurgiano 
+- [Dynamic forms](#dynamic-forms) by Giovanni Fiorentino 
 
 <br>
 
@@ -32,11 +36,8 @@ At the beginning of this year, our engineering teams adopted a new tool: Backsta
 During the talk, we discussed the following points:
 
 -   Introduction to Backstage
-
 -   Extension points and potential of Backstage
-
 -   Invitation to developers to contribute to the project
-
 -   Development road map and new intriguing features to expect in future releases
 
 To learn more about Backstage, visit the official [Backstage website](https://backstage.io/docs/overview/what-is-backstage/ "https://backstage.io/docs/overview/what-is-backstage/").
@@ -56,9 +57,7 @@ In this talk, we learned how the Clean Architecture can be framework-independent
 To learn more, read one of the articles about this topic:
 
 -   [Clean architecture with Nest.js](https://medium.com/@jonathan.pretre91/clean-architecture-with-nestjs-e089cef65045 "https://medium.com/@jonathan.pretre91/clean-architecture-with-nestjs-e089cef65045")
-
 -   [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html")
-
 -   [The Clean Architecture - Beginner's Guide](https://betterprogramming.pub/the-clean-architecture-beginners-guide-e4b7058c1165 "https://betterprogramming.pub/the-clean-architecture-beginners-guide-e4b7058c1165")  
 
 <br>
@@ -78,7 +77,6 @@ The talk included some practical examples of the use of this common library and 
 To learn more about this topic, take a look at these resources:
 
 - [Customising JSON Forms](https://kukshalkanishka.medium.com/customising-json-forms-7fc75f627fff)
-
 - [JSON Forms](https://jsonforms.io/)
 
 <br>

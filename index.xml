@@ -6,10 +6,32 @@
     <description>Recent content on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Apr 2023 11:02:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Venerdì Protetto - April 14th 2023</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto14-4-2023/</link>
+      <pubDate>Fri, 21 Apr 2023 11:02:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto14-4-2023/</guid>
+      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on April 14, 2023.
+Topics:
+ Backstage by Lee Mills (Spotify) Code revolution by Mirko Urru &amp;amp; Stefano Giurgiano (Facile.it) Dynamic forms by Giovanni Fiorentino (Facile.it)  Backstage An introduction to Backstage, managing the chaos by Lee Mills, Spotify
+At the beginning of this year, our engineering teams adopted a new tool: Backstage, an open-source platform for building developer portals created at Spotify.</description>
+    </item>
+    
+    <item>
+      <title>Venerdì Protetto, AKA Protected Friday</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto/</link>
+      <pubDate>Fri, 21 Apr 2023 11:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto/</guid>
+      <description>What is it all about? At Facile.it, we strongly believe in sharing knowledge and experiences. Thus, we dedicate one Friday a month to expanding our knowledge and learning among colleagues in the IT department. These Fridays are called Venerdì Protetto. During the so-called Venerdì Protetto, i. e. Protected Friday, we welcome speakers and participate in talks on IT-related topics. Speakers are colleagues or external guests.
+Archive of talks The archive of all Venerdì Protetto talks is available here.</description>
+    </item>
     
     <item>
       <title>MADR template for capturing decisions</title>

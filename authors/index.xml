@@ -6,10 +6,19 @@
     <description>Recent content in Authors on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Apr 2023 11:02:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/authors/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>engineering</title>
+      <link>https://engineering.facile.it/authors/engineering/</link>
+      <pubDate>Fri, 21 Apr 2023 11:02:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/engineering/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ana-radujko</title>
@@ -170,15 +179,6 @@
       <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/authors/elviro/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>engineering</title>
-      <link>https://engineering.facile.it/authors/engineering/</link>
-      <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/engineering/</guid>
       <description></description>
     </item>
     

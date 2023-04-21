@@ -6,10 +6,22 @@
     <description>Recent content in React on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Nov 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Apr 2023 11:02:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/react/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Venerdì Protetto - April 14th 2023</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto14-4-2023/</link>
+      <pubDate>Fri, 21 Apr 2023 11:02:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto14-4-2023/</guid>
+      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on April 14, 2023.
+Topics:
+ Backstage by Lee Mills (Spotify) Code revolution by Mirko Urru &amp;amp; Stefano Giurgiano (Facile.it) Dynamic forms by Giovanni Fiorentino (Facile.it)  Backstage An introduction to Backstage, managing the chaos by Lee Mills, Spotify
+At the beginning of this year, our engineering teams adopted a new tool: Backstage, an open-source platform for building developer portals created at Spotify.</description>
+    </item>
     
     <item>
       <title>Building a scalable Redux web app</title>

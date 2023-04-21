@@ -6,10 +6,37 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 21 Apr 2023 11:02:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Open Source</title>
+      <link>https://engineering.facile.it/categories/open-source/</link>
+      <pubDate>Fri, 21 Apr 2023 11:02:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/open-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Protected Fridays</title>
+      <link>https://engineering.facile.it/categories/protected-fridays/</link>
+      <pubDate>Fri, 21 Apr 2023 11:02:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/protected-fridays/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>React</title>
+      <link>https://engineering.facile.it/categories/react/</link>
+      <pubDate>Fri, 21 Apr 2023 11:02:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/react/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>ADR</title>
@@ -53,15 +80,6 @@
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/javascript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>React</title>
-      <link>https://engineering.facile.it/categories/react/</link>
-      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/react/</guid>
       <description></description>
     </item>
     
@@ -701,15 +719,6 @@
       <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/fuse/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Open Source</title>
-      <link>https://engineering.facile.it/categories/open-source/</link>
-      <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/open-source/</guid>
       <description></description>
     </item>
     

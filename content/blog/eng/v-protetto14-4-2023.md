@@ -1,11 +1,11 @@
 ---
 authors: ["engineering"]
 comments: true
-date: "2023-04-21 13:02:00"
+date: "2023-04-21 11:02:00"
 draft: false
 share: true
-categories: [Venerdì Protetto]
-title: "Venerdì Protetto 14 April 2023"
+categories: ['Protected Fridays', 'Open Source', 'React']
+title: "Venerdì Protetto - April 14th 2023"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/logo_engineering.png'
@@ -16,11 +16,9 @@ This page contains the abstracts of the talks held during the latest Venerdì Pr
 
 Topics: 
 
-- [Backstage](#backstage) by Lee Mills  
-- [Code revolution](#code-revolution) by Mirko Urru & Stefano Giurgiano 
-- [Dynamic forms](#dynamic-forms) by Giovanni Fiorentino 
-
-<br>
+- [Backstage](#backstage) by Lee Mills (Spotify)
+- [Code revolution](#code-revolution) by Mirko Urru & Stefano Giurgiano (Facile.it) 
+- [Dynamic forms](#dynamic-forms) by Giovanni Fiorentino (Facile.it)
 
 ## Backstage 
 

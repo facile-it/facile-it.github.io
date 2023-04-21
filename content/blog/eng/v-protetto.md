@@ -1,11 +1,11 @@
 ---
 authors: ["engineering"]
 comments: true
-date: "2023-04-21 13:00:00"
+date: "2023-04-21 11:00:00"
 draft: false
 share: true
-categories: [Venerdì Protetto]
-title: "Venerdì Protetto presentation"
+categories: ['Protected Fridays']
+title: "Venerdì Protetto, AKA Protected Friday"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/logo_engineering.png'
@@ -20,4 +20,4 @@ At Facile.it, we strongly believe in sharing knowledge and experiences. Thus, we
     
 ## Archive of talks
  
-The archive of all Venerdì Protetto talks is available [here](https://engineering.facile.it/categories/venerdi-protetto/).
+The archive of all Venerdì Protetto talks is available [here](/categories/protected-fridays).

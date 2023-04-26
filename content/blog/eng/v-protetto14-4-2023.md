@@ -79,4 +79,4 @@ To learn more about this topic, take a look at these resources:
 
 <br>
 
-The overview of Venerdì Protetto is available [here](https://engineering.facile.it/categories/venerdi-protetto/).
+The overview of Venerdì Protetto is available [here](/categories/protected-fridays).

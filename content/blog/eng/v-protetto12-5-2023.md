@@ -1,3 +1,7 @@
+---
+authors: ["engineering"]
+comments: true
+date: "2023-04-21 11:02:00"
 draft: false
 share: true
 categories: ['Protected Fridays', 'ChatGPT', 'API testing', 'Mental health']
@@ -13,8 +17,8 @@ This page contains the abstracts of the talks held during the latest Venerdì Pr
 Topics: 
 
 - [API testing](#api-testing) by Domenico Buttafarro & Vincenzo Gasparo Morticella (Facile.it)
-- [ChatGPR and React](#chathgpt-and-react) by Alessio Monesi (Facile.it) 
-- [Mental health at work](#mental-health) by Francesco Di Muro (Lobby Frontali)
+- [ChatGPT and React](#chatgpt-and-react) by Alessio Monesi (Facile.it) 
+- [Mental health at work](#mental-health-at-work) by Francesco Di Muro (Lobby Frontali)
 
 <br>
 
@@ -44,7 +48,7 @@ During the talk, we discussed the following points:
 ● Playwright Test Examples
 
 
-## ChatGPR and React
+## ChatGPT and React
 
 ### Using openAI APIs in a custom knowledge base
 

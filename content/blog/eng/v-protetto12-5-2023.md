@@ -30,22 +30,24 @@ Topics:
 
 <img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/api_testing.png?raw=true" style="width:300px; margin-right: 0.5em" />
 
+  
 Today's software landscape is highly competitive and users are increasingly reluctant to tolerate unreliable applications. 
 
 An issue at the API level of an application can lead to user-facing errors or latency, which can erode customer trust, lead to churn, and negatively impact the business. This puts tremendous pressure on development teams to deliver consistently available, high-performing APIs.
 
-With the Prism proxy tool (Stoplight) we are able to validate requests and responses against a model and achieve a clean and correct documentation (OpenAPI). By writing tests through Playwright we can test different aspects of an API from request to response.
+With the Prism proxy tool (Stoplight) we are able to validate requests and responses against a model and achieve a clean and correct documentation ([OpenAPI](https://www.openapis.org/)). By writing tests through Playwright we can test different aspects of an API from request to response.
 
 During the talk, we discussed the following points:
 
-● What is API Testing?
-● Prism
-● 10 API testing tips
-● How to develop test API?
-● Running API tests
-● Swagger-PHP (zircote)
-● Prism Error Types
-● Playwright Test Examples
+- What is API Testing?
+- Prism
+- 10 API testing tips
+- How to develop test API?
+- Running API tests
+- Swagger-PHP (zircote)
+- Prism error types 
+- Playwright test examples
+  
 
 
 ## ChatGPT and React
@@ -56,6 +58,7 @@ During the talk, we discussed the following points:
 
 <img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/chatgpt.png?raw=true" style="width:300px; margin-right: 0.5em" />
 
+  
 This talk introduced the study of the potential of the artificial intelligence models exposed by OpenAI using chatGPT APIs in a React project, both without a custom knowledge base and with a restricted and specific knowledge base.
 
 In this talk, we learned what the learning models used by ChatGPT are. We saw a brief list of the models exposed by OpenAI and talked about tokenization and pricing.
@@ -76,6 +79,7 @@ To learn more, read one of the articles about this topic:
 
 <img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/mental_health.png?raw=true" style="width:300px; margin-right: 0.5em" />
 
+  
 With the advent of the COVID-19 pandemic, worldwide governments enforced lockdown measures to contain the health crisis; this hurried many companies to adopt and enhance agile/remote work practices, in which information technologies played a pivotal role.
 
 Implementing such practices required heavy regulatory, logistical, infrastructural, and organizational changes, the acquisition of new skills and habits, and a new way to conceive work. Though challenging at first, these changes proved beneficial for both the organizations and the individual workers, with long-lasting consequences even after overcoming the critical phase of the pandemic. However, many concerns were raised regarding several issues, including workers' mental health and its impact from both an individual and organizational standpoint.

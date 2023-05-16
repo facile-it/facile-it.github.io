@@ -48,7 +48,7 @@ During the talk, we discussed the following points:
 - Prism error types 
 - Playwright test examples
   
-
+<br>
 
 ## ChatGPT and React
 
@@ -70,6 +70,7 @@ To learn more, read one of the articles about this topic:
 - Build your own custom ChatGPT chatbot using a Python script
 - Llama Hub with data connectors
 
+<br>
 
 ## Mental health at work
 

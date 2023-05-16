@@ -35,7 +35,7 @@ Today's software landscape is highly competitive and users are increasingly relu
 
 An issue at the API level of an application can lead to user-facing errors or latency, which can erode customer trust, lead to churn, and negatively impact the business. This puts tremendous pressure on development teams to deliver consistently available, high-performing APIs.
 
-With the Prism proxy tool (Stoplight) we can validate requests and responses against a model and achieve clean and correct documentation ([OpenAPI](https://www.openapis.org/)). By writing tests through Playwright we can test different aspects of an API from request to response.
+With the Prism proxy tool ([Stoplight](https://stoplight.io/)) we can validate requests and responses against a model and achieve clean and correct documentation ([OpenAPI](https://www.openapis.org/)). By writing tests through Playwright we can test different aspects of an API from request to response.
 
 During the talk, we discussed the following points:
 
@@ -63,12 +63,12 @@ This talk introduced the study of the potential of the artificial intelligence m
 
 In this talk, we learned what the learning models used by ChatGPT are. We saw a brief list of the models exposed by OpenAI and talked about tokenization and pricing.
 
-Furthermore, we saw the completions API, i.e. the core API of the technology and verified the functioning of summarization, sentiment analysis and classification through a demo. We then saw a Python script within which we queried the model on data provided as input, requesting the same set of capabilities in a custom knowledge base.
+Furthermore, we saw the completions API i.e. the core API of the technology and verified the functioning of summarization, sentiment analysis and classification through a demo. We then saw a Python script within which we queried the model on data provided as input, requesting the same set of capabilities in a custom knowledge base.
 
-To learn more, read one of the articles about this topic:
-- Tokenizer
-- Build your own custom ChatGPT chatbot using a Python script
-- Llama Hub with data connectors
+To learn more, take a look at these resources:
+- [How To Build Your Own Custom ChatGPT With Custom Knowledge Base](https://betterprogramming.pub/how-to-build-your-own-custom-chatgpt-with-custom-knowledge-base-4e61ad82427e)
+- [Llama Hub](https://llamahub.ai/)
+- [Tokenizer](https://platform.openai.com/tokenizer)
 
 <br>
 

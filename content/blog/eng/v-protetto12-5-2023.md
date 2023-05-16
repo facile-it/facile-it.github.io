@@ -2,7 +2,7 @@
 authors: ["engineering"]
 comments: true
 date: "2023-05-16 11:02:00"
-draft: false
+draft: true
 share: true
 categories: ['Protected Fridays', 'ChatGPT', 'API testing', 'Mental health']
 title: "Venerdì Protetto - May 12th 2023"

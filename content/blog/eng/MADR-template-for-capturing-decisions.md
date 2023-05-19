@@ -12,17 +12,15 @@ twitterImage: '/images/madr/architectural-decisions.jpg'
 toc: true
 ---
 
-MADR template for capturing decisions
-=====================================
 
-<img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/crossr.jpg?raw=true" style="width:70px; margin-right: 0.5em" />
+<img align="left" src="https://github.com/facile-it/facile-it.github.io/blob/source/static/images/madr/crossr.jpg?raw=true" style="width:70px; margin-right: 0.5em" />
 
 Developing a project or a product implies, for the engineering teams, the need to make many decisions to reach their goals. Therefore, the teams are often faced with an inevitable and usually not-so-exciting step: capturing and recording significant decisions. This article will give you a taste of what it takes to make decisions during project or product development and will provide you with a standard that can be used in different contexts.
 
 What to capture and why?
 ------------------------
 
-<img align="right" src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/list.png?raw=true" style="width:200px; margin-left: 0.5em" />
+<img align="right" src="https://github.com/facile-it/facile-it.github.io/blob/source/static/images/madr/list.png?raw=true" style="width:200px; margin-left: 0.5em" />
 
 In the article [*Architectural Decisions - The Making Of*](https://ozimmer.ch/practices/2020/04/27/ArchitectureDecisionMaking.html "https://ozimmer.ch/practices/2020/04/27/ArchitectureDecisionMaking.html"), Olaf Zimmermann addresses the need to understand which decisions are significant enough to be recorded and defines significant decisions as *"*the ones that are hard and costly to change"*.* These decisions are most likely to surface when talking about integrating dependencies, implementing interface solutions, adopting construction techniques, and introducing structural elements or non-functional requirements. Decisions made in these instances are rarely self-explanatory, nor deductible from the code. If we fail to record the reasoning behind them, we might encounter a *Why?* question later on from a new team member or our future selves.
 
@@ -43,7 +41,7 @@ If you work in an agile environment, you know that often decisions are made alon
 Some of you might have even stumbled upon one of many articles and studies that aim at providing the best way to capture decisions. In that case, you have probably encountered the formats such as Y-statement and MADR. Both of these formats managed to establish their prevalence due to their slim and agile nature which perfectly reflects the fast pace of the current software engineering reality. In this article, we will focus on the MADR format.
 
 <p align="center">
-<img src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/madr.png?raw=true" style="width:190px;" />
+<img src="https://github.com/facile-it/facile-it.github.io/blob/source/static/images/madr/madr.png?raw=true" style="width:190px;" />
 </p>
 
 These four letters reference one of the most widely adopted formats for capturing architectural and other important decisions, but do we know what they mean? Let's break them down. **M**arkdown is the syntax chosen for capturing these decisions. **A** stands for Any decision, but given its roots, it can often be limited to architectural decisions. A **D**ecision is a choice that has an impact on the software project or product, while a **R**ecord is a document that captures a single decision, its context, and its rationale.
@@ -51,13 +49,13 @@ These four letters reference one of the most widely adopted formats for capturin
 MADR: specifications and template
 ---------------------------------
 
-<img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/MADRlight_template1.png?raw=true" style="width:120px; margin-right: 0.5em" />
+<img align="left" src="https://github.com/facile-it/facile-it.github.io/blob/source/static/images/madr/MADRlight_template1.png?raw=true" style="width:120px; margin-right: 0.5em" />
 
 The consequence of  the MADR format is version 3.0 of the MADR template, available in the [MADR project on GitHub](https://github.com/adr/madr/blob/main/template/adr-template.md "https://github.com/adr/madr/blob/main/template/adr-template.md"). The template consists of a limited number of sections, dedicated to capturing different aspects of a single decision. The first two sections are reserved for the ADR title and its metadata. The core of the template reflects a typical decision-making journey. The initial steps involve the identification of the problem and its context, and the analysis of the goals and desires driving the decision. Next is the evaluation of different options and their pros and cons. Once the final decision is made and enforced, it is time to record its consequences, such as improvements and added efforts or risks and to evaluate its implementation through reviews and tests. The last two sections contain additional information. Here we find the pros and cons of considered options and information that traces the realization and outcome of the final decision, its links to other decisions, and other relevant details.
 
 The reduced version of the template, *MADR light,* puts an even major emphasis on the lean and agile approach to capturing decisions due to its condensed nature, while still recording all relevant information regarding the decision.  Let's now take a look at this version of the template and its sections.
 
-<img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/anaradujko-firstblog/static/images/madr/MADRlight_template.png?raw=true" style="width:120px; margin-right: 0.5em" />
+<img align="left" src="https://github.com/facile-it/facile-it.github.io/blob/source/static/images/madr/MADRlight_template.png?raw=true" style="width:120px; margin-right: 0.5em" />
 
 The **Title** of an ADR conveys the crux of the problem and the decision made to address it. The **Problem statement** is briefly described and placed within the **Context**. The other **Considered options**, later discarded, are listed. The final **Decision outcome** is clearly stated, complete with the **Justification** for its adoption. If we were to translate the template using another lean and widely adopted ADR standard, the Y-statement, the derived sentence would be: In the context of **A**, facing problem **B**, we neglected **C** and decided on **D**, because of **F**.
 

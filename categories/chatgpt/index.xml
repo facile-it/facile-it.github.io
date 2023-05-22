@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ChatGPT on Facile.it Engineering</title>
+    <link>https://engineering.facile.it/categories/chatgpt/</link>
+    <description>Recent content in ChatGPT on Facile.it Engineering</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 May 2023 17:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.facile.it/categories/chatgpt/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Venerdì Protetto - May 12th 2023</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto12-5-2023/</link>
+      <pubDate>Thu, 18 May 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto12-5-2023/</guid>
+      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on May 12, 2023.
+Topics:
+ API testing by Domenico Buttafarro &amp;amp; Vincenzo Gasparo Morticella (Facile.it) ChatGPT and React by Alessio Monesi (Facile.it) Mental health at work by Francesco Di Muro (Lobby Frontali)  API testing API testing with Prism and Playwright by Domenico Buttafarro &amp;amp; Vincenzo Gasparo Morticella
+Today&amp;rsquo;s software landscape is highly competitive and users are increasingly reluctant to tolerate unreliable applications.</description>
+    </item>
+    
+  </channel>
+</rss>

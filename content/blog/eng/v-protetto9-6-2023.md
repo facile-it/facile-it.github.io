@@ -71,7 +71,7 @@ Additionally, we addressed the risks associated with Generative AI and provided 
   
 <sup>by [Olegs Belousovs](https://it.linkedin.com/in/olegsbelousovs)<sup>
   
-<a href="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/user_stories.pngr?raw=true" target="_blank"> 
+<a href="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/user_stories.png?raw=true" target="_blank"> 
 <img align="left" style="width:400px; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/user_stories.png?raw=true" alt="User Stories" title="User Stories" /> 
 </a>
   

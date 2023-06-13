@@ -5,7 +5,7 @@ date: "2023-06-16 17:00:00"
 draft: true
 share: true
 categories: ['Protected Fridays', 'Async API', 'Generative AI', 'User Stories']
-title: "Venerdì Protetto - May 12th 2023"
+title: "Venerdì Protetto - Jun 9th 2023"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/logo_engineering.png'

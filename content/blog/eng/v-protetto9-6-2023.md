@@ -12,6 +12,26 @@ twitterImage: '/images/logo_engineering.png'
 toc: false
 ---
 
+<script type="application/ld+json">
+{ "@context": "https://schema.org", 
+ "@type": "BlogPosting",
+ "headline": "Venerdì Protetto - Jun 9th 2023",
+ "keywords": "API, Generative AI, User stories", 
+ "wordcount": "401",
+ "publisher": "Facile.it Engineering",
+ "url": "[http://www.example.com](https://engineering.facile.it/)",
+ "datePublished": "2023-06-06",
+ "dateCreated": "2023-06-09",
+ "dateModified": "2023-06-09",
+ "description": "We love to do stuff to help people and stuff",
+ "articleBody": "You can paste your entire post in here, and yes it can get really really long.",
+   "author": {
+    "@type": "Person",
+    "name": "Ana"
+  }
+ }
+</script>
+
 
 This page contains the abstracts of the talks held during the latest Venerdì Protetto on Jun 9, 2023. 
 

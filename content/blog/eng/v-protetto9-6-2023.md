@@ -32,7 +32,7 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 <sup>by [Filippo Andrighetti](https://it.linkedin.com/in/filippo-andrighetti-862749b0)<sup>
   
-<a href="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/async_api_initiative.png?raw=true" target="_blank"> 
+<a target="_blank" href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/async_api_initiative.png?raw=true" > 
 <img align="left" style="width:400px; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/async_api_initiative.png?raw=true" alt="AsyncAPI Initiative" title="AsyncAPI Initiative" /> 
 </a>
 

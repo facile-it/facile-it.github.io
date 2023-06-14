@@ -56,6 +56,10 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 <img align="left" style="width:400px; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/async_api_initiative.png?raw=true" alt="AsyncAPI Initiative" title="AsyncAPI Initiative" /> 
 </a>
 
+ <iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
+ 
 Working with Event-Driven Architecture (EDA) is difficult, especially when you need to retrieve documentation of the messages sent, find who is consuming or publishing a specific message, and so on. 
 What if there was a specification that allows developers, architects, and product managers to define the interfaces of an async API, as OpenAPI does for REST APIs?
 

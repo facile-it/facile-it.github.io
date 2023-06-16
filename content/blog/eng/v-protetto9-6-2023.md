@@ -19,12 +19,12 @@ toc: false
  "keywords": "API, Generative AI, User stories", 
  "wordcount": "401",
  "publisher": "Facile.it Engineering",
- "url": "[http://www.example.com](https://engineering.facile.it/)",
- "datePublished": "2023-06-06",
+ "url": "https://engineering.facile.it/",
+ "datePublished": "2023-06-16",
  "dateCreated": "2023-06-09",
- "dateModified": "2023-06-09",
- "description": "We love to do stuff to help people and stuff",
- "articleBody": "You can paste your entire post in here, and yes it can get really really long.",
+ "dateModified": "2023-06-16",
+ "description": "Abstracts of the talks held during the Venerdì Protetto on June 9th",
+ "articleBody": "AsyncAPI Initiative: Async APIs and Event-Driven Architecture. Generative Artificial Intelligence: A Practical Primer. Unveiling the Power of User Stories: Essential Techniques for Successful Software Development",
    "author": {
     "@type": "Person",
     "name": "Ana"
@@ -52,13 +52,9 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 <sup>by [Filippo Andrighetti](https://it.linkedin.com/in/filippo-andrighetti-862749b0)<sup>
   
-<a target="_blank" href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/async_api_initiative.png?raw=true" onclick="window.open(this.src); return false;"> 
+<a href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/async_api_initiative.png?raw=true" target="_blank"> 
 <img align="left" style="width:400px; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/async_api_initiative.png?raw=true" alt="AsyncAPI Initiative" title="AsyncAPI Initiative" /> 
 </a>
-
- <iframe width="420" height="315"
-src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
  
 Working with Event-Driven Architecture (EDA) is difficult, especially when you need to retrieve documentation of the messages sent, find who is consuming or publishing a specific message, and so on. 
 What if there was a specification that allows developers, architects, and product managers to define the interfaces of an async API, as OpenAPI does for REST APIs?

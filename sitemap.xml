@@ -3,17 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://engineering.facile.it/categories/api-testing/</loc>
-    <lastmod>2023-05-18T17:00:00+00:00</lastmod>
+    <loc>https://engineering.facile.it/categories/async-api/</loc>
+    <lastmod>2023-06-16T17:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/authors/</loc>
-    <lastmod>2023-05-18T17:00:00+00:00</lastmod>
+    <lastmod>2023-06-16T17:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/blog/</loc>
+    <lastmod>2023-06-16T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/</loc>
+    <lastmod>2023-06-16T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/authors/engineering/</loc>
+    <lastmod>2023-06-16T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/</loc>
+    <lastmod>2023-06-16T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/generative-ai/</loc>
+    <lastmod>2023-06-16T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/protected-fridays/</loc>
+    <lastmod>2023-06-16T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/user-stories/</loc>
+    <lastmod>2023-06-16T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/eng/v-protetto9-6-2023/</loc>
+    <lastmod>2023-06-16T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/api-testing/</loc>
     <lastmod>2023-05-18T17:00:00+00:00</lastmod>
   </url>
   
@@ -23,32 +63,12 @@
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/categories/</loc>
-    <lastmod>2023-05-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/categories/chatgpt/</loc>
     <lastmod>2023-05-18T17:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/authors/engineering/</loc>
-    <lastmod>2023-05-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/</loc>
-    <lastmod>2023-05-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/categories/mental-health/</loc>
-    <lastmod>2023-05-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/protected-fridays/</loc>
     <lastmod>2023-05-18T17:00:00+00:00</lastmod>
   </url>
   

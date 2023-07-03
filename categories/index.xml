@@ -6,10 +6,46 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 May 2023 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jun 2023 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Async API</title>
+      <link>https://engineering.facile.it/categories/async-api/</link>
+      <pubDate>Fri, 16 Jun 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/async-api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Generative AI</title>
+      <link>https://engineering.facile.it/categories/generative-ai/</link>
+      <pubDate>Fri, 16 Jun 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/generative-ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Protected Fridays</title>
+      <link>https://engineering.facile.it/categories/protected-fridays/</link>
+      <pubDate>Fri, 16 Jun 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/protected-fridays/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>User Stories</title>
+      <link>https://engineering.facile.it/categories/user-stories/</link>
+      <pubDate>Fri, 16 Jun 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/user-stories/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>API testing</title>
@@ -44,15 +80,6 @@
       <pubDate>Thu, 18 May 2023 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/mental-health/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Protected Fridays</title>
-      <link>https://engineering.facile.it/categories/protected-fridays/</link>
-      <pubDate>Thu, 18 May 2023 17:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/protected-fridays/</guid>
       <description></description>
     </item>
     

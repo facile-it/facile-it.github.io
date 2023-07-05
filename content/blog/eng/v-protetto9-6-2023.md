@@ -102,5 +102,6 @@ We discovered the 3 C's framework for effective story crafting and the INVEST pr
 Attendees left equipped with practical knowledge to leverage user stories for improved collaboration, iteration, and successful software development.
   
 <br>
+
   
 The archive of all Venerdì Protetto talks is available [here](/categories/protected-fridays).

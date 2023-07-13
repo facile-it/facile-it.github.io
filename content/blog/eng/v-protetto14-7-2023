@@ -20,9 +20,9 @@ toc: false
  "wordcount": "",
  "publisher": "Facile.it Engineering",
  "url": "https://engineering.facile.it/",
- "datePublished": "2023-06-16",
- "dateCreated": "2023-06-09",
- "dateModified": "2023-06-16",
+ "datePublished": "2023-07-17",
+ "dateCreated": "2023-07-14",
+ "dateModified": "2023-07-17",
  "description": "Abstracts of the talks held during the Venerdì Protetto on July 14th",
  "articleBody":"  ",
    "author": {
@@ -36,9 +36,9 @@ This page contains the abstracts of the talks held during the latest Venerdì Pr
 
 Topics:
 
-- [](#) by (Facile.it)
-- [](#) by (Facile.it)
-- [](#) by (Facile.it)
+- [Deserialization](#deserialization) by Alessio Giorgianni (Facile.it)
+- [Kubernetes](#kubernetes) by Dario Tranchitella ([clastix.io](https://clastix.io/))
+- [Machine Learning pipelines at Facile.it](#machine-learning-pipelines-at-facile-it) by (Facile.it)
 
 
 The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).
@@ -47,23 +47,23 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 ## Deserialization
 
-### The Attacker Point Of View
+### The Attacker's Point Of View
 
-sup>by [Alessio Giorgianni]()<sup>                                                    
+<sup>by [Alessio Giorgianni]()<sup>                                                    
 
 <br>
 
 ## Kubernetes
 ### Kubernetes Multi-Tenancy 
 
-sup>by [Dario Tranchitella](https://clastix.io/)<sup> 
+<sup>by [Dario Tranchitella](https://clastix.io/)<sup> 
 
 <br>
 
 ## Machine Learning pipelines at Facile.it
 ### The Chubb and MetLife use cases
 
-sup>by [Luigi Cerone]( https://www.linkedin.com/in/luigi-cerone/) & [Jacopo Demichelis](https://www.linkedin.com/in/jacopo-maria-demichelis-b20b96196/)<sup> 
+<sup>by [Luigi Cerone]( https://www.linkedin.com/in/luigi-cerone/) & [Jacopo Demichelis](https://www.linkedin.com/in/jacopo-maria-demichelis-b20b96196/)<sup> 
 
 Building a machine learning (ML) model could be challenging, but being able to handle its lifecycle in production at scale is a whole different problem.
 

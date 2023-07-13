@@ -65,6 +65,13 @@ sup>by [Dario Tranchitella](https://clastix.io/)<sup>
 
 sup>by [Team Data]<sup> 
 
+Building a machine learning (ML) model could be challenging, but being able to handle its lifecycle in production at scale is a whole different problem.
+
+In this talk, we shared what’s behind the curtain of many of the ML models in production at Facile. it.
+
+We started from an existing use case, that is, the optimization of leads sold to Chubb and Metlife. 
+We then covered both the creation of the models and all the technical solutions, pipelines, and procedures created in the last year to keep them updated and monitored.
+
 <br>
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)

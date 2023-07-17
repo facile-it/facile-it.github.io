@@ -38,7 +38,7 @@ Topics:
 
 - [Deserialization](#deserialization) by Alessio Giorgianni (Facile.it)
 - [Kubernetes](#kubernetes) by Dario Tranchitella ([clastix.io](https://clastix.io/))
-- [Machine Learning pipelines at Facile.it](#machine-learning-pipelines-at-facile.it) by (Facile.it)
+- [Machine Learning pipelines at Facile.it](#machine-learning-pipelines-at-facileit) by (Facile.it)
 
 
 The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).
@@ -49,7 +49,13 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 ### The Attacker's Point Of View
 
-<sup>by [Alessio Giorgianni]()<sup>                                                    
+<sup>by [Alessio Giorgianni]()<sup>      
+
+<a href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" alt="Deserialization" title="Deserialization" /> 
+</a>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <br>
 
@@ -58,12 +64,22 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 <sup>by [Dario Tranchitella](https://clastix.io/)<sup> 
 
+<a href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Kubernetes.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Kubernetes.png?raw=true" alt="Kubernetes" title="Kubernetes" /> 
+</a>
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 <br>
 
 ## Machine Learning pipelines at Facile.it
 ### The Chubb and MetLife use cases
 
 <sup>by [Luigi Cerone]( https://www.linkedin.com/in/luigi-cerone/) & [Jacopo Demichelis](https://www.linkedin.com/in/jacopo-maria-demichelis-b20b96196/)<sup> 
+
+<a href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" alt="Deserialization" title="Deserialization" /> 
+</a>
 
 Building a machine learning (ML) model could be challenging, but being able to handle its lifecycle in production at scale is a whole different problem.
 

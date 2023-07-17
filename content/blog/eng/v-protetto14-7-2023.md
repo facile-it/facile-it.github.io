@@ -74,6 +74,7 @@ We then covered both the creation of the models and all the technical solutions,
 
 <br>
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+[![IMAGE](https://img.youtube.com/vi/mCw9h0jIuqk/0.jpg)](https://www.youtube.com/embed/mCw9h0jIuqk)
+
   
 The archive of all Venerdì Protetto talks is available [here](/categories/protected-fridays).

@@ -4,8 +4,8 @@ comments: true
 date: "2023-06-16 17:00:00"
 draft: true
 share: true
-categories: ['Protected Fridays', 'Async API', 'Generative AI', 'User Stories']
-title: "Venerdì Protetto - Jun 9th 2023"
+categories: ['Protected Fridays']
+title: "Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/logo_engineering.png'
@@ -55,7 +55,14 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 <img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" alt="Deserialization" title="Deserialization" /> 
 </a>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Serialization is a known concept within software development. Nonetheless, the developer often has only a superficial knowledge of this mechanism, ignoring especially the security-related issues.
+
+So, what might happen if a skilled attacker is able to manipulate a serialized payload maliciously?
+
+The purpose of this talk was to give an introductory overview of the potential attack scenarios that a user attacker could implement, and the consequences they could have (arbitrary file read/write, remote code execution, etc.) by focusing more on the PHP platform.
+
+We started by writing simple introductory exploits and worked our way up to a complex exploit used in the recent bug from the well-known blog [VBullettin](https://www.vbulletin.com/).
+
 
 <br>
 

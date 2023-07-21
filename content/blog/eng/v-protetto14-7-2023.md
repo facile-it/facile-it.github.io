@@ -38,7 +38,7 @@ Topics:
 
 - [Deserialization](#deserialization) by Alessio Giorgianni (Facile.it)
 - [Kubernetes](#kubernetes) by Dario Tranchitella ([clastix.io](https://clastix.io/))
-- [Machine Learning pipelines at Facile.it](#machine-learning-pipelines-at-facileit) by (Facile.it)
+- [Machine learning pipelines at Facile.it](#machine-learning-pipelines-at-facileit) by (Facile.it)
 
 
 The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).
@@ -47,7 +47,7 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 ## Deserialization
 
-### The Attacker's Point Of View
+### The attacker's point of view
 
 <sup>by [Alessio Giorgianni]()<sup>      
 
@@ -61,13 +61,13 @@ So, what might happen if a skilled attacker is able to manipulate a serialized p
 
 The purpose of this talk was to give an introductory overview of the potential attack scenarios that a user attacker could implement, and the consequences they could have (arbitrary file read/write, remote code execution, etc.) by focusing more on the PHP platform.
 
-We started by writing simple introductory exploits and worked our way up to a complex exploit used in the recent bug from the well-known blog [VBullettin](https://www.vbulletin.com/).
+We started by writing simple introductory exploits and worked our way up to a complex exploit used in a recent bug from the well-known blog [VBullettin](https://www.vbulletin.com/).
 
 
 <br>
 
 ## Kubernetes
-### Kubernetes Multi-Tenancy 
+### Kubernetes multi-tenancy 
 
 <sup>by [Dario Tranchitella](https://clastix.io/)<sup> 
 
@@ -75,11 +75,17 @@ We started by writing simple introductory exploits and worked our way up to a co
 <img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Kubernetes.png?raw=true" alt="Kubernetes" title="Kubernetes" /> 
 </a>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 <br>
 
-## Machine Learning pipelines at Facile.it
+## Machine learning pipelines at Facile.it
 ### The Chubb and MetLife use cases
 
 <sup>by [Luigi Cerone]( https://www.linkedin.com/in/luigi-cerone/) & [Jacopo Demichelis](https://www.linkedin.com/in/jacopo-maria-demichelis-b20b96196/)<sup> 
@@ -92,12 +98,9 @@ Building a machine learning (ML) model could be challenging, but being able to h
 
 In this talk, we shared what’s behind the curtain of many of the ML models in production at Facile. it.
 
-We started from an existing use case, that is, the optimization of leads sold to Chubb and Metlife. 
+We started from an existing use case, that is, the optimization of leads sold to [Chubb](https://www.chubb.com/it-it/) and [Metlife](https://www.metlife.it/). 
 We then covered both the creation of the models and all the technical solutions, pipelines, and procedures created in the last year to keep them updated and monitored.
 
 <br>
-
-[![IMAGE](https://img.youtube.com/vi/mCw9h0jIuqk/0.jpg)](https://www.youtube.com/embed/mCw9h0jIuqk)
-
   
 The archive of all Venerdì Protetto talks is available [here](/categories/protected-fridays).

@@ -2,7 +2,7 @@
 authors: ["engineering"]
 comments: true
 date: "2023-06-16 17:00:00"
-draft: true
+draft: false
 share: true
 categories: ['Protected Fridays']
 title: "Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning"

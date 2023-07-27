@@ -15,22 +15,23 @@ toc: false
 <script type="application/ld+json">
 { "@context": "https://schema.org", 
  "@type": "BlogPosting",
- "headline": "Venerdì Protetto - Jun 9th 2023",
- "keywords": "API, Generative AI, User stories", 
- "wordcount": "",
+ "headline": "Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning",
+ "keywords": "Deserialization, Kubernetes, Machine Learning", 
+ "wordcount": "368",
  "publisher": "Facile.it Engineering",
  "url": "https://engineering.facile.it/",
- "datePublished": "2023-07-17",
+ "datePublished": "2023-07-27",
  "dateCreated": "2023-07-14",
- "dateModified": "2023-07-17",
+ "dateModified": "2023-07-27",
  "description": "Abstracts of the talks held during the Venerdì Protetto on July 14th",
- "articleBody":"  ",
+ "articleBody":"Deserialization The attacker's point of view by Alessio Giorgianni Serialization is a known concept within software development. Nonetheless, the developer often has only a superficial knowledge of this mechanism, ignoring especially the security-related issues. So, what might happen if a skilled attacker is able to manipulate a serialized payload maliciously? The purpose of this talk was to give an introductory overview of the potential attack scenarios that a user attacker could implement, and the consequences they could have (arbitrary file read/write, remote code execution, etc.) by focusing more on the PHP platform. We started by writing From great power comes great responsibility, as Uncle Ben said. And that's true when you use a Kubernetes cluster shared among multiple tenants. In this session, we discovered the principles required to develop an Internal Developer Platform that is multi-tenant aware such as self-service, security first, and declarative, besides the API primitives that Kubernetes offers to address the resource quota and isolation. Eventually, we discovered how Capsule can help to address all these requirements in a simpler way, without breaking the Kubernetes UX. Machine learning pipelines at Facile.it The Chubb and MetLife use cases by Luigi Cerone & Jacopo Demichelissimple introductory exploits and worked our way up to a complex exploit used in a recent bug from the well-known blog VBullettin. Kubernetes multi-tenancy by Dario Tranchitella Building a machine learning (ML) model could be challenging, but being able to handle its lifecycle in production at scale is a whole different problem. In this talk, we shared what’s behind the curtain of many of the ML models in production at Facile.it. We started from an existing use case, that is, the optimization of leads sold to Chubb and Metlife. We then covered both the creation of the models and all the technical solutions, pipelines, and procedures created in the last year to keep them updated and monitored. The archive of all Venerdì Protetto talks is available here.",
    "author": {
     "@type": "Person",
     "name": "Ana"
        }
  }
 </script>
+
 
 This page contains the abstracts of the talks held during the latest Venerdì Protetto on July 14, 2023. 
 
@@ -75,13 +76,13 @@ We started by writing simple introductory exploits and worked our way up to a co
 <img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Kubernetes.png?raw=true" alt="Kubernetes" title="Kubernetes" /> 
 </a>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+From great power comes great responsibility, as Uncle Ben said. And that's true when you use a Kubernetes cluster shared among multiple tenants.
 
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+In this session, we discovered the principles required to develop an Internal Developer Platform that is multi-tenant aware such as self-service, security first, and declarative, besides the API primitives that Kubernetes offers to address the resource quota and isolation.
 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Eventually, we discovered how Capsule can help to address all these requirements in a simpler way, without breaking the Kubernetes UX.
 
 <br>
 
@@ -96,7 +97,7 @@ Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deseru
 
 Building a machine learning (ML) model could be challenging, but being able to handle its lifecycle in production at scale is a whole different problem.
 
-In this talk, we shared what’s behind the curtain of many of the ML models in production at Facile. it.
+In this talk, we shared what’s behind the curtain of many of the ML models in production at Facile.it.
 
 We started from an existing use case, that is, the optimization of leads sold to [Chubb](https://www.chubb.com/it-it/) and [Metlife](https://www.metlife.it/). 
 We then covered both the creation of the models and all the technical solutions, pipelines, and procedures created in the last year to keep them updated and monitored.

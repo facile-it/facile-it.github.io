@@ -1920,6 +1920,17 @@
 	    article.post h3,
 	    article.post h4 {
 	        color: #333333;
+	        /* Theoretically for IE 8 & 9 (more valid) */
+	        /* ...but not required as filter works too */
+	        /* should come BEFORE filter */
+	        -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=87)";
+
+	        /* This works in IE 8 & 9 too */
+	        /* ... but also 5, 6, 7 */
+	        filter: alpha(opacity=87);
+
+	        /* Modern Browsers */
+	        opacity: 0.87;
 	    }
 
 /* Table */

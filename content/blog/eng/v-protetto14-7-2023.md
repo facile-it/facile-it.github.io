@@ -37,9 +37,9 @@ This page contains the abstracts of the talks held during the latest Venerdì Pr
 
 Topics:
 
-- [Deserialization](#deserialization) by Alessio Giorgianni (Facile.it)
-- [Kubernetes](#kubernetes) by Dario Tranchitella ([clastix.io](https://clastix.io/))
-- [Machine learning pipelines at Facile.it](#machine-learning-pipelines-at-facileit) by (Facile.it)
+- [Deserialization](#deserialization) by [Alessio Giorgianni](https://www.linkedin.com/in/alessio-giorgianni-b90500123/) (Facile.it)
+- [Kubernetes](#kubernetes) by [Dario Tranchitella](https://www.linkedin.com/in/dariotranchitella/) ([CLASTIX](https://clastix.io/))
+- [Machine learning pipelines at Facile.it](#machine-learning-pipelines-at-facileit) by [Luigi Cerone]( https://www.linkedin.com/in/luigi-cerone/) & [Jacopo Demichelis](https://www.linkedin.com/in/jacopo-maria-demichelis-b20b96196/) (Facile.it)
 
 
 The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).
@@ -50,7 +50,7 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 ### The attacker's point of view
 
-<sup>by [Alessio Giorgianni]()<sup>      
+<sup>by [Alessio Giorgianni](https://www.linkedin.com/in/alessio-giorgianni-b90500123/)<sup>      
 
 <a href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" target="_blank"> 
 <img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" alt="Deserialization" title="Deserialization" /> 
@@ -70,7 +70,7 @@ We started by writing simple introductory exploits and worked our way up to a co
 ## Kubernetes
 ### Kubernetes multi-tenancy 
 
-<sup>by [Dario Tranchitella](https://clastix.io/)<sup> 
+<sup>by [Dario Tranchitella](https://www.linkedin.com/in/dariotranchitella/) ([CLASTIX](https://clastix.io/))<sup> 
 
 <a href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Kubernetes.png?raw=true" target="_blank"> 
 <img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Kubernetes.png?raw=true" alt="Kubernetes" title="Kubernetes" /> 

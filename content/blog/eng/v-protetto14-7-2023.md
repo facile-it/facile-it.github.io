@@ -13,23 +13,24 @@ toc: false
 ---
 
 <script type="application/ld+json">
-{ "@context": "https://schema.org", 
- "@type": "BlogPosting",
- "headline": "Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning",
- "keywords": "Deserialization, Kubernetes, Machine Learning", 
- "wordcount": "368",
- "publisher": "Facile.it Engineering",
- "url": "https://engineering.facile.it/",
- "datePublished": "2023-07-27",
- "dateCreated": "2023-07-14",
- "dateModified": "2023-07-27",
- "description": "Abstracts of the talks held during the Venerdì Protetto on July 14th",
- "articleBody":"Deserialization The attacker's point of view by Alessio Giorgianni Serialization is a known concept within software development. Nonetheless, the developer often has only a superficial knowledge of this mechanism, ignoring especially the security-related issues. So, what might happen if a skilled attacker is able to manipulate a serialized payload maliciously? The purpose of this talk was to give an introductory overview of the potential attack scenarios that a user attacker could implement, and the consequences they could have (arbitrary file read/write, remote code execution, etc.) by focusing more on the PHP platform. We started by writing From great power comes great responsibility, as Uncle Ben said. And that's true when you use a Kubernetes cluster shared among multiple tenants. In this session, we discovered the principles required to develop an Internal Developer Platform that is multi-tenant aware such as self-service, security first, and declarative, besides the API primitives that Kubernetes offers to address the resource quota and isolation. Eventually, we discovered how Capsule can help to address all these requirements in a simpler way, without breaking the Kubernetes UX. Machine learning pipelines at Facile.it by Luigi Cerone & Jacopo Demichelis - simple introductory exploits and worked our way up to a complex exploit used in a recent bug from the well-known blog VBullettin. Kubernetes multi-tenancy by Dario Tranchitella Building a machine learning (ML) model could be challenging, but being able to handle its lifecycle in production at scale is a whole different problem. In this talk, we shared what’s behind the curtain of many of the ML models in production at Facile.it. We started from an existing use case, that is, the optimization of leads sold to third-party societies. We then covered both the creation of the models and all the technical solutions, pipelines, and procedures created in the last year to keep them updated and monitored. The archive of all Venerdì Protetto talks is available here.",
-   "author": {
+{ 
+  "@context": "https://schema.org", 
+  "@type": "BlogPosting",
+  "headline": "Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning",
+  "keywords": "Deserialization, Kubernetes, Machine Learning", 
+  "wordcount": "368",
+  "publisher": "Facile.it Engineering",
+  "url": "https://engineering.facile.it/",
+  "datePublished": "2023-07-27",
+  "dateCreated": "2023-07-14",
+  "dateModified": "2023-07-27",
+  "description": "Abstracts of the talks held during the Venerdì Protetto on July 14th, 2023",
+  "articleBody":"Deserialization The attacker's point of view by Alessio Giorgianni Serialization is a known concept within software development. Nonetheless, the developer often has only a superficial knowledge of this mechanism, ignoring especially the security-related issues. So, what might happen if a skilled attacker is able to manipulate a serialized payload maliciously? The purpose of this talk was to give an introductory overview of the potential attack scenarios that a user attacker could implement, and the consequences they could have (arbitrary file read/write, remote code execution, etc.) by focusing more on the PHP platform. We started by writing From great power comes great responsibility, as Uncle Ben said. And that's true when you use a Kubernetes cluster shared among multiple tenants. In this session, we discovered the principles required to develop an Internal Developer Platform that is multi-tenant aware such as self-service, security first, and declarative, besides the API primitives that Kubernetes offers to address the resource quota and isolation. Eventually, we discovered how Capsule can help to address all these requirements in a simpler way, without breaking the Kubernetes UX. Machine learning pipelines at Facile.it by Luigi Cerone & Jacopo Demichelis - simple introductory exploits and worked our way up to a complex exploit used in a recent bug from the well-known blog VBullettin. Kubernetes multi-tenancy by Dario Tranchitella Building a machine learning (ML) model could be challenging, but being able to handle its lifecycle in production at scale is a whole different problem. In this talk, we shared what’s behind the curtain of many of the ML models in production at Facile.it. We started from an existing use case, that is, the optimization of leads. We then covered both the creation of the models and all the technical solutions, pipelines, and procedures created in the last year to keep them updated and monitored. The archive of all Venerdì Protetto talks is available here.",
+  "author": {
     "@type": "Person",
     "name": "Ana"
-       }
- }
+  }
+}
 </script>
 
 
@@ -98,7 +99,7 @@ Building a machine learning (ML) model could be challenging, but being able to h
 
 In this talk, we shared what’s behind the curtain of many of the ML models in production at Facile.it.
 
-We started from an existing use case, that is, the optimization of leads sold to third-party societies. 
+We started from an existing use case, that is, the optimization of leads. 
 We then covered both the creation of the models and all the technical solutions, pipelines, and procedures created in the last year to keep them updated and monitored.
 
 <br>

@@ -53,8 +53,8 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 <sup>by [Alessio Giorgianni](https://www.linkedin.com/in/alessio-giorgianni-b90500123/)<sup>      
 
-<a href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" alt="Deserialization" title="Deserialization" /> 
+<a href= "/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" alt="Deserialization" title="Deserialization" /> 
 </a>
 
 Serialization is a known concept within software development. Nonetheless, the developer often has only a superficial knowledge of this mechanism, ignoring especially the security-related issues.
@@ -73,8 +73,8 @@ We started by writing simple introductory exploits and worked our way up to a co
 
 <sup>by [Dario Tranchitella](https://www.linkedin.com/in/dariotranchitella/) ([CLASTIX](https://clastix.io/))<sup> 
 
-<a href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Kubernetes.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Kubernetes.png?raw=true" alt="Kubernetes" title="Kubernetes" /> 
+<a href= "/images/venerd%C3%AC_protetto/Kubernetes.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerd%C3%AC_protetto/Kubernetes.png?raw=true" alt="Kubernetes" title="Kubernetes" /> 
 </a>
 
 From great power comes great responsibility, as Uncle Ben said. And that's true when you use a Kubernetes cluster shared among multiple tenants.
@@ -91,8 +91,8 @@ Eventually, we discovered how Capsule can help to address all these requirements
 
 <sup>by [Luigi Cerone]( https://www.linkedin.com/in/luigi-cerone/) & [Jacopo Demichelis](https://www.linkedin.com/in/jacopo-maria-demichelis-b20b96196/)<sup> 
 
-<a href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" alt="Deserialization" title="Deserialization" /> 
+<a href= "/images/venerd%C3%AC_protetto/machine_learning.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/machine_learning.png?raw=true" alt="Machine Learning Pipelines at Facile.it" title="MachineLearningPipelines" /> 
 </a>
 
 Building a machine learning (ML) model could be challenging, but being able to handle its lifecycle in production at scale is a whole different problem.

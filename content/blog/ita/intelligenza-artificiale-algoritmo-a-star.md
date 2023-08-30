@@ -37,7 +37,11 @@ Un'euristica è ammissibile quando l'errore di stima non è mai in eccesso. Un e
 In termini matematici una funzione euristica h è ammissibile se:
 
 <p align="center">
-<img src="/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.png?raw=true"/>
+<img src="../../../static/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.png?raw=true"/>
+</p>
+
+<p align="center">
+<img src="../../static/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.png?raw=true"/>
 </p>
 
 Dove V è l'insieme dei nodi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.

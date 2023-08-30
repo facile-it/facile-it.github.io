@@ -35,10 +35,11 @@ L'euristica determina anche la qualità della soluzione finale.
 Con un'<a href="http://www.okpedia.it/euristica_ammissibile">euristica ammissibile</a> A* è in grado di identificare la soluzione ottima (e.g. percorso con il minor costo possibile).
 Un'euristica è ammissibile quando l'errore di stima non è mai in eccesso. Un esempio è la distanza in linea d'aria tra due punti su una mappa.
 In termini matematici una funzione euristica h è ammissibile se:
-<div style="text-align: center; margin: 0 0 2em 0;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif)
-    <!-- \forall x \in V : h(s, x) \leq g(s, x) -->
-</div>
+
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif" />
+</p>
+
 Dove V è l'insieme dei nodi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.
 
 La funzione euristica si dice monotòna o consistente se:

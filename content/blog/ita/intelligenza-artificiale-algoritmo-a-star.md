@@ -37,7 +37,7 @@ Un'euristica è ammissibile quando l'errore di stima non è mai in eccesso. Un e
 In termini matematici una funzione euristica h è ammissibile se:
 
 <p align="center">
-<img src="../../../static/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.png?raw=true"/>
+<img src="../../../static/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif?raw=true"/>
 </p>
 
 Dove V è l'insieme dei nodi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.
@@ -45,7 +45,7 @@ Dove V è l'insieme dei nodi, s è il nodo soluzione e la funzione g calcola la 
 La funzione euristica si dice monotòna o consistente se:
 
 <p align="center">
-<img src="../../../static/images/intelligenza-artificiale-algoritmo-a-star/monotonia.png?raw=true"/>
+<img src="../../../static/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif?raw=true"/>
 </p>
 
 Dove E è l'insieme degli archi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.

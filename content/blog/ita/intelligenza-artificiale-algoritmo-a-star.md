@@ -37,16 +37,18 @@ Un'euristica è ammissibile quando l'errore di stima non è mai in eccesso. Un e
 In termini matematici una funzione euristica h è ammissibile se:
 
 <p align="center">
-<img src="/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif" />
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif style="hight:190px;"/>
 </p>
 
 Dove V è l'insieme dei nodi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.
 
 La funzione euristica si dice monotòna o consistente se:
 <div style="text-align: center; margin: 0 0 2em 0;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif)
-    <!-- \forall (x, y) \in E : h(s, x) \leq g(x, y) + h(s, y) -->
-</div>
+
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif style="hight:190px;"/>
+</p>
+
 Dove E è l'insieme degli archi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.
 
 Una funzione euristica monotona semplifica ulteriormente la struttura di A* in quanto la lista dei nodi già visitati diviene superflua. In questi casi, la sola coda a priorità è sufficiente.
@@ -63,15 +65,18 @@ A* usa le seguenti strutture dati per mantenere traccia dello stato d'esecuzione
 
 Nel corso dell'esecuzione, ad ogni nodo vengono associati più valori: *gScore, hScore, fScore.*
 In termini matematici, dato il nodo corrente n, il nodo di partenza p e il nodo soluzione s, si deifiniscono i valori:
-<div style="text-align: center;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/g-score.gif)
-</div>
-<div style="text-align: center;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/h-score.gif)
-</div>
-<div style="text-align: center; margin: 0 0 2em 0;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/f-score.gif)
-</div>
+
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/g-score.gif style="hight:190px;"/>
+</p>
+
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/h-score.gif style="hight:190px;"/>
+</p>
+
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/f-score.gif style="hight:190px;"/>
+</p>
 
 La **funzione g** calcola il **costo effettivo** del percorso che separa i nodi p (partenza) e n (attuale).
 La **funzione h** calcola una **stima** del costo del percorso tra i nodi s (soluzione) e n (attuale).

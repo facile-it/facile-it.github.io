@@ -33,16 +33,7 @@ One key point worth mentioning is *optimize for correctness and not for performa
 
 - **The power of Π**
  
- 
-<iframe title="YouTube video player"
-    width="640"
-    height="480"
-    src="https://www.youtube.com/watch?v=3zT5eVHpQwA&list=PLvL2NEhYV4ZsV9Bw0wp1P46SOdtk4pFW6&index=13&t=0s"
-    frameborder="0"
-    allow="encrypted-media"
-    allowfullscreen
->
-</iframe>
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/3zT5eVHpQwA?si=ovKHcngfyUUsSfi0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
 
 
 **Thorsten Altenkirch** from the University of Nottingham gave a talk about implementing dependent types.

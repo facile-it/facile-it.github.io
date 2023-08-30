@@ -32,9 +32,10 @@ One key point worth mentioning is *optimize for correctness and not for performa
 
 
 - **The power of Π**
- 
- <iframe width="560" height="315" src="https://www.youtube.com/embed/3zT5eVHpQwA?si=ovKHcngfyUUsSfi0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
 
+<div style="text-align: left">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3zT5eVHpQwA?si=ovKHcngfyUUsSfi0" frameborder="0" allowfullscreen></iframe>
+</div>
 
 **Thorsten Altenkirch** from the University of Nottingham gave a talk about implementing dependent types.
 Think for a second if it was possible to base return types in functions by the value at runtime. Normally you would think is not possible because we should run the code to know the actual input value.

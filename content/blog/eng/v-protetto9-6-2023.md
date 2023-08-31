@@ -5,7 +5,7 @@ date: "2023-06-16 17:00:00"
 draft: false
 share: true
 categories: ['Protected Fridays', 'Async API', 'Generative AI', 'User Stories']
-title: "Venerdì Protetto | July edition: Async API Initiative, Generative AI, User stories"
+title: "Venerdì Protetto | Jun edition: Async API Initiative, Generative AI, User stories"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/logo_engineering.png'
@@ -16,7 +16,7 @@ toc: false
     "@context": "https://schema.org",
     "genre":["SEO","JSON-LD"],
     "@type": "BlogPosting",
-    "headline": "Venerdì Protetto | July edition: Async API Initiative, Generative AI, User stories",
+    "headline": "Venerdì Protetto | Jun edition: Async API Initiative, Generative AI, User stories",
     "keywords": ["API", "Generative AI", "User stories"],
     "wordcount": "401",
     "publisher": {

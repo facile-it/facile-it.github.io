@@ -12,15 +12,12 @@
     
     
     <item>
-      <title>Venerdì Protetto - May 12th 2023</title>
+      <title>Venerdì Protetto | May edition: API testing, Chat GPT and React, Mental health at work</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto12-5-2023/</link>
       <pubDate>Thu, 18 May 2023 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/v-protetto12-5-2023/</guid>
-      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on May 12, 2023.
-Topics:
- API testing by Domenico Buttafarro &amp;amp; Vincenzo Gasparo Morticella (Facile.it) ChatGPT and React by Alessio Monesi (Facile.it) Mental health at work by Francesco Di Muro (Lobby Frontali)  API testing API testing with Prism and Playwright by Domenico Buttafarro &amp;amp; Vincenzo Gasparo Morticella
-Today&amp;rsquo;s software landscape is highly competitive and users are increasingly reluctant to tolerate unreliable applications.</description>
+      <description>{ &#34;@context&#34;: &#34;https://schema.org&#34;, &#34;@type&#34;: &#34;BlogPosting&#34;, &#34;headline&#34;: &#34;Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning&#34;, &#34;keywords&#34;: &#34;Deserialization, Kubernetes, Machine Learning&#34;, &#34;wordcount&#34;: &#34;569&#34;, &#34;publisher&#34;: &#34;Facile.it Engineering&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/&#34;, &#34;datePublished&#34;: &#34;2023-05-18&#34;, &#34;dateCreated&#34;: &#34;2023-05-18&#34;, &#34;dateModified&#34;: &#34;2023-08-31&#34;, &#34;description&#34;: &#34;Abstracts of the talks held during the Venerdì Protetto on May 12th, 2023&#34;, &#34;articleBody&#34;:&#34;API testing with Prism and Playwright Today&#39;s software landscape is highly competitive and users are increasingly reluctant to tolerate unreliable applications. An issue at the API level of an application can lead to user-facing errors or latency, which can erode customer trust, lead to churn, and negatively impact the business.</description>
     </item>
     
   </channel>

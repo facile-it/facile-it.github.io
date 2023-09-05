@@ -21,40 +21,30 @@
     </item>
     
     <item>
-      <title>Venerdì Protetto - Jun 9th 2023</title>
+      <title>Venerdì Protetto | Jun edition: Async API Initiative, Generative AI, User stories</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto9-6-2023/</link>
       <pubDate>Fri, 16 Jun 2023 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/v-protetto9-6-2023/</guid>
-      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on Jun 9, 2023.
-Topics:
- Async API Initiative by Filippo Andrighetti (Facile.it) Generative AI Alessandro Vitale (Conversate) User Stories by Olegs Belousovs (Facile.it)  The overview of Venerdì Protetto is available here.
-Async API Initiative AsyncAPI Initiative: Async APIs and Event-Driven Architecture by Filippo Andrighetti
- Working with Event-Driven Architecture (EDA) is difficult, especially when you need to retrieve documentation of the messages sent, find who is consuming or publishing a specific message, and so on.</description>
+      <description>{ &#34;@context&#34;: &#34;https://schema.org&#34;, &#34;genre&#34;:[&#34;SEO&#34;,&#34;JSON-LD&#34;], &#34;@type&#34;: &#34;BlogPosting&#34;, &#34;headline&#34;: &#34;Venerdì Protetto | Jun edition: Async API Initiative, Generative AI, User stories&#34;, &#34;keywords&#34;: [&#34;API&#34;, &#34;Generative AI&#34;, &#34;User stories&#34;], &#34;wordcount&#34;: &#34;401&#34;, &#34;publisher&#34;: { &#34;@type&#34;: &#34;Organization&#34;, &#34;name&#34;: &#34;Facile.it Engineering&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/&#34;, &#34;logo&#34;: { &#34;@type&#34;: &#34;ImageObject&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/images/logo_engineering.png&#34;, &#34;width&#34;:&#34;1057&#34;, &#34;height&#34;:&#34;244&#34; } }, &#34;url&#34;: &#34;https://engineering.facile.it/blog/eng/v-protetto9-6-2023/&#34;, &#34;image&#34;: &#34;https://engineering.facile.it/images/logo_engineering.png&#34;, &#34;datePublished&#34;: &#34;2023-06-16&#34;, &#34;dateCreated&#34;: &#34;2023-06-09&#34;, &#34;dateModified&#34;: &#34;2023-08-31&#34;, &#34;inLanguage&#34;: &#34;en-US&#34;, &#34;isFamilyFriendly&#34;: &#34;true&#34;, &#34;description&#34;: &#34;Abstracts of the talks held during the Venerdì Protetto on June 9th&#34;</description>
     </item>
     
     <item>
-      <title>Venerdì Protetto - May 12th 2023</title>
+      <title>Venerdì Protetto | May edition: API testing, Chat GPT and React, Mental health at work</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto12-5-2023/</link>
       <pubDate>Thu, 18 May 2023 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/v-protetto12-5-2023/</guid>
-      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on May 12, 2023.
-Topics:
- API testing by Domenico Buttafarro &amp;amp; Vincenzo Gasparo Morticella (Facile.it) ChatGPT and React by Alessio Monesi (Facile.it) Mental health at work by Francesco Di Muro (Lobby Frontali)  API testing API testing with Prism and Playwright by Domenico Buttafarro &amp;amp; Vincenzo Gasparo Morticella
-Today&amp;rsquo;s software landscape is highly competitive and users are increasingly reluctant to tolerate unreliable applications.</description>
+      <description>{ &#34;@context&#34;: &#34;https://schema.org&#34;, &#34;@type&#34;: &#34;BlogPosting&#34;, &#34;headline&#34;: &#34;Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning&#34;, &#34;keywords&#34;: &#34;Deserialization, Kubernetes, Machine Learning&#34;, &#34;wordcount&#34;: &#34;569&#34;, &#34;publisher&#34;: &#34;Facile.it Engineering&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/&#34;, &#34;datePublished&#34;: &#34;2023-05-18&#34;, &#34;dateCreated&#34;: &#34;2023-05-18&#34;, &#34;dateModified&#34;: &#34;2023-08-31&#34;, &#34;description&#34;: &#34;Abstracts of the talks held during the Venerdì Protetto on May 12th, 2023&#34;, &#34;articleBody&#34;:&#34;API testing with Prism and Playwright Today&#39;s software landscape is highly competitive and users are increasingly reluctant to tolerate unreliable applications. An issue at the API level of an application can lead to user-facing errors or latency, which can erode customer trust, lead to churn, and negatively impact the business.</description>
     </item>
     
     <item>
-      <title>Venerdì Protetto - April 14th 2023</title>
+      <title>Venerdì Protetto | April edition: Backstage, Code revolution, Dynamic forms</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto14-4-2023/</link>
       <pubDate>Fri, 21 Apr 2023 11:02:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/v-protetto14-4-2023/</guid>
-      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on April 14, 2023.
-Topics:
- Backstage by Lee Mills (Spotify) Code revolution by Mirko Urru &amp;amp; Stefano Giurgiano (Facile.it) Dynamic forms by Giovanni Fiorentino (Facile.it)  Backstage An introduction to Backstage, managing the chaos by Lee Mills, Spotify
-At the beginning of this year, our engineering teams adopted a new tool: Backstage, an open-source platform for building developer portals created at Spotify.</description>
+      <description>{ &#34;@context&#34;: &#34;https://schema.org&#34;, &#34;@type&#34;: &#34;BlogPosting&#34;, &#34;headline&#34;: &#34;Venerdì Protetto | April edition: Backstage, Code revolution, Dynamic forms&#34;, &#34;keywords&#34;: &#34;Backstage, Code revolution, Dynamic forms&#34;, &#34;wordcount&#34;: &#34;637&#34;, &#34;publisher&#34;: &#34;Facile.it Engineering&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/&#34;, &#34;datePublished&#34;: &#34;2023-04-21&#34;, &#34;dateCreated&#34;: &#34;2023-04-21&#34;, &#34;dateModified&#34;: &#34;2023-08-31&#34;, &#34;description&#34;: &#34;Abstracts of the talks held during the Venerdì Protetto on April 14th, 2023&#34;, &#34;articleBody&#34;:&#34;An introduction to Backstage, managing the chaos At the beginning of this year, our engineering teams adopted a new tool: Backstage, an open-source platform for building developer portals created at Spotify.</description>
     </item>
     
     <item>

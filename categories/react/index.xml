@@ -12,15 +12,12 @@
     
     
     <item>
-      <title>Venerdì Protetto - April 14th 2023</title>
+      <title>Venerdì Protetto | April edition: Backstage, Code revolution, Dynamic forms</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto14-4-2023/</link>
       <pubDate>Fri, 21 Apr 2023 11:02:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/v-protetto14-4-2023/</guid>
-      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on April 14, 2023.
-Topics:
- Backstage by Lee Mills (Spotify) Code revolution by Mirko Urru &amp;amp; Stefano Giurgiano (Facile.it) Dynamic forms by Giovanni Fiorentino (Facile.it)  Backstage An introduction to Backstage, managing the chaos by Lee Mills, Spotify
-At the beginning of this year, our engineering teams adopted a new tool: Backstage, an open-source platform for building developer portals created at Spotify.</description>
+      <description>{ &#34;@context&#34;: &#34;https://schema.org&#34;, &#34;@type&#34;: &#34;BlogPosting&#34;, &#34;headline&#34;: &#34;Venerdì Protetto | April edition: Backstage, Code revolution, Dynamic forms&#34;, &#34;keywords&#34;: &#34;Backstage, Code revolution, Dynamic forms&#34;, &#34;wordcount&#34;: &#34;637&#34;, &#34;publisher&#34;: &#34;Facile.it Engineering&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/&#34;, &#34;datePublished&#34;: &#34;2023-04-21&#34;, &#34;dateCreated&#34;: &#34;2023-04-21&#34;, &#34;dateModified&#34;: &#34;2023-08-31&#34;, &#34;description&#34;: &#34;Abstracts of the talks held during the Venerdì Protetto on April 14th, 2023&#34;, &#34;articleBody&#34;:&#34;An introduction to Backstage, managing the chaos At the beginning of this year, our engineering teams adopted a new tool: Backstage, an open-source platform for building developer portals created at Spotify.</description>
     </item>
     
     <item>

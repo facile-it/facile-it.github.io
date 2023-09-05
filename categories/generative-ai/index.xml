@@ -12,16 +12,12 @@
     
     
     <item>
-      <title>Venerdì Protetto - Jun 9th 2023</title>
+      <title>Venerdì Protetto | Jun edition: Async API Initiative, Generative AI, User stories</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto9-6-2023/</link>
       <pubDate>Fri, 16 Jun 2023 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/blog/eng/v-protetto9-6-2023/</guid>
-      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on Jun 9, 2023.
-Topics:
- Async API Initiative by Filippo Andrighetti (Facile.it) Generative AI Alessandro Vitale (Conversate) User Stories by Olegs Belousovs (Facile.it)  The overview of Venerdì Protetto is available here.
-Async API Initiative AsyncAPI Initiative: Async APIs and Event-Driven Architecture by Filippo Andrighetti
- Working with Event-Driven Architecture (EDA) is difficult, especially when you need to retrieve documentation of the messages sent, find who is consuming or publishing a specific message, and so on.</description>
+      <description>{ &#34;@context&#34;: &#34;https://schema.org&#34;, &#34;genre&#34;:[&#34;SEO&#34;,&#34;JSON-LD&#34;], &#34;@type&#34;: &#34;BlogPosting&#34;, &#34;headline&#34;: &#34;Venerdì Protetto | Jun edition: Async API Initiative, Generative AI, User stories&#34;, &#34;keywords&#34;: [&#34;API&#34;, &#34;Generative AI&#34;, &#34;User stories&#34;], &#34;wordcount&#34;: &#34;401&#34;, &#34;publisher&#34;: { &#34;@type&#34;: &#34;Organization&#34;, &#34;name&#34;: &#34;Facile.it Engineering&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/&#34;, &#34;logo&#34;: { &#34;@type&#34;: &#34;ImageObject&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/images/logo_engineering.png&#34;, &#34;width&#34;:&#34;1057&#34;, &#34;height&#34;:&#34;244&#34; } }, &#34;url&#34;: &#34;https://engineering.facile.it/blog/eng/v-protetto9-6-2023/&#34;, &#34;image&#34;: &#34;https://engineering.facile.it/images/logo_engineering.png&#34;, &#34;datePublished&#34;: &#34;2023-06-16&#34;, &#34;dateCreated&#34;: &#34;2023-06-09&#34;, &#34;dateModified&#34;: &#34;2023-08-31&#34;, &#34;inLanguage&#34;: &#34;en-US&#34;, &#34;isFamilyFriendly&#34;: &#34;true&#34;, &#34;description&#34;: &#34;Abstracts of the talks held during the Venerdì Protetto on June 9th&#34;</description>
     </item>
     
   </channel>

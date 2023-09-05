@@ -71,7 +71,7 @@ In generale, A* può risolvere efficacemente i problemi che soddisfano i requisi
  La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti.">
 <meta itemprop="datePublished" content="2015-05-12T00:00:00&#43;00:00" />
 <meta itemprop="dateModified" content="2015-05-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="874">
+<meta itemprop="wordCount" content="868">
 
 
 
@@ -257,7 +257,7 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="/blog/eng/v-protetto9-6-2023/">Venerdì Protetto - Jun 9th 2023</a></h3>
+                                <h3><a href="/blog/eng/v-protetto9-6-2023/">Venerdì Protetto | Jun edition: Async API Initiative, Generative AI, User stories</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2023-06-16'>
@@ -269,7 +269,7 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="/blog/eng/v-protetto12-5-2023/">Venerdì Protetto - May 12th 2023</a></h3>
+                                <h3><a href="/blog/eng/v-protetto12-5-2023/">Venerdì Protetto | May edition: API testing, Chat GPT and React, Mental health at work</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2023-05-18'>
@@ -435,17 +435,15 @@ Nel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ri
 Con un'<a href="http://www.okpedia.it/euristica_ammissibile">euristica ammissibile</a> A* è in grado di identificare la soluzione ottima (e.g. percorso con il minor costo possibile).
 Un&rsquo;euristica è ammissibile quando l&rsquo;errore di stima non è mai in eccesso. Un esempio è la distanza in linea d&rsquo;aria tra due punti su una mappa.
 In termini matematici una funzione euristica h è ammissibile se:</p>
-<div style="text-align: center; margin: 0 0 2em 0;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif)
-    <!-- \forall x \in V : h(s, x) \leq g(s, x) -->
-</div>
-Dove V è l'insieme dei nodi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif?raw=true"/>
+</p>
+<p>Dove V è l&rsquo;insieme dei nodi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.</p>
 <p>La funzione euristica si dice monotòna o consistente se:</p>
-<div style="text-align: center; margin: 0 0 2em 0;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif)
-    <!-- \forall (x, y) \in E : h(s, x) \leq g(x, y) + h(s, y) -->
-</div>
-Dove E è l'insieme degli archi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif?raw=true"/>
+</p>
+<p>Dove E è l&rsquo;insieme degli archi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.</p>
 <p>Una funzione euristica monotona semplifica ulteriormente la struttura di A* in quanto la lista dei nodi già visitati diviene superflua. In questi casi, la sola coda a priorità è sufficiente.
 Una funzione euristica monotona è sempre ammissibile.</p>
 <h1 id="struttura-dellalgoritmo">Struttura dell&rsquo;algoritmo</h1>
@@ -458,15 +456,15 @@ Esso tuttavia non è *<a href="https://it.wikipedia.org/wiki/Algoritmo_greedy">g
 </ul>
 <p>Nel corso dell&rsquo;esecuzione, ad ogni nodo vengono associati più valori: <em>gScore, hScore, fScore.</em>
 In termini matematici, dato il nodo corrente n, il nodo di partenza p e il nodo soluzione s, si deifiniscono i valori:</p>
-<div style="text-align: center;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/g-score.gif)
-</div>
-<div style="text-align: center;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/h-score.gif)
-</div>
-<div style="text-align: center; margin: 0 0 2em 0;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/f-score.gif)
-</div>
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/g-score.gif?raw=true" style="hight:190px;"/>
+</p>
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/h-score.gif?raw=true" style="hight:190px;"/>
+</p>
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/f-score.gif?raw=true" style="hight:190px;"/>
+</p>
 <p>La <strong>funzione g</strong> calcola il <strong>costo effettivo</strong> del percorso che separa i nodi p (partenza) e n (attuale).
 La <strong>funzione h</strong> calcola una <strong>stima</strong> del costo del percorso tra i nodi s (soluzione) e n (attuale).
 La funzione h corrisponde alla definizione dell&rsquo;algoritmo euristico enunciato in precedenza. Essa è infatti chiamata spesso <em>funzione euristica</em>.</p>
@@ -506,12 +504,11 @@ end function
 <p>Si analizza un&rsquo;implementazione dell&rsquo;algoritmo A* che consente di risolvere il problema del <a href="https://it.wikipedia.org/wiki/Gioco_del_quindici">gioco del 15</a>.</p>
 <p>Il software è disponibile su GitHub all&rsquo;indirizzo <a href="https://github.com/taueres/a-star-15-puzzle-solver">https://github.com/taueres/a-star-15-puzzle-solver</a></p>
 <p>La funzione euristica utilizzata è la <a href="http://it.wikipedia.org/wiki/Geometria_del_taxi">Distanza di Manhattan</a>, definita nel modo seguente:</p>
-<div style="text-align: center; margin: 0 0 2em 0;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/distanza-di-manhattan.gif)
-    <!-- man(p, p') = \sum_{i=1}^{15} |x_i - x'_i| + |y_i - y'_i| -->
-</div>
-Essa calcola, per ogni casella, la quantità minima di spostamenti necessari per arrivare dalla posizione p alla posizione p'.
-È dimostrabile che la Distanza di Manhattan è *ammissibile* e *monotona*.
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/distanza-di-manhattan.gif?raw=true" style="hight:190px;"/>
+</p>
+<p>Essa calcola, per ogni casella, la quantità minima di spostamenti necessari per arrivare dalla posizione p alla posizione p&rsquo;.
+È dimostrabile che la Distanza di Manhattan è <em>ammissibile</em> e <em>monotona</em>.</p>
 <p>L&rsquo;implementazione ha diverse componenti:</p>
 <ul>
 <li><strong>Main.py</strong>: 	Stabilisce la posizione di partenza, avvia l&rsquo;algoritmo e mostra la soluzione;</li>
@@ -774,7 +771,7 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
               </div>
 
               <h3>
-                <a href="/blog/eng/v-protetto9-6-2023/">Venerdì Protetto - Jun 9th 2023</a>
+                <a href="/blog/eng/v-protetto9-6-2023/">Venerdì Protetto | Jun edition: Async API Initiative, Generative AI, User stories</a>
               </h3>
               
               <time class="published" datetime='2023-06-16'>
@@ -798,7 +795,7 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
               </div>
 
               <h3>
-                <a href="/blog/eng/v-protetto12-5-2023/">Venerdì Protetto - May 12th 2023</a>
+                <a href="/blog/eng/v-protetto12-5-2023/">Venerdì Protetto | May edition: API testing, Chat GPT and React, Mental health at work</a>
               </h3>
               
               <time class="published" datetime='2023-05-18'>

@@ -35,17 +35,19 @@ L'euristica determina anche la qualità della soluzione finale.
 Con un'<a href="http://www.okpedia.it/euristica_ammissibile">euristica ammissibile</a> A* è in grado di identificare la soluzione ottima (e.g. percorso con il minor costo possibile).
 Un'euristica è ammissibile quando l'errore di stima non è mai in eccesso. Un esempio è la distanza in linea d'aria tra due punti su una mappa.
 In termini matematici una funzione euristica h è ammissibile se:
-<div style="text-align: center; margin: 0 0 2em 0;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif)
-    <!-- \forall x \in V : h(s, x) \leq g(s, x) -->
-</div>
+
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/ammissibilita.gif?raw=true"/>
+</p>
+
 Dove V è l'insieme dei nodi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.
 
 La funzione euristica si dice monotòna o consistente se:
-<div style="text-align: center; margin: 0 0 2em 0;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif)
-    <!-- \forall (x, y) \in E : h(s, x) \leq g(x, y) + h(s, y) -->
-</div>
+
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/monotonia.gif?raw=true"/>
+</p>
+
 Dove E è l'insieme degli archi, s è il nodo soluzione e la funzione g calcola la distanza esatta tra due nodi.
 
 Una funzione euristica monotona semplifica ulteriormente la struttura di A* in quanto la lista dei nodi già visitati diviene superflua. In questi casi, la sola coda a priorità è sufficiente.
@@ -62,15 +64,18 @@ A* usa le seguenti strutture dati per mantenere traccia dello stato d'esecuzione
 
 Nel corso dell'esecuzione, ad ogni nodo vengono associati più valori: *gScore, hScore, fScore.*
 In termini matematici, dato il nodo corrente n, il nodo di partenza p e il nodo soluzione s, si deifiniscono i valori:
-<div style="text-align: center;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/g-score.gif)
-</div>
-<div style="text-align: center;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/h-score.gif)
-</div>
-<div style="text-align: center; margin: 0 0 2em 0;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/f-score.gif)
-</div>
+
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/g-score.gif?raw=true" style="hight:190px;"/>
+</p>
+
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/h-score.gif?raw=true" style="hight:190px;"/>
+</p>
+
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/f-score.gif?raw=true" style="hight:190px;"/>
+</p>
 
 La **funzione g** calcola il **costo effettivo** del percorso che separa i nodi p (partenza) e n (attuale).
 La **funzione h** calcola una **stima** del costo del percorso tra i nodi s (soluzione) e n (attuale).
@@ -117,10 +122,11 @@ Si analizza un'implementazione dell'algoritmo A* che consente di risolvere il pr
 Il software è disponibile su GitHub all'indirizzo https://github.com/taueres/a-star-15-puzzle-solver
 
 La funzione euristica utilizzata è la <a href="http://it.wikipedia.org/wiki/Geometria_del_taxi">Distanza di Manhattan</a>, definita nel modo seguente:
-<div style="text-align: center; margin: 0 0 2em 0;">
-    ![](/images/intelligenza-artificiale-algoritmo-a-star/distanza-di-manhattan.gif)
-    <!-- man(p, p') = \sum_{i=1}^{15} |x_i - x'_i| + |y_i - y'_i| -->
-</div>
+
+<p align="center">
+<img src="/images/intelligenza-artificiale-algoritmo-a-star/distanza-di-manhattan.gif?raw=true" style="hight:190px;"/>
+</p>
+
 Essa calcola, per ogni casella, la quantità minima di spostamenti necessari per arrivare dalla posizione p alla posizione p'.
 È dimostrabile che la Distanza di Manhattan è *ammissibile* e *monotona*.
 

@@ -1,0 +1,48 @@
+---
+authors: ["engineering"]
+comments: true
+date: "2023-07-27 13:00:00"
+draft: true
+share: true
+categories: ['Protected Fridays']
+title: "Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning"
+languageCode: "en-US"
+type: "post"
+twitterImage: '/images/logo_engineering.png'
+toc: false
+---
+
+<script type="application/ld+json">
+{ 
+  "@context": "https://schema.org", 
+  "@type": "BlogPosting",
+  "headline": "Venerdì Protetto | September edition: Code shipping, Community tools, Quix Streams Library",
+  "keywords": "Code shipping, Community tools, Quix Streams Library", 
+  "wordcount": "8",
+  "publisher": "Facile.it Engineering",
+  "url": "https://engineering.facile.it/",
+  "datePublished": "2023-09-15",
+  "dateCreated": "2023-09-12",
+  "dateModified": "2023-09-12",
+  "description": "Abstracts of the talks held during the Venerdì Protetto on Semptember 8th, 2023",
+  "articleBody":"",
+  "author": {
+    "@type": "Person",
+    "name": "Ana"
+  }
+}
+</script>
+
+
+This page contains the abstracts of the talks held during the latest Venerdì Protetto on September 8, 2023. 
+
+Topics:
+- [Code shipping](code-shipping) by [Luca Florio]()
+- [Community tools](#community-tools) by [Giovanni Cardamone]()
+- [Quix Streams Library](quix-streams-library) by Thomas Neubauer & Michael Rosam ([Quix](https://quix.io/))
+
+The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).
+
+<br>
+
+                                                     

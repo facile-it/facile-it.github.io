@@ -37,7 +37,7 @@ toc: false
 This page contains the abstracts of the talks held during the latest Venerdì Protetto on September 8, 2023. 
 
 Topics:
-- [Code shipping](code-shipping) by [Luca Florio]()
+- [Code shipping](code-shipping) by [Luca Florio]() ([Spotify](https://engineering.atspotify.com/))
 - [Community tools](#community-tools) by [Giovanni Cardamone]()
 - [Quix Streams Library](quix-streams-library) by Thomas Neubauer & Michael Rosam ([Quix](https://quix.io/))
 
@@ -49,7 +49,7 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 ### Ship it! From your laptop to production multiple times a day
 
-<sup>By [Luca Florio](https://www.linkedin.com/in/elleflorio/)<sup>
+<sup>By [Luca Florio](https://www.linkedin.com/in/elleflorio/), [Spotify](https://engineering.atspotify.com/)<sup>
 
 <a href= "/images/venerd%C3%AC_protetto/shipping-code.png?raw=true" target="_blank"> 
 <img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerd%C3%AC_protetto/shipping-code.png?raw=true" alt="Shipping code" title="Shipping code" /> 

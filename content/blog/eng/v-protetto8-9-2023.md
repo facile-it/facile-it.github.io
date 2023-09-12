@@ -67,7 +67,7 @@ Oh, and we need to keep it up and running after we deploy it as well. That is im
 
 ### A place where we can meet
 
-<sup>By [Giovanni Cardamone]()<sup>
+<sup>By [Giovanni Cardamone](), Facile.it<sup>
 
 <a href= "/images/venerdì_protetto/community-tools.png?raw=true" target="_blank"> 
 <img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerdì_protetto/community-tools.png?raw=true" alt="Community tools" title="Community tools" /> 
@@ -96,13 +96,9 @@ We saw the library in action with a sentiment analysis demo. In this demo, we ca
 We saw how the library can simplify tasks such as:
 
 - Subscribing to topics and deserializing incoming messages into table rows.
-
 - Running calculations on a rolling window of messages.
-
 - Using memory states to apply different functions such as aggregation or filtering.
-
 - Automatically outputting the results of calculations into downstream topics.
-
 - Managing state without the hassle of checkpointing and queues.
 
 <br>

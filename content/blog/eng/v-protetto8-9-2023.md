@@ -51,8 +51,8 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 <sup>By [Luca Florio](https://www.linkedin.com/in/elleflorio/), [Spotify](https://engineering.atspotify.com/)<sup>
 
-<a href= "/images/venerd%C3%AC_protetto/shipping-code.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerd%C3%AC_protetto/shipping-code.png?raw=true" alt="Shipping code" title="Shipping code" /> 
+<a href= "/images/venerdì_protetto/shipping-code.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerdì_protetto/shipping-code.png?raw=true" alt="Shipping code" title="Shipping code" /> 
 </a>
 
 We all love to ship our code to production as fast as possible. But how to ensure (well, kind of) that we are not breaking stuff?
@@ -69,8 +69,8 @@ Oh, and we need to keep it up and running after we deploy it as well. That is im
 
 <sup>By [Giovanni Cardamone]()<sup>
 
-<a href= "/images/venerd%C3%AC_protetto/community-tools.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerd%C3%AC_protetto/community-tools.png?raw=true" alt="Community tools" title="Community tools" /> 
+<a href= "/images/venerdì_protetto/community-tools.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerdì_protetto/community-tools.png?raw=true" alt="Community tools" title="Community tools" /> 
 </a>
 
 Add text
@@ -83,8 +83,8 @@ Add text
 
 <sup>By [Thomas Neubauer](), [Quix](https://quix.io/)
 
-<a href= "/images/venerd%C3%AC_protetto/quix-streams.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerd%C3%AC_protetto/quix-streams.png?raw=true" alt="Quix Streams Library" title="Quix Streams Library" /> 
+<a href= "/images/venerdì_protetto/quix-streams.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerdì_protetto/quix-streams.png?raw=true" alt="Quix Streams Library" title="Quix Streams Library" /> 
 </a>
 
 This talk introduced Quix Streams, an open-source Python library for data-intensive workloads on Kafka.

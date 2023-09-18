@@ -91,8 +91,8 @@ Eventually, we discovered how Capsule can help to address all these requirements
 
 <sup>by [Luigi Cerone]( https://www.linkedin.com/in/luigi-cerone/) & [Jacopo Demichelis](https://www.linkedin.com/in/jacopo-maria-demichelis-b20b96196/)<sup> 
 
-<a href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" alt="Deserialization" title="Deserialization" /> 
+<a href= "/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerd%C3%AC_protetto/Deserialization.png?raw=true" alt="Deserialization" title="Deserialization" /> 
 </a>
 
 Building a machine learning (ML) model could be challenging, but being able to handle its lifecycle in production at scale is a whole different problem.

@@ -73,7 +73,11 @@ Oh, and we need to keep it up and running after we deploy it as well. That is im
 <img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerdì_protetto/community-tools.png?raw=true" alt="Community tools" title="Community tools" /> 
 </a>
 
-Add text
+Community Tools is an initiative to create a unified community within Facile.it. The key points are improving, having fun, and bringing value to everyone. 
+
+The initiative focuses on introducing new tools to the company to build a nicer working environment and better integrate into the "Facile lifestyle". Every community member can make a difference by having a space to communicate and compare with others. 
+
+Community Tools is also a place to find new stuff and learn from each other's work. New workflows, programming languages, and methodologies can be experimented with freely and without deadlines to build everything you think is missing.
 
 <br>
 

@@ -97,10 +97,9 @@ Eventually, we discovered how Capsule can help to address all these requirements
 
 Building a machine learning (ML) model could be challenging, but being able to handle its lifecycle in production at scale is a whole different problem.
 
-In this talk, we shared what’s behind the curtain of many of the ML models in production at Facile.it.
+In this talk, we shared what’s behind the curtain of many of the ML models in production at Facile.it.
 
-We started from an existing use case, that is, the optimization of leads sold to [Chubb](https://www.chubb.com/it-it/) and [Metlife](https://www.metlife.it/). 
-We then covered both the creation of the models and all the technical solutions, pipelines, and procedures created in the last year to keep them updated and monitored.
+We started from an existing use case, that is, the optimization of leads. We then covered both the creation of the models and all the technical solutions, pipelines, and procedures created in the last year to keep them updated and monitored.
 
 <br>
   

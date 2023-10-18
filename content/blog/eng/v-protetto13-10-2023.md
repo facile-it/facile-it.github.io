@@ -1,8 +1,8 @@
 ---
 authors: ["engineering"]
 comments: true
-date: "2023-10-17 17:00:00"
-draft: true
+date: "2023-10-18 17:00:00"
+draft: false
 share: true
 categories: ['Protected Fridays']
 title: "Venerdì Protetto | October edition: Machine learning, OpenTelemetry, Second Brain"

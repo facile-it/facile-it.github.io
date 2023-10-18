@@ -106,7 +106,7 @@ As a knowledge worker, your knowledge is your most important asset.
 
 Think about when you need to approach a new development paradigm, a new technology, or learn a new domain, and imagine having an ecosystem of tools that allow you to capture, organize, and retrieve information, whatever the source or type. 
 Imagine being able to compose, link, and reference your knowledge, obtain new knowledge, and generate all sorts of deliverables while doing it better and in less time than having to start 'from scratch' each time. 
-If you are familiar with the Domain-Driven Design (DDD) and use this approach, you will find compelling synergies with this ecosystem.
+If you are familiar with the Domain-Driven Design (DDD) and use it, you will find compelling synergies with this ecosystem of tools.
 
 In this talk, we explored the concepts behind a Personal Knowledge Management System (PKMS) that enables you to understand what it means to manage information, discover how to generate value from it and learn the basics so that you can start building your knowledge repository. 
 We used Obsidian, one of the most used tools in this field. Nonetheless, everything we saw is tool-independent to give you the freedom to implement the system that best suits your goals and brings you the most value.

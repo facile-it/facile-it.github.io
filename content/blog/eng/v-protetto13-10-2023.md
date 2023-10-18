@@ -16,7 +16,7 @@ toc: false
     "@context": "https://schema.org",
     "genre":["SEO","JSON-LD"],
     "@type": "BlogPosting",
-    "headline": "Venerdì Protetto | Jun edition: Machine learning, OpenTelemetry, Second Brain",
+    "headline": "Venerdì Protetto | October edition: Machine learning, OpenTelemetry, Second Brain",
     "keywords": ["Machine learning", "OpenTelemetry ", "Second Brain"],
     "wordcount": "350",
     "publisher": {

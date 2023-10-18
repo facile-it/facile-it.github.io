@@ -51,7 +51,7 @@ This page contains the abstracts of the talks held during the latest Venerdì Pr
 
 Topics:
 
-- [Machine learning](#machine-learning) by [Marica Castaldo](https://www.linkedin.com/in/ACoAABKZGhwBZf_NEuPa1lj1TE8F3-v0eTfVMw4?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BTG1ST732RaOObyA3vnZFeA%3D%3D) & [Santolo Tubelli](https://www.linkedin.com/in/ACoAAAsXQ3QBAQLMllIX_lfGJZPbABlYBP4awAw?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BTG1ST732RaOObyA3vnZFeA%3D%3D)
+- [Machine learning](#machine-learning) by [Marica Castaldo](https://it.linkedin.com/in/marica-castaldo-2505b588) & [Santolo Tubelli](https://it.linkedin.com/in/santolo-tubelli)
 - [OpenTelemetry](#open-telemetry) by [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/?originalSubdomain=it)
 - [Second Brain](#second-brain) by [Antonello Calamea](https://www.linkedin.com/in/antonello-calamea/)
 
@@ -64,7 +64,7 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 ### Machine learning pipelines at Facile.it: real-rime use case for mortgages
 
-<sup>by [Marica Castaldo](https://www.linkedin.com/in/ACoAABKZGhwBZf_NEuPa1lj1TE8F3-v0eTfVMw4?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BTG1ST732RaOObyA3vnZFeA%3D%3D) & [Santolo Tubelli](https://www.linkedin.com/in/ACoAAAsXQ3QBAQLMllIX_lfGJZPbABlYBP4awAw?lipi=urn%3Ali%3Apage%3Ad_flagship3_detail_base%3BTG1ST732RaOObyA3vnZFeA%3D%3D)<sup>
+<sup>by [Marica Castaldo](https://it.linkedin.com/in/marica-castaldo-2505b588) & [Santolo Tubelli](https://it.linkedin.com/in/santolo-tubelli)<sup>
 
 <a href= "/images/venerd%C3%AC_protetto/machinelearning2.png?raw=true" target="_blank"> 
 <img align="left" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/machinelearning2.png?raw=true" alt="Machine Learning Pipelines at Facile.it" title="Machine Learning Pipelines Mortgages Use Case" /> 

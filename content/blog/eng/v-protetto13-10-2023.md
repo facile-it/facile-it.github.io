@@ -10,6 +10,7 @@ description: "What happened in last Facile.it Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/twitter_preview.png'
+twitterLargeImage: '/images/twitter_preview.png'
 toc: false
 ---
 

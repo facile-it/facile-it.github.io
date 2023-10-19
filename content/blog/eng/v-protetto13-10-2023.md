@@ -11,6 +11,7 @@ type: "post"
 twitterImage: '/images/logo_engineering.png'
 toc: false
 ---
+ 
 <script type="application/ld+json">
 { 
     "@context": "https://schema.org",
@@ -52,7 +53,7 @@ This page contains the abstracts of the talks held during the latest Venerdì Pr
 Topics:
 
 - [Machine learning](#machine-learning) by [Marica Castaldo](https://it.linkedin.com/in/marica-castaldo-2505b588) & [Santolo Tubelli](https://it.linkedin.com/in/santolo-tubelli)
-- [OpenTelemetry](#open-telemetry) by [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/?originalSubdomain=it)
+- [OpenTelemetry](#opentelemetry) by [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/?originalSubdomain=it)
 - [Second Brain](#second-brain) by [Antonello Calamea](https://www.linkedin.com/in/antonello-calamea/)
 
 
@@ -110,3 +111,7 @@ If you are familiar with the Domain-Driven Design (DDD) and use it, you will fin
 
 In this talk, we explored the concepts behind a Personal Knowledge Management System (PKMS) that enables you to understand what it means to manage information, discover how to generate value from it and learn the basics so that you can start building your knowledge repository. 
 We used Obsidian, one of the most used tools in this field. Nonetheless, everything we saw is tool-independent to give you the freedom to implement the system that best suits your goals and brings you the most value.
+
+<br/>
+
+The archive of all Venerdì Protetto talks is available [here](/categories/protected-fridays).

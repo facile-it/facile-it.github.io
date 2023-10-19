@@ -5,10 +5,11 @@ date: "2023-10-18 17:00:00"
 draft: false
 share: true
 categories: ['Protected Fridays']
-title: "Venerdì Protetto | October edition: Machine learning, OpenTelemetry, Second Brain"
+title: "Venerdì Protetto | October edition"
+description: "What happened in last Facile.it Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/logo_engineering.png'
+twitterImage: '/images/twitter_preview.png'
 toc: false
 ---
 
@@ -40,6 +41,8 @@ The use case aims to assist call center operators by recommending the most-suite
 Besides, we deep-dived into the key features of the internal framework that we as Team Data developed to speed up the delivery of machine learning systems.
 
 <br>
+<br>
+
 
 ## OpenTelemetry 
 
@@ -100,7 +103,7 @@ The archive of all Venerdì Protetto talks is available [here](/categories/prote
         }
     },
     "url": "https://engineering.facile.it/blog/eng/v-protetto9-6-2023/",
-    "image": "https://engineering.facile.it/images/logo_engineering.png",
+    "image": "https://engineering.facile.it/images/twitter_preview.png",
     "datePublished": "2023-10-18",
     "dateCreated": "2023-10-18",
     "dateModified": "2023-10-18",

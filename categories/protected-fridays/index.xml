@@ -6,10 +6,23 @@
     <description>Recent content in Protected Fridays on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Sep 2023 13:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Oct 2023 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/protected-fridays/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Venerdì Protetto | October edition</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto13-10-2023/</link>
+      <pubDate>Wed, 18 Oct 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto13-10-2023/</guid>
+      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on October 13, 2023.
+Topics:
+ Machine learning by Marica Castaldo &amp;amp; Santolo Tubelli OpenTelemetry by Stefano Giurgiano Second Brain by Antonello Calamea (freelance)  The overview of Venerdì Protetto is available here.
+Machine learning Machine learning pipelines at Facile.it: real-rime use case for mortgages by Marica Castaldo &amp;amp; Santolo Tubelli
+ In this talk, we presented a real-time machine learning use case within the mortgage industry.</description>
+    </item>
     
     <item>
       <title>Venerdì Protetto | September edition: Code shipping, Community tools, Quix Streams Library</title>

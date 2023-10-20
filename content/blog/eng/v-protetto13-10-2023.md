@@ -6,7 +6,7 @@ draft: false
 share: true
 categories: ['Protected Fridays']
 title: "Venerdì Protetto | October edition"
-description: "What happened in last Facile.it Venerdì Protetto?"
+description: "What happened in the last Facile.it Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/twitter_preview.png'
@@ -19,7 +19,7 @@ This page contains the abstracts of the talks held during the latest Venerdì Pr
 Topics:
 
 - [Machine learning](#machine-learning) by [Marica Castaldo](https://it.linkedin.com/in/marica-castaldo-2505b588) & [Santolo Tubelli](https://it.linkedin.com/in/santolo-tubelli)
-- [OpenTelemetry](#openTelemetry) by [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/?originalSubdomain=it)
+- [OpenTelemetry](#open-telemetry) by [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/?originalSubdomain=it)
 - [Second Brain](#second-brain) by [Antonello Calamea](https://www.linkedin.com/in/antonello-calamea/) (freelance)
 
 
@@ -45,7 +45,7 @@ Besides, we deep-dived into the key features of the internal framework that we a
 <br>
 
 
-## OpenTelemetry 
+## Open Telemetry 
 
 ### Observability with a library and standard open-source
 

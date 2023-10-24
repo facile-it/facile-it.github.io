@@ -4,7 +4,7 @@ comments: true
 date: "2023-10-18 17:00:00"
 draft: false
 share: true
-categories: ['Protected Fridays']
+categories: ['Protected Fridays', 'Machine Learning', 'Telemetry', 'Open source', 'Soft Skill', 'Second Brain']
 title: "Venerdì Protetto | October edition"
 description: "What happened in the last Facile.it Venerdì Protetto?"
 languageCode: "en-US"

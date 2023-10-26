@@ -124,7 +124,7 @@ Behind the scenes, the ServerRMQ uses [amqp-connection-manager](https://www.npmj
 
 Amqplib uses the `consume` method to handle incoming messages and return a [consumerTag](https://amqp-node.github.io/amqplib/channel_api.html#channel_consume). At the moment NestJS implementation does not handle the consumerTag and there isn’t a way to remove the consumer from the current channel.
 
-GracefulServerRMQ overrides the `setupChannel` method from the base implementation and stores the consumer tag in a class field (you can compare the methods). The `setupChannel` is the method provided to `createChannel` method of the amqp-connection-manager server.
+GracefulServerRMQ overrides the `setupChannel` method from the base implementation and stores the consumer tag in a class field (you can compare the methods). The `setupChannel` is the method provided to the `createChannel` method of the amqp-connection-manager server.
 
 > _As you can see in the amqp-connection-manager documentation:_ “The setup functions will be run every time amqp-connection-manager reconnects, to make sure your channel and broker are in a sane state.”
 
@@ -154,7 +154,7 @@ public async setupChannel(channel: Channel, callback: () => void) {
   }
 ```
 
-After the connection happens, the `handleMessage` , which is a method used by Microservices to handle a message from other microservices or external services, discriminates what the message pattern is and executes the correct handler (you can see it in the parent class).
+After the connection, the handleMessage method, used by Microservices to handle a message from other microservices or external services, determines the message pattern and executes the correct handler (you can see it in the parent class).
 
 To achieve the graceful shutdown without losing any execution, the custom implementation overrides the `handleMessage` method by adding a counter of the current executions.
 
@@ -174,7 +174,7 @@ public async handleMessage(
   }
 ```
 
-This counter allows the Custom Transporter to wait for all handlers before closing Rabbit Channel and Connection.
+This counter allows the Custom Transporter to wait for all handlers before closing the RabbitMQ Channel and Connection.
 
 When the server is closing (when the `close` method is invoked):
 

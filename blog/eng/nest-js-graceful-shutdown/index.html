@@ -1,0 +1,1439 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>NestJS graceful shutdown for RabbitMQ Microservices</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="referrer" content="always">
+        <meta name="generator" content="Hugo 0.69.0" />
+        
+
+
+        
+        
+            
+                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+            
+        
+
+        <meta name="twitter:card" content="summary_large_image"/>
+
+    <meta name="twitter:image" content="https://engineering.facile.it/images/nest-js-graceful-shutdown/nestjs-rabbitmq.webp"/>
+
+
+
+<meta name="twitter:title" content="NestJS graceful shutdown for RabbitMQ Microservices"/>
+<meta name="twitter:description" content="Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.
+What is the problem? In my current job, my team deals with asynchronous jobs in our project daily.
+Because of the intrinsic nature of asynchronous jobs, they take a long time to execute, sometimes over 30 seconds."/>
+
+    
+        
+    
+
+
+<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+
+        <meta property="og:title" content="NestJS graceful shutdown for RabbitMQ Microservices" />
+<meta property="og:description" content="Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.
+What is the problem? In my current job, my team deals with asynchronous jobs in our project daily.
+Because of the intrinsic nature of asynchronous jobs, they take a long time to execute, sometimes over 30 seconds." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/" />
+<meta property="article:published_time" content="2023-10-14T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-10-14T00:00:00+00:00" />
+
+
+        
+            
+                <meta property="og:image" content="https://engineering.facile.it/images/nest-js-graceful-shutdown/nestjs-rabbitmq.webp">
+            
+        
+
+        <meta itemprop="name" content="NestJS graceful shutdown for RabbitMQ Microservices">
+<meta itemprop="description" content="Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.
+What is the problem? In my current job, my team deals with asynchronous jobs in our project daily.
+Because of the intrinsic nature of asynchronous jobs, they take a long time to execute, sometimes over 30 seconds.">
+<meta itemprop="datePublished" content="2023-10-14T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2023-10-14T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1405">
+
+
+
+<meta itemprop="keywords" content="" />
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/additional.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.12.0/styles/monokai-sublime.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-22342495-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">Facile.it Engineering</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/authors/">
+                            <i class="fa fa-pencil">&nbsp;</i>Authors
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/ita/careers/">
+                            <i class="fa fa-briefcase">&nbsp;</i>Careers
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/eng/who-we-are/">
+                            <i class="fa fa-users">&nbsp;</i>Who we are
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-folder-open-o">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/authors/">
+                            <h3>
+                                <i class="fa fa-pencil">&nbsp;</i>Authors
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/ita/careers/">
+                            <h3>
+                                <i class="fa fa-briefcase">&nbsp;</i>Careers
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/eng/who-we-are/">
+                            <h3>
+                                <i class="fa fa-users">&nbsp;</i>Who we are
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto13-10-2023/">Venerdì Protetto | October edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2023-10-18'>
+                                    October 18, 2023</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/nest-js-graceful-shutdown/">NestJS graceful shutdown for RabbitMQ Microservices</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2023-10-14'>
+                                    October 14, 2023</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto8-9-2023/">Venerdì Protetto | September edition: Code shipping, Community tools, Quix Streams Library</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2023-09-18'>
+                                    September 18, 2023</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            /blog/
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fnest-js-graceful-shutdown%2f&amp;text=NestJS%20graceful%20shutdown%20for%20RabbitMQ%20Microservices&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fnest-js-graceful-shutdown%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fnest-js-graceful-shutdown%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fnest-js-graceful-shutdown%2f&amp;title=NestJS%20graceful%20shutdown%20for%20RabbitMQ%20Microservices" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fnest-js-graceful-shutdown%2f&amp;title=NestJS%20graceful%20shutdown%20for%20RabbitMQ%20Microservices" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fnest-js-graceful-shutdown%2f&amp;title=NestJS%20graceful%20shutdown%20for%20RabbitMQ%20Microservices" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fnest-js-graceful-shutdown%2f&amp;description=NestJS%20graceful%20shutdown%20for%20RabbitMQ%20Microservices" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fnest-js-graceful-shutdown%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/eng/nest-js-graceful-shutdown/">NestJS graceful shutdown for RabbitMQ Microservices</a></h1>
+            
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2023-10-14'>
+            14 October 2023
+        </time>
+
+        
+            <a href="/authors/pasqualino-desimone/" class="author">
+            
+                <span class="name">Pasqualino de Simone</span>
+                <img src="https://www.gravatar.com/avatar/3b8e327984accc34cafb36d1acd6284dfcc72478f5b914750caf40feab5f7acd" alt="Pasqualino de Simone avatar" />
+            
+            </a>
+        
+
+        
+            <p>7 minute read</p>
+        
+    </div>
+</header>
+
+
+  
+
+
+  
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-the-problem">What is the problem?</a></li>
+    <li><a href="#what-is-a-graceful-shutdown">What is a graceful shutdown?</a></li>
+    <li><a href="#how-do-nestjs-nodejs-and-rabbitmq-deal-with-graceful-shutdown">How do NestJS, NodeJS and RabbitMQ deal with graceful shutdown?</a></li>
+    <li><a href="#what-are-microservices-in-nestjs">What are microservices in NestJS?</a></li>
+    <li><a href="#the-solution-maybe">The solution (maybe)</a></li>
+    <li><a href="#in-a-nutshell">In a nutshell</a></li>
+    <li><a href="#tldr">TL;DR</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav>
+  
+
+  <div id="content">
+    <p><strong><em>Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.</em></strong></p>
+<p><img src="/images/nest-js-graceful-shutdown/nestjs-rabbitmq.webp" alt="NestJS with RabbitMQ"></p>
+<h1 id="what-is-the-problem">What is the problem?</h1>
+<p>In my current job, my team deals with asynchronous jobs in our project daily.</p>
+<p>Because of the intrinsic nature of <strong>asynchronous jobs</strong>, they take a long time to execute, sometimes over 30 seconds.</p>
+<p>During those executions, many things could happen. A new deployment, downscaling, node changing on K8s or spot terminations, could require a <strong>shutdown</strong> of the current instance of your application.</p>
+<p>But, what if during this shutdown request the application is <strong>still executing some operation</strong>?</p>
+<p>The application should <strong>wait</strong> for the execution to end before definitively shutting down. At the same time, the application should guarantee that it doesn&rsquo;t accept new incoming requests of new jobs to avoid creating an infinite loop. This mechanism is named graceful shutdown <em>(for a more appropriate definition see below)</em>.</p>
+<p>Our application sends commands between different services with <strong>RabbitMQ</strong> as the broker. We use <strong>NestJS</strong> as the main framework and, going deeper, we use the <strong>Microservices RabbitMQ Transport</strong> feature to perform the job associated with incoming messages.</p>
+<p>Despite NestJS already having a RabbitMQ broker transport mechanism, it doesn’t deal the graceful shutdown natively for this kind of microservices. This means if you have a running execution, the shutdown kills it and exits directly.</p>
+<blockquote>
+<p>NestJS natively has a graceful shutdown mechanism for HTTP requests but not for RabbitMQ Microservices.</p>
+</blockquote>
+<h1 id="what-is-a-graceful-shutdown">What is a graceful shutdown?</h1>
+<p>The graceful shutdown is a technique with which the application, process, or system is intentionally shut down. With this technique, the involved system tries to shut down <strong>preserving the state, preventing data corruption or malfunctions and completing pending operations before ending.</strong></p>
+<p>Generally, a system receives a signal or event from the external world to start the graceful shutdown procedure.</p>
+<p>Different systems or frameworks deal with this technique in different ways based on their intrinsic nature.</p>
+<blockquote>
+<p>Graceful shutdown means that <strong>all</strong> current requests in the system are executed before exiting from the process without having data corruption or failures.</p>
+</blockquote>
+<p>Imagine having an HTTP server connected to the database during the execution of a query. What if during execution the process ends immediately? It could be possible to have several requests in execution that could not be ending correctly and maybe will have data corruption. For the right shutdown, the server should:</p>
+<ul>
+<li>block new incoming requests</li>
+<li>end the pending and current executions</li>
+<li>close all connections to third-party services</li>
+<li>exit from the process</li>
+</ul>
+<p>In the same way, if you have a message broker like RabbitMQ that consumes messages from a queue, the application should:</p>
+<ul>
+<li>cancel the consumer listener to prevent new incoming messages from entering the queue</li>
+<li>perform the pending and current executions</li>
+<li>acknowledge current messages</li>
+<li>close all connections to third-party services</li>
+<li>exit from the process</li>
+</ul>
+<p>Other systems can handle graceful shutdown in different ways.</p>
+<h1 id="how-do-nestjs-nodejs-and-rabbitmq-deal-with-graceful-shutdown">How do NestJS, NodeJS and RabbitMQ deal with graceful shutdown?</h1>
+<p>If you want to know how NodeJS generally handles graceful shutdown, you can read this <a href="https://hackernoon.com/graceful-shutdown-in-nodejs-2f8f59d1c357">article</a>.</p>
+<p>On the other hand, <a href="https://docs.nestjs.com/fundamentals/lifecycle-events#lifecycle-sequence">here</a> is an implementation of the NestJS graceful shutdown.</p>
+<p><a href="https://gist.github.com/eduardo-matos/2eb06ec4c6354e0f48ea3b60889c24f1">Here</a> is an implementation of RabbitMQ&rsquo;s graceful shutdown.</p>
+<h1 id="what-are-microservices-in-nestjs">What are microservices in NestJS?</h1>
+<p>If you have landed here, I suppose that you already know what NestJS Microservices are and are very familiar with how RabbitMQ Transport works. Despite that, in the following text, you can find the information about Microservices and RabbitMQ documentation for NestJS. If you don’t know these concepts I advise you to read the following pages before continuing.</p>
+<p><a href="https://docs.nestjs.com/microservices/basics">NestJS Microservices</a></p>
+<p><a href="https://docs.nestjs.com/microservices/rabbitmq">RabbitMQ Microservice</a></p>
+<p>In particular, on this <a href="https://docs.nestjs.com/microservices/custom-transport">page</a>, you can read about the creation of a Custom Transporter.</p>
+<h1 id="the-solution-maybe">The solution (maybe)</h1>
+<p>I created a repository with an example of a custom implementation of RabbitMQ Server Transport with graceful shutdown.</p>
+<p><a href="https://github.com/pasalino/nestjs-rabbitmq-transporter-graceful-shutdown">https://github.com/pasalino/nestjs-rabbitmq-transporter-graceful-shutdown</a></p>
+<h1 id="in-a-nutshell">In a nutshell</h1>
+<blockquote>
+<p>As I write this article, I am gathering all of my thoughts and information and putting them in the repository mentioned earlier. In the future, I plan to make time to create a library about this topic.</p>
+</blockquote>
+<p>The whole implementation is encapsulated in this file: <a href="https://github.com/pasalino/nestjs-rabbitmq-transporter-graceful-shutdown/blob/main/src/graceful-server-rmq.ts">https://github.com/pasalino/nestjs-rabbitmq-transporter-graceful-shutdown/blob/main/src/graceful-server-rmq.ts</a></p>
+<p>You can paste it into your application.</p>
+<p>To use it, at the moment of Microservice instantiation (on Bootstrap), utilize it as a strategy:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">NestFactory</span>.<span style="color:#a6e22e">createMicroservice</span>(<span style="color:#a6e22e">AppModule</span>, {
+  <span style="color:#a6e22e">strategy</span>: <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">GracefulServerRMQ</span>({
+    <span style="color:#a6e22e">urls</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;amqp://localhost&#34;</span>],
+    <span style="color:#a6e22e">queue</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;messages&#34;</span>,
+    <span style="color:#75715e">// Here you can put all options of ServerRMQ
+</span><span style="color:#75715e"></span>  }),
+});
+</code></pre></div><p>You must enable the <code>enableShutdownHooks</code> or close the app directly in the <code>SIGTERM</code> handler.</p>
+<p><strong><em>That’s all folks!</em></strong></p>
+<h1 id="tldr">TL;DR</h1>
+<p>If you like long explanations, follow me down the rabbit hole.</p>
+<p>The <a href="https://github.com/pasalino/nestjs-rabbitmq-transporter-graceful-shutdown/blob/main/src/graceful-server-rmq.ts">GracefulServerRMQ</a> Custom Transporter uses all features of ServerRMQ of NestJS, in fact, it extends this class.</p>
+<p>export class GracefulServerRMQ extends ServerRMQ {</p>
+<p>You can find the native implementation <a href="https://github.com/nestjs/nest/blob/master/packages/microservices/server/server-rmq.ts">here</a>:</p>
+<p>Behind the scenes, the ServerRMQ uses <a href="https://www.npmjs.com/package/amqp-connection-manager">amqp-connection-manager</a> to manage RabbitMQ connections and in deep this library is based on <a href="https://www.npmjs.com/package/amqplib">amqplib</a>.</p>
+<p>Amqplib uses the <code>consume</code> method to handle incoming messages and return a <a href="https://amqp-node.github.io/amqplib/channel_api.html#channel_consume">consumerTag</a>. At the moment NestJS implementation does not handle the consumerTag and there isn’t a way to remove the consumer from the current channel.</p>
+<p>GracefulServerRMQ overrides the <code>setupChannel</code> method from the base implementation and stores the consumer tag in a class field (you can compare the methods). The <code>setupChannel</code> is the method provided to the <code>createChannel</code> method of the amqp-connection-manager server.</p>
+<blockquote>
+<p><em>As you can see in the amqp-connection-manager documentation:</em> “The setup functions will be run every time amqp-connection-manager reconnects, to make sure your channel and broker are in a sane state.”</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">setupChannel</span>(<span style="color:#a6e22e">channel</span>: <span style="color:#66d9ef">Channel</span>, <span style="color:#a6e22e">callback</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span>) {
+    <span style="color:#75715e">// If the server is closing, the setup channel doesn&#39;t re-open the consumer
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">closing</span>) {
+      <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queueOptions</span>.<span style="color:#a6e22e">noAssert</span>) {
+      <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">assertQueue</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queue</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queueOptions</span>);
+    }
+    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">prefetch</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prefetchCount</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">isGlobalPrefetchCount</span>);
+
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">consumerTag</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">consume</span>(
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queue</span>,
+      (<span style="color:#a6e22e">msg</span>: <span style="color:#66d9ef">Record</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">any</span><span style="color:#f92672">&gt;</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleMessage</span>(<span style="color:#a6e22e">msg</span>, <span style="color:#a6e22e">channel</span>),
+      {
+        <span style="color:#a6e22e">noAck</span>: <span style="color:#66d9ef">this.noAck</span>,
+      },
+    );
+
+    <span style="color:#75715e">// The consumerTag is stored in the instance of the server
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumerTag</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">consumerTag</span>
+
+    <span style="color:#a6e22e">callback</span>();
+  }
+</code></pre></div><p>After the connection, the handleMessage method, used by Microservices to handle a message from other microservices or external services, determines the message pattern and executes the correct handler (you can see it in the parent class).</p>
+<p>To achieve the graceful shutdown without losing any execution, the custom implementation overrides the <code>handleMessage</code> method by adding a counter of the current executions.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">handleMessage</span>(
+    <span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">Record</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">any</span><span style="color:#f92672">&gt;</span>,
+    <span style="color:#a6e22e">channel</span>: <span style="color:#66d9ef">Channel</span>,
+  )<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span><span style="color:#f92672">&gt;</span> {
+     <span style="color:#75715e">// Adding 1 if a new execution running
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">runningMessages</span><span style="color:#f92672">++</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">handleMessage</span>(<span style="color:#a6e22e">message</span>, <span style="color:#a6e22e">channel</span>)
+      .<span style="color:#66d9ef">finally</span>(() <span style="color:#f92672">=&gt;</span> {
+    <span style="color:#75715e">// With finally method on the promise, we ensure that the counter remains consistent
+</span><span style="color:#75715e"></span>	  <span style="color:#75715e">// Removing 1 at the end of execution
+</span><span style="color:#75715e"></span>	  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">runningMessages</span><span style="color:#f92672">--</span>;
+       });
+  }
+</code></pre></div><p>This counter allows the Custom Transporter to wait for all handlers before closing the RabbitMQ Channel and Connection.</p>
+<p>When the server is closing (when the <code>close</code> method is invoked):</p>
+<ol>
+<li>At first, the Server cancels the RabbitMQ consumer associated with Channel. In this way, the server will not receive any new messages present in the queue.</li>
+<li>The <code>close</code> method waits for the handler counter to be 0 (nothing in execution) or a timeout occurs.</li>
+<li>At this point, the method closes the RabbitMQ channel and connection using the base implementation.</li>
+<li>In the end, the application can exit gracefully.</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">async</span> <span style="color:#a6e22e">close</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span><span style="color:#f92672">&gt;</span> {
+    <span style="color:#75715e">// Notifies the instance that the server is being shut down
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">closing</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    <span style="color:#75715e">// If the channel is open yet
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">channel</span>) {
+      <span style="color:#75715e">// Trying to remove the setup according to amqplib-connection-manager documentation
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">removeSetup</span>(<span style="color:#66d9ef">undefined</span>, (<span style="color:#a6e22e">channel</span>: <span style="color:#66d9ef">Channel</span>) <span style="color:#f92672">=&gt;</span>
+          <span style="color:#75715e">// Cancel the consumption of messages. At this stage, the server will not consume more messages from the queue
+</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">cancel</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumerTag</span>),
+      );
+    }
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumerTag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+
+    <span style="color:#75715e">// Now the server will wait for the ending of pending handlers or exit for timeout
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// In this period, all handlers will end and the underlying channel is open yet. In this way, the consumer will be able to send ack message to RabbitMQ
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">Promise</span>.<span style="color:#a6e22e">race</span>([
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">waitingHandlers</span>(),
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">waitingEndingHandlersTimeoutMs</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span>
+        <span style="color:#a6e22e">sleep</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">waitingEndingHandlersTimeoutMs</span>),
+    ]);
+
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">runningMessages</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#75715e">// In the end the RabbitMQ channel and connection by base implementation
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">close</span>();
+  }
+</code></pre></div><h1 id="summary">Summary</h1>
+<p>This implementation is one of the possible ways to obtain a grace shutdown of RabbitMQ for NestJS, which is surely a goal for any resilient application that deals with asynchronous messages with RabbitMQ. If you use an orchestrator, such as K8s, you face this problem daily. The GracefulServerRMQ allows you to avoid losing any execution and prevent data corruption with NestJS Microservices.</p>
+
+  </div>
+
+  
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/node.js">Node.js</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/nestjs">NestJS</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/rabbitmq">RabbitMQ</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/typescript">Typescript</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/blog/eng/v-protetto8-9-2023/"
+                class="button big previous">Venerdì Protetto | September edition: Code shipping, Community tools, Quix Streams Library</a></li>
+    
+
+    
+        <li><a href="/blog/eng/v-protetto13-10-2023/"
+                class="button big next">Venerdì Protetto | October edition</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/'><img src="/images/logo_engineering.png" width="100%" alt="Facile.it Engineering" /></a>
+      
+    
+    
+      <header>
+        <h2></h2>
+        <p>News, repos, tips & trends from the Facile.it Engineering team!</p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section id="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto13-10-2023/">Venerdì Protetto | October edition</a>
+              </h3>
+              
+              <time class="published" datetime='2023-10-18'>
+                18 October 2023
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/pasqualino-desimone/" class="author" title="See other posts from Pasqualino de Simone">
+                      <img src="https://www.gravatar.com/avatar/3b8e327984accc34cafb36d1acd6284dfcc72478f5b914750caf40feab5f7acd" alt="Pasqualino de Simone avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/nest-js-graceful-shutdown/">NestJS graceful shutdown for RabbitMQ Microservices</a>
+              </h3>
+              
+              <time class="published" datetime='2023-10-14'>
+                14 October 2023
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto8-9-2023/">Venerdì Protetto | September edition: Code shipping, Community tools, Quix Streams Library</a>
+              </h3>
+              
+              <time class="published" datetime='2023-09-18'>
+                18 September 2023
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            /blog/
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Top categories</a></h3>
+      </header>
+        
+          
+        
+
+        
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/conferences/">Conferences</a>
+                <span style="float:right;">10</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/docker/">Docker</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/english/">English</a>
+                <span style="float:right;">41</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <span style="float:right;">11</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/italiano/">Italiano</a>
+                <span style="float:right;">34</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/oop/">OOP</a>
+                <span style="float:right;">6</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/open-source/">Open source</a>
+                <span style="float:right;">7</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/php/">PHP</a>
+                <span style="float:right;">23</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
+                <span style="float:right;">7</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/software-testing/">Software Testing</a>
+                <span style="float:right;">7</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/swift/">Swift</a>
+                <span style="float:right;">8</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+        <p>
+          <article>
+            <header>
+              
+                <a href="https://engineering.facile.it/categories/symfony/">Symfony</a>
+                <span style="float:right;">5</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+        <p>
+            <a href="/categories/" class="button">View more categories</a>
+        </p>
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h1>
+      <p>Facile.it relies on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. This blog allows our developers to share tips and direct experiences with new technologies.</p>
+      <a href="/ita/chi-siamo/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          <li>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+          </li>
+        
+        
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2023
+        
+          Facile.it Engineering
+        
+      .
+      <a href="/ita/disclaimer/" rel="nofollow">Disclaimer</a><br>
+      Design <a href="http://html5up.net" rel="nofollow" target="_blank">HTML5 UP</a><br>
+      Ported by <a href="//github.com/jpescador" rel="nofollow" target="_blank">Julio Pescador</a><br>
+      Modified by <a href="//github.com/Jean85" rel="nofollow" target="_blank">Alessandro Lai</a><br>
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/dockerfile.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/objectivec.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/python.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/swift.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.12.0/languages/yaml.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+      <script type="text/javascript" src="/js/jquery-lazy/jquery.lazy.min.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="text/javascript">
+        $(function() {
+            $('.lazy').Lazy();
+        });
+    </script>
+  </body>
+</html>
+

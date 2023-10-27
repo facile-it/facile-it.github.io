@@ -25,6 +25,17 @@ Machine learning Machine learning pipelines at Facile.it: real-rime use case for
     </item>
     
     <item>
+      <title>NestJS graceful shutdown for RabbitMQ Microservices</title>
+      <link>https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/</guid>
+      <description>Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.
+What is the problem? In my current job, my team deals with asynchronous jobs in our project daily.
+Because of the intrinsic nature of asynchronous jobs, they take a long time to execute, sometimes over 30 seconds.</description>
+    </item>
+    
+    <item>
       <title>Venerdì Protetto | September edition: Code shipping, Community tools, Quix Streams Library</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto8-9-2023/</link>
       <pubDate>Mon, 18 Sep 2023 13:00:00 +0000</pubDate>

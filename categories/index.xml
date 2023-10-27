@@ -12,11 +12,155 @@
     
     
     <item>
+      <title>Machine Learning</title>
+      <link>https://engineering.facile.it/categories/machine-learning/</link>
+      <pubDate>Wed, 18 Oct 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Open source</title>
+      <link>https://engineering.facile.it/categories/open-source/</link>
+      <pubDate>Wed, 18 Oct 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/open-source/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Protected Fridays</title>
       <link>https://engineering.facile.it/categories/protected-fridays/</link>
       <pubDate>Wed, 18 Oct 2023 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/protected-fridays/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Second Brain</title>
+      <link>https://engineering.facile.it/categories/second-brain/</link>
+      <pubDate>Wed, 18 Oct 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/second-brain/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Soft Skill</title>
+      <link>https://engineering.facile.it/categories/soft-skill/</link>
+      <pubDate>Wed, 18 Oct 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/soft-skill/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Telemetry</title>
+      <link>https://engineering.facile.it/categories/telemetry/</link>
+      <pubDate>Wed, 18 Oct 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/telemetry/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NestJS</title>
+      <link>https://engineering.facile.it/categories/nestjs/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/nestjs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Node.js</title>
+      <link>https://engineering.facile.it/categories/node.js/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://engineering.facile.it/categories/rabbitmq/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/rabbitmq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>TypeScript</title>
+      <link>https://engineering.facile.it/categories/typescript/</link>
+      <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>C</title>
+      <link>https://engineering.facile.it/categories/c/</link>
+      <pubDate>Mon, 18 Sep 2023 13:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CI-CD</title>
+      <link>https://engineering.facile.it/categories/ci-cd/</link>
+      <pubDate>Mon, 18 Sep 2023 13:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/ci-cd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>community</title>
+      <link>https://engineering.facile.it/categories/community/</link>
+      <pubDate>Mon, 18 Sep 2023 13:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/community/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Community tools</title>
+      <link>https://engineering.facile.it/categories/community-tools/</link>
+      <pubDate>Mon, 18 Sep 2023 13:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/community-tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://engineering.facile.it/categories/kafka/</link>
+      <pubDate>Mon, 18 Sep 2023 13:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/kafka/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://engineering.facile.it/categories/python/</link>
+      <pubDate>Mon, 18 Sep 2023 13:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spotify</title>
+      <link>https://engineering.facile.it/categories/spotify/</link>
+      <pubDate>Mon, 18 Sep 2023 13:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/spotify/</guid>
       <description></description>
     </item>
     
@@ -57,15 +201,6 @@
     </item>
     
     <item>
-      <title>C</title>
-      <link>https://engineering.facile.it/categories/c/</link>
-      <pubDate>Thu, 18 May 2023 17:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ChatGPT</title>
       <link>https://engineering.facile.it/categories/chatgpt/</link>
       <pubDate>Thu, 18 May 2023 17:00:00 +0000</pubDate>
@@ -80,15 +215,6 @@
       <pubDate>Thu, 18 May 2023 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/mental-health/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Open Source</title>
-      <link>https://engineering.facile.it/categories/open-source/</link>
-      <pubDate>Fri, 21 Apr 2023 11:02:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/open-source/</guid>
       <description></description>
     </item>
     
@@ -152,15 +278,6 @@
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/redux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TypeScript</title>
-      <link>https://engineering.facile.it/categories/typescript/</link>
-      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/typescript/</guid>
       <description></description>
     </item>
     
@@ -444,15 +561,6 @@
     </item>
     
     <item>
-      <title>RabbitMQ</title>
-      <link>https://engineering.facile.it/categories/rabbitmq/</link>
-      <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/rabbitmq/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Rust</title>
       <link>https://engineering.facile.it/categories/rust/</link>
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
@@ -732,15 +840,6 @@
     </item>
     
     <item>
-      <title>Node.js</title>
-      <link>https://engineering.facile.it/categories/node.js/</link>
-      <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/node.js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>REST</title>
       <link>https://engineering.facile.it/categories/rest/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
@@ -863,15 +962,6 @@
       <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/rsa/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Python</title>
-      <link>https://engineering.facile.it/categories/python/</link>
-      <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/python/</guid>
       <description></description>
     </item>
     

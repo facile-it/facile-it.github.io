@@ -102,7 +102,7 @@ The archive of all Venerdì Protetto talks is available [here](/categories/prote
         }
     },
     "url": "https://engineering.facile.it/blog/eng/v-protetto9-6-2023/",
-    "image": "https://engineering.facile.it/images/twitter_preview.png",
+    "image": "https://engineering.facile.it/images/social/social_preview.png",
     "datePublished": "2023-10-18",
     "dateCreated": "2023-10-18",
     "dateModified": "2023-10-18",

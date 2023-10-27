@@ -67,3 +67,12 @@ git commit [...] # to save it it
 `image`: used for sharing the URL in Facebook and LinkedIn. Best fit: 1600px x 900px. If not specified, the [ENGR logo](./static/images/social/social-preview.png) will be used;
 
 `twitterImage`: used for the twitter cards when sharing the url of this page (in X - former Twitter -, Telegram, Slack, Whatsapp); You can use the same image as `image` parameter. If not specified, the [ENGR logo](./static/images/social/social-preview.png) will be used;
+
+## Social hints
+
+Let someone know that you have written something new is almost as important as writing new post itself.
+here there are some useful stuff to do
+
+- add an image and a twitter image, fitted with the content. Best dimension: 1600px x 900px.
+
+- facebook sharing: use short title (3 or 4 words). Also description should be short, otherwise it would be cropped. 

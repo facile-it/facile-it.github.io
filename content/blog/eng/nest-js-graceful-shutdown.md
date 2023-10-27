@@ -12,6 +12,41 @@ type: "post"
 twitterImage: /images/nest-js-graceful-shutdown/nestjs-rabbitmq.webp
 ---
 
+<script type="application/ld+json">
+{ 
+    "@context": "https://schema.org",
+    "genre":["SEO","JSON-LD"],
+    "@type": "BlogPosting",
+    "headline": "NestJS graceful shutdown for RabbitMQ Microservices",
+    "keywords": ["Graceful shutdown", "Nest JS", "RabbitMQ"],
+    "wordcount": "1116",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Facile.it Engineering",
+        "url": "https://engineering.facile.it/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://engineering.facile.it/images/logo_engineering.png",
+            "width":"1057",
+            "height":"244"
+        }
+    },
+    "url": "https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/",
+    "image": "https://engineering.facile.it/images/nest-js-graceful-shutdown/nestjs-rabbitmq.png",
+    "datePublished": "2023-10-27",
+    "dateCreated": "2023-10-27",
+    "dateModified": "2023-10-27",
+    "inLanguage": "en-US",
+    "isFamilyFriendly": "true",
+    "description": "Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.",
+    "author": {
+        "@type": "Person",
+        "name": "Pasqualino de Simone",
+        "url": "http://www.pasalino.it"
+    }
+}
+</script>
+
 **_Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature._**
 
 ![NestJS with RabbitMQ](/images/nest-js-graceful-shutdown/nestjs-rabbitmq.webp)

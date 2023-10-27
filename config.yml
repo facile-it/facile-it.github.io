@@ -12,8 +12,9 @@ taxonomies:
   author: "authors"
 
 params:
-  openGraphImage: '/images/logo.png'
-  twitterCardImage: '/images/social/twitter-card-logo.png'
+  # '/images/logo.png'
+  openGraphImage: '/images/social/social-preview.png'
+  twitterCardImage: '/images/social/social-preview.png'
 
   # Sets the meta tag description, usually reserved for the main page
   description         : "News, repos, tips & trends from the Facile.it Engineering team!"

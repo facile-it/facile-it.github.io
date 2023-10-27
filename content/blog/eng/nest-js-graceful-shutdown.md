@@ -10,7 +10,6 @@ toc: true
 languageCode: "en-US"
 type: "post"
 twitterImage: /images/nest-js-graceful-shutdown/nestjs-rabbitmq.webp
-twitterLargeImage: /images/nest-js-graceful-shutdown/nestjs-rabbitmq.webp
 ---
 
 **_Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature._**

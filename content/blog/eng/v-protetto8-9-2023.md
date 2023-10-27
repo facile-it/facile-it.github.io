@@ -4,11 +4,12 @@ comments: true
 date: "2023-09-18 13:00:00"
 draft: false
 share: true
-categories: ['Protected Fridays']
+categories: ['Protected Fridays', 'Spotify', 'Python', 'Kafka', 'CI-CD', 'Community tools', 'community']
 title: "Venerdì Protetto | September edition: Code shipping, Community tools, Quix Streams Library"
+description: "What happened on September 8, 2023, at Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/logo_engineering.png'
+twitterImage: '/images/social/orange-social-preview.png'
 toc: false
 ---
 

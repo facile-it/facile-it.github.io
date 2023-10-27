@@ -86,22 +86,22 @@ menu:
     - categories:
       name: "Categories"
       url: "/categories/"
-      identifier: "fa fa-folder-open-o"
+      identifier: "fa-solid fa-folder-open"
       weight: 2
     - categories:
       name: "Authors"
       url: "/authors/"
-      identifier: "fa fa-pencil"
+      identifier: "fa-solid fa-pencil"
       weight: 3
     - categories:
       name: "Careers"
       url: "/ita/careers/"
-      identifier: "fa fa-briefcase"
+      identifier: "fa-solid fa-briefcase"
       weight: 4
     - categories:
       name: "Who we are"
       url: "/eng/who-we-are/"
-      identifier: "fa fa-users"
+      identifier: "fa-solid fa-users"
       weight: 5
 
 # Insert your username and the icon will apear on the page as long as

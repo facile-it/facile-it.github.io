@@ -40,7 +40,7 @@ git commit [...] # to save it it
 
 ## Front matter documentation
 
-`authors`: an array of the authors of the article; the names must match the .yml files in the `/data/authors` folder;
+`authors`: an array of the authors of the article; the names must match the `.yml` files in the `/data/authors` folder;
 
 `comments`: enables Disqus at the end of the page (disabled anyway when serving locally);
 
@@ -54,6 +54,8 @@ git commit [...] # to save it it
 
 `title`: the title of the article;
 
+`description`: a quick description of the article content. Will be used in the homepage, as a subtitle, and in Facebook and X (Twitter) sharing; 
+
 `languageCode`: suggested, not needed, default is "en-En";
 
 `type`: always "post" for articles;
@@ -62,4 +64,7 @@ git commit [...] # to save it it
 
 `ita` or `eng`: the file name of the article of the opposite language, to obtain cross-linking between translations;
 
-`twitterImage`: used for the twitter cards when sharing the url of this page; needs to be at least 120x120, will be cropped to square. If not specified, the ENGR logo will be used;
+`image`: used for sharing the URL in Facebook and LinkedIn. Best fit: 1600px x 900px. If not specified, the [ENGR logo](./static/images/social/social-preview.png) will be used;
+
+`twitterImage`: used for the twitter cards when sharing the url of this page (in X - former Twitter -, Telegram, Slack, Whatsapp); You can use the same image as `image` parameter. If not specified, the [ENGR logo](./static/images/social/social-preview.png) will be used;
+

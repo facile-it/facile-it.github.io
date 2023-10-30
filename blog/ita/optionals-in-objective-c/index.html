@@ -31,6 +31,9 @@
 <meta name="twitter:title" content="Optionals in Objective-C"/>
 <meta name="twitter:description" content="Objective-C vivrà ancora per molto. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&rsquo;:
  progetti esistenti basati su Objective-C richiedono ancora mantenimento e probabile aggiunta di nuove funzionalità, e anche se è tecnicamente possibile mescolare i linguaggi, la cosa può risultare poco conveniente per via della natura molto dinamica di Objective-C; Swift sta cambiando rapidamente, presenta ancora alcuni bug e problemi di performance, e il suo workflow manca ancora di alcune feature fondamentali per i professionisti, mentre Objective-C è un linguaggio maturo, con una community molto vivace; alcuni possono preferire un linguaggio più dinamico, e il supporto di Apple su Objective-C è ancora forte;  Personalmente ho la tendenza a preferire linguaggi più statici, e un approccio type-first alla programmazione, ma di tanto in tanto mi piace lavorare in un ambiente più dinamico, quindi, sia per preferenza personale che per esigenze di business, non ho ancora messo Objective-C da parte."/>
+<meta name="og:title" content="Optionals in Objective-C" />
+<meta name="og:description" content="Objective-C vivrà ancora per molto. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&rsquo;:
+ progetti esistenti basati su Objective-C richiedono ancora mantenimento e probabile aggiunta di nuove funzionalità, e anche se è tecnicamente possibile mescolare i linguaggi, la cosa può risultare poco conveniente per via della natura molto dinamica di Objective-C; Swift sta cambiando rapidamente, presenta ancora alcuni bug e problemi di performance, e il suo workflow manca ancora di alcune feature fondamentali per i professionisti, mentre Objective-C è un linguaggio maturo, con una community molto vivace; alcuni possono preferire un linguaggio più dinamico, e il supporto di Apple su Objective-C è ancora forte;  Personalmente ho la tendenza a preferire linguaggi più statici, e un approccio type-first alla programmazione, ma di tanto in tanto mi piace lavorare in un ambiente più dinamico, quindi, sia per preferenza personale che per esigenze di business, non ho ancora messo Objective-C da parte."/>
 
     
         <meta name="twitter:creator" content="@_logicist"/>
@@ -77,7 +80,7 @@
         
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
             <link rel="stylesheet" href="/css/main.css">
             <link rel="stylesheet" href="/css/additional.css">
@@ -289,14 +292,14 @@ if (!doNotTrack) {
     <section id="social-share-nav">
         <ul class="links">
             <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
             </header>
             
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f&amp;text=Optionals%20in%20Objective-C&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
+  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f&amp;text=Optionals%20in%20Objective-C&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa-brand fa-x-twitter"></i>
     <p>Twitter</p>
     </a>
 </li>
@@ -304,7 +307,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
+    <i class="fa-brand fa-google-plus"></i>
     <p>Google+</p>
   </a>
 </li>
@@ -312,7 +315,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
+    <i class="fa-brand fa-facebook"></i>
     <p>Facebook</p>
     </a>
 </li>
@@ -320,7 +323,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
+    <i class="fa-brand fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
 </li>
@@ -328,7 +331,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
+      <i class="fa-brand fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
 </li>
@@ -336,7 +339,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
+    <i class="fa-brand fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
 </li>
@@ -344,7 +347,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f&amp;description=Optionals%20in%20Objective-C" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
+    <i class="fa-brand fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
 </li>
@@ -352,7 +355,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foptionals-in-objective-c%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
+    <i class="fa-solid fa-envelope"></i>
     <p>Email</p>
   </a>
 </li>
@@ -838,7 +841,7 @@ NS_ASSUME_NONNULL_END
         
             
             
-                <i class="fa fa-folder"></i>
+                <i class="fa-solid fa-folder"></i>
                 
                 
                 <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
@@ -929,11 +932,11 @@ NS_ASSUME_NONNULL_END
       <ul class="icons">
         
           <li>
-            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa-solid fa-rss"></a>
           </li>
         
         
-  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa-brand fa-github"></a></li>
 
 
 
@@ -961,7 +964,7 @@ NS_ASSUME_NONNULL_END
 
 
 
-  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa-brand fa-linkedin"></a></li>
 
 
 
@@ -971,7 +974,7 @@ NS_ASSUME_NONNULL_END
 
 
 
-  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa-brand fa-facebook"></a></li>
 
 
 
@@ -981,7 +984,7 @@ NS_ASSUME_NONNULL_END
 
 
 
-  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa-brand fa-youtube"></a></li>
 
 
 
@@ -995,13 +998,13 @@ NS_ASSUME_NONNULL_END
 
 
 
-  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa-brand fa-instagram"></a></li>
 
 
 
 
 
-  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+  <li><a href="//x.com/FacileIt_Engr" target="_blank" title="X" class="fa-brand fa-x-twitter"></a></li>
 
 
 
@@ -1539,11 +1542,11 @@ NS_ASSUME_NONNULL_END
       <ul class="icons">
         
           <li>
-            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa-solid fa-rss"></a>
           </li>
         
         
-  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa-brand fa-github"></a></li>
 
 
 
@@ -1571,7 +1574,7 @@ NS_ASSUME_NONNULL_END
 
 
 
-  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa-brand fa-linkedin"></a></li>
 
 
 
@@ -1581,7 +1584,7 @@ NS_ASSUME_NONNULL_END
 
 
 
-  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa-brand fa-facebook"></a></li>
 
 
 
@@ -1591,7 +1594,7 @@ NS_ASSUME_NONNULL_END
 
 
 
-  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa-brand fa-youtube"></a></li>
 
 
 
@@ -1605,13 +1608,13 @@ NS_ASSUME_NONNULL_END
 
 
 
-  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa-brand fa-instagram"></a></li>
 
 
 
 
 
-  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+  <li><a href="//x.com/FacileIt_Engr" target="_blank" title="X" class="fa-brand fa-x-twitter"></a></li>
 
 
 
@@ -1651,7 +1654,7 @@ NS_ASSUME_NONNULL_END
 </section>
 
     </div>
-    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    <a id="back-to-top" href="#" class="fa-solid fa-arrow-up fa-border fa-2x"></a>
     
 
     

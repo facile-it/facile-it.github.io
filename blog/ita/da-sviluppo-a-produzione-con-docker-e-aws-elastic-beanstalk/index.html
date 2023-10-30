@@ -32,6 +32,10 @@
 <meta name="twitter:description" content="In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.
 Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy.
 In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:"/>
+<meta name="og:title" content="Da sviluppo a produzione con Docker e AWS Elastic Beanstalk" />
+<meta name="og:description" content="In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.
+Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy.
+In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:"/>
 
     
         
@@ -84,7 +88,7 @@ In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina loc
         
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
             <link rel="stylesheet" href="/css/main.css">
             <link rel="stylesheet" href="/css/additional.css">
@@ -296,14 +300,14 @@ if (!doNotTrack) {
     <section id="social-share-nav">
         <ul class="links">
             <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
             </header>
             
 
 
 <li>
-  <a href="//twitter.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&amp;text=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa fa-twitter"></i>
+  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&amp;text=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa-brand fa-x-twitter"></i>
     <p>Twitter</p>
     </a>
 </li>
@@ -311,7 +315,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//plus.google.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
+    <i class="fa-brand fa-google-plus"></i>
     <p>Google+</p>
   </a>
 </li>
@@ -319,7 +323,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
+    <i class="fa-brand fa-facebook"></i>
     <p>Facebook</p>
     </a>
 </li>
@@ -327,7 +331,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&amp;title=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
+    <i class="fa-brand fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
 </li>
@@ -335,7 +339,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&amp;title=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
+      <i class="fa-brand fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
 </li>
@@ -343,7 +347,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&amp;title=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
+    <i class="fa-brand fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
 </li>
@@ -351,7 +355,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f&amp;description=Da%20sviluppo%20a%20produzione%20con%20Docker%20e%20AWS%20Elastic%20Beanstalk" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
+    <i class="fa-brand fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
 </li>
@@ -359,7 +363,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fda-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
+    <i class="fa-solid fa-envelope"></i>
     <p>Email</p>
   </a>
 </li>
@@ -530,7 +534,7 @@ REDIS_PORT
         
             
             
-                <i class="fa fa-folder"></i>
+                <i class="fa-solid fa-folder"></i>
                 
                 
                 <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
@@ -615,11 +619,11 @@ REDIS_PORT
       <ul class="icons">
         
           <li>
-            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa-solid fa-rss"></a>
           </li>
         
         
-  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa-brand fa-github"></a></li>
 
 
 
@@ -647,7 +651,7 @@ REDIS_PORT
 
 
 
-  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa-brand fa-linkedin"></a></li>
 
 
 
@@ -657,7 +661,7 @@ REDIS_PORT
 
 
 
-  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa-brand fa-facebook"></a></li>
 
 
 
@@ -667,7 +671,7 @@ REDIS_PORT
 
 
 
-  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa-brand fa-youtube"></a></li>
 
 
 
@@ -681,13 +685,13 @@ REDIS_PORT
 
 
 
-  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa-brand fa-instagram"></a></li>
 
 
 
 
 
-  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+  <li><a href="//x.com/FacileIt_Engr" target="_blank" title="X" class="fa-brand fa-x-twitter"></a></li>
 
 
 
@@ -1225,11 +1229,11 @@ REDIS_PORT
       <ul class="icons">
         
           <li>
-            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa-solid fa-rss"></a>
           </li>
         
         
-  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa-brand fa-github"></a></li>
 
 
 
@@ -1257,7 +1261,7 @@ REDIS_PORT
 
 
 
-  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa-brand fa-linkedin"></a></li>
 
 
 
@@ -1267,7 +1271,7 @@ REDIS_PORT
 
 
 
-  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+  <li><a href="//facebook.com/facile.it" target="_blank" title="Facebook" class="fa-brand fa-facebook"></a></li>
 
 
 
@@ -1277,7 +1281,7 @@ REDIS_PORT
 
 
 
-  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa-brand fa-youtube"></a></li>
 
 
 
@@ -1291,13 +1295,13 @@ REDIS_PORT
 
 
 
-  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa-brand fa-instagram"></a></li>
 
 
 
 
 
-  <li><a href="//twitter.com/FacileIt_Engr" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+  <li><a href="//x.com/FacileIt_Engr" target="_blank" title="X" class="fa-brand fa-x-twitter"></a></li>
 
 
 
@@ -1337,7 +1341,7 @@ REDIS_PORT
 </section>
 
     </div>
-    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    <a id="back-to-top" href="#" class="fa-solid fa-arrow-up fa-border fa-2x"></a>
     
 
     

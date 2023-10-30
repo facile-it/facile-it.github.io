@@ -6,6 +6,7 @@ draft: false
 share: true
 categories: ['Protected Fridays', 'Spotify', 'Python', 'Kafka', 'CI-CD', 'Community tools', 'community']
 title: "Venerdì Protetto | September edition: Code shipping, Community tools, Quix Streams Library"
+summary: "What happened on September 8, 2023, at Venerdì Protetto?"
 description: "What happened on September 8, 2023, at Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"

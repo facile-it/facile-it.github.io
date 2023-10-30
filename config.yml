@@ -13,8 +13,8 @@ taxonomies:
 
 params:
   # '/images/logo.png'
-  openGraphImage: '/images/social/social-preview.jpg'
-  twitterCardImage: '/images/social/social-preview.png'
+  openGraphImage: "/images/social/social-preview.jpg"
+  twitterCardImage: "/images/social/social-preview.png"
 
   # Sets the meta tag description, usually reserved for the main page
   description         : "News, repos, tips & trends from the Facile.it Engineering team!"
@@ -58,6 +58,7 @@ params:
     - "swift"
     - "yaml"
   highlightjsTheme: "monokai-sublime"
+  twitterSite: "FacileIt_Engr"
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use

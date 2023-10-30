@@ -86,7 +86,7 @@ menu:
     - categories:
       name: "Categories"
       url: "/categories/"
-      identifier: "fa fa-folder-open-o"
+      identifier: "fa fa-folder-open"
       weight: 2
     - categories:
       name: "Authors"

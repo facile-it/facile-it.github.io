@@ -13,7 +13,7 @@ type: "post"
 twitterImage: '/images/social/orange-social-preview.png'
 toc: false
 ---
-
+<head>
 <script type="application/ld+json">
 { 
   "@context": "https://schema.org", 
@@ -35,7 +35,7 @@ toc: false
   }
 }
 </script>
-
+</head>
 
 This page contains the abstracts of the talks held during the latest Venerdì Protetto on September 8, 2023. 
 

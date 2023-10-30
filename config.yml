@@ -13,7 +13,7 @@ taxonomies:
 
 params:
   # '/images/logo.png'
-  openGraphImage: '/images/social/social-preview.png'
+  openGraphImage: '/images/social/social-preview.jpg'
   twitterCardImage: '/images/social/social-preview.png'
 
   # Sets the meta tag description, usually reserved for the main page

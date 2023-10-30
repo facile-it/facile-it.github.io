@@ -10,7 +10,7 @@ summary: "What happened on September 8, 2023, at Venerdì Protetto?"
 description: "What happened on September 8, 2023, at Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/social/orange-social-preview.png'
+twitterImage: '/images/social/orange-social-preview.jpg'
 toc: false
 ---
 <head>
@@ -23,6 +23,7 @@ toc: false
   "wordcount": "512",
   "publisher": "Facile.it Engineering",
   "url": "https://engineering.facile.it/",
+  "image": "https://engineering.facile.it/images/social/orange-social-preview.png",
   "datePublished": "2023-09-18",
   "dateCreated": "2023-09-12",
   "dateModified": "2023-09-18",

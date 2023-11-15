@@ -39,7 +39,7 @@ This page contains the abstracts of the talks held during the latest Venerdì Pr
 
 Topics:
 - [Code shipping](#code-shipping) by [Luca Florio](https://www.linkedin.com/in/elleflorio/) ([Spotify](https://engineering.atspotify.com/))
-- [Community tools](#community-tools) by [Giovanni Cardamone](https://www.linkedin.com/in/giovanni-cardamone-41306973/)
+- [Community tools](#community-tools) by [Giovanni Cardamone](https://www.linkedin.com/in/giovanni-cardamone-41306973)
 - [Quix Streams Library](#quix-streams-library) by [Thomas Neubauer](https://www.linkedin.com/in/tom%C3%A1%C5%A1-neubauer-a10bb144/) ([Quix](https://quix.io/))
 
 The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).
@@ -52,8 +52,8 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 <sup>By [Luca Florio](https://www.linkedin.com/in/elleflorio/), [Spotify](https://engineering.atspotify.com/)<sup>
 
-<a href= "/images/venerdì_protetto/shipping-code.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerdì_protetto/shipping-code.png?raw=true" alt="Shipping code" title="Shipping code" /> 
+<a href= "/images/venerdì_protetto/shipping-code-1.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerdì_protetto/shipping-code-1.png?raw=true" alt="Shipping code" title="Shipping code" /> 
 </a>
 
 We all love to ship our code to production as fast as possible. But how to ensure (well, kind of) that we are not breaking stuff?
@@ -68,7 +68,7 @@ Oh, and we need to keep it up and running after we deploy it as well. That is im
 
 ### A place where we can meet
 
-<sup>By [Giovanni Cardamone](https://www.linkedin.com/in/giovanni-cardamone-41306973/), Facile.it<sup>
+<sup>By [Giovanni Cardamone](https://www.linkedin.com/in/giovanni-cardamone-41306973), Facile.it<sup>
 
 <a href= "/images/venerdì_protetto/community-tools.png?raw=true" target="_blank"> 
 <img align="left" style="width:45%; margin-right: 0.5em" src="/images/venerdì_protetto/community-tools.png?raw=true" alt="Community tools" title="Community tools" /> 

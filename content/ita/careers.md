@@ -6,7 +6,7 @@ share: true
 title: "Careers"
 
 image: "/images/careers/banner.png"
-twitterlargeimage: "/images/careers/banner.png"
+twitterimage: "/images/careers/banner.png"
 
 ---
 

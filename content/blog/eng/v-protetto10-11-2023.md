@@ -2,7 +2,7 @@
 
 authors: ["engineering"]
 comments: true
-date: "2023-12-04 17:00:00"
+date: "2023-12-06 17:00:00"
 draft: true
 share: true
 categories: ['Protected Fridays']
@@ -118,9 +118,9 @@ The archive of all Venerdì Protetto talks is available [here](/categories/prote
     },
     "url": "https://engineering.facile.it/blog/eng/v-protetto9-6-2023/",
     "image": "https://engineering.facile.it/images/twitter_preview.png",
-    "datePublished": "2023-12-04",
-    "dateCreated": "2023-11-04",
-    "dateModified": "2023-11-04",
+    "datePublished": "2023-12-06",
+    "dateCreated": "2023-12-04",
+    "dateModified": "2023-12-06",
     "inLanguage": "en-US",
     "isFamilyFriendly": "true",
     "description": "Abstracts of the talks held during the Venerdì Protetto on November 10th",

@@ -604,13 +604,13 @@
 	        cells[c].setAttribute('data-header', header[c]);
 	      }
 	      if (cells[c].innerHTML.trim() == 'Yes') {
-	      	cells[c].innerHTML = '<i class="fa-solid fa-check" aria-hidden="true" style="color:green"></i>';
+	      	cells[c].innerHTML = '<i class="fa fa-check" aria-hidden="true" style="color:green"></i>';
 	      }
 	      if (cells[c].innerHTML.trim() == 'Free') {
-	      	cells[c].innerHTML = '<i class="fa-solid fa-check" aria-hidden="true" style="color:green"></i>';
+	      	cells[c].innerHTML = '<i class="fa fa-check" aria-hidden="true" style="color:green"></i>';
 	      }
 	      if (cells[c].innerHTML.trim() == 'No') {
-	      	cells[c].innerHTML = '<i class="fa-solid fa-times" aria-hidden="true" style="color:red"></i>';
+	      	cells[c].innerHTML = '<i class="fa fa-times" aria-hidden="true" style="color:red"></i>';
 	      }
 	    }
 	  }

@@ -6,10 +6,26 @@
     <description>Recent content in Blogs on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Oct 2023 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Dec 2023 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Venerdì Protetto | November edition</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto10-11-2023/</link>
+      <pubDate>Wed, 06 Dec 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto10-11-2023/</guid>
+      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on November 10, 2023.
+Topics:
+  Event sourcing by Christian Nastasi
+  Playwright by Vincenzo Gasparo Morticella
+  Project IDEA and PoC by Stefano Fago and Giacomo Brambilla
+  The overview of Venerdì Protetto is available here.
+Event sourcing Event sourcing with Laravel by Christian Nastasi
+Event sourcing and Command and Query Responsibility Segregation (CQRS): Everyone talks about them, but nobody applies them.</description>
+    </item>
     
     <item>
       <title>Venerdì Protetto | October edition</title>

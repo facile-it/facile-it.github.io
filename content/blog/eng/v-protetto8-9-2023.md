@@ -6,13 +6,14 @@ draft: false
 share: true
 categories: ['Protected Fridays', 'Spotify', 'Python', 'Kafka', 'CI-CD', 'Community tools', 'community']
 title: "Venerdì Protetto | September edition: Code shipping, Community tools, Quix Streams Library"
+summary: "What happened on September 8, 2023, at Venerdì Protetto?"
 description: "What happened on September 8, 2023, at Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/social/orange-social-preview.png'
+twitterImage: '/images/social/orange-social-preview.jpg'
 toc: false
 ---
-
+<head>
 <script type="application/ld+json">
 { 
   "@context": "https://schema.org", 
@@ -22,6 +23,7 @@ toc: false
   "wordcount": "512",
   "publisher": "Facile.it Engineering",
   "url": "https://engineering.facile.it/",
+  "image": "https://engineering.facile.it/images/social/orange-social-preview.png",
   "datePublished": "2023-09-18",
   "dateCreated": "2023-09-12",
   "dateModified": "2023-09-18",
@@ -34,7 +36,7 @@ toc: false
   }
 }
 </script>
-
+</head>
 
 This page contains the abstracts of the talks held during the latest Venerdì Protetto on September 8, 2023. 
 

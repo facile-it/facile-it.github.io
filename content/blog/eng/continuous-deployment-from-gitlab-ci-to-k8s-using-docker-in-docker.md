@@ -14,10 +14,10 @@ In the last month, I'm working on two different PHP projects here at Facile.it: 
 
 After, I decided to start migrating a previous, internal project of mine to the same approach, since it's currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, **doing a rolling deployment with Kubernetes is surprisingly easy**!
 
-A few days ago David Négrier‏ ([@david_negrier](https://twitter.com/david_negrier)) published a blog posts about his way of doing continuous deployment from GitLab CI:
+A few days ago David Négrier‏ ([@david_negrier](https://x.com/david_negrier)) published a blog posts about his way of doing continuous deployment from GitLab CI:
 
-<blockquote class="twitter-tweet" data-lang="it"><p lang="en" dir="ltr">Just blogged: &quot;Continuous Delivery of a PHP application with <a href="https://twitter.com/gitlab?ref_src=twsrc%5Etfw">@gitlab</a>, <a href="https://twitter.com/Docker?ref_src=twsrc%5Etfw">@Docker</a> and <a href="https://twitter.com/traefikproxy?ref_src=twsrc%5Etfw">@traefikproxy</a> on a dedicated server&quot;<br>                 <br> <a href="https://t.co/6piVuNBa7x">https://t.co/6piVuNBa7x</a><br><br>// <a href="https://twitter.com/coding_machine?ref_src=twsrc%5Etfw">@coding_machine</a></p>&mdash; David Négrier (@david_negrier) <a href="https://twitter.com/david_negrier/status/954306019655593984?ref_src=twsrc%5Etfw">19 gennaio 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-lang="it"><p lang="en" dir="ltr">Just blogged: &quot;Continuous Delivery of a PHP application with <a href="https://x.com/gitlab?ref_src=twsrc%5Etfw">@gitlab</a>, <a href="https://x.com/Docker?ref_src=twsrc%5Etfw">@Docker</a> and <a href="https://x.com/traefikproxy?ref_src=twsrc%5Etfw">@traefikproxy</a> on a dedicated server&quot;<br>                 <br> <a href="https://t.co/6piVuNBa7x">https://t.co/6piVuNBa7x</a><br><br>// <a href="https://x.com/coding_machine?ref_src=twsrc%5Etfw">@coding_machine</a></p>&mdash; David Négrier (@david_negrier) <a href="https://x.com/david_negrier/status/954306019655593984?ref_src=twsrc%5Etfw">19 gennaio 2018</a></blockquote>
+<script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
 
 This post immediately captured my attention, due to my current work: David in his post avoided the usage of Kubernetes to not add too much cognitive load, and wrote a very straightforward piece. On the other hand, in my case I wrote a kinda complicated pipeline, learning a few tricks and pitfalls in the process, so I decided to write this down and share my experience.
 
@@ -60,7 +60,7 @@ The combination of the `alias: docker` setting and the `DOCKER_HOST` environment
 > My approach is a bit more **robust**, but it's overall **slower**, because each job is **totally isolated** (which is good), but on the downside it has no memory of previous builds, so no cache is available: we will have to **pull from the registry each time**.
 <br/>
 <br/>
-> **2018-02-07 ERRATA**: [Stefano Torresi](https://twitter.com/storresi) (privately) and [/u/veloxlector](https://www.reddit.com/r/kubernetes/comments/7vomn5/continuous_deployment_from_gitlab_ci_to/dttzc28/) (on Reddit) made me realize that my approach still requires a privileged runner, so that doesn't change with my approach; the privileged execution is [always required when doing Docker-in-Docker](https://github.com/docker-library/docs/blob/master/docker/README.md#start-a-daemon-instance). This reduces my security claims, but my main aim was isolation.
+> **2018-02-07 ERRATA**: [Stefano Torresi](https://x.com/storresi) (privately) and [/u/veloxlector](https://www.reddit.com/r/kubernetes/comments/7vomn5/continuous_deployment_from_gitlab_ci_to/dttzc28/) (on Reddit) made me realize that my approach still requires a privileged runner, so that doesn't change with my approach; the privileged execution is [always required when doing Docker-in-Docker](https://github.com/docker-library/docs/blob/master/docker/README.md#start-a-daemon-instance). This reduces my security claims, but my main aim was isolation.
 
 The `GIT_DEPTH` option makes the project clone process in each job a bit faster, pulling only the current commit, not the whole Git history.
 
@@ -140,7 +140,7 @@ I still leverage GitLab's `$CI_REGISTRY` variable to compose the names, so basic
 Just remember to use `$CI_COMMIT_REF_SLUG` for the second tag, because it has slashes and other invalid chars stripped out automatically.
 
 ### A small trick: cache-friendly Docker images
-To make this process work smoothly, you should write your **Dockerfile in a cache-friendly manner**. To obtain that, we must leverage the layer-based structure of the images, and **put the stuff that changes more often in the latter layers**, and vice versa the stuff that never changes up in the first ones. In this specific case we're talking about a PHP/Symfony application and, starting from some advice that I got from my colleague [Thomas](https://twitter.com/thomasvargiu), I wrote down this Dockerfile:
+To make this process work smoothly, you should write your **Dockerfile in a cache-friendly manner**. To obtain that, we must leverage the layer-based structure of the images, and **put the stuff that changes more often in the latter layers**, and vice versa the stuff that never changes up in the first ones. In this specific case we're talking about a PHP/Symfony application and, starting from some advice that I got from my colleague [Thomas](https://x.com/thomasvargiu), I wrote down this Dockerfile:
 
 ```dockerfile
 FROM gitlab.facile.it/facile/my-project/php-base

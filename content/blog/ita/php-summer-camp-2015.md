@@ -57,8 +57,8 @@ Sono state approfondite alcune configurazioni particolari di PhpUnit che consent
 ### Modernising the legacy (Marek Matulka)
 Il presentatore ha illustrato le feature implementate da un'applicazione PHP legacy. Il codice era molto disordinato e praticamente impossibile da testare.
 Logica di business, data retrieval e viste erano mescolate in un'applicazione che non era dotata nemmeno di un singolo [front-controller](https://it.wikipedia.org/wiki/Front_Controller_pattern).
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Modernising legacy w/ <a href="https://twitter.com/super_marek">@super_marek</a> is kicking off at <a href="https://twitter.com/hashtag/phpsummer?src=hash">#phpsummer</a> <a href="http://t.co/aOIt1CWhNb">pic.twitter.com/aOIt1CWhNb</a></p>&mdash; Jakub Zalas (@jakub_zalas) <a href="https://twitter.com/jakub_zalas/status/636506399288201216">August 26, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Modernising legacy w/ <a href="https://x.com/super_marek">@super_marek</a> is kicking off at <a href="https://x.com/hashtag/phpsummer?src=hash">#phpsummer</a> <a href="http://t.co/aOIt1CWhNb">pic.x.com/aOIt1CWhNb</a></p>&mdash; Jakub Zalas (@jakub_zalas) <a href="https://x.com/jakub_zalas/status/636506399288201216">August 26, 2015</a></blockquote>
+<script async src="//platform.x.com/widgets.js" charset="utf-8"></script>
 L'applicazione era un semplice sito di e-commerce per la vendita di articoli e comprendeva una sezione di checkout.
 Nel dover aggiungere un nuova funzionalità - il calcolo real-time delle spese di spedizione - si è voluto introdurre alcune componenti di Symfony per migliorare la qualità del sistema.
 È stato illustrato come introdurre e configurare le seguenti componenti: [**DependencyInjection**](http://symfony.com/it/doc/current/components/dependency_injection/introduction.html), [**Twig**](http://twig.sensiolabs.org/) e [**HttpFoundation**](http://symfony.com/it/doc/current/components/http_foundation/index.html).
@@ -81,16 +81,16 @@ In generale il workshop è stato interessante ma, rispetto agli altri, conteneva
 Alcuni esempi di domande: Mac vs Linux, [Functional programming](http://engineering.facile.it/programmazione-funzionale-perche-preoccuparsi/) vs [OOP](https://it.wikipedia.org/wiki/Programmazione_orientata_agli_oggetti), Tea vs Coffee, USA vs Europe
 Il vincitore Ryan Weaver è stato selezionato dal pubblico in base ad un conteggio di consensi.
 È stato un momento divertente con argomenti molto vari anche al di fuori dell'ambito informatico.
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/symfony">@symfony</a> vs <a href="https://twitter.com/laravelphp">@laravelphp</a> debate on <a href="https://twitter.com/hashtag/ezsummer?src=hash">#ezsummer</a> <a href="https://twitter.com/hashtag/phpsummer?src=hash">#phpsummer</a> wanna bet on the winner? :-) <a href="http://t.co/f7HXqkoLXU">pic.twitter.com/f7HXqkoLXU</a></p>&mdash; Igor Vrdoljak (@ivrdoljak) <a href="https://twitter.com/ivrdoljak/status/636571466104967168">August 26, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr"><a href="https://x.com/symfony">@symfony</a> vs <a href="https://x.com/laravelphp">@laravelphp</a> debate on <a href="https://x.com/hashtag/ezsummer?src=hash">#ezsummer</a> <a href="https://x.com/hashtag/phpsummer?src=hash">#phpsummer</a> wanna bet on the winner? :-) <a href="http://t.co/f7HXqkoLXU">pic.x.com/f7HXqkoLXU</a></p>&mdash; Igor Vrdoljak (@ivrdoljak) <a href="https://x.com/ivrdoljak/status/636571466104967168">August 26, 2015</a></blockquote>
+<script async src="//platform.x.com/widgets.js" charset="utf-8"></script>
 
 <a name="giovedi"></a>
 # Giovedì 27 agosto
 <a name="coupling"></a>
 ### Loose coupling in practice (Jakub Zalas)
 L'obiettivo della sessione era disaccoppiare l'applicazione [Symfony Demo](http://symfony.com/blog/introducing-the-symfony-demo-application) da [Doctrine ORM/DBAL](http://www.doctrine-project.org/) e di consentire lo switch ad altre strategie di storage.
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Quite a crowd at <a href="https://twitter.com/jakub_zalas">@jakub_zalas</a> workshop on loose coupling with <a href="https://twitter.com/symfony">@Symfony</a>! <a href="https://twitter.com/PHPSummerCamp">@PHPSummerCamp</a> <a href="http://t.co/KnvqaafRfG">pic.twitter.com/KnvqaafRfG</a></p>&mdash; Marek ✈ (@super_marek) <a href="https://twitter.com/super_marek/status/636805256987455488">August 27, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Quite a crowd at <a href="https://x.com/jakub_zalas">@jakub_zalas</a> workshop on loose coupling with <a href="https://x.com/symfony">@Symfony</a>! <a href="https://x.com/PHPSummerCamp">@PHPSummerCamp</a> <a href="http://t.co/KnvqaafRfG">pic.x.com/KnvqaafRfG</a></p>&mdash; Marek ✈ (@super_marek) <a href="https://x.com/super_marek/status/636805256987455488">August 27, 2015</a></blockquote>
+<script async src="//platform.x.com/widgets.js" charset="utf-8"></script>
 Nonostante il sistema fosse un semplice gestionale per articoli di blog, il lavoro si è subito rilevato molto più lungo e complesso del previsto.
 È stato interessante notare come Symfony full-stack abbia numerosi legami "nascosti" con Doctrine. Esempi sono il componente [Security](http://symfony.com/it/doc/current/book/security.html) e il [ParamConverter](http://symfony.com/it/doc/current/bundles/SensioFrameworkExtraBundle/annotations/converters.html).
 Si è iniziato nel creare i **repository as services** in modo da consentire la rimozione di qualsiasi riferimento a Doctrine nei controller.
@@ -106,8 +106,8 @@ Anche in questo workshop le soluzioni ai problemi erano già presenti nel reposi
 ### Next-gen package development with Puli (Bernhard Schussek)
 Questa sessione è stata divisa in due parti. La prima è una presentazione del **progetto [Puli](http://docs.puli.io/en/latest/)**. Sono state illustrate le funzionalità dell'applicazione e i problemi che essa risolve.
 Puli è un gestore della configurazione di pacchetti che mira a rendere **le librerie PHP più omogenee e più semplici da configurare**. Esso, per funzionare, usa [Composer](https://getcomposer.org/) che continua a gestire il package retrieval e l'autoloading.
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Finally learning about <a href="https://twitter.com/hashtag/Puli?src=hash">#Puli</a> from <a href="https://twitter.com/webmozart">@webmozart</a>. Great stuff! <a href="https://twitter.com/hashtag/phpsummer?src=hash">#phpsummer</a> <a href="http://t.co/l72oOuwtjY">pic.twitter.com/l72oOuwtjY</a></p>&mdash; Paweł Jędrzejewski (@pjedrzejewski) <a href="https://twitter.com/pjedrzejewski/status/636889138252357632">August 27, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Finally learning about <a href="https://x.com/hashtag/Puli?src=hash">#Puli</a> from <a href="https://x.com/webmozart">@webmozart</a>. Great stuff! <a href="https://x.com/hashtag/phpsummer?src=hash">#phpsummer</a> <a href="http://t.co/l72oOuwtjY">pic.x.com/l72oOuwtjY</a></p>&mdash; Paweł Jędrzejewski (@pjedrzejewski) <a href="https://x.com/pjedrzejewski/status/636889138252357632">August 27, 2015</a></blockquote>
+<script async src="//platform.x.com/widgets.js" charset="utf-8"></script>
 Puli consente l'accesso alle risorse di un pacchetto in modo semplice e veloce. Le risorse qualitativamente possono essere molto varie: immagini, template, file per la localizzazione, fogli di stile, basi di dati, ecc.
 Puli introduce il concetto di **percorso virtuale**, un nuovo standard per l'accesso alle risorse condivise da uno o più pacchetti.
 Ciascun componente Puli definisce dei mappings che consentono di tradurre un percorso virtuale in percorso reale.
@@ -149,8 +149,8 @@ Le attività di Input/Output superflue causano rallentamenti, esempi sono le scr
 <a name="symfony3"></a>
 ### Migrating to Symfony 3 (Nicolas Grekas)
 Questo workshop ha consentito di apprendere la **roadmap a lungo termine del framework Symfony**.
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">on the way to symfony 3 at <a href="https://twitter.com/hashtag/phpsummer?src=hash">#phpsummer</a> with <a href="https://twitter.com/nicolasgrekas">@nicolasgrekas</a> <a href="http://t.co/vijn5ttzPG">pic.twitter.com/vijn5ttzPG</a></p>&mdash; dbu (@dbu) <a href="https://twitter.com/dbu/status/637233201635835904">August 28, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">on the way to symfony 3 at <a href="https://x.com/hashtag/phpsummer?src=hash">#phpsummer</a> with <a href="https://x.com/nicolasgrekas">@nicolasgrekas</a> <a href="http://t.co/vijn5ttzPG">pic.x.com/vijn5ttzPG</a></p>&mdash; dbu (@dbu) <a href="https://x.com/dbu/status/637233201635835904">August 28, 2015</a></blockquote>
+<script async src="//platform.x.com/widgets.js" charset="utf-8"></script>
 È stato annunciato che l'ultima versione LTS di Symfony 2 sarà **la versione 2.8 completamente compatibile, quanto a funzionalità, con la versione 3.0**.
 È interessante notare che non ci saranno cambiamenti stravolgenti per Symfony vesione 3.0: essa infatti rimuove soltanto le funzionalità deprecate nelle versioni precedenti.
 Sono stati alresì spiegati i concetti di [versionamento semantico](http://engineering.facile.it/git-flow-semantic-versioning/) adottati dal framework a partire dalla versione 2.3.
@@ -162,8 +162,8 @@ Ciò consente all'utente di rilevare subito eventuali utilizzi non corretti già
 <a name="experts"></a>
 ### Meet the experts
 Diversi gruppi di persone si sono riunite per parlare di molteplici argomenti.
-<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Ecommerce on Symfony roundtable at <a href="https://twitter.com/PHPSummerCamp">@PHPSummerCamp</a> <a href="http://t.co/RD8ueJX7Nj">pic.twitter.com/RD8ueJX7Nj</a></p>&mdash; Ivo Lukač (@ilukac) <a href="https://twitter.com/ilukac/status/637288188231450625">August 28, 2015</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Ecommerce on Symfony roundtable at <a href="https://x.com/PHPSummerCamp">@PHPSummerCamp</a> <a href="http://t.co/RD8ueJX7Nj">pic.x.com/RD8ueJX7Nj</a></p>&mdash; Ivo Lukač (@ilukac) <a href="https://x.com/ilukac/status/637288188231450625">August 28, 2015</a></blockquote>
+<script async src="//platform.x.com/widgets.js" charset="utf-8"></script>
 Ciascun gruppo comprendeva, tra gli altri partecipanti, un paio di persone esperte dell'argomento per moderare la discussione.
 Io ho partecipato alla discussione di: [**E-commerce**](https://it.wikipedia.org/wiki/Commercio_elettronico) su Symfony (con particolare riguardo a [Sylius](http://sylius.org/)), [**software testing**](https://it.wikipedia.org/wiki/Collaudo_del_software) e **[API](https://it.wikipedia.org/wiki/Application_programming_interface) design**.
 È stato interessante discutere su come progettare architetture orientate a microservizi cercando di definire API stabili e solide.

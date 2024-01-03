@@ -13,8 +13,8 @@ toc: false
 ---
 A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
 
-<blockquote class="twitter-tweet" data-lang="it"><p lang="en" dir="ltr">Scalar type hints &amp; return types vs no scalar type hints &amp; return types is <a href="https://twitter.com/hashtag/PHP?src=hash">#PHP</a>&#39;s new spaces vs tabs</p>&mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) <a href="https://twitter.com/WyriHaximus/status/865524687257862144">19 maggio 2017</a></blockquote>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-lang="it"><p lang="en" dir="ltr">Scalar type hints &amp; return types vs no scalar type hints &amp; return types is <a href="https://x.com/hashtag/PHP?src=hash">#PHP</a>&#39;s new spaces vs tabs</p>&mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) <a href="https://x.com/WyriHaximus/status/865524687257862144">19 maggio 2017</a></blockquote>
+<script async src="//platform.x.com/widgets.js" charset="utf-8"></script>
 
 After asking references about this, someone alluded to this very short video: [**"PHP Bits: Visual Debt"**](https://laracasts.com/series/php-bits/episodes/1) (it's only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.
 

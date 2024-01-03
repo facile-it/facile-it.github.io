@@ -38,7 +38,7 @@ I talk sono in ordine cronologico. Buona lettura!
 
 <a name="prophecy"></a>
 #### PHP object mocking framework world: let's compare Prophecy and PHPUnit
- * Sarah Khalil ([@saro0h](http://twitter.com/saro0h))
+ * Sarah Khalil ([@saro0h](http://x.com/saro0h))
  * Day 1 - 14:30 – 15:30 - track 1 ([slides](https://speakerdeck.com/saro0h/php-day-verona-2015-php-object-mocking-framework-world))
 
 <iframe src="https://player.vimeo.com/video/134728681" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -49,7 +49,7 @@ Ricordatevi di aggiungere qualche altra parola (oltre a prophecy) chiave nelle v
 
 <a name="containerize"></a>
 #### Containerize your PHP
- * Marek Jelen ([@marek_jelen](http://twitter.com/marek_jelen))
+ * Marek Jelen ([@marek_jelen](http://x.com/marek_jelen))
  * Day 1 - 15:30 – 16:30 - track 2
 
 <iframe src="https://player.vimeo.com/video/134728683" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -69,7 +69,7 @@ Abbiamo scoperto il [FOSHttpCacheBundle](http://github.com/FriendsOfSymfony/FOSH
 
 <a name="psr-7"></a>
 #### Hello, PSR-7
- * Beau Simensen ([@beausimensen](http://www.twitter.com/beausimensen))
+ * Beau Simensen ([@beausimensen](http://www.x.com/beausimensen))
  * Day 2 - 11:00 – 12:00 - track 2 ([slides](https://beau.io/talks/2015/05/16/hello-psr-7-phpday-2015/))
 
 <iframe src="https://player.vimeo.com/video/134281520" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -80,7 +80,7 @@ Lo standard sarà approvato a brevissimo (solo 3 giorni dopo il talk!) e molti a
 
 <a name="php7-data-structures"></a>
 #### PHP Data Structures (and the impact of PHP 7 on them)
- * Patrick Allaert ([@patrick_allaert](http://www.twitter.com/patrick_allaert))
+ * Patrick Allaert ([@patrick_allaert](http://www.x.com/patrick_allaert))
  * Day 2 - 12:00 – 13:00 - track 1 ([slides](http://www.slideshare.net/patrick.allaert/php-data-structures-and-the-impact-of-php-7-on-them-php-days-2015))
 
 <iframe src="https://player.vimeo.com/video/134070469" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -89,7 +89,7 @@ Questo talk, dal sapore molto tecnico, ci ha fatto addentrare negli internals de
 
 <a name="doctrine"></a>
 #### Doctrine ORM Good Practices and Tricks
- * Marco Pivetta ([@Ocramius](http://www.twitter.com/Ocramius))
+ * Marco Pivetta ([@Ocramius](http://www.x.com/Ocramius))
  * Day 2 - 15:30 – 16:30 - track 1
 
 <iframe src="https://player.vimeo.com/video/134178140" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -101,7 +101,7 @@ Abbiamo voluto citare in questo articolo anche i **3 keynote** della conferenza:
 
 <a name="coderabbi"></a>
 #### Talmudic Maxims to Maximize Your Growth as a Developer
- * Yitzchok Willroth ([@coderabbi](http://www.twitter.com/coderabbi))
+ * Yitzchok Willroth ([@coderabbi](http://www.x.com/coderabbi))
  * Day 1 - keynote di apertura
 
 Yitz, studente rabbinico poi passato alla programmazione, molto famoso nella community PHP, ci ha spinto a considerare alcuni suoi consigli su come poterci **migliorare come sviluppatori** e come membri della community stessa: cercare e coltivare un mentore, essere pazienti ed accettare i consigli, aiutare gli altri per ripagare tutto questo, partecipare nell'open source...
@@ -113,7 +113,7 @@ Personalmente, mi ha anche fatto scoprire tre siti piuttosto interessanti:
 
 <a name="calevans"></a>
 #### Down the Rabbit Hole: Lessons Learned combining Career and Community
- * Cal Evans ([@CalEvans](http://www.twitter.com/calevans))
+ * Cal Evans ([@CalEvans](http://www.x.com/calevans))
  * Day 2 - keynote di apertura  
 
 Cal è il community manager (ma non chiamatelo così!) per Zend, e ci ha raccontato con estrema passione, qualche lacrima e in maniera molto divertente la sua storia, come è nata la sua carriera di programmatore e come il suo percorso si è intrecciato con la community PHP e il mondo dell'open source. 
@@ -122,7 +122,7 @@ Tutto questo per spiegarci come **far parte della community è un valore** impor
 
 <a name="seldaek"></a>
 #### Behind the Scenes of Maintaining an Open Source Project
- * Jordi Boggiano ([@seldaek](http://twitter.com/seldaek))
+ * Jordi Boggiano ([@seldaek](http://x.com/seldaek))
  * Day 2 - keynote di chiusura
 
 Jordi è il creatore e mantainer di [Composer](https://getcomposer.org/), uno dei principali tool per un programmatore PHP. Nel suo keynote ci ha raccontato con franchezza la sua esperienza in prima persona nel **gestire un progetto open source** così vasto e popolare, come spesso sia difficile accontentare tutti, e alcuni retroscena e dettagli di qualche curiosa pull request.

@@ -272,4 +272,4 @@ Ecco alcune risorse utili:
 - [GoPHP7-ext](http://gophp7.org/gophp7-ext/) Progetto che supporta la migrazione delle estensioni verso PHP 7, raccogliendo risorse e consigli utili ad ottenere questo scopo.
 - [Getting started with PHP Extensions development](http://spaghetti.io/cont/article/getting-started-with-php-extensions-development/52/1.html) - Un mio breve articolo (in inglese) su come scrivere la propria prima estensione PHP.
 
-Se il post vi è piaciuto non dimenticate di condividerlo e di commentarlo qui sotto o su twitter menzionando [@FacileIt_Engr](https://twitter.com/FacileIt_Engr).
+Se il post vi è piaciuto non dimenticate di condividerlo e di commentarlo qui sotto o su twitter menzionando [@FacileIt_Engr](https://x.com/FacileIt_Engr).

@@ -20,34 +20,34 @@ What follows is a mere recap of the event, with my some comments of mine.
 
 
 # Things I Wish I Knew When I Started Playing Developer
-## Gary Hockin ([@GeeH](https://twitter.com/GeeH))
+## Gary Hockin ([@GeeH](https://x.com/GeeH))
 
 
 A trip into developers' mindset from a ludic (and hence, engaging) point of view. Gary is a natural born speaker ;) and this talk deserves to be seen at least once by anyone interested in programming, no matter their background and interests.
 
 # What's new in PHP 8 
-## Derick Rethans ([@derickr](https://twitter.com/derickr))
+## Derick Rethans ([@derickr](https://x.com/derickr))
 
 Personally, I did not like the style of the presentation. I'm not referring to the graphical layout of slides, but how they were presented! 🙂 However, the information provided is very important and so you should take a look **[here](https://derickrethans.nl/talks/php-phpday20)**
 
 # Symfony 5, the new bit 
-## Andreas Hucks ([@meandmymonkey](https://twitter.com/meandmymonkey))
+## Andreas Hucks ([@meandmymonkey](https://x.com/meandmymonkey))
 
 A deep dive into Symfony 5 features and enhancements. By knowing where the framework is heading, we will make better-informed decisions in our daily work.
 
 #Leveraging Typed Exceptions for Cleaner Error Handling 
-## Chris Holland ([@chrisholland](https://twitter.com/chrisholland))
+## Chris Holland ([@chrisholland](https://x.com/chrisholland))
 
 This speech was mainly intended for entry-level or mid-level developers. However, it is very useful to learn (or recap) how to build a long-lasting relationship with exceptions. In fact, exceptions are not our enemies, they can help us contextualize the scope in which they occur and thus speed up the debugging process.
 Slides **[available here](https://bit.ly/exceptions-ftw)**
  
 # Kubernetes for PHP developers 
-## Alessandro Lai ([@AlessandroLai](https://twitter.com/AlessandroLai))
+## Alessandro Lai ([@AlessandroLai](https://x.com/AlessandroLai))
 
 A well-presented talk by my colleague Alessandro - Too many screenshots of the dashboard for me, but that's only because I am more dev than ops ;)
 
 # Technically Speaking: Improve your code with documentation 
-## Alexandra White ([@heyawhite](https://twitter.com/heyawhite))
+## Alexandra White ([@heyawhite](https://x.com/heyawhite))
 
 Brilliantly presented by Alexandra! A tidbit that I brought home: there are moments to be (like) Shakespeare and others not. One of those when not to be Shakespeare is when writing documentation.
 I must say that this talk lighted my interest in technical writing.
@@ -55,18 +55,18 @@ The icing on the cake was that the presentation had subtitles, which should defi
 Slides **[available here](https://docs.google.com/presentation/d/1l7cjrouAGdsGae4nXyJLcGcool1l0zx5knXvL_4h04Q/edit#slide=id.g589a77319a_0_34)**
 
 # Looping the Loop with SPL Iterators 
-## Mark Baker ([@Mark_Baker](https://twitter.com/Mark_Baker))
+## Mark Baker ([@Mark_Baker](https://x.com/Mark_Baker))
 
 A tour of the little-known iterators world. . There was also time for a little mea-culpa about the almost-not-existent documentation when the library was first published and its initial years.🙂 
 Slides **[available here](https://www.slideshare.net/MarkBakerUK/looping-the-loop-with-spl-iterators/)**
 
 # Getting started with ReactPHP - Pushing real-time data to the browser 
-## Christian Lück ([@another_clue](https://twitter.com/another_clue))
+## Christian Lück ([@another_clue](https://x.com/another_clue))
 
 This is the real React! Not that other little thing made by Facebook! An introductory talk to the React world and the pillars it is based on: async and event-driven programming and, of course, promises (https://music.youtube.com/watch?v=Ok1Z65OMi1Y&feature=gws_kp_track). 
 
 # Pragmatic Optimism: How PHP Conquered the Web
-## Samantha Quiñones ([@ieatkillerbees](https://twitter.com/ieatkillerbees))
+## Samantha Quiñones ([@ieatkillerbees](https://x.com/ieatkillerbees))
 
 I really enjoyed the final talk that was a historical retrospective of the web and web developing, starting from Charles Babbage up to (fast forward) CGI, the Personal Home Page Tools - PHP Tools and its evolution.
 There was a point in this talk worth mentioning: sometimes people are ashamed to tell others they are using PHP because of (insert here any drawback you heard of - probably already fixed by now).

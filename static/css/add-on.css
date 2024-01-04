@@ -2,6 +2,16 @@
     font-size: 1.8em;
 }
 
+#sidebar #intro ul.icons li,
+#sidebar #footer ul.icons li {
+    padding: 0 .8em 0 0;
+}
+
+#sidebar #intro ul.icons li:last-child,
+#sidebar #footer ul.icons li:last-child {
+    padding: 0;
+}
+
 .post > footer .stats {
     margin-left: 24px;
 }

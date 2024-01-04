@@ -25,7 +25,7 @@ In this post I'm going to recap the event and make some considerations about the
 
 # Day 1
 
-## Keynote - *[Wojtek Kalicinski](https://twitter.com/wkalic)*
+## Keynote - *[Wojtek Kalicinski](https://x.com/wkalic)*
 The day 1 keynote was all about the N Developer Preview and was given by Wojtek Kalicinski, a developer advocate directly from Google.
 Wojtek went through all the new improvements of the platform, both from user's and developer's point of view. Here’s a short summary of the most relevant ones:
 
@@ -42,7 +42,7 @@ The most interesting and encouraging aspect coming out from the keynote and the 
 
 Not only the release of the new OS preview six months before its public release — instead of three — is really useful for third party developers to update apps to support new APIs, but hopefully it will also help phone manufactures to keep their custom Android implementations more aligned with the stock version release cycle. This will result in a better user experience and, more importantly to us, a better developer experience, making it closer to the iOS world where developers are not required to support five years old OS versions.
 
-## #PERFMATTERS for Android - *[Hasan Hosgel](https://twitter.com/alosdev)*
+## #PERFMATTERS for Android - *[Hasan Hosgel](https://x.com/alosdev)*
 
 [Slides](https://speakerdeck.com/alosdev/perfmatters-for-android-droidcon-turin-2016)
 
@@ -50,7 +50,7 @@ The talk was all about performance in Android. The speaker analyzed why #**PERFM
 
 Performance is crucial to **engage the user** and I think the speaker did a great job in summarizing useful tips to improve it. Moreover most of them doesn’t alter the readability or the maintainability of the code, as is often the case for performance driven code changes.
 
-## Let it flow! Unidirectional data flow architecture in Android - [*Benjamin Augustin*](https://twitter.com/dorvaryn)
+## Let it flow! Unidirectional data flow architecture in Android - [*Benjamin Augustin*](https://x.com/dorvaryn)
 
 [Slides](https://speakerdeck.com/dorvaryn/let-it-flow)
 
@@ -68,7 +68,7 @@ They explained also how they use a **C++ library** common to all platforms to re
 
 It was a light talk but still it was interesting to see how a big company like Spotify finds solutions to scale and maintain a **consistent and engaging UX** across all of its user-base.
 
-## Loving lean layouts - [*Huyen Tue Dao*](https://twitter.com/queencodemonkey) <a name="lean-layouts"></a>
+## Loving lean layouts - [*Huyen Tue Dao*](https://x.com/queencodemonkey) <a name="lean-layouts"></a>
 
 [Slides](https://speakerdeck.com/queencodemonkey/droidcon-italy-2016-loving-lean-layouts)
 
@@ -78,7 +78,7 @@ The talk was very easy to follow and really useful: most of the advices covered 
 
 # Day 2
 
-## Android reactive programming with RxJava - [*Ivan Morgillo*](https://twitter.com/hamen)
+## Android reactive programming with RxJava - [*Ivan Morgillo*](https://x.com/hamen)
 During last couple of years RxJava has been echoing all over the Android developers community and given its huge popularity I was surprised to see that Droidcon IT offered only one talk about it. 
 
 Fortunately Ivan Morgillo is a topic expert — he also wrote a [book](https://www.packtpub.com/application-development/rxjava-essentials) about RxJava and Android — and during the talk he went through some of the **basics of reactive programming** (`Observables`, `Observer`, `Subscription`…) and a lot of useful **operators**, which are one of the strengths of RxJava and Reactive extensions (Rx*) in general.

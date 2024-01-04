@@ -2,7 +2,8 @@
     font-size: 1.8em;
 }
 
-#intro ul.icons li {
+#intro ul.icons li,
+#footer ul.icons li {
     padding: 0 .8em 0 0;
 }
 

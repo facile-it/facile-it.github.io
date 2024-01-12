@@ -7,7 +7,7 @@ draft: true
 share: true
 categories: ['Protected Fridays']
 title: "Venerdì Protetto | Christmas edition"
-description: "What happened in the latest Facile.it Venerdì Protetto?"
+description: "What happened in the last Facile.it Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/venerdì_protetto/christmas_kata.png'

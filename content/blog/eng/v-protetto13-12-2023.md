@@ -2,47 +2,60 @@
 
 authors: ["engineering"]
 comments: true
-date: "2024-01-12 17:00:00"
+date: "2023-12-30 17:00:00"
 draft: true
 share: true
 categories: ['Protected Fridays']
 title: "Venerdì Protetto | Christmas edition"
-description: "What happened in the last Facile.it Venerdì Protetto?"
+description: "What happened in the latest Facile.it Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/christmas_kata'
-twitterLargeImage: '/images/christmas_kata'
+twitterImage: '/images/venerdì_protetto/christmas_kata.png'
+twitterLargeImage: '/images/venerdì_protetto/christmas_kata.png'
 toc: false
 
 ---
 
-![Architectual Kata](/static/images/venerdì_protetto/vp_christmas.png)
+<a href= "/images/venerd%C3%AC_protetto/vp_christmas.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/vp_christmas.png?raw=true" alt="Architectural Kata" title="Architectural Kata" /> 
+</a>
+
 
 During the latest Venerdì Protetto on December 13th, Facile.it hosted a software architecture exercise called Architecture Kata with some of our lead developers. 
 
 Architectural Katas are small-group exercises. A moderator assignes each group a different project that needs development, keeps track of time and acts as the facilitator. To learn about Architectural Katas, see https://nealford.com/katas/.
 
-During the exercise, each team had a meeting to discover additional requirements, discuss possible technology options, and sketch out a rough vision of the solution. Then, each team presented the final solution to the other teams using UML, C4 model, or other diagrams and answered challenging questions about the presented project. Once all projects were presented, each team voted for their favorite project. Following the voting, two winners were selected.
+During the exercise, each team had a meeting to discover additional requirements, discuss possible technology options, and sketch out a rough vision of the solution. Then, each team presented the final solution to the other teams using UML, C4 model, or other diagrams and answered challenging questions about the presented project. Once all projects were presented, each team voted for their favorite project. Following the voting, two winners were selected:
 
-Let’s take a look at the exercises and the winning solutions.
+- Team Isola bella vista with the [Architectural Kata "Room With A View"](#architectural-kata-room-with-a-view)
 
-## Architectural Kata “Room With A View”
+- Team Simfonia di Facilitatori with the [Architectural Kata "Concert Comparison"](#architectural-kata-concert-comparison)
+
+Let’s take a look at the exercises and winning solutions.
+
+
+<br>
+
+
+## Architectural Kata "Room With A View"
+
+Team: Isola bella vista
 
 Moderator: Filippo Andrighetti
 
 Partecipants: Francesco Benedetto, Francesco Trevis, Alessandro Lai, Marco Saletta, Giulia Chiola, Santolo Tubelli
 
-### Exercise
+#### Exercise
 
 A large hotel reservation company wants to build the next-generation hotel reservation and management system specifically tailored to high-end resorts and SPAs where guests can view and reserve specific rooms.
 
-#### Users
+**Users**
 
 - guests (hundreds)
 
 - hotel staff (less than 20)
 
-#### Requirements
+**Requirements**
 
 - Registration can be made via web, mobile, phone call, or walk-in.
 
@@ -56,29 +69,37 @@ A large hotel reservation company wants to build the next-generation hotel reser
 
 - The system will be web-based and hosted by the reservation company.
 
-#### Additional context
+**Additional context**
 
 Peak season is quickly approaching so the system must be ready quickly or we have to wait until next year. The company is investing heavily in cutting-edge technology like smart room locks that open via a cell phone and is only interested in the high-end market. Salespeople have tremendous clout in the organization. People often scramble to make their promises true.
 
-### Presented solution
+#### Presented solution
 
-![Architectual Kata Room with a view](static/images/venerdì_protetto/architectual_kata_2_2023.png)
+<a href= "/images/venerd%C3%AC_protetto/architectural_kata_2_2023.png?raw=true" target="_blank"> 
+<img align="center" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/architectural_kata_2_2023.png?raw=true" alt="Architectural Kata winner 1" title="Architectural Kata" /> 
+</a>
 
-## Architectural Kata “Concert Comparison”
+
+<br>
+
+
+## Architectural Kata "Concert Comparison"
+
+Team: Sinfonia di Facilitatori
 
 Moderator: Olegs Belousovs
 
 Partecipants: Matteo Garza, Roberto Diana, Giulio Garofalo, Alessandra Frisullo, Ana Radujko, Luca Pacchiarotta, Giuseppe Rogato, Thomas Vargiù
 
-### Exercise
+#### Exercise
 
 A concert ticketing website with big acts and high volume needs an elastic solution to sell tickets.
 
-#### Users
+**Users**
 
 Thousand of concurrent users, bursts of up to 10,000/second when tickets go on sale.
 
-#### Requirements
+**Requirements**
 
 - Allow concurrent ticket buying.
 
@@ -86,18 +107,15 @@ Thousand of concurrent users, bursts of up to 10,000/second when tickets go on s
 
 - Shoppers can see an overview of the remaining seats.
 
-#### Additional context
+**Additional context**
 
 Consider an implementation in both Space-Based and Microservices architecture styles. Identify the tradeoffs for each solution.
 
-### Presented solution
+#### Presented solution
 
-![Architectual Kata Room with a view](static/images/venerdì_protetto/architectual_kata_1_2023.png)
-
-<br>
-
-
-The archive of all Venerdì Protetto talks is available [here](/categories/protected-fridays).
+<a href= "/images/venerd%C3%AC_protetto/architectural_kata_1_2023.png?raw=true" target="_blank"> 
+<img align="center" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/architectural_kata_1_2023.png?raw=true" alt="Architectural Kata winner 2" title="Architectural Kata" /> 
+</a>
 
 
 <script type="application/ld+json">
@@ -121,9 +139,9 @@ The archive of all Venerdì Protetto talks is available [here](/categories/prote
     },
     "url": "https://engineering.facile.it/blog/eng/v-protetto9-6-2023/",
     "image": "https://engineering.facile.it/images/venerdì_protetto/vp_christmas.png",
-    "datePublished": "2023-12-04",
-    "dateCreated": "2023-01-12",
-    "dateModified": "2023-01-12",
+    "datePublished": "2023-12-30",
+    "dateCreated": "2023-12-30",
+    "dateModified": "2023-12-30",
     "inLanguage": "en-US",
     "isFamilyFriendly": "true",
     "description": "Venerdì Protetto Christmas edition: Architectural Kata",

@@ -1,0 +1,136 @@
+---
+
+authors: ["engineering"]
+comments: true
+date: "2024-01-12 17:00:00"
+draft: true
+share: true
+categories: ['Protected Fridays']
+title: "Venerdì Protetto | Christmas edition"
+description: "What happened in the last Facile.it Venerdì Protetto?"
+languageCode: "en-US"
+type: "post"
+twitterImage: '/images/christmas_kata'
+twitterLargeImage: '/images/christmas_kata'
+toc: false
+
+---
+
+![Architectual Kata](/static/images/venerdì_protetto/vp_christmas.png)
+
+During the latest Venerdì Protetto on December 13th, Facile.it hosted a software architecture exercise called Architecture Kata with some of our lead developers. 
+
+Architectural Katas are small-group exercises. A moderator assignes each group a different project that needs development, keeps track of time and acts as the facilitator. To learn about Architectural Katas, see https://nealford.com/katas/.
+
+During the exercise, each team had a meeting to discover additional requirements, discuss possible technology options, and sketch out a rough vision of the solution. Then, each team presented the final solution to the other teams using UML, C4 model, or other diagrams and answered challenging questions about the presented project. Once all projects were presented, each team voted for their favorite project. Following the voting, two winners were selected.
+
+Let’s take a look at the exercises and the winning solutions.
+
+## Architectural Kata “Room With A View”
+
+Moderator: Filippo Andrighetti
+
+Partecipants: Francesco Benedetto, Francesco Trevis, Alessandro Lai, Marco Saletta, Giulia Chiola, Santolo Tubelli
+
+### Exercise
+
+A large hotel reservation company wants to build the next-generation hotel reservation and management system specifically tailored to high-end resorts and SPAs where guests can view and reserve specific rooms.
+
+#### Users
+
+- guests (hundreds)
+
+- hotel staff (less than 20)
+
+#### Requirements
+
+- Registration can be made via web, mobile, phone call, or walk-in.
+
+- Guests can either book a type of room (standard, deluxe, or suite) or choose a specific room to stay in by viewing pictures of each room and its location in the hotel.
+
+- The system must be able to maintain room status (booked, available, ready to clean, etc.) as well as when the room will be needed next.
+
+- It must also have state-of-the-art housekeeping management functionality so that cleaning and maintenance staff can be directed to various rooms based on priority and reservation needs using proprietary devices supplied by the reservation company attached to the cleaning carts.
+
+- Standard reservation functionality (e.g., payments, registration info, etc.) will be done by leveraging the existing reservations system.
+
+- The system will be web-based and hosted by the reservation company.
+
+#### Additional context
+
+Peak season is quickly approaching so the system must be ready quickly or we have to wait until next year. The company is investing heavily in cutting-edge technology like smart room locks that open via a cell phone and is only interested in the high-end market. Salespeople have tremendous clout in the organization. People often scramble to make their promises true.
+
+### Presented solution
+
+![Architectual Kata Room with a view](static/images/venerdì_protetto/architectual_kata_2_2023.png)
+
+## Architectural Kata “Concert Comparison”
+
+Moderator: Olegs Belousovs
+
+Partecipants: Matteo Garza, Roberto Diana, Giulio Garofalo, Alessandra Frisullo, Ana Radujko, Luca Pacchiarotta, Giuseppe Rogato, Thomas Vargiù
+
+### Exercise
+
+A concert ticketing website with big acts and high volume needs an elastic solution to sell tickets.
+
+#### Users
+
+Thousand of concurrent users, bursts of up to 10,000/second when tickets go on sale.
+
+#### Requirements
+
+- Allow concurrent ticket buying.
+
+- Do not sell a seat more than once.
+
+- Shoppers can see an overview of the remaining seats.
+
+#### Additional context
+
+Consider an implementation in both Space-Based and Microservices architecture styles. Identify the tradeoffs for each solution.
+
+### Presented solution
+
+![Architectual Kata Room with a view](static/images/venerdì_protetto/architectual_kata_1_2023.png)
+
+<br>
+
+
+The archive of all Venerdì Protetto talks is available [here](/categories/protected-fridays).
+
+
+<script type="application/ld+json">
+{ 
+    "@context": "https://schema.org",
+    "genre":["SEO","JSON-LD"],
+    "@type": "BlogPosting",
+    "headline": "Venerdì Protetto | Christmas edition",
+    "keywords": ["Architectural Kata"],
+    "wordcount": "543",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Facile.it Engineering",
+        "url": "https://engineering.facile.it/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://engineering.facile.it/images/logo_engineering.png",
+            "width":"1057",
+            "height":"244"
+        }
+    },
+    "url": "https://engineering.facile.it/blog/eng/v-protetto9-6-2023/",
+    "image": "https://engineering.facile.it/images/venerdì_protetto/vp_christmas.png",
+    "datePublished": "2023-12-04",
+    "dateCreated": "2023-01-12",
+    "dateModified": "2023-01-12",
+    "inLanguage": "en-US",
+    "isFamilyFriendly": "true",
+    "description": "Venerdì Protetto Christmas edition: Architectural Kata",
+    "author": {
+        "@type": "Person",
+        "name": "Ana",
+        "url": "https://www.linkedin.com/in/ana-radujko"
+    }
+}
+</script>

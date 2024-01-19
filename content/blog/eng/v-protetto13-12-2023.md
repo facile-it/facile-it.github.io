@@ -23,7 +23,7 @@ toc: false
 
 During the latest Venerdì Protetto on December 13th, Facile.it hosted a software architecture exercise called Architecture Kata with some of our lead developers. 
 
-Architectural Katas are small-group exercises. A moderator assigns each group a different project that needs development, keeps track of time and acts as the facilitator. To learn about Architectural Katas, see https://nealford.com/katas/.
+<i>Architectural Katas</i> are small-group exercises. A moderator assigns each group a different project that needs development, keeps track of time and acts as the facilitator. To learn about Architectural Katas, see https://nealford.com/katas/.
 
 During the exercise, each team had a meeting to discover additional requirements, discuss possible technology options, and sketch out a rough vision of the solution. Then, each team presented the final solution to the other teams using UML, C4 model, or other diagrams and answered challenging questions about the presented project. Once all projects were presented, each team voted for their favorite project. Following the voting, two winners were selected:
 

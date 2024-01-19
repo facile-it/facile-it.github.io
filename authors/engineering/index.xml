@@ -6,10 +6,21 @@
     <description>Recent content in engineering on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Dec 2023 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 Dec 2023 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/authors/engineering/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Venerdì Protetto | Christmas edition</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto13-12-2023/</link>
+      <pubDate>Sat, 30 Dec 2023 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto13-12-2023/</guid>
+      <description>During the latest Venerdì Protetto on December 13th, Facile.it hosted a software architecture exercise called Architecture Kata with some of our lead developers.
+Architectural Katas are small-group exercises. A moderator assigns each group a different project that needs development, keeps track of time and acts as the facilitator. To learn about Architectural Katas, see https://nealford.com/katas/.
+During the exercise, each team had a meeting to discover additional requirements, discuss possible technology options, and sketch out a rough vision of the solution.</description>
+    </item>
     
     <item>
       <title>Venerdì Protetto | November edition</title>

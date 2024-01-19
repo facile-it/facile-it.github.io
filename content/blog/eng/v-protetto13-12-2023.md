@@ -3,15 +3,15 @@
 authors: ["engineering"]
 comments: true
 date: "2023-12-30 17:00:00"
-draft: true
+draft: false
 share: true
 categories: ['Protected Fridays']
 title: "Venerdì Protetto | Christmas edition"
 description: "What happened in the last Facile.it Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/venerdì_protetto/christmas_kata.png'
-twitterLargeImage: '/images/venerdì_protetto/christmas_kata.png'
+twitterImage: '/images/venerdì_protetto/vp_christmas-2.png'
+twitterLargeImage: '/images/venerdì_protetto/vp_christmas-2.png'
 toc: false
 
 ---

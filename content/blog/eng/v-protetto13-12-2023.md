@@ -41,7 +41,7 @@ Team: Isola bella vista
 
 Moderator: Filippo Andrighetti
 
-Participants: Francesco Benedetto, Francesco Trevis, Alessandro Lai, Marco Saletta, Giulia Chiola, Santolo Tubelli
+Participants: Francesco Benedetto, Francesco Trevisi, Alessandro Lai, Marco Saletta, Giulia Chiola, Santolo Tubelli
 
 #### Exercise
 
@@ -119,7 +119,7 @@ Team: X-men
 
 Moderator: Christian Nastasi
 
-Participants: Angelo Landino, Edoardo Masselli, Gabriele Vener,i Davide Monfrecola, Vincenzo Gasparo, Cesare Bassu
+Participants: Angelo Landino, Edoardo Masselli, Gabriele Veneri, Davide Monfrecola, Vincenzo Gasparo, Cesare Bassu
 
 #### Exercise
 
@@ -219,7 +219,7 @@ Users will place their order and then be given a time to pick up their sandwich 
     "genre":["SEO","JSON-LD"],
     "@type": "BlogPosting",
     "headline": "Venerdì Protetto | Christmas edition",
-    "keywords": ["Architectural Kata"],
+    "keywords": ["Architectural Kata", "kata", "teamworking", "architecture", "events"],
     "wordcount": "543",
     "publisher": {
         "@type": "Organization",

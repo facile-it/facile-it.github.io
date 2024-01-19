@@ -27,9 +27,9 @@ During the latest Venerdì Protetto on December 13th, Facile.it hosted a softwar
 
 During the exercise, each team had a meeting to discover additional requirements, discuss possible technology options, and sketch out a rough vision of the solution. Then, each team presented the final solution to the other teams using UML, C4 model, or other diagrams and answered challenging questions about the presented project. Once all projects were presented, each team voted for their favorite project. Following the voting, two winners were selected:
 
-- Team Isola bella vista with the [Architectural Kata "Room With A View"](#architectural-kata-room-with-a-view)
+- Team Isola Bella Vista with the [Architectural Kata "Room With A View"](#architectural-kata-room-with-a-view)
 
-- Team Simfonia di Facilitatori with the [Architectural Kata "Concert Comparison"](#architectural-kata-concert-comparison)
+- Team Sinfonia di Facilitatori with the [Architectural Kata "Concert Comparison"](#architectural-kata-concert-comparison)
 
 Let’s take a look at the exercises and presented solutions.
 
@@ -37,7 +37,7 @@ Let’s take a look at the exercises and presented solutions.
 
 ## Architectural Kata "Room With A View"
 
-Team: Isola bella vista
+Team: Isola Bella Vista
 
 Moderator: Filippo Andrighetti
 
@@ -148,7 +148,7 @@ Students must be able to upload their source code, which will be run and graded.
 
 ## Architectural Kata "1-800-AMI-SICK”
 
-Team: Lambretta ipocondriaca
+Team: Lambretta Ipocondriaca
 
 Moderator: Alessandro Manno
 

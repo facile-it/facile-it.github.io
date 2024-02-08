@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Helm-based charts on Facile.it Engineering</title>
+    <link>https://engineering.facile.it/categories/helm-based-charts/</link>
+    <description>Recent content in Helm-based charts on Facile.it Engineering</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 30 Jan 2024 17:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://engineering.facile.it/categories/helm-based-charts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Venerdì Protetto | January edition</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto12-1-2024/</link>
+      <pubDate>Tue, 30 Jan 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto12-1-2024/</guid>
+      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on January 12, 2024.
+Topics:
+ AI journey by Yuri Mariotti (Innovazione.AI) Helm-based charts by Alessandro Manno (Facile.it) Software architecture by Sandro Toma &amp;amp; Alessandro Cagnetti (Solace)  The overview of Venerdì Protetto is available here.
+
+AI journey From silos to AI enterprise by Yuri Mariotti, Innovazione.AI
+ In this talk, we delved into the principles, preliminary steps, and macro-phases of a profound AI transformation in which digital best practices become the foundation of a new type of enterprise, capable of improving in (almost) every aspect thanks to the horizontal and vertical integration of Artificial Intelligence.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,10 +6,24 @@
     <description>Recent content on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Dec 2023 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jan 2024 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Venerdì Protetto | January edition</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto12-1-2024/</link>
+      <pubDate>Tue, 30 Jan 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto12-1-2024/</guid>
+      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on January 12, 2024.
+Topics:
+ AI journey by Yuri Mariotti (Innovazione.AI) Helm-based charts by Alessandro Manno (Facile.it) Software architecture by Sandro Toma &amp;amp; Alessandro Cagnetti (Solace)  The overview of Venerdì Protetto is available here.
+
+AI journey From silos to AI enterprise by Yuri Mariotti, Innovazione.AI
+ In this talk, we delved into the principles, preliminary steps, and macro-phases of a profound AI transformation in which digital best practices become the foundation of a new type of enterprise, capable of improving in (almost) every aspect thanks to the horizontal and vertical integration of Artificial Intelligence.</description>
+    </item>
     
     <item>
       <title>Venerdì Protetto | Christmas edition</title>

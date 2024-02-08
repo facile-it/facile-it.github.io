@@ -6,15 +6,51 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 30 Dec 2023 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jan 2024 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>AI</title>
+      <link>https://engineering.facile.it/categories/ai/</link>
+      <pubDate>Tue, 30 Jan 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Event driven</title>
+      <link>https://engineering.facile.it/categories/event-driven/</link>
+      <pubDate>Tue, 30 Jan 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/event-driven/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Event-driven architecture</title>
+      <link>https://engineering.facile.it/categories/event-driven-architecture/</link>
+      <pubDate>Tue, 30 Jan 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/event-driven-architecture/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Helm-based charts</title>
+      <link>https://engineering.facile.it/categories/helm-based-charts/</link>
+      <pubDate>Tue, 30 Jan 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/helm-based-charts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Protected Fridays</title>
       <link>https://engineering.facile.it/categories/protected-fridays/</link>
-      <pubDate>Sat, 30 Dec 2023 17:00:00 +0000</pubDate>
+      <pubDate>Tue, 30 Jan 2024 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/protected-fridays/</guid>
       <description></description>
@@ -710,15 +746,6 @@
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/aws/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Event driven</title>
-      <link>https://engineering.facile.it/categories/event-driven/</link>
-      <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/event-driven/</guid>
       <description></description>
     </item>
     

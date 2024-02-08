@@ -10,6 +10,7 @@ description: "What happened in the last Facile.it Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
 toc: false
+twitterImage: '/images/social/orange-social-preview.jpg'
 ---
 
 This page contains the abstracts of the talks held during the latest Venerdì Protetto on January 12, 2024. 
@@ -32,12 +33,13 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 <sup>by [Yuri Mariotti](https://it.linkedin.com/in/yurimariotti), [Innovazione.AI](https://innovazione.ai/chi-siamo/)<sup>
 
 <a href= "/images/venerd%C3%AC_protetto/azienda-ai.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/azienda-ai.png?raw=true" alt="" title="" /> 
+<img align="right" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/azienda-ai.png?raw=true" alt="" title="" /> 
 </a>
 
 In this talk, we delved into the principles, preliminary steps, and macro-phases of a profound AI transformation in which digital best practices become the foundation of a new type of enterprise, capable of improving in (almost) every aspect thanks to the horizontal and vertical integration of Artificial Intelligence.
 
 
+<br />
 <br />
 
 ## Helm-based charts
@@ -47,7 +49,7 @@ In this talk, we delved into the principles, preliminary steps, and macro-phases
 <sup>by [Alessandro Manno](https://it.linkedin.com/in/alessandro-manno-9888a55a), Facile.it<sup>
 
 <a href= "/images/venerd%C3%AC_protetto/helm-based-charts.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/helm-based-charts.png?raw=true" alt="" title="" /> 
+<img align="right" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/helm-based-charts.png?raw=true" alt="" title="" /> 
 </a>
 
 In this talk, the Facile.it DXCP team introduced Helm-based charts, a set of Helm library charts for managing Kubernetes applications.
@@ -65,7 +67,7 @@ After the introduction, the team presented a demo project aimed at creating proj
 <sup>by [Sandro Toma](https://it.linkedin.com/in/sandrotoma68) & [Alessandro Cagnetti](https://it.linkedin.com/in/cagnetti), [Solace](https://solace.com/)<sup>
 
 <a href= "/images/venerd%C3%AC_protetto/event-driven-architecture.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/event-driven-architecture.png?raw=true" alt="Event-driven architecture" title="Event-driven architecture" /> 
+<img align="right" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/event-driven-architecture.png?raw=true" alt="Event-driven architecture" title="Event-driven architecture" /> 
 </a>
 
 Organizations want to digitally transform themselves to have real-time activities and be responsive to customer needs or market dynamics. In this respect, it has become increasingly important to adopt the Event-driven architecture or EDA approach.
@@ -105,7 +107,7 @@ The archive of all Venerdì Protetto talks is available [here](/categories/prote
         }
     },
     "url": "https://engineering.facile.it/blog/eng/v-protetto9-6-2023/",
-    "image": "https://engineering.facile.it/images/social/social-preview.png",
+    "image": "https://engineering.facile.it/images/social/orange-social-preview.png",
     "datePublished": "2024-02-08",
     "dateCreated": "2024-01-30",
     "dateModified": "2024-02-08",

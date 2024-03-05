@@ -16,7 +16,7 @@ toc: false
 
 ---
 
-This page contains the abstracts of the talks held during the latest Venerdì Protetto on Febraury 9, 2024.
+This page contains the abstracts of the talks held during the latest Venerdì Protetto on February 9, 2024.
 
 Topics:
 
@@ -41,9 +41,7 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 <img align="right" style="width:35%; margin-left: 0.5em" src=/images/venerd%C3%AC_protetto/Software_and_people.png?raw=true" alt="Software is about people" title="Software is about people" /> 
 </a>
 
-In this talk, we looked into efficient ways to manage a software project by keeping it simple, focusing on your skills and the features you want to implement while avoiding over-engineering, technical trends, and doing more than needed.
-
-We tackled the importance of testing the software products and saw different testing scenarios. We also looked into the opportunities arising from the open-source communities and the challenges of using open-source software. More broadly, we delved into the challenges of managing software projects, such as technical gaps, communication, and deadlines.
+In this talk, we explored the activities involved in a software development process and the resources needed to create a good product. Software is an intangible thing and the risk of complexity is always present, even in few lines of code. Simplicity is the key and the KISS principle should be the guide. In order to survive in a software project, automated tests are a must. But at the end, the most important part of a software project are the people. We cannot build a good software with unhappy developers. That means an health environment and good salaries. Software is about people, not about code!
  
  <br />
  
@@ -102,7 +100,7 @@ In this talk, we dived into the technical aptitude and strategic assessments req
     "dateModified": "2024-03-04",
     "inLanguage": "en-US",
     "isFamilyFriendly": "true",
-    "description": "Abstracts of the talks held during the Venerdì Protetto on Febrauary 9th",
+    "description": "Abstracts of the talks held during the Venerdì Protetto on February 9th",
     "articleBody": "Software and open source Software is about people, not about code! 
 by Enrico Zimuel (Elastic) Software is about people In this talk, we looked into efficient ways to manage a software project by keeping it simple, focusing on your skills and the features you want to implement while avoiding over-engineering, technical trends, and doing more than needed. We tackled the importance of testing the software products and saw different testing scenarios. We also looked into the opportunities arising from the open-source communities and the challenges of using open-source software. More broadly, we delved into the challenges of managing software projects, such as technical gaps, communication, and deadlines. Software architecture and cross-functional requirements Getting the most important requirements right by Matteo Vaccari (Thoughtworks) Software architecture Developers may tend to focus 100% of their attention on “functional requirements”. In this talk, I try to argue that first, those are not really “requirements”, but rather are solution ideas. Second, I assert that the cross-functional requirements (CFR) are the most important ones, and I hint at a more precise and actionable way to think about CFR than what I usually see. Software monitoring Monitoring is a crap if you don’t know how to do it by Valerio Barbera (Inspector.dev) Software monitoring In this talk, we dived into the technical aptitude and strategic assessments required to understand how to manage complexity in software development projects, focus on the Developer Experience, and choose the right tools to set up the right monitoring strategy for your team and keep customers happy to work with you.",
     "author": {

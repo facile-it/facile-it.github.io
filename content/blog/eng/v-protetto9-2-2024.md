@@ -12,6 +12,7 @@ languageCode: "en-US"
 type: "post"
 twitterImage: '/images/social/social-preview-vp.png'
 twitterLargeImage: '/images/social/social-preview-vp.png'
+
 toc: false
 
 ---

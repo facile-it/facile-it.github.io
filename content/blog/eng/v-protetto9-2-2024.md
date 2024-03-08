@@ -10,8 +10,8 @@ title: "Venerdì Protetto | February edition"
 description: "What happened in the last Facile.it Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/twitter_preview.png'
-twitterLargeImage: '/images/twitter_preview.png'
+twitterImage: '/images/social/social-preview-vp.png'
+twitterLargeImage: '/images/social/social-preview-vp.png'
 toc: false
 
 ---
@@ -41,7 +41,9 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 <img align="right" style="width:35%; margin-left: 0.5em" src=/images/venerd%C3%AC_protetto/Software_and_people.png?raw=true" alt="Software is about people" title="Software is about people" /> 
 </a>
 
-In this talk, we explored the activities involved in a software development process and the resources needed to create a good product. Software is an intangible thing and the risk of complexity is always present, even in a few lines of code. Simplicity is the key and the KISS principle should be the guide. In order to survive in a software project, automated tests are a must. But in the end, the most important part of a software project are the people. We cannot build good software with unhappy developers. That means a health environment and good salaries. Software is about people, not about code!
+In this talk, we explored the activities involved in a software development process and the resources needed to create a good product. Software is an intangible thing and the risk of complexity is always present, even in a few lines of code. Simplicity is the key and the KISS principle should be the guide. In order to survive in a software project, automated tests are a must. But in the end, the most important part of a software project are the people. We cannot build good software with unhappy developers. That means a health environment and good salaries. 
+
+Software is about people, not about code!
  
  <br />
  

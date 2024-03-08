@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Jan 2024 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Feb 2024 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Protected Fridays</title>
+      <link>https://engineering.facile.it/categories/protected-fridays/</link>
+      <pubDate>Fri, 09 Feb 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/protected-fridays/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>AI</title>
@@ -44,15 +53,6 @@
       <pubDate>Tue, 30 Jan 2024 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/helm-based-charts/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Protected Fridays</title>
-      <link>https://engineering.facile.it/categories/protected-fridays/</link>
-      <pubDate>Tue, 30 Jan 2024 17:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/protected-fridays/</guid>
       <description></description>
     </item>
     

@@ -3,27 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://engineering.facile.it/categories/ai/</loc>
-    <lastmod>2024-01-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/authors/</loc>
-    <lastmod>2024-01-30T17:00:00+00:00</lastmod>
+    <lastmod>2024-02-09T17:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/blog/</loc>
-    <lastmod>2024-01-30T17:00:00+00:00</lastmod>
+    <lastmod>2024-02-09T17:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/categories/</loc>
-    <lastmod>2024-01-30T17:00:00+00:00</lastmod>
+    <lastmod>2024-02-09T17:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://engineering.facile.it/authors/engineering/</loc>
+    <lastmod>2024-02-09T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/</loc>
+    <lastmod>2024-02-09T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/protected-fridays/</loc>
+    <lastmod>2024-02-09T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/blog/eng/v-protetto9-2-2024/</loc>
+    <lastmod>2024-02-09T17:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://engineering.facile.it/categories/ai/</loc>
     <lastmod>2024-01-30T17:00:00+00:00</lastmod>
   </url>
   
@@ -38,17 +53,7 @@
   </url>
   
   <url>
-    <loc>https://engineering.facile.it/</loc>
-    <lastmod>2024-01-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://engineering.facile.it/categories/helm-based-charts/</loc>
-    <lastmod>2024-01-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/protected-fridays/</loc>
     <lastmod>2024-01-30T17:00:00+00:00</lastmod>
   </url>
   

@@ -6,10 +6,26 @@
     <description>Recent content in Protected Fridays on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 30 Jan 2024 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Feb 2024 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/protected-fridays/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Venerdì Protetto | February edition</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto9-2-2024/</link>
+      <pubDate>Fri, 09 Feb 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto9-2-2024/</guid>
+      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on February 9, 2024.
+Topics:
+  Software and open source by Enrico Zimuel (Elastic)
+  Software architecture and cross-functional requirements by Matteo Vaccari (Thoughtworks)
+  Software monitoring by Valerio Barbera (Inspector.dev)
+  The overview of Venerdì Protetto is available here.
+
+Software and open source Software is about people, not about code! by Enrico Zimuel (Elastic)</description>
+    </item>
     
     <item>
       <title>Venerdì Protetto | January edition</title>

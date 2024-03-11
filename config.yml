@@ -107,6 +107,11 @@ menu:
       url: "/eng/who-we-are/"
       identifier: "fa fa-users"
       weight: 5
+    - categories:
+      name: "Privacy Policy"
+      url: "/ita/privacy/"
+      identifier: "fa fa-cookie"
+      weight: 6
 
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area

@@ -1,10 +1,19 @@
-# Privacy Policy per Engineering.Facile.it e Blog.facile.it
+---
+comments: false
+date: "2024-03-11"
+draft: false
+share: true
+title: "Privacy Policy per Engineering.Facile.it e Blog.facile.it"
+languageCode: "it-IT"
+twitterImage: '/images/twitter_preview.png'
+twitterLargeImage: '/images/twitter_preview.png'
+aliases:
+  - "/privacy"
+---
 
 **1. Titolare del trattamento**
 Ai sensi del Regolamento 679/2016 (GDPR) il titolare del trattamento è la società Facile.it S.p.A. con socio unico.
 Il dpo è raggiungibile al seguente indirizzo dpo@facile.it 
-
-<br>
 
 **2. Raccolta delle informazioni tramite cookie e tracker**
 L’unico strumento presente sul blog con cui raccogliamo dati personali sono <ins>cookie e tracker</ins> che ottengono, a titolo esemplificativo, informazioni come:
@@ -20,8 +29,6 @@ L’ utente ha la possibilità di accettare o rifiutare i cookie al primo ingres
 La disabilitazione di alcuni cookie potrebbe limitare alcune funzionalità del blog. 
 
 Per maggiori informazioni e per istruzioni su come gestire i cookie visita la pagina [cookie policy](/cookie)
-
-<br/>
 
 **3. Esercizio dei diritti**
 

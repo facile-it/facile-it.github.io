@@ -7,7 +7,7 @@ draft: false
 share: true
 categories: ['Protected Fridays']
 title: "Venerdì Protetto | March edition"
-description: "What happened in the last Facile.it Venerdì Protetto?"
+description: "Shall we play a game? What about a nice Code Challenge?"
 languageCode: "en-US"
 type: "post"
 twitterImage: '/images/social/social-preview-vp.png'

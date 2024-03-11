@@ -24,7 +24,7 @@ But how to do it?
 
 Searching for something already did on the Net, the most suitable for our needs. So we tried the most obvious solution, going for... Advent of Code!
 
-![Advent of Code Christmas Tree]( /static/images/code-challenge-march-2024/Advent-of-code-tree.png "Such a nice ASCII Art Christmas Tree for a challenge... in March!") 
+![Advent of Code Christmas Tree]( /images/code-challenge-march-2024/Advent-of-code-tree.png "Such a nice ASCII Art Christmas Tree for a challenge... in March!") 
 *Such a nice ASCII Art Christmas Tree for a challenge... in March!*
 
 ## Advent of Code - Private Leaderboard
@@ -50,7 +50,7 @@ Leaderboard manage how the points are computed and all other tedious stuff.
 
 All teams are free to solve the puzzles in the order they want (and this was crucial for the winning team!), keeping in mind that the difficulty is ramping up from day 1 and soon you can get stuck in such a strict time-box.
 
-![Wheel of Years](/static/images/code-challenge-march-2024/wheel-of-years.png "If you have to extract something randomly in public, why don't you do in a fancy way, like the good ol' Wheel of Fortune?")
+![Wheel of Years](/images/code-challenge-march-2024/wheel-of-years.png "If you have to extract something randomly in public, why don't you do in a fancy way, like the good ol' Wheel of Fortune?")
 *If you have to extract something randomly, why don't you do in a fancy way, like the good ol' [Wheel of Fortune?](https://wheelofnames.com/)*
 
 # Suit up!
@@ -75,7 +75,7 @@ The winning team (mainly composed of colleague from the same area) used a differ
 
 Here it is, the final score of the challenge.
 
-![Leaderboard Advent Of Code March 2024](/static/images/venerdì_protetto/Leaderboard-code-challenge.png "Congrats to Daje Team!")
+![Leaderboard Advent Of Code March 2024](/images/code-challenge-march-2024/leaderboard-code-challenge.png "Congrats to Daje Team!")
 *All glory to Daje team!*
 
 Besides of the mere numbers, everyone enjoys the day, considering it though but fun. _Also, it helps people from different teams_ - and with different expertise - _wrapping up together_, knowing each others.
@@ -84,7 +84,7 @@ The challenge sharpen up collaboration and the strict time-box helps the team to
 
 From the organization point of view, this was a success, even if it's a bit rough to the edges, and it needs some further fine-tuning.
 
-And remember: Rule #1 of every challenge is to give [a very valuable prize for the winner](/static/images/code-challenge-march-2024/AdventOfFacileCrown.jpg)!
+And remember: Rule #1 of every challenge is to give [a very valuable prize for the winner](/images/code-challenge-march-2024/AdventOfFacileCrown.jpg)!
 
 
 *The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).*

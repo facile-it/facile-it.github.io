@@ -69,7 +69,7 @@ The challenge was very intense, and until the last 10 minutes, it was a head to 
 Every single team used the [mob programming technique](https://en.wikipedia.org/wiki/Team_programming#Mob_programming) to solve problems. _The entire team_ focused _on a single problem_. One person actively wrote the code, and others suggested solutions. This is a very interesting way to share knowledge, expecially in a never-tried setting. This is also very useful to make team building.
 
 All teams... but one. _The winning one_.
-The winning team (mainly composed of colleagues from the same area) used a different approach: everyone took a problem and tried to solve it. They switched to mob programming only to solve difficult issues. This approach allowed them to score the latest winning point by solving a problem a litle further from the one every was stuck.
+The winning team (mainly composed of colleagues from the same area) used a different approach: everyone took a problem and tried to solve it. They switched to mob programming only to solve difficult issues. This approach allowed them to score the latest winning point by solving a problem a litle further from the one every team was stuck into.
 
 ## Wrapping up
 

@@ -69,7 +69,7 @@ The challenge was very intense, and until the last 10 minutes, it was a head to 
 Every single team used the [mob programming technique](https://en.wikipedia.org/wiki/Team_programming#Mob_programming) to solve problems. _The entire team_ focused _on a single problem_. One person actively wrote the code, and others suggested solutions. This is a very interesting way to share knowledge, expecially in a never-tried setting. This is also very useful to make team building.
 
 All teams... but one. _The winning one_.
-The winning team (mainly composed of colleague from the same area) used a different approach: everyone takes a problem and try to solve it. They switch on mob programming only to solve difficult issues. This approach let they get the latest winning point solving a problem a litle further from the one everyone were stuck.
+The winning team (mainly composed of colleagues from the same area) used a different approach: everyone took a problem and tried to solve it. They switched to mob programming only to solve difficult issues. This approach allowed them to score the latest winning point by solving a problem a litle further from the one every was stuck.
 
 ## Wrapping up
 
@@ -78,16 +78,17 @@ Here it is, the final score of the challenge.
 ![Leaderboard Advent Of Code March 2024](/images/code-challenge-march-2024/leaderboard-code-challenge.png "Congrats to Daje Team!")
 *All glory to Daje team!*
 
-Besides of the mere numbers, everyone enjoys the day, considering it though but fun. _Also, it helps people from different teams_ - and with different expertise - _wrapping up together_, knowing each others.
+Besides of the mere numbers, everyone enjoyed the day, considering it tough but fun. _Also, it helped people from different teams_ -, and with different skills _to meet and get to know each other._
 
-The challenge sharpen up collaboration and the strict time-box helps the team to focus on what matters. The side effect is, when the time almost expires, someone gave up because it was unable to focus anymore.
+The challenge sharpened up collaboration and the strict time-box helped the team to _focus on what matters_. 
+The side effect was that when the time almost expired, someone gave up because they were unable to focus anymore.
 
-From the organization point of view, this was a success, even if it's a bit rough to the edges, and it needs some further fine-tuning.
+From the organizational point of view, this was a success, even though it's a bit rough around the edges and in need of some further fine-tuning.
 
-And remember: Rule #1 of every challenge is to give [a very valuable prize for the winner](/images/code-challenge-march-2024/AdventOfFacileCrown.jpg)!
+And remember: Rule #1 of every challenge is to give [a very valuable prize to the winner](/images/code-challenge-march-2024/AdventOfFacileCrown.jpg)!
 
 
-*The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).*
+The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).
 
  
 <script type="application/ld+json">
@@ -97,7 +98,7 @@ And remember: Rule #1 of every challenge is to give [a very valuable prize for t
     "@type": "BlogPosting",
     "headline": "Venerdì Protetto | March edition",
     "keywords": ["Code challenge", "Advent of Code"],
-    "wordcount": "",
+    "wordcount": "755",
     "publisher": {
         "@type": "Organization",
         "name": "Facile.it Engineering",

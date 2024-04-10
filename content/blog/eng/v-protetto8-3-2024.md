@@ -77,7 +77,7 @@ Here it is, the final score of the challenge.
 ![Leaderboard Advent Of Code March 2024](/images/code-challenge-march-2024/leaderboard-code-challenge.png "Congrats to Daje Team!")
 *All glory to Daje team!*
 
-Besides of the mere numbers, everyone enjoyed the day, considering it tough but fun. _Also, it helped people from different teams_ -, and with different skills _to meet and get to know each other._
+Besides of the mere numbers, everyone enjoyed the day, considering it tough but fun. _Also, it helped people from different teams_, and with different skills _to meet and get to know each other._
 
 The challenge sharpened up collaboration and the strict time-box helped the team to _focus on what matters_. 
 The side effect was that when the time almost expired, someone gave up because they were unable to focus anymore.

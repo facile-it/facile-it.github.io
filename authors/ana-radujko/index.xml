@@ -6,10 +6,21 @@
     <description>Recent content in ana-radujko on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 11 Mar 2024 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/authors/ana-radujko/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Venerdì Protetto | March edition</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto8-3-2024/</link>
+      <pubDate>Mon, 11 Mar 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto8-3-2024/</guid>
+      <description>During the last Venerdì Protetto (held on March 8, 2024), we had to change a little bit the schedule we&amp;rsquo;d planned. We had to face a new schedule with very strict time constraint. So we decided to&amp;hellip; do something new, and try a Code Challenge!
+But how did we do it?
+We searched for something already done on the Net, the most suitable for our needs. So we tried the most obvious solution and went for&amp;hellip; Advent of Code!</description>
+    </item>
     
     <item>
       <title>MADR template for capturing decisions</title>

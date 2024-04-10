@@ -1,6 +1,6 @@
 ---
 
-authors: ["mgarza"]
+authors: ["mgarza", "ana-radujko"]
 comments: true
 date: "2024-03-11 17:00:00"
 draft: false
@@ -12,7 +12,6 @@ languageCode: "en-US"
 type: "post"
 twitterImage: '/images/social/social-preview-vp.png'
 twitterLargeImage: '/images/social/social-preview-vp.png'
-author: 
 toc: false
 
 ---

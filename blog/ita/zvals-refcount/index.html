@@ -8,13 +8,6 @@
             
         
 
-        
-        <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="681f55b7-a157-4ce6-bdf1-ecc71c38e2ce" ></script>
-        <script type="text/javascript">
-        function OptanonWrapper() { }
-        </script>
-        
-
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
@@ -25,7 +18,9 @@
         
         
             
-                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+                <meta name="description" content="Assegnare valori alle variabili è sicuramente l&rsquo;operazione più comune all&rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&rsquo;interprete? Vediamolo assieme!
+L&rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla linea 334 di zend.h, la riporto qui di seguito per commentarne le proprietà.
+struct _zval_struct { zvalue_value value;	/* Il valore assegnato alla variabile */ zend_uint refcount__gc; /* Il conto delle referenze legato alla variabile */ zend_uchar type;	/* L&#39;identificativo del tipo di dato */ zend_uchar is_ref__gc; /* Flag che indica se la variabile è o meno una referenza */ }; Il tipo di dato zvalue_value non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo ogni variabile che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo stesso spazio in memoria richiesto per il tipo di dato più grande.">
             
         
 
@@ -38,17 +33,21 @@
     
 
 
-<meta name="twitter:title" content="ZVALs refcount AKA come vengono memorizzate le nostre variabili"/>
-<meta name="twitter:description" content="Assegnare valori alle variabili è sicuramente l&rsquo;operazione più comune all&rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&rsquo;interprete? Vediamolo assieme!
+
+<meta name="og:title" content="ZVALs refcount AKA come vengono memorizzate le nostre variabili"/>
+<meta name="og:description" content="Assegnare valori alle variabili è sicuramente l&rsquo;operazione più comune all&rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&rsquo;interprete? Vediamolo assieme!
 L&rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla linea 334 di zend.h, la riporto qui di seguito per commentarne le proprietà.
 struct _zval_struct { zvalue_value value;	/* Il valore assegnato alla variabile */ zend_uint refcount__gc; /* Il conto delle referenze legato alla variabile */ zend_uchar type;	/* L&#39;identificativo del tipo di dato */ zend_uchar is_ref__gc; /* Flag che indica se la variabile è o meno una referenza */ }; Il tipo di dato zvalue_value non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo ogni variabile che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo stesso spazio in memoria richiesto per il tipo di dato più grande."/>
+
 
     
         
     
 
 
-<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+    <meta name="twitter:site" content="@FacileIt_Engr"/>
+
 
 
         <meta property="og:title" content="ZVALs refcount AKA come vengono memorizzate le nostre variabili" />
@@ -63,9 +62,7 @@ struct _zval_struct { zvalue_value value;	/* Il valore assegnato alla variabile 
 
         
             
-                
                 <meta property="og:image" content="https://engineering.facile.it/images/social/social-preview.jpg">
-                
             
         
 
@@ -302,7 +299,7 @@ if (!doNotTrack) {
     <section id="social-share-nav">
         <ul class="links">
             <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
             </header>
             
 
@@ -325,7 +322,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fzvals-refcount%2f&amp;title=ZVALs%20refcount%20AKA%20come%20vengono%20memorizzate%20le%20nostre%20variabili" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
+    <i class="fa-brand fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
 </li>
@@ -333,7 +330,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fzvals-refcount%2f&amp;title=ZVALs%20refcount%20AKA%20come%20vengono%20memorizzate%20le%20nostre%20variabili" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
+      <i class="fa-brand fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
 </li>
@@ -341,7 +338,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fzvals-refcount%2f&amp;title=ZVALs%20refcount%20AKA%20come%20vengono%20memorizzate%20le%20nostre%20variabili" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
+    <i class="fa-brand fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
 </li>
@@ -349,7 +346,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fzvals-refcount%2f&amp;description=ZVALs%20refcount%20AKA%20come%20vengono%20memorizzate%20le%20nostre%20variabili" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
+    <i class="fa-brand fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
 </li>
@@ -357,7 +354,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fzvals-refcount%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
+    <i class="fa-solid fa-envelope"></i>
     <p>Email</p>
   </a>
 </li>
@@ -462,7 +459,7 @@ impostato a 1.</p>
         
             
             
-                <i class="fa fa-folder"></i>
+                <i class="fa-solid fa-folder"></i>
                 
                 
                 <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
@@ -544,11 +541,11 @@ impostato a 1.</p>
       <ul class="icons">
         
           <li>
-            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa-solid fa-rss"></a>
           </li>
         
         
-  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa-brand fa-github"></a></li>
 
 
 
@@ -576,7 +573,7 @@ impostato a 1.</p>
 
 
 
-  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa-brand fa-linkedin"></a></li>
 
 
 
@@ -596,7 +593,7 @@ impostato a 1.</p>
 
 
 
-  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa-brand fa-youtube"></a></li>
 
 
 
@@ -610,7 +607,7 @@ impostato a 1.</p>
 
 
 
-  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa-brand fa-instagram"></a></li>
 
 
 
@@ -1169,11 +1166,11 @@ impostato a 1.</p>
       <ul class="icons">
         
           <li>
-            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa-solid fa-rss"></a>
           </li>
         
         
-  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa-brand fa-github"></a></li>
 
 
 
@@ -1201,7 +1198,7 @@ impostato a 1.</p>
 
 
 
-  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa-brand fa-linkedin"></a></li>
 
 
 
@@ -1221,7 +1218,7 @@ impostato a 1.</p>
 
 
 
-  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa-brand fa-youtube"></a></li>
 
 
 
@@ -1235,7 +1232,7 @@ impostato a 1.</p>
 
 
 
-  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa-brand fa-instagram"></a></li>
 
 
 
@@ -1284,7 +1281,7 @@ impostato a 1.</p>
 </section>
 
     </div>
-    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    <a id="back-to-top" href="#" class="fa-solid fa-arrow-up fa-border fa-2x"></a>
     
 
     

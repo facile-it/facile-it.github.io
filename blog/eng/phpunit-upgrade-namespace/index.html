@@ -8,13 +8,6 @@
             
         
 
-        
-        <script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="681f55b7-a157-4ce6-bdf1-ecc71c38e2ce" ></script>
-        <script type="text/javascript">
-        function OptanonWrapper() { }
-        </script>
-        
-
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
@@ -25,7 +18,8 @@
         
         
             
-                <meta name="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
+                <meta name="description" content="In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced.
+This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp; replace job, but since you need to introduce at least one use PHPUnit\Framework\TestCase line at the top of each one of your test classes, it&rsquo;s a boring and a little more than trivial task; also, upgrading it in a single big jump may not be feasible or prudent, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.">
             
         
 
@@ -38,16 +32,20 @@
     
 
 
-<meta name="twitter:title" content="How to gradually upgrade toward PHPUnit 6 with namespaced classes"/>
-<meta name="twitter:description" content="In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced.
+
+<meta name="og:title" content="How to gradually upgrade toward PHPUnit 6 with namespaced classes"/>
+<meta name="og:description" content="In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced.
 This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp; replace job, but since you need to introduce at least one use PHPUnit\Framework\TestCase line at the top of each one of your test classes, it&rsquo;s a boring and a little more than trivial task; also, upgrading it in a single big jump may not be feasible or prudent, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured."/>
+
 
     
         <meta name="twitter:creator" content="@AlessandroLai"/>
     
 
 
-<meta name="twitter:site" content="@FacileIt_Engr"/>
+
+    <meta name="twitter:site" content="@FacileIt_Engr"/>
+
 
 
         <meta property="og:title" content="How to gradually upgrade toward PHPUnit 6 with namespaced classes" />
@@ -61,9 +59,7 @@ This means that any usage of those classes in your project needs to be updated. 
 
         
             
-                
                 <meta property="og:image" content="https://engineering.facile.it/images/social/social-preview.jpg">
-                
             
         
 
@@ -299,7 +295,7 @@ if (!doNotTrack) {
     <section id="social-share-nav">
         <ul class="links">
             <header>
-                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
             </header>
             
 
@@ -322,7 +318,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&amp;title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn reddit">
-    <i class="fa fa-reddit-alien"></i>
+    <i class="fa-brand fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
 </li>
@@ -330,7 +326,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&amp;title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn linkedin">
-      <i class="fa fa-linkedin"></i>
+      <i class="fa-brand fa-linkedin"></i>
       <p>LinkedIn</p>
     </a>
 </li>
@@ -338,7 +334,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&amp;title=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn stumbleupon">
-    <i class="fa fa-stumbleupon"></i>
+    <i class="fa-brand fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
 </li>
@@ -346,7 +342,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f&amp;description=How%20to%20gradually%20upgrade%20toward%20PHPUnit%206%20with%20namespaced%20classes" target="_blank" class="share-btn pinterest">
-    <i class="fa fa-pinterest-p"></i>
+    <i class="fa-brand fa-pinterest-p"></i>
     <p>Pinterest</p>
   </a>
 </li>
@@ -354,7 +350,7 @@ if (!doNotTrack) {
 
 <li>
   <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fphpunit-upgrade-namespace%2f" target="_blank" class="share-btn email">
-    <i class="fa fa-envelope"></i>
+    <i class="fa-solid fa-envelope"></i>
     <p>Email</p>
   </a>
 </li>
@@ -507,7 +503,7 @@ $this-&gt;expectExceptionMessage($message);
         
             
             
-                <i class="fa fa-folder"></i>
+                <i class="fa-solid fa-folder"></i>
                 
                 
                 <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
@@ -592,11 +588,11 @@ $this-&gt;expectExceptionMessage($message);
       <ul class="icons">
         
           <li>
-            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa-solid fa-rss"></a>
           </li>
         
         
-  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa-brand fa-github"></a></li>
 
 
 
@@ -624,7 +620,7 @@ $this-&gt;expectExceptionMessage($message);
 
 
 
-  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa-brand fa-linkedin"></a></li>
 
 
 
@@ -644,7 +640,7 @@ $this-&gt;expectExceptionMessage($message);
 
 
 
-  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa-brand fa-youtube"></a></li>
 
 
 
@@ -658,7 +654,7 @@ $this-&gt;expectExceptionMessage($message);
 
 
 
-  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa-brand fa-instagram"></a></li>
 
 
 
@@ -1217,11 +1213,11 @@ $this-&gt;expectExceptionMessage($message);
       <ul class="icons">
         
           <li>
-            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="" type="application/rss+xml" target="_blank" title="RSS" class="fa-solid fa-rss"></a>
           </li>
         
         
-  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+  <li><a href="//github.com/facile-it" target="_blank" title="GitHub" class="fa-brand fa-github"></a></li>
 
 
 
@@ -1249,7 +1245,7 @@ $this-&gt;expectExceptionMessage($message);
 
 
 
-  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+  <li><a href="//linkedin.com/company/facile-it" target="_blank" title="LinkedIn Company" class="fa-brand fa-linkedin"></a></li>
 
 
 
@@ -1269,7 +1265,7 @@ $this-&gt;expectExceptionMessage($message);
 
 
 
-  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa fa-youtube"></a></li>
+  <li><a href="//youtube.com/user/Facileit" target="_blank" title="YouTube" class="fa-brand fa-youtube"></a></li>
 
 
 
@@ -1283,7 +1279,7 @@ $this-&gt;expectExceptionMessage($message);
 
 
 
-  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+  <li><a href="//instagram.com/facile.it" target="_blank" title="Instagram" class="fa-brand fa-instagram"></a></li>
 
 
 
@@ -1332,7 +1328,7 @@ $this-&gt;expectExceptionMessage($message);
 </section>
 
     </div>
-    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    <a id="back-to-top" href="#" class="fa-solid fa-arrow-up fa-border fa-2x"></a>
     
 
     

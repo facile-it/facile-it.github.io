@@ -2,6 +2,32 @@
 
 <html>
     <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/engineering.facile.it"
+        },
+        "articleSection" : "blog",
+        "name" : "Using Kotlin type-safe builders to create a DSL for Forms",
+        "headline" : "Using Kotlin type-safe builders to create a DSL for Forms",
+        "description" : "Here at Facile.it we are constantly dealing with a lot of forms: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be really complex, having multiple rules and dependencies between fields, and they are likely to be changed and tuned frequently.\nWhen I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field.",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2017",
+        "datePublished": "2017-02-08 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2017-02-08 00:00:00 \x2b0000 UTC",
+        "url" : "https:\/\/engineering.facile.it\/blog\/eng\/kotlin-dsl\/",
+        "wordCount" : "1321",
+        "keywords" : [ "Blog" ]
+    }
+    </script>
         
             
                 <title>Using Kotlin type-safe builders to create a DSL for Forms</title>
@@ -224,7 +250,7 @@ if (!doNotTrack) {
         </section>
 
     
-        <section id="recent-posts">
+        <section class="recent-posts">
             <div class="mini-posts">
                 <header>
                     <h3>Recent Posts</h3>
@@ -296,12 +322,16 @@ if (!doNotTrack) {
             
 
 
+
 <li>
   <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fkotlin-dsl%2f&amp;text=Using%20Kotlin%20type-safe%20builders%20to%20create%20a%20DSL%20for%20Forms&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
     <i class="fa-brands fa-square-x-twitter"></i>
-    <p>Twitter</p>
+    <p>X</p>
     </a>
 </li>
+
+
+
 
 
 <li>
@@ -312,12 +342,16 @@ if (!doNotTrack) {
 </li>
 
 
+
+
 <li>
   <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fkotlin-dsl%2f&amp;title=Using%20Kotlin%20type-safe%20builders%20to%20create%20a%20DSL%20for%20Forms" target="_blank" class="share-btn reddit">
     <i class="fa-brand fa-reddit-alien"></i>
     <p>Reddit</p>
   </a>
 </li>
+
+
 
 
 <li>
@@ -328,12 +362,16 @@ if (!doNotTrack) {
 </li>
 
 
+
+
 <li>
   <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fkotlin-dsl%2f&amp;title=Using%20Kotlin%20type-safe%20builders%20to%20create%20a%20DSL%20for%20Forms" target="_blank" class="share-btn stumbleupon">
     <i class="fa-brand fa-stumbleupon"></i>
     <p>StumbleUpon</p>
   </a>
 </li>
+
+
 
 
 <li>
@@ -344,12 +382,15 @@ if (!doNotTrack) {
 </li>
 
 
+
+
 <li>
   <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fkotlin-dsl%2f" target="_blank" class="share-btn email">
     <i class="fa-solid fa-envelope"></i>
     <p>Email</p>
   </a>
 </li>
+
 
         </ul>
     </section>
@@ -756,7 +797,7 @@ builtForm.getFields() <span style="color:#75715e">// -&gt; [Field(&#34;key1&#34;
   </section>
 
   
-  <section id="recent-posts">
+  <section class="recent-posts">
     <div class="mini-posts">
       <header>
         <h3>Recent Posts</h3>
@@ -1268,7 +1309,7 @@ builtForm.getFields() <span style="color:#75715e">// -&gt; [Field(&#34;key1&#34;
   
   
     <section id="mini-bio">
-      <h3>About</h1>
+      <h3>About</h3>
       <p>Facile.it relies on a big and keen crew of developers. Since 2008, the group’s projects are based on PHP, and as time goes by new technologies become part of corporate know how. This blog allows our developers to share tips and direct experiences with new technologies.</p>
       <a href="/ita/chi-siamo/" class="button">Learn More</a>
     </section>
@@ -1434,6 +1475,12 @@ builtForm.getFields() <span style="color:#75715e">// -&gt; [Field(&#34;key1&#34;
 
     
     <script>hljs.initHighlightingOnLoad();</script>
+    <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
     <script type="text/javascript">
         $(function() {
             $('.lazy').Lazy();

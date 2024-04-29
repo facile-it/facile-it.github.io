@@ -1,0 +1,31 @@
+<!-- og:image tags are for Whatsapp sharing -->
+<meta name="twitter:card" content="summary_large_image"/>
+{{ with .Params.twitterImage }}
+    <meta name="og:image" content="{{ . | absURL }}"/>
+
+{{ else }}
+    {{ with .Params.twitterImage }}
+        <meta name="twitter:image" content="{{ . | absURL }}"/>
+        <meta name="og:image" content="{{ . | absURL }}"/>
+    {{ else }}
+        <meta name="twitter:image" content="{{ .Site.Params.twitterCardImage | absURL }}"/>
+        <meta name="og:image" content="{{ .Site.Params.twitterCardImage | absURL }}"/>
+    {{ end }}
+{{ end }}
+
+<!-- Twitter Card data -->
+<meta name="og:title" content="{{ .Title }}"/>
+<meta name="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"/>
+
+{{ range .Params.authors }}
+    {{ with index $.Site.Data.authors . }}
+        {{ with .twitter }}<meta name="twitter:creator" content="@{{ . }}"/>{{ end }}
+    {{ end }}
+{{ end }}
+
+{{ with .Site.Social.twitter }}
+    <meta name="twitter:site" content="@{{ . }}"/>
+{{ else }}
+    <meta name="twitter:site" content="@{{ .Site.Params.twitterSite }}"/>
+{{ end }}
+{{ with .Site.Social.twitter_domain }}<meta name="twitter:domain" content="{{ . }}"/>{{ end }}

@@ -1,0 +1,14 @@
+#sidebar .mini-post div.author-avatars {
+    float: right;
+}
+
+#sidebar .mini-post a {
+    position: initial;
+}
+
+#sidebar .mini-post a img.author-avatar {
+    border-radius: 100%;
+    display: block;
+    width: 3.2em;
+    margin-bottom: 0.4em;
+}

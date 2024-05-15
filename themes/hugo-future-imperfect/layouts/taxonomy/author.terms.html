@@ -1,0 +1,37 @@
+{{ partial "general-title" . }}
+
+{{ partial "header" . }}
+    {{ partial "navbar" . }}
+    <!-- Main -->
+    <div id="main">
+        {{ if .Site.Params.authorsByCount }}
+            {{ $.Scratch.Set "authors" .Data.Terms.ByCount }}
+        {{ else }}
+            {{ $.Scratch.Set "authors" .Data.Terms.Alphabetical }}
+        {{ end }}
+
+        <ul class="posts">
+            <header>
+                <h1>{{ .Data.Plural | humanize }} of this blog</h1>
+            </header>
+            {{ $data := .Data }}
+            {{ range $key, $value := $.Scratch.Get "authors" }}
+                <li>
+                    <article>
+                        <header>
+                            {{ with index $.Site.Data.authors $value.Name }}
+                                <a href="{{ $value.Page.Permalink }}">
+                                    <img src="{{ .thumbnail }}" alt="{{ .name }} avatar" style="margin-right:8px; vertical-align: text-top; float:left; border-radius: 100%; display: block; width: 3.5em;"/>
+                                    {{ .name }}
+                                </a>
+                                <span style="float:right;">{{ $value.Count }}</span>
+                            {{ end }}
+                        </header>
+                    </article>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+
+    {{ partial "sidebar" . }}
+{{ partial "footer" . }}

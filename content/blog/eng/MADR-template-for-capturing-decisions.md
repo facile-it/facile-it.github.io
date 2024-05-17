@@ -12,15 +12,13 @@ twitterImage: '/images/madr/architectural-decisions.jpg'
 toc: true
 ---
 
-MADR template for capturing decisions
-=====================================
+# What is this post about?
 
-<img align="left" src="/images/madr/crossr.jpg" style="width:70px; margin-right: 0.5em" />
+Developing a project or a product implies, for the engineering teams, the need to make many decisions to reach their goals. Therefore, the teams are often faced with an inevitable and usually not-so-exciting step: capturing and recording significant decisions. This post will give you a taste of what it takes to make decisions during project or product development and will provide you with a standard that can be used in different contexts.
 
-Developing a project or a product implies, for the engineering teams, the need to make many decisions to reach their goals. Therefore, the teams are often faced with an inevitable and usually not-so-exciting step: capturing and recording significant decisions. This article will give you a taste of what it takes to make decisions during project or product development and will provide you with a standard that can be used in different contexts.
+<br />
 
-What to capture and why?
-------------------------
+# What to capture and why?
 
 <img align="right" src="/images/madr/list.png" style="width:200px; margin-left: 0.5em" />
 
@@ -28,15 +26,17 @@ In the article [*Architectural Decisions - The Making Of*](https://ozimmer.ch/pr
 
 Aware of the importance of capturing decisions, we might be wondering how to choose the right format. Before getting into what is available today in terms of templates and standards, let's briefly dive into the history and try to understand what brought us here.
 
-Architectural decisions: evolution distilled
---------------------------------------------
+<br />
+
+# Architectural decisions: evolution distilled
 
 In the early 90', with the rise of software architecture studies, the term Architectural Decision started to gain importance. The rise was followed by a boom in the 2000s when the term established its presence once and for all in the sphere of Architectural Knowledge Management (AKM). Since then several formats for capturing Architectural Decisions were proposed and even included in the standards like [arc42](https://arc42.org/examples "https://arc42.org/examples"). The boom led to the production of several templates suited for capturing decisions. More often than not these templates were complex and required substantial effort to be compiled.
 
 Today the situation is different. The need to be more responsive to market needs has made documenting software architecture decisions as important as recording any other meaningful decision. At the same time, the [tools and formalism](https://adr.github.io/ "https://adr.github.io/") are lighter to favor their adoption and continuity of use.
 
-MADR: an agile formalism
-------------------------
+<br />
+
+# MADR: an agile formalism
 
 If you work in an agile environment, you know that often decisions are made along the way and have to follow the same fast pace as the project development. In this context, bite-sized pieces that document decisions are easier to produce and consume and therefore often preferred to more detailed ones.
 
@@ -48,8 +48,9 @@ Some of you might have even stumbled upon one of many articles and studies that 
 
 These four letters reference one of the most widely adopted formats for capturing architectural and other important decisions, but do we know what they mean? Let's break them down. **M**arkdown is the syntax chosen for capturing these decisions. **A** stands for Any decision, but given its roots, it can often be limited to architectural decisions. A **D**ecision is a choice that has an impact on the software project or product, while a **R**ecord is a document that captures a single decision, its context, and its rationale.
 
-MADR: specifications and template
----------------------------------
+<br />
+
+# MADR: specifications and template
 
 <img align="left" src="/images/madr/MADRlight_template1.png" style="width:120px; margin-right: 0.5em" />
 
@@ -61,20 +62,23 @@ The reduced version of the template, *MADR light,* puts an even major emphasis o
 
 The **Title** of an ADR conveys the crux of the problem and the decision made to address it. The **Problem statement** is briefly described and placed within the **Context**. The other **Considered options**, later discarded, are listed. The final **Decision outcome** is clearly stated, complete with the **Justification** for its adoption. If we were to translate the template using another lean and widely adopted ADR standard, the Y-statement, the derived sentence would be: In the context of **A**, facing problem **B**, we neglected **C** and decided on **D**, because of **F**.
 
-MADR: consistency enabled
--------------------------
+<br />
+
+# MADR: consistency enabled
 
 The template simplifies the creation of decision records and ensures that all the relevant information is captured, but what makes the difference is the consistency of its implementation. It is not uncommon for engineering teams to be reluctant when it comes to capturing decisions. One of the main reasons is the fact that this task deviates from the usual workflow. Not only it requires them to switch from their usual activities to writing, but it calls for the use of different tools.
 
 One of the ways to ensure the consistency of capturing decisions is to keep them as near as possible to the primary tool used by the engineering teams, their Integrated Development Environment (IDE). The Markdown syntax is suited for this purpose and allows for the ADRs to be placed alongside the version-controlled code project.
 
-Conclusion
-----------
+<br />
+
+# Conclusion
 
 Adopting the light model of the MADR template is one of the possible answers to the questions raised on the boundaries between frenetic production and the need to trace and document the evolution of an engineering project or product. MADR light allows for reduced documentation efforts while still providing the added value of recording the reasons and consequences of the choices made. This formalism sees increasing adoption even in big tech companies and not without a reason. It is compact and supported both in IDE and in separate tools that allow for integration in daily team activities, such as [Backstage](https://backstage.io/ "https://backstage.io/") and other software catalogs. Thus, *MADR light* seems to be on its way to becoming another piece in the puzzle called [Docs as Code](https://www.writethedocs.org/guide/docs-as-code/ "https://www.writethedocs.org/guide/docs-as-code/").
 
-Want to learn more?
--------------------
+<br />
+
+# Want to learn more?
 
 Here are some online resources to help you explore this topic in greater detail.
 
@@ -94,3 +98,5 @@ Here are some online resources to help you explore this topic in greater detail.
 
 -   MicrosoftGitHub - Code With Engineering Playbook "[Design Decision Log](https://microsoft.github.io/code-with-engineering-playbook/design/design-reviews/decision-log/ "https://microsoft.github.io/code-with-engineering-playbook/design/design-reviews/decision-log/")"
 -   AWS Prescriptive Guidance "[Using architectural decision records to streamline technical decision-making for a software development project](https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/architectural-decision-records/architectural-decision-records.pdf "https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/architectural-decision-records/architectural-decision-records.pdf")"
+
+<br />

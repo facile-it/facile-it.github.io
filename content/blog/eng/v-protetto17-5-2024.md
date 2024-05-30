@@ -31,7 +31,7 @@ During the last Venerdì Protetto (held on May 17, 2024), we had both a talk and
 ### What is this workshop? 
 After the successful experience of [having a code challenge in March 2024](https://engineering.facile.it/blog/eng/v-protetto8-3-2024/ "Previously, on Venerdì Protetto... a code challenge!"), we decided to go further in delivering experiences to our colleagues.
 
-Scouting around, I asked help to Alessio Giorgianni, a developer with a passion of white hat hacking competition. We agree upon trying an experience using a platform, called [Hack the Box](https://academy.hackthebox.com/). Hack the Box Academy offers lots of formation about IT Security and, in our case, some exercises we can use for hacking dummy application. We agree upon using a non-trivial quests, called [Jerrytok](https://www.hackthebox.com/achievement/challenge/48545/638). Jerrytok is a simple web-application, written in PHP, undisclosing the harmness of using template engines in not-proper way. It's a good introduction to SSTI, [Server Side Template Injection](https://portswigger.net/web-security/server-side-template-injection).
+Scouting around, I asked help to Alessio Giorgianni, a developer with a passion of white hat hacking competition. We agree upon trying an experience using a platform, called [Hack the Box](https://academy.hackthebox.com/). Hack the Box Academy offers lots of formation about IT Security and, in our case, some exercises we can use for hacking dummy application. We agree upon using a non-trivial quests, called [Jerrytok](https://www.hackthebox.com/achievement/challenge/48545/638). Jerrytok is a WAPT (Web App Penetration Testing) whitebox challenge. We got a simple web-application, written in PHP, and it is setted to undisclose the harmness of using template engines in not-proper way. It's a good introduction to SSTI, [Server Side Template Injection](https://portswigger.net/web-security/server-side-template-injection).
 
 ![Please wear your favorite hacker hoodie before trying the workshop]( /static/images/vp-may-2024/hack-the-box-v0-a56fw7h8a2aa1.webp "Hack the Box Wallpaper")
 *Please wear your favorite hacker hoodie before trying the workshop*
@@ -47,7 +47,6 @@ Let's not hide ourself behind a finger: Hacking an application is not a trivial 
 
 So we prepared a virtual machine with all the needed tools. We try to create a lightweight yet simple to prepare VM, so we started from a [Debian 11 VM](https://mac.getutm.app/gallery/debian-11-ldxe), in which we installed:  
 
-- the challenge itself
 - a decoder and repeater, we used [Burp Suite community edition](https://portswigger.net/burp/communitydownload)
 - a simple proxy - we used [FoxyProxy](https://getfoxyproxy.org/)
 - a reverse proxy - we used [ngrok](https://ngrok.com/) 
@@ -63,7 +62,7 @@ Workshop itself was subdivided in:
 - hands on the machine
 
 During the introduction, we discovered what is an SSTI, several tool to analyze if a page can be affected by this problem and how to mitigate it.
-Hands on was guided by Alessio, and some volunteers shared their screen in order to have feedback directly from the learners. The machine used some basic security system, so hacking is not trivial.
+Hands on was guided by Alessio, and some volunteers shared their screen in order to have feedback directly from the learners. The machine used some basic security system, so hacking is not trivial (even if it's white box).
 
 Overall, it was a though yet interesting experience.
 

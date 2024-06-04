@@ -16,8 +16,6 @@ toc: false
 
 ---
 
-
-
 This page contains the abstracts of the talks held during the latest Venerdì Protetto on May 17, 2024.
 
 Here they are:
@@ -58,8 +56,8 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
     "genre":["SEO","JSON-LD"],
     "@type": "BlogPosting",
     "headline": "Venerdì Protetto | May 2024 edition",
-    "keywords": [""],
-    "wordcount": "",
+    "keywords": ["hacking", "workshop", "ssti" "template", "cognitive flexibility", "personal improvement"],
+    "wordcount": "249",
     "publisher": {
         "@type": "Organization",
         "name": "Facile.it Engineering",
@@ -71,14 +69,14 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
             "height":"244"
         }
     },
-    "url": "",
+    "url": "https://engineering.facile.it/blog/eng/v-protetto17-5-2024/",
     "image": "",
-    "datePublished": "",
-    "dateCreated": "",
-    "dateModified": "",
+    "datePublished": "2024-06-05",
+    "dateCreated": "2024-05-30",
+    "dateModified": "2024-05-30",
     "inLanguage": "en-US",
     "isFamilyFriendly": "true",
-    "description": "",
+    "description": "A summary of all the activities we held in the May 2024 edition of Venerdì Protetto: a hacking workshop and a talk about cognitive flexibility",
     "author": {
         "@type": "Person",
         "name": "Matteo",

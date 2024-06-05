@@ -6,10 +6,31 @@
     <description>Recent content in Blogs on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Mar 2024 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2024 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hack the Box Experience</title>
+      <link>https://engineering.facile.it/blog/eng/hack-the-box-experience/</link>
+      <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/hack-the-box-experience/</guid>
+      <description>After the successful experience of having a code challenge in March 2024, we decided to go further in delivering experiences to our colleagues.
+Scouting around, I turned to Alessio Giorgianni, a developer with a passion for white hat hacking competition. We agree to try an experience using a platform called Hack the Box. Hack the Box Academy offers lots of information and training about IT Security and, in our case, some exercises we can use for hacking dummy applications, with a whitebox example (i.</description>
+    </item>
+    
+    <item>
+      <title>Venerdì Protetto | May 2024 edition</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto17-5-2024/</link>
+      <pubDate>Mon, 20 May 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto17-5-2024/</guid>
+      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on May 17, 2024.
+Here they are:
+ Hack the Box Workshop by Alessio Giorgianni (Facile.it) How to develop cognitive flexibility? by Arduino Mancini (TIBICON)  Hack the Box Workshop After the successful experience of having a code challenge in March 2024, we decided to go further in delivering experiences to our colleagues. To try something meaningful with less organizational effort, we agreed to use a platform called Hack the Box, and specifically a WAPT (Web App Penetration Testing) whitebox challenge, as a good introduction to SSTI, Server Side Template Injection.</description>
+    </item>
     
     <item>
       <title>Venerdì Protetto | March edition</title>

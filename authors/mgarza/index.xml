@@ -6,10 +6,20 @@
     <description>Recent content in mgarza on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Mar 2024 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2024 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/authors/mgarza/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hack the Box Experience</title>
+      <link>https://engineering.facile.it/blog/eng/hack-the-box-experience/</link>
+      <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/hack-the-box-experience/</guid>
+      <description>After the successful experience of having a code challenge in March 2024, we decided to go further in delivering experiences to our colleagues.
+Scouting around, I turned to Alessio Giorgianni, a developer with a passion for white hat hacking competition. We agree to try an experience using a platform called Hack the Box. Hack the Box Academy offers lots of information and training about IT Security and, in our case, some exercises we can use for hacking dummy applications, with a whitebox example (i.</description>
+    </item>
     
     <item>
       <title>Venerdì Protetto | March edition</title>

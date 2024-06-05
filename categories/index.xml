@@ -6,17 +6,53 @@
     <description>Recent content in Categories on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Mar 2024 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2024 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>C</title>
+      <link>https://engineering.facile.it/categories/c/</link>
+      <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/c/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>challenge</title>
+      <link>https://engineering.facile.it/categories/challenge/</link>
+      <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/challenge/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hacking</title>
+      <link>https://engineering.facile.it/categories/hacking/</link>
+      <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/hacking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Protected Fridays</title>
       <link>https://engineering.facile.it/categories/protected-fridays/</link>
-      <pubDate>Mon, 11 Mar 2024 17:00:00 +0000</pubDate>
+      <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/protected-fridays/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>security</title>
+      <link>https://engineering.facile.it/categories/security/</link>
+      <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/categories/security/</guid>
       <description></description>
     </item>
     
@@ -134,15 +170,6 @@
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/typescript/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>C</title>
-      <link>https://engineering.facile.it/categories/c/</link>
-      <pubDate>Mon, 18 Sep 2023 13:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/c/</guid>
       <description></description>
     </item>
     
@@ -827,15 +854,6 @@
       <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/categories/jwt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Security</title>
-      <link>https://engineering.facile.it/categories/security/</link>
-      <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/categories/security/</guid>
       <description></description>
     </item>
     

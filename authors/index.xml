@@ -6,24 +6,24 @@
     <description>Recent content in Authors on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Mar 2024 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 30 May 2024 17:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/authors/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>ana-radujko</title>
-      <link>https://engineering.facile.it/authors/ana-radujko/</link>
-      <pubDate>Mon, 11 Mar 2024 17:00:00 +0000</pubDate>
+      <title>agiorgianni</title>
+      <link>https://engineering.facile.it/authors/agiorgianni/</link>
+      <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
       
-      <guid>https://engineering.facile.it/authors/ana-radujko/</guid>
+      <guid>https://engineering.facile.it/authors/agiorgianni/</guid>
       <description></description>
     </item>
     
     <item>
       <title>mgarza</title>
       <link>https://engineering.facile.it/authors/mgarza/</link>
-      <pubDate>Mon, 11 Mar 2024 17:00:00 +0000</pubDate>
+      <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/authors/mgarza/</guid>
       <description></description>
@@ -32,9 +32,18 @@
     <item>
       <title>engineering</title>
       <link>https://engineering.facile.it/authors/engineering/</link>
-      <pubDate>Fri, 09 Feb 2024 17:00:00 +0000</pubDate>
+      <pubDate>Mon, 20 May 2024 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/authors/engineering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ana-radujko</title>
+      <link>https://engineering.facile.it/authors/ana-radujko/</link>
+      <pubDate>Mon, 11 Mar 2024 17:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/ana-radujko/</guid>
       <description></description>
     </item>
     

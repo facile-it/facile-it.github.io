@@ -10,8 +10,8 @@ title: "Venerdì Protetto | May 2024 edition"
 description: "What happened in the last issue of Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/social/orange-social-preview.jpg'
-twitterLargeImage: '/images/social/orange-social-preview.jpg'
+twitterImage: '/images/social/suggested/9_stock.jpg'
+twitterLargeImage: '/images/social/suggested/9_stock.jpg'
 toc: false
 
 ---

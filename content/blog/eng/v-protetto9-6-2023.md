@@ -66,8 +66,8 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
 
 <sup>by [Filippo Andrighetti](https://it.linkedin.com/in/filippo-andrighetti-862749b0)<sup>
   
-<a href= "https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/async_api_initiative.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/async_api_initiative.png?raw=true" alt="AsyncAPI Initiative" title="AsyncAPI Initiative" /> 
+<a href= "/images/venerd%C3%AC_protetto/async_api_initiative.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/async_api_initiative.png?raw=true" alt="Async API Initiative" title="Async API Initiative" /> 
 </a>
  
 Working with Event-Driven Architecture (EDA) is difficult, especially when you need to retrieve documentation of the messages sent, find who is consuming or publishing a specific message, and so on. 
@@ -86,8 +86,8 @@ In this talk, we presented the main concepts behind the AsyncAPI specification, 
 
 <sup>by [Alessandro Vitale](https://it.linkedin.com/in/alessandrovitale)<sup>
   
-<a href="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/generative_ai.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/generative_ai.png?raw=true" alt="Generative AI" title="Generative AI" /> 
+<a href= "/images/venerd%C3%AC_protetto/generative_ai.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/generative_ai.png?raw=true" alt="Generative AI" title="Generative AI" /> 
 </a>
 
 In this talk, we delved into the world of Generative AI, defining its place in the broader AI landscape and exploring the capabilities and applications of Large Language Models (LLMs).
@@ -105,8 +105,8 @@ Additionally, we addressed the risks associated with Generative AI and provided 
   
 <sup>by [Olegs Belousovs](https://it.linkedin.com/in/olegsbelousovs)<sup>
   
-<a href="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/user_stories.png?raw=true" target="_blank"> 
-<img align="left" style="width:45%; margin-right: 0.5em" src="https://github.com/anaradujko/facile-it.github.io/blob/protected-friday/static/images/venerd%C3%AC_protetto/user_stories.png?raw=true" alt="User Stories" title="User Stories" /> 
+<a href= "/images/venerd%C3%AC_protetto/user_stories.png?raw=true" target="_blank"> 
+<img align="left" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/user_stories.png?raw=true" alt="User stories" title="User stories" /> 
 </a>
   
 Explore the transformative potential of user stories in Agile software development. This talk covered the why and how of user stories, including their origins, benefits, and common templates. 

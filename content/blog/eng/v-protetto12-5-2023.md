@@ -55,8 +55,10 @@ Topics:
 
 <sup>by [Domenico Buttafarro](https://www.linkedin.com/in/domenicobuttafarro/) & [Vincenzo Gasparo Morticella](https://www.linkedin.com/in/vincenzogasparo/)<sup>
 
-<img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/venerd%C3%AC-protetto/static/images/venerd%C3%AC_protetto/api_testing.png?raw=true" style="width:300px; margin-right: 0.5em" />
 
+<a href= "/images/venerd%C3%AC_protetto/api_testing.png?raw=true" target="_blank"> 
+<img align="left" style="width:35%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/api_testing.png?raw=true" alt="API testing" title="API testing" /> 
+</a>
   
 Today's software landscape is highly competitive and users are increasingly reluctant to tolerate unreliable applications. 
 
@@ -83,7 +85,9 @@ During the talk, we discussed the following points:
 
 <sup>by [Alessio Monesi](https://www.linkedin.com/in/alessiomonesi1992/)<sup>
 
-<img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/venerd%C3%AC-protetto/static/images/venerd%C3%AC_protetto/chatgpt.png?raw=true" style="width:300px; margin-right: 0.5em" />
+<a href= "/images/venerd%C3%AC_protetto/chatgpt.png?raw=true" target="_blank"> 
+<img align="left" style="width:35%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/chatgpt.png?raw=true" alt="Chat GPT" title="Chat GPT" /> 
+</a>
 
   
 This talk introduced the study of the potential of the artificial intelligence models exposed by OpenAI using chatGPT APIs in a React project, both without a custom knowledge base and with a restricted and specific knowledge base.
@@ -105,7 +109,9 @@ To learn more, take a look at these resources:
 
 <sup>by [Francesco Di Muro](https://lobbyfrontali.it/)<sup>
 
-<img align="left" src="https://github.com/anaradujko/facile-it.github.io/blob/venerd%C3%AC-protetto/static/images/venerd%C3%AC_protetto/mental_health.png?raw=true" style="width:300px; margin-right: 0.5em" />
+<a href= "/images/venerd%C3%AC_protetto/mental_health.png?raw=true" target="_blank"> 
+<img align="left" style="width:35%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/mental_health.png?raw=true" alt="Mental health" title="Mental health" /> 
+</a>
 
   
 With the advent of the COVID-19 pandemic, worldwide governments enforced lockdown measures to contain the health crisis; this hurried many companies to adopt and enhance agile/remote work practices, in which information technologies played a pivotal role.

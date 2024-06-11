@@ -16,38 +16,38 @@ toc: false
 
 ---
 
-During the last Venerdì Protetto (held on March 8, 2024), we had to change a little bit the schedule we'd planned.
-We had to face a new schedule with very strict time constraint. So we decided to... _do something new_, and try a Code Challenge!
+During the latest Venerdì Protetto (held on March 8, 2024), we had to change slightly the schedule we'd planned.
+We had to face a new schedule with very strict time constraints. So we decided to... _do something new_, and try a Code Challenge!
 
 But how did we do it?
 
-We searched for something already done on the Net, the most suitable for our needs. So we tried the most obvious solution and went for... Advent of Code!
+We searched for something already done on the internet, and most suitable for our needs. So we tried the most obvious solution and went for... Advent of Code!
 
 ![Advent of Code Christmas Tree]( /images/code-challenge-march-2024/Advent-of-code-tree.png "Such a nice ASCII Art Christmas Tree for a challenge... in March!") 
 *Such a nice ASCII Art Christmas Tree for a challenge... in March!*
 
 ## Advent of Code - Private Leaderboard
 
-[Advent of Code](https://adventofcode.com/about) is an Advent Calendar, written by [Eric Wastl](http://was.tl/), the creator of pages like [Vanilla JS](http://vanilla-js.com/) and [PHP Sadness](http://phpsadness.com/). Every day a little coding puzzle is proposed, with increasing difficulty, obviously Christmas themed. 
+[Advent of Code](https://adventofcode.com/about) is an Advent Calendar, written by [Eric Wastl](http://was.tl/), the creator of pages like [Vanilla JS](http://vanilla-js.com/) and [PHP Sadness](http://phpsadness.com/). Every day a little coding puzzle is proposed, with increasing difficulty, obviously Christmas-themed. 
 
 Advent of Code is one of the most famous and well-known code challenges around the web, kept every year [since 2015](https://adventofcode.com/2015).
 
 There are two nice features, useful for our purpose:
 - *You can have a private leaderboard*, with a specific ID, where everybody can join.
-- *It's language agnostic*: for every challenger, a different input is proposed, and you just have to find the correct output. So everyone, independently on what job they can do, can subscribe. _Even a non-strictly-technical person can join and try to guess a solution._
+- *It's language agnostic*: for every challenger, a different input is proposed, and you just have to find the correct output. So everyone, independently of what job they can do, can subscribe. _Even a non-strictly-technical person can join and try to guess a solution._
 
 ## Setting the challenge
 
-How did we prepared the challenge? It's quite straightforward.
+How did we prepare the challenge? It was quite straightforward.
 
-- On the very day of the challenge, we *randomly chose an year*, from 2015 to 2022. We excluded the latest year, because it was too close and someone could try to remember the solutions.
-- We asked the challengers to form *four-persons teams*
+- On the very day of the challenge, we *randomly chose a year*, from 2015 to 2022. We excluded the latest year because it was too close and someone could try to remember the solutions.
+- We asked the challengers to form *four-person teams*
 - The challenge is: *how many points can you get in 2.5 hours*?
 - and that's it!
 
-A leaderboard manage how the points are computed and all other tedious stuff.
+A leaderboard managed how the points were computed and all other tedious stuff.
 
-All teams are free to solve the puzzles in the order they want (and this was crucial for the winning team!), keeping in mind that the difficulty ramps up from day 1 and soon you can get stuck in such a strict time-box.
+All teams were free to solve the puzzles in the order they wanted (this was crucial for the winning team!) but had to keep in mind that the difficulty ramps up from day one and they could get stuck in a strict time box.
 
 ![Wheel of Years](/images/code-challenge-march-2024/wheel-of-years.png "If you have to extract something randomly in public, why not do it a fancy way, like the good ol' Wheel of Fortune?")
 *If you have to extract something randomly, why not do it in a fancy way, like the good ol' [Wheel of Fortune?](https://wheelofnames.com/)*
@@ -55,20 +55,20 @@ All teams are free to solve the puzzles in the order they want (and this was cru
 # Suit up!
 
 Six teams were formed.
-They were `stderr`, `Tori Automatici` ("automated bulls"), `Ittasinanta`, `Loans&Lions`, `Daje` ("go!" in roman dialect), `Alco1isti Anon1mi`.
+They were `stderr`, `Tori Automatici` ("automated bulls"), `Ittasinanta`, `Loans&Lions`, `Daje` ("go!" in Roman dialect), `Alco1isti Anon1mi`.
 
- The teams were formed _in some quite heterogeneous way_. In fact, on the same team, there were backend developers, frontend developers, data engineers, QA analysts, and so on.. 
+ The teams were formed _in a quite heterogeneous way_. In fact, on the same team, there were backend developers, frontend developers, data engineers, QA analysts, and so on.
 
-Most of the challengers were _newcomers_, who had never participated in an Advent of Code before, and this was the main difficulty of some teams, one specifically. The other ones were made of veterans of this challenge, and they proceed like a wind.
+Most of the challengers were _newcomers_, who had never participated in an Advent of Code before, and this was the main difficulty of some teams, one specifically. The other ones were made of veterans of this challenge, and they proceed like the wind.
 
 ## On your mark, ready, steady, go!
 
-The challenge was very intense, and until the last 10 minutes, it was a head to head between the first two teams.
+The challenge was very intense, and until the last 10 minutes, it was a head-to-head between the first two teams.
 
-Every single team used the [mob programming technique](https://en.wikipedia.org/wiki/Team_programming#Mob_programming) to solve problems. _The entire team_ focused _on a single problem_. One person actively wrote the code, and others suggested solutions. This is a very interesting way to share knowledge, expecially in a never-tried setting. This is also very useful to make team building.
+Every single team used the [mob programming technique](https://en.wikipedia.org/wiki/Team_programming#Mob_programming) to solve problems. _The entire team_ focused _on a single problem_. One person actively wrote the code, and others suggested solutions. This is a very interesting way to share knowledge, especially in a never-tried setting. This is also very useful for team building.
 
 All teams... but one. _The winning one_.
-The winning team (mainly composed of colleagues from the same area) used a different approach: everyone took a problem and tried to solve it. They switched to mob programming only to solve difficult issues. This approach allowed them to score the latest winning point by solving a problem a litle further from the one every team was stuck into.
+The winning team (mainly composed of colleagues from the same area) used a different approach: everyone took a problem and tried to solve it. They switched to mob programming only to solve difficult issues. This approach allowed them to score the latest winning point by solving a problem a little further from the one every team was stuck into.
 
 ## Wrapping up
 

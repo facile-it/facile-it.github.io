@@ -64,11 +64,11 @@ git commit [...] # to save it it
 
 `ita` or `eng`: the file name of the article of the opposite language, to obtain cross-linking between translations;
 
-`image`: used for sharing the URL in Facebook and LinkedIn. Best fit: 1600px x 900px. If not specified, the [ENGR logo](./static/images/social/social-preview.png) will be used;
+`image`: used for sharing the URL on Facebook and LinkedIn. Best fit: 1600px x 900px. If not specified, the [ENGR logo](./static/images/social/social-preview.png) will be used;
 
-`twitterImage`: used for the twitter cards when sharing the url of this page (in X - former Twitter -, Telegram, Slack, Whatsapp); You can use the same image as `image` parameter. If not specified, the [ENGR logo](./static/images/social/social-preview.png) will be used;
+`twitterImage`: used for the Twitter cards when sharing the URL of this page of this page on X (formerly Twitter), Telegram, Slack, and WhatsApp; you can use the same image as the `image` parameter. If not specified, the [ENGR logo](./static/images/social/social-preview.png) will be used;
 
 ## Hints on how to write post
 
-they're included [in this article](./how-to-write-posts.md).
+The hints are listed [in this article](./how-to-write-posts.md).
 

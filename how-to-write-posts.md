@@ -1,32 +1,51 @@
-## Social hints
+# Social sharing preview
 
-Let someone know that you have written something new is almost as important as writing new post itself.
+Letting someone know that you have written something new is almost as important as writing a new post itself.
 
-Here there are some useful stuff to do
+Here are some hints for making the posts easier to share on social media.
 
-- **insert a property `title`**, on top of the article, Keep it short, for the sake of sharing. I suggest max 5 word length, longer titles will hide the description while sharing on Facebook.
+## title
 
-- **insert a short `description`**, tag that will be used on Facebook (cropped) and X. Keep this also short.
+In the front matter on top of the article, insert a `title` property. Keep the title short for the sake of sharing. I suggest a maximum of five words since longer titles hide the description when shared on Facebook.
 
-- **add an image** in repo to be used as a **social sharing preview**. It should be fitted with the content. Best dimensions: 1600px x 900px. If in doubt, you can use [some default images](static/images/social/suggested/2.png). If omitted, [the default one will be used](static/images/social/social-preview.png).
+## Description
 
-- custom twitter image should be **linked on top of the article**, as a `twitterImage` prop.
+Insert a `description` tag. Keep the description short since it will be used as the post description when sharing on Facebook (cropped version) and X.
 
-- it's better also to **include the twitter image on top** of the article.
+## Social sharing image
 
-- keep in mind that previews in Facebook, Linkedin and X (former Twitter) **are different in size**, they will be slightly cropped on the border. Do not insert important things there.
+Add an image to the repository. Ensure the image fits the content of the post since it is used as a preview when sharing on social media. The best dimensions are 1600px x 900px. If you do not specify any image, [the default one is used](static/images/social/social-preview.png). If in doubt, you can use [default images](static/images/social/suggested/2.png).
 
-- **Facebook sharing**: use short title (3 or 4 words). Also description should be short, otherwise it would be cropped.
+Custom twitter image should be **linked on top of the article**, as a `twitterImage` prop, as long as an `image` prop. Both are used in different social media and messaging apps.
 
-- **LinkedIn sharing**: no description will be shown
+## Size and borders
 
-- **Messagging app** (Telegram, Slack, Whatsapp) will use Twitter information
+Previews on Facebook, LinkedIn, and X are different in size and, therefore, slightly cropped along the borders. Do not insert important information close to the border.
+
+## Social media platform-specific hints
+Here are some hints on how to achieve the best results on each social media platform.
+
+### Facebook
+Use a short title (three or four words) and a short description to avoid cropping.
+
+### LinkedIn
+No description is shown.
+
+### Messaging apps
+Telegram, Slack, and Whatsapp use Twitter information.
 
 ## SEO hints
 
-[We're working on automatizing this thing](https://github.com/facile-it/facile-it.github.io/issues/73), in the meantime I'll suggest you to **insert also a [JSON+LD](https://json-ld.org/) script in the page**, regarding the content of the article. You can see [this page for inspiration](content/blog/eng/v-protetto8-9-2023.md).
+We're working on [automatizing this part](https://github.com/facile-it/facile-it.github.io/issues/73). 
+In the meantime, you should use a JSON+LD script.
 
-In a tag `<script>` add a JSON object with all the information regarding your post. This will be used by Google crawler to get your content, and properly indexing it. *The better this data will be written, the greater visibility it gets*.
+### JSON-LD
+JSON-LD enables Google crawlers to retrieve and index the content of the post. Therefore, the better the JSON-LD data, the greater the visibility.
+
+### Add a JSON-LD object
+In a tag script, add a [JSON+LD](https://json-ld.org/) object to the page and fill it in with information about the post. For inspiration, seèe [this page](content/blog/eng/v-protetto8-9-2023.md).
+
+### JSON-LS object format
 
 `@context`: "https://schema.org", 
 

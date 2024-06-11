@@ -54,7 +54,9 @@ git commit [...] # to save it it
 
 `title`: the title of the article;
 
-`description`: a quick description of the article content. Will be used in the homepage, as a subtitle, and in Facebook and X (Twitter) sharing; 
+`summary`: a short description used only for sharing;
+
+`description`: a quick description of the article content. Will be used in the homepage, as a subtitle, and in Facebook and X (Twitter) sharing; If you don't want to change the subtitle of your post, use `summary`; 
 
 `languageCode`: suggested, not needed, default is "en-En";
 

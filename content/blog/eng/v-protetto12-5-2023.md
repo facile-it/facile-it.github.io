@@ -6,11 +6,13 @@ draft: false
 share: true
 categories: ['Protected Fridays', 'ChatGPT', 'API testing', 'Mental health']
 title: "Venerdì Protetto | May edition: API testing, Chat GPT and React, Mental health at work"
+summary: "This page contains the abstracts of the talks held during the latest Venerdì Protetto on May 12, 2023."
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/logo_engineering.png'
+twitterImage: '/images/social/orange-social-preview.png'
 toc: false
 ---
+
 <script type="application/ld+json">
 { 
   "@context": "https://schema.org", 
@@ -43,7 +45,7 @@ Topics:
 
 - [API testing](#api-testing) by Domenico Buttafarro & Vincenzo Gasparo Morticella (Facile.it)
 - [ChatGPT and React](#chatgpt-and-react) by Alessio Monesi (Facile.it) 
-- [Mental health at work](#mental-health-at-work) by Francesco Di Muro (Lobby Frontali)
+- [Mental health at work](#mental-health-at-work) by Francesco Di Muro ([Lobby Frontali](https://lobbyfrontali.it/))
 
 <br>
 

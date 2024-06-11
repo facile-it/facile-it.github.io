@@ -13,9 +13,12 @@ taxonomies:
 
 params:
   # '/images/logo.png'
-  openGraphImage: '/images/social/social-preview.png'
-  twitterCardImage: '/images/social/social-preview.png'
+  image: "/images/social/social-preview.jpg"
+  openGraphImage: "/images/social/social-preview.jpg"
+  twitterCardImage: "/images/social/social-preview.png"
 
+  # Sets the meta tag og:description, reserved for sharing
+  summary         : "News, repos, tips & trends from the Facile.it Engineering team!"
   # Sets the meta tag description, usually reserved for the main page
   description         : "News, repos, tips & trends from the Facile.it Engineering team!"
   # This will appear on the top left of the navigation bar
@@ -58,6 +61,7 @@ params:
     - "swift"
     - "yaml"
   highlightjsTheme: "monokai-sublime"
+  twitterSite: "FacileIt_Engr"
 
 # parms.intro will appear on the sidebar
 # This is optional, but it's suggested to use
@@ -86,7 +90,7 @@ menu:
     - categories:
       name: "Categories"
       url: "/categories/"
-      identifier: "fa fa-folder-open-o"
+      identifier: "fa fa-folder-open"
       weight: 2
     - categories:
       name: "Authors"

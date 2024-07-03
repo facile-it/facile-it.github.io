@@ -56,8 +56,10 @@ We explored the challenges the speaker's team faced while managing a large proje
 <a href= "/images/venerd%C3%AC_protetto/contributionladder.png?raw=true" target="_blank"><img align="right" style="width:35%; margin-left: 0.5em" src="/images/venerd%C3%AC_protetto/contributionladder.png?raw=true" alt="Alt text for image_b" title="Title of image_b" />
 </a>
 
-In the world of open-source projects and community-driven platforms, the term “contribution ladder” is frequently used, but what exactly does it mean? This talk introduced the term, explained the concept, and explored its main aspects. 
+In the world of open-source projects and community-driven platforms, the term “contribution ladder” is frequently used, but what exactly does it mean? This talk introduced the term, explained the concept, and explored its main aspects.
+
 The contribution ladder is an organizational structure that outlines different levels of contribution and influence on software projects. It is particularly well-suited for front-end and back-end libraries that are dependencies of business applications.
+
 The contribution ladder defines roles, responsibilities, and expectations to help participants understand how to contribute to a project and how they can grow within the community. Participants that start at the lower steps of the ladder can advance as their project involvement evolves. In this way, the contribution ladder encourages growth, aims to create a community, and fosters knowledge sharing among contributors.
 
 <br />

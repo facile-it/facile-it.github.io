@@ -10,8 +10,8 @@ title: "Venerdì Protetto | June edition"
 description: "What happened in the last Facile.it Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/twitter_preview.png'
-twitterLargeImage: '/images/twitter_preview.png'
+twitterImage: '/images/social/suggested/6_stock.jpg'
+twitterLargeImage: '/images/social/suggested/6_stock.jpg'
 toc: false
 
 ---
@@ -25,10 +25,6 @@ Topics:
 - [Contribution ladder](#contribution-ladder) by [Leonardo Podda](https://www.linkedin.com/in/leonardo-podda/) & [Alessandro Lai](https://www.linkedin.com/in/alessandro-lai-09440922/)
 
 - [Solid foundations for solid growth](#solid-foundations-for-solid-growth) by [Domenico Briganti](https://www.linkedin.com/in/dometec/?originalSubdomain=it) ([Kalpa.it](https://www.kalpa.it/about-us/))
-
-
-
-The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).
 
 <br />
 
@@ -76,6 +72,11 @@ The contribution ladder defines roles, responsibilities, and expectations to hel
 The speaker has worked with human resources on selecting IT candidates for quite some time now. Sometimes he comes across what he considers to be important gaps among candidates with a high level of experience.
 
 In this short presentation, we saw an overview of the protocols and technologies that a developer (but not only a developer) must know in order to grow well in this wonderful world.
+
+<br />
+
+<i>The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).</i>
+
 
 <script type="application/ld+json">
 {

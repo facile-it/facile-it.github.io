@@ -6,10 +6,19 @@
     <description>Recent content in Authors on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 May 2024 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2024 09:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/authors/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>engineering</title>
+      <link>https://engineering.facile.it/authors/engineering/</link>
+      <pubDate>Tue, 02 Jul 2024 09:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/authors/engineering/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>agiorgianni</title>
@@ -26,15 +35,6 @@
       <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
       
       <guid>https://engineering.facile.it/authors/mgarza/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>engineering</title>
-      <link>https://engineering.facile.it/authors/engineering/</link>
-      <pubDate>Mon, 20 May 2024 17:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/authors/engineering/</guid>
       <description></description>
     </item>
     

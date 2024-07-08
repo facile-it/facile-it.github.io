@@ -6,10 +6,28 @@
     <description>Recent content in engineering on Facile.it Engineering</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 20 May 2024 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2024 09:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://engineering.facile.it/authors/engineering/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Venerdì Protetto | June edition</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto14-6-2024/</link>
+      <pubDate>Tue, 02 Jul 2024 09:00:00 +0000</pubDate>
+      
+      <guid>https://engineering.facile.it/blog/eng/v-protetto14-6-2024/</guid>
+      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on June 14, 2024.
+Topics:
+  Big project management by Stefano Bosio
+  Contribution ladder by Leonardo Podda &amp;amp; Alessandro Lai
+  Solid foundations for solid growth by Domenico Briganti (Kalpa.it)
+  The overview of Venerdì Protetto is available here.
+
+Big project management What really matters? by Stefano Bosio
+
+This presentation explored the primary technical hurdles of managing large IT projects, including technical challenges, planning, time management, technical debt, documenting, testing, and rollout strategy.</description>
+    </item>
     
     <item>
       <title>Venerdì Protetto | May 2024 edition</title>

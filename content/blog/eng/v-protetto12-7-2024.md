@@ -32,7 +32,7 @@ The hackathon unfolded over an intense four-hour period, during which participan
 <img align="right" style="width:55%; margin-left: 0.5em" src=/images/venerd%C3%AC_protetto/hackathon_1.png?raw=true" alt="hackathon code image" title="Hackathon code image" /> 
 </a>
 
-The goal was to use the right technologies to create an app that requires geolocation, DB access, and smartphone integration, integrate the app with OpenStreetMap, and utilize React-admin to streamline the development process. By the end of the event, a functioning prototype equipped with an administrator's panel emerged, showcasing technical capabilities and a deep understanding of the environmental issues at play.
+The goal was to use the right technologies to create an app that requires geolocation, DB access, and smartphone integration, integrate the app with OpenStreetMap, and utilize react-admin to streamline the development process. By the end of the event, a functioning prototype equipped with an administrator's panel emerged, showcasing technical capabilities and a deep understanding of the environmental issues at play.
 
 The challenge was undeniably a success, and attendees found the collaborative effort invigorating, as cross-functional teamwork often breeds innovative ideas that wouldn’t have surfaced in a traditional work environment. In conclusion, our hackathon yielded the exciting groundwork for a potentially transformative app and fortified our company culture. 
 

@@ -44,6 +44,8 @@ Topics:
 - [Code revolution](#code-revolution) by Mirko Urru & Stefano Giurgiano (Facile.it) 
 - [Dynamic forms](#dynamic-forms) by Giovanni Fiorentino (Facile.it)
 
+<!--more-->
+
 ## Backstage 
 
 ### An introduction to Backstage, managing the chaos

@@ -23,6 +23,7 @@ Here they are:
 - [Hack the Box Workshop](#hack-the-box-workshop) by [Alessio Giorgianni](https://www.linkedin.com/in/alessio-giorgianni-b90500123/) (Facile.it)
 - [How to develop cognitive flexibility?](#how-to-develop-cognitive-flexibility) by [Arduino Mancini](https://www.linkedin.com/in/arduinomancini/) ([TIBICON](https://www.tibicon.net/))
 
+<!--more-->
 
 ## Hack the Box Workshop
 

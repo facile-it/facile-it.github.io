@@ -20,9 +20,10 @@ After the successful experience of [having a code challenge in March 2024](https
 
 Scouting around, I turned to Alessio Giorgianni, a developer with a passion for white hat hacking competition. We agree to try an experience using a platform called [Hack the Box](https://academy.hackthebox.com/). Hack the Box Academy offers lots of information and training about IT Security and, in our case, some exercises we can use for hacking dummy applications, with a whitebox example (i.e., an example where all the code is undisclosed to us. [There are also different kind of pentest](https://www.eccouncil.org/cybersecurity-exchange/penetration-testing/black-box-gray-box-and-white-box-penetration-testing-importance-and-uses/#:~:text=Objectives%3A%20Black%2Dbox%20testers%20seek,somewhere%20between%20these%20two%20extremes)). We agreed upon using a non-trivial quest, called [Jerrytok](https://www.hackthebox.com/achievement/challenge/48545/638). Jerrytok is a WAPT (Web App Penetration Testing) whitebox challenge. We got a simple web-application, written in PHP, which disclose the harm of using template engines in a not-proper way. It's a good introduction to SSTI, [Server Side Template Injection](https://portswigger.net/web-security/server-side-template-injection).
 
+<!--more-->
+
 ![Please wear your favorite hacker hoodie before trying the workshop]( /images/vp-may-2024/hack-the-box-v0-a56fw7h8a2aa1.webp "Hack the Box Wallpaper")
 *Please wear your favorite hacker hoodie before trying the workshop*
-
 
 ### Preparing the workshop
 

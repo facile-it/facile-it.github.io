@@ -23,6 +23,8 @@ Topics:
 
 The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).
 
+<!--more-->
+
 <br>
 
 ## Machine learning

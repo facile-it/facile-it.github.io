@@ -19,7 +19,6 @@ Documentation supplements the knowledge we might not have.
 Lack of knowledge manifests in:
 - Wasted time (finding the missing points or guessing them).
 - Biased decisions due to this lack.
-
 - Hint: when you don’t know something, you are usually not aware that you don't know it ;)
 
 Therefore, the time spent harvesting knowledge should be considered as helping to build the stakeholders' application mental model. This is important because that's the mental model that developers will use to augment the code, that product owners will use to describe the stories to implement, and that business owners will use to describe their key goals and outcomes.

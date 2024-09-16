@@ -1,10 +1,22 @@
 #!/usr/bin/env bash
 
-os_type=`uname -s`;
+set -e
+
+os_type=$(uname -s);
 
 if [[ $os_type == 'Linux' ]]; then
-    ./bin/hugo_0.69.0_linux64 "$@"
+    URL=https://github.com/gohugoio/hugo/releases/download/v0.134.2/hugo_0.134.2_linux-amd64.tar.gz
 elif [[ $os_type == 'Darwin' ]]; then
-    ./bin/hugo_0.69.0_osx64 "$@"
+    URL=https://github.com/gohugoio/hugo/releases/download/v0.134.2/hugo_0.134.2_darwin-universal.tar.gz
 else echo 'ARCHITETTURA NON RICONOSCIUTA';
 fi
+
+if ! [[ -f "./bin/hugo" ]]; then
+    echo "Hugo binary missing, downloading..."
+    cd bin && wget -c $URL -O - | tar -xz
+    cd -
+fi
+
+chmod +x ./bin/hugo
+
+./bin/hugo "$@"

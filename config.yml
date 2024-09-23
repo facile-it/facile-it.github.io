@@ -9,8 +9,7 @@ config:
     disqus:
       shortname: "facile-it"
     googleAnalytics:
-  # TODO: replace with a new GA4 tag ID
-  #    id: "UA-22342495-1"
+      id: "G-1V6DNT10GR"
 
 taxonomies:
   category: "categories"

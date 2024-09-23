@@ -4,44 +4,30 @@
     <title>Ita on Facile.it Engineering</title>
     <link>https://engineering.facile.it/ita/</link>
     <description>Recent content in Ita on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 30 Nov 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/ita/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/ita/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Careers</title>
       <link>https://engineering.facile.it/ita/careers/</link>
       <pubDate>Tue, 30 Nov 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/ita/careers/</guid>
-      <description>Facile.it is constantly growing and we are always looking for IT professionals to join our team. This proposal is aimed at experienced developers who believe in innovation and are always on the lookout for new technologies and can&amp;rsquo;t wait to put them to work. We are a dynamic, young and fun team. We are more than 100 professionals and manage numerous projects with different technology stacks.
-What we offer at Facile.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/careers/banner.png&#34; alt=&#34;Facile.it - lavora con noi!&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Facile.it&lt;/strong&gt; is constantly growing and we are always looking for IT professionals to join our team.&#xA;This proposal is aimed at experienced developers who believe in innovation and are always on the lookout for new technologies and can&amp;rsquo;t wait to put them to work. We are a dynamic, young and fun team.&#xA;We are more than 100 professionals and manage numerous projects with different technology stacks.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Disclaimer</title>
       <link>https://engineering.facile.it/ita/disclaimer/</link>
       <pubDate>Wed, 21 Sep 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/ita/disclaimer/</guid>
-      <description>Questo blog non rappresenta una testata giornalistica e viene aggiornato senza alcuna periodicità. Non può pertanto considerarsi un prodotto editoriale ai sensi della Legge n. 62 del 07/03/2001.
-Facile.it S.p.A. non ha e non si assume alcuna responsabilità per l&amp;rsquo;attualità, la correttezza, la completezza o la qualità delle informazioni messe a disposizione, ivi compresi i contenuti dei siti collegati e/o citati.
-Facile.it, inoltre, si riserva il diritto e la facoltà di rimuovere le informazioni proprie e/o fornite da terzi senza alcun preavviso.</description>
+      <description>&lt;p&gt;Questo blog non rappresenta una testata giornalistica e viene aggiornato senza alcuna periodicità. Non può pertanto considerarsi un prodotto editoriale ai sensi della Legge n. 62 del 07/03/2001.&lt;/p&gt;&#xA;&lt;p&gt;Facile.it S.p.A. non ha e non si assume alcuna responsabilità per l&amp;rsquo;attualità, la correttezza, la completezza o la qualità delle informazioni messe a disposizione, ivi compresi i contenuti dei siti collegati e/o citati.&lt;/p&gt;&#xA;&lt;p&gt;Facile.it, inoltre, si riserva il diritto e la facoltà di rimuovere le informazioni proprie e/o fornite da terzi senza alcun preavviso.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Chi siamo</title>
       <link>https://engineering.facile.it/ita/chi-siamo/</link>
       <pubDate>Thu, 24 Mar 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/ita/chi-siamo/</guid>
-      <description>This page is also available in english.
-Facile.it ha un nutrito e appassionato gruppo di sviluppatori. I progetti del gruppo Facile.it si basano su PHP fin dal 2008, più il tempo passa più nuove tecnologie entrano a far parte del Know How aziendale. Questo Blog permette ai nostri sviluppatori di condividere consigli ed esperienze dirette con le tecnologie che usano quotidianamente.
- Facile.it è il sito leader nella comparazione online, il gruppo comprende anche i domini Assicurazione.</description>
+      <description>&lt;p&gt;This page is also available in &lt;a href=&#34;https://engineering.facile.it/eng/who-we-are/&#34;&gt;english&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Facile.it ha un nutrito e appassionato gruppo di sviluppatori. I progetti del gruppo Facile.it si basano su PHP fin dal 2008, più il tempo passa più nuove tecnologie entrano a far parte del Know How aziendale.&#xA;Questo Blog permette ai nostri sviluppatori di condividere consigli ed esperienze dirette con le tecnologie che usano quotidianamente.&lt;/p&gt;&#xA;&lt;p&gt;&#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.facile.it/&#34; target=&#39;_blank&#39;&gt;Facile.it&lt;/a&gt;&#xA;&#xA; è il sito leader nella comparazione online, il gruppo comprende anche i domini &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.assicurazione.it/&#34; target=&#39;_blank&#39;&gt;Assicurazione.it&lt;/a&gt;&#xA;&#xA;, &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.prestiti.it/&#34; target=&#39;_blank&#39;&gt;Prestiti.it&lt;/a&gt;&#xA;&#xA; e &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.mutui.it/&#34; target=&#39;_blank&#39;&gt;Mutui.it&lt;/a&gt;&#xA;&#xA;. Ogni mese aiuta oltre 1,5 milioni di italiani a tagliare le spese ricorrenti, grazie al rapido confronto delle &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.facile.it/adsl/risultati.html&#34; target=&#39;_blank&#39;&gt;offerte ADSL&lt;/a&gt;&#xA;&#xA; o alla possibilità di risparmiare confrontando le offerte delle compagnie partner per le &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.facile.it/assicurazioni-auto.html&#34; target=&#39;_blank&#39;&gt;assicurazioni auto&lt;/a&gt;&#xA;&#xA; e per la stipula di un&amp;rsquo;&#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.facile.it/assicurazioni-moto.html&#34; target=&#39;_blank&#39;&gt;assicurazione moto&lt;/a&gt;&#xA;&#xA;.&#xA;Il comparatore ha conquistato la fiducia dei suoi utenti e ha potuto così aumentare costantemente le categorie di prodotti e servizi rendendo disponibile il &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;https://www.facile.it/mutui/risultati-acquisto.html&#34; target=&#39;_blank&#39;&gt;calcolo rata mutuo&lt;/a&gt;&#xA;&#xA; e il confronto di &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.facile.it/prestiti-personali.html&#34; target=&#39;_blank&#39;&gt;prestiti personali&lt;/a&gt;&#xA;&#xA; oltre a quello delle offerte delle banche per &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.facile.it/prestiti.html&#34; target=&#39;_blank&#39;&gt;prestiti online&lt;/a&gt;&#xA;&#xA;.&#xA;Facile.it consente di trovare online le migliori offerte per privati, aziende e liberi professionisti con partiva iva rendendo facile risparmiare sul costo di &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.facile.it/energia-luce-gas.html&#34; target=&#39;_blank&#39;&gt;luce e gas&lt;/a&gt;&#xA;&#xA; e sulla bolletta telefonica grazie alle &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.facile.it/adsl-internet-casa.html&#34; target=&#39;_blank&#39;&gt;offerte internet casa&lt;/a&gt;&#xA;&#xA;. Oltre a tutti i servizi precedentemente elencati gli utenti di Facile.it hanno la possibilità di aprire &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.facile.it/conti-correnti.html&#34; target=&#39;_blank&#39;&gt;conti correnti&lt;/a&gt;&#xA;&#xA;, ottenere &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;http://www.facile.it/carta-di-credito.html&#34; target=&#39;_blank&#39;&gt;carte di credito&lt;/a&gt;&#xA;&#xA;, reperire sconti e buoni sconto e confrontare le offerte per le gomme auto.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

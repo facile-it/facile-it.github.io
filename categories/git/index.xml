@@ -4,23 +4,16 @@
     <title>Git on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/git/</link>
     <description>Recent content in Git on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Apr 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/git/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 16 Jun 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://engineering.facile.it/categories/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GIT flow e versionamento semantico</title>
       <link>https://engineering.facile.it/blog/ita/git-flow-semantic-versioning/</link>
       <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/git-flow-semantic-versioning/</guid>
-      <description>GIT flow è un flusso di sviluppo, ideato da Vincent Driessen, che descrive un modello di diramazione, (branching), ben preciso costruito intorno al concetto di release software.
-Questo flusso è concepito per sfruttare al meglio le potenzialità del software di versionamento GIT, ma affinità concettuali possono essere utili anche per la gestione del lavoro con altri software dediti alla medesima funzionalità.
-Il flusso descritto in GIT flow è finalizzato a mantenere una storia implementativa pulita, dove un rilascio comunica a tutti gli utilizzatori la presenza di una nuova versione del prodotto, definita da un determinato changelog composto da nuove caratteristiche e correzioni.</description>
+      <description>&lt;p&gt;GIT flow è un &lt;strong&gt;flusso di sviluppo&lt;/strong&gt;, ideato da &lt;a href=&#34;http://nvie.com/about/&#34;&gt;Vincent Driessen&lt;/a&gt;, che descrive un modello di diramazione, (&lt;a href=&#34;http://git-scm.com/docs/git-branch&#34;&gt;branching&lt;/a&gt;), ben preciso costruito intorno al concetto di release software.&lt;/p&gt;&#xA;&lt;p&gt;Questo flusso è concepito per sfruttare al meglio le potenzialità del software di versionamento &lt;a href=&#34;https://git-scm.com/&#34;&gt;GIT&lt;/a&gt;, ma affinità concettuali possono essere utili anche per la gestione del lavoro con altri software dediti alla medesima funzionalità.&lt;/p&gt;&#xA;&lt;p&gt;Il flusso descritto in GIT flow è finalizzato a mantenere una storia implementativa pulita, dove un rilascio comunica a tutti gli utilizzatori la presenza di una &lt;strong&gt;nuova versione&lt;/strong&gt; del prodotto, definita da un determinato &lt;em&gt;changelog&lt;/em&gt; composto da nuove caratteristiche e correzioni.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

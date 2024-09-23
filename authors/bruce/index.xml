@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>bruce on Facile.it Engineering</title>
+    <title>Bruce on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/bruce/</link>
-    <description>Recent content in bruce on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Bruce on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 10 Jul 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/bruce/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/bruce/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>From zero to infinite: the Final keyword</title>
       <link>https://engineering.facile.it/blog/eng/from-zero-to-infinite-the-final-keyword/</link>
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/from-zero-to-infinite-the-final-keyword/</guid>
-      <description>Google from zero to infinite Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc. I apply a technique invented by me named: &amp;ldquo;Google from zero to infinite&amp;rdquo;.
-Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. However, most of the time I find very interesting documents, otherwise difficult to reach.</description>
+      <description>&lt;h1 id=&#34;google-from-zero-to-infinite&#34;&gt;Google from zero to infinite&lt;/h1&gt;&#xA;&lt;p&gt;Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc.&#xA;I apply a technique invented by me named: &lt;strong&gt;&amp;ldquo;Google from zero to infinite&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. However, most of the time I find very interesting documents, otherwise difficult to reach. This time I decided to use the &lt;code&gt;final&lt;/code&gt; keyword of PHP.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>amaccis on Facile.it Engineering</title>
+    <title>Amaccis on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/amaccis/</link>
-    <description>Recent content in amaccis on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Amaccis on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 12 Mar 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/amaccis/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/amaccis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Careful with that constant, developer</title>
       <link>https://engineering.facile.it/blog/eng/careful-with-that-constant-developer/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/careful-with-that-constant-developer/</guid>
-      <description>Introduction Imagine you need to use a fixed numeric value in your code, let&amp;rsquo;s say 20000. It is what we call a literal constant, that is a value that will always remain the exact same in your code.
-Now imagine you need to use that value more than once. Sooner or later you will read your code and you will not remember what 20000 was, it will happen for sure. But what if you assign the value to an immutable variable with a meaningful name?</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Imagine you need to use a fixed numeric value in your code, let&amp;rsquo;s say 20000. It is what we call a &lt;em&gt;literal constant&lt;/em&gt;, that is a value that will always remain the exact same in your code.&lt;br&gt;&#xA;Now imagine you need to use that value more than once. Sooner or later you will read your code and you will not remember what 20000 was, it will happen for sure. But what if you assign the value to an immutable variable with a &lt;a href=&#34;https://en.wikipedia.org/wiki/Self-documenting_code&#34;&gt;meaningful name&lt;/a&gt;? Let&amp;rsquo;s say something like this:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

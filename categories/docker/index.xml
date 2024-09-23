@@ -4,74 +4,51 @@
     <title>Docker on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/docker/</link>
     <description>Recent content in Docker on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Apr 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/docker/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline</title>
       <link>https://engineering.facile.it/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/</link>
       <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/</guid>
-      <description>Introduction During these months at Facile.it I had to face many challenges regarding the improvement of CI/CD pipelines for the Insurance team, with a strong focus on performance and reusability. The focus on these topics is very important as it allows us to follow GitLab best practices for CI/CD such as the fail fast principle.
- 💬
-Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;During these months at Facile.it I had to face many challenges regarding the improvement of &lt;strong&gt;CI/CD&lt;/strong&gt; pipelines for the &lt;em&gt;Insurance&lt;/em&gt; team, with a strong focus on performance and reusability. The focus on these topics is very important as it allows us to follow &lt;strong&gt;GitLab&lt;/strong&gt; best practices for &lt;strong&gt;CI/CD&lt;/strong&gt; such as the &lt;em&gt;fail fast principle&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;💬&lt;/p&gt;&#xA;&lt;p&gt;Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds. The idea of “fail fast” helps reduce developer context switching too, which makes for happier DevOps professionals.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ndash; &lt;cite&gt;&lt;a href=&#34;https://about.gitlab.com/blog/2022/02/03/how-to-keep-up-with-ci-cd-best-practices/#what-are-the-best-practices-for-cicd&#34;&gt;How to keep up with CI/CD best practices - GitLab Blog&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</title>
       <link>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</link>
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</guid>
-      <description>In the last month, I&amp;rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt GitLab CI for the build, since we use GitLab CE for our Git repositories; I then created a continuous deployment pipeline for the staging environment, directly to a Kubernetes cluster, leveraging Docker Compose to make the configuration easier.
-After, I decided to start migrating a previous, internal project of mine to the same approach, since it&amp;rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, doing a rolling deployment with Kubernetes is surprisingly easy!</description>
+      <description>&lt;p&gt;In the last month, I&amp;rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt &lt;strong&gt;GitLab CI&lt;/strong&gt; for the build, since we use GitLab CE for our Git repositories; I then created a &lt;strong&gt;continuous deployment pipeline&lt;/strong&gt; for the staging environment, directly to a &lt;strong&gt;Kubernetes cluster&lt;/strong&gt;, leveraging &lt;strong&gt;Docker Compose&lt;/strong&gt; to make the configuration easier.&lt;/p&gt;&#xA;&lt;p&gt;After, I decided to start migrating a previous, internal project of mine to the same approach, since it&amp;rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, &lt;strong&gt;doing a rolling deployment with Kubernetes is surprisingly easy&lt;/strong&gt;!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Da sviluppo a produzione con Docker e AWS Elastic Beanstalk</title>
       <link>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
-      <description>In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.
-Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy.
-In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:</description>
+      <description>&lt;h2 id=&#34;in-locale-funzionava&#34;&gt;In locale funzionava&lt;/h2&gt;&#xA;&lt;p&gt;Questo articolo si rivolge a chi ha già una &lt;a href=&#34;https://docs.docker.com/articles/basics&#34;&gt;conoscenza base di docker&lt;/a&gt; e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.&lt;/p&gt;&#xA;&lt;p&gt;Avere un ambiente di sviluppo/test &lt;strong&gt;il più simile possibile&lt;/strong&gt; a quello di produzione aiuta molto nel garantire un &lt;strong&gt;corretto funzionamento dopo il deploy&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>From development to production with Docker and AWS Elastic Beanstalk</title>
       <link>https://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</guid>
-      <description>It works on my machine This post is addressed to people who already have basic knowledge about docker, about how it works and are looking for a way to move to the next step with the goal of using it in development and production day by day.
-Having a development/testing environment as close as possible to the production one helps a lot in assuring that things will behave correctly when delivered.</description>
+      <description>&lt;h1 id=&#34;it-works-on-my-machine&#34;&gt;It works on my machine&lt;/h1&gt;&#xA;&lt;p&gt;This post is addressed to people who already have &lt;a href=&#34;https://docs.docker.com/articles/basics&#34;&gt;basic knowledge about docker&lt;/a&gt;, about how it works and are looking for a way to move to the next step with the goal of using it in development and production day by day.&lt;/p&gt;&#xA;&lt;p&gt;Having a development/testing environment &lt;strong&gt;as close as possible&lt;/strong&gt; to the production one helps a lot in assuring that &lt;strong&gt;things will behave correctly when delivered&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Si fa presto a dire Docker (e OS X)</title>
       <link>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</link>
       <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</guid>
-      <description>Di guide per l&amp;rsquo;installazione di Docker su OS X è pieno il web, ma le soluzioni sono molte e spesso scegliere non è facile. In questo articolo vi mostrerò quello che è stato il mio personale percorso, nella speranza che possa essere utile a chiarirvi le idee e magari evitare qualche buco nell&amp;rsquo;acqua.
-Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco.</description>
+      <description>&lt;p&gt;Di guide per l&amp;rsquo;installazione di Docker su OS X è pieno il web, ma &lt;strong&gt;le soluzioni sono molte&lt;/strong&gt; e spesso scegliere non è facile.&#xA;In questo articolo vi mostrerò quello che è stato il mio personale percorso, nella speranza che possa essere utile a chiarirvi le idee e magari evitare qualche buco nell&amp;rsquo;acqua.&lt;/p&gt;&#xA;&lt;p&gt;Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco. Nulla di complicato, quindi sono partito dalla cosa più semplice.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Continuous Integration con Docker e Drone</title>
       <link>https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</link>
       <pubDate>Fri, 12 Jun 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</guid>
-      <description>La continuous integration è una pratica che consiste nel frequente allineamento, su di una base comune definita mainline, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto.
-Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione Object Oriented Design: With Applications, la pratica è stata estesa e sviluppata all&amp;rsquo;interno dell&amp;rsquo;extreme programming, fino a sostenere la necessità di allineare le copie di lavoro diverse volte al giorno.</description>
+      <description>&lt;p&gt;La &lt;strong&gt;continuous integration&lt;/strong&gt; è una pratica che consiste nel &lt;strong&gt;frequente allineamento&lt;/strong&gt;, su di una base comune definita &lt;em&gt;mainline&lt;/em&gt;, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto.&lt;/p&gt;&#xA;&lt;p&gt;Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione &lt;a href=&#34;http://books.google.com/books?id=w5VQAAAAMAAJ&amp;amp;q=continuous+integration+inauthor:grady+inauthor:booch&amp;amp;dq=continuous+integration+inauthor:grady+inauthor:booch&amp;amp;hl=en&amp;amp;sa=X&amp;amp;ei=0_TxU6TqIMOZyASJ3ICYCQ&amp;amp;ved=0CEQQ6AEwAg&#34;&gt;Object Oriented Design: With Applications&lt;/a&gt;, la pratica è stata estesa e sviluppata all&amp;rsquo;interno dell&amp;rsquo;&lt;strong&gt;extreme programming&lt;/strong&gt;, fino a sostenere la necessità di &lt;strong&gt;allineare&lt;/strong&gt; le copie di lavoro &lt;strong&gt;diverse volte al giorno&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Il vantaggio principale nell&amp;rsquo;adottare la pratica è quello di &lt;strong&gt;evitare l&amp;rsquo;integration hell&lt;/strong&gt; (o merge hell) &lt;strong&gt;minimizzando il rischio&lt;/strong&gt; legato a copie di lavoro divergenti di difficile integrazione.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

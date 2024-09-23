@@ -4,24 +4,16 @@
     <title>QA on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/qa/</link>
     <description>Recent content in QA on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/qa/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/qa/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Types of software testing</title>
       <link>https://engineering.facile.it/blog/eng/different-types-of-software-testing/</link>
       <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/different-types-of-software-testing/</guid>
-      <description>Why do I need to test? Everyone who works in software development has stumbled upon software testing.
-Why should a developer know anything about testing?
-Well, software testing is a valuable asset and a big part of development: it does not only test the application, it also teaches to think outside the box and to write code with quality in mind.
-Software testing is not finding bugs The goal of software testing is not only to find bugs and &amp;ldquo;break things&amp;rdquo;.</description>
+      <description>&lt;h1 id=&#34;why-do-i-need-to-test&#34;&gt;Why do I need to test?&lt;/h1&gt;&#xA;&lt;p&gt;Everyone who works in software development has stumbled upon &lt;strong&gt;software testing&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Why should a developer know anything about testing?&lt;br&gt;&#xA;Well, software testing is a valuable asset and a big part of development: it does not only test the application, it also teaches to think outside the box and to write code with quality in mind.&lt;/p&gt;&#xA;&lt;h1 id=&#34;software-testing-is-not-finding-bugs&#34;&gt;Software testing is not finding bugs&lt;/h1&gt;&#xA;&lt;p&gt;The goal of software testing is not only to &lt;em&gt;find bugs&lt;/em&gt; and &lt;em&gt;&amp;ldquo;break things&amp;rdquo;&lt;/em&gt;. Testing can range from a pure exploration of functionalities to a deep understanding of the tested application. Testing can give an idea of what, why and how the application is tested together with the guiding concept of quality.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,33 +4,23 @@
     <title>Scrum on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/scrum/</link>
     <description>Recent content in Scrum on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Sep 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/scrum/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/scrum/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHPDay 2020</title>
       <link>https://engineering.facile.it/blog/eng/php-day-2020/</link>
       <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/php-day-2020/</guid>
-      <description>The 2020 edition of PHPDay took place on September 8th in a remote fashion.
-Having experienced the 2019 edition (indeed my first one, despite being a PHP developer from eons!) I would say that it was a little difficult to stay focused for such a long event. However, given the high-quality level of lecturers and talks, it was totally worth the effort.
-I would like to thank the folks at Grusp for their passionate work.</description>
+      <description>&lt;p&gt;The &lt;strong&gt;&lt;a href=&#34;https://2020.phpday.it/&#34;&gt;2020 edition of PHPDay&lt;/a&gt;&lt;/strong&gt; took place on September 8th in a remote fashion.&lt;/p&gt;&#xA;&lt;p&gt;Having experienced the 2019 edition (indeed my first one, despite being a PHP developer from eons!) I would say that it was a little difficult to stay focused for such a long event. However, given the high-quality level of lecturers and talks, it was totally worth the effort.&lt;/p&gt;&#xA;&lt;p&gt;I would like to thank the folks at &lt;strong&gt;&lt;a href=&#34;https://www.grusp.org/&#34;&gt;Grusp&lt;/a&gt;&lt;/strong&gt; for their passionate work. Please support them!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Un flusso di lavoro agile</title>
       <link>https://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</link>
       <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</guid>
-      <description>Parlare di metodologie di lavoro in azienda è una cosa piuttosto complessa, soprattutto perché non è possibile generalizzare un modo di lavoro che sia universalmente valido. Sento sempre più persone dire &amp;ldquo;con SCRUM avrai risultati assicurati&amp;rdquo;. Lo trovo piuttosto riduttivo.
-In sostanza, sempre più persone hanno tradotto i valori ed i princìpi promossi dal manifesto agile in una serie di &amp;ldquo;ricette&amp;rdquo; pronte da seguire fedelmente per ottenere buoni risultati. Cosa c’è di &amp;ldquo;agile&amp;rdquo; in tutto ciò?</description>
+      <description>&lt;p&gt;Parlare di &lt;strong&gt;metodologie di lavoro&lt;/strong&gt; in azienda è una cosa piuttosto complessa, soprattutto perché non è possibile generalizzare un modo di lavoro che sia universalmente valido. Sento sempre più persone dire &amp;ldquo;con &lt;a href=&#34;http://it.wikipedia.org/wiki/Scrum_%28informatica%29&#34;&gt;SCRUM&lt;/a&gt; avrai risultati assicurati&amp;rdquo;. Lo trovo piuttosto riduttivo.&lt;/p&gt;&#xA;&lt;p&gt;In sostanza, sempre più persone hanno tradotto i &lt;a href=&#34;http://agilemanifesto.org/iso/it/&#34;&gt;valori&lt;/a&gt; ed i &lt;a href=&#34;http://agilemanifesto.org/iso/it/principles.html&#34;&gt;princìpi&lt;/a&gt; promossi dal manifesto agile in una serie di &amp;ldquo;ricette&amp;rdquo; pronte da seguire fedelmente per ottenere buoni risultati. Cosa c’è di &amp;ldquo;&lt;a href=&#34;http://it.wikipedia.org/wiki/Metodologia_agile&#34;&gt;agile&lt;/a&gt;&amp;rdquo; in tutto ciò? E’ come cucinare con un robot da cucina&amp;hellip;&#xA;Ecco perché sono sempre più convinto che la vera ricetta del successo nei progetti sia qualcosa che si scopre &amp;ldquo;assaggiando&amp;rdquo; gli ingredienti che mettiamo nella ricetta (andrò avanti con la metafora della cucina, siete avvisati!).&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,21 +4,16 @@
     <title>Type First Development on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/type-first-development/</link>
     <description>Recent content in Type First Development on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 05 May 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/type-first-development/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/type-first-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Type First Development in Swift</title>
       <link>https://engineering.facile.it/blog/ita/type-first-development-in-swift/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/type-first-development-in-swift/</guid>
-      <description>Con Type First Development può intendersi un approccio allo sviluppo di nuove funzionalità o moduli di un software partendo dai tipi di dati coinvolti: non si tratta quindi di un pattern o una pratica codificata, ma solo di un possibile punto di partenza per iniziare il ragionamento. Ragionando esclusivamente sui tipi, prima ancora di pensare alle singole specifiche implementazioni dei vari blocchi di codice, è possibile costruire più facilmente una mappa dei vari di flussi di dati che attraversano il nostro software, e verificare immediatamente se stiamo scrivendo qualcosa di sensato, solido ed adeguatamente estendibile.</description>
+      <description>&lt;p&gt;Con &lt;em&gt;Type First Development&lt;/em&gt; può intendersi un approccio allo sviluppo di nuove funzionalità o moduli di un software partendo dai &lt;strong&gt;tipi&lt;/strong&gt; di dati coinvolti: non si tratta quindi di un pattern o una pratica codificata, ma solo di &lt;strong&gt;un possibile punto di partenza&lt;/strong&gt; per iniziare il ragionamento. Ragionando esclusivamente sui tipi, prima ancora di pensare alle singole specifiche implementazioni dei vari blocchi di codice, è possibile costruire più facilmente una mappa dei vari di flussi di dati che attraversano il nostro software, e verificare immediatamente se stiamo scrivendo qualcosa di sensato, solido ed adeguatamente estendibile.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

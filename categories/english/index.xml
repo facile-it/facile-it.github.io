@@ -4,421 +4,296 @@
     <title>English on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/english/</link>
     <description>Recent content in English on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Apr 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/english/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/english/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline</title>
       <link>https://engineering.facile.it/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/</link>
       <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/</guid>
-      <description>Introduction During these months at Facile.it I had to face many challenges regarding the improvement of CI/CD pipelines for the Insurance team, with a strong focus on performance and reusability. The focus on these topics is very important as it allows us to follow GitLab best practices for CI/CD such as the fail fast principle.
- 💬
-Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;During these months at Facile.it I had to face many challenges regarding the improvement of &lt;strong&gt;CI/CD&lt;/strong&gt; pipelines for the &lt;em&gt;Insurance&lt;/em&gt; team, with a strong focus on performance and reusability. The focus on these topics is very important as it allows us to follow &lt;strong&gt;GitLab&lt;/strong&gt; best practices for &lt;strong&gt;CI/CD&lt;/strong&gt; such as the &lt;em&gt;fail fast principle&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;💬&lt;/p&gt;&#xA;&lt;p&gt;Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds. The idea of “fail fast” helps reduce developer context switching too, which makes for happier DevOps professionals.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ndash; &lt;cite&gt;&lt;a href=&#34;https://about.gitlab.com/blog/2022/02/03/how-to-keep-up-with-ci-cd-best-practices/#what-are-the-best-practices-for-cicd&#34;&gt;How to keep up with CI/CD best practices - GitLab Blog&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>On Living Documentation</title>
       <link>https://engineering.facile.it/blog/eng/on-living-documentation/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/on-living-documentation/</guid>
-      <description>Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, Living Documentation: continuous knowledge sharing by design, published by Pearson.
-The need for documentation Documentation supplements the knowledge we might not have. Lack of knowledge manifests in:
-  Wasted time (finding the missing points or guessing them).
-  Biased decisions due to this lack.
-  Hint: when you don’t know something, you are usually not aware that you don&amp;rsquo;t know it ;)</description>
+      <description>&lt;p&gt;Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, &lt;strong&gt;&lt;a href=&#34;https://www.pearson.com/store/p/living-documentation-continuous-knowledge-sharing-by-design/P100000797747/9780134689326&#34;&gt;Living Documentation: continuous knowledge sharing by design&lt;/a&gt;&lt;/strong&gt;, published by Pearson.&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-need-for-documentation&#34;&gt;The need for documentation&lt;/h1&gt;&#xA;&lt;p&gt;Documentation supplements the knowledge we might not have.&#xA;Lack of knowledge manifests in:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Wasted time (finding the missing points or guessing them).&lt;/li&gt;&#xA;&lt;li&gt;Biased decisions due to this lack.&lt;/li&gt;&#xA;&lt;li&gt;Hint: when you don’t know something, you are usually not aware that you don&amp;rsquo;t know it ;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Therefore, the time spent harvesting knowledge should be considered as helping to build the stakeholders&amp;rsquo; application mental model. This is important because that&amp;rsquo;s the mental model that developers will use to augment the code, that product owners will use to describe the stories to implement, and that business owners will use to describe their key goals and outcomes.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Write the Docs Prague 2021</title>
       <link>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</link>
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</guid>
-      <description>Introduction Facile.it&amp;rsquo;s Technical Writing team attended the Write the Docs Prague 2021 conference which was held from 3rd to 5th October 2021. While the conference was usually held in the capital of the Czech Republic, for the second year in a row it was held remotely due to Covid-19 restrictions. In this article we will provide a quick overview of the event.
-What is Write the Docs Prague Write the Docs Prague is the annual European conference organized by the Write the Docs community.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Facile.it&amp;rsquo;s Technical Writing team attended the &lt;strong&gt;&lt;a href=&#34;https://www.writethedocs.org/conf/prague/2021/&#34;&gt;Write the Docs Prague 2021 conference&lt;/a&gt;&lt;/strong&gt; which was held &lt;strong&gt;from 3rd to 5th October 2021&lt;/strong&gt;. While the conference was usually held in the capital of the Czech Republic, for the second year in a row it was held remotely due to Covid-19 restrictions.&#xA;In this article we will provide a quick overview of the event.&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-write-the-docs-prague&#34;&gt;What is Write the Docs Prague&lt;/h1&gt;&#xA;&lt;p&gt;Write the Docs Prague is the &lt;strong&gt;annual European conference organized by the &lt;a href=&#34;https://www.writethedocs.org/&#34;&gt;Write the Docs community&lt;/a&gt;&lt;/strong&gt;. There are usually 3 annual conferences organized by the community: Write the Docs Portland, Prague, and Australia &amp;amp; India. This year due to organizational difficulties the Australia &amp;amp; India event was cancelled and partially incorporated into the Prague conference.&#xA;These conferences allow all people involved in documentation (of any kind and in any field, but especially in tech field) to meet, exchange ideas, and keep up to date on the latest themes. These events are attended by tech writers, developers, support specialists, UX/UI designers, and many others. Therefore, to be inclusive and for simplicity&amp;rsquo;s sake, organizers like to talk about &amp;ldquo;Documentarians&amp;rdquo;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Technical Writers: the mystery unveiled</title>
       <link>https://engineering.facile.it/blog/eng/technical-writers-an-introduction/</link>
       <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/technical-writers-an-introduction/</guid>
-      <description>The technical writer, this mysterious character Let&amp;rsquo;s face it, being a technical writer (especially in Italy) makes you feel a bit like Barney Stinson from How I Met Your Mother: no one knows what your real job is. If you&amp;rsquo;re a tech writer, we bet you have at least one relative who, at every family gathering, asks you &amp;ldquo;What do you exactly do for a living?&amp;quot;. In the most desperate cases, even your mom doesn&amp;rsquo;t know what your job is!</description>
+      <description>&lt;h1 id=&#34;the-technical-writer-this-mysterious-character&#34;&gt;The technical writer, this mysterious character&lt;/h1&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s face it, being a technical writer (especially in Italy) makes you feel a bit like &lt;a href=&#34;https://en.wikipedia.org/wiki/Barney_Stinson&#34;&gt;Barney Stinson from How I Met Your Mother&lt;/a&gt;: no one knows what your real job is. If you&amp;rsquo;re a tech writer, we bet you have at least one relative who, at every family gathering, asks you &amp;ldquo;What do you exactly do for a living?&amp;rdquo;. In the most desperate cases, even your mom doesn&amp;rsquo;t know what your job is!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to write a functional test with Symfony and Guzzle&#39;s mock handler</title>
       <link>https://engineering.facile.it/blog/eng/functional-testing-symfony-guzzle/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/functional-testing-symfony-guzzle/</guid>
-      <description>Introduction When we write a client to integrate an API in our systems it is important to test it to be sure we can handle every possible response. Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler. This tool provides a mock handler that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;When we write a client to integrate an API in our systems it is important to test it to be sure we can handle every possible response.&#xA;Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler. This tool provides a mock handler&#xA;that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Careful with that constant, developer</title>
       <link>https://engineering.facile.it/blog/eng/careful-with-that-constant-developer/</link>
       <pubDate>Fri, 12 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/careful-with-that-constant-developer/</guid>
-      <description>Introduction Imagine you need to use a fixed numeric value in your code, let&amp;rsquo;s say 20000. It is what we call a literal constant, that is a value that will always remain the exact same in your code.
-Now imagine you need to use that value more than once. Sooner or later you will read your code and you will not remember what 20000 was, it will happen for sure. But what if you assign the value to an immutable variable with a meaningful name?</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Imagine you need to use a fixed numeric value in your code, let&amp;rsquo;s say 20000. It is what we call a &lt;em&gt;literal constant&lt;/em&gt;, that is a value that will always remain the exact same in your code.&lt;br&gt;&#xA;Now imagine you need to use that value more than once. Sooner or later you will read your code and you will not remember what 20000 was, it will happen for sure. But what if you assign the value to an immutable variable with a &lt;a href=&#34;https://en.wikipedia.org/wiki/Self-documenting_code&#34;&gt;meaningful name&lt;/a&gt;? Let&amp;rsquo;s say something like this:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Types of software testing</title>
       <link>https://engineering.facile.it/blog/eng/different-types-of-software-testing/</link>
       <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/different-types-of-software-testing/</guid>
-      <description>Why do I need to test? Everyone who works in software development has stumbled upon software testing.
-Why should a developer know anything about testing?
-Well, software testing is a valuable asset and a big part of development: it does not only test the application, it also teaches to think outside the box and to write code with quality in mind.
-Software testing is not finding bugs The goal of software testing is not only to find bugs and &amp;ldquo;break things&amp;rdquo;.</description>
+      <description>&lt;h1 id=&#34;why-do-i-need-to-test&#34;&gt;Why do I need to test?&lt;/h1&gt;&#xA;&lt;p&gt;Everyone who works in software development has stumbled upon &lt;strong&gt;software testing&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Why should a developer know anything about testing?&lt;br&gt;&#xA;Well, software testing is a valuable asset and a big part of development: it does not only test the application, it also teaches to think outside the box and to write code with quality in mind.&lt;/p&gt;&#xA;&lt;h1 id=&#34;software-testing-is-not-finding-bugs&#34;&gt;Software testing is not finding bugs&lt;/h1&gt;&#xA;&lt;p&gt;The goal of software testing is not only to &lt;em&gt;find bugs&lt;/em&gt; and &lt;em&gt;&amp;ldquo;break things&amp;rdquo;&lt;/em&gt;. Testing can range from a pure exploration of functionalities to a deep understanding of the tested application. Testing can give an idea of what, why and how the application is tested together with the guiding concept of quality.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Automated testing: a step back</title>
       <link>https://engineering.facile.it/blog/eng/automated-testing-a-step-back/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/automated-testing-a-step-back/</guid>
-      <description>The goal of this article is to define basic concepts related to testing, trying not to take anything for granted.
-Why do we test?? Why is it important to write automated tests? I asked myself and I did some research because the answer to this question was not obvious to me. I knew it was important but I didn&amp;rsquo;t know why. So, I decided to try to explain it starting from a point of view as impartial as possible.</description>
+      <description>&lt;p&gt;The goal of this article is to define basic concepts related to testing, trying not to take anything for granted.&lt;/p&gt;&#xA;&lt;h1 id=&#34;why-do-we-test&#34;&gt;Why do we test??&lt;/h1&gt;&#xA;&lt;p&gt;Why is it important to write automated tests? I asked myself and I did some research because the answer to this question was not obvious to me. I knew it was important but I didn&amp;rsquo;t know why. So, I decided to try to explain it starting from a point of view as impartial as possible.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PHPDay 2020</title>
       <link>https://engineering.facile.it/blog/eng/php-day-2020/</link>
       <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/php-day-2020/</guid>
-      <description>The 2020 edition of PHPDay took place on September 8th in a remote fashion.
-Having experienced the 2019 edition (indeed my first one, despite being a PHP developer from eons!) I would say that it was a little difficult to stay focused for such a long event. However, given the high-quality level of lecturers and talks, it was totally worth the effort.
-I would like to thank the folks at Grusp for their passionate work.</description>
+      <description>&lt;p&gt;The &lt;strong&gt;&lt;a href=&#34;https://2020.phpday.it/&#34;&gt;2020 edition of PHPDay&lt;/a&gt;&lt;/strong&gt; took place on September 8th in a remote fashion.&lt;/p&gt;&#xA;&lt;p&gt;Having experienced the 2019 edition (indeed my first one, despite being a PHP developer from eons!) I would say that it was a little difficult to stay focused for such a long event. However, given the high-quality level of lecturers and talks, it was totally worth the effort.&lt;/p&gt;&#xA;&lt;p&gt;I would like to thank the folks at &lt;strong&gt;&lt;a href=&#34;https://www.grusp.org/&#34;&gt;Grusp&lt;/a&gt;&lt;/strong&gt; for their passionate work. Please support them!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Lambda Days 2020</title>
       <link>https://engineering.facile.it/blog/eng/lambda-days-2020/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/lambda-days-2020/</guid>
-      <description>This year, Facile attended for the first time Lambda Days Conference in the beautiful polish city of Krakow. It has been a two-days full immersion with speakers coming from all over the world. The latest trends and academic research in the functional world were showcased, spanning from beginner&amp;rsquo;s approaches to functional languages to highly specific scientific applications. This conference was totally worth attending, albeit very intense (sometimes mind-bending, actually!). All the talks were of high quality and the organization was perfect.</description>
+      <description>&lt;p&gt;This year, Facile attended for the first time &lt;a href=&#34;https://www.lambdadays.org/lambdadays2020&#34;&gt;Lambda Days&lt;/a&gt; Conference in the beautiful polish city of Krakow.&#xA;It has been a two-days full immersion with speakers coming from all over the world.&#xA;The latest trends and academic research in the functional world were showcased, spanning from beginner&amp;rsquo;s approaches to functional languages to highly specific scientific applications.&#xA;This conference was totally worth attending, albeit very intense (sometimes mind-bending, actually!). All the talks were of high quality and the organization was perfect.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>From zero to infinite: the Final keyword</title>
       <link>https://engineering.facile.it/blog/eng/from-zero-to-infinite-the-final-keyword/</link>
       <pubDate>Fri, 10 Jul 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/from-zero-to-infinite-the-final-keyword/</guid>
-      <description>Google from zero to infinite Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc. I apply a technique invented by me named: &amp;ldquo;Google from zero to infinite&amp;rdquo;.
-Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. However, most of the time I find very interesting documents, otherwise difficult to reach.</description>
+      <description>&lt;h1 id=&#34;google-from-zero-to-infinite&#34;&gt;Google from zero to infinite&lt;/h1&gt;&#xA;&lt;p&gt;Sometimes I do a full immersion on topics of my interest, generally related to programming, topics on testing, good design, etc.&#xA;I apply a technique invented by me named: &lt;strong&gt;&amp;ldquo;Google from zero to infinite&amp;rdquo;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Basically I use one or more keywords in Google, then I literally follow all the links of all the pages. It is a very long and laborious activity. However, most of the time I find very interesting documents, otherwise difficult to reach. This time I decided to use the &lt;code&gt;final&lt;/code&gt; keyword of PHP.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Operators: an overview</title>
       <link>https://engineering.facile.it/blog/eng/operators-overview/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/operators-overview/</guid>
-      <description>Introduction Operators are useful constructors and they are present in most programming languages. They are fundamental for many operations and in this article we will provide an overview to better understand their properties.
-This article is the first in a series of two about operators. Here we will make an overview of the main operators&amp;rsquo; properties and in the next one we will discuss about some custom operators that we use in our production code.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Operators are useful constructors and they are present in most programming languages. They are fundamental for many operations and in this article we will provide an overview to better understand their properties.&lt;/p&gt;&#xA;&lt;p&gt;This article is the first in a series of two about operators. Here we will make an overview of the main operators&amp;rsquo; properties and in the next one we will discuss about some custom operators that we use in our production code.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Common problems faced by PHP developers in consuming an AMQP message</title>
       <link>https://engineering.facile.it/blog/eng/common-problems-faced-by-php-developers-in-consuming-an-ampq-message/</link>
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/common-problems-faced-by-php-developers-in-consuming-an-ampq-message/</guid>
-      <description>When we use RabbitMQ and our project is in PHP, we have to run a Consumer and we could encounter some common and still unresolved problems.
-In order to implement RabbitMQ in the project, there are different ready to use packages, especially when we use a framework like Symfony or Laravel. Usually these packages provide the full integration needed for the AMQP protocol, so we can easily configure it and create a Producer and a Consumer; then, we have to create a little script that will supervise the PHP process in order to make sure that all our consumers are running.</description>
+      <description>&lt;p&gt;When we use RabbitMQ and our project is in PHP, we have to run a Consumer and we could encounter some common and still unresolved problems.&lt;/p&gt;&#xA;&lt;p&gt;In order to implement RabbitMQ in the project, there are different ready to use packages, especially when we use a framework like Symfony or Laravel. Usually these packages provide the full integration needed for the AMQP protocol, so we can easily configure it and create a Producer and a Consumer; then, we have to create a little script that will supervise the PHP process in order to make sure that all our consumers are running.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</title>
       <link>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</link>
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</guid>
-      <description>In the last month, I&amp;rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt GitLab CI for the build, since we use GitLab CE for our Git repositories; I then created a continuous deployment pipeline for the staging environment, directly to a Kubernetes cluster, leveraging Docker Compose to make the configuration easier.
-After, I decided to start migrating a previous, internal project of mine to the same approach, since it&amp;rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, doing a rolling deployment with Kubernetes is surprisingly easy!</description>
+      <description>&lt;p&gt;In the last month, I&amp;rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt &lt;strong&gt;GitLab CI&lt;/strong&gt; for the build, since we use GitLab CE for our Git repositories; I then created a &lt;strong&gt;continuous deployment pipeline&lt;/strong&gt; for the staging environment, directly to a &lt;strong&gt;Kubernetes cluster&lt;/strong&gt;, leveraging &lt;strong&gt;Docker Compose&lt;/strong&gt; to make the configuration easier.&lt;/p&gt;&#xA;&lt;p&gt;After, I decided to start migrating a previous, internal project of mine to the same approach, since it&amp;rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, &lt;strong&gt;doing a rolling deployment with Kubernetes is surprisingly easy&lt;/strong&gt;!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Is it all PHP OPCache&#39;s fault?</title>
       <link>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</link>
       <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</guid>
-      <description>Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&amp;rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
-Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things».</description>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&amp;rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;When I started my software developer career, I was very surprised to read the following sentence, attributed to &lt;a href=&#34;https://martinfowler.com/bliki/TwoHardThings.html&#34;&gt;Phil Karlton&lt;/a&gt;: &lt;em&gt;«There are only two hard things in Computer Science: &lt;strong&gt;cache invalidation&lt;/strong&gt; and &lt;strong&gt;naming things&lt;/strong&gt;»&lt;/em&gt;. In the beginning I was incredulous, because I didn&amp;rsquo;t really get the sense of these words. Not much later, I started to understand.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to gradually upgrade toward PHPUnit 6 with namespaced classes</title>
       <link>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</link>
       <pubDate>Tue, 12 Sep 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</guid>
-      <description>In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced.
-This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp;amp; replace job, but since you need to introduce at least one use PHPUnit\Framework\TestCase line at the top of each one of your test classes, it&amp;rsquo;s a boring and a little more than trivial task; also, upgrading it in a single big jump may not be feasible or prudent, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.</description>
+      <description>&lt;p&gt;In the latest months I wrote multiple times, in different projects, code migrating &lt;strong&gt;PHPUnit&lt;/strong&gt; toward major &lt;strong&gt;version 6&lt;/strong&gt;. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: &lt;strong&gt;all classes got (finally!) namespaced&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp;amp; replace job, but since you need to introduce at least one &lt;code&gt;use PHPUnit\Framework\TestCase&lt;/code&gt; line at the top of each one of your test classes, it&amp;rsquo;s a boring and a little more than trivial task; also, &lt;strong&gt;upgrading it in a single big jump may not be feasible or prudent&lt;/strong&gt;, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Why type hints and interfaces are not visual debt</title>
       <link>https://engineering.facile.it/blog/eng/visual-debt-typehints/</link>
       <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/visual-debt-typehints/</guid>
-      <description>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
-Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is #PHP&amp;#39;s new spaces vs tabs
-&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017  After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading).</description>
+      <description>&lt;p&gt;A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;it&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is &lt;a href=&#34;https://twitter.com/hashtag/PHP?src=hash&#34;&gt;#PHP&lt;/a&gt;&amp;#39;s new spaces vs tabs&lt;/p&gt;&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) &lt;a href=&#34;https://twitter.com/WyriHaximus/status/865524687257862144&#34;&gt;19 maggio 2017&lt;/a&gt;&lt;/blockquote&gt;&#xA;&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&#xA;&lt;p&gt;After asking references about this, someone alluded to this very short video: &lt;a href=&#34;https://laracasts.com/series/php-bits/episodes/1&#34;&gt;&lt;strong&gt;&amp;ldquo;PHP Bits: Visual Debt&amp;rdquo;&lt;/strong&gt;&lt;/a&gt; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facile.it devs @ phpDay 2017</title>
       <link>https://engineering.facile.it/blog/eng/php-day-2017/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/php-day-2017/</guid>
-      <description>Like clockwork, on May we head up to Verona to attend the phpDay conference; this time it was on May 12th and 13th.
-We met a lot of new people and known fellow PHP developers, and like previous years, we wanted to write down a light summary; like the previous ones, this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.</description>
+      <description>&lt;p&gt;Like clockwork, on May we head up to Verona to attend the &lt;strong&gt;&lt;a href=&#34;https://2017.phpday.it/&#34;&gt;phpDay conference&lt;/a&gt;&lt;/strong&gt;; this time it was on &lt;strong&gt;May 12th and 13th&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;We met a lot of new people and known fellow PHP developers, and like &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;previous&lt;/a&gt; &lt;a href=&#34;https://engineering.facile.it/blog/eng/php-day-2016/&#34;&gt;years&lt;/a&gt;, we wanted to write down a light summary; like the previous ones, this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>#FacileHack 2017, 10 days later</title>
       <link>https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/</link>
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/</guid>
-      <description>Ten days ago #FacileHack 2017 came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers.
-The hackathon&amp;rsquo;s theme for this year was connectivity: our site offers the comparation between internet access services, and we have decided to put this at the center of the competition.</description>
+      <description>&lt;p&gt;Ten days ago &lt;a href=&#34;http://hackathon.facile.it/2017.html&#34;&gt;&lt;strong&gt;#FacileHack 2017&lt;/strong&gt;&lt;/a&gt; came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers.&lt;/p&gt;&#xA;&lt;p&gt;The hackathon&amp;rsquo;s theme for this year was &lt;strong&gt;connectivity&lt;/strong&gt;: our site offers the comparation between internet access services, and we have decided to put this at the center of the competition. The teams have then faced each other on this theme, searching new ways to improve Facile.it&amp;rsquo;s business and the customers&amp;rsquo; user experience.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Using Kotlin type-safe builders to create a DSL for Forms</title>
       <link>https://engineering.facile.it/blog/eng/kotlin-dsl/</link>
       <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/kotlin-dsl/</guid>
-      <description>Here at Facile.it we are constantly dealing with a lot of forms: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be really complex, having multiple rules and dependencies between fields, and they are likely to be changed and tuned frequently.
-When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field.</description>
+      <description>&lt;p&gt;Here at Facile.it we are constantly dealing with a lot of &lt;strong&gt;forms&lt;/strong&gt;: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be &lt;strong&gt;really complex&lt;/strong&gt;, having multiple rules and dependencies between fields, and they are likely to be &lt;strong&gt;changed and tuned frequently&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do &lt;strong&gt;a lot of work&lt;/strong&gt; just to add or remove a simple field. So I took a step back and I started thinking about a strategy that would have allowed me to define and structure a form in a more &lt;em&gt;flexible&lt;/em&gt; and &lt;em&gt;declarative&lt;/em&gt; way. I wanted to be able to declare the &lt;strong&gt;relationships&lt;/strong&gt; between fields, their &lt;strong&gt;validation rules&lt;/strong&gt; and their &lt;strong&gt;serialized representation&lt;/strong&gt; (how they are sent to the server).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Angular Components: from AngularJS to &#34;just Angular&#34;</title>
       <link>https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</guid>
-      <description>With version 1.5 and newer, AngularJS (which for clarity we&amp;rsquo;ll call just Angular from now on, even though the naming convention was recently updated) introduced their own interpretation of Web Components, back-porting Components from Angular 2.
-Using Components with Angular today not only means writing code much more easily upgradeable to future framework versions (especially using ES6), but it also allows you to modularize and reuse code more easily, in line with the modern frontend programming style that will be more and more modular.</description>
+      <description>&lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;https://engineering.facile.it/images/web-components-a-path-to-angular-2/angular.png&#34;&gt; &lt;/p&gt;&#xA;&lt;p&gt;With version 1.5 and newer, AngularJS (which for clarity we&amp;rsquo;ll call &lt;a href=&#34;http://angularjs.blogspot.it/2016/12/ok-let-me-explain-its-going-to-be.html#Its_just_Angular_39&#34;&gt;&lt;em&gt;just Angular&lt;/em&gt;&lt;/a&gt; from now on, even though the naming convention was &lt;a href=&#34;http://angularjs.blogspot.it/2017/01/branding-guidelines-for-angular-and.html&#34;&gt;recently updated&lt;/a&gt;) introduced their own interpretation of &lt;a href=&#34;https://www.webcomponents.org/&#34;&gt;Web Components&lt;/a&gt;, back-porting &lt;em&gt;Components&lt;/em&gt; from Angular 2.&lt;/p&gt;&#xA;&lt;p&gt;Using &lt;em&gt;Components&lt;/em&gt; with Angular today not only means writing code much more easily upgradeable to future framework versions (especially using ES6), but it also allows you to modularize and reuse code more easily, in line with the modern frontend programming style that will be more and more modular.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Please mutate responsibly: 3 ways to improve your mutable objects</title>
       <link>https://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/</link>
       <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/</guid>
-      <description>Maintaining state is the main cause of complexity and headaches in software development: without a careful consideration of state, our projects will inevitably become impossible to understand. In fact, various development techniques and programming styles are mainly there to handle state in a responsible way: for example, monads, as used in functional programming, are often employed for this very task. A good general way of managing state is trying to make it immutable, either through the use value types, that is, types which instances are passed around with deep copy semantics, or simple immutable objects, which have reference semantics but because they&amp;rsquo;re immutable their state is fixed.</description>
+      <description>&lt;p&gt;Maintaining &lt;strong&gt;state&lt;/strong&gt; is the main cause of complexity and headaches in software development: without a careful consideration of state, our projects will inevitably become impossible to understand. In fact, various development techniques and programming styles are mainly there to handle state in a responsible way: for example, &lt;a href=&#34;https://en.wikipedia.org/wiki/Monad_(functional_programming)&#34;&gt;&lt;strong&gt;monads&lt;/strong&gt;&lt;/a&gt;, as used in functional programming, are often employed for this very task. A good general way of managing state is trying to make it &lt;strong&gt;immutable&lt;/strong&gt;, either through the use &lt;a href=&#34;https://en.wikipedia.org/wiki/Value_type&#34;&gt;value types&lt;/a&gt;, that is, types which instances are passed around with &lt;a href=&#34;https://en.wikipedia.org/wiki/Object_copying#Deep_copy&#34;&gt;deep copy&lt;/a&gt; semantics, or simple &lt;em&gt;immutable objects&lt;/em&gt;, which have reference semantics but because they&amp;rsquo;re immutable their state is fixed.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Codemotion Milan 2016 in review</title>
       <link>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</link>
       <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</guid>
-      <description>«Learn or die». These are the words with which Codemotion Milan 2016 started on the 25th of November. Most of our development team attended this tech conference like the previous year. Moreover Facile.it was present at the event as a sponsor with his stand looking for new talent.
-During the event we also officially announced the second #FacileHack hackathon, which is planned for march 2017.
-This post would be a short recap of some talks in chronological order.</description>
+      <description>&lt;p&gt;&lt;em&gt;«Learn or die»&lt;/em&gt;. These are the words with which &lt;a href=&#34;http://milan2016.codemotionworld.com/&#34;&gt;&lt;strong&gt;Codemotion Milan 2016&lt;/strong&gt;&lt;/a&gt; started on the 25th of November. Most of our development team attended this tech conference like the &lt;a href=&#34;http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/&#34;&gt;previous year&lt;/a&gt;. Moreover &lt;a href=&#34;http://www.facile.it&#34;&gt;Facile.it&lt;/a&gt; was present at the event as a sponsor with his stand looking for new talent.&lt;/p&gt;&#xA;&lt;p&gt;During the event we also officially &lt;strong&gt;announced the second &lt;a href=&#34;http://hackathon.facile.it/&#34;&gt;#FacileHack&lt;/a&gt; hackathon&lt;/strong&gt;, which is planned for &lt;strong&gt;march 2017&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;This post would be a short recap of some talks in chronological order. The choice of the talks is based on the personal taste of the various members of the editorial staff of Facile.it Engineering blog. Enjoy!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Looking back at Symfony Day Rome 2016</title>
       <link>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</link>
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</guid>
-      <description>Every year the GrUSP, in cooperation with one of the italian PHP user groups, organizes the italian Symfony conference. This year the event was organized in the Capital on 28th October with the help of PHP User Group Roma, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.</description>
+      <description>&lt;p&gt;Every year the &lt;a href=&#34;http://www.grusp.org/&#34;&gt;GrUSP&lt;/a&gt;, in cooperation with one of the italian PHP user groups, organizes the italian &lt;strong&gt;&lt;a href=&#34;http://symfony.com/&#34;&gt;Symfony&lt;/a&gt;&lt;/strong&gt; conference. This year the &lt;a href=&#34;http://2016.symfonyday.it/&#34;&gt;event&lt;/a&gt; was organized in the Capital on 28th October with the help of &lt;a href=&#34;http://roma.grusp.org/&#34;&gt;PHP User Group Roma&lt;/a&gt;, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MessagePack: an alternative to JSON?</title>
       <link>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</link>
       <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
-      <description>When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &amp;ldquo;JSONC&amp;quot;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.</description>
+      <description>&lt;p&gt;When we talk about data interchange in web applications, &lt;strong&gt;&lt;a href=&#34;http://www.json.org/&#34;&gt;JSON&lt;/a&gt;&lt;/strong&gt; is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist &lt;a href=&#34;https://www.w3.org/XML/&#34;&gt;XML&lt;/a&gt; (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like &lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;Google’s &lt;strong&gt;Protocol Buffers&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://avro.apache.org/&#34;&gt;Apache &lt;strong&gt;Avro&lt;/strong&gt;&lt;/a&gt; or &lt;strong&gt;&lt;a href=&#34;http://msgpack.org/&#34;&gt;MessagePack&lt;/a&gt;&lt;/strong&gt;. In being thorough, we should also mention &lt;a href=&#34;http://www.gzip.org/&#34;&gt;gzip&lt;/a&gt; JSON compression (sometimes called &amp;ldquo;&lt;em&gt;JSONC&lt;/em&gt;&amp;rdquo;), and &lt;a href=&#34;http://bsonspec.org/&#34;&gt;BSON&lt;/a&gt;, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we&amp;rsquo;ll discuss MessagePack in depth.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>A new hope for the JVM: Kotlin</title>
       <link>https://engineering.facile.it/blog/eng/kotlin-intro/</link>
       <pubDate>Mon, 17 Oct 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/kotlin-intro/</guid>
-      <description>Premise Java is an old programming language. Version 1.0 was released in 1996 by Sun Microsystems and even though it has evolved and grown a lot over the past twenty years it is still carrying on some bad design choices such as null (ask Tony Hoare), primitive types or lack of a proper function type. With the last version of the language (Java 8) Java tried to address some of these problems introducing concepts such as Optional or lambda expression.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/kotlin-intro/logo_Kotlin.svg&#34; alt=&#34;Kotlin&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;premise&#34;&gt;Premise&lt;/h2&gt;&#xA;&lt;p&gt;Java is an &lt;strong&gt;old&lt;/strong&gt; programming language. Version 1.0 was released in 1996 by Sun Microsystems and  even though it has evolved and grown a lot over the past twenty years it is still carrying on some bad design choices such as &lt;em&gt;null&lt;/em&gt; (ask &lt;a href=&#34;https://en.wikipedia.org/wiki/Tony_Hoare?section=3#Apologies_and_retractions&#34;&gt;Tony Hoare&lt;/a&gt;), primitive types or lack of a proper function type. With the last version of the language (Java 8) Java tried to address some of these problems introducing concepts such as &lt;a href=&#34;https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html&#34;&gt;&lt;code&gt;Optional&lt;/code&gt;&lt;/a&gt; or &lt;a href=&#34;http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html&#34;&gt;lambda expression&lt;/a&gt;. Although these additions clearly represent a step forward for the language I still have the feeling that they are just &lt;em&gt;patches&lt;/em&gt; applied to &lt;strong&gt;mitigate problems&lt;/strong&gt; and not to solve them at their very source. For example &lt;code&gt;Optional&lt;/code&gt; could be used to reduce NPE (Null Pointer Exception) but it is clearly not designed for &lt;a href=&#34;https://twitter.com/mariofusco/status/780770300178956289&#34;&gt;this purpose&lt;/a&gt; and lambda expressions, implemented in Java 8 with SAM types, still force you to write an interface only to define a &lt;em&gt;function&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Event-driven serverless applications</title>
       <link>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</link>
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
-      <description>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &amp;ldquo;Lambda&amp;quot;, that allows us to focus on business logic and not on infrastructure.</description>
+      <description>&lt;p&gt;If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 &lt;strong&gt;Amazon Web Services&lt;/strong&gt; (AWS) announced a new service called &amp;ldquo;&lt;strong&gt;&lt;a href=&#34;https://aws.amazon.com/lambda/&#34;&gt;Lambda&lt;/a&gt;&lt;/strong&gt;&amp;rdquo;, that allows us to focus on business logic and not on infrastructure.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How PHP 7 &amp; TDD helped me sleep better</title>
       <link>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
       <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
-      <description>The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
-Maybe we fear only one thing more than that: being interrupted.
-[![Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)](/images/how-php-7-tdd-helped-me-sleep-better/interruption.png)](http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/) While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.</description>
+      <description>&lt;h1 id=&#34;the-enemies-of-programming&#34;&gt;The enemies of programming&lt;/h1&gt;&#xA;&lt;p&gt;As many of you will agree with me, &lt;strong&gt;sleep deprivation&lt;/strong&gt; is the enemy of programming.&lt;br&gt;&#xA;Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p style=&#34;text-align: center;&#34;&gt;&#xA;    [![Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)](/images/how-php-7-tdd-helped-me-sleep-better/interruption.png)](http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/)&#xA;&lt;/p&gt;&#xA;&lt;p&gt;While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facile.it devs @ PhpDay 2016</title>
       <link>https://engineering.facile.it/blog/eng/php-day-2016/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/php-day-2016/</guid>
-      <description>Almost like a nice tradition, we went to the PHP Day conference this year as well; this time too it was held in Verona, on May 13th and 14th.
-We participated and attended numerous talks and, as last year, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.</description>
+      <description>&lt;p&gt;Almost like a nice tradition, we went to the &lt;strong&gt;&lt;a href=&#34;http://2016.phpday.it/&#34;&gt;PHP Day conference&lt;/a&gt;&lt;/strong&gt; this year as well; this time too it was held in Verona, on &lt;strong&gt;May 13th and 14th&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Faster Web with HTTP/2</title>
       <link>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</link>
       <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</guid>
-      <description>HTTP is the protocol that powers the Web. It was originally designed in 1996 for transferring and manipulating simple text-based documents (mainly hypertext resources). Nowadays it&amp;rsquo;s been adopted for many different purposes. It&amp;rsquo;s used for: multimedia content transfer, rich real-time session-based web applications, API messages dispatch, Internet of Things and much more. For this reason, the HTTP specifications are continuously updated, by adding new features and improving performance.
-In May 2015, the latest version 2.</description>
+      <description>&lt;p&gt;HTTP is the protocol that powers the Web. It was originally designed in 1996 for transferring and manipulating simple text-based documents (mainly hypertext resources).&#xA;Nowadays it&amp;rsquo;s been adopted for many different purposes. It&amp;rsquo;s used for: multimedia content transfer, rich real-time session-based web applications, API messages dispatch, Internet of Things and much more.&#xA;For this reason, the HTTP specifications are continuously updated, by adding new features and improving performance.&lt;/p&gt;&#xA;&lt;p&gt;In May 2015, the latest version 2.0 was standardized with &lt;em&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc7540&#34;&gt;RFC 7540&lt;/a&gt;&lt;/em&gt;.&#xA;This introduced major differences on how the low-level protocol works.&#xA;From the application perspective, very little has changed: requests, responses, resources, headers and HTTP methods are still there.&#xA;New features have been added such as the possibility to &lt;strong&gt;push resources to the client&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Blog restyling: switching to Hugo and GitHub Pages</title>
       <link>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</link>
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</guid>
-      <description>As you may have noticed, we went through a bit of a restyling in the last few days, and our blog changed a lot in terms of appearance and structure. We are very happy with those changes, but the reason behind this transition is not just a simple template change.
-What we were searching for Before, we were using an hosted CMS to run the blog, Ghost. We were happy with the results, it wasn&amp;rsquo;t our concern to administrate the server or bother about other hosting stuff.</description>
+      <description>&lt;p&gt;As you may have noticed, we went through a bit of a restyling in the last few days, and our blog changed a lot in terms of appearance and structure.&#xA;We are very happy with those changes, but the reason behind this transition is not just a simple template change.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-we-were-searching-for&#34;&gt;What we were searching for&lt;/h2&gt;&#xA;&lt;p&gt;Before, we were using an hosted CMS to run the blog, &lt;a href=&#34;https://ghost.org/&#34;&gt;Ghost&lt;/a&gt;. We were happy with the results, it wasn&amp;rsquo;t our concern to administrate the server or bother about other hosting stuff.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Droidcon It 2016</title>
       <link>https://engineering.facile.it/blog/eng/droidcon-it-2016/</link>
       <pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/droidcon-it-2016/</guid>
-      <description>The third edition of Droidcon IT was, as expected, a great conference, full of interesting talks and people coming from all over the world. We saw a lot of GDEs (Google Developer Expert) and also some Developer Advocates from Google, although it was not organized directly by the company. Back in March the Android team surprisingly released the brand new N Developer Preview earlier than expected, so this year we were already able to talk about the new features in Android N and analyze them.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/droidconit-recap/logo_droidcon_it.png&#34; alt=&#34;Droidcon It&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The third edition of &lt;a href=&#34;http://it.droidcon.com/2016/&#34;&gt;Droidcon IT&lt;/a&gt; was, as expected, a great conference, full of interesting talks and people coming from all over the world. We saw a lot of GDEs (&lt;a href=&#34;https://developers.google.com/experts/all/technology/android&#34;&gt;Google Developer Expert&lt;/a&gt;) and also some Developer Advocates from Google, although it was not organized directly by the company. Back in March the Android team surprisingly released the brand new &lt;strong&gt;N Developer Preview&lt;/strong&gt; earlier than expected, so this year we were already able to talk about the new features in Android N and analyze them. Furthermore, there was talk of &lt;strong&gt;Kotlin&lt;/strong&gt;, &lt;strong&gt;RxJava&lt;/strong&gt; and a lot of other useful and interesting topics.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Json Web Token</title>
       <link>https://engineering.facile.it/blog/eng/json-web-tokens/</link>
       <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/json-web-tokens/</guid>
-      <description>When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability. I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy. Imagine for example a web application where a user can login and obtain a &amp;ldquo;pass&amp;rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/json-web-tokens/logo.svg&#34; alt=&#34;JWT&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability.&#xA;I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy.&#xA;Imagine for example a web application where a user can login and obtain a &amp;ldquo;pass&amp;rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted.&#xA;Thanks to JWT&amp;rsquo;s self verification capabilities, I could discard every request where the token is invalid (a fake token not signed by my application) or expired.&#xA;Beyond this specific use case, JWT can be also useful to securely transmit data to other applications.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Decoupling view controllers with Signals</title>
       <link>https://engineering.facile.it/blog/eng/decoupling-view-controllers-with.signals/</link>
       <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/decoupling-view-controllers-with.signals/</guid>
-      <description>Last time we looked at the Signal class, that is, a simple, reusable way of encapsulating the observer pattern. There are many use cases for a signal, and I&amp;rsquo;m going to show one possible application, spawned from a real-world problem. View controllers&amp;rsquo; composition and decoupling is hard: we often need an input from a view controller, that has to send its input back to its creator, while handling the back navigation somehow.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://engineering.facile.it/code-reuse-a-primer/&#34;&gt;Last time&lt;/a&gt; we looked at the &lt;strong&gt;Signal&lt;/strong&gt; class, that is, a simple, reusable way of encapsulating the &lt;a href=&#34;https://en.wikipedia.org/wiki/Observer_pattern&#34;&gt;observer pattern&lt;/a&gt;. There are many use cases for a signal, and I&amp;rsquo;m going to show one possible application, spawned from a real-world problem. View controllers&amp;rsquo; composition and decoupling is &lt;strong&gt;hard&lt;/strong&gt;: we often need an input from a view controller, that has to send its input back to its creator, while handling the back navigation somehow. We often find ourselves in a situation in which several different responsibilities are all expressed in a single view controller, with the effect of creating a gigantic class, full of entangled imperative statements, hard-to-understand sequencing and general complexity. We&amp;rsquo;ll use the &lt;code&gt;Signal&lt;/code&gt; class to assign the various responsibilities to different classes, and write cleaner, more declarative code. The core of this architectural pattern lies in inverting the way in which objects communicate, view controller or other: instead of asking objects to do things, we&amp;rsquo;re going to &lt;strong&gt;observe&lt;/strong&gt; what objects are doing, and &lt;strong&gt;react&lt;/strong&gt; accordingly. &lt;em&gt;Observe&lt;/em&gt; and &lt;em&gt;React&lt;/em&gt; are the cornerstones of the programming paradigm known as &lt;a href=&#34;https://en.wikipedia.org/wiki/Functional_reactive_programming&#34;&gt;functional reactive programming(FRP)&lt;/a&gt;; the present article is not going to talk about FRP as a whole, nor to present shared FRP techniques; the point is to discuss an architectural pattern for decoupling view controllers from responsibilities not strictly related to user interaction, by leveraging some basic FRP tools.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GraphQL: an introduction</title>
       <link>https://engineering.facile.it/blog/eng/graphql-an-introduction/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/graphql-an-introduction/</guid>
-      <description>The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let&amp;rsquo;s see some of the consequences and benefits of choosing REST:
- Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.</description>
+      <description>&lt;h2 id=&#34;the-lesson-we-learned-with-rest&#34;&gt;The lesson we learned with REST&lt;/h2&gt;&#xA;&lt;p&gt;For many developers, nowadays, building an &lt;strong&gt;API&lt;/strong&gt; for their applications essentially means mapping the &lt;em&gt;resources&lt;/em&gt; of the domain to &lt;em&gt;URIs&lt;/em&gt;, with the &lt;a href=&#34;https://en.wikipedia.org/wiki/Representational_state_transfer&#34;&gt;REST&lt;/a&gt; principles in mind.&#xA;Usually creating a &lt;em&gt;&lt;strong&gt;RESTful&lt;/strong&gt;&lt;/em&gt; system is not difficult, and the simplicity of the idea makes the task easier.&#xA;Let&amp;rsquo;s see some of the consequences and benefits of choosing REST:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.&lt;/li&gt;&#xA;&lt;li&gt;Often the same URI can be used with multiple verbs to accomplish different tasks (e.g. &amp;ldquo;example.com/tag/123&amp;rdquo; refers to a particular tag that you can retrieve, update or delete).&lt;/li&gt;&#xA;&lt;li&gt;Controllers in many server-side frameworks can be created with a RESTful approach, each one of them representing one or more resources.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;However, unfortunately, it&amp;rsquo;s often easy to come across some problems:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Write a filesystem with FUSE</title>
       <link>https://engineering.facile.it/blog/eng/write-filesystem-fuse/</link>
       <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/write-filesystem-fuse/</guid>
-      <description>During the past year I experimented a lot with file systems in Userspace using FUSE, I wrote this post to share my thoughts about what I did and to give you a starting point to do something by yourself.
-Introduction A filesystem is that piece of software that is in charge of storing, organizing and generally taking care of data represented as files and directories. If you are using a device to read this post you are probably using at least one filesystem at the moment.</description>
+      <description>&lt;p&gt;During the past year I experimented a lot with file systems in Userspace using FUSE, I wrote this post to share my thoughts about what I did and to give you a starting point to do something by yourself.&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;A filesystem is that piece of software that is in charge of storing, organizing and generally taking care of data represented as files and directories.&#xA;If you are using a device to read this post you are probably using at least one filesystem at the moment.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Code reuse: a primer</title>
       <link>https://engineering.facile.it/blog/eng/code-reuse-a-primer/</link>
       <pubDate>Wed, 09 Dec 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/code-reuse-a-primer/</guid>
-      <description>Last time we looked at a possible implementation for the Optional type in Objective-C; while the main point was to port to Objective-C a tool that&amp;rsquo;s frequently used in Swift, making use of the Optional class can be considered an application of a much more general concept: code reuse. In fact, Optional is not tied to a particular domain, and can be reused over and over again in multiple projects: that&amp;rsquo;s what actually happens in Swift.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://engineering.facile.it/optionals-in-objective-c/&#34;&gt;Last time&lt;/a&gt; we looked at a possible implementation for the &lt;a href=&#34;https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330&#34;&gt;Optional&lt;/a&gt; type in Objective-C; while the main point was to port to Objective-C a tool that&amp;rsquo;s frequently used in Swift, making use of the &lt;code&gt;Optional&lt;/code&gt; class can be considered an application of a much more general concept: &lt;strong&gt;code reuse&lt;/strong&gt;. In fact, &lt;code&gt;Optional&lt;/code&gt; is not tied to a particular domain, and can be reused over and over again in multiple projects: that&amp;rsquo;s what actually happens in Swift. But, to think about it, that&amp;rsquo;s what happens for a wide range of &lt;em&gt;classes&lt;/em&gt; in Objective-C, or &lt;em&gt;types&lt;/em&gt; in Swift: for example, &lt;code&gt;NSArray&lt;/code&gt; and &lt;code&gt;Array&lt;/code&gt; are both constructs that expose a certain interface, have a certain implementation, and are reused multiple times within methods and functions. And again, &lt;code&gt;NSArray&lt;/code&gt; and &lt;code&gt;Array&lt;/code&gt; are not tied to a particular domain, and have two important properties:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Optionals in Objective-C</title>
       <link>https://engineering.facile.it/blog/eng/optionals-in-objective-c/</link>
       <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/optionals-in-objective-c/</guid>
-      <description>Objective-C is not going anywhere. While Swift is most certainly the new hotness for iOS and OS X programming, there are some concrete reasons to stick with Objective-C for a while:
- Objective-C based projects still need maintenance and new features to be added, and mixing Swift and Objective-C, while possible, can be tricky and possibly unconvenient, due to the dynamic nature of the latter; Swift is changing rapidly, has still some bugs and performance problems, and still lacks some features that professionals need, while Objective-C is mature and has a strong community; some may prefer a more dynamic language, and Objective-C support from Apple is still strong;  Personally, while I naturally lean towards a more static, type-first approach to programming, from time to time I like to work in a more dynamic environment, so both for preference and for business needs, I still didn&amp;rsquo;t put Objective-C completely away.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Objective-C is not going anywhere&lt;/strong&gt;. While Swift is most certainly the new hotness for iOS and OS X programming, there are some concrete reasons to stick with Objective-C for a while:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Objective-C based projects still need maintenance and new features to be added, and mixing Swift and Objective-C, while possible, &lt;strong&gt;can be tricky&lt;/strong&gt; and possibly unconvenient, due to the dynamic nature of the latter;&lt;/li&gt;&#xA;&lt;li&gt;Swift is changing rapidly, has still some bugs and &lt;strong&gt;performance problems&lt;/strong&gt;, and still lacks some features that professionals need, while Objective-C is mature and has a strong community;&lt;/li&gt;&#xA;&lt;li&gt;some may &lt;strong&gt;prefer a more dynamic language&lt;/strong&gt;, and Objective-C support from Apple &lt;a href=&#34;https://netguru.co/blog/objective-c-generics&#34;&gt;is still strong&lt;/a&gt;;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Personally, while I naturally lean towards a more static, &lt;a href=&#34;http://engineering.facile.it/type-first-development-in-swift/&#34;&gt;type-first&lt;/a&gt; approach to programming, from time to time I like to work in a more dynamic environment, so both for preference and for business needs, I still didn&amp;rsquo;t put Objective-C completely away. But just after a few weeks of Swift I found myself missing one of the most powerful features of the language: &lt;a href=&#34;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330&#34;&gt;Optionals&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>From development to production with Docker and AWS Elastic Beanstalk</title>
       <link>https://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</guid>
-      <description>It works on my machine This post is addressed to people who already have basic knowledge about docker, about how it works and are looking for a way to move to the next step with the goal of using it in development and production day by day.
-Having a development/testing environment as close as possible to the production one helps a lot in assuring that things will behave correctly when delivered.</description>
+      <description>&lt;h1 id=&#34;it-works-on-my-machine&#34;&gt;It works on my machine&lt;/h1&gt;&#xA;&lt;p&gt;This post is addressed to people who already have &lt;a href=&#34;https://docs.docker.com/articles/basics&#34;&gt;basic knowledge about docker&lt;/a&gt;, about how it works and are looking for a way to move to the next step with the goal of using it in development and production day by day.&lt;/p&gt;&#xA;&lt;p&gt;Having a development/testing environment &lt;strong&gt;as close as possible&lt;/strong&gt; to the production one helps a lot in assuring that &lt;strong&gt;things will behave correctly when delivered&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Protection of sensitive data using encryption</title>
       <link>https://engineering.facile.it/blog/eng/protection-of-sensitive-data-using-encryption/</link>
       <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/protection-of-sensitive-data-using-encryption/</guid>
-      <description>Data protection is one of the major and recurrent problems in recent years: whether it is private information of users, or the company for which we work, the problem is always the same.
-How to protect such data from any attackers who would - and could (!!) - be able to gain possession?
-Before arriving at the solution of this problem, however, is right to split the series in at least two branches.</description>
+      <description>&lt;p&gt;Data protection is one of the major and recurrent problems in recent years: whether it is private information of users, or the company for which we work, the problem is always the same.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;How to protect such data from any attackers who would - and could (!!) - be able to gain possession?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Before arriving at the solution of this problem, however, is right to split the series in at least two branches. In the wwww data can be &amp;ldquo;obtained&amp;rdquo; in two different moments: 1) as they pass over the network in packets, or 2) after their storing (eg. database or file) in one or more servers.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>No Country For If Else</title>
       <link>https://engineering.facile.it/blog/eng/no-country-for-if-else/</link>
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/no-country-for-if-else/</guid>
-      <description>There is an unwanted guest with us as we write code and build software projects: it&amp;rsquo;s the code that&amp;rsquo;s already written, and we must take into account its complexity as the code base increases in size. High complexity of the existing code can make the following activities particularly difficult:
- understanding the meaning of old code, written by others or ourselves; tracing the causes of bugs, i.e. errors, in code; making changes to a certain procedure; adding features to existing structures;  Even if we approach the development of new software with agile methodologies, we always have to deal with the existing code, and to do that we must at least be able to understand it without overexertion.</description>
+      <description>&lt;p&gt;There is an &lt;strong&gt;unwanted guest&lt;/strong&gt; with us as we write code and build software projects: it&amp;rsquo;s the code that&amp;rsquo;s &lt;strong&gt;already written&lt;/strong&gt;, and we must take into account its complexity as the code base increases in size. High complexity of the existing code can make the following activities particularly difficult:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;understanding the meaning of old code, written by others or ourselves;&lt;/li&gt;&#xA;&lt;li&gt;tracing the causes of bugs, i.e. errors, in code;&lt;/li&gt;&#xA;&lt;li&gt;making changes to a certain procedure;&lt;/li&gt;&#xA;&lt;li&gt;adding features to existing structures;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Even if we approach the development of new software with &lt;a href=&#34;https://en.wikipedia.org/wiki/Agile_software_development&#34;&gt;agile methodologies&lt;/a&gt;, we always have to deal with the existing code, and to do that we must at least be able to &lt;strong&gt;understand it without overexertion&lt;/strong&gt;. So when I talk about &lt;em&gt;complexity&lt;/em&gt; I am referring in particular to the difficulty with which a programmer can &lt;em&gt;reason about&lt;/em&gt; the existing code: the preface of the well-known academic textbook &lt;a href=&#34;http://deptinfo.unice.fr/~roy/sicp.pdf&#34;&gt;Structure and Interpretation of Computer Programs&lt;/a&gt; contains the following sentence:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

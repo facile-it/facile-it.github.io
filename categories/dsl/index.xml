@@ -4,22 +4,16 @@
     <title>DSL on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/dsl/</link>
     <description>Recent content in DSL on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Feb 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/dsl/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/dsl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Kotlin type-safe builders to create a DSL for Forms</title>
       <link>https://engineering.facile.it/blog/eng/kotlin-dsl/</link>
       <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/kotlin-dsl/</guid>
-      <description>Here at Facile.it we are constantly dealing with a lot of forms: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be really complex, having multiple rules and dependencies between fields, and they are likely to be changed and tuned frequently.
-When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field.</description>
+      <description>&lt;p&gt;Here at Facile.it we are constantly dealing with a lot of &lt;strong&gt;forms&lt;/strong&gt;: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be &lt;strong&gt;really complex&lt;/strong&gt;, having multiple rules and dependencies between fields, and they are likely to be &lt;strong&gt;changed and tuned frequently&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do &lt;strong&gt;a lot of work&lt;/strong&gt; just to add or remove a simple field. So I took a step back and I started thinking about a strategy that would have allowed me to define and structure a form in a more &lt;em&gt;flexible&lt;/em&gt; and &lt;em&gt;declarative&lt;/em&gt; way. I wanted to be able to declare the &lt;strong&gt;relationships&lt;/strong&gt; between fields, their &lt;strong&gt;validation rules&lt;/strong&gt; and their &lt;strong&gt;serialized representation&lt;/strong&gt; (how they are sent to the server).&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,21 +4,16 @@
     <title>JWT on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/jwt/</link>
     <description>Recent content in JWT on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 08 Apr 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/jwt/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/jwt/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Json Web Token</title>
       <link>https://engineering.facile.it/blog/eng/json-web-tokens/</link>
       <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/json-web-tokens/</guid>
-      <description>When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability. I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy. Imagine for example a web application where a user can login and obtain a &amp;ldquo;pass&amp;rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/json-web-tokens/logo.svg&#34; alt=&#34;JWT&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability.&#xA;I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy.&#xA;Imagine for example a web application where a user can login and obtain a &amp;ldquo;pass&amp;rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted.&#xA;Thanks to JWT&amp;rsquo;s self verification capabilities, I could discard every request where the token is invalid (a fake token not signed by my application) or expired.&#xA;Beyond this specific use case, JWT can be also useful to securely transmit data to other applications.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

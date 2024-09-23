@@ -4,22 +4,16 @@
     <title>WebComponent on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/webcomponent/</link>
     <description>Recent content in WebComponent on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Feb 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/webcomponent/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/webcomponent/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Angular Components: from AngularJS to &#34;just Angular&#34;</title>
       <link>https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</link>
       <pubDate>Wed, 01 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</guid>
-      <description>With version 1.5 and newer, AngularJS (which for clarity we&amp;rsquo;ll call just Angular from now on, even though the naming convention was recently updated) introduced their own interpretation of Web Components, back-porting Components from Angular 2.
-Using Components with Angular today not only means writing code much more easily upgradeable to future framework versions (especially using ES6), but it also allows you to modularize and reuse code more easily, in line with the modern frontend programming style that will be more and more modular.</description>
+      <description>&lt;p align=&#34;center&#34;&gt; &lt;img src=&#34;https://engineering.facile.it/images/web-components-a-path-to-angular-2/angular.png&#34;&gt; &lt;/p&gt;&#xA;&lt;p&gt;With version 1.5 and newer, AngularJS (which for clarity we&amp;rsquo;ll call &lt;a href=&#34;http://angularjs.blogspot.it/2016/12/ok-let-me-explain-its-going-to-be.html#Its_just_Angular_39&#34;&gt;&lt;em&gt;just Angular&lt;/em&gt;&lt;/a&gt; from now on, even though the naming convention was &lt;a href=&#34;http://angularjs.blogspot.it/2017/01/branding-guidelines-for-angular-and.html&#34;&gt;recently updated&lt;/a&gt;) introduced their own interpretation of &lt;a href=&#34;https://www.webcomponents.org/&#34;&gt;Web Components&lt;/a&gt;, back-porting &lt;em&gt;Components&lt;/em&gt; from Angular 2.&lt;/p&gt;&#xA;&lt;p&gt;Using &lt;em&gt;Components&lt;/em&gt; with Angular today not only means writing code much more easily upgradeable to future framework versions (especially using ES6), but it also allows you to modularize and reuse code more easily, in line with the modern frontend programming style that will be more and more modular.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

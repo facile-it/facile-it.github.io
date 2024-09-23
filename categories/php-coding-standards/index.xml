@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PHP Coding standards on Facile.it Engineering</title>
+    <title>PHP Coding Standards on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/php-coding-standards/</link>
-    <description>Recent content in PHP Coding standards on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in PHP Coding Standards on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 23 Mar 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/php-coding-standards/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/php-coding-standards/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PHP coding standard: PSR-7  HTTP message interfaces</title>
       <link>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</guid>
-      <description>Le specifiche PSR-7 descrivono una proposta di standardizzazione delle interfacce per i messaggi HTTP.
-Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, definisce una serie di regole di comunicazione che vengono implementate dalle applicazioni client e server che lo adottano.
-A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&amp;rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP.</description>
+      <description>&lt;p&gt;Le specifiche PSR-7 descrivono una &lt;a href=&#34;https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md&#34;&gt;proposta di standardizzazione&lt;/a&gt; delle &lt;strong&gt;interfacce per i messaggi HTTP&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, definisce una serie di regole di comunicazione che vengono implementate dalle applicazioni client e server che lo adottano.&lt;/p&gt;&#xA;&lt;p&gt;A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&amp;rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>pasqualino-desimone on Facile.it Engineering</title>
+    <title>Pasqualino-Desimone on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/pasqualino-desimone/</link>
-    <description>Recent content in pasqualino-desimone on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Pasqualino-Desimone on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/pasqualino-desimone/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/pasqualino-desimone/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NestJS graceful shutdown for RabbitMQ Microservices</title>
       <link>https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/</link>
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/</guid>
       <description>Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.</description>
     </item>
-    
   </channel>
 </rss>

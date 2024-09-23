@@ -4,25 +4,16 @@
     <title>Second Brain on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/second-brain/</link>
     <description>Recent content in Second Brain on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 18 Oct 2023 17:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/second-brain/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/second-brain/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Venerdì Protetto | October edition</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto13-10-2023/</link>
       <pubDate>Wed, 18 Oct 2023 17:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/v-protetto13-10-2023/</guid>
-      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on October 13, 2023.
-Topics:
- Machine learning by Marica Castaldo &amp;amp; Santolo Tubelli OpenTelemetry by Stefano Giurgiano Second Brain by Antonello Calamea (freelance)  The overview of Venerdì Protetto is available here.
-Machine learning Machine learning pipelines at Facile.it: real-rime use case for mortgages by Marica Castaldo &amp;amp; Santolo Tubelli
- In this talk, we presented a real-time machine learning use case within the mortgage industry.</description>
+      <description>&lt;p&gt;This page contains the abstracts of the talks held during the latest Venerdì Protetto on October 13, 2023.&lt;/p&gt;&#xA;&lt;p&gt;Topics:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#machine-learning&#34;&gt;Machine learning&lt;/a&gt; by &lt;a href=&#34;https://it.linkedin.com/in/marica-castaldo-2505b588&#34;&gt;Marica Castaldo&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://it.linkedin.com/in/santolo-tubelli&#34;&gt;Santolo Tubelli&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#open-telemetry&#34;&gt;OpenTelemetry&lt;/a&gt; by &lt;a href=&#34;https://www.linkedin.com/in/stefano-giurgiano-023545150/?originalSubdomain=it&#34;&gt;Stefano Giurgiano&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#second-brain&#34;&gt;Second Brain&lt;/a&gt; by &lt;a href=&#34;https://www.linkedin.com/in/antonello-calamea/&#34;&gt;Antonello Calamea&lt;/a&gt; (freelance)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The overview of Venerdì Protetto is available &lt;a href=&#34;https://engineering.facile.it/blog/eng/v-protetto/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,22 +4,16 @@
     <title>GitHub on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/github/</link>
     <description>Recent content in GitHub on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 26 Apr 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/github/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Blog restyling: switching to Hugo and GitHub Pages</title>
       <link>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</link>
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</guid>
-      <description>As you may have noticed, we went through a bit of a restyling in the last few days, and our blog changed a lot in terms of appearance and structure. We are very happy with those changes, but the reason behind this transition is not just a simple template change.
-What we were searching for Before, we were using an hosted CMS to run the blog, Ghost. We were happy with the results, it wasn&amp;rsquo;t our concern to administrate the server or bother about other hosting stuff.</description>
+      <description>&lt;p&gt;As you may have noticed, we went through a bit of a restyling in the last few days, and our blog changed a lot in terms of appearance and structure.&#xA;We are very happy with those changes, but the reason behind this transition is not just a simple template change.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-we-were-searching-for&#34;&gt;What we were searching for&lt;/h2&gt;&#xA;&lt;p&gt;Before, we were using an hosted CMS to run the blog, &lt;a href=&#34;https://ghost.org/&#34;&gt;Ghost&lt;/a&gt;. We were happy with the results, it wasn&amp;rsquo;t our concern to administrate the server or bother about other hosting stuff.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

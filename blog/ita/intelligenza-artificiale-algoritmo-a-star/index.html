@@ -8,12 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/engineering.facile.it"
+             "@id": "https:\/\/engineering.facile.it\/"
         },
         "articleSection" : "blog",
         "name" : "Intelligenza artificiale: algoritmo A*",
         "headline" : "Intelligenza artificiale: algoritmo A*",
-        "description" : "Introduzione A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell\x26rsquo;intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati.\nL\x26rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: gioco del 15, percorso minimo, Sudoku, cubo di Rubik, ecc.\nIn generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:\n La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti.",
+        "description" : "\u003ch1 id=\u0022introduzione\u0022\u003eIntroduzione\u003c\/h1\u003e\n\u003cp\u003eA* è un \u003ca href=\u0022https:\/\/it.wikipedia.org\/wiki\/Algoritmo_di_ricerca\u0022\u003ealgoritmo di ricerca\u003c\/a\u003e e ottimizzazione basato su grafi. Viene frequentemente impiegato nell\u0026rsquo;\u003ca href=\u0022https:\/\/it.wikipedia.org\/wiki\/Intelligenza_artificiale\u0022\u003eintelligenza artificiale\u003c\/a\u003e perché in grado di gestire grafi ampi e\nindeterminati.\u003c\/p\u003e\n\u003cp\u003eL\u0026rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: \u003ca href=\u0022https:\/\/it.wikipedia.org\/wiki\/Gioco_del_quindici\u0022\u003egioco del 15\u003c\/a\u003e, percorso minimo, \u003ca href=\u0022https:\/\/it.wikipedia.org\/wiki\/Sudoku\u0022\u003eSudoku\u003c\/a\u003e, \u003ca href=\u0022https:\/\/it.wikipedia.org\/wiki\/Cubo_di_Rubik\u0022\u003ecubo di Rubik\u003c\/a\u003e, ecc.\u003c\/p\u003e\n\u003cp\u003eIn generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eLa soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi;\u003c\/li\u003e\n\u003cli\u003eIl nodo iniziale e il nodo finale devono essere noti. Talvolta è sufficiente conoscere solo le regole che compongono la soluzione (vedi Sudoku);\u003c\/li\u003e\n\u003cli\u003eDeve essere noto un \u003cstrong\u003ealgoritmo euristico\u003c\/strong\u003e che \u003cstrong\u003estima\u003c\/strong\u003e il costo del percorso tra un nodo qualsiasi e la soluzione.\u003c\/li\u003e\n\u003cli\u003eDeve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario).\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch1 id=\u0022leuristica\u0022\u003eL\u0026rsquo;euristica\u003c\/h1\u003e\n\u003cp\u003eL\u0026rsquo;\u003ca href=\u0022https:\/\/it.wikipedia.org\/wiki\/Algoritmo_euristico\u0022\u003ealgoritmo euristico\u003c\/a\u003e ha il compito di stimare la distanza tra qualsiasi nodo e la soluzione.\nL\u0026rsquo;euristica influenza fortemente i risultati conseguiti da A*. Esso, in particolare, ne determina il tempo complessivo di esecuzione.\nUn algoritmo euristico molto efficace consente ad A* di trovare velocemente la soluzione.\nNel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ricerca molto simile a \u003ca href=\u0022https:\/\/it.wikipedia.org\/wiki\/Algoritmo_di_Dijkstra\u0022\u003eDijkstra\u003c\/a\u003e.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2015",
-        "datePublished": "2015-05-12 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2015-05-12 00:00:00 \x2b0000 UTC",
+        "datePublished": "2015-05-12 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2015-05-12 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/blog\/ita\/intelligenza-artificiale-algoritmo-a-star\/",
         "wordCount" : "868",
         "keywords" : [ "Blog" ]
@@ -37,17 +37,29 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.69.0" />
+        <meta name="generator" content="Hugo 0.134.2">
         
 
 
         
         
             
-                <meta name="description" content="Introduzione A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&rsquo;intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati.
+                <meta name="description" content="Introduzione
+A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&rsquo;intelligenza artificiale perché in grado di gestire grafi ampi e
+indeterminati.
 L&rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: gioco del 15, percorso minimo, Sudoku, cubo di Rubik, ecc.
 In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:
- La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti.">
+
+La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi;
+Il nodo iniziale e il nodo finale devono essere noti. Talvolta è sufficiente conoscere solo le regole che compongono la soluzione (vedi Sudoku);
+Deve essere noto un algoritmo euristico che stima il costo del percorso tra un nodo qualsiasi e la soluzione.
+Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario).
+
+L&rsquo;euristica
+L&rsquo;algoritmo euristico ha il compito di stimare la distanza tra qualsiasi nodo e la soluzione.
+L&rsquo;euristica influenza fortemente i risultati conseguiti da A*. Esso, in particolare, ne determina il tempo complessivo di esecuzione.
+Un algoritmo euristico molto efficace consente ad A* di trovare velocemente la soluzione.
+Nel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ricerca molto simile a Dijkstra.">
             
         
 
@@ -62,10 +74,22 @@ In generale, A* può risolvere efficacemente i problemi che soddisfano i requisi
 
 
 <meta name="og:title" content="Intelligenza artificiale: algoritmo A*"/>
-<meta name="og:description" content="Introduzione A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&rsquo;intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati.
+<meta name="og:description" content="Introduzione
+A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&rsquo;intelligenza artificiale perché in grado di gestire grafi ampi e
+indeterminati.
 L&rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: gioco del 15, percorso minimo, Sudoku, cubo di Rubik, ecc.
 In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:
- La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti."/>
+
+La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi;
+Il nodo iniziale e il nodo finale devono essere noti. Talvolta è sufficiente conoscere solo le regole che compongono la soluzione (vedi Sudoku);
+Deve essere noto un algoritmo euristico che stima il costo del percorso tra un nodo qualsiasi e la soluzione.
+Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario).
+
+L&rsquo;euristica
+L&rsquo;algoritmo euristico ha il compito di stimare la distanza tra qualsiasi nodo e la soluzione.
+L&rsquo;euristica influenza fortemente i risultati conseguiti da A*. Esso, in particolare, ne determina il tempo complessivo di esecuzione.
+Un algoritmo euristico molto efficace consente ad A* di trovare velocemente la soluzione.
+Nel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ricerca molto simile a Dijkstra."/>
 
 
     
@@ -78,15 +102,18 @@ In generale, A* può risolvere efficacemente i problemi che soddisfano i requisi
 
 
 
-        <meta property="og:title" content="Intelligenza artificiale: algoritmo A*" />
-<meta property="og:description" content="Introduzione A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&rsquo;intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati.
-L&rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: gioco del 15, percorso minimo, Sudoku, cubo di Rubik, ecc.
+        <meta property="og:url" content="https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/">
+  <meta property="og:site_name" content="Facile.it Engineering">
+  <meta property="og:title" content="Intelligenza artificiale: algoritmo A*">
+  <meta property="og:description" content="Introduzione A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell’intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati.
+L’algoritmo A* può essere utilizzato per risolvere problemi come: gioco del 15, percorso minimo, Sudoku, cubo di Rubik, ecc.
 In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:
- La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/" />
-<meta property="article:published_time" content="2015-05-12T00:00:00+00:00" />
-<meta property="article:modified_time" content="2015-05-12T00:00:00+00:00" />
+La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti. Talvolta è sufficiente conoscere solo le regole che compongono la soluzione (vedi Sudoku); Deve essere noto un algoritmo euristico che stima il costo del percorso tra un nodo qualsiasi e la soluzione. Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario). L’euristica L’algoritmo euristico ha il compito di stimare la distanza tra qualsiasi nodo e la soluzione. L’euristica influenza fortemente i risultati conseguiti da A*. Esso, in particolare, ne determina il tempo complessivo di esecuzione. Un algoritmo euristico molto efficace consente ad A* di trovare velocemente la soluzione. Nel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ricerca molto simile a Dijkstra.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2015-05-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2015-05-12T00:00:00+00:00">
 
 
         
@@ -95,19 +122,16 @@ In generale, A* può risolvere efficacemente i problemi che soddisfano i requisi
             
         
 
-        <meta itemprop="name" content="Intelligenza artificiale: algoritmo A*">
-<meta itemprop="description" content="Introduzione A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&rsquo;intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati.
-L&rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: gioco del 15, percorso minimo, Sudoku, cubo di Rubik, ecc.
-In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:
- La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti.">
-<meta itemprop="datePublished" content="2015-05-12T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-05-12T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="868">
-
-
-
-<meta itemprop="keywords" content="" />
         
+  <meta itemprop="name" content="Intelligenza artificiale: algoritmo A*">
+  <meta itemprop="description" content="Introduzione A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell’intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati.
+L’algoritmo A* può essere utilizzato per risolvere problemi come: gioco del 15, percorso minimo, Sudoku, cubo di Rubik, ecc.
+In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:
+La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti. Talvolta è sufficiente conoscere solo le regole che compongono la soluzione (vedi Sudoku); Deve essere noto un algoritmo euristico che stima il costo del percorso tra un nodo qualsiasi e la soluzione. Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario). L’euristica L’algoritmo euristico ha il compito di stimare la distanza tra qualsiasi nodo e la soluzione. L’euristica influenza fortemente i risultati conseguiti da A*. Esso, in particolare, ne determina il tempo complessivo di esecuzione. Un algoritmo euristico molto efficace consente ad A* di trovare velocemente la soluzione. Nel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ricerca molto simile a Dijkstra.">
+  <meta itemprop="datePublished" content="2015-05-12T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2015-05-12T00:00:00+00:00">
+  <meta itemprop="wordCount" content="868">
+  <meta itemprop="keywords" content="Sergio,Italiano,Python,Algorithms,Artificial Intelligence">
 
         
             
@@ -135,19 +159,6 @@ In generale, A* può risolvere efficacemente i problemi che soddisfano i requisi
 
 
       
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-22342495-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
     </head>
     <body>
 
@@ -201,7 +212,7 @@ if (!doNotTrack) {
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
                 </form>
             </li>
             <li class="menu">
@@ -218,7 +229,7 @@ if (!doNotTrack) {
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
             </form>
         </section>
 
@@ -276,35 +287,35 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-08-28'>
-                                    August 28, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-07-02'>
-                                    July 2, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-05-20'>
+                                    May 20, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-03-11'>
+                                    March 11, 2024</time>
                             </header>
                             
 
@@ -470,7 +481,7 @@ L&rsquo;euristica influenza fortemente i risultati conseguiti da A*. Esso, in pa
 Un algoritmo euristico molto efficace consente ad A* di trovare velocemente la soluzione.
 Nel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ricerca molto simile a <a href="https://it.wikipedia.org/wiki/Algoritmo_di_Dijkstra">Dijkstra</a>.</p>
 <p>L&rsquo;euristica determina anche la qualità della soluzione finale.
-Con un'<a href="http://www.okpedia.it/euristica_ammissibile">euristica ammissibile</a> A* è in grado di identificare la soluzione ottima (e.g. percorso con il minor costo possibile).
+Con un&rsquo;<a href="http://www.okpedia.it/euristica_ammissibile">euristica ammissibile</a> A* è in grado di identificare la soluzione ottima (e.g. percorso con il minor costo possibile).
 Un&rsquo;euristica è ammissibile quando l&rsquo;errore di stima non è mai in eccesso. Un esempio è la distanza in linea d&rsquo;aria tra due punti su una mappa.
 In termini matematici una funzione euristica h è ammissibile se:</p>
 <p align="center">
@@ -485,8 +496,8 @@ In termini matematici una funzione euristica h è ammissibile se:</p>
 <p>Una funzione euristica monotona semplifica ulteriormente la struttura di A* in quanto la lista dei nodi già visitati diviene superflua. In questi casi, la sola coda a priorità è sufficiente.
 Una funzione euristica monotona è sempre ammissibile.</p>
 <h1 id="struttura-dellalgoritmo">Struttura dell&rsquo;algoritmo</h1>
-<p>A* rientra nella categoria degli algoritmi di **<a href="https://it.wikipedia.org/wiki/Best-first_search">ricerca best-first</a>**. Esso infatti esamina, passo dopo passo, i nodi che hanno il punteggio migliore.
-Esso tuttavia non è *<a href="https://it.wikipedia.org/wiki/Algoritmo_greedy">greedy</a>* in quanto il punteggio non è determinato esclusivamente dall&rsquo;euristica.</p>
+<p>A* rientra nella categoria degli algoritmi di <strong><a href="https://it.wikipedia.org/wiki/Best-first_search">ricerca best-first</a></strong>. Esso infatti esamina, passo dopo passo, i nodi che hanno il punteggio migliore.
+Esso tuttavia non è <em><a href="https://it.wikipedia.org/wiki/Algoritmo_greedy">greedy</a></em> in quanto il punteggio non è determinato esclusivamente dall&rsquo;euristica.</p>
 <p>A* usa le seguenti strutture dati per mantenere traccia dello stato d&rsquo;esecuzione:</p>
 <ul>
 <li>Una lista di nodi già visitati;</li>
@@ -518,7 +529,7 @@ La funzione h corrisponde alla definizione dell&rsquo;algoritmo euristico enunci
 <li>Tornare al punto 2.</li>
 </ol>
 <p>In pseudo-codice:</p>
-<pre><code>begin function aStar(startNode)
+<pre tabindex="0"><code>begin function aStar(startNode)
     queue := buildPriorityQueue()
     visited := buildList()
     queue.add(startNode)
@@ -536,7 +547,7 @@ La funzione h corrisponde alla definizione dell&rsquo;algoritmo euristico enunci
         end for
         queue.add(&lt;every elem in toInsert&gt;)
     end while
-    return 'No solution found'
+    return &#39;No solution found&#39;
 end function
 </code></pre><h1 id="esempio-dimplementazione">Esempio d&rsquo;implementazione</h1>
 <p>Si analizza un&rsquo;implementazione dell&rsquo;algoritmo A* che consente di risolvere il problema del <a href="https://it.wikipedia.org/wiki/Gioco_del_quindici">gioco del 15</a>.</p>
@@ -559,7 +570,7 @@ end function
 <p>L&rsquo;algoritmo mostra in output la lista dei movimenti che la casella vuota deve compiere per risolvere il problema.</p>
 <h1 id="conclusioni">Conclusioni</h1>
 <p>A* è un algoritmo semplice ma dalle grandi potenzialità. Esso getta le basi per ulteriori metodologie di ricerca più complesse come <a href="https://en.wikipedia.org/wiki/Iterative_deepening_A*">IDA*</a> e <a href="https://en.wikipedia.org/wiki/D*">D*</a>.
-La sua principale limitazione è nell&rsquo;assenza di *vincoli sulla profondità di ricerca*.
+La sua principale limitazione è nell&rsquo;assenza di <em>vincoli sulla profondità di ricerca</em>.
 Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di dama e scacchi.</p>
 
   </div>
@@ -601,29 +612,6 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
   </footer>
 
 </article>
-
-    <article class="post">
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
 
 
 <ul class="actions pagination">
@@ -780,54 +768,6 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-08-28'>
-                28 August 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
-                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-07-02'>
-                2 July 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
                     <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
                       <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
@@ -847,6 +787,60 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
               
               <time class="published" datetime='2024-05-30'>
                 30 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-05-20'>
+                20 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+                  
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-03-11'>
+                11 March 2024
               </time>
             </header>
             
@@ -1000,7 +994,7 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional Programming</a>
                 <span style="float:right;">11</span>
               
             </header>
@@ -1111,7 +1105,7 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/open-source/">Open source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">7</span>
               
             </header>
@@ -1148,7 +1142,7 @@ Ciò non consente l&rsquo;analisi di problemi troppo complessi come i giochi di 
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">16</span>
+                <span style="float:right;">14</span>
               
             </header>
           </article>

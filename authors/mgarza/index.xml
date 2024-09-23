@@ -1,36 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>mgarza on Facile.it Engineering</title>
+    <title>Mgarza on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/mgarza/</link>
-    <description>Recent content in mgarza on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Mgarza on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 30 May 2024 17:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/mgarza/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/mgarza/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hack the Box Experience</title>
       <link>https://engineering.facile.it/blog/eng/hack-the-box-experience/</link>
       <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/hack-the-box-experience/</guid>
-      <description>After the successful experience of having a code challenge in March 2024, we decided to go further in delivering experiences to our colleagues.
-Scouting around, I turned to Alessio Giorgianni, a developer with a passion for white hat hacking competition. We agree to try an experience using a platform called Hack the Box. Hack the Box Academy offers lots of information and training about IT Security and, in our case, some exercises we can use for hacking dummy applications, with a whitebox example (i.</description>
+      <description>&lt;p&gt;After the successful experience of &lt;a href=&#34;https://engineering.facile.it/blog/eng/v-protetto8-3-2024/&#34; title=&#34;Previously, on Venerdì Protetto... a code challenge!&#34;&gt;having a code challenge in March 2024&lt;/a&gt;, we decided to go further in delivering experiences to our colleagues.&lt;/p&gt;&#xA;&lt;p&gt;Scouting around, I turned to Alessio Giorgianni, a developer with a passion for white hat hacking competition. We agree to try an experience using a platform called &lt;a href=&#34;https://academy.hackthebox.com/&#34;&gt;Hack the Box&lt;/a&gt;. Hack the Box Academy offers lots of information and training about IT Security and, in our case, some exercises we can use for hacking dummy applications, with a whitebox example (i.e., an example where all the code is undisclosed to us. &lt;a href=&#34;https://www.eccouncil.org/cybersecurity-exchange/penetration-testing/black-box-gray-box-and-white-box-penetration-testing-importance-and-uses/#:~:text=Objectives%3A%20Black%2Dbox%20testers%20seek,somewhere%20between%20these%20two%20extremes&#34;&gt;There are also different kind of pentest&lt;/a&gt;). We agreed upon using a non-trivial quest, called &lt;a href=&#34;https://www.hackthebox.com/achievement/challenge/48545/638&#34;&gt;Jerrytok&lt;/a&gt;. Jerrytok is a WAPT (Web App Penetration Testing) whitebox challenge. We got a simple web-application, written in PHP, which disclose the harm of using template engines in a not-proper way. It&amp;rsquo;s a good introduction to SSTI, &lt;a href=&#34;https://portswigger.net/web-security/server-side-template-injection&#34;&gt;Server Side Template Injection&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Venerdì Protetto | March edition</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto8-3-2024/</link>
       <pubDate>Mon, 11 Mar 2024 17:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/v-protetto8-3-2024/</guid>
-      <description>During the latest Venerdì Protetto (held on March 8, 2024), we had to change slightly the schedule we&amp;rsquo;d planned. We had to face a new schedule with very strict time constraints. So we decided to&amp;hellip; do something new, and try a Code Challenge!
-But how did we do it?
-We searched for something already done on the internet, and most suitable for our needs. So we tried the most obvious solution and went for&amp;hellip; Advent of Code!</description>
+      <description>&lt;p&gt;During the latest Venerdì Protetto (held on March 8, 2024), we had to change slightly the schedule we&amp;rsquo;d planned.&#xA;We had to face a new schedule with very strict time constraints. So we decided to&amp;hellip; &lt;em&gt;do something new&lt;/em&gt;, and try a Code Challenge!&lt;/p&gt;&#xA;&lt;p&gt;But how did we do it?&lt;/p&gt;&#xA;&lt;p&gt;We searched for something already done on the internet, and most suitable for our needs. So we tried the most obvious solution and went for&amp;hellip; Advent of Code!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

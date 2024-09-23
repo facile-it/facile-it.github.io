@@ -1,78 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sergio on Facile.it Engineering</title>
+    <title>Sergio on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/sergio/</link>
-    <description>Recent content in sergio on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Sergio on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 31 May 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/sergio/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/sergio/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Facile.it devs @ PhpDay 2016</title>
       <link>https://engineering.facile.it/blog/eng/php-day-2016/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/php-day-2016/</guid>
-      <description>Almost like a nice tradition, we went to the PHP Day conference this year as well; this time too it was held in Verona, on May 13th and 14th.
-We participated and attended numerous talks and, as last year, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.</description>
+      <description>&lt;p&gt;Almost like a nice tradition, we went to the &lt;strong&gt;&lt;a href=&#34;http://2016.phpday.it/&#34;&gt;PHP Day conference&lt;/a&gt;&lt;/strong&gt; this year as well; this time too it was held in Verona, on &lt;strong&gt;May 13th and 14th&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Faster Web with HTTP/2</title>
       <link>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</link>
       <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</guid>
-      <description>HTTP is the protocol that powers the Web. It was originally designed in 1996 for transferring and manipulating simple text-based documents (mainly hypertext resources). Nowadays it&amp;rsquo;s been adopted for many different purposes. It&amp;rsquo;s used for: multimedia content transfer, rich real-time session-based web applications, API messages dispatch, Internet of Things and much more. For this reason, the HTTP specifications are continuously updated, by adding new features and improving performance.
-In May 2015, the latest version 2.</description>
+      <description>&lt;p&gt;HTTP is the protocol that powers the Web. It was originally designed in 1996 for transferring and manipulating simple text-based documents (mainly hypertext resources).&#xA;Nowadays it&amp;rsquo;s been adopted for many different purposes. It&amp;rsquo;s used for: multimedia content transfer, rich real-time session-based web applications, API messages dispatch, Internet of Things and much more.&#xA;For this reason, the HTTP specifications are continuously updated, by adding new features and improving performance.&lt;/p&gt;&#xA;&lt;p&gt;In May 2015, the latest version 2.0 was standardized with &lt;em&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc7540&#34;&gt;RFC 7540&lt;/a&gt;&lt;/em&gt;.&#xA;This introduced major differences on how the low-level protocol works.&#xA;From the application perspective, very little has changed: requests, responses, resources, headers and HTTP methods are still there.&#xA;New features have been added such as the possibility to &lt;strong&gt;push resources to the client&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Puli: Universal Packages for PHP</title>
       <link>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</link>
       <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</guid>
-      <description>Composer e l&amp;rsquo;ecosistema PHP L&amp;rsquo;ecosistema PHP è notevolmente cambiato negli ultimi anni grazie all&amp;rsquo;introduzione di Composer. Esso ha definito degli standard per risolvere problemi comuni come l&amp;rsquo;autoloading e la gestione di pacchetti e dipendenze. In questi ultimi anni si è assistito ad un proliferare di numerose componenti software riusabili che hanno significativamente modificato le strategie di sviluppo.
-Nonostante Composer si sia evoluto molto, in alcuni contesti le sue funzionalità risultano essere limitanti e incomplete.</description>
+      <description>&lt;h2 id=&#34;composer-e-lecosistema-php&#34;&gt;Composer e l&amp;rsquo;ecosistema PHP&lt;/h2&gt;&#xA;&lt;p&gt;L&amp;rsquo;ecosistema PHP è notevolmente cambiato negli ultimi anni grazie all&amp;rsquo;introduzione di &lt;em&gt;Composer&lt;/em&gt;.&#xA;Esso ha definito degli standard per risolvere problemi comuni come l&amp;rsquo;autoloading e la gestione di pacchetti e dipendenze.&#xA;In questi ultimi anni si è assistito ad un proliferare di numerose componenti software riusabili che hanno significativamente modificato le strategie di sviluppo.&lt;/p&gt;&#xA;&lt;p&gt;Nonostante Composer si sia evoluto molto, in alcuni contesti le sue funzionalità risultano essere limitanti e incomplete.&#xA;I framework e i pacchetti più complessi hanno bisogno di una gestione personalizzata delle dipendenze. Generalmente sono necessarie operazioni di configurazione e registrazione. Ciò è specialmente vero per pacchetti core dei framework come i &lt;em&gt;template engines&lt;/em&gt;.&#xA;Composer, inoltre, possiede una cattiva gestione delle risorse non PHP. I file di configurazione devono essere gestiti manualmente oppure è necessario adottare standard strettamente legati a ciascun framework.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Php Summer Camp 2015</title>
       <link>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</link>
       <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</guid>
-      <description>Introduzione Dal 26 al 29 agosto 2015 ho avuto l&amp;rsquo;occasione di partecipare al PhpSummerCamp in Rovigno (Croazia). Negli stessi giorni e nello stesso luogo si è svolto anche il SummerCamp EzPublish. Ciò ha consentito di accrescere ulteriormente la platea di partecipanti con cui è stato possibile condividere idee e soluzioni.
-L&amp;rsquo;evento è costituito da numerosi workshop orientati allo sviluppo di applicazioni con il framework PHP Symfony. Le mattine e le prime metà del pomeriggio erano interamente dedicati ai workshop.</description>
+      <description>&lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;&#xA;&lt;p&gt;Dal 26 al 29 agosto 2015 ho avuto l&amp;rsquo;occasione di partecipare al &lt;a href=&#34;http://2015.phpsummercamp.com/&#34;&gt;&lt;strong&gt;PhpSummerCamp&lt;/strong&gt;&lt;/a&gt; in Rovigno (Croazia).&#xA;Negli stessi giorni e nello stesso luogo si è svolto anche il &lt;a href=&#34;http://2015.ezsummercamp.com/&#34;&gt;&lt;strong&gt;SummerCamp EzPublish&lt;/strong&gt;&lt;/a&gt;.&#xA;Ciò ha consentito di accrescere ulteriormente la platea di partecipanti con cui è stato possibile condividere idee e soluzioni.&lt;/p&gt;&#xA;&lt;p&gt;L&amp;rsquo;evento è costituito da numerosi &lt;strong&gt;workshop&lt;/strong&gt; orientati allo sviluppo di applicazioni con il &lt;a href=&#34;http://symfony.com&#34;&gt;framework PHP Symfony&lt;/a&gt;.&#xA;Le mattine e le prime metà del pomeriggio erano interamente dedicati ai workshop.&#xA;Nel tempo rimanente venivano condotte varie attività dedicate alla community e al confronto tra i partecipanti.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Intelligenza artificiale: algoritmo A*</title>
       <link>https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</link>
       <pubDate>Tue, 12 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</guid>
-      <description>Introduzione A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&amp;rsquo;intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati.
-L&amp;rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: gioco del 15, percorso minimo, Sudoku, cubo di Rubik, ecc.
-In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:
- La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti.</description>
+      <description>&lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;&#xA;&lt;p&gt;A* è un &lt;a href=&#34;https://it.wikipedia.org/wiki/Algoritmo_di_ricerca&#34;&gt;algoritmo di ricerca&lt;/a&gt; e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&amp;rsquo;&lt;a href=&#34;https://it.wikipedia.org/wiki/Intelligenza_artificiale&#34;&gt;intelligenza artificiale&lt;/a&gt; perché in grado di gestire grafi ampi e&#xA;indeterminati.&lt;/p&gt;&#xA;&lt;p&gt;L&amp;rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: &lt;a href=&#34;https://it.wikipedia.org/wiki/Gioco_del_quindici&#34;&gt;gioco del 15&lt;/a&gt;, percorso minimo, &lt;a href=&#34;https://it.wikipedia.org/wiki/Sudoku&#34;&gt;Sudoku&lt;/a&gt;, &lt;a href=&#34;https://it.wikipedia.org/wiki/Cubo_di_Rubik&#34;&gt;cubo di Rubik&lt;/a&gt;, ecc.&lt;/p&gt;&#xA;&lt;p&gt;In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi;&lt;/li&gt;&#xA;&lt;li&gt;Il nodo iniziale e il nodo finale devono essere noti. Talvolta è sufficiente conoscere solo le regole che compongono la soluzione (vedi Sudoku);&lt;/li&gt;&#xA;&lt;li&gt;Deve essere noto un &lt;strong&gt;algoritmo euristico&lt;/strong&gt; che &lt;strong&gt;stima&lt;/strong&gt; il costo del percorso tra un nodo qualsiasi e la soluzione.&lt;/li&gt;&#xA;&lt;li&gt;Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;leuristica&#34;&gt;L&amp;rsquo;euristica&lt;/h1&gt;&#xA;&lt;p&gt;L&amp;rsquo;&lt;a href=&#34;https://it.wikipedia.org/wiki/Algoritmo_euristico&#34;&gt;algoritmo euristico&lt;/a&gt; ha il compito di stimare la distanza tra qualsiasi nodo e la soluzione.&#xA;L&amp;rsquo;euristica influenza fortemente i risultati conseguiti da A*. Esso, in particolare, ne determina il tempo complessivo di esecuzione.&#xA;Un algoritmo euristico molto efficace consente ad A* di trovare velocemente la soluzione.&#xA;Nel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ricerca molto simile a &lt;a href=&#34;https://it.wikipedia.org/wiki/Algoritmo_di_Dijkstra&#34;&gt;Dijkstra&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Software testing: Coverage vs Efficacia</title>
       <link>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
-      <description>Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.
-Numerosi sono i fattori che hanno reso il code coverage popolare:
- è una metrica facile da comprendere; si misura senza difficoltà; è oggettiva e imparziale; è universale (applicabile a tutti i paradigmi di programmazione).  Ma al di là di questi vantaggi, possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?</description>
+      <description>&lt;p&gt;Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.&lt;/p&gt;&#xA;&lt;p&gt;Numerosi sono i fattori che hanno reso il code coverage popolare:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;è una metrica facile da comprendere;&lt;/li&gt;&#xA;&lt;li&gt;si misura senza difficoltà;&lt;/li&gt;&#xA;&lt;li&gt;è oggettiva e imparziale;&lt;/li&gt;&#xA;&lt;li&gt;è universale (applicabile a tutti i paradigmi di programmazione).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ma al di là di questi vantaggi, &lt;em&gt;&lt;strong&gt;possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;quando-un-test-è-efficace&#34;&gt;Quando un test è efficace?&lt;/h3&gt;&#xA;&lt;p&gt;Una test suite è considerata efficace se consente di rilevare una grande quantità di failure; d&amp;rsquo;altronde, ciò è proprio la finalità ultima del software testing.&#xA;La massima efficacia è realizzabile solo applicando testing esaustivo ma, siccome ciò è spesso impraticabile, ci si accontenta di test più semplici con un&amp;rsquo;efficacia inferiore.&#xA;È importante notare che, a differenza del coverage, il livello d&amp;rsquo;efficacia viene stabilito soggettivamente dallo sviluppatore.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

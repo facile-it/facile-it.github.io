@@ -8,12 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/engineering.facile.it"
+             "@id": "https:\/\/engineering.facile.it\/"
         },
         "articleSection" : "blog",
         "name" : "Using Kotlin type-safe builders to create a DSL for Forms",
         "headline" : "Using Kotlin type-safe builders to create a DSL for Forms",
-        "description" : "Here at Facile.it we are constantly dealing with a lot of forms: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be really complex, having multiple rules and dependencies between fields, and they are likely to be changed and tuned frequently.\nWhen I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field.",
+        "description" : "\u003cp\u003eHere at Facile.it we are constantly dealing with a lot of \u003cstrong\u003eforms\u003c\/strong\u003e: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be \u003cstrong\u003ereally complex\u003c\/strong\u003e, having multiple rules and dependencies between fields, and they are likely to be \u003cstrong\u003echanged and tuned frequently\u003c\/strong\u003e.\u003c\/p\u003e\n\u003cp\u003eWhen I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do \u003cstrong\u003ea lot of work\u003c\/strong\u003e just to add or remove a simple field. So I took a step back and I started thinking about a strategy that would have allowed me to define and structure a form in a more \u003cem\u003eflexible\u003c\/em\u003e and \u003cem\u003edeclarative\u003c\/em\u003e way. I wanted to be able to declare the \u003cstrong\u003erelationships\u003c\/strong\u003e between fields, their \u003cstrong\u003evalidation rules\u003c\/strong\u003e and their \u003cstrong\u003eserialized representation\u003c\/strong\u003e (how they are sent to the server).\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2017",
-        "datePublished": "2017-02-08 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2017-02-08 00:00:00 \x2b0000 UTC",
+        "datePublished": "2017-02-08 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2017-02-08 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/blog\/eng\/kotlin-dsl\/",
         "wordCount" : "1321",
         "keywords" : [ "Blog" ]
@@ -37,7 +37,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.69.0" />
+        <meta name="generator" content="Hugo 0.134.2">
         
 
 
@@ -45,7 +45,7 @@
         
             
                 <meta name="description" content="Here at Facile.it we are constantly dealing with a lot of forms: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be really complex, having multiple rules and dependencies between fields, and they are likely to be changed and tuned frequently.
-When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field.">
+When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field. So I took a step back and I started thinking about a strategy that would have allowed me to define and structure a form in a more flexible and declarative way. I wanted to be able to declare the relationships between fields, their validation rules and their serialized representation (how they are sent to the server).">
             
         
 
@@ -59,7 +59,7 @@ When I joined Facile.it, a lot of forms within the Android app needed to be upda
 
 <meta name="og:title" content="Using Kotlin type-safe builders to create a DSL for Forms"/>
 <meta name="og:description" content="Here at Facile.it we are constantly dealing with a lot of forms: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be really complex, having multiple rules and dependencies between fields, and they are likely to be changed and tuned frequently.
-When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field."/>
+When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field. So I took a step back and I started thinking about a strategy that would have allowed me to define and structure a form in a more flexible and declarative way. I wanted to be able to declare the relationships between fields, their validation rules and their serialized representation (how they are sent to the server)."/>
 
 
     
@@ -72,30 +72,30 @@ When I joined Facile.it, a lot of forms within the Android app needed to be upda
 
 
 
-        <meta property="og:title" content="Using Kotlin type-safe builders to create a DSL for Forms" />
-<meta property="og:description" content="Here at Facile.it we are constantly dealing with a lot of forms: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be really complex, having multiple rules and dependencies between fields, and they are likely to be changed and tuned frequently.
-When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.facile.it/blog/eng/kotlin-dsl/" />
-<meta property="article:published_time" content="2017-02-08T00:00:00+00:00" />
-<meta property="article:modified_time" content="2017-02-08T00:00:00+00:00" />
+        <meta property="og:url" content="https://engineering.facile.it/blog/eng/kotlin-dsl/">
+  <meta property="og:site_name" content="Facile.it Engineering">
+  <meta property="og:title" content="Using Kotlin type-safe builders to create a DSL for Forms">
+  <meta property="og:description" content="Here at Facile.it we are constantly dealing with a lot of forms: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be really complex, having multiple rules and dependencies between fields, and they are likely to be changed and tuned frequently.
+When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field. So I took a step back and I started thinking about a strategy that would have allowed me to define and structure a form in a more flexible and declarative way. I wanted to be able to declare the relationships between fields, their validation rules and their serialized representation (how they are sent to the server).">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2017-02-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2017-02-08T00:00:00+00:00">
 
 
         
             <meta property="og:image" content="https://engineering.facile.it/images/kotlin-intro/logo_Kotlin.png">
         
 
-        <meta itemprop="name" content="Using Kotlin type-safe builders to create a DSL for Forms">
-<meta itemprop="description" content="Here at Facile.it we are constantly dealing with a lot of forms: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be really complex, having multiple rules and dependencies between fields, and they are likely to be changed and tuned frequently.
-When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field.">
-<meta itemprop="datePublished" content="2017-02-08T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-02-08T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1321">
-
-
-
-<meta itemprop="keywords" content="" />
         
+  <meta itemprop="name" content="Using Kotlin type-safe builders to create a DSL for Forms">
+  <meta itemprop="description" content="Here at Facile.it we are constantly dealing with a lot of forms: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be really complex, having multiple rules and dependencies between fields, and they are likely to be changed and tuned frequently.
+When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field. So I took a step back and I started thinking about a strategy that would have allowed me to define and structure a form in a more flexible and declarative way. I wanted to be able to declare the relationships between fields, their validation rules and their serialized representation (how they are sent to the server).">
+  <meta itemprop="datePublished" content="2017-02-08T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2017-02-08T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1321">
+  <meta itemprop="keywords" content="Giacomo,English,Java,Kotlin,JVM,Android,DSL">
 
         
             
@@ -123,19 +123,6 @@ When I joined Facile.it, a lot of forms within the Android app needed to be upda
 
 
       
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-22342495-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
     </head>
     <body>
 
@@ -189,7 +176,7 @@ if (!doNotTrack) {
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
                 </form>
             </li>
             <li class="menu">
@@ -206,7 +193,7 @@ if (!doNotTrack) {
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
             </form>
         </section>
 
@@ -264,35 +251,35 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-08-28'>
-                                    August 28, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-07-02'>
-                                    July 2, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-05-20'>
+                                    May 20, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-03-11'>
+                                    March 11, 2024</time>
                             </header>
                             
 
@@ -447,68 +434,68 @@ if (!doNotTrack) {
 <p>I still wanted to be able to have both a <strong>human readable representation</strong> of the form and the right degree of <strong>flexibility</strong> to integrate the form definition into the app code.
 So I thought that creating a <a href="https://en.wikipedia.org/wiki/Domain-specific_language">Domain-Specific Language</a> would have been a perfect strategy to solve the problem in an elegant and efficient way.
 Writing a DSL in Java could have ended up into something like that:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Form<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">()</span>
-    <span style="color:#f92672">.</span><span style="color:#a6e22e">openSection</span><span style="color:#f92672">(</span>sectionId<span style="color:#f92672">)</span>
-    <span style="color:#f92672">.</span><span style="color:#a6e22e">field</span><span style="color:#f92672">(</span>key1<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;label1&#34;</span><span style="color:#f92672">,</span> style<span style="color:#f92672">,</span> <span style="color:#f92672">...)</span> 
-    <span style="color:#f92672">.</span><span style="color:#a6e22e">field</span><span style="color:#f92672">(</span>key2<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;label2&#34;</span><span style="color:#f92672">,</span> style<span style="color:#f92672">,</span> <span style="color:#f92672">...)</span> 
-    <span style="color:#f92672">.</span><span style="color:#a6e22e">field</span><span style="color:#f92672">(</span>key3<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;label3&#34;</span><span style="color:#f92672">,</span> style<span style="color:#f92672">,</span> <span style="color:#f92672">...)</span> 
-    <span style="color:#f92672">.</span><span style="color:#a6e22e">closeSection</span><span style="color:#f92672">()</span>
-    <span style="color:#f92672">...</span>
-    <span style="color:#f92672">.</span><span style="color:#a6e22e">build</span><span style="color:#f92672">()</span>
-</code></pre></div><p>I don&rsquo;t think the previous code is readable nor flexible and it requires a lot of boilerplate to be written.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>Form.<span style="color:#a6e22e">create</span>()
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">openSection</span>(sectionId)
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">field</span>(key1, <span style="color:#e6db74">&#34;label1&#34;</span>, style, ...) 
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">field</span>(key2, <span style="color:#e6db74">&#34;label2&#34;</span>, style, ...) 
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">field</span>(key3, <span style="color:#e6db74">&#34;label3&#34;</span>, style, ...) 
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">closeSection</span>()
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>    .<span style="color:#a6e22e">build</span>()
+</span></span></code></pre></div><p>I don&rsquo;t think the previous code is readable nor flexible and it requires a lot of boilerplate to be written.</p>
 <h2 id="kotlin-to-the-rescue">Kotlin to the rescue!</h2>
 <p>Unlike Java, Kotlin (take a look at my <a href="https://engineering.facile.it/blog/eng/kotlin-intro/">previous post</a> about it) has a lot of features that makes it really powerful when it comes to write internal DSLs. The results are very similar to Groovy (think about a Gradle file) but thanks to its type system they could be <a href="https://kotlinlang.org/docs/reference/type-safe-builders.html#type-safe-builders">Type-Safe</a>.</p>
 <p>The builders you can write with Kotlin are extremely readable and easy to understand even for people that don&rsquo;t know either the language or the DSL itself. Here&rsquo;s how a form built using my final DSL looks like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> FORM = form {
-    page(<span style="color:#e6db74">&#34;Page 1 Title&#34;</span>) {
-        section(<span style="color:#e6db74">&#34;Section 1 Title&#34;</span>) {
-            field(key = <span style="color:#e6db74">&#34;fieldKey1&#34;</span>) {
-                checkbox(<span style="color:#e6db74">&#34;Checkbox Field Label&#34;</span>) {
-                    boolToStringConverter = { <span style="color:#66d9ef">if</span> (it == <span style="color:#66d9ef">true</span>) <span style="color:#e6db74">&#34;Yes&#34;</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;No&#34;</span> }
-                    rules = { listOf(NotMissing()) }
-                }
-            }
-            field(key = <span style="color:#e6db74">&#34;fieldKey2&#34;</span>) {
-                picker(<span style="color:#e6db74">&#34;Picker Field Label&#34;</span>) {
-                    placeHolder = <span style="color:#e6db74">&#34;Select a value&#34;</span>
-                    possibleValues = Available(listOf(
-                            <span style="color:#ae81ff">1</span> keyTo <span style="color:#e6db74">&#34;Value1&#34;</span>,
-                            <span style="color:#ae81ff">2</span> keyTo <span style="color:#e6db74">&#34;Value2&#34;</span>,
-                            <span style="color:#ae81ff">3</span> keyTo <span style="color:#e6db74">&#34;Value3&#34;</span>))
-                    representation = IF_VISIBLE representAs SIMPLE_KEY_TO_VALUE
-                }
-            }
-        }
-        section(<span style="color:#e6db74">&#34;Section 2 Title&#34;</span>) {
-            field(key = <span style="color:#e6db74">&#34;fieldKey3&#34;</span>) {
-                picker(<span style="color:#e6db74">&#34;Picker Field Label&#34;</span>) {
-                    placeHolder = <span style="color:#e6db74">&#34;Select a value&#34;</span>
-                    possibleValues = ToBeRetrieved(someWebService.getValues())
-                    representation = IF_VISIBLE representAs SIMPLE_KEY_TO_VALUE
-                }
-            }
-            field(key = <span style="color:#e6db74">&#34;fieldKey4&#34;</span>) {
-                input(<span style="color:#e6db74">&#34;Input Text Field Label&#34;</span>) {
-                    inputTextType = InputTextType.EMAIL
-                    rules = { listOf(IsEmail()) }
-                }
-            }
-            field(key = <span style="color:#e6db74">&#34;fieldKey&#34;</span>) {
-				        empty(<span style="color:#e6db74">&#34;Empty Field&#34;</span>)
-            }
-        }
-		    section(<span style="color:#e6db74">&#34;Section 3 Title&#34;</span>) {
-            field(key = <span style="color:#e6db74">&#34;fieldKey6&#34;</span>) {
-                toggle(<span style="color:#e6db74">&#34;Toggle Field Label&#34;</span>) {
-                    boolToStringConverter = { <span style="color:#66d9ef">if</span> (it == <span style="color:#66d9ef">true</span>) <span style="color:#e6db74">&#34;OK&#34;</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;KO&#34;</span> }
-                    rules = { listOf(NotMissing()) }
-                    representation = ALWAYS representAs SIMPLE_KEY_TO_VALUE
-                }
-            }
-        }
-    }
-}
-</code></pre></div><p>And this is the result on Android using my <a href="https://github.com/brescia123/forms">Form library</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> FORM = form {
+</span></span><span style="display:flex;"><span>    page(<span style="color:#e6db74">&#34;Page 1 Title&#34;</span>) {
+</span></span><span style="display:flex;"><span>        section(<span style="color:#e6db74">&#34;Section 1 Title&#34;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">field</span>(key = <span style="color:#e6db74">&#34;fieldKey1&#34;</span>) {
+</span></span><span style="display:flex;"><span>                checkbox(<span style="color:#e6db74">&#34;Checkbox Field Label&#34;</span>) {
+</span></span><span style="display:flex;"><span>                    boolToStringConverter = { <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">it</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>) <span style="color:#e6db74">&#34;Yes&#34;</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;No&#34;</span> }
+</span></span><span style="display:flex;"><span>                    rules = { listOf(NotMissing()) }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">field</span>(key = <span style="color:#e6db74">&#34;fieldKey2&#34;</span>) {
+</span></span><span style="display:flex;"><span>                picker(<span style="color:#e6db74">&#34;Picker Field Label&#34;</span>) {
+</span></span><span style="display:flex;"><span>                    placeHolder = <span style="color:#e6db74">&#34;Select a value&#34;</span>
+</span></span><span style="display:flex;"><span>                    possibleValues = Available(listOf(
+</span></span><span style="display:flex;"><span>                            <span style="color:#ae81ff">1</span> keyTo <span style="color:#e6db74">&#34;Value1&#34;</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#ae81ff">2</span> keyTo <span style="color:#e6db74">&#34;Value2&#34;</span>,
+</span></span><span style="display:flex;"><span>                            <span style="color:#ae81ff">3</span> keyTo <span style="color:#e6db74">&#34;Value3&#34;</span>))
+</span></span><span style="display:flex;"><span>                    representation = IF_VISIBLE representAs SIMPLE_KEY_TO_VALUE
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        section(<span style="color:#e6db74">&#34;Section 2 Title&#34;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">field</span>(key = <span style="color:#e6db74">&#34;fieldKey3&#34;</span>) {
+</span></span><span style="display:flex;"><span>                picker(<span style="color:#e6db74">&#34;Picker Field Label&#34;</span>) {
+</span></span><span style="display:flex;"><span>                    placeHolder = <span style="color:#e6db74">&#34;Select a value&#34;</span>
+</span></span><span style="display:flex;"><span>                    possibleValues = ToBeRetrieved(someWebService.getValues())
+</span></span><span style="display:flex;"><span>                    representation = IF_VISIBLE representAs SIMPLE_KEY_TO_VALUE
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">field</span>(key = <span style="color:#e6db74">&#34;fieldKey4&#34;</span>) {
+</span></span><span style="display:flex;"><span>                input(<span style="color:#e6db74">&#34;Input Text Field Label&#34;</span>) {
+</span></span><span style="display:flex;"><span>                    inputTextType = <span style="color:#a6e22e">InputTextType</span>.EMAIL
+</span></span><span style="display:flex;"><span>                    rules = { listOf(IsEmail()) }
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">field</span>(key = <span style="color:#e6db74">&#34;fieldKey&#34;</span>) {
+</span></span><span style="display:flex;"><span>				        empty(<span style="color:#e6db74">&#34;Empty Field&#34;</span>)
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>		    section(<span style="color:#e6db74">&#34;Section 3 Title&#34;</span>) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">field</span>(key = <span style="color:#e6db74">&#34;fieldKey6&#34;</span>) {
+</span></span><span style="display:flex;"><span>                toggle(<span style="color:#e6db74">&#34;Toggle Field Label&#34;</span>) {
+</span></span><span style="display:flex;"><span>                    boolToStringConverter = { <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">it</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">true</span>) <span style="color:#e6db74">&#34;OK&#34;</span> <span style="color:#66d9ef">else</span> <span style="color:#e6db74">&#34;KO&#34;</span> }
+</span></span><span style="display:flex;"><span>                    rules = { listOf(NotMissing()) }
+</span></span><span style="display:flex;"><span>                    representation = ALWAYS representAs SIMPLE_KEY_TO_VALUE
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And this is the result on Android using my <a href="https://github.com/brescia123/forms">Form library</a>:</p>
 <p><img src="/images/kotlin-dsl/form_screen.png" alt="Form screenshot"></p>
 <p>Cool, isn&rsquo;t it?</p>
 <h2 id="type-safe-builders">Type-safe builders</h2>
@@ -517,50 +504,50 @@ Writing a DSL in Java could have ended up into something like that:</p>
 <ul>
 <li><strong>Higher-Order Functions and Lambdas</strong>: in Kotlin we are allowed to write functions that have <em>functions as parameters or return type</em> (higher-order functions) and functions that are <em>not declared</em>, but are passed immediately as an expression (lambdas). Because of this, we can write things like:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#75715e">// Higher-Order Function
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">transformWith</span>(path: String, function: (String) -&gt; List&lt;String&gt;): List&lt;String&gt; {
-    <span style="color:#66d9ef">return</span> function(<span style="color:#66d9ef">this</span>)
-}
-
-<span style="color:#75715e">// Lambda
-</span><span style="color:#75715e"></span>{ path: String -&gt; path.split(<span style="color:#e6db74">&#34;/&#34;</span>) }
-</code></pre></div><p>Thanks to Kotlin syntactic sugar we can use them in these ways:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin">transformWith(<span style="color:#e6db74">&#34;some/path/to&#34;</span>, { path: String -&gt; path.split(<span style="color:#e6db74">&#34;/&#34;</span>) }) <span style="color:#75715e">// -&gt; [some, path, to]
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// Functions which have a function as the last parameter can be written as follow
-</span><span style="color:#75715e"></span>transformWith(<span style="color:#e6db74">&#34;some/path/to&#34;</span>) { path -&gt; path.split(<span style="color:#e6db74">&#34;/&#34;</span>) } <span style="color:#75715e">// -&gt; [some, path, to]
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// If the lambda has only one parameter it can be ommitted and referenced as &#34;it&#34;
-</span><span style="color:#75715e"></span>transformWith(<span style="color:#e6db74">&#34;some/path/to&#34;</span>) { it.split(<span style="color:#e6db74">&#34;/&#34;</span>) } <span style="color:#75715e">// -&gt; [some, path, to]
-</span></code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#75715e">// Higher-Order Function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">transformWith</span>(path: String, function: (String) <span style="color:#f92672">-&gt;</span> List&lt;String&gt;): List&lt;String&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> function(<span style="color:#66d9ef">this</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Lambda
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{ path: String <span style="color:#f92672">-&gt;</span> path.split(<span style="color:#e6db74">&#34;/&#34;</span>) }
+</span></span></code></pre></div><p>Thanks to Kotlin syntactic sugar we can use them in these ways:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span>transformWith(<span style="color:#e6db74">&#34;some/path/to&#34;</span>, { path: String <span style="color:#f92672">-&gt;</span> path.split(<span style="color:#e6db74">&#34;/&#34;</span>) }) <span style="color:#75715e">// -&gt; [some, path, to]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Functions which have a function as the last parameter can be written as follow
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>transformWith(<span style="color:#e6db74">&#34;some/path/to&#34;</span>) { path <span style="color:#f92672">-&gt;</span> path.split(<span style="color:#e6db74">&#34;/&#34;</span>) } <span style="color:#75715e">// -&gt; [some, path, to]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// If the lambda has only one parameter it can be ommitted and referenced as &#34;it&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>transformWith(<span style="color:#e6db74">&#34;some/path/to&#34;</span>) { <span style="color:#66d9ef">it</span>.split(<span style="color:#e6db74">&#34;/&#34;</span>) } <span style="color:#75715e">// -&gt; [some, path, to]
+</span></span></span></code></pre></div><ul>
 <li><strong>Extension Functions</strong>: they allow us to <em>extend</em> a type with functions without modifying the original class. They are useful to add functionalities to classes we don&rsquo;t have control on or to create utility methods without the need to create &ldquo;Utils classes&rdquo; that contains static methods, as we are used to as Java developers. To continue the previous example we can write:</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#75715e">// Extension function
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">String</span>.transformWith(function: (String) -&gt; List&lt;String&gt;) {
-    <span style="color:#66d9ef">return</span> function(<span style="color:#66d9ef">this</span>)
-}
-
-<span style="color:#e6db74">&#34;some/path/to&#34;</span>.transformWith { receiverString: String -&gt; receiverString(<span style="color:#e6db74">&#34;/&#34;</span>) } <span style="color:#75715e">// -&gt; [some, path, to]
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// or more concisely 
-</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;some/path/to&#34;</span>.transformWith { it.split(<span style="color:#e6db74">&#34;/&#34;</span>) } <span style="color:#75715e">// -&gt; [some, path, to]
-</span></code></pre></div><p>Note that we are referring to the string inside the closure of the extension function using <code>this</code> as it will be the String object on which the method will be called.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#75715e">// Extension function
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">String</span>.transformWith(function: (String) <span style="color:#f92672">-&gt;</span> List&lt;String&gt;) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> function(<span style="color:#66d9ef">this</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;some/path/to&#34;</span>.transformWith { receiverString: String <span style="color:#f92672">-&gt;</span> receiverString(<span style="color:#e6db74">&#34;/&#34;</span>) } <span style="color:#75715e">// -&gt; [some, path, to]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// or more concisely 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;some/path/to&#34;</span>.transformWith { <span style="color:#66d9ef">it</span>.split(<span style="color:#e6db74">&#34;/&#34;</span>) } <span style="color:#75715e">// -&gt; [some, path, to]
+</span></span></span></code></pre></div><p>Note that we are referring to the string inside the closure of the extension function using <code>this</code> as it will be the String object on which the method will be called.</p>
 <ul>
 <li><strong>Function Literals with Receiver</strong>: similarly to extension functions you are also allowed to define functions with a receiver that will be referred to as <code>this</code> inside the literal closure:</li>
 </ul>
-<pre><code>val transformWith: String.() -&gt; List&lt;String&gt; = { this.split(&quot;/&quot;) }
+<pre tabindex="0"><code>val transformWith: String.() -&gt; List&lt;String&gt; = { this.split(&#34;/&#34;) }
 
-&quot;some/path/to&quot;.transformWith() // -&gt; [some, path, to]
+&#34;some/path/to&#34;.transformWith() // -&gt; [some, path, to]
 </code></pre><p>To better understand function literals with receiver you should think of them as follow: <em>lambda is to normal function as function literal with receiver is to extension function</em>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#75715e">// lambda
-</span><span style="color:#75715e"></span>{ s: String -&gt; s.split(<span style="color:#e6db74">&#34;/&#34;</span>) }
-<span style="color:#75715e">// is to
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">function</span>(s: String): List&lt;String&gt; { <span style="color:#66d9ef">return</span> s.split(<span style="color:#e6db74">&#34;/&#34;</span>) }
-<span style="color:#75715e">// as
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> functionLiteralWithReceiver = String.() -&gt; List&lt;String&gt; = { <span style="color:#66d9ef">this</span>.split(<span style="color:#e6db74">&#34;/&#34;</span>) }
-<span style="color:#75715e">// is to
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">String</span>.extensionFunction(): List&lt;String&gt; { <span style="color:#66d9ef">return</span> function(<span style="color:#66d9ef">this</span>) }
-</code></pre></div><p>Basically function literals with receiver are extension functions that can be passed to other functions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#75715e">// lambda
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>{ s: String <span style="color:#f92672">-&gt;</span> s.split(<span style="color:#e6db74">&#34;/&#34;</span>) }
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// is to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">function</span>(s: String): List&lt;String&gt; { <span style="color:#66d9ef">return</span> s.split(<span style="color:#e6db74">&#34;/&#34;</span>) }
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// as
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">val</span> functionLiteralWithReceiver = <span style="color:#a6e22e">String</span>.() <span style="color:#f92672">-&gt;</span> List&lt;String&gt; = { <span style="color:#66d9ef">this</span>.split(<span style="color:#e6db74">&#34;/&#34;</span>) }
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// is to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">String</span>.extensionFunction(): List&lt;String&gt; { <span style="color:#66d9ef">return</span> function(<span style="color:#66d9ef">this</span>) }
+</span></span></code></pre></div><p>Basically function literals with receiver are extension functions that can be passed to other functions.</p>
 <h3 id="wrapping-up">Wrapping up</h3>
 <p>Now we have all the elements required to understand and write a Type-safe builder.</p>
 <p>Combining the above mentioned Kotlin features we can now write a function and name it <code>form</code>. This function will take as parameter a function literal with receiver usually called <code>init()</code> and will do the follow:</p>
@@ -569,26 +556,26 @@ Writing a DSL in Java could have ended up into something like that:</p>
 <li>call <code>init()</code> on it (that is using it as the receiver of the function literal)</li>
 <li>return the built object to the caller</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">form</span>(init: Form.() -&gt; Unit): Form {
-    <span style="color:#66d9ef">val</span> form = Form() 
-    form.init()
-    <span style="color:#66d9ef">return</span> form
-}
-</code></pre></div><p>Now let&rsquo;s imagine that our Form class defines a function <code>field()</code> that actually creates a field object and adds it to the list of fields contained within the form:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Form</span>() {
-    <span style="color:#66d9ef">val</span> fields: List&lt;Field&gt;
-    ...
-    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">field</span>(key: String) { ... }
-    ...
-}
-</code></pre></div><p>Taking advantage of Kotlin syntactic sugar we can use <code>form()</code> passing it the <code>init()</code> function as a lambda and call methods on the Form object to build it as follow:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-kotlin" data-lang="kotlin"><span style="color:#66d9ef">val</span> builtForm = form() {
-    <span style="color:#75715e">// Here we can take advantage of the compiler and, as a result, of the IDE code completion
-</span><span style="color:#75715e"></span>    field(<span style="color:#e6db74">&#34;key1&#34;</span>) <span style="color:#75715e">// == this.field(&#34;key1&#34;) where this is the object create by form()
-</span><span style="color:#75715e"></span>    field(<span style="color:#e6db74">&#34;key2&#34;</span>)
-}
-builtForm.getFields() <span style="color:#75715e">// -&gt; [Field(&#34;key1&#34;), Field(&#34;key2&#34;)]
-</span></code></pre></div><p>As you can see Type-Safe builders are an <strong>extremely powerful</strong> and useful feature of Kotlin and they allow you to write very complex DSLs with a <strong>really readable and clear syntax</strong>. They give you a lot of <strong>flexibility</strong> letting you combine multiple builders to create a domain language that can meet your requirements.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">form</span>(<span style="color:#66d9ef">init</span>: <span style="color:#a6e22e">Form</span>.() <span style="color:#f92672">-&gt;</span> Unit): Form {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> form = Form() 
+</span></span><span style="display:flex;"><span>    form.<span style="color:#66d9ef">init</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> form
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Now let&rsquo;s imagine that our Form class defines a function <code>field()</code> that actually creates a field object and adds it to the list of fields contained within the form:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Form</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">val</span> fields: List&lt;Field&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">..</span>.
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fun</span> <span style="color:#a6e22e">field</span>(key: String) { <span style="color:#f92672">..</span>. }
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">..</span>.
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Taking advantage of Kotlin syntactic sugar we can use <code>form()</code> passing it the <code>init()</code> function as a lambda and call methods on the Form object to build it as follow:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#66d9ef">val</span> builtForm = form() {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Here we can take advantage of the compiler and, as a result, of the IDE code completion
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">field</span>(<span style="color:#e6db74">&#34;key1&#34;</span>) <span style="color:#75715e">// == this.field(&#34;key1&#34;) where this is the object create by form()
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">field</span>(<span style="color:#e6db74">&#34;key2&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>builtForm.getFields() <span style="color:#75715e">// -&gt; [Field(&#34;key1&#34;), Field(&#34;key2&#34;)]
+</span></span></span></code></pre></div><p>As you can see Type-Safe builders are an <strong>extremely powerful</strong> and useful feature of Kotlin and they allow you to write very complex DSLs with a <strong>really readable and clear syntax</strong>. They give you a lot of <strong>flexibility</strong> letting you combine multiple builders to create a domain language that can meet your requirements.</p>
 <p>If you want to learn more about this subject check out the official <a href="https://github.com/Kotlin/kotlinx.html">documentation</a> or, for example, <a href="https://github.com/Kotlin/kotlinx.html">kotlinx</a>, an official project from the Kotlin team that allows you to create HTML documents with a custom DSL entirely written with Type-safe builders.</p>
 
   </div>
@@ -636,29 +623,6 @@ builtForm.getFields() <span style="color:#75715e">// -&gt; [Field(&#34;key1&#34;
   </footer>
 
 </article>
-
-    <article class="post">
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
 
 
 <ul class="actions pagination">
@@ -815,54 +779,6 @@ builtForm.getFields() <span style="color:#75715e">// -&gt; [Field(&#34;key1&#34;
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-08-28'>
-                28 August 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
-                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-07-02'>
-                2 July 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
                     <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
                       <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
@@ -882,6 +798,60 @@ builtForm.getFields() <span style="color:#75715e">// -&gt; [Field(&#34;key1&#34;
               
               <time class="published" datetime='2024-05-30'>
                 30 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-05-20'>
+                20 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+                  
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-03-11'>
+                11 March 2024
               </time>
             </header>
             
@@ -1035,7 +1005,7 @@ builtForm.getFields() <span style="color:#75715e">// -&gt; [Field(&#34;key1&#34;
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional Programming</a>
                 <span style="float:right;">11</span>
               
             </header>
@@ -1146,7 +1116,7 @@ builtForm.getFields() <span style="color:#75715e">// -&gt; [Field(&#34;key1&#34;
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/open-source/">Open source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">7</span>
               
             </header>
@@ -1183,7 +1153,7 @@ builtForm.getFields() <span style="color:#75715e">// -&gt; [Field(&#34;key1&#34;
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">16</span>
+                <span style="float:right;">14</span>
               
             </header>
           </article>

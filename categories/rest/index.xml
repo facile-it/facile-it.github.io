@@ -4,31 +4,23 @@
     <title>REST on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/rest/</link>
     <description>Recent content in REST on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Jan 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/rest/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/rest/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GraphQL: an introduction</title>
       <link>https://engineering.facile.it/blog/eng/graphql-an-introduction/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/graphql-an-introduction/</guid>
-      <description>The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let&amp;rsquo;s see some of the consequences and benefits of choosing REST:
- Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.</description>
+      <description>&lt;h2 id=&#34;the-lesson-we-learned-with-rest&#34;&gt;The lesson we learned with REST&lt;/h2&gt;&#xA;&lt;p&gt;For many developers, nowadays, building an &lt;strong&gt;API&lt;/strong&gt; for their applications essentially means mapping the &lt;em&gt;resources&lt;/em&gt; of the domain to &lt;em&gt;URIs&lt;/em&gt;, with the &lt;a href=&#34;https://en.wikipedia.org/wiki/Representational_state_transfer&#34;&gt;REST&lt;/a&gt; principles in mind.&#xA;Usually creating a &lt;em&gt;&lt;strong&gt;RESTful&lt;/strong&gt;&lt;/em&gt; system is not difficult, and the simplicity of the idea makes the task easier.&#xA;Let&amp;rsquo;s see some of the consequences and benefits of choosing REST:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.&lt;/li&gt;&#xA;&lt;li&gt;Often the same URI can be used with multiple verbs to accomplish different tasks (e.g. &amp;ldquo;example.com/tag/123&amp;rdquo; refers to a particular tag that you can retrieve, update or delete).&lt;/li&gt;&#xA;&lt;li&gt;Controllers in many server-side frameworks can be created with a RESTful approach, each one of them representing one or more resources.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;However, unfortunately, it&amp;rsquo;s often easy to come across some problems:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introduzione al tracciamento di eventi lato server</title>
       <link>https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</link>
       <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</guid>
-      <description>L’adozione di strategie DevOps ha portato negli ultimi anni ad incrementare le aree coperte da tool di monitoring in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei server o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le applicazioni stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc.</description>
+      <description>&lt;p&gt;L’adozione di strategie &lt;em&gt;DevOps&lt;/em&gt; ha portato negli ultimi anni ad incrementare le aree coperte da &lt;strong&gt;tool di monitoring&lt;/strong&gt; in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei &lt;strong&gt;server&lt;/strong&gt; o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le &lt;strong&gt;applicazioni&lt;/strong&gt; stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc. ecc.).&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

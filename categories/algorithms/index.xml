@@ -4,24 +4,16 @@
     <title>Algorithms on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/algorithms/</link>
     <description>Recent content in Algorithms on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 12 May 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/algorithms/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/algorithms/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Intelligenza artificiale: algoritmo A*</title>
       <link>https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</link>
       <pubDate>Tue, 12 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</guid>
-      <description>Introduzione A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&amp;rsquo;intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati.
-L&amp;rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: gioco del 15, percorso minimo, Sudoku, cubo di Rubik, ecc.
-In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:
- La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti.</description>
+      <description>&lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;&#xA;&lt;p&gt;A* è un &lt;a href=&#34;https://it.wikipedia.org/wiki/Algoritmo_di_ricerca&#34;&gt;algoritmo di ricerca&lt;/a&gt; e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&amp;rsquo;&lt;a href=&#34;https://it.wikipedia.org/wiki/Intelligenza_artificiale&#34;&gt;intelligenza artificiale&lt;/a&gt; perché in grado di gestire grafi ampi e&#xA;indeterminati.&lt;/p&gt;&#xA;&lt;p&gt;L&amp;rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: &lt;a href=&#34;https://it.wikipedia.org/wiki/Gioco_del_quindici&#34;&gt;gioco del 15&lt;/a&gt;, percorso minimo, &lt;a href=&#34;https://it.wikipedia.org/wiki/Sudoku&#34;&gt;Sudoku&lt;/a&gt;, &lt;a href=&#34;https://it.wikipedia.org/wiki/Cubo_di_Rubik&#34;&gt;cubo di Rubik&lt;/a&gt;, ecc.&lt;/p&gt;&#xA;&lt;p&gt;In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi;&lt;/li&gt;&#xA;&lt;li&gt;Il nodo iniziale e il nodo finale devono essere noti. Talvolta è sufficiente conoscere solo le regole che compongono la soluzione (vedi Sudoku);&lt;/li&gt;&#xA;&lt;li&gt;Deve essere noto un &lt;strong&gt;algoritmo euristico&lt;/strong&gt; che &lt;strong&gt;stima&lt;/strong&gt; il costo del percorso tra un nodo qualsiasi e la soluzione.&lt;/li&gt;&#xA;&lt;li&gt;Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;leuristica&#34;&gt;L&amp;rsquo;euristica&lt;/h1&gt;&#xA;&lt;p&gt;L&amp;rsquo;&lt;a href=&#34;https://it.wikipedia.org/wiki/Algoritmo_euristico&#34;&gt;algoritmo euristico&lt;/a&gt; ha il compito di stimare la distanza tra qualsiasi nodo e la soluzione.&#xA;L&amp;rsquo;euristica influenza fortemente i risultati conseguiti da A*. Esso, in particolare, ne determina il tempo complessivo di esecuzione.&#xA;Un algoritmo euristico molto efficace consente ad A* di trovare velocemente la soluzione.&#xA;Nel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ricerca molto simile a &lt;a href=&#34;https://it.wikipedia.org/wiki/Algoritmo_di_Dijkstra&#34;&gt;Dijkstra&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,35 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>TypeScript on Facile.it Engineering</title>
+    <title>Typescript on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/typescript/</link>
-    <description>Recent content in TypeScript on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Typescript on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/typescript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NestJS graceful shutdown for RabbitMQ Microservices</title>
       <link>https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/</link>
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/</guid>
       <description>Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.</description>
     </item>
-    
     <item>
       <title>Building a scalable Redux web app</title>
       <link>https://engineering.facile.it/blog/eng/building-a-scalable-redux-web-app/</link>
       <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/building-a-scalable-redux-web-app/</guid>
-      <description>Introduction There is inconsistency in the Redux community on how to use actions. Redux Toolkit documentation suggests the following approach:
- [&amp;hellip;] we recommend trying to treat actions more as &amp;ldquo;describing events that occurred&amp;rdquo;, rather than &amp;ldquo;setters&amp;rdquo;.
- Why should we treat actions as events rather than setters? Dan Abramov, the founder of Redux, said that Redux doesn&amp;rsquo;t reinvent event sourcing. It&amp;rsquo;s up to people how to use it. It&amp;rsquo;s clear that there isn&amp;rsquo;t a well-accepted approach towards how to use actions.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;There is inconsistency in the Redux community on how to use actions. Redux Toolkit documentation suggests the following approach:&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;[&amp;hellip;] we recommend trying to treat actions more as &amp;ldquo;describing events that occurred&amp;rdquo;, rather than &amp;ldquo;setters&amp;rdquo;.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Why should we treat actions as events rather than setters? Dan Abramov, the founder of Redux, said that Redux doesn&amp;rsquo;t reinvent event sourcing. It&amp;rsquo;s up to people how to use it. It&amp;rsquo;s clear that there isn&amp;rsquo;t a well-accepted approach towards how to use actions.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

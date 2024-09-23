@@ -4,22 +4,16 @@
     <title>C on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/c/</link>
     <description>Recent content in C on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 May 2024 17:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/c/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 11 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://engineering.facile.it/categories/c/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Write a filesystem with FUSE</title>
       <link>https://engineering.facile.it/blog/eng/write-filesystem-fuse/</link>
       <pubDate>Mon, 11 Jan 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/write-filesystem-fuse/</guid>
-      <description>During the past year I experimented a lot with file systems in Userspace using FUSE, I wrote this post to share my thoughts about what I did and to give you a starting point to do something by yourself.
-Introduction A filesystem is that piece of software that is in charge of storing, organizing and generally taking care of data represented as files and directories. If you are using a device to read this post you are probably using at least one filesystem at the moment.</description>
+      <description>&lt;p&gt;During the past year I experimented a lot with file systems in Userspace using FUSE, I wrote this post to share my thoughts about what I did and to give you a starting point to do something by yourself.&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;A filesystem is that piece of software that is in charge of storing, organizing and generally taking care of data represented as files and directories.&#xA;If you are using a device to read this post you are probably using at least one filesystem at the moment.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

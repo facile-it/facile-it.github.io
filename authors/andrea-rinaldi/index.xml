@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>andrea-rinaldi on Facile.it Engineering</title>
+    <title>Andrea-Rinaldi on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/andrea-rinaldi/</link>
-    <description>Recent content in andrea-rinaldi on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Andrea-Rinaldi on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/andrea-rinaldi/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/andrea-rinaldi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Operators: an overview</title>
       <link>https://engineering.facile.it/blog/eng/operators-overview/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/operators-overview/</guid>
-      <description>Introduction Operators are useful constructors and they are present in most programming languages. They are fundamental for many operations and in this article we will provide an overview to better understand their properties.
-This article is the first in a series of two about operators. Here we will make an overview of the main operators&amp;rsquo; properties and in the next one we will discuss about some custom operators that we use in our production code.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Operators are useful constructors and they are present in most programming languages. They are fundamental for many operations and in this article we will provide an overview to better understand their properties.&lt;/p&gt;&#xA;&lt;p&gt;This article is the first in a series of two about operators. Here we will make an overview of the main operators&amp;rsquo; properties and in the next one we will discuss about some custom operators that we use in our production code.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

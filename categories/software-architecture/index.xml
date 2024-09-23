@@ -4,21 +4,16 @@
     <title>Software Architecture on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/software-architecture/</link>
     <description>Recent content in Software Architecture on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 28 Mar 2023 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/software-architecture/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/software-architecture/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MADR template for capturing decisions</title>
       <link>https://engineering.facile.it/blog/eng/madr-template-for-capturing-decisions/</link>
       <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/madr-template-for-capturing-decisions/</guid>
-      <description>What is this post about? Developing a project or a product implies, for the engineering teams, the need to make many decisions to reach their goals. Therefore, the teams are often faced with an inevitable and usually not-so-exciting step: capturing and recording significant decisions. This post will give you a taste of what it takes to make decisions during project or product development and will provide you with a standard that can be used in different contexts.</description>
+      <description>&lt;h1 id=&#34;what-is-this-post-about&#34;&gt;What is this post about?&lt;/h1&gt;&#xA;&lt;p&gt;Developing a project or a product implies, for the engineering teams, the need to make many decisions to reach their goals. Therefore, the teams are often faced with an inevitable and usually not-so-exciting step: capturing and recording significant decisions. This post will give you a taste of what it takes to make decisions during project or product development and will provide you with a standard that can be used in different contexts.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

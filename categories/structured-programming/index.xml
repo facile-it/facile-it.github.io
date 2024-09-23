@@ -1,35 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Structured programming on Facile.it Engineering</title>
+    <title>Structured Programming on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/structured-programming/</link>
-    <description>Recent content in Structured programming on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Structured Programming on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 15 Sep 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/structured-programming/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/structured-programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>No Country For If Else</title>
       <link>https://engineering.facile.it/blog/eng/no-country-for-if-else/</link>
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/no-country-for-if-else/</guid>
-      <description>There is an unwanted guest with us as we write code and build software projects: it&amp;rsquo;s the code that&amp;rsquo;s already written, and we must take into account its complexity as the code base increases in size. High complexity of the existing code can make the following activities particularly difficult:
- understanding the meaning of old code, written by others or ourselves; tracing the causes of bugs, i.e. errors, in code; making changes to a certain procedure; adding features to existing structures;  Even if we approach the development of new software with agile methodologies, we always have to deal with the existing code, and to do that we must at least be able to understand it without overexertion.</description>
+      <description>&lt;p&gt;There is an &lt;strong&gt;unwanted guest&lt;/strong&gt; with us as we write code and build software projects: it&amp;rsquo;s the code that&amp;rsquo;s &lt;strong&gt;already written&lt;/strong&gt;, and we must take into account its complexity as the code base increases in size. High complexity of the existing code can make the following activities particularly difficult:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;understanding the meaning of old code, written by others or ourselves;&lt;/li&gt;&#xA;&lt;li&gt;tracing the causes of bugs, i.e. errors, in code;&lt;/li&gt;&#xA;&lt;li&gt;making changes to a certain procedure;&lt;/li&gt;&#xA;&lt;li&gt;adding features to existing structures;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Even if we approach the development of new software with &lt;a href=&#34;https://en.wikipedia.org/wiki/Agile_software_development&#34;&gt;agile methodologies&lt;/a&gt;, we always have to deal with the existing code, and to do that we must at least be able to &lt;strong&gt;understand it without overexertion&lt;/strong&gt;. So when I talk about &lt;em&gt;complexity&lt;/em&gt; I am referring in particular to the difficulty with which a programmer can &lt;em&gt;reason about&lt;/em&gt; the existing code: the preface of the well-known academic textbook &lt;a href=&#34;http://deptinfo.unice.fr/~roy/sicp.pdf&#34;&gt;Structure and Interpretation of Computer Programs&lt;/a&gt; contains the following sentence:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>No Country For If Else</title>
       <link>https://engineering.facile.it/blog/ita/no-country-for-if-else/</link>
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/no-country-for-if-else/</guid>
-      <description>C&#39;è un ospite indesiderato che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del codice già esistente, e dobbiamo tener conto della sua complessità man mano che la code base aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:
- comprendere il significato di codice vecchio, scritto da altri o da se stessi; tracciare le cause di bug, cioè errori, nel codice; eseguire modifiche a una certa procedura; aggiungere funzionalità a strutture già esistenti;  Anche approcciando lo sviluppo di nuovo software con metodologie agili, dobbiamo comunque fare i conti con il codice esistente, e per farlo dobbiamo almeno essere in grado di comprenderlo senza sforzi eccessivi.</description>
+      <description>&lt;p&gt;C&amp;rsquo;è un &lt;strong&gt;ospite indesiderato&lt;/strong&gt; che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del &lt;strong&gt;codice già esistente&lt;/strong&gt;, e dobbiamo tener conto della sua complessità man mano che la &lt;em&gt;code base&lt;/em&gt; aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;comprendere il significato di codice vecchio, scritto da altri o da se stessi;&lt;/li&gt;&#xA;&lt;li&gt;tracciare le cause di bug, cioè errori, nel codice;&lt;/li&gt;&#xA;&lt;li&gt;eseguire modifiche a una certa procedura;&lt;/li&gt;&#xA;&lt;li&gt;aggiungere funzionalità a strutture già esistenti;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Anche approcciando lo sviluppo di nuovo software con &lt;a href=&#34;https://en.wikipedia.org/wiki/Agile_software_development&#34;&gt;metodologie agili&lt;/a&gt;, dobbiamo comunque fare i conti con il codice esistente, e per farlo dobbiamo almeno essere in grado di &lt;strong&gt;comprenderlo senza sforzi eccessivi&lt;/strong&gt;. Dunque quando parlo di &lt;em&gt;complessità&lt;/em&gt; mi riferisco in particolare alla difficoltà con la quale una programmatore è in grado di &lt;em&gt;ragionare&lt;/em&gt; sul codice. La prefazione del noto testo accademico &lt;a href=&#34;http://deptinfo.unice.fr/~roy/sicp.pdf&#34;&gt;Structure and interpretation of computer programs&lt;/a&gt; contiene la seguente frase:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

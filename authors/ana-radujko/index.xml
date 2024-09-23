@@ -1,44 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>ana-radujko on Facile.it Engineering</title>
+    <title>Ana-Radujko on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/ana-radujko/</link>
-    <description>Recent content in ana-radujko on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Ana-Radujko on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 28 Aug 2024 17:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/ana-radujko/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Venerdì Protetto | July edition</title>
-      <link>https://engineering.facile.it/blog/eng/v-protetto12-7-2024/</link>
-      <pubDate>Wed, 28 Aug 2024 17:00:00 +0000</pubDate>
-      
-      <guid>https://engineering.facile.it/blog/eng/v-protetto12-7-2024/</guid>
-      <description>Innovating for a cleaner tomorrow: our company hackathon experience In today’s fast-paced tech landscape, innovation often thrives in unconventional environments. One such event that has gained popularity in recent years is the hackathon. A hackathon is a collaborative event that brings together people from different backgrounds to brainstorm and create innovative solutions to specific challenges, all within a limited timeframe. These events foster a culture of creativity, teamwork, and rapid problem-solving, making them invaluable for companies looking to harness the collective intelligence of their employees.</description>
-    </item>
-    
+    <lastBuildDate>Mon, 11 Mar 2024 17:00:00 +0000</lastBuildDate>
+    <atom:link href="https://engineering.facile.it/authors/ana-radujko/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Venerdì Protetto | March edition</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto8-3-2024/</link>
       <pubDate>Mon, 11 Mar 2024 17:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/v-protetto8-3-2024/</guid>
-      <description>During the latest Venerdì Protetto (held on March 8, 2024), we had to change slightly the schedule we&amp;rsquo;d planned. We had to face a new schedule with very strict time constraints. So we decided to&amp;hellip; do something new, and try a Code Challenge!
-But how did we do it?
-We searched for something already done on the internet, and most suitable for our needs. So we tried the most obvious solution and went for&amp;hellip; Advent of Code!</description>
+      <description>&lt;p&gt;During the latest Venerdì Protetto (held on March 8, 2024), we had to change slightly the schedule we&amp;rsquo;d planned.&#xA;We had to face a new schedule with very strict time constraints. So we decided to&amp;hellip; &lt;em&gt;do something new&lt;/em&gt;, and try a Code Challenge!&lt;/p&gt;&#xA;&lt;p&gt;But how did we do it?&lt;/p&gt;&#xA;&lt;p&gt;We searched for something already done on the internet, and most suitable for our needs. So we tried the most obvious solution and went for&amp;hellip; Advent of Code!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MADR template for capturing decisions</title>
       <link>https://engineering.facile.it/blog/eng/madr-template-for-capturing-decisions/</link>
       <pubDate>Tue, 28 Mar 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/madr-template-for-capturing-decisions/</guid>
-      <description>What is this post about? Developing a project or a product implies, for the engineering teams, the need to make many decisions to reach their goals. Therefore, the teams are often faced with an inevitable and usually not-so-exciting step: capturing and recording significant decisions. This post will give you a taste of what it takes to make decisions during project or product development and will provide you with a standard that can be used in different contexts.</description>
+      <description>&lt;h1 id=&#34;what-is-this-post-about&#34;&gt;What is this post about?&lt;/h1&gt;&#xA;&lt;p&gt;Developing a project or a product implies, for the engineering teams, the need to make many decisions to reach their goals. Therefore, the teams are often faced with an inevitable and usually not-so-exciting step: capturing and recording significant decisions. This post will give you a taste of what it takes to make decisions during project or product development and will provide you with a standard that can be used in different contexts.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,37 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>michele on Facile.it Engineering</title>
+    <title>Michele on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/michele/</link>
-    <description>Recent content in michele on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Michele on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 16 Jun 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/michele/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/michele/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GIT flow e versionamento semantico</title>
       <link>https://engineering.facile.it/blog/ita/git-flow-semantic-versioning/</link>
       <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/git-flow-semantic-versioning/</guid>
-      <description>GIT flow è un flusso di sviluppo, ideato da Vincent Driessen, che descrive un modello di diramazione, (branching), ben preciso costruito intorno al concetto di release software.
-Questo flusso è concepito per sfruttare al meglio le potenzialità del software di versionamento GIT, ma affinità concettuali possono essere utili anche per la gestione del lavoro con altri software dediti alla medesima funzionalità.
-Il flusso descritto in GIT flow è finalizzato a mantenere una storia implementativa pulita, dove un rilascio comunica a tutti gli utilizzatori la presenza di una nuova versione del prodotto, definita da un determinato changelog composto da nuove caratteristiche e correzioni.</description>
+      <description>&lt;p&gt;GIT flow è un &lt;strong&gt;flusso di sviluppo&lt;/strong&gt;, ideato da &lt;a href=&#34;http://nvie.com/about/&#34;&gt;Vincent Driessen&lt;/a&gt;, che descrive un modello di diramazione, (&lt;a href=&#34;http://git-scm.com/docs/git-branch&#34;&gt;branching&lt;/a&gt;), ben preciso costruito intorno al concetto di release software.&lt;/p&gt;&#xA;&lt;p&gt;Questo flusso è concepito per sfruttare al meglio le potenzialità del software di versionamento &lt;a href=&#34;https://git-scm.com/&#34;&gt;GIT&lt;/a&gt;, ma affinità concettuali possono essere utili anche per la gestione del lavoro con altri software dediti alla medesima funzionalità.&lt;/p&gt;&#xA;&lt;p&gt;Il flusso descritto in GIT flow è finalizzato a mantenere una storia implementativa pulita, dove un rilascio comunica a tutti gli utilizzatori la presenza di una &lt;strong&gt;nuova versione&lt;/strong&gt; del prodotto, definita da un determinato &lt;em&gt;changelog&lt;/em&gt; composto da nuove caratteristiche e correzioni.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PHP coding standard: PSR-7  HTTP message interfaces</title>
       <link>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</guid>
-      <description>Le specifiche PSR-7 descrivono una proposta di standardizzazione delle interfacce per i messaggi HTTP.
-Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, definisce una serie di regole di comunicazione che vengono implementate dalle applicazioni client e server che lo adottano.
-A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&amp;rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP.</description>
+      <description>&lt;p&gt;Le specifiche PSR-7 descrivono una &lt;a href=&#34;https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md&#34;&gt;proposta di standardizzazione&lt;/a&gt; delle &lt;strong&gt;interfacce per i messaggi HTTP&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, definisce una serie di regole di comunicazione che vengono implementate dalle applicazioni client e server che lo adottano.&lt;/p&gt;&#xA;&lt;p&gt;A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&amp;rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

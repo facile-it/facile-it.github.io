@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Test coverage on Facile.it Engineering</title>
+    <title>Test Coverage on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/test-coverage/</link>
-    <description>Recent content in Test coverage on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Test Coverage on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 16 Mar 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/test-coverage/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/test-coverage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Software testing: Coverage vs Efficacia</title>
       <link>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
-      <description>Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.
-Numerosi sono i fattori che hanno reso il code coverage popolare:
- è una metrica facile da comprendere; si misura senza difficoltà; è oggettiva e imparziale; è universale (applicabile a tutti i paradigmi di programmazione).  Ma al di là di questi vantaggi, possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?</description>
+      <description>&lt;p&gt;Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.&lt;/p&gt;&#xA;&lt;p&gt;Numerosi sono i fattori che hanno reso il code coverage popolare:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;è una metrica facile da comprendere;&lt;/li&gt;&#xA;&lt;li&gt;si misura senza difficoltà;&lt;/li&gt;&#xA;&lt;li&gt;è oggettiva e imparziale;&lt;/li&gt;&#xA;&lt;li&gt;è universale (applicabile a tutti i paradigmi di programmazione).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ma al di là di questi vantaggi, &lt;em&gt;&lt;strong&gt;possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;quando-un-test-è-efficace&#34;&gt;Quando un test è efficace?&lt;/h3&gt;&#xA;&lt;p&gt;Una test suite è considerata efficace se consente di rilevare una grande quantità di failure; d&amp;rsquo;altronde, ciò è proprio la finalità ultima del software testing.&#xA;La massima efficacia è realizzabile solo applicando testing esaustivo ma, siccome ciò è spesso impraticabile, ci si accontenta di test più semplici con un&amp;rsquo;efficacia inferiore.&#xA;È importante notare che, a differenza del coverage, il livello d&amp;rsquo;efficacia viene stabilito soggettivamente dallo sviluppatore.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

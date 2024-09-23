@@ -1,46 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>daniele on Facile.it Engineering</title>
+    <title>Daniele on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/daniele/</link>
-    <description>Recent content in daniele on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Daniele on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 25 Nov 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/daniele/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/daniele/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>#FacileHack 2015</title>
       <link>https://engineering.facile.it/blog/ita/facilehack-2015/</link>
       <pubDate>Wed, 25 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/facilehack-2015/</guid>
-      <description>Sono stati due giorni ricchi di emozioni quelli trascorsi con i partecipanti di #FacileHack, il primo hackathon organizzato da Facile.it. Abbiamo visto impegno nella competizione, talenti diversi e complementari tra loro, passione per la tecnologia, serietà e molto caffè&amp;hellip; momenti che vogliamo rivivere insieme a voi con questo video.
-  Grazie a tutti!</description>
+      <description>&lt;p&gt;Sono stati due giorni ricchi di emozioni quelli trascorsi con i partecipanti di #FacileHack, il primo hackathon organizzato da Facile.it.&#xA;Abbiamo visto impegno nella competizione, talenti diversi e complementari tra loro, passione per la tecnologia, serietà e molto caffè&amp;hellip; momenti che vogliamo rivivere insieme a voi con questo video.&lt;/p&gt;&#xA;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/7B8NtkvNXlQ&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&#xA;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/oWWJX5WUZ8A&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&#xA;&lt;p&gt;Grazie a tutti!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Da sviluppo a produzione con Docker e AWS Elastic Beanstalk</title>
       <link>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
-      <description>In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.
-Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy.
-In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:</description>
+      <description>&lt;h2 id=&#34;in-locale-funzionava&#34;&gt;In locale funzionava&lt;/h2&gt;&#xA;&lt;p&gt;Questo articolo si rivolge a chi ha già una &lt;a href=&#34;https://docs.docker.com/articles/basics&#34;&gt;conoscenza base di docker&lt;/a&gt; e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.&lt;/p&gt;&#xA;&lt;p&gt;Avere un ambiente di sviluppo/test &lt;strong&gt;il più simile possibile&lt;/strong&gt; a quello di produzione aiuta molto nel garantire un &lt;strong&gt;corretto funzionamento dopo il deploy&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Si fa presto a dire Docker (e OS X)</title>
       <link>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</link>
       <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</guid>
-      <description>Di guide per l&amp;rsquo;installazione di Docker su OS X è pieno il web, ma le soluzioni sono molte e spesso scegliere non è facile. In questo articolo vi mostrerò quello che è stato il mio personale percorso, nella speranza che possa essere utile a chiarirvi le idee e magari evitare qualche buco nell&amp;rsquo;acqua.
-Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco.</description>
+      <description>&lt;p&gt;Di guide per l&amp;rsquo;installazione di Docker su OS X è pieno il web, ma &lt;strong&gt;le soluzioni sono molte&lt;/strong&gt; e spesso scegliere non è facile.&#xA;In questo articolo vi mostrerò quello che è stato il mio personale percorso, nella speranza che possa essere utile a chiarirvi le idee e magari evitare qualche buco nell&amp;rsquo;acqua.&lt;/p&gt;&#xA;&lt;p&gt;Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco. Nulla di complicato, quindi sono partito dalla cosa più semplice.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

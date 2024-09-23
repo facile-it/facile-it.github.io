@@ -4,26 +4,16 @@
     <title>AI on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/ai/</link>
     <description>Recent content in AI on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 30 Jan 2024 17:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/ai/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Venerdì Protetto | January edition</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto12-1-2024/</link>
       <pubDate>Tue, 30 Jan 2024 17:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/v-protetto12-1-2024/</guid>
-      <description>This page contains the abstracts of the talks held during the latest Venerdì Protetto on January 12, 2024.
-Topics:
- AI journey by Yuri Mariotti (Innovazione.AI) Helm-based charts by Alessandro Manno (Facile.it) Software architecture by Sandro Toma &amp;amp; Alessandro Cagnetti (Solace)  The overview of Venerdì Protetto is available here.
-
-AI journey From silos to AI enterprise by Yuri Mariotti, Innovazione.AI
- In this talk, we delved into the principles, preliminary steps, and macro-phases of a profound AI transformation in which digital best practices become the foundation of a new type of enterprise, capable of improving in (almost) every aspect thanks to the horizontal and vertical integration of Artificial Intelligence.</description>
+      <description>&lt;p&gt;This page contains the abstracts of the talks held during the latest Venerdì Protetto on January 12, 2024.&lt;/p&gt;&#xA;&lt;p&gt;Topics:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#ai-journey&#34;&gt;AI journey&lt;/a&gt; by &lt;a href=&#34;https://it.linkedin.com/in/yurimariotti&#34;&gt;Yuri Mariotti&lt;/a&gt; (&lt;a href=&#34;https://innovazione.ai/chi-siamo/&#34;&gt;Innovazione.AI&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#helm-based-charts&#34;&gt;Helm-based charts&lt;/a&gt; by &lt;a href=&#34;https://it.linkedin.com/in/alessandro-manno-9888a55a&#34;&gt;Alessandro Manno&lt;/a&gt; (Facile.it)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#software-architecture&#34;&gt;Software architecture&lt;/a&gt; by &lt;a href=&#34;https://it.linkedin.com/in/sandrotoma68&#34;&gt;Sandro Toma&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://it.linkedin.com/in/cagnetti&#34;&gt;Alessandro Cagnetti&lt;/a&gt; (&lt;a href=&#34;https://solace.com/&#34;&gt;Solace&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;The overview of Venerdì Protetto is available &lt;a href=&#34;https://engineering.facile.it/blog/eng/v-protetto/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

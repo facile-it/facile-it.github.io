@@ -4,32 +4,23 @@
     <title>Xcode on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/xcode/</link>
     <description>Recent content in Xcode on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 05 Jun 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/xcode/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/xcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Swift testing avanzato: stubbing e test asincroni</title>
       <link>https://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/</link>
       <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/</guid>
-      <description>In un precedente articolo abbiamo visto le impostazioni di base in Xcode per la scrittura dei test unitari: abbiamo evidenziato inoltre l&amp;rsquo;importanza e l&amp;rsquo;utilità intrinseca dei test, attraverso un semplice esempio riguardante un caso d&amp;rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&amp;rsquo; più avanzate:
- implementeremo uno Stub Object in Swift; analizzeremo un altro caso di test asincrono;  Lo Stub Object Uno Stub Object (per il resto dell&amp;rsquo;articolo, stub) rappresenta un&amp;rsquo;istanza di una certa classe, la quale mima una vera classe presente nella nostra code base: l&amp;rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://engineering.facile.it/xcode-testing-in-pratica/&#34;&gt;In un precedente articolo&lt;/a&gt; abbiamo visto le impostazioni di base in Xcode per la scrittura dei &lt;strong&gt;test unitari&lt;/strong&gt;: abbiamo evidenziato inoltre &lt;strong&gt;l&amp;rsquo;importanza e l&amp;rsquo;utilità intrinseca dei test&lt;/strong&gt;, attraverso un semplice esempio riguardante un caso d&amp;rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&amp;rsquo; più avanzate:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;implementeremo uno &lt;strong&gt;Stub Object&lt;/strong&gt; in Swift;&lt;/li&gt;&#xA;&lt;li&gt;analizzeremo un altro caso di test &lt;em&gt;asincrono&lt;/em&gt;;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;lo-stub-object&#34;&gt;Lo &lt;em&gt;Stub Object&lt;/em&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Uno &lt;em&gt;Stub Object&lt;/em&gt; (per il resto dell&amp;rsquo;articolo, &lt;em&gt;stub&lt;/em&gt;) rappresenta un&amp;rsquo;istanza di una certa classe, la quale &lt;em&gt;mima&lt;/em&gt; una vera classe presente nella nostra &lt;em&gt;code base&lt;/em&gt;:  l&amp;rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio &lt;strong&gt;alcuni metodi possono essere sovrascritti&lt;/strong&gt; per poter fornire &lt;strong&gt;un determinato output&lt;/strong&gt; utile per i test. Nell&amp;rsquo;implementare uno &lt;em&gt;stub&lt;/em&gt; non è generalmente consentito modificare dettagli di logica interni relativi alla classe che stiamo mimando, ma &lt;strong&gt;è possibile sovrascrivere metodi pubblici&lt;/strong&gt;, in modo che essi ritornino i valori che vogliamo, oppure che svolgano una particolare procedura necessaria per i test. Tanto per fare un esempio pratico potremmo &lt;em&gt;stubbare&lt;/em&gt; una classe che ci fornisce la data precisa in un certo istante, in modo da ottenere una data diversa da usare nei test, oppure un client che chiede a un server delle informazioni su un utente, in modo da far ritonare al client &lt;em&gt;stub&lt;/em&gt; delle informazioni arbitrarie.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Xcode Testing in pratica</title>
       <link>https://engineering.facile.it/blog/ita/xcode-testing-in-pratica/</link>
       <pubDate>Thu, 09 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/xcode-testing-in-pratica/</guid>
-      <description>Tra i molti strumenti utili presenti in Xcode, il testing framework XCTest è certamente uno dei più rilevanti, non solo per l&amp;rsquo;importanza intrinseca dello Unit Testing in generale, ma soprattutto per la facilità con la quale è possibile scrivere ed eseguire test direttamente dall&amp;rsquo;IDE out-of-the-box, senza la necessità di installare componenti di terze parti o impostare una particolare configurazione per i progetti.
-In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a creare un target per il binario principale crea automaticamente anche un target di test, cioè un bundle aggiuntivo che può essere caricato nel bundle principale per poter fisicamente eseguire i test una volta avviata l&amp;rsquo;app.</description>
+      <description>&lt;p&gt;Tra i molti strumenti utili presenti in Xcode, il testing framework &lt;strong&gt;XCTest&lt;/strong&gt; è certamente uno dei più rilevanti, non solo per l&amp;rsquo;importanza intrinseca dello Unit Testing in generale, ma soprattutto per la facilità con la quale è possibile scrivere ed eseguire test direttamente dall&amp;rsquo;IDE &lt;em&gt;out-of-the-box&lt;/em&gt;, &lt;strong&gt;senza la necessità di installare componenti di terze parti&lt;/strong&gt; o impostare una particolare configurazione per i progetti.&lt;/p&gt;&#xA;&lt;p&gt;In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a creare un target per il binario principale crea automaticamente anche un &lt;strong&gt;target di test&lt;/strong&gt;, cioè un bundle aggiuntivo che può essere caricato nel bundle principale per poter fisicamente eseguire i test una volta avviata l&amp;rsquo;app. Nell&amp;rsquo;immagine seguente è possibile vedere come, in un progetto appena creato, sia già presente il test bundle, in questo caso chiamato &lt;em&gt;AwesomeAppTests.xctest&lt;/em&gt;:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

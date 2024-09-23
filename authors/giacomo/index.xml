@@ -1,43 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>giacomo on Facile.it Engineering</title>
+    <title>Giacomo on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/giacomo/</link>
-    <description>Recent content in giacomo on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Giacomo on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Feb 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/giacomo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/giacomo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Kotlin type-safe builders to create a DSL for Forms</title>
       <link>https://engineering.facile.it/blog/eng/kotlin-dsl/</link>
       <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/kotlin-dsl/</guid>
-      <description>Here at Facile.it we are constantly dealing with a lot of forms: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be really complex, having multiple rules and dependencies between fields, and they are likely to be changed and tuned frequently.
-When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do a lot of work just to add or remove a simple field.</description>
+      <description>&lt;p&gt;Here at Facile.it we are constantly dealing with a lot of &lt;strong&gt;forms&lt;/strong&gt;: we use them to collect various information and data needed to feed our in-house comparing algorithms. These forms could be &lt;strong&gt;really complex&lt;/strong&gt;, having multiple rules and dependencies between fields, and they are likely to be &lt;strong&gt;changed and tuned frequently&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;When I joined Facile.it, a lot of forms within the Android app needed to be updated or modified and sticking with the existing strategy would have required me to do &lt;strong&gt;a lot of work&lt;/strong&gt; just to add or remove a simple field. So I took a step back and I started thinking about a strategy that would have allowed me to define and structure a form in a more &lt;em&gt;flexible&lt;/em&gt; and &lt;em&gt;declarative&lt;/em&gt; way. I wanted to be able to declare the &lt;strong&gt;relationships&lt;/strong&gt; between fields, their &lt;strong&gt;validation rules&lt;/strong&gt; and their &lt;strong&gt;serialized representation&lt;/strong&gt; (how they are sent to the server).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>A new hope for the JVM: Kotlin</title>
       <link>https://engineering.facile.it/blog/eng/kotlin-intro/</link>
       <pubDate>Mon, 17 Oct 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/kotlin-intro/</guid>
-      <description>Premise Java is an old programming language. Version 1.0 was released in 1996 by Sun Microsystems and even though it has evolved and grown a lot over the past twenty years it is still carrying on some bad design choices such as null (ask Tony Hoare), primitive types or lack of a proper function type. With the last version of the language (Java 8) Java tried to address some of these problems introducing concepts such as Optional or lambda expression.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/kotlin-intro/logo_Kotlin.svg&#34; alt=&#34;Kotlin&#34;&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;premise&#34;&gt;Premise&lt;/h2&gt;&#xA;&lt;p&gt;Java is an &lt;strong&gt;old&lt;/strong&gt; programming language. Version 1.0 was released in 1996 by Sun Microsystems and  even though it has evolved and grown a lot over the past twenty years it is still carrying on some bad design choices such as &lt;em&gt;null&lt;/em&gt; (ask &lt;a href=&#34;https://en.wikipedia.org/wiki/Tony_Hoare?section=3#Apologies_and_retractions&#34;&gt;Tony Hoare&lt;/a&gt;), primitive types or lack of a proper function type. With the last version of the language (Java 8) Java tried to address some of these problems introducing concepts such as &lt;a href=&#34;https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html&#34;&gt;&lt;code&gt;Optional&lt;/code&gt;&lt;/a&gt; or &lt;a href=&#34;http://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html&#34;&gt;lambda expression&lt;/a&gt;. Although these additions clearly represent a step forward for the language I still have the feeling that they are just &lt;em&gt;patches&lt;/em&gt; applied to &lt;strong&gt;mitigate problems&lt;/strong&gt; and not to solve them at their very source. For example &lt;code&gt;Optional&lt;/code&gt; could be used to reduce NPE (Null Pointer Exception) but it is clearly not designed for &lt;a href=&#34;https://twitter.com/mariofusco/status/780770300178956289&#34;&gt;this purpose&lt;/a&gt; and lambda expressions, implemented in Java 8 with SAM types, still force you to write an interface only to define a &lt;em&gt;function&lt;/em&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Droidcon It 2016</title>
       <link>https://engineering.facile.it/blog/eng/droidcon-it-2016/</link>
       <pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/droidcon-it-2016/</guid>
-      <description>The third edition of Droidcon IT was, as expected, a great conference, full of interesting talks and people coming from all over the world. We saw a lot of GDEs (Google Developer Expert) and also some Developer Advocates from Google, although it was not organized directly by the company. Back in March the Android team surprisingly released the brand new N Developer Preview earlier than expected, so this year we were already able to talk about the new features in Android N and analyze them.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/droidconit-recap/logo_droidcon_it.png&#34; alt=&#34;Droidcon It&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The third edition of &lt;a href=&#34;http://it.droidcon.com/2016/&#34;&gt;Droidcon IT&lt;/a&gt; was, as expected, a great conference, full of interesting talks and people coming from all over the world. We saw a lot of GDEs (&lt;a href=&#34;https://developers.google.com/experts/all/technology/android&#34;&gt;Google Developer Expert&lt;/a&gt;) and also some Developer Advocates from Google, although it was not organized directly by the company. Back in March the Android team surprisingly released the brand new &lt;strong&gt;N Developer Preview&lt;/strong&gt; earlier than expected, so this year we were already able to talk about the new features in Android N and analyze them. Furthermore, there was talk of &lt;strong&gt;Kotlin&lt;/strong&gt;, &lt;strong&gt;RxJava&lt;/strong&gt; and a lot of other useful and interesting topics.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

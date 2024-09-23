@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>realpath_cache on Facile.it Engineering</title>
+    <title>Realpath_cache on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/realpath_cache/</link>
-    <description>Recent content in realpath_cache on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Realpath_cache on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 04 Oct 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/realpath_cache/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/realpath_cache/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Is it all PHP OPCache&#39;s fault?</title>
       <link>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</link>
       <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</guid>
-      <description>Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&amp;rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
-Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things».</description>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&amp;rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;When I started my software developer career, I was very surprised to read the following sentence, attributed to &lt;a href=&#34;https://martinfowler.com/bliki/TwoHardThings.html&#34;&gt;Phil Karlton&lt;/a&gt;: &lt;em&gt;«There are only two hard things in Computer Science: &lt;strong&gt;cache invalidation&lt;/strong&gt; and &lt;strong&gt;naming things&lt;/strong&gt;»&lt;/em&gt;. In the beginning I was incredulous, because I didn&amp;rsquo;t really get the sense of these words. Not much later, I started to understand.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

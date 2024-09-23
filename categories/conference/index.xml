@@ -4,31 +4,23 @@
     <title>Conference on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/conference/</link>
     <description>Recent content in Conference on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 20 Oct 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/conference/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/conference/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Write the Docs Prague 2021</title>
       <link>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</link>
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</guid>
-      <description>Introduction Facile.it&amp;rsquo;s Technical Writing team attended the Write the Docs Prague 2021 conference which was held from 3rd to 5th October 2021. While the conference was usually held in the capital of the Czech Republic, for the second year in a row it was held remotely due to Covid-19 restrictions. In this article we will provide a quick overview of the event.
-What is Write the Docs Prague Write the Docs Prague is the annual European conference organized by the Write the Docs community.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Facile.it&amp;rsquo;s Technical Writing team attended the &lt;strong&gt;&lt;a href=&#34;https://www.writethedocs.org/conf/prague/2021/&#34;&gt;Write the Docs Prague 2021 conference&lt;/a&gt;&lt;/strong&gt; which was held &lt;strong&gt;from 3rd to 5th October 2021&lt;/strong&gt;. While the conference was usually held in the capital of the Czech Republic, for the second year in a row it was held remotely due to Covid-19 restrictions.&#xA;In this article we will provide a quick overview of the event.&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-write-the-docs-prague&#34;&gt;What is Write the Docs Prague&lt;/h1&gt;&#xA;&lt;p&gt;Write the Docs Prague is the &lt;strong&gt;annual European conference organized by the &lt;a href=&#34;https://www.writethedocs.org/&#34;&gt;Write the Docs community&lt;/a&gt;&lt;/strong&gt;. There are usually 3 annual conferences organized by the community: Write the Docs Portland, Prague, and Australia &amp;amp; India. This year due to organizational difficulties the Australia &amp;amp; India event was cancelled and partially incorporated into the Prague conference.&#xA;These conferences allow all people involved in documentation (of any kind and in any field, but especially in tech field) to meet, exchange ideas, and keep up to date on the latest themes. These events are attended by tech writers, developers, support specialists, UX/UI designers, and many others. Therefore, to be inclusive and for simplicity&amp;rsquo;s sake, organizers like to talk about &amp;ldquo;Documentarians&amp;rdquo;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Lambda Days 2020</title>
       <link>https://engineering.facile.it/blog/eng/lambda-days-2020/</link>
       <pubDate>Tue, 01 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/lambda-days-2020/</guid>
-      <description>This year, Facile attended for the first time Lambda Days Conference in the beautiful polish city of Krakow. It has been a two-days full immersion with speakers coming from all over the world. The latest trends and academic research in the functional world were showcased, spanning from beginner&amp;rsquo;s approaches to functional languages to highly specific scientific applications. This conference was totally worth attending, albeit very intense (sometimes mind-bending, actually!). All the talks were of high quality and the organization was perfect.</description>
+      <description>&lt;p&gt;This year, Facile attended for the first time &lt;a href=&#34;https://www.lambdadays.org/lambdadays2020&#34;&gt;Lambda Days&lt;/a&gt; Conference in the beautiful polish city of Krakow.&#xA;It has been a two-days full immersion with speakers coming from all over the world.&#xA;The latest trends and academic research in the functional world were showcased, spanning from beginner&amp;rsquo;s approaches to functional languages to highly specific scientific applications.&#xA;This conference was totally worth attending, albeit very intense (sometimes mind-bending, actually!). All the talks were of high quality and the organization was perfect.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

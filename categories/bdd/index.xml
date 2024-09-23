@@ -4,25 +4,16 @@
     <title>BDD on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/bdd/</link>
     <description>Recent content in BDD on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Mar 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/bdd/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/bdd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On Living Documentation</title>
       <link>https://engineering.facile.it/blog/eng/on-living-documentation/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/on-living-documentation/</guid>
-      <description>Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, Living Documentation: continuous knowledge sharing by design, published by Pearson.
-The need for documentation Documentation supplements the knowledge we might not have. Lack of knowledge manifests in:
-  Wasted time (finding the missing points or guessing them).
-  Biased decisions due to this lack.
-  Hint: when you don’t know something, you are usually not aware that you don&amp;rsquo;t know it ;)</description>
+      <description>&lt;p&gt;Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, &lt;strong&gt;&lt;a href=&#34;https://www.pearson.com/store/p/living-documentation-continuous-knowledge-sharing-by-design/P100000797747/9780134689326&#34;&gt;Living Documentation: continuous knowledge sharing by design&lt;/a&gt;&lt;/strong&gt;, published by Pearson.&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-need-for-documentation&#34;&gt;The need for documentation&lt;/h1&gt;&#xA;&lt;p&gt;Documentation supplements the knowledge we might not have.&#xA;Lack of knowledge manifests in:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Wasted time (finding the missing points or guessing them).&lt;/li&gt;&#xA;&lt;li&gt;Biased decisions due to this lack.&lt;/li&gt;&#xA;&lt;li&gt;Hint: when you don’t know something, you are usually not aware that you don&amp;rsquo;t know it ;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Therefore, the time spent harvesting knowledge should be considered as helping to build the stakeholders&amp;rsquo; application mental model. This is important because that&amp;rsquo;s the mental model that developers will use to augment the code, that product owners will use to describe the stories to implement, and that business owners will use to describe their key goals and outcomes.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

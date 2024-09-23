@@ -4,44 +4,30 @@
     <title>Documentation on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/documentation/</link>
     <description>Recent content in Documentation on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Mar 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/documentation/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/documentation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On Living Documentation</title>
       <link>https://engineering.facile.it/blog/eng/on-living-documentation/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/on-living-documentation/</guid>
-      <description>Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, Living Documentation: continuous knowledge sharing by design, published by Pearson.
-The need for documentation Documentation supplements the knowledge we might not have. Lack of knowledge manifests in:
-  Wasted time (finding the missing points or guessing them).
-  Biased decisions due to this lack.
-  Hint: when you don’t know something, you are usually not aware that you don&amp;rsquo;t know it ;)</description>
+      <description>&lt;p&gt;Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, &lt;strong&gt;&lt;a href=&#34;https://www.pearson.com/store/p/living-documentation-continuous-knowledge-sharing-by-design/P100000797747/9780134689326&#34;&gt;Living Documentation: continuous knowledge sharing by design&lt;/a&gt;&lt;/strong&gt;, published by Pearson.&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-need-for-documentation&#34;&gt;The need for documentation&lt;/h1&gt;&#xA;&lt;p&gt;Documentation supplements the knowledge we might not have.&#xA;Lack of knowledge manifests in:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Wasted time (finding the missing points or guessing them).&lt;/li&gt;&#xA;&lt;li&gt;Biased decisions due to this lack.&lt;/li&gt;&#xA;&lt;li&gt;Hint: when you don’t know something, you are usually not aware that you don&amp;rsquo;t know it ;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Therefore, the time spent harvesting knowledge should be considered as helping to build the stakeholders&amp;rsquo; application mental model. This is important because that&amp;rsquo;s the mental model that developers will use to augment the code, that product owners will use to describe the stories to implement, and that business owners will use to describe their key goals and outcomes.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Write the Docs Prague 2021</title>
       <link>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</link>
       <pubDate>Wed, 20 Oct 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</guid>
-      <description>Introduction Facile.it&amp;rsquo;s Technical Writing team attended the Write the Docs Prague 2021 conference which was held from 3rd to 5th October 2021. While the conference was usually held in the capital of the Czech Republic, for the second year in a row it was held remotely due to Covid-19 restrictions. In this article we will provide a quick overview of the event.
-What is Write the Docs Prague Write the Docs Prague is the annual European conference organized by the Write the Docs community.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Facile.it&amp;rsquo;s Technical Writing team attended the &lt;strong&gt;&lt;a href=&#34;https://www.writethedocs.org/conf/prague/2021/&#34;&gt;Write the Docs Prague 2021 conference&lt;/a&gt;&lt;/strong&gt; which was held &lt;strong&gt;from 3rd to 5th October 2021&lt;/strong&gt;. While the conference was usually held in the capital of the Czech Republic, for the second year in a row it was held remotely due to Covid-19 restrictions.&#xA;In this article we will provide a quick overview of the event.&lt;/p&gt;&#xA;&lt;h1 id=&#34;what-is-write-the-docs-prague&#34;&gt;What is Write the Docs Prague&lt;/h1&gt;&#xA;&lt;p&gt;Write the Docs Prague is the &lt;strong&gt;annual European conference organized by the &lt;a href=&#34;https://www.writethedocs.org/&#34;&gt;Write the Docs community&lt;/a&gt;&lt;/strong&gt;. There are usually 3 annual conferences organized by the community: Write the Docs Portland, Prague, and Australia &amp;amp; India. This year due to organizational difficulties the Australia &amp;amp; India event was cancelled and partially incorporated into the Prague conference.&#xA;These conferences allow all people involved in documentation (of any kind and in any field, but especially in tech field) to meet, exchange ideas, and keep up to date on the latest themes. These events are attended by tech writers, developers, support specialists, UX/UI designers, and many others. Therefore, to be inclusive and for simplicity&amp;rsquo;s sake, organizers like to talk about &amp;ldquo;Documentarians&amp;rdquo;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Technical Writers: the mystery unveiled</title>
       <link>https://engineering.facile.it/blog/eng/technical-writers-an-introduction/</link>
       <pubDate>Wed, 01 Sep 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/technical-writers-an-introduction/</guid>
-      <description>The technical writer, this mysterious character Let&amp;rsquo;s face it, being a technical writer (especially in Italy) makes you feel a bit like Barney Stinson from How I Met Your Mother: no one knows what your real job is. If you&amp;rsquo;re a tech writer, we bet you have at least one relative who, at every family gathering, asks you &amp;ldquo;What do you exactly do for a living?&amp;quot;. In the most desperate cases, even your mom doesn&amp;rsquo;t know what your job is!</description>
+      <description>&lt;h1 id=&#34;the-technical-writer-this-mysterious-character&#34;&gt;The technical writer, this mysterious character&lt;/h1&gt;&#xA;&lt;p&gt;Let&amp;rsquo;s face it, being a technical writer (especially in Italy) makes you feel a bit like &lt;a href=&#34;https://en.wikipedia.org/wiki/Barney_Stinson&#34;&gt;Barney Stinson from How I Met Your Mother&lt;/a&gt;: no one knows what your real job is. If you&amp;rsquo;re a tech writer, we bet you have at least one relative who, at every family gathering, asks you &amp;ldquo;What do you exactly do for a living?&amp;rdquo;. In the most desperate cases, even your mom doesn&amp;rsquo;t know what your job is!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

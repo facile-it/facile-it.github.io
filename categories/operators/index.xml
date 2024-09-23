@@ -4,22 +4,16 @@
     <title>Operators on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/operators/</link>
     <description>Recent content in Operators on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/operators/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/operators/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Operators: an overview</title>
       <link>https://engineering.facile.it/blog/eng/operators-overview/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/operators-overview/</guid>
-      <description>Introduction Operators are useful constructors and they are present in most programming languages. They are fundamental for many operations and in this article we will provide an overview to better understand their properties.
-This article is the first in a series of two about operators. Here we will make an overview of the main operators&amp;rsquo; properties and in the next one we will discuss about some custom operators that we use in our production code.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;Operators are useful constructors and they are present in most programming languages. They are fundamental for many operations and in this article we will provide an overview to better understand their properties.&lt;/p&gt;&#xA;&lt;p&gt;This article is the first in a series of two about operators. Here we will make an overview of the main operators&amp;rsquo; properties and in the next one we will discuss about some custom operators that we use in our production code.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

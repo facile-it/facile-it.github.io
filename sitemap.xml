@@ -1,1330 +1,794 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://engineering.facile.it/authors/ana-radujko/</loc>
-    <lastmod>2024-08-28T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/authors/</loc>
-    <lastmod>2024-08-28T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/blog/</loc>
-    <lastmod>2024-08-28T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/</loc>
-    <lastmod>2024-08-28T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/</loc>
-    <lastmod>2024-08-28T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/protected-fridays/</loc>
-    <lastmod>2024-08-28T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/blog/eng/v-protetto12-7-2024/</loc>
-    <lastmod>2024-08-28T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/authors/engineering/</loc>
-    <lastmod>2024-07-02T09:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/blog/eng/v-protetto14-6-2024/</loc>
-    <lastmod>2024-07-02T09:00:00+00:00</lastmod>
-  </url>
-  
   <url>
     <loc>https://engineering.facile.it/authors/agiorgianni/</loc>
     <lastmod>2024-05-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/c/</loc>
+  </url><url>
+    <loc>https://engineering.facile.it/authors/</loc>
     <lastmod>2024-05-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://engineering.facile.it/blog/</loc>
+    <lastmod>2024-05-30T17:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://engineering.facile.it/categories/</loc>
+    <lastmod>2024-05-30T17:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://engineering.facile.it/categories/challenge/</loc>
     <lastmod>2024-05-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://engineering.facile.it/</loc>
+    <lastmod>2024-05-30T17:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/hack-the-box-experience/</loc>
     <lastmod>2024-05-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/hacking/</loc>
     <lastmod>2024-05-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/mgarza/</loc>
     <lastmod>2024-05-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://engineering.facile.it/categories/protected-fridays/</loc>
+    <lastmod>2024-05-30T17:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://engineering.facile.it/categories/security/</loc>
     <lastmod>2024-05-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://engineering.facile.it/authors/engineering/</loc>
+    <lastmod>2024-05-20T17:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto17-5-2024/</loc>
     <lastmod>2024-05-20T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://engineering.facile.it/authors/ana-radujko/</loc>
+    <lastmod>2024-03-11T17:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto8-3-2024/</loc>
     <lastmod>2024-03-11T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto9-2-2024/</loc>
     <lastmod>2024-02-09T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/ai/</loc>
     <lastmod>2024-01-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/event-driven/</loc>
-    <lastmod>2024-01-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/event-driven-architecture/</loc>
     <lastmod>2024-01-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/helm-based-charts/</loc>
     <lastmod>2024-01-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto12-1-2024/</loc>
     <lastmod>2024-01-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto13-12-2023/</loc>
     <lastmod>2023-12-30T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto10-11-2023/</loc>
     <lastmod>2023-12-06T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/machine-learning/</loc>
     <lastmod>2023-10-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/open-source/</loc>
     <lastmod>2023-10-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/second-brain/</loc>
     <lastmod>2023-10-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/soft-skill/</loc>
     <lastmod>2023-10-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/telemetry/</loc>
     <lastmod>2023-10-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto13-10-2023/</loc>
     <lastmod>2023-10-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/nestjs/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/node.js/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/pasqualino-desimone/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/rabbitmq/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/typescript/</loc>
     <lastmod>2023-10-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/ci-cd/</loc>
     <lastmod>2023-09-18T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/community/</loc>
     <lastmod>2023-09-18T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/community-tools/</loc>
     <lastmod>2023-09-18T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/kafka/</loc>
     <lastmod>2023-09-18T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/python/</loc>
     <lastmod>2023-09-18T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/spotify/</loc>
     <lastmod>2023-09-18T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto8-9-2023/</loc>
     <lastmod>2023-09-18T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto14-7-2023/</loc>
     <lastmod>2023-07-27T13:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/async-api/</loc>
     <lastmod>2023-06-16T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/generative-ai/</loc>
     <lastmod>2023-06-16T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/user-stories/</loc>
     <lastmod>2023-06-16T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto9-6-2023/</loc>
     <lastmod>2023-06-16T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/api-testing/</loc>
     <lastmod>2023-05-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/chatgpt/</loc>
     <lastmod>2023-05-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/mental-health/</loc>
     <lastmod>2023-05-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto12-5-2023/</loc>
     <lastmod>2023-05-18T17:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/react/</loc>
     <lastmod>2023-04-21T11:02:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto14-4-2023/</loc>
     <lastmod>2023-04-21T11:02:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/v-protetto/</loc>
     <lastmod>2023-04-21T11:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/adr/</loc>
     <lastmod>2023-03-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/madr/</loc>
     <lastmod>2023-03-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/madr-template-for-capturing-decisions/</loc>
     <lastmod>2023-03-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/software-architecture/</loc>
     <lastmod>2023-03-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/building-a-scalable-redux-web-app/</loc>
     <lastmod>2022-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/java/</loc>
-    <lastmod>2022-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/javascript/</loc>
     <lastmod>2022-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/pierroberto-lucisano/</loc>
     <lastmod>2022-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/redux/</loc>
     <lastmod>2022-11-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/continuous-deployment/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/continuous-integration/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/docker/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/english/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://engineering.facile.it/categories/git/</loc>
-    <lastmod>2022-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/gitlab/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/kubernetes/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/opensource/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/stapps/</loc>
     <lastmod>2022-04-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/agile/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/bdd/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/documentation/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/on-living-documentation/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/tdd/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/veronica-bolognesi/</loc>
     <lastmod>2022-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/ita/careers/</loc>
     <lastmod>2021-11-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/ita/</loc>
     <lastmod>2021-11-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/conference/</loc>
     <lastmod>2021-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/marta-gilberti/</loc>
     <lastmod>2021-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/technical-writing/</loc>
     <lastmod>2021-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/writethedocs-prague-2021/</loc>
     <lastmod>2021-10-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/technical-writers-an-introduction/</loc>
     <lastmod>2021-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/carlo-cappai/</loc>
     <lastmod>2021-06-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/guzzle/</loc>
     <lastmod>2021-06-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/functional-testing-symfony-guzzle/</loc>
     <lastmod>2021-06-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/php/</loc>
     <lastmod>2021-06-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/symfony/</loc>
     <lastmod>2021-06-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/testing/</loc>
     <lastmod>2021-06-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/amaccis/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/careful-with-that-constant-developer/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/oop/</loc>
     <lastmod>2021-03-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/andrea-gubellini/</loc>
     <lastmod>2021-03-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/automation/</loc>
     <lastmod>2021-03-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/qa/</loc>
     <lastmod>2021-03-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/different-types-of-software-testing/</loc>
     <lastmod>2021-03-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/automated-testing-a-step-back/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/carmine-laface/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/software-testing/</loc>
     <lastmod>2020-10-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/kanban/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/php-day-2020/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/scrum/</loc>
     <lastmod>2020-09-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/andrea-ceccarelli/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/functional-programming/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/krakow/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/lambda-days-2020/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/lambda-days/</loc>
     <lastmod>2020-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/bruce/</loc>
     <lastmod>2020-07-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/from-zero-to-infinite-the-final-keyword/</loc>
     <lastmod>2020-07-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/andrea-rinaldi/</loc>
     <lastmod>2020-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/operators/</loc>
     <lastmod>2020-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/operators-overview/</loc>
     <lastmod>2020-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/amqp/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/common-problems-faced-by-php-developers-in-consuming-an-ampq-message/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/consumer/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/emulator000/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/go/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/rust/</loc>
     <lastmod>2019-05-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</loc>
     <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/jean/</loc>
     <lastmod>2018-02-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</loc>
     <lastmod>2017-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/opcache/</loc>
     <lastmod>2017-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/realpath_cache/</loc>
     <lastmod>2017-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/salvatore-cordiano/</loc>
     <lastmod>2017-10-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</loc>
     <lastmod>2017-09-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/visual-debt-typehints/</loc>
     <lastmod>2017-05-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/conferences/</loc>
     <lastmod>2017-05-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/php-day-2017/</loc>
     <lastmod>2017-05-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/facilehack-2017-10-giorni-dopo/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/facilehack/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/hackathon/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/italiano/</loc>
     <lastmod>2017-04-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/</loc>
     <lastmod>2017-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/android/</loc>
     <lastmod>2017-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/dsl/</loc>
     <lastmod>2017-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/giacomo/</loc>
     <lastmod>2017-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://engineering.facile.it/categories/java/</loc>
+    <lastmod>2017-02-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://engineering.facile.it/categories/jvm/</loc>
     <lastmod>2017-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/kotlin/</loc>
     <lastmod>2017-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/kotlin-dsl/</loc>
     <lastmod>2017-02-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/angular/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/angular-components-from-angularjs-to-just-angular/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/simone-lazzaroni/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/ui/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/webcomponent/</loc>
     <lastmod>2017-02-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/elviro/</loc>
     <lastmod>2016-12-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/please-mutate-responsibly-3-ways-to-improve-your-mutable-objects/</loc>
     <lastmod>2016-12-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</loc>
     <lastmod>2016-12-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</loc>
     <lastmod>2016-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/mario-maraone/</loc>
     <lastmod>2016-11-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/json/</loc>
     <lastmod>2016-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/messagepack/</loc>
     <lastmod>2016-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</loc>
     <lastmod>2016-10-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/kotlin-intro/</loc>
     <lastmod>2016-10-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/ita/disclaimer/</loc>
     <lastmod>2016-09-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/aws/</loc>
     <lastmod>2016-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://engineering.facile.it/categories/event-driven/</loc>
+    <lastmod>2016-09-20T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</loc>
     <lastmod>2016-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/serverless/</loc>
     <lastmod>2016-09-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</loc>
     <lastmod>2016-06-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/php-day-2016/</loc>
     <lastmod>2016-05-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/sergio/</loc>
     <lastmod>2016-05-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</loc>
     <lastmod>2016-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/http/</loc>
     <lastmod>2016-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/networking/</loc>
     <lastmod>2016-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/blog/</loc>
     <lastmod>2016-04-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</loc>
     <lastmod>2016-04-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/github/</loc>
     <lastmod>2016-04-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/hugo/</loc>
     <lastmod>2016-04-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/static-site/</loc>
     <lastmod>2016-04-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/droidcon-it-2016/</loc>
     <lastmod>2016-04-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/algatux/</loc>
     <lastmod>2016-04-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/encryption/</loc>
     <lastmod>2016-04-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/json-web-tokens/</loc>
     <lastmod>2016-04-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/jwt/</loc>
     <lastmod>2016-04-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/ita/chi-siamo/</loc>
     <lastmod>2016-03-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/eng/</loc>
     <lastmod>2016-03-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/eng/who-we-are/</loc>
     <lastmod>2016-03-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/decoupling-view-controllers-with.signals/</loc>
     <lastmod>2016-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/signal/</loc>
     <lastmod>2016-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/swift/</loc>
     <lastmod>2016-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/graphql/</loc>
     <lastmod>2016-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/graphql-an-introduction/</loc>
     <lastmod>2016-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/rest/</loc>
     <lastmod>2016-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/vito/</loc>
     <lastmod>2016-01-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://engineering.facile.it/categories/c/</loc>
+    <lastmod>2016-01-11T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://engineering.facile.it/categories/cmake/</loc>
     <lastmod>2016-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/filesystem/</loc>
     <lastmod>2016-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/fuse/</loc>
     <lastmod>2016-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/lorenzo/</loc>
     <lastmod>2016-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/write-filesystem-fuse/</loc>
     <lastmod>2016-01-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</loc>
     <lastmod>2015-12-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/code-reuse/</loc>
     <lastmod>2015-12-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/code-reuse-a-primer/</loc>
     <lastmod>2015-12-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/codice-riusabile-un-primer/</loc>
     <lastmod>2015-12-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/codemotion/</loc>
     <lastmod>2015-11-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</loc>
     <lastmod>2015-11-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/facilehack-2015/</loc>
     <lastmod>2015-11-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/daniele/</loc>
     <lastmod>2015-11-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/monad/</loc>
     <lastmod>2015-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/objective-c/</loc>
     <lastmod>2015-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/optionals-in-objective-c/</loc>
     <lastmod>2015-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/optionals-in-objective-c/</loc>
     <lastmod>2015-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</loc>
     <lastmod>2015-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/from-development-to-production-with-docker-and-amazon-ecs/</loc>
     <lastmod>2015-10-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/database/</loc>
     <lastmod>2015-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/doctrine/</loc>
     <lastmod>2015-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/mysql/</loc>
     <lastmod>2015-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/paraunit/</loc>
     <lastmod>2015-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/aes/</loc>
     <lastmod>2015-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/protection-of-sensitive-data-using-encryption/</loc>
     <lastmod>2015-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</loc>
     <lastmod>2015-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/rjindael/</loc>
     <lastmod>2015-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/rsa/</loc>
     <lastmod>2015-10-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/luca/</loc>
     <lastmod>2015-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</loc>
     <lastmod>2015-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/websocket/</loc>
     <lastmod>2015-09-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/eng/no-country-for-if-else/</loc>
     <lastmod>2015-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/no-country-for-if-else/</loc>
     <lastmod>2015-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/software-complexity/</loc>
     <lastmod>2015-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/structured-programming/</loc>
     <lastmod>2015-09-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</loc>
     <lastmod>2015-09-08T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/osx/</loc>
     <lastmod>2015-07-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</loc>
     <lastmod>2015-07-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</loc>
     <lastmod>2015-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/nicola/</loc>
     <lastmod>2015-07-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</loc>
     <lastmod>2015-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/software-crisis/</loc>
     <lastmod>2015-07-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/php-7-overview/</loc>
     <lastmod>2015-07-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://engineering.facile.it/categories/git/</loc>
+    <lastmod>2015-06-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/git-flow-semantic-versioning/</loc>
     <lastmod>2015-06-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/michele/</loc>
     <lastmod>2015-06-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/semantic-versioning/</loc>
     <lastmod>2015-06-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</loc>
     <lastmod>2015-06-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/</loc>
     <lastmod>2015-06-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/xcode/</loc>
     <lastmod>2015-06-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/php-day-2015/</loc>
     <lastmod>2015-05-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/algorithms/</loc>
     <lastmod>2015-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/artificial-intelligence/</loc>
     <lastmod>2015-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</loc>
     <lastmod>2015-05-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/type-first-development/</loc>
     <lastmod>2015-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/type-first-development-in-swift/</loc>
     <lastmod>2015-05-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</loc>
     <lastmod>2015-04-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</loc>
     <lastmod>2015-04-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/matteo/</loc>
     <lastmod>2015-04-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/newrelic/</loc>
     <lastmod>2015-04-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/design-patterns/</loc>
     <lastmod>2015-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/authors/francesco/</loc>
     <lastmod>2015-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/principio-open-close-le-sue-origini-e-i-casi-d-uso/</loc>
     <lastmod>2015-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/solid/</loc>
     <lastmod>2015-04-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/xcode-testing-in-pratica/</loc>
     <lastmod>2015-04-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</loc>
     <lastmod>2015-04-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/php-coding-standards/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/psr/</loc>
     <lastmod>2015-03-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</loc>
     <lastmod>2015-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/test-coverage/</loc>
     <lastmod>2015-03-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</loc>
     <lastmod>2015-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</loc>
     <lastmod>2015-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/categories/php-internals/</loc>
     <lastmod>2015-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</loc>
     <lastmod>2015-03-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://engineering.facile.it/blog/ita/zvals-refcount/</loc>
     <lastmod>2015-03-02T00:00:00+00:00</lastmod>
   </url>
-  
 </urlset>

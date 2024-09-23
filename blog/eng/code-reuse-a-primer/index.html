@@ -8,12 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/engineering.facile.it"
+             "@id": "https:\/\/engineering.facile.it\/"
         },
         "articleSection" : "blog",
         "name" : "Code reuse: a primer",
         "headline" : "Code reuse: a primer",
-        "description" : "Last time we looked at a possible implementation for the Optional type in Objective-C; while the main point was to port to Objective-C a tool that\x26rsquo;s frequently used in Swift, making use of the Optional class can be considered an application of a much more general concept: code reuse. In fact, Optional is not tied to a particular domain, and can be reused over and over again in multiple projects: that\x26rsquo;s what actually happens in Swift.",
+        "description" : "\u003cp\u003e\u003ca href=\u0022http:\/\/engineering.facile.it\/optionals-in-objective-c\/\u0022\u003eLast time\u003c\/a\u003e we looked at a possible implementation for the \u003ca href=\u0022https:\/\/developer.apple.com\/library\/prerelease\/ios\/documentation\/Swift\/Conceptual\/Swift_Programming_Language\/TheBasics.html#\/\/apple_ref\/doc\/uid\/TP40014097-CH5-ID330\u0022\u003eOptional\u003c\/a\u003e type in Objective-C; while the main point was to port to Objective-C a tool that\u0026rsquo;s frequently used in Swift, making use of the \u003ccode\u003eOptional\u003c\/code\u003e class can be considered an application of a much more general concept: \u003cstrong\u003ecode reuse\u003c\/strong\u003e. In fact, \u003ccode\u003eOptional\u003c\/code\u003e is not tied to a particular domain, and can be reused over and over again in multiple projects: that\u0026rsquo;s what actually happens in Swift. But, to think about it, that\u0026rsquo;s what happens for a wide range of \u003cem\u003eclasses\u003c\/em\u003e in Objective-C, or \u003cem\u003etypes\u003c\/em\u003e in Swift: for example, \u003ccode\u003eNSArray\u003c\/code\u003e and \u003ccode\u003eArray\u003c\/code\u003e are both constructs that expose a certain interface, have a certain implementation, and are reused multiple times within methods and functions. And again, \u003ccode\u003eNSArray\u003c\/code\u003e and \u003ccode\u003eArray\u003c\/code\u003e are not tied to a particular domain, and have two important properties:\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2015",
-        "datePublished": "2015-12-09 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2015-12-09 00:00:00 \x2b0000 UTC",
+        "datePublished": "2015-12-09 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2015-12-09 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/blog\/eng\/code-reuse-a-primer\/",
         "wordCount" : "1827",
         "keywords" : [ "Blog" ]
@@ -37,14 +37,14 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.69.0" />
+        <meta name="generator" content="Hugo 0.134.2">
         
 
 
         
         
             
-                <meta name="description" content="Last time we looked at a possible implementation for the Optional type in Objective-C; while the main point was to port to Objective-C a tool that&rsquo;s frequently used in Swift, making use of the Optional class can be considered an application of a much more general concept: code reuse. In fact, Optional is not tied to a particular domain, and can be reused over and over again in multiple projects: that&rsquo;s what actually happens in Swift.">
+                <meta name="description" content="Last time we looked at a possible implementation for the Optional type in Objective-C; while the main point was to port to Objective-C a tool that&rsquo;s frequently used in Swift, making use of the Optional class can be considered an application of a much more general concept: code reuse. In fact, Optional is not tied to a particular domain, and can be reused over and over again in multiple projects: that&rsquo;s what actually happens in Swift. But, to think about it, that&rsquo;s what happens for a wide range of classes in Objective-C, or types in Swift: for example, NSArray and Array are both constructs that expose a certain interface, have a certain implementation, and are reused multiple times within methods and functions. And again, NSArray and Array are not tied to a particular domain, and have two important properties:">
             
         
 
@@ -59,7 +59,7 @@
 
 
 <meta name="og:title" content="Code reuse: a primer"/>
-<meta name="og:description" content="Last time we looked at a possible implementation for the Optional type in Objective-C; while the main point was to port to Objective-C a tool that&rsquo;s frequently used in Swift, making use of the Optional class can be considered an application of a much more general concept: code reuse. In fact, Optional is not tied to a particular domain, and can be reused over and over again in multiple projects: that&rsquo;s what actually happens in Swift."/>
+<meta name="og:description" content="Last time we looked at a possible implementation for the Optional type in Objective-C; while the main point was to port to Objective-C a tool that&rsquo;s frequently used in Swift, making use of the Optional class can be considered an application of a much more general concept: code reuse. In fact, Optional is not tied to a particular domain, and can be reused over and over again in multiple projects: that&rsquo;s what actually happens in Swift. But, to think about it, that&rsquo;s what happens for a wide range of classes in Objective-C, or types in Swift: for example, NSArray and Array are both constructs that expose a certain interface, have a certain implementation, and are reused multiple times within methods and functions. And again, NSArray and Array are not tied to a particular domain, and have two important properties:"/>
 
 
     
@@ -72,12 +72,15 @@
 
 
 
-        <meta property="og:title" content="Code reuse: a primer" />
-<meta property="og:description" content="Last time we looked at a possible implementation for the Optional type in Objective-C; while the main point was to port to Objective-C a tool that&rsquo;s frequently used in Swift, making use of the Optional class can be considered an application of a much more general concept: code reuse. In fact, Optional is not tied to a particular domain, and can be reused over and over again in multiple projects: that&rsquo;s what actually happens in Swift." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.facile.it/blog/eng/code-reuse-a-primer/" />
-<meta property="article:published_time" content="2015-12-09T00:00:00+00:00" />
-<meta property="article:modified_time" content="2015-12-09T00:00:00+00:00" />
+        <meta property="og:url" content="https://engineering.facile.it/blog/eng/code-reuse-a-primer/">
+  <meta property="og:site_name" content="Facile.it Engineering">
+  <meta property="og:title" content="Code reuse: a primer">
+  <meta property="og:description" content="Last time we looked at a possible implementation for the Optional type in Objective-C; while the main point was to port to Objective-C a tool that’s frequently used in Swift, making use of the Optional class can be considered an application of a much more general concept: code reuse. In fact, Optional is not tied to a particular domain, and can be reused over and over again in multiple projects: that’s what actually happens in Swift. But, to think about it, that’s what happens for a wide range of classes in Objective-C, or types in Swift: for example, NSArray and Array are both constructs that expose a certain interface, have a certain implementation, and are reused multiple times within methods and functions. And again, NSArray and Array are not tied to a particular domain, and have two important properties:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2015-12-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2015-12-09T00:00:00+00:00">
 
 
         
@@ -86,16 +89,13 @@
             
         
 
-        <meta itemprop="name" content="Code reuse: a primer">
-<meta itemprop="description" content="Last time we looked at a possible implementation for the Optional type in Objective-C; while the main point was to port to Objective-C a tool that&rsquo;s frequently used in Swift, making use of the Optional class can be considered an application of a much more general concept: code reuse. In fact, Optional is not tied to a particular domain, and can be reused over and over again in multiple projects: that&rsquo;s what actually happens in Swift.">
-<meta itemprop="datePublished" content="2015-12-09T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-12-09T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1827">
-
-
-
-<meta itemprop="keywords" content="" />
         
+  <meta itemprop="name" content="Code reuse: a primer">
+  <meta itemprop="description" content="Last time we looked at a possible implementation for the Optional type in Objective-C; while the main point was to port to Objective-C a tool that’s frequently used in Swift, making use of the Optional class can be considered an application of a much more general concept: code reuse. In fact, Optional is not tied to a particular domain, and can be reused over and over again in multiple projects: that’s what actually happens in Swift. But, to think about it, that’s what happens for a wide range of classes in Objective-C, or types in Swift: for example, NSArray and Array are both constructs that expose a certain interface, have a certain implementation, and are reused multiple times within methods and functions. And again, NSArray and Array are not tied to a particular domain, and have two important properties:">
+  <meta itemprop="datePublished" content="2015-12-09T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2015-12-09T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1827">
+  <meta itemprop="keywords" content="Elviro,English,Swift,Functional Programming,Code Reuse">
 
         
             
@@ -123,19 +123,6 @@
 
 
       
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-22342495-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
     </head>
     <body>
 
@@ -189,7 +176,7 @@ if (!doNotTrack) {
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
                 </form>
             </li>
             <li class="menu">
@@ -206,7 +193,7 @@ if (!doNotTrack) {
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
             </form>
         </section>
 
@@ -264,35 +251,35 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-08-28'>
-                                    August 28, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-07-02'>
-                                    July 2, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-05-20'>
+                                    May 20, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-03-11'>
+                                    March 11, 2024</time>
                             </header>
                             
 
@@ -477,129 +464,129 @@ if (!doNotTrack) {
 </ul>
 <p>Semantically, we can describe a <code>Signal</code> as a container for a value that&rsquo;s going to be there at a certain point in time, and it&rsquo;s going to update itself indefinitely.</p>
 <p>What follows is the entire implementation of the <code>Signal</code> class:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">SignalContinuation</span>
-{
-  <span style="color:#66d9ef">case</span> Continue
-  <span style="color:#66d9ef">case</span> Stop
-}
-
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Signal</span>&lt;Subtype&gt;
-{
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> observers: [(Subtype -&gt; SignalContinuation)] = []
-
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">init</span>() {}
-
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">observe</span> (observeFunction: Subtype -&gt; SignalContinuation)
-  {
-    observers.append(observeFunction)
-  }
-
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">send</span> (value: Subtype)
-  {
-    <span style="color:#66d9ef">var</span> continuations: [(Subtype -&gt; SignalContinuation)] = []
-    <span style="color:#66d9ef">while</span> observers.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>
-    {
-      <span style="color:#66d9ef">let</span> observer = observers.removeFirst()
-      <span style="color:#66d9ef">let</span> continuation = observer(value)
-      <span style="color:#66d9ef">switch</span> continuation
-      {
-      <span style="color:#66d9ef">case</span> .Continue:
-        continuations.append(observer)
-      <span style="color:#66d9ef">case</span> .Stop: <span style="color:#66d9ef">break</span>
-      }
-    }
-    observers = continuations
-  }
-
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">forwardTo</span> (otherSignal: Signal&lt;Subtype&gt;) -&gt; Signal
-  {
-    observe { action <span style="color:#66d9ef">in</span>
-      otherSignal.send(action)
-      <span style="color:#66d9ef">return</span> .Continue
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">self</span>
-  }
-
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">forwardTo</span> &lt;OtherSubtype&gt; (
-    otherSignal: Signal&lt;OtherSubtype&gt;,
-    mappingFunction: Subtype -&gt; OtherSubtype) -&gt; Signal
-  {
-    observe { action <span style="color:#66d9ef">in</span>
-      otherSignal.send(mappingFunction(action))
-      <span style="color:#66d9ef">return</span> .Continue
-    }
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">self</span>
-  }
-
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">map</span> &lt;OtherSubtype&gt; (transform: Subtype -&gt; OtherSubtype) -&gt; Signal&lt;OtherSubtype&gt;
-  {
-    <span style="color:#66d9ef">let</span> mappedSignal = Signal&lt;OtherSubtype&gt;()
-    forwardTo(mappedSignal, mappingFunction: transform)
-    <span style="color:#66d9ef">return</span> mappedSignal
-  }
-}
-</code></pre></div><p>This is really simple, but still, really powerful. A problem that&rsquo;s frequently found when implementing the observer pattern is how to manage unsubscriptions; it&rsquo;s a responsibility of the observer object to stop observing something, and in this <code>Signal</code> implementation this is easily managed within the closure passed to the <code>observe</code> method: the closure must return a <code>SignalContinuation</code> value, that can be simply <code>.Continue</code> (that is, keep observing updates) or <code>.Stop</code>. Another problem is memory management: we need to make sure that when an observer&rsquo;s memory is released, it will also stop observing, or a message will be sent to a dangling pointer, resulting in the app crashing. Swift&rsquo;s <code>weak</code> memory semantics actually makes this really easy to do: we&rsquo;ll put a <code>guard</code> clause at the beginning of the closure passed to the <code>observe</code> method; if the object has become <code>nil</code>, we&rsquo;ll simply return <code>.Stop</code>. The following example shows a simple use of the <code>Signal</code> class, including the <em>stop-observing-on-nil</em> mechanism:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Sender</span>
-{
-  <span style="color:#66d9ef">let</span> signal = Signal&lt;Int&gt;()
-
-  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sendNew</span>(value: Int)
-  {
-    signal.send(value)
-  }
-}
-
-<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Receiver</span>&lt;<span style="color:#66d9ef">Type</span>: CustomStringConvertible&gt;
-{
-  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">startObserving</span>(signal: Signal&lt;<span style="color:#66d9ef">Type</span>&gt;)
-  {
-    signal.observe { [<span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">self</span>] value <span style="color:#66d9ef">in</span>
-      <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> this = <span style="color:#66d9ef">self</span> <span style="color:#66d9ef">else</span> { <span style="color:#66d9ef">return</span> .Stop }
-      this.printNewValue(value)
-      <span style="color:#66d9ef">return</span> .Continue
-    }
-  }
-
-  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">printNewValue</span>(value: <span style="color:#66d9ef">Type</span>)
-  {
-    print(value)
-  }
-}
-
-<span style="color:#66d9ef">let</span> sender = Sender()
-<span style="color:#66d9ef">let</span> receiver = Receiver&lt;Int&gt;()
-
-receiver.startObserving(sender.signal)
-
-sender.signal.send(<span style="color:#ae81ff">3</span>)
-sender.signal.send(<span style="color:#ae81ff">5</span>)
-sender.signal.send(<span style="color:#ae81ff">10</span>)
-sender.signal.send(<span style="color:#ae81ff">20</span>)
-<span style="color:#75715e">/// this will print 3, 5, 10, 20 on console</span>
-</code></pre></div><p>In the example we can see an application of the concepts we talked about at the beginning of this article: instead of creating yet another interface for the same behavior, we are directly using and reusing the <code>Signal</code> object. A more complex example would be the addition of something like a <em>resonator</em>, that is, an object with a <code>Signal</code> that resonates with another, like in the following example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-swift" data-lang="swift"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DoublingResonator</span>
-{
-  <span style="color:#66d9ef">let</span> signal = Signal&lt;Int&gt;()
-
-  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">resonateWith</span>(otherSignal: Signal&lt;Int&gt;)
-  {
-    otherSignal.forwardTo(signal) { $0<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> }
-  }
-}
-
-<span style="color:#66d9ef">let</span> resonator = DoublingResonator()
-resonator.resonateWith(sender.signal)
-
-<span style="color:#66d9ef">let</span> receiver = Receiver&lt;Int&gt;()
-
-receiver.startObserving(resonator.signal)
-
-sender.signal.send(<span style="color:#ae81ff">3</span>)
-sender.signal.send(<span style="color:#ae81ff">5</span>)
-sender.signal.send(<span style="color:#ae81ff">10</span>)
-sender.signal.send(<span style="color:#ae81ff">20</span>)
-<span style="color:#75715e">/// this will print 6, 10, 20, 40 on console</span>
-</code></pre></div><p>There are many other options for composition of signals, but as long as we don&rsquo;t need them, it&rsquo;s better to keep the class <strong>simple</strong>: then, gradually over time, we can start adding features to the class, and as long as they&rsquo;re properly generic and tested, we will be able to use them in all of our projects.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> <span style="color:#a6e22e">SignalContinuation</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> Continue
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">case</span> Stop
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Signal</span>&lt;Subtype&gt;
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">var</span> observers: [(Subtype -&gt; SignalContinuation)] = []
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">init</span>() {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">observe</span> (observeFunction: Subtype -&gt; SignalContinuation)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    observers.append(observeFunction)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">send</span> (value: Subtype)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> continuations: [(Subtype -&gt; SignalContinuation)] = []
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> observers.count <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> observer = observers.removeFirst()
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">let</span> continuation = observer(value)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">switch</span> continuation
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">case</span> .Continue:
+</span></span><span style="display:flex;"><span>        continuations.append(observer)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">case</span> .Stop: <span style="color:#66d9ef">break</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    observers = continuations
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">forwardTo</span> (otherSignal: Signal&lt;Subtype&gt;) -&gt; Signal
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    observe { action <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>      otherSignal.send(action)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> .Continue
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">self</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">forwardTo</span> &lt;OtherSubtype&gt; (
+</span></span><span style="display:flex;"><span>    otherSignal: Signal&lt;OtherSubtype&gt;,
+</span></span><span style="display:flex;"><span>    mappingFunction: Subtype -&gt; OtherSubtype) -&gt; Signal
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    observe { action <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>      otherSignal.send(mappingFunction(action))
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> .Continue
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">self</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">map</span> &lt;OtherSubtype&gt; (transform: Subtype -&gt; OtherSubtype) -&gt; Signal&lt;OtherSubtype&gt;
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> mappedSignal = Signal&lt;OtherSubtype&gt;()
+</span></span><span style="display:flex;"><span>    forwardTo(mappedSignal, mappingFunction: transform)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> mappedSignal
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is really simple, but still, really powerful. A problem that&rsquo;s frequently found when implementing the observer pattern is how to manage unsubscriptions; it&rsquo;s a responsibility of the observer object to stop observing something, and in this <code>Signal</code> implementation this is easily managed within the closure passed to the <code>observe</code> method: the closure must return a <code>SignalContinuation</code> value, that can be simply <code>.Continue</code> (that is, keep observing updates) or <code>.Stop</code>. Another problem is memory management: we need to make sure that when an observer&rsquo;s memory is released, it will also stop observing, or a message will be sent to a dangling pointer, resulting in the app crashing. Swift&rsquo;s <code>weak</code> memory semantics actually makes this really easy to do: we&rsquo;ll put a <code>guard</code> clause at the beginning of the closure passed to the <code>observe</code> method; if the object has become <code>nil</code>, we&rsquo;ll simply return <code>.Stop</code>. The following example shows a simple use of the <code>Signal</code> class, including the <em>stop-observing-on-nil</em> mechanism:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Sender</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> signal = Signal&lt;Int&gt;()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">sendNew</span>(value: Int)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    signal.send(value)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Receiver</span>&lt;<span style="color:#66d9ef">Type</span>: CustomStringConvertible&gt;
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">startObserving</span>(signal: Signal&lt;<span style="color:#66d9ef">Type</span>&gt;)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    signal.observe { [<span style="color:#66d9ef">weak</span> <span style="color:#66d9ef">self</span>] value <span style="color:#66d9ef">in</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">guard</span> <span style="color:#66d9ef">let</span> this = <span style="color:#66d9ef">self</span> <span style="color:#66d9ef">else</span> { <span style="color:#66d9ef">return</span> .Stop }
+</span></span><span style="display:flex;"><span>      this.printNewValue(value)
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> .Continue
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">printNewValue</span>(value: <span style="color:#66d9ef">Type</span>)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    print(value)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> sender = Sender()
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> receiver = Receiver&lt;Int&gt;()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>receiver.startObserving(sender.signal)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sender.signal.send(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>sender.signal.send(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>sender.signal.send(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>sender.signal.send(<span style="color:#ae81ff">20</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// this will print 3, 5, 10, 20 on console</span>
+</span></span></code></pre></div><p>In the example we can see an application of the concepts we talked about at the beginning of this article: instead of creating yet another interface for the same behavior, we are directly using and reusing the <code>Signal</code> object. A more complex example would be the addition of something like a <em>resonator</em>, that is, an object with a <code>Signal</code> that resonates with another, like in the following example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-swift" data-lang="swift"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DoublingResonator</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">let</span> signal = Signal&lt;Int&gt;()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">resonateWith</span>(otherSignal: Signal&lt;Int&gt;)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    otherSignal.forwardTo(signal) { $0<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> resonator = DoublingResonator()
+</span></span><span style="display:flex;"><span>resonator.resonateWith(sender.signal)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">let</span> receiver = Receiver&lt;Int&gt;()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>receiver.startObserving(resonator.signal)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sender.signal.send(<span style="color:#ae81ff">3</span>)
+</span></span><span style="display:flex;"><span>sender.signal.send(<span style="color:#ae81ff">5</span>)
+</span></span><span style="display:flex;"><span>sender.signal.send(<span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>sender.signal.send(<span style="color:#ae81ff">20</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// this will print 6, 10, 20, 40 on console</span>
+</span></span></code></pre></div><p>There are many other options for composition of signals, but as long as we don&rsquo;t need them, it&rsquo;s better to keep the class <strong>simple</strong>: then, gradually over time, we can start adding features to the class, and as long as they&rsquo;re properly generic and tested, we will be able to use them in all of our projects.</p>
 <p>To conclude, finding the right abstractions for reusability is of course a problem, and the solution is not an easy one: plenty of academic papers address the problem in several ways (classic Charles W. Krueger&rsquo;s paper <a href="http://www.biglever.com/papers/Krueger_AcmReuseSurvey.pdf">Software Reuse</a> contains a good overview of the used techniques), and the reason why <a href="https://en.wikipedia.org/wiki/Category_theory">category theory</a> has many applications in functional programming is because it offers an excellent set of abstractions for tackling several classes of problems. But still, I think the advantages of code reuse are many, and that achieving a compositional design through atomic, reusable components is <strong>a worthy goal</strong> to pursue.</p>
 
   </div>
@@ -641,29 +628,6 @@ sender.signal.send(<span style="color:#ae81ff">20</span>)
   </footer>
 
 </article>
-
-    <article class="post">
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
 
 
 <ul class="actions pagination">
@@ -820,54 +784,6 @@ sender.signal.send(<span style="color:#ae81ff">20</span>)
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-08-28'>
-                28 August 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
-                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-07-02'>
-                2 July 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
                     <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
                       <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
@@ -887,6 +803,60 @@ sender.signal.send(<span style="color:#ae81ff">20</span>)
               
               <time class="published" datetime='2024-05-30'>
                 30 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-05-20'>
+                20 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+                  
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-03-11'>
+                11 March 2024
               </time>
             </header>
             
@@ -1040,7 +1010,7 @@ sender.signal.send(<span style="color:#ae81ff">20</span>)
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional Programming</a>
                 <span style="float:right;">11</span>
               
             </header>
@@ -1151,7 +1121,7 @@ sender.signal.send(<span style="color:#ae81ff">20</span>)
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/open-source/">Open source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">7</span>
               
             </header>
@@ -1188,7 +1158,7 @@ sender.signal.send(<span style="color:#ae81ff">20</span>)
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">16</span>
+                <span style="float:right;">14</span>
               
             </header>
           </article>

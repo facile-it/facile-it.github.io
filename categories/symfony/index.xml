@@ -4,60 +4,44 @@
     <title>Symfony on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/symfony/</link>
     <description>Recent content in Symfony on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 10 Jun 2021 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/symfony/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/symfony/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to write a functional test with Symfony and Guzzle&#39;s mock handler</title>
       <link>https://engineering.facile.it/blog/eng/functional-testing-symfony-guzzle/</link>
       <pubDate>Thu, 10 Jun 2021 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/functional-testing-symfony-guzzle/</guid>
-      <description>Introduction When we write a client to integrate an API in our systems it is important to test it to be sure we can handle every possible response. Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler. This tool provides a mock handler that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;When we write a client to integrate an API in our systems it is important to test it to be sure we can handle every possible response.&#xA;Guzzle client provides a very simple way to mock external APIs responses: Guzzle Mock Handler. This tool provides a mock handler&#xA;that can be used to fulfill HTTP requests with a response or exception by shifting return values off of a queue.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Looking back at Symfony Day Rome 2016</title>
       <link>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</link>
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</guid>
-      <description>Every year the GrUSP, in cooperation with one of the italian PHP user groups, organizes the italian Symfony conference. This year the event was organized in the Capital on 28th October with the help of PHP User Group Roma, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.</description>
+      <description>&lt;p&gt;Every year the &lt;a href=&#34;http://www.grusp.org/&#34;&gt;GrUSP&lt;/a&gt;, in cooperation with one of the italian PHP user groups, organizes the italian &lt;strong&gt;&lt;a href=&#34;http://symfony.com/&#34;&gt;Symfony&lt;/a&gt;&lt;/strong&gt; conference. This year the &lt;a href=&#34;http://2016.symfonyday.it/&#34;&gt;event&lt;/a&gt; was organized in the Capital on 28th October with the help of &lt;a href=&#34;http://roma.grusp.org/&#34;&gt;PHP User Group Roma&lt;/a&gt;, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Paraunit: test paralleli, Doctrine e le fixture</title>
       <link>https://engineering.facile.it/blog/ita/paraunit/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
-      <description>Questo articolo è la sintesi di un talk presentato al SymfonyDay 2015; potete trovare le slide qui.
-I test e la loro durata Sviluppare applicazioni scrivendo test e facendo Test Driven Development è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa crescere la suite di test del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.</description>
+      <description>&lt;p&gt;&lt;em&gt;Questo articolo è la sintesi di un talk presentato al &lt;a href=&#34;http://2015.symfonyday.it/&#34;&gt;SymfonyDay 2015&lt;/a&gt;; potete trovare le slide &lt;a href=&#34;http://jean85.github.io/slides/2015-10-paraunit-symfonyday/index.html&#34;&gt;qui&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h4 id=&#34;i-test-e-la-loro-durata&#34;&gt;I test e la loro durata&lt;/h4&gt;&#xA;&lt;p&gt;Sviluppare applicazioni scrivendo &lt;strong&gt;test&lt;/strong&gt; e facendo &lt;a href=&#34;https://it.wikipedia.org/wiki/Test_driven_development&#34;&gt;Test Driven Development&lt;/a&gt; è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa &lt;strong&gt;crescere la suite di test&lt;/strong&gt; del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>WAMP, Web Application Messaging Protocol.. e PHP!</title>
       <link>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
-      <description>Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno scambio dati in due direzioni, efficiente e a bassa latenza, ha determinato l’ascesa negli ultimi anni di soluzioni basate su WebSocket .
-Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.</description>
+      <description>&lt;p&gt;Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno &lt;strong&gt;scambio dati&lt;/strong&gt; in &lt;strong&gt;due direzioni&lt;/strong&gt;, &lt;strong&gt;efficiente&lt;/strong&gt; e a &lt;strong&gt;bassa latenza&lt;/strong&gt;, ha determinato l’ascesa negli ultimi anni di &lt;strong&gt;soluzioni basate su &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;https://www.websocket.org/&#34; target=&#39;_blank&#39;&gt;WebSocket&lt;/a&gt;&#xA;&#xA;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Internet delle cose e web 2.0 trovano oramai sempre &lt;strong&gt;meno spazio&lt;/strong&gt; all’interno del protocollo &lt;strong&gt;HTTP/1&lt;/strong&gt;. Le tecniche di &lt;strong&gt;polling e long polling&lt;/strong&gt;, in voga fino a pochi anni fa, non permettevano di trasmettere in &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;https://it.wikipedia.org/wiki/Duplex&#34; target=&#39;_blank&#39;&gt;full duplex&lt;/a&gt;&#xA;&#xA; (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano &lt;strong&gt;diversi sforzi&lt;/strong&gt; per simulare notifiche push server side.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Gestione di ACL su insiemi di records</title>
       <link>https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</guid>
-      <description>Le ACL (Access Control List) sono un strumento molto potente per poter definire l&amp;rsquo;accesso a risorse con una granularità molto fine. Nel quotidiano abbiamo già modo di utilizzarle per definire i permessi per accedere a file su Unix o quali pacchetti far passare attraverso un firewall o ancora l&amp;rsquo;accesso a database.
-In Symfony le ACL sono disponibili out-of-the-box nel caso di installazione completa e permettono la definizione delle regole di accesso a risorse tramite ruoli e maschere.</description>
+      <description>&lt;p&gt;Le &lt;strong&gt;ACL&lt;/strong&gt; (&lt;em&gt;Access Control List&lt;/em&gt;) sono un strumento molto potente per poter definire l&amp;rsquo;accesso a risorse con una granularità molto fine. Nel quotidiano abbiamo già modo di utilizzarle per definire i permessi per accedere a file su Unix o quali pacchetti far passare attraverso un firewall o ancora l&amp;rsquo;accesso a database.&lt;/p&gt;&#xA;&lt;p&gt;In &lt;strong&gt;Symfony&lt;/strong&gt; le &lt;em&gt;ACL&lt;/em&gt; sono disponibili &lt;em&gt;out-of-the-box&lt;/em&gt; nel caso di installazione completa e permettono la definizione delle regole di accesso a risorse tramite &lt;strong&gt;ruoli&lt;/strong&gt; e &lt;strong&gt;maschere&lt;/strong&gt;. Mentre i &lt;strong&gt;ruoli&lt;/strong&gt; rappresentano dei sottoinsiemi degli utenti di una data applicazione (&lt;em&gt;amministratori&lt;/em&gt;, &lt;em&gt;backoffice&lt;/em&gt;, &lt;em&gt;business analyst&lt;/em&gt;) e possono essere visti come delle etichette da assegnare ad un utente, le &lt;strong&gt;maschere&lt;/strong&gt; sono la rappresentazione numerica delle azioni che possono essere effettuate dagli utenti aventi determinati ruoli. Per tornare all&amp;rsquo;esempio del filesystem Unix, i ruoli possono essere &lt;em&gt;Owner&lt;/em&gt;, &lt;em&gt;Group&lt;/em&gt; o &lt;em&gt;Others&lt;/em&gt; mentre le maschere sono ad esempio 7 (lettura, scrittura e esecuzione) indicato per ciascun ruolo.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

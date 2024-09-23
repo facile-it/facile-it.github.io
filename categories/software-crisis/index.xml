@@ -4,21 +4,16 @@
     <title>Software Crisis on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/software-crisis/</link>
     <description>Recent content in Software Crisis on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 13 Jul 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/software-crisis/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/software-crisis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Programmazione Funzionale: perché preoccuparsi?</title>
       <link>https://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</link>
       <pubDate>Mon, 13 Jul 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</guid>
-      <description>Nel suo discorso di accettazione del Premio Turing 1972, dal titolo &amp;ldquo;The humble programmer&amp;quot;, Edsger Wybe Dijkstra, uno dei più celebri computing scientists del 20° secolo (morto nel 2002), affrontò le cause della nota Software Crisis, cioè la crisi che colpì l&amp;rsquo;industria del software nella seconda metà degli anni sessanta: la potenza e la capacità di elaborazione dei computer stavano crescendo esponenzialmente, molto più rapidamente dell&amp;rsquo;abilità dei programmatori di gestire la complessità e scrivere software funzionante.</description>
+      <description>&lt;p&gt;Nel suo discorso di accettazione del &lt;a href=&#34;http://amturing.acm.org/award_winners/dijkstra_1053701.cfm&#34;&gt;Premio Turing 1972&lt;/a&gt;, dal titolo &amp;ldquo;&lt;a href=&#34;https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html&#34;&gt;The humble programmer&lt;/a&gt;&amp;rdquo;, &lt;strong&gt;Edsger Wybe Dijkstra&lt;/strong&gt;, uno dei più celebri &lt;em&gt;computing scientists&lt;/em&gt; del 20° secolo (morto nel 2002), affrontò le cause della nota &lt;a href=&#34;https://it.wikipedia.org/wiki/Software_crisis&#34;&gt;Software Crisis&lt;/a&gt;, cioè la crisi che colpì l&amp;rsquo;industria del software nella seconda metà degli anni sessanta: la potenza e la capacità di elaborazione dei computer stavano &lt;strong&gt;crescendo esponenzialmente&lt;/strong&gt;, molto più rapidamente dell&amp;rsquo;abilità dei programmatori di &lt;strong&gt;gestire la complessità&lt;/strong&gt; e scrivere software funzionante. Nello stesso discorso, Dijkstra propose anche delle possibili strade da intraprendere che a suo avviso avrebbero portato aziende e università a migliorare la qualità del loro software. Riporto qui una frase che a mio parere riassume abbastanza bene l&amp;rsquo;intero discorso:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

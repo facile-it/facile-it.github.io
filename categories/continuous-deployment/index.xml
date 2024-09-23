@@ -1,36 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Continuous deployment on Facile.it Engineering</title>
+    <title>Continuous Deployment on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/continuous-deployment/</link>
-    <description>Recent content in Continuous deployment on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Continuous Deployment on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Apr 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/continuous-deployment/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/continuous-deployment/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How I became a GitLab contributor to fix an issue in our project&#39;s CI/CD pipeline</title>
       <link>https://engineering.facile.it/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/</link>
       <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/how-i-became-a-gitlab-contributor-to-fix-an-issue-in-our-projects-cicd-pipeline/</guid>
-      <description>Introduction During these months at Facile.it I had to face many challenges regarding the improvement of CI/CD pipelines for the Insurance team, with a strong focus on performance and reusability. The focus on these topics is very important as it allows us to follow GitLab best practices for CI/CD such as the fail fast principle.
- 💬
-Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds.</description>
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;During these months at Facile.it I had to face many challenges regarding the improvement of &lt;strong&gt;CI/CD&lt;/strong&gt; pipelines for the &lt;em&gt;Insurance&lt;/em&gt; team, with a strong focus on performance and reusability. The focus on these topics is very important as it allows us to follow &lt;strong&gt;GitLab&lt;/strong&gt; best practices for &lt;strong&gt;CI/CD&lt;/strong&gt; such as the &lt;em&gt;fail fast principle&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;💬&lt;/p&gt;&#xA;&lt;p&gt;Fail fast: On the CI side, devs committing code need to know as quickly as possible if there are issues so they can roll the code back and fix it while it’s fresh in their minds. The idea of “fail fast” helps reduce developer context switching too, which makes for happier DevOps professionals.&lt;/p&gt;&#xA;&lt;p&gt;&amp;ndash; &lt;cite&gt;&lt;a href=&#34;https://about.gitlab.com/blog/2022/02/03/how-to-keep-up-with-ci-cd-best-practices/#what-are-the-best-practices-for-cicd&#34;&gt;How to keep up with CI/CD best practices - GitLab Blog&lt;/a&gt;&lt;/cite&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;</description>
     </item>
-    
     <item>
       <title>Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</title>
       <link>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</link>
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</guid>
-      <description>In the last month, I&amp;rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt GitLab CI for the build, since we use GitLab CE for our Git repositories; I then created a continuous deployment pipeline for the staging environment, directly to a Kubernetes cluster, leveraging Docker Compose to make the configuration easier.
-After, I decided to start migrating a previous, internal project of mine to the same approach, since it&amp;rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, doing a rolling deployment with Kubernetes is surprisingly easy!</description>
+      <description>&lt;p&gt;In the last month, I&amp;rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt &lt;strong&gt;GitLab CI&lt;/strong&gt; for the build, since we use GitLab CE for our Git repositories; I then created a &lt;strong&gt;continuous deployment pipeline&lt;/strong&gt; for the staging environment, directly to a &lt;strong&gt;Kubernetes cluster&lt;/strong&gt;, leveraging &lt;strong&gt;Docker Compose&lt;/strong&gt; to make the configuration easier.&lt;/p&gt;&#xA;&lt;p&gt;After, I decided to start migrating a previous, internal project of mine to the same approach, since it&amp;rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, &lt;strong&gt;doing a rolling deployment with Kubernetes is surprisingly easy&lt;/strong&gt;!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

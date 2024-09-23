@@ -8,12 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/engineering.facile.it"
+             "@id": "https:\/\/engineering.facile.it\/"
         },
         "articleSection" : "blog",
-        "name" : "Is it all PHP OPCache\x27s fault?",
-        "headline" : "Is it all PHP OPCache\x27s fault?",
-        "description" : "Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn\x26rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.\nIntroduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things».",
+        "name" : "Is it all PHP OPCache\u0027s fault?",
+        "headline" : "Is it all PHP OPCache\u0027s fault?",
+        "description" : "\u003ch1 id=\u0022abstract\u0022\u003eAbstract\u003c\/h1\u003e\n\u003cp\u003e\u003cem\u003eUpon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn\u0026rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.\u003c\/em\u003e\u003c\/p\u003e\n\u003ch1 id=\u0022introduction\u0022\u003eIntroduction\u003c\/h1\u003e\n\u003cp\u003eWhen I started my software developer career, I was very surprised to read the following sentence, attributed to \u003ca href=\u0022https:\/\/martinfowler.com\/bliki\/TwoHardThings.html\u0022\u003ePhil Karlton\u003c\/a\u003e: \u003cem\u003e«There are only two hard things in Computer Science: \u003cstrong\u003ecache invalidation\u003c\/strong\u003e and \u003cstrong\u003enaming things\u003c\/strong\u003e»\u003c\/em\u003e. In the beginning I was incredulous, because I didn\u0026rsquo;t really get the sense of these words. Not much later, I started to understand.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2017",
-        "datePublished": "2017-10-04 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2017-10-04 00:00:00 \x2b0000 UTC",
+        "datePublished": "2017-10-04 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2017-10-04 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/blog\/eng\/realpath-cache-is-it-all-php-opcache-s-fault\/",
         "wordCount" : "2706",
         "keywords" : [ "Blog" ]
@@ -37,15 +37,17 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.69.0" />
+        <meta name="generator" content="Hugo 0.134.2">
         
 
 
         
         
             
-                <meta name="description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
-Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things».">
+                <meta name="description" content="Abstract
+Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
+Introduction
+When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things». In the beginning I was incredulous, because I didn&rsquo;t really get the sense of these words. Not much later, I started to understand.">
             
         
 
@@ -58,8 +60,10 @@ Introduction When I started my software developer career, I was very surprised t
 
 
 <meta name="og:title" content="Is it all PHP OPCache&#39;s fault?"/>
-<meta name="og:description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
-Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things»."/>
+<meta name="og:description" content="Abstract
+Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
+Introduction
+When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things». In the beginning I was incredulous, because I didn&rsquo;t really get the sense of these words. Not much later, I started to understand."/>
 
 
     
@@ -72,30 +76,30 @@ Introduction When I started my software developer career, I was very surprised t
 
 
 
-        <meta property="og:title" content="Is it all PHP OPCache&#39;s fault?" />
-<meta property="og:description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
-Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things»." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/" />
-<meta property="article:published_time" content="2017-10-04T00:00:00+00:00" />
-<meta property="article:modified_time" content="2017-10-04T00:00:00+00:00" />
+        <meta property="og:url" content="https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/">
+  <meta property="og:site_name" content="Facile.it Engineering">
+  <meta property="og:title" content="Is it all PHP OPCache&#39;s fault?">
+  <meta property="og:description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn’t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
+Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things». In the beginning I was incredulous, because I didn’t really get the sense of these words. Not much later, I started to understand.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2017-10-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2017-10-04T00:00:00+00:00">
 
 
         
             <meta property="og:image" content="https://engineering.facile.it/images/realpath-cache-is-it-all-php-opcache-s-fault/share.jpg">
         
 
-        <meta itemprop="name" content="Is it all PHP OPCache&#39;s fault?">
-<meta itemprop="description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
-Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things».">
-<meta itemprop="datePublished" content="2017-10-04T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2017-10-04T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="2706">
-
-
-
-<meta itemprop="keywords" content="" />
         
+  <meta itemprop="name" content="Is it all PHP OPCache&#39;s fault?">
+  <meta itemprop="description" content="Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn’t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
+Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things». In the beginning I was incredulous, because I didn’t really get the sense of these words. Not much later, I started to understand.">
+  <meta itemprop="datePublished" content="2017-10-04T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2017-10-04T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2706">
+  <meta itemprop="keywords" content="Salvatore-Cordiano,English,PHP,OPCache,Realpath_cache">
 
         
             
@@ -123,19 +127,6 @@ Introduction When I started my software developer career, I was very surprised t
 
 
       
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-22342495-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
     </head>
     <body>
 
@@ -189,7 +180,7 @@ if (!doNotTrack) {
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
                 </form>
             </li>
             <li class="menu">
@@ -206,7 +197,7 @@ if (!doNotTrack) {
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
             </form>
         </section>
 
@@ -264,35 +255,35 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-08-28'>
-                                    August 28, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-07-02'>
-                                    July 2, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-05-20'>
+                                    May 20, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-03-11'>
+                                    March 11, 2024</time>
                             </header>
                             
 
@@ -465,8 +456,8 @@ if (!doNotTrack) {
 </ol>
 <p>We should focus on point 5 because it&rsquo;s the roll out phase. At that point, an <a href="http://docs.ansible.com/ansible/latest/playbooks.html"><strong>Ansible playbook</strong></a> is responsible for copying the new release from the <a href="https://en.wikipedia.org/wiki/Bastion_host">bastion host</a> to all the target machines (front-end, batch, etc.), for setting up folders and permissions, and for doing cache warm-up and release switch. As described previously, each deployment procedure consists of many mandatory activities, but the turning point is when the current project&rsquo;s folder changes: this is usually done through a symlink swap from the previous release folder to the new one. The current project folder is the document root of the specific web application.</p>
 <p>It&rsquo;s just something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ln -sf /var/www/<span style="color:#f92672">{</span>APP_NAME<span style="color:#f92672">}</span>/releases/@YYYYMMDDHHIISS /var/www/<span style="color:#f92672">{</span>APP_NAME<span style="color:#f92672">}</span>/current
-</code></pre></div><p>The <code>-s</code> option is used to create a symbolic link, while <code>-f</code> is used to force the symlink creation if the target already exists; <code>{APP_NAME}</code> represents the project&rsquo;s name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ln -sf /var/www/<span style="color:#f92672">{</span>APP_NAME<span style="color:#f92672">}</span>/releases/@YYYYMMDDHHIISS /var/www/<span style="color:#f92672">{</span>APP_NAME<span style="color:#f92672">}</span>/current
+</span></span></code></pre></div><p>The <code>-s</code> option is used to create a symbolic link, while <code>-f</code> is used to force the symlink creation if the target already exists; <code>{APP_NAME}</code> represents the project&rsquo;s name.</p>
 <p>Our deployment strategy is very common in the PHP world. We store multiple releases of the same application on the production machines, and we use a symlink to the current version. This way we should deploy <strong>atomically and safely</strong>, without impacting the production traffic.</p>
 <p>Last but not least, we have about 15 front-end machines behind a load-balancer with a round-robin workload balancing policy (more than twice the previous number of servers). Now the question is: what happens after the release switch?</p>
 <h1 id="its-all-php-opcaches-fault-">It&rsquo;s all PHP OPCache&rsquo;s fault (?)</h1>
@@ -487,17 +478,17 @@ if (!doNotTrack) {
 <li><code>release-watcher.sh</code> checks the current release served by Apache every second, by making an HTTP request.</li>
 </ul>
 <p>Just clone the GitHub repository and you&rsquo;re ready to test, assuming Docker is already installed on your machine.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/salvatorecordiano/facile-it-realpath_cache
-cd facile-it-realpath_cache
-docker pull salvatorecordiano/realpath_cache
-</code></pre></div><p>To reproduce the cache issue, you have to run the following commands in parallel, using three different command lines:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># start the container with production configuration</span>
-./start.sh production 
-<span style="color:#75715e"># start switching the current release</span>
-./release-switcher.sh
-<span style="color:#75715e"># start watching the current web server response</span> 
-./release-watcher.sh
-</code></pre></div><p>The following <a href="https://www.youtube.com/watch?v=PNjyi42VwP4">video</a> shows the execution output.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/salvatorecordiano/facile-it-realpath_cache
+</span></span><span style="display:flex;"><span>cd facile-it-realpath_cache
+</span></span><span style="display:flex;"><span>docker pull salvatorecordiano/realpath_cache
+</span></span></code></pre></div><p>To reproduce the cache issue, you have to run the following commands in parallel, using three different command lines:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># start the container with production configuration</span>
+</span></span><span style="display:flex;"><span>./start.sh production 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># start switching the current release</span>
+</span></span><span style="display:flex;"><span>./release-switcher.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># start watching the current web server response </span>
+</span></span><span style="display:flex;"><span>./release-watcher.sh
+</span></span></code></pre></div><p>The following <a href="https://www.youtube.com/watch?v=PNjyi42VwP4">video</a> shows the execution output.</p>
 <p>
 	<img data-src="/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production.gif" class="lazy" title="Execution with configuration: production" width="100%"/>
 	<br/>
@@ -508,13 +499,13 @@ docker pull salvatorecordiano/realpath_cache
 
 <p>As expected we are experiencing the cache issue: after a release switch, we&rsquo;re not seeing the right code as the output of an HTTP request.</p>
 <p>Now we disable the OPCache extension and redo the test.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># start the container with production configuration and opcache disabled</span>
-./start.sh production-no-opcache 
-<span style="color:#75715e"># start switching the current release</span>
-./release-switcher.sh
-<span style="color:#75715e"># start watching the current web server response</span> 
-./release-watcher.sh
-</code></pre></div><p>The following <a href="https://www.youtube.com/watch?v=WB78eE0kwUo">video</a> shows the output of this new execution.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># start the container with production configuration and opcache disabled</span>
+</span></span><span style="display:flex;"><span>./start.sh production-no-opcache 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># start switching the current release</span>
+</span></span><span style="display:flex;"><span>./release-switcher.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># start watching the current web server response </span>
+</span></span><span style="display:flex;"><span>./release-watcher.sh
+</span></span></code></pre></div><p>The following <a href="https://www.youtube.com/watch?v=WB78eE0kwUo">video</a> shows the output of this new execution.</p>
 <p>
 	<img data-src="/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production_no_opcache.gif" class="lazy" title="Execution with configuration: production" width="100%"/>
 	<br/>
@@ -530,52 +521,52 @@ docker pull salvatorecordiano/realpath_cache
 <p>When we access a file, PHP tries to resolve it&rsquo;s path using the <code>stat()</code> Unix system call: it returns file attributes (like permission, filename extensions and other metadata) about an <strong>inode</strong>. In the Unix world, an inode is a data structure used to describe a file system object such as a file or a directory. PHP puts the result of the system call in a data structure called <code>realpath_cache_bucket</code>, excluding some things like permissions and owners. So, if we try to access the same file twice, the bucket lookup will spare us another slow system call. To deepen the subject, I suggest reading this bit of <a href="https://github.com/php/php-src/blob/php-7.0.0/Zend/zend_virtual_cwd.c">PHP source code</a>.</p>
 <p>The function <code>realpath_cache_get</code> was introduced in PHP 5.3.2 and it allows one to get an array of all the real path cache entries. For each element of the array, the key is the resolved path, and the value is another array of data like <code>key</code>, <code>is_dir</code>, <code>realpath</code>, <code>expires</code>.</p>
 <p>What follows is the output of <code>print_r(realpath_cache_get());</code> in our Docker test environment:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-PHP" data-lang="PHP">Array
-(
-    [/var/www/html] =&gt; Array
-        (
-            [key] =&gt; 1438560323331296433
-            [is_dir] =&gt; 1
-            [realpath] =&gt; /var/www/html
-            [expires] =&gt; 1504549899
-        )
-    [/var/www] =&gt; Array
-        (
-            [key] =&gt; 1.5408950988325E+19
-            [is_dir] =&gt; 1
-            [realpath] =&gt; /var/www
-            [expires] =&gt; 1504549899
-        )
-    [/var] =&gt; Array
-        (
-            [key] =&gt; 1.6710127960665E+19
-            [is_dir] =&gt; 1
-            [realpath] =&gt; /var
-            [expires] =&gt; 1504549899
-        )
-    [/var/www/html/release1] =&gt; Array
-        (
-            [key] =&gt; 7631224517412515240
-            [is_dir] =&gt; 1
-            [realpath] =&gt; /var/www/html/release1
-            [expires] =&gt; 1504549899
-        )
-    [/var/www/current] =&gt; Array
-        (
-            [key] =&gt; 1.7062595747834E+19
-            [is_dir] =&gt; 1
-            [realpath] =&gt; /var/www/html/release1
-            [expires] =&gt; 1504549899
-        )
-    [/var/www/current/index.php] =&gt; Array
-        (
-            [key] =&gt; 6899135167081162414
-            [is_dir] =&gt; 0
-            [realpath] =&gt; /var/www/html/release1/index.php
-            [expires] =&gt; 1504549899
-        )
-)
-</code></pre></div><p>In the previous code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-PHP" data-lang="PHP"><span style="display:flex;"><span><span style="color:#66d9ef">Array</span>
+</span></span><span style="display:flex;"><span>(
+</span></span><span style="display:flex;"><span>    [<span style="color:#f92672">/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span><span style="color:#a6e22e">www</span><span style="color:#f92672">/</span><span style="color:#a6e22e">html</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Array</span>
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1438560323331296433</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">is_dir</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">realpath</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span><span style="color:#a6e22e">www</span><span style="color:#f92672">/</span><span style="color:#a6e22e">html</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">expires</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1504549899</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    [<span style="color:#f92672">/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span><span style="color:#a6e22e">www</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Array</span>
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1.5408950988325E+19</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">is_dir</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">realpath</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span><span style="color:#a6e22e">www</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">expires</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1504549899</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    [<span style="color:#f92672">/</span><span style="color:#66d9ef">var</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Array</span>
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1.6710127960665E+19</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">is_dir</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">realpath</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">/</span><span style="color:#66d9ef">var</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">expires</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1504549899</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    [<span style="color:#f92672">/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span><span style="color:#a6e22e">www</span><span style="color:#f92672">/</span><span style="color:#a6e22e">html</span><span style="color:#f92672">/</span><span style="color:#a6e22e">release1</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Array</span>
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">7631224517412515240</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">is_dir</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">realpath</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span><span style="color:#a6e22e">www</span><span style="color:#f92672">/</span><span style="color:#a6e22e">html</span><span style="color:#f92672">/</span><span style="color:#a6e22e">release1</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">expires</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1504549899</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    [<span style="color:#f92672">/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span><span style="color:#a6e22e">www</span><span style="color:#f92672">/</span><span style="color:#a6e22e">current</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Array</span>
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1.7062595747834E+19</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">is_dir</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">realpath</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span><span style="color:#a6e22e">www</span><span style="color:#f92672">/</span><span style="color:#a6e22e">html</span><span style="color:#f92672">/</span><span style="color:#a6e22e">release1</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">expires</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1504549899</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>    [<span style="color:#f92672">/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span><span style="color:#a6e22e">www</span><span style="color:#f92672">/</span><span style="color:#a6e22e">current</span><span style="color:#f92672">/</span><span style="color:#a6e22e">index</span><span style="color:#f92672">.</span><span style="color:#a6e22e">php</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">Array</span>
+</span></span><span style="display:flex;"><span>        (
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">6899135167081162414</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">is_dir</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">realpath</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">/</span><span style="color:#66d9ef">var</span><span style="color:#f92672">/</span><span style="color:#a6e22e">www</span><span style="color:#f92672">/</span><span style="color:#a6e22e">html</span><span style="color:#f92672">/</span><span style="color:#a6e22e">release1</span><span style="color:#f92672">/</span><span style="color:#a6e22e">index</span><span style="color:#f92672">.</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>            [<span style="color:#a6e22e">expires</span>] <span style="color:#f92672">=&gt;</span> <span style="color:#ae81ff">1504549899</span>
+</span></span><span style="display:flex;"><span>        )
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>In the previous code:</p>
 <ul>
 <li><code>key</code> is a float, and represents a hash associated with the path;</li>
 <li><code>is_dir</code> is a boolean, and it&rsquo;s true when the resolved path is a directory, otherwise it&rsquo;s false;</li>
@@ -590,16 +581,16 @@ docker pull salvatorecordiano/realpath_cache
 <p>This means that the <strong>cache must expire for every PHP process</strong>. So if we are using <a href="https://php-fpm.org"><strong>PHP-FPM</strong></a> to clean the whole web server, we need to wait that the cache expires for every worker of the pool. This can be useful to understand what happens during our test while using the configuration <code>production-no-opcache</code>. Even if OPCache is disabled after the symlink swap, PHP will notify every process about the paths&rsquo; expiration slowly.</p>
 <p>In our real production environment we must consider that we have 15 front-end machines, hosting many web applications. Every machine has one PHP-FPM pool that is composed of 35 workers + 1 master process. This explains why the &ldquo;strange behavior&rdquo; is more evident in the new environment. We can <strong>tune the real path cache impact</strong> on our web application using the above mentioned the parameters <code>realpath_cache_size</code> and <code>realpath_cache_ttl</code>: the former determines the size of the real path bucket to be used by PHP. It is an integer and incrementing this value can be useful if our web application uses a huge number of files. The other configuration directive <code>realpath_cache_ttl</code>, as already mentioned, represents the duration in seconds for which the real path information should be cached.</p>
 <p>Now we have the full picture, and we can re-enable the OPCache extension and disable real path cache, setting up size and time to live (TTL) as described below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">realpath_cache_size<span style="color:#f92672">=</span>0k
-realpath_cache_ttl<span style="color:#f92672">=</span>-1
-</code></pre></div><p>Let&rsquo;s run our (hopefully) last test:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># start the container with production configuration, opcache enabled and realpath_cache disabled</span>
-./start.sh production-no-realpath-cache 
-<span style="color:#75715e"># start switching the current release</span>
-./release-switcher.sh
-<span style="color:#75715e"># start watching the current web server response</span> 
-./release-watcher.sh
-</code></pre></div><p>The following <a href="https://www.youtube.com/watch?v=Qry6cvUmf3c">video</a> shows the output of the last execution.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>realpath_cache_size<span style="color:#f92672">=</span>0k
+</span></span><span style="display:flex;"><span>realpath_cache_ttl<span style="color:#f92672">=</span>-1
+</span></span></code></pre></div><p>Let&rsquo;s run our (hopefully) last test:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># start the container with production configuration, opcache enabled and realpath_cache disabled</span>
+</span></span><span style="display:flex;"><span>./start.sh production-no-realpath-cache 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># start switching the current release</span>
+</span></span><span style="display:flex;"><span>./release-switcher.sh
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># start watching the current web server response </span>
+</span></span><span style="display:flex;"><span>./release-watcher.sh
+</span></span></code></pre></div><p>The following <a href="https://www.youtube.com/watch?v=Qry6cvUmf3c">video</a> shows the output of the last execution.</p>
 <p>
 	<img data-src="/images/realpath-cache-is-it-all-php-opcache-s-fault/demo_production_no_realpath_cache.gif" class="lazy" title="Execution with configuration: production" width="100%"/>
 	<br/>
@@ -615,13 +606,13 @@ realpath_cache_ttl<span style="color:#f92672">=</span>-1
 <p>Another approach is to use an Apache module called <code>mod_realdoc</code> to support atomic deploys. It was written by <a href="https://github.com/etsy/mod_realdoc"><strong>Rasmus Lerdorf</strong></a>. The trick implemented in <code>mod_realdoc</code> is to call real path on the <code>DOCUMENT_ROOT</code> symlink at the beginning of a request, and to set the absolute path as the real document root for the whole request. Consequently, requests that started before a symlink change will continue to execute on the previous symlink target.
 The only problem of that module is the requirement of <a href="https://httpd.apache.org/docs/2.4/mod/prefork.html"><strong>Apache Multi-Processing Module (MPM) prefork</strong></a>. MPM prefork implements a non-threaded, forking based server that spawns new processes and keeps them alive to serve requests. It is the best MPM for isolating each request, so that a problem with a single request will not affect the others. But it&rsquo;s not the best for when the server is under heavy load, because there&rsquo;s going to be one process per request, thus concurrent requests will suffer since they&rsquo;re forced to wait until a server process is freed. The same result of <code>mod_realdoc</code> could be achieved at PHP level in the application front controller by defining the base root via <code>realpath(__FILE__)</code>.</p>
 <p>If you&rsquo;re using the <strong>nginx</strong> web server in front of PHP, you are lucky! To avoid the symlinks update during ongoing requests, you must give nginx the responsibility to resolve symlinks and assign them to <code>DOCUMENT_ROOT</code>. You simply need to change a few lines on your server blocks, as described below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># default configuration</span>
-fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-fastcgi_param DOCUMENT_ROOT $document_root;
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># configuration with real path resolution</span>
-fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
-fastcgi_param DOCUMENT_ROOT $realpath_root;
-</code></pre></div><p>With the above changes nginx will resolve the symlinks, hiding them from PHP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># default configuration</span>
+</span></span><span style="display:flex;"><span>fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+</span></span><span style="display:flex;"><span>fastcgi_param DOCUMENT_ROOT $document_root;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># configuration with real path resolution</span>
+</span></span><span style="display:flex;"><span>fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+</span></span><span style="display:flex;"><span>fastcgi_param DOCUMENT_ROOT $realpath_root;
+</span></span></code></pre></div><p>With the above changes nginx will resolve the symlinks, hiding them from PHP.</p>
 <p>These are just some discussed solutions to fight against real path cache issues, and there is no universal &ldquo;right&rdquo; way. You must always find the best solution considering your particular requirements and infrastructure.</p>
 <h1 id="references">References</h1>
 <ul>
@@ -672,29 +663,6 @@ fastcgi_param DOCUMENT_ROOT $realpath_root;
   </footer>
 
 </article>
-
-    <article class="post">
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
 
 
 <ul class="actions pagination">
@@ -851,54 +819,6 @@ fastcgi_param DOCUMENT_ROOT $realpath_root;
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-08-28'>
-                28 August 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
-                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-07-02'>
-                2 July 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
                     <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
                       <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
@@ -918,6 +838,60 @@ fastcgi_param DOCUMENT_ROOT $realpath_root;
               
               <time class="published" datetime='2024-05-30'>
                 30 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-05-20'>
+                20 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+                  
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-03-11'>
+                11 March 2024
               </time>
             </header>
             
@@ -1071,7 +1045,7 @@ fastcgi_param DOCUMENT_ROOT $realpath_root;
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional Programming</a>
                 <span style="float:right;">11</span>
               
             </header>
@@ -1182,7 +1156,7 @@ fastcgi_param DOCUMENT_ROOT $realpath_root;
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/open-source/">Open source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">7</span>
               
             </header>
@@ -1219,7 +1193,7 @@ fastcgi_param DOCUMENT_ROOT $realpath_root;
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">16</span>
+                <span style="float:right;">14</span>
               
             </header>
           </article>

@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vito on Facile.it Engineering</title>
+    <title>Vito on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/vito/</link>
-    <description>Recent content in vito on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Vito on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Jan 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/vito/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/vito/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GraphQL: an introduction</title>
       <link>https://engineering.facile.it/blog/eng/graphql-an-introduction/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/graphql-an-introduction/</guid>
-      <description>The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let&amp;rsquo;s see some of the consequences and benefits of choosing REST:
- Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.</description>
+      <description>&lt;h2 id=&#34;the-lesson-we-learned-with-rest&#34;&gt;The lesson we learned with REST&lt;/h2&gt;&#xA;&lt;p&gt;For many developers, nowadays, building an &lt;strong&gt;API&lt;/strong&gt; for their applications essentially means mapping the &lt;em&gt;resources&lt;/em&gt; of the domain to &lt;em&gt;URIs&lt;/em&gt;, with the &lt;a href=&#34;https://en.wikipedia.org/wiki/Representational_state_transfer&#34;&gt;REST&lt;/a&gt; principles in mind.&#xA;Usually creating a &lt;em&gt;&lt;strong&gt;RESTful&lt;/strong&gt;&lt;/em&gt; system is not difficult, and the simplicity of the idea makes the task easier.&#xA;Let&amp;rsquo;s see some of the consequences and benefits of choosing REST:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.&lt;/li&gt;&#xA;&lt;li&gt;Often the same URI can be used with multiple verbs to accomplish different tasks (e.g. &amp;ldquo;example.com/tag/123&amp;rdquo; refers to a particular tag that you can retrieve, update or delete).&lt;/li&gt;&#xA;&lt;li&gt;Controllers in many server-side frameworks can be created with a RESTful approach, each one of them representing one or more resources.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;However, unfortunately, it&amp;rsquo;s often easy to come across some problems:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

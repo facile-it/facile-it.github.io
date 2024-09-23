@@ -4,84 +4,58 @@
     <title>Software Testing on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/software-testing/</link>
     <description>Recent content in Software Testing on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 22 Oct 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/software-testing/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/software-testing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Automated testing: a step back</title>
       <link>https://engineering.facile.it/blog/eng/automated-testing-a-step-back/</link>
       <pubDate>Thu, 22 Oct 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/automated-testing-a-step-back/</guid>
-      <description>The goal of this article is to define basic concepts related to testing, trying not to take anything for granted.
-Why do we test?? Why is it important to write automated tests? I asked myself and I did some research because the answer to this question was not obvious to me. I knew it was important but I didn&amp;rsquo;t know why. So, I decided to try to explain it starting from a point of view as impartial as possible.</description>
+      <description>&lt;p&gt;The goal of this article is to define basic concepts related to testing, trying not to take anything for granted.&lt;/p&gt;&#xA;&lt;h1 id=&#34;why-do-we-test&#34;&gt;Why do we test??&lt;/h1&gt;&#xA;&lt;p&gt;Why is it important to write automated tests? I asked myself and I did some research because the answer to this question was not obvious to me. I knew it was important but I didn&amp;rsquo;t know why. So, I decided to try to explain it starting from a point of view as impartial as possible.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to gradually upgrade toward PHPUnit 6 with namespaced classes</title>
       <link>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</link>
       <pubDate>Tue, 12 Sep 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</guid>
-      <description>In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced.
-This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp;amp; replace job, but since you need to introduce at least one use PHPUnit\Framework\TestCase line at the top of each one of your test classes, it&amp;rsquo;s a boring and a little more than trivial task; also, upgrading it in a single big jump may not be feasible or prudent, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.</description>
+      <description>&lt;p&gt;In the latest months I wrote multiple times, in different projects, code migrating &lt;strong&gt;PHPUnit&lt;/strong&gt; toward major &lt;strong&gt;version 6&lt;/strong&gt;. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: &lt;strong&gt;all classes got (finally!) namespaced&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp;amp; replace job, but since you need to introduce at least one &lt;code&gt;use PHPUnit\Framework\TestCase&lt;/code&gt; line at the top of each one of your test classes, it&amp;rsquo;s a boring and a little more than trivial task; also, &lt;strong&gt;upgrading it in a single big jump may not be feasible or prudent&lt;/strong&gt;, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Why type hints and interfaces are not visual debt</title>
       <link>https://engineering.facile.it/blog/eng/visual-debt-typehints/</link>
       <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/visual-debt-typehints/</guid>
-      <description>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
-Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is #PHP&amp;#39;s new spaces vs tabs
-&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017  After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading).</description>
+      <description>&lt;p&gt;A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;it&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is &lt;a href=&#34;https://twitter.com/hashtag/PHP?src=hash&#34;&gt;#PHP&lt;/a&gt;&amp;#39;s new spaces vs tabs&lt;/p&gt;&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) &lt;a href=&#34;https://twitter.com/WyriHaximus/status/865524687257862144&#34;&gt;19 maggio 2017&lt;/a&gt;&lt;/blockquote&gt;&#xA;&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&#xA;&lt;p&gt;After asking references about this, someone alluded to this very short video: &lt;a href=&#34;https://laracasts.com/series/php-bits/episodes/1&#34;&gt;&lt;strong&gt;&amp;ldquo;PHP Bits: Visual Debt&amp;rdquo;&lt;/strong&gt;&lt;/a&gt; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Paraunit: test paralleli, Doctrine e le fixture</title>
       <link>https://engineering.facile.it/blog/ita/paraunit/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
-      <description>Questo articolo è la sintesi di un talk presentato al SymfonyDay 2015; potete trovare le slide qui.
-I test e la loro durata Sviluppare applicazioni scrivendo test e facendo Test Driven Development è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa crescere la suite di test del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.</description>
+      <description>&lt;p&gt;&lt;em&gt;Questo articolo è la sintesi di un talk presentato al &lt;a href=&#34;http://2015.symfonyday.it/&#34;&gt;SymfonyDay 2015&lt;/a&gt;; potete trovare le slide &lt;a href=&#34;http://jean85.github.io/slides/2015-10-paraunit-symfonyday/index.html&#34;&gt;qui&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h4 id=&#34;i-test-e-la-loro-durata&#34;&gt;I test e la loro durata&lt;/h4&gt;&#xA;&lt;p&gt;Sviluppare applicazioni scrivendo &lt;strong&gt;test&lt;/strong&gt; e facendo &lt;a href=&#34;https://it.wikipedia.org/wiki/Test_driven_development&#34;&gt;Test Driven Development&lt;/a&gt; è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa &lt;strong&gt;crescere la suite di test&lt;/strong&gt; del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swift testing avanzato: stubbing e test asincroni</title>
       <link>https://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/</link>
       <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/</guid>
-      <description>In un precedente articolo abbiamo visto le impostazioni di base in Xcode per la scrittura dei test unitari: abbiamo evidenziato inoltre l&amp;rsquo;importanza e l&amp;rsquo;utilità intrinseca dei test, attraverso un semplice esempio riguardante un caso d&amp;rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&amp;rsquo; più avanzate:
- implementeremo uno Stub Object in Swift; analizzeremo un altro caso di test asincrono;  Lo Stub Object Uno Stub Object (per il resto dell&amp;rsquo;articolo, stub) rappresenta un&amp;rsquo;istanza di una certa classe, la quale mima una vera classe presente nella nostra code base: l&amp;rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://engineering.facile.it/xcode-testing-in-pratica/&#34;&gt;In un precedente articolo&lt;/a&gt; abbiamo visto le impostazioni di base in Xcode per la scrittura dei &lt;strong&gt;test unitari&lt;/strong&gt;: abbiamo evidenziato inoltre &lt;strong&gt;l&amp;rsquo;importanza e l&amp;rsquo;utilità intrinseca dei test&lt;/strong&gt;, attraverso un semplice esempio riguardante un caso d&amp;rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&amp;rsquo; più avanzate:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;implementeremo uno &lt;strong&gt;Stub Object&lt;/strong&gt; in Swift;&lt;/li&gt;&#xA;&lt;li&gt;analizzeremo un altro caso di test &lt;em&gt;asincrono&lt;/em&gt;;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;lo-stub-object&#34;&gt;Lo &lt;em&gt;Stub Object&lt;/em&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Uno &lt;em&gt;Stub Object&lt;/em&gt; (per il resto dell&amp;rsquo;articolo, &lt;em&gt;stub&lt;/em&gt;) rappresenta un&amp;rsquo;istanza di una certa classe, la quale &lt;em&gt;mima&lt;/em&gt; una vera classe presente nella nostra &lt;em&gt;code base&lt;/em&gt;:  l&amp;rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio &lt;strong&gt;alcuni metodi possono essere sovrascritti&lt;/strong&gt; per poter fornire &lt;strong&gt;un determinato output&lt;/strong&gt; utile per i test. Nell&amp;rsquo;implementare uno &lt;em&gt;stub&lt;/em&gt; non è generalmente consentito modificare dettagli di logica interni relativi alla classe che stiamo mimando, ma &lt;strong&gt;è possibile sovrascrivere metodi pubblici&lt;/strong&gt;, in modo che essi ritornino i valori che vogliamo, oppure che svolgano una particolare procedura necessaria per i test. Tanto per fare un esempio pratico potremmo &lt;em&gt;stubbare&lt;/em&gt; una classe che ci fornisce la data precisa in un certo istante, in modo da ottenere una data diversa da usare nei test, oppure un client che chiede a un server delle informazioni su un utente, in modo da far ritonare al client &lt;em&gt;stub&lt;/em&gt; delle informazioni arbitrarie.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Xcode Testing in pratica</title>
       <link>https://engineering.facile.it/blog/ita/xcode-testing-in-pratica/</link>
       <pubDate>Thu, 09 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/xcode-testing-in-pratica/</guid>
-      <description>Tra i molti strumenti utili presenti in Xcode, il testing framework XCTest è certamente uno dei più rilevanti, non solo per l&amp;rsquo;importanza intrinseca dello Unit Testing in generale, ma soprattutto per la facilità con la quale è possibile scrivere ed eseguire test direttamente dall&amp;rsquo;IDE out-of-the-box, senza la necessità di installare componenti di terze parti o impostare una particolare configurazione per i progetti.
-In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a creare un target per il binario principale crea automaticamente anche un target di test, cioè un bundle aggiuntivo che può essere caricato nel bundle principale per poter fisicamente eseguire i test una volta avviata l&amp;rsquo;app.</description>
+      <description>&lt;p&gt;Tra i molti strumenti utili presenti in Xcode, il testing framework &lt;strong&gt;XCTest&lt;/strong&gt; è certamente uno dei più rilevanti, non solo per l&amp;rsquo;importanza intrinseca dello Unit Testing in generale, ma soprattutto per la facilità con la quale è possibile scrivere ed eseguire test direttamente dall&amp;rsquo;IDE &lt;em&gt;out-of-the-box&lt;/em&gt;, &lt;strong&gt;senza la necessità di installare componenti di terze parti&lt;/strong&gt; o impostare una particolare configurazione per i progetti.&lt;/p&gt;&#xA;&lt;p&gt;In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a creare un target per il binario principale crea automaticamente anche un &lt;strong&gt;target di test&lt;/strong&gt;, cioè un bundle aggiuntivo che può essere caricato nel bundle principale per poter fisicamente eseguire i test una volta avviata l&amp;rsquo;app. Nell&amp;rsquo;immagine seguente è possibile vedere come, in un progetto appena creato, sia già presente il test bundle, in questo caso chiamato &lt;em&gt;AwesomeAppTests.xctest&lt;/em&gt;:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Software testing: Coverage vs Efficacia</title>
       <link>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
-      <description>Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.
-Numerosi sono i fattori che hanno reso il code coverage popolare:
- è una metrica facile da comprendere; si misura senza difficoltà; è oggettiva e imparziale; è universale (applicabile a tutti i paradigmi di programmazione).  Ma al di là di questi vantaggi, possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?</description>
+      <description>&lt;p&gt;Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.&lt;/p&gt;&#xA;&lt;p&gt;Numerosi sono i fattori che hanno reso il code coverage popolare:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;è una metrica facile da comprendere;&lt;/li&gt;&#xA;&lt;li&gt;si misura senza difficoltà;&lt;/li&gt;&#xA;&lt;li&gt;è oggettiva e imparziale;&lt;/li&gt;&#xA;&lt;li&gt;è universale (applicabile a tutti i paradigmi di programmazione).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ma al di là di questi vantaggi, &lt;em&gt;&lt;strong&gt;possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;quando-un-test-è-efficace&#34;&gt;Quando un test è efficace?&lt;/h3&gt;&#xA;&lt;p&gt;Una test suite è considerata efficace se consente di rilevare una grande quantità di failure; d&amp;rsquo;altronde, ciò è proprio la finalità ultima del software testing.&#xA;La massima efficacia è realizzabile solo applicando testing esaustivo ma, siccome ciò è spesso impraticabile, ci si accontenta di test più semplici con un&amp;rsquo;efficacia inferiore.&#xA;È importante notare che, a differenza del coverage, il livello d&amp;rsquo;efficacia viene stabilito soggettivamente dallo sviluppatore.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

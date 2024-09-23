@@ -1,63 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>salvatore-cordiano on Facile.it Engineering</title>
+    <title>Salvatore-Cordiano on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/salvatore-cordiano/</link>
-    <description>Recent content in salvatore-cordiano on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Salvatore-Cordiano on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 04 Oct 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/salvatore-cordiano/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/salvatore-cordiano/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Is it all PHP OPCache&#39;s fault?</title>
       <link>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</link>
       <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/realpath-cache-is-it-all-php-opcache-s-fault/</guid>
-      <description>Abstract Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&amp;rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.
-Introduction When I started my software developer career, I was very surprised to read the following sentence, attributed to Phil Karlton: «There are only two hard things in Computer Science: cache invalidation and naming things».</description>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;&#xA;&lt;p&gt;&lt;em&gt;Upon migrating to a new infrastructure we started experiencing cache issues after each deploy: as we refreshed pages that were updated by the new release, we didn&amp;rsquo;t see the right content for a very short period of time. Initially, we wrongly assumed that the cause of this issue was the PHP OPcache extension but, after our investigation, we understood that real path cache was the culprit.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;&#xA;&lt;p&gt;When I started my software developer career, I was very surprised to read the following sentence, attributed to &lt;a href=&#34;https://martinfowler.com/bliki/TwoHardThings.html&#34;&gt;Phil Karlton&lt;/a&gt;: &lt;em&gt;«There are only two hard things in Computer Science: &lt;strong&gt;cache invalidation&lt;/strong&gt; and &lt;strong&gt;naming things&lt;/strong&gt;»&lt;/em&gt;. In the beginning I was incredulous, because I didn&amp;rsquo;t really get the sense of these words. Not much later, I started to understand.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>#FacileHack 2017 ci siamo quasi</title>
       <link>https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/</guid>
-      <description>Mancano meno di 4 giorni alla seconda edizione di #FacileHack, la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana.
-Attesa grande partecipazione all&amp;rsquo;evento anche da fuori Italia, le registrazioni sono state chiuse per sold-out all&amp;rsquo;inizio di questo mese.
-In meno di 24 ore gli hackers partecipanti dovranno confrontarsi, mettendo a dura prova le proprie capacità fisiche e creative, per presentare un&amp;rsquo;idea o un prototipo in grado di ottenere il punteggio massimo della giuria di qualità.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/facilehack-2017-ci-siamo-quasi/share.png&#34; alt=&#34;FacileHack&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Mancano meno di 4 giorni alla seconda edizione di &lt;a href=&#34;http://hackathon.facile.it/2017.html&#34;&gt;&lt;strong&gt;#FacileHack&lt;/strong&gt;&lt;/a&gt;, la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana.&lt;/p&gt;&#xA;&lt;p&gt;Attesa grande partecipazione all&amp;rsquo;evento anche da fuori Italia, le registrazioni sono state chiuse per sold-out all&amp;rsquo;inizio di questo mese.&lt;/p&gt;&#xA;&lt;p&gt;In meno di 24 ore gli &lt;em&gt;hackers&lt;/em&gt; partecipanti dovranno confrontarsi, mettendo a dura prova le proprie capacità fisiche e creative, per presentare un&amp;rsquo;idea o un prototipo in grado di ottenere il punteggio massimo della &lt;a href=&#34;http://hackathon.facile.it/2017.html#giuria&#34;&gt;giuria&lt;/a&gt; di qualità.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Looking back at Symfony Day Rome 2016</title>
       <link>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</link>
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</guid>
-      <description>Every year the GrUSP, in cooperation with one of the italian PHP user groups, organizes the italian Symfony conference. This year the event was organized in the Capital on 28th October with the help of PHP User Group Roma, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.</description>
+      <description>&lt;p&gt;Every year the &lt;a href=&#34;http://www.grusp.org/&#34;&gt;GrUSP&lt;/a&gt;, in cooperation with one of the italian PHP user groups, organizes the italian &lt;strong&gt;&lt;a href=&#34;http://symfony.com/&#34;&gt;Symfony&lt;/a&gt;&lt;/strong&gt; conference. This year the &lt;a href=&#34;http://2016.symfonyday.it/&#34;&gt;event&lt;/a&gt; was organized in the Capital on 28th October with the help of &lt;a href=&#34;http://roma.grusp.org/&#34;&gt;PHP User Group Roma&lt;/a&gt;, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MessagePack: an alternative to JSON?</title>
       <link>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</link>
       <pubDate>Tue, 25 Oct 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/</guid>
-      <description>When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &amp;ldquo;JSONC&amp;quot;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.</description>
+      <description>&lt;p&gt;When we talk about data interchange in web applications, &lt;strong&gt;&lt;a href=&#34;http://www.json.org/&#34;&gt;JSON&lt;/a&gt;&lt;/strong&gt; is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist &lt;a href=&#34;https://www.w3.org/XML/&#34;&gt;XML&lt;/a&gt; (SOAP) without a battle, but it didn&amp;rsquo;t prevent the development of alternatives like &lt;a href=&#34;https://developers.google.com/protocol-buffers/&#34;&gt;Google’s &lt;strong&gt;Protocol Buffers&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://avro.apache.org/&#34;&gt;Apache &lt;strong&gt;Avro&lt;/strong&gt;&lt;/a&gt; or &lt;strong&gt;&lt;a href=&#34;http://msgpack.org/&#34;&gt;MessagePack&lt;/a&gt;&lt;/strong&gt;. In being thorough, we should also mention &lt;a href=&#34;http://www.gzip.org/&#34;&gt;gzip&lt;/a&gt; JSON compression (sometimes called &amp;ldquo;&lt;em&gt;JSONC&lt;/em&gt;&amp;rdquo;), and &lt;a href=&#34;http://bsonspec.org/&#34;&gt;BSON&lt;/a&gt;, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we&amp;rsquo;ll discuss MessagePack in depth.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Event-driven serverless applications</title>
       <link>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</link>
       <pubDate>Tue, 20 Sep 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/event-driven-serverless-applications/</guid>
-      <description>If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 Amazon Web Services (AWS) announced a new service called &amp;ldquo;Lambda&amp;quot;, that allows us to focus on business logic and not on infrastructure.</description>
+      <description>&lt;p&gt;If we think about computing in the Cloud Era, our mind is immediately drawn towards virtual machines and containers. Therefore, for example, when building a production environment with both approaches we think about the need of patching the operating system and/or upgrading the container. At the end of 2014 &lt;strong&gt;Amazon Web Services&lt;/strong&gt; (AWS) announced a new service called &amp;ldquo;&lt;strong&gt;&lt;a href=&#34;https://aws.amazon.com/lambda/&#34;&gt;Lambda&lt;/a&gt;&lt;/strong&gt;&amp;rdquo;, that allows us to focus on business logic and not on infrastructure.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

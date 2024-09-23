@@ -1,127 +1,89 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>jean on Facile.it Engineering</title>
+    <title>Jean on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/jean/</link>
-    <description>Recent content in jean on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Jean on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 06 Feb 2018 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/jean/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/jean/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</title>
       <link>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</link>
       <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/</guid>
-      <description>In the last month, I&amp;rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt GitLab CI for the build, since we use GitLab CE for our Git repositories; I then created a continuous deployment pipeline for the staging environment, directly to a Kubernetes cluster, leveraging Docker Compose to make the configuration easier.
-After, I decided to start migrating a previous, internal project of mine to the same approach, since it&amp;rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, doing a rolling deployment with Kubernetes is surprisingly easy!</description>
+      <description>&lt;p&gt;In the last month, I&amp;rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt &lt;strong&gt;GitLab CI&lt;/strong&gt; for the build, since we use GitLab CE for our Git repositories; I then created a &lt;strong&gt;continuous deployment pipeline&lt;/strong&gt; for the staging environment, directly to a &lt;strong&gt;Kubernetes cluster&lt;/strong&gt;, leveraging &lt;strong&gt;Docker Compose&lt;/strong&gt; to make the configuration easier.&lt;/p&gt;&#xA;&lt;p&gt;After, I decided to start migrating a previous, internal project of mine to the same approach, since it&amp;rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, &lt;strong&gt;doing a rolling deployment with Kubernetes is surprisingly easy&lt;/strong&gt;!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How to gradually upgrade toward PHPUnit 6 with namespaced classes</title>
       <link>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</link>
       <pubDate>Tue, 12 Sep 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/phpunit-upgrade-namespace/</guid>
-      <description>In the latest months I wrote multiple times, in different projects, code migrating PHPUnit toward major version 6. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: all classes got (finally!) namespaced.
-This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp;amp; replace job, but since you need to introduce at least one use PHPUnit\Framework\TestCase line at the top of each one of your test classes, it&amp;rsquo;s a boring and a little more than trivial task; also, upgrading it in a single big jump may not be feasible or prudent, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.</description>
+      <description>&lt;p&gt;In the latest months I wrote multiple times, in different projects, code migrating &lt;strong&gt;PHPUnit&lt;/strong&gt; toward major &lt;strong&gt;version 6&lt;/strong&gt;. This upgrade is harder than the previous one, since in this version it was introduced a big breaking change: &lt;strong&gt;all classes got (finally!) namespaced&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;This means that any usage of those classes in your project needs to be updated. It may seem a simple find &amp;amp; replace job, but since you need to introduce at least one &lt;code&gt;use PHPUnit\Framework\TestCase&lt;/code&gt; line at the top of each one of your test classes, it&amp;rsquo;s a boring and a little more than trivial task; also, &lt;strong&gt;upgrading it in a single big jump may not be feasible or prudent&lt;/strong&gt;, especially in the case of open source or distributed libraries, where backward compatibility and support for old PHP versions must be ensured.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Why type hints and interfaces are not visual debt</title>
       <link>https://engineering.facile.it/blog/eng/visual-debt-typehints/</link>
       <pubDate>Wed, 31 May 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/visual-debt-typehints/</guid>
-      <description>A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.
-Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is #PHP&amp;#39;s new spaces vs tabs
-&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) 19 maggio 2017  After asking references about this, someone alluded to this very short video: &amp;ldquo;PHP Bits: Visual Debt&amp;rdquo; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading).</description>
+      <description>&lt;p&gt;A few days ago I stumbled on a strange tweet that was highlighting a controversy about scalar type hints.&lt;/p&gt;&#xA;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;it&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Scalar type hints &amp;amp; return types vs no scalar type hints &amp;amp; return types is &lt;a href=&#34;https://twitter.com/hashtag/PHP?src=hash&#34;&gt;#PHP&lt;/a&gt;&amp;#39;s new spaces vs tabs&lt;/p&gt;&amp;mdash; Cees-Jan 🔊 Kiewiet (@WyriHaximus) &lt;a href=&#34;https://twitter.com/WyriHaximus/status/865524687257862144&#34;&gt;19 maggio 2017&lt;/a&gt;&lt;/blockquote&gt;&#xA;&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&#xA;&lt;p&gt;After asking references about this, someone alluded to this very short video: &lt;a href=&#34;https://laracasts.com/series/php-bits/episodes/1&#34;&gt;&lt;strong&gt;&amp;ldquo;PHP Bits: Visual Debt&amp;rdquo;&lt;/strong&gt;&lt;/a&gt; (it&amp;rsquo;s only 3 minutes, please watch it before continue reading). After that, the author of the video was dragged into the conversation, and it blew up into a big tweetstorm in the following few hours.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facile.it devs @ phpDay 2017</title>
       <link>https://engineering.facile.it/blog/eng/php-day-2017/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/php-day-2017/</guid>
-      <description>Like clockwork, on May we head up to Verona to attend the phpDay conference; this time it was on May 12th and 13th.
-We met a lot of new people and known fellow PHP developers, and like previous years, we wanted to write down a light summary; like the previous ones, this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.</description>
+      <description>&lt;p&gt;Like clockwork, on May we head up to Verona to attend the &lt;strong&gt;&lt;a href=&#34;https://2017.phpday.it/&#34;&gt;phpDay conference&lt;/a&gt;&lt;/strong&gt;; this time it was on &lt;strong&gt;May 12th and 13th&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;We met a lot of new people and known fellow PHP developers, and like &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;previous&lt;/a&gt; &lt;a href=&#34;https://engineering.facile.it/blog/eng/php-day-2016/&#34;&gt;years&lt;/a&gt;, we wanted to write down a light summary; like the previous ones, this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>#FacileHack 2017, 10 days later</title>
       <link>https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/</link>
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/facilehack-2017-10-days-later/</guid>
-      <description>Ten days ago #FacileHack 2017 came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers.
-The hackathon&amp;rsquo;s theme for this year was connectivity: our site offers the comparation between internet access services, and we have decided to put this at the center of the competition.</description>
+      <description>&lt;p&gt;Ten days ago &lt;a href=&#34;http://hackathon.facile.it/2017.html&#34;&gt;&lt;strong&gt;#FacileHack 2017&lt;/strong&gt;&lt;/a&gt; came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers.&lt;/p&gt;&#xA;&lt;p&gt;The hackathon&amp;rsquo;s theme for this year was &lt;strong&gt;connectivity&lt;/strong&gt;: our site offers the comparation between internet access services, and we have decided to put this at the center of the competition. The teams have then faced each other on this theme, searching new ways to improve Facile.it&amp;rsquo;s business and the customers&amp;rsquo; user experience.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>#FacileHack 2017, 10 giorni dopo</title>
       <link>https://engineering.facile.it/blog/ita/facilehack-2017-10-giorni-dopo/</link>
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/facilehack-2017-10-giorni-dopo/</guid>
-      <description>Dieci giorni fa è terminato #FacileHack 2017, la seconda edizione dell&amp;rsquo;hackathon organizzato da Facile.it. Tenere un evento di questo genere ci ha permesso di vedere all&amp;rsquo;opera e di confrontarci con tanti team molto eterogenei, composti da programmatori, designer e specialisti del marketing.
-Il tema dell&amp;rsquo;hackathon di quest&amp;rsquo;anno è stata la connettività: il nostro portale propone la comparazione dei servizi di connessione ad internet, e ha deciso di porre questo al centro della competizione.</description>
+      <description>&lt;p&gt;Dieci giorni fa è terminato &lt;a href=&#34;http://hackathon.facile.it/2017.html&#34;&gt;&lt;strong&gt;#FacileHack 2017&lt;/strong&gt;&lt;/a&gt;, la seconda edizione dell&amp;rsquo;hackathon organizzato da Facile.it. Tenere un evento di questo genere ci ha permesso di vedere all&amp;rsquo;opera e di confrontarci con tanti team molto eterogenei, composti da programmatori, designer e specialisti del marketing.&lt;/p&gt;&#xA;&lt;p&gt;Il tema dell&amp;rsquo;hackathon di quest&amp;rsquo;anno è stata la &lt;strong&gt;connettività&lt;/strong&gt;: il nostro portale propone la comparazione dei servizi di connessione ad internet, e ha deciso di porre questo al centro della competizione. I diversi team si sono quindi affrontati su questo tema, per trovare modi per migliorare il business di Facile.it e l&amp;rsquo;esperienza utente degli utilizzatori del servizio.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How PHP 7 &amp; TDD helped me sleep better</title>
       <link>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
       <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
-      <description>The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
-Maybe we fear only one thing more than that: being interrupted.
-[![Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)](/images/how-php-7-tdd-helped-me-sleep-better/interruption.png)](http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/) While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.</description>
+      <description>&lt;h1 id=&#34;the-enemies-of-programming&#34;&gt;The enemies of programming&lt;/h1&gt;&#xA;&lt;p&gt;As many of you will agree with me, &lt;strong&gt;sleep deprivation&lt;/strong&gt; is the enemy of programming.&lt;br&gt;&#xA;Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p style=&#34;text-align: center;&#34;&gt;&#xA;    [![Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)](/images/how-php-7-tdd-helped-me-sleep-better/interruption.png)](http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/)&#xA;&lt;/p&gt;&#xA;&lt;p&gt;While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facile.it devs @ PhpDay 2016</title>
       <link>https://engineering.facile.it/blog/eng/php-day-2016/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/php-day-2016/</guid>
-      <description>Almost like a nice tradition, we went to the PHP Day conference this year as well; this time too it was held in Verona, on May 13th and 14th.
-We participated and attended numerous talks and, as last year, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.</description>
+      <description>&lt;p&gt;Almost like a nice tradition, we went to the &lt;strong&gt;&lt;a href=&#34;http://2016.phpday.it/&#34;&gt;PHP Day conference&lt;/a&gt;&lt;/strong&gt; this year as well; this time too it was held in Verona, on &lt;strong&gt;May 13th and 14th&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Blog restyling: switching to Hugo and GitHub Pages</title>
       <link>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</link>
       <pubDate>Tue, 26 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/switching-to-hugo-and-github-pages/</guid>
-      <description>As you may have noticed, we went through a bit of a restyling in the last few days, and our blog changed a lot in terms of appearance and structure. We are very happy with those changes, but the reason behind this transition is not just a simple template change.
-What we were searching for Before, we were using an hosted CMS to run the blog, Ghost. We were happy with the results, it wasn&amp;rsquo;t our concern to administrate the server or bother about other hosting stuff.</description>
+      <description>&lt;p&gt;As you may have noticed, we went through a bit of a restyling in the last few days, and our blog changed a lot in terms of appearance and structure.&#xA;We are very happy with those changes, but the reason behind this transition is not just a simple template change.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-we-were-searching-for&#34;&gt;What we were searching for&lt;/h2&gt;&#xA;&lt;p&gt;Before, we were using an hosted CMS to run the blog, &lt;a href=&#34;https://ghost.org/&#34;&gt;Ghost&lt;/a&gt;. We were happy with the results, it wasn&amp;rsquo;t our concern to administrate the server or bother about other hosting stuff.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Paraunit: test paralleli, Doctrine e le fixture</title>
       <link>https://engineering.facile.it/blog/ita/paraunit/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
-      <description>Questo articolo è la sintesi di un talk presentato al SymfonyDay 2015; potete trovare le slide qui.
-I test e la loro durata Sviluppare applicazioni scrivendo test e facendo Test Driven Development è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa crescere la suite di test del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.</description>
+      <description>&lt;p&gt;&lt;em&gt;Questo articolo è la sintesi di un talk presentato al &lt;a href=&#34;http://2015.symfonyday.it/&#34;&gt;SymfonyDay 2015&lt;/a&gt;; potete trovare le slide &lt;a href=&#34;http://jean85.github.io/slides/2015-10-paraunit-symfonyday/index.html&#34;&gt;qui&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h4 id=&#34;i-test-e-la-loro-durata&#34;&gt;I test e la loro durata&lt;/h4&gt;&#xA;&lt;p&gt;Sviluppare applicazioni scrivendo &lt;strong&gt;test&lt;/strong&gt; e facendo &lt;a href=&#34;https://it.wikipedia.org/wiki/Test_driven_development&#34;&gt;Test Driven Development&lt;/a&gt; è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa &lt;strong&gt;crescere la suite di test&lt;/strong&gt; del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facile.it devs @ PHP Day 2015</title>
       <link>https://engineering.facile.it/blog/ita/php-day-2015/</link>
       <pubDate>Tue, 19 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/php-day-2015/</guid>
-      <description>Anche quest&amp;rsquo;anno si è svolto il PHP Day a Verona, il 15 e 16 maggio. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.
-In questo breve articolo vorremmo citare quelli che in qualche maniera ci hanno colpito, per motivi tecnici e non, per dare l&amp;rsquo;opportunità a chi non ha potuto partecipare di sapere qualcosa di più, o per dare un assaggio della conferenza a chi non ha mai partecipato a qualcosa del genere e, speriamo, invogliarlo a far parte della community!</description>
+      <description>&lt;p&gt;Anche quest&amp;rsquo;anno si è svolto il &lt;strong&gt;&lt;a href=&#34;http://2015.phpday.it/&#34;&gt;PHP Day&lt;/a&gt; a Verona, il 15 e 16 maggio&lt;/strong&gt;. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.&lt;/p&gt;&#xA;&lt;p&gt;In questo breve articolo vorremmo citare quelli che in qualche maniera &lt;strong&gt;ci hanno colpito&lt;/strong&gt;, per motivi tecnici e non, per dare l&amp;rsquo;opportunità a chi non ha potuto partecipare di sapere qualcosa di più, o per dare &lt;strong&gt;un assaggio della conferenza&lt;/strong&gt; a chi non ha mai partecipato a qualcosa del genere e, speriamo, invogliarlo a far parte della community!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,21 +4,16 @@
     <title>Codemotion on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/codemotion/</link>
     <description>Recent content in Codemotion on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 26 Nov 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/codemotion/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/codemotion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Facile.it devs @ Codemotion Milan 2015</title>
       <link>https://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</link>
       <pubDate>Thu, 26 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</guid>
-      <description>L&amp;rsquo;appuntamento con il Codemotion di quest&amp;rsquo;anno a Milano è stato particolarmente ricco: tante tracce, moltissimi contenuti suddivisi tra talk tecnici, workshop e keynote, e alcuni ospiti illustri, tra cui il celebre Rasmus Lerdorf, creatore del linguaggio PHP. Come già fatto per il PHP Day 2015, proponiamo le nostre impressioni sulla conferenza, citando i talk che ci hanno colpito maggiormente: la scelta dei talk è basata sul gusto personale dei vari membri della redazione di Facile.</description>
+      <description>&lt;p&gt;L&amp;rsquo;appuntamento con il &lt;a href=&#34;http://milan2015.codemotionworld.com&#34;&gt;Codemotion&lt;/a&gt; di quest&amp;rsquo;anno a Milano è stato particolarmente &lt;strong&gt;ricco&lt;/strong&gt;: tante tracce, moltissimi contenuti suddivisi tra talk tecnici, workshop e keynote, e alcuni ospiti illustri, tra cui il celebre &lt;a href=&#34;https://twitter.com/rasmus&#34;&gt;Rasmus Lerdorf&lt;/a&gt;, creatore del linguaggio &lt;strong&gt;PHP&lt;/strong&gt;. Come già fatto per il &lt;a href=&#34;http://engineering.facile.it/php-day-2015/&#34;&gt;PHP Day 2015&lt;/a&gt;, proponiamo le nostre impressioni sulla conferenza, citando i talk che ci hanno colpito maggiormente: la scelta dei talk è basata sul gusto personale dei vari membri della redazione di Facile.it Engineering, e le considerazioni esposte non vanno lette come recensioni, ma come riflessioni di vario genere sulle tematiche trattate, volte a stimolare nei lettori l&amp;rsquo;interesse a &lt;strong&gt;partecipare&lt;/strong&gt; a conferenze come il Codemotion.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

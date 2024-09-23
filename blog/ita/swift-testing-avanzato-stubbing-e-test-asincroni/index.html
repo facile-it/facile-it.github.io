@@ -8,12 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/engineering.facile.it"
+             "@id": "https:\/\/engineering.facile.it\/"
         },
         "articleSection" : "blog",
         "name" : "Swift testing avanzato: stubbing e test asincroni",
         "headline" : "Swift testing avanzato: stubbing e test asincroni",
-        "description" : "In un precedente articolo abbiamo visto le impostazioni di base in Xcode per la scrittura dei test unitari: abbiamo evidenziato inoltre l\x26rsquo;importanza e l\x26rsquo;utilità intrinseca dei test, attraverso un semplice esempio riguardante un caso d\x26rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po\x26rsquo; più avanzate:\n implementeremo uno Stub Object in Swift; analizzeremo un altro caso di test asincrono;  Lo Stub Object Uno Stub Object (per il resto dell\x26rsquo;articolo, stub) rappresenta un\x26rsquo;istanza di una certa classe, la quale mima una vera classe presente nella nostra code base: l\x26rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test.",
+        "description" : "\u003cp\u003e\u003ca href=\u0022http:\/\/engineering.facile.it\/xcode-testing-in-pratica\/\u0022\u003eIn un precedente articolo\u003c\/a\u003e abbiamo visto le impostazioni di base in Xcode per la scrittura dei \u003cstrong\u003etest unitari\u003c\/strong\u003e: abbiamo evidenziato inoltre \u003cstrong\u003el\u0026rsquo;importanza e l\u0026rsquo;utilità intrinseca dei test\u003c\/strong\u003e, attraverso un semplice esempio riguardante un caso d\u0026rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po\u0026rsquo; più avanzate:\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eimplementeremo uno \u003cstrong\u003eStub Object\u003c\/strong\u003e in Swift;\u003c\/li\u003e\n\u003cli\u003eanalizzeremo un altro caso di test \u003cem\u003easincrono\u003c\/em\u003e;\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003ch2 id=\u0022lo-stub-object\u0022\u003eLo \u003cem\u003eStub Object\u003c\/em\u003e\u003c\/h2\u003e\n\u003cp\u003eUno \u003cem\u003eStub Object\u003c\/em\u003e (per il resto dell\u0026rsquo;articolo, \u003cem\u003estub\u003c\/em\u003e) rappresenta un\u0026rsquo;istanza di una certa classe, la quale \u003cem\u003emima\u003c\/em\u003e una vera classe presente nella nostra \u003cem\u003ecode base\u003c\/em\u003e:  l\u0026rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio \u003cstrong\u003ealcuni metodi possono essere sovrascritti\u003c\/strong\u003e per poter fornire \u003cstrong\u003eun determinato output\u003c\/strong\u003e utile per i test. Nell\u0026rsquo;implementare uno \u003cem\u003estub\u003c\/em\u003e non è generalmente consentito modificare dettagli di logica interni relativi alla classe che stiamo mimando, ma \u003cstrong\u003eè possibile sovrascrivere metodi pubblici\u003c\/strong\u003e, in modo che essi ritornino i valori che vogliamo, oppure che svolgano una particolare procedura necessaria per i test. Tanto per fare un esempio pratico potremmo \u003cem\u003estubbare\u003c\/em\u003e una classe che ci fornisce la data precisa in un certo istante, in modo da ottenere una data diversa da usare nei test, oppure un client che chiede a un server delle informazioni su un utente, in modo da far ritonare al client \u003cem\u003estub\u003c\/em\u003e delle informazioni arbitrarie.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2015",
-        "datePublished": "2015-06-05 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2015-06-05 00:00:00 \x2b0000 UTC",
+        "datePublished": "2015-06-05 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2015-06-05 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/blog\/ita\/swift-testing-avanzato-stubbing-e-test-asincroni\/",
         "wordCount" : "1894",
         "keywords" : [ "Blog" ]
@@ -37,7 +37,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.69.0" />
+        <meta name="generator" content="Hugo 0.134.2">
         
 
 
@@ -45,7 +45,12 @@
         
             
                 <meta name="description" content="In un precedente articolo abbiamo visto le impostazioni di base in Xcode per la scrittura dei test unitari: abbiamo evidenziato inoltre l&rsquo;importanza e l&rsquo;utilità intrinseca dei test, attraverso un semplice esempio riguardante un caso d&rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&rsquo; più avanzate:
- implementeremo uno Stub Object in Swift; analizzeremo un altro caso di test asincrono;  Lo Stub Object Uno Stub Object (per il resto dell&rsquo;articolo, stub) rappresenta un&rsquo;istanza di una certa classe, la quale mima una vera classe presente nella nostra code base: l&rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test.">
+
+implementeremo uno Stub Object in Swift;
+analizzeremo un altro caso di test asincrono;
+
+Lo Stub Object
+Uno Stub Object (per il resto dell&rsquo;articolo, stub) rappresenta un&rsquo;istanza di una certa classe, la quale mima una vera classe presente nella nostra code base:  l&rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test. Nell&rsquo;implementare uno stub non è generalmente consentito modificare dettagli di logica interni relativi alla classe che stiamo mimando, ma è possibile sovrascrivere metodi pubblici, in modo che essi ritornino i valori che vogliamo, oppure che svolgano una particolare procedura necessaria per i test. Tanto per fare un esempio pratico potremmo stubbare una classe che ci fornisce la data precisa in un certo istante, in modo da ottenere una data diversa da usare nei test, oppure un client che chiede a un server delle informazioni su un utente, in modo da far ritonare al client stub delle informazioni arbitrarie.">
             
         
 
@@ -61,7 +66,12 @@
 
 <meta name="og:title" content="Swift testing avanzato: stubbing e test asincroni"/>
 <meta name="og:description" content="In un precedente articolo abbiamo visto le impostazioni di base in Xcode per la scrittura dei test unitari: abbiamo evidenziato inoltre l&rsquo;importanza e l&rsquo;utilità intrinseca dei test, attraverso un semplice esempio riguardante un caso d&rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&rsquo; più avanzate:
- implementeremo uno Stub Object in Swift; analizzeremo un altro caso di test asincrono;  Lo Stub Object Uno Stub Object (per il resto dell&rsquo;articolo, stub) rappresenta un&rsquo;istanza di una certa classe, la quale mima una vera classe presente nella nostra code base: l&rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test."/>
+
+implementeremo uno Stub Object in Swift;
+analizzeremo un altro caso di test asincrono;
+
+Lo Stub Object
+Uno Stub Object (per il resto dell&rsquo;articolo, stub) rappresenta un&rsquo;istanza di una certa classe, la quale mima una vera classe presente nella nostra code base:  l&rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test. Nell&rsquo;implementare uno stub non è generalmente consentito modificare dettagli di logica interni relativi alla classe che stiamo mimando, ma è possibile sovrascrivere metodi pubblici, in modo che essi ritornino i valori che vogliamo, oppure che svolgano una particolare procedura necessaria per i test. Tanto per fare un esempio pratico potremmo stubbare una classe che ci fornisce la data precisa in un certo istante, in modo da ottenere una data diversa da usare nei test, oppure un client che chiede a un server delle informazioni su un utente, in modo da far ritonare al client stub delle informazioni arbitrarie."/>
 
 
     
@@ -74,13 +84,16 @@
 
 
 
-        <meta property="og:title" content="Swift testing avanzato: stubbing e test asincroni" />
-<meta property="og:description" content="In un precedente articolo abbiamo visto le impostazioni di base in Xcode per la scrittura dei test unitari: abbiamo evidenziato inoltre l&rsquo;importanza e l&rsquo;utilità intrinseca dei test, attraverso un semplice esempio riguardante un caso d&rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&rsquo; più avanzate:
- implementeremo uno Stub Object in Swift; analizzeremo un altro caso di test asincrono;  Lo Stub Object Uno Stub Object (per il resto dell&rsquo;articolo, stub) rappresenta un&rsquo;istanza di una certa classe, la quale mima una vera classe presente nella nostra code base: l&rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/" />
-<meta property="article:published_time" content="2015-06-05T00:00:00+00:00" />
-<meta property="article:modified_time" content="2015-06-05T00:00:00+00:00" />
+        <meta property="og:url" content="https://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/">
+  <meta property="og:site_name" content="Facile.it Engineering">
+  <meta property="og:title" content="Swift testing avanzato: stubbing e test asincroni">
+  <meta property="og:description" content="In un precedente articolo abbiamo visto le impostazioni di base in Xcode per la scrittura dei test unitari: abbiamo evidenziato inoltre l’importanza e l’utilità intrinseca dei test, attraverso un semplice esempio riguardante un caso d’uso tipico. Nel presente articolo vedremo alcune tecniche un po’ più avanzate:
+implementeremo uno Stub Object in Swift; analizzeremo un altro caso di test asincrono; Lo Stub Object Uno Stub Object (per il resto dell’articolo, stub) rappresenta un’istanza di una certa classe, la quale mima una vera classe presente nella nostra code base: l’istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test. Nell’implementare uno stub non è generalmente consentito modificare dettagli di logica interni relativi alla classe che stiamo mimando, ma è possibile sovrascrivere metodi pubblici, in modo che essi ritornino i valori che vogliamo, oppure che svolgano una particolare procedura necessaria per i test. Tanto per fare un esempio pratico potremmo stubbare una classe che ci fornisce la data precisa in un certo istante, in modo da ottenere una data diversa da usare nei test, oppure un client che chiede a un server delle informazioni su un utente, in modo da far ritonare al client stub delle informazioni arbitrarie.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2015-06-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2015-06-05T00:00:00+00:00">
 
 
         
@@ -89,17 +102,14 @@
             
         
 
-        <meta itemprop="name" content="Swift testing avanzato: stubbing e test asincroni">
-<meta itemprop="description" content="In un precedente articolo abbiamo visto le impostazioni di base in Xcode per la scrittura dei test unitari: abbiamo evidenziato inoltre l&rsquo;importanza e l&rsquo;utilità intrinseca dei test, attraverso un semplice esempio riguardante un caso d&rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&rsquo; più avanzate:
- implementeremo uno Stub Object in Swift; analizzeremo un altro caso di test asincrono;  Lo Stub Object Uno Stub Object (per il resto dell&rsquo;articolo, stub) rappresenta un&rsquo;istanza di una certa classe, la quale mima una vera classe presente nella nostra code base: l&rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test.">
-<meta itemprop="datePublished" content="2015-06-05T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2015-06-05T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1894">
-
-
-
-<meta itemprop="keywords" content="" />
         
+  <meta itemprop="name" content="Swift testing avanzato: stubbing e test asincroni">
+  <meta itemprop="description" content="In un precedente articolo abbiamo visto le impostazioni di base in Xcode per la scrittura dei test unitari: abbiamo evidenziato inoltre l’importanza e l’utilità intrinseca dei test, attraverso un semplice esempio riguardante un caso d’uso tipico. Nel presente articolo vedremo alcune tecniche un po’ più avanzate:
+implementeremo uno Stub Object in Swift; analizzeremo un altro caso di test asincrono; Lo Stub Object Uno Stub Object (per il resto dell’articolo, stub) rappresenta un’istanza di una certa classe, la quale mima una vera classe presente nella nostra code base: l’istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test. Nell’implementare uno stub non è generalmente consentito modificare dettagli di logica interni relativi alla classe che stiamo mimando, ma è possibile sovrascrivere metodi pubblici, in modo che essi ritornino i valori che vogliamo, oppure che svolgano una particolare procedura necessaria per i test. Tanto per fare un esempio pratico potremmo stubbare una classe che ci fornisce la data precisa in un certo istante, in modo da ottenere una data diversa da usare nei test, oppure un client che chiede a un server delle informazioni su un utente, in modo da far ritonare al client stub delle informazioni arbitrarie.">
+  <meta itemprop="datePublished" content="2015-06-05T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2015-06-05T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1894">
+  <meta itemprop="keywords" content="Elviro,Italiano,Swift,Software Testing,Xcode">
 
         
             
@@ -127,19 +137,6 @@
 
 
       
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-22342495-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
     </head>
     <body>
 
@@ -193,7 +190,7 @@ if (!doNotTrack) {
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
                 </form>
             </li>
             <li class="menu">
@@ -210,7 +207,7 @@ if (!doNotTrack) {
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
             </form>
         </section>
 
@@ -268,35 +265,35 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-08-28'>
-                                    August 28, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-07-02'>
-                                    July 2, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-05-20'>
+                                    May 20, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-03-11'>
+                                    March 11, 2024</time>
                             </header>
                             
 
@@ -463,7 +460,7 @@ if (!doNotTrack) {
 <p>Supponiamo ad esempio che una certa classe, diciamo un <code>UIViewController</code>, esegua delle <strong>azioni che dipendono dalla posizione ricevuta</strong>. L&rsquo;idea è quella di testare che il nostro <code>UIViewController</code> si comporti &ldquo;bene&rdquo; rispetto alle notifiche del sistema di localizzazione. Il progetto Xcode contenente il codice mostrato in questo articolo è disponibile su <a href="https://github.com/broomburgo/AsyncTestingStubbing">GitHub</a>: si consiglia di scaricare il progetto e tenerlo a riferimento per il resto dell&rsquo;articolo.</p>
 <p>Invece di usare direttamente <code>CLLocationManager</code> per ottenere la posizione GPS del dispositivo, implementeremo una semplice classe che fungerà da <em>wrapper</em>, chiamata <code>LocationCoordinator</code>: un&rsquo;istanza di tale classe potrà essere configurata con due semplici funzioni <code>onUpdate</code> e <code>onFailure</code>, in modo da evitare l&rsquo;implementazione dei vari metodi di callback del <code>protocol</code> <code>CLLocationManagerDelegate</code>. L&rsquo;idea è quella di passare un&rsquo;istanza di <code>LocationCoordinator</code> al nostro <code>UIViewController</code>: quest&rsquo;ultimo quindi imposterà le due funzioni di callback indicate sopra, in modo da modificare il suo stato e i dati mostrati all&rsquo;utente.</p>
 <p>Di seguito è riportato il codice della classe <code>LocationCoordinator</code>:</p>
-<pre><code>import Foundation
+<pre tabindex="0"><code>import Foundation
 import CoreLocation
 
 public class LocationCoordinator: NSObject {
@@ -516,7 +513,7 @@ extension LocationCoordinator: CLLocationManagerDelegate {
 <p><img src="/images/swift-testing-avanzato-stubbing-e-test-asincroni/locationUsageDescription.png" alt=""></p>
 <p>Sebbene l&rsquo;aggiunta della chiave <code>NSLocationWhenIsUseUsageDescription</code> non sia necessaria per eseguire i test, senza questa chiave l&rsquo;app non potrà funzionare in iOS8 nel caso in cui provassimo ad avviarla normalmente.</p>
 <p>La classe di cui vogliamo testare il corretto funzionamento è indicata nel progetto con il nome di <code>LocationViewController</code>, e il suo scopo è mostrare le attuali coordinate GPS dell&rsquo;utente o mostrare un messaggio in caso di errore: un sua istanza è, in ogni instante, caratterizzata da un <code>LocationState</code> che rappresenta in quale stato essa si trova rispetto alla ricerca della posizione GPS:</p>
-<pre><code>public enum LocationState {
+<pre tabindex="0"><code>public enum LocationState {
     case Searching
     case Found
     case Error(CLError)
@@ -526,22 +523,22 @@ extension LocationCoordinator: CLLocationManagerDelegate {
 <ul>
 <li>ignora le notifiche del <code>locationManager</code>:</li>
 </ul>
-<pre><code>locationManager.stopUpdatingLocation()
+<pre tabindex="0"><code>locationManager.stopUpdatingLocation()
 locationManager.delegate = nil
 </code></pre><ul>
 <li>dichiara 4 funzioni per forzare posizione GPS e/o errori:</li>
 </ul>
-<pre><code>forceLocation
+<pre tabindex="0"><code>forceLocation
 forceError
 forceRandomDelayedLocations
 forceDelayedErrorLocationUnknown
 </code></pre><p>Ciascuna di queste funzioni genera le stesse notifiche che normalmente genererebbe <code>CLLocationManager</code>. Le prime due funzioni, <code>forceLocation</code> e <code>forceError</code> forzano immediatamente una certa posizione GPS o un certo errore, mentre la funzione <code>forceRandomDelayedLocations</code> genera una serie di posizioni casuali dopo un certo ritardo e a intervalli regolari, e la funzione <code>forceDelayedErrorLocationUnknown</code> forza un errore del tipo <code>.LocationUnknown</code> dopo un certo ritardo.</p>
-<p>Prima di procedere con i test osserviamo che nel file <code>AsyncTestingStubbingTests.swift</code> c'è una sezione <em>utility</em> nella quale sono implementate alcune funzioni comode per <strong>rendere  il codice dei test più espressivo</strong>. Ad esempio la funzione <code>mainViewController</code> ritorna l&rsquo;istanza del LocationViewController utilizzata nell&rsquo;interfaccia grafica nell&rsquo;app. Il <em>testing framework</em> integrato in Xcode è chiamato <code>XCTest</code>, e per quanto adeguatamente completo nelle sue funzionalità, esso è principalmente basato su funzioni del tipo <code>XCTAssert</code> che verificano che una qualche condizione sia vera, e se non lo è stampano in console un messaggio di errore passato alla stessa funzione <code>XCTAssert</code> nel momento in cui essa è chiamata: questo può portare alla scrittura di <strong>test verbosi e poco espressivi</strong>. Ci sono diverse librerie facilmente integrabili nei progetti Xcode che semplificano la scrittura dei nostri <em>assert</em>, come ad esempio <a href="https://github.com/Quick/Nimble">Nimble</a>, ma come si può vedere dalle poche funzioni di utility implementate nel progetto associato a questo articolo, basta poco per migliorare consistentemente la leggibilità dei nostri test.</p>
+<p>Prima di procedere con i test osserviamo che nel file <code>AsyncTestingStubbingTests.swift</code> c&rsquo;è una sezione <em>utility</em> nella quale sono implementate alcune funzioni comode per <strong>rendere  il codice dei test più espressivo</strong>. Ad esempio la funzione <code>mainViewController</code> ritorna l&rsquo;istanza del LocationViewController utilizzata nell&rsquo;interfaccia grafica nell&rsquo;app. Il <em>testing framework</em> integrato in Xcode è chiamato <code>XCTest</code>, e per quanto adeguatamente completo nelle sue funzionalità, esso è principalmente basato su funzioni del tipo <code>XCTAssert</code> che verificano che una qualche condizione sia vera, e se non lo è stampano in console un messaggio di errore passato alla stessa funzione <code>XCTAssert</code> nel momento in cui essa è chiamata: questo può portare alla scrittura di <strong>test verbosi e poco espressivi</strong>. Ci sono diverse librerie facilmente integrabili nei progetti Xcode che semplificano la scrittura dei nostri <em>assert</em>, come ad esempio <a href="https://github.com/Quick/Nimble">Nimble</a>, ma come si può vedere dalle poche funzioni di utility implementate nel progetto associato a questo articolo, basta poco per migliorare consistentemente la leggibilità dei nostri test.</p>
 <p>A questo punto possiamo procedere all&rsquo;implementazione dei test. Le funzioni <code>testLocation</code> e <code>testError</code> testano semplicemente che lo stato del <code>mainViewController</code> sia corretto prima e dopo la generazione di una posizione GPS e di un errore arbitrari. Tuttavia questi test non permettono di rappresentare correttamente un caso d&rsquo;uso tipico, perché <strong>le notifiche sulla posizione GPS posso arrivare in qualsiasi momento</strong>, e il <code>LocationViewController</code> deve essere in grado di <em>reagire</em> alle notifiche nel momento in cui queste si presentano. Per simulare la cosa useremo due test <em>asincroni</em>, cioè test il cui risultato non è ottenuto immediatamente, ma dopo un certo tempo: l&rsquo;idea è quella di &ldquo;mettere in pausa&rdquo; i test per un certo numero di secondi, finché non si verifica una certa condizione oppure non scade il tempo: in quest&rsquo;ultimo caso il test verrà considerato <strong>fallito</strong> da <code>XCTest</code> perché la condizione attesa non si è verificata entro il tempo richiesto.</p>
 <p>Riportiamo ad esempio il codice della funzione <code>testDelayedLocation</code>:</p>
-<pre><code>func testDelayedLocation() {
+<pre tabindex="0"><code>func testDelayedLocation() {
         if let vc = mainViewController() {
-            let locationExpectation = expectationWithDescription(&quot;locationExpectation&quot;)
+            let locationExpectation = expectationWithDescription(&#34;locationExpectation&#34;)
             let coordinator = STUB_LocationCoordinator()
             vc.showLocationWithCoordinator(coordinator)
             vc.locationState.assertState(.Searching)
@@ -557,7 +554,7 @@ forceDelayedErrorLocationUnknown
             waitForExpectationsWithTimeout(1, handler: nil)
         }
         else {
-            fail(&quot;this will never happen&quot;)
+            fail(&#34;this will never happen&#34;)
         }
     }
 </code></pre><p>La funzione di utility <code>after</code> semplicemente esegue del codice dopo un certo numero di secondi: in base all&rsquo;implementazione di <code>forceRandomDelayedLocations</code> presente in <code>STUB_LocationCoordinator</code>, il <code>LocationViewController</code> dovrebbe  ricevere alcune posizioni GPS a intervalli regolari dopo un certo ritardo, e per verificarlo inseriamo due <em>assert</em>, dopo mezzo secondo e poi ancora un quarto di secondo. Per realizzare il test asincrono  definiamo una <code>XCTestExpectation</code>, quindi una &ldquo;aspettativa&rdquo;, chiamata <code>locationExpectation</code>: in coda al codice di test chiamiamo la funzione <code>waitForExpectationsWithTimeout</code> che fa continuare la funzione di test - senza che essa <em>ritorni</em> - fino alla &ldquo;realizzazione&rdquo; delle aspettative, tenendo conto di un certo tempo di timeout. Quindi, per &ldquo;realizzare&rdquo; un&rsquo;aspettativa, chiamiamo la funzione <code>fulfill</code> su <code>locationExpectation</code>, ma solo dopo aver verificato che lo stato del <code>LocationViewController</code> sia quello corretto.</p>
@@ -602,29 +599,6 @@ forceDelayedErrorLocationUnknown
   </footer>
 
 </article>
-
-    <article class="post">
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
 
 
 <ul class="actions pagination">
@@ -781,54 +755,6 @@ forceDelayedErrorLocationUnknown
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-08-28'>
-                28 August 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
-                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-07-02'>
-                2 July 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
                     <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
                       <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
@@ -848,6 +774,60 @@ forceDelayedErrorLocationUnknown
               
               <time class="published" datetime='2024-05-30'>
                 30 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-05-20'>
+                20 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+                  
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-03-11'>
+                11 March 2024
               </time>
             </header>
             
@@ -1001,7 +981,7 @@ forceDelayedErrorLocationUnknown
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional Programming</a>
                 <span style="float:right;">11</span>
               
             </header>
@@ -1112,7 +1092,7 @@ forceDelayedErrorLocationUnknown
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/open-source/">Open source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">7</span>
               
             </header>
@@ -1149,7 +1129,7 @@ forceDelayedErrorLocationUnknown
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">16</span>
+                <span style="float:right;">14</span>
               
             </header>
           </article>

@@ -4,22 +4,16 @@
     <title>Websocket on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/websocket/</link>
     <description>Recent content in Websocket on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Sep 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/websocket/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/websocket/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WAMP, Web Application Messaging Protocol.. e PHP!</title>
       <link>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
-      <description>Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno scambio dati in due direzioni, efficiente e a bassa latenza, ha determinato l’ascesa negli ultimi anni di soluzioni basate su WebSocket .
-Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.</description>
+      <description>&lt;p&gt;Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno &lt;strong&gt;scambio dati&lt;/strong&gt; in &lt;strong&gt;due direzioni&lt;/strong&gt;, &lt;strong&gt;efficiente&lt;/strong&gt; e a &lt;strong&gt;bassa latenza&lt;/strong&gt;, ha determinato l’ascesa negli ultimi anni di &lt;strong&gt;soluzioni basate su &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;https://www.websocket.org/&#34; target=&#39;_blank&#39;&gt;WebSocket&lt;/a&gt;&#xA;&#xA;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Internet delle cose e web 2.0 trovano oramai sempre &lt;strong&gt;meno spazio&lt;/strong&gt; all’interno del protocollo &lt;strong&gt;HTTP/1&lt;/strong&gt;. Le tecniche di &lt;strong&gt;polling e long polling&lt;/strong&gt;, in voga fino a pochi anni fa, non permettevano di trasmettere in &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;https://it.wikipedia.org/wiki/Duplex&#34; target=&#39;_blank&#39;&gt;full duplex&lt;/a&gt;&#xA;&#xA; (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano &lt;strong&gt;diversi sforzi&lt;/strong&gt; per simulare notifiche push server side.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

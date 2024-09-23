@@ -1,39 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>veronica-bolognesi on Facile.it Engineering</title>
+    <title>Veronica-Bolognesi on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/veronica-bolognesi/</link>
-    <description>Recent content in veronica-bolognesi on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Veronica-Bolognesi on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Mar 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/veronica-bolognesi/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/veronica-bolognesi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On Living Documentation</title>
       <link>https://engineering.facile.it/blog/eng/on-living-documentation/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/on-living-documentation/</guid>
-      <description>Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, Living Documentation: continuous knowledge sharing by design, published by Pearson.
-The need for documentation Documentation supplements the knowledge we might not have. Lack of knowledge manifests in:
-  Wasted time (finding the missing points or guessing them).
-  Biased decisions due to this lack.
-  Hint: when you don’t know something, you are usually not aware that you don&amp;rsquo;t know it ;)</description>
+      <description>&lt;p&gt;Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, &lt;strong&gt;&lt;a href=&#34;https://www.pearson.com/store/p/living-documentation-continuous-knowledge-sharing-by-design/P100000797747/9780134689326&#34;&gt;Living Documentation: continuous knowledge sharing by design&lt;/a&gt;&lt;/strong&gt;, published by Pearson.&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-need-for-documentation&#34;&gt;The need for documentation&lt;/h1&gt;&#xA;&lt;p&gt;Documentation supplements the knowledge we might not have.&#xA;Lack of knowledge manifests in:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Wasted time (finding the missing points or guessing them).&lt;/li&gt;&#xA;&lt;li&gt;Biased decisions due to this lack.&lt;/li&gt;&#xA;&lt;li&gt;Hint: when you don’t know something, you are usually not aware that you don&amp;rsquo;t know it ;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Therefore, the time spent harvesting knowledge should be considered as helping to build the stakeholders&amp;rsquo; application mental model. This is important because that&amp;rsquo;s the mental model that developers will use to augment the code, that product owners will use to describe the stories to implement, and that business owners will use to describe their key goals and outcomes.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PHPDay 2020</title>
       <link>https://engineering.facile.it/blog/eng/php-day-2020/</link>
       <pubDate>Wed, 16 Sep 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/php-day-2020/</guid>
-      <description>The 2020 edition of PHPDay took place on September 8th in a remote fashion.
-Having experienced the 2019 edition (indeed my first one, despite being a PHP developer from eons!) I would say that it was a little difficult to stay focused for such a long event. However, given the high-quality level of lecturers and talks, it was totally worth the effort.
-I would like to thank the folks at Grusp for their passionate work.</description>
+      <description>&lt;p&gt;The &lt;strong&gt;&lt;a href=&#34;https://2020.phpday.it/&#34;&gt;2020 edition of PHPDay&lt;/a&gt;&lt;/strong&gt; took place on September 8th in a remote fashion.&lt;/p&gt;&#xA;&lt;p&gt;Having experienced the 2019 edition (indeed my first one, despite being a PHP developer from eons!) I would say that it was a little difficult to stay focused for such a long event. However, given the high-quality level of lecturers and talks, it was totally worth the effort.&lt;/p&gt;&#xA;&lt;p&gt;I would like to thank the folks at &lt;strong&gt;&lt;a href=&#34;https://www.grusp.org/&#34;&gt;Grusp&lt;/a&gt;&lt;/strong&gt; for their passionate work. Please support them!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

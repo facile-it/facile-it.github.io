@@ -8,12 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/engineering.facile.it"
+             "@id": "https:\/\/engineering.facile.it\/"
         },
         "articleSection" : "blog",
         "name" : "Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning",
         "headline" : "Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning",
-        "description" : "{ \x22@context\x22: \x22https:\/\/schema.org\x22, \x22@type\x22: \x22BlogPosting\x22, \x22headline\x22: \x22Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning\x22, \x22keywords\x22: \x22Deserialization, Kubernetes, Machine Learning\x22, \x22wordcount\x22: \x22368\x22, \x22publisher\x22: \x22Facile.it Engineering\x22, \x22url\x22: \x22https:\/\/engineering.facile.it\/\x22, \x22datePublished\x22: \x222023-07-27\x22, \x22dateCreated\x22: \x222023-07-14\x22, \x22dateModified\x22: \x222023-07-27\x22, \x22description\x22: \x22Abstracts of the talks held during the Venerdì Protetto on July 14th, 2023\x22, \x22articleBody\x22:\x22Deserialization The attacker\x27s point of view by Alessio Giorgianni Serialization is a known concept within software development. Nonetheless, the developer often has only a superficial knowledge of this mechanism, ignoring especially the security-related issues.",
+        "description" : "\u003cscript type=\u0022application\/ld\u002bjson\u0022\u003e\n{ \n  \u0022@context\u0022: \u0022https:\/\/schema.org\u0022, \n  \u0022@type\u0022: \u0022BlogPosting\u0022,\n  \u0022headline\u0022: \u0022Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning\u0022,\n  \u0022keywords\u0022: \u0022Deserialization, Kubernetes, Machine Learning\u0022, \n  \u0022wordcount\u0022: \u0022368\u0022,\n  \u0022publisher\u0022: \u0022Facile.it Engineering\u0022,\n  \u0022url\u0022: \u0022https:\/\/engineering.facile.it\/\u0022,\n  \u0022datePublished\u0022: \u00222023-07-27\u0022,\n  \u0022dateCreated\u0022: \u00222023-07-14\u0022,\n  \u0022dateModified\u0022: \u00222023-07-27\u0022,\n  \u0022description\u0022: \u0022Abstracts of the talks held during the Venerdì Protetto on July 14th, 2023\u0022,\n  \u0022articleBody\u0022:\u0022Deserialization The attacker\u0027s point of view by Alessio Giorgianni Serialization is a known concept within software development. Nonetheless, the developer often has only a superficial knowledge of this mechanism, ignoring especially the security-related issues. So, what might happen if a skilled attacker is able to manipulate a serialized payload maliciously? The purpose of this talk was to give an introductory overview of the potential attack scenarios that a user attacker could implement, and the consequences they could have (arbitrary file read\/write, remote code execution, etc.) by focusing more on the PHP platform. We started by writing From great power comes great responsibility, as Uncle Ben said. And that\u0027s true when you use a Kubernetes cluster shared among multiple tenants. In this session, we discovered the principles required to develop an Internal Developer Platform that is multi-tenant aware such as self-service, security first, and declarative, besides the API primitives that Kubernetes offers to address the resource quota and isolation. Eventually, we discovered how Capsule can help to address all these requirements in a simpler way, without breaking the Kubernetes UX. Machine learning pipelines at Facile.it by Luigi Cerone \u0026 Jacopo Demichelis - simple introductory exploits and worked our way up to a complex exploit used in a recent bug from the well-known blog VBullettin. Kubernetes multi-tenancy by Dario Tranchitella Building a machine learning (ML) model could be challenging, but being able to handle its lifecycle in production at scale is a whole different problem. In this talk, we shared what’s behind the curtain of many of the ML models in production at Facile.it. We started from an existing use case, that is, the optimization of leads. We then covered both the creation of the models and all the technical solutions, pipelines, and procedures created in the last year to keep them updated and monitored. The archive of all Venerdì Protetto talks is available here.\u0022,\n  \u0022author\u0022: {\n    \u0022@type\u0022: \u0022Person\u0022,\n    \u0022name\u0022: \u0022Ana\u0022\n  }\n}\n\u003c\/script\u003e\n\u003cp\u003eThis page contains the abstracts of the talks held during the latest Venerdì Protetto on July 14, 2023.\u003c\/p\u003e\n\u003cp\u003eTopics:\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href=\u0022#deserialization\u0022\u003eDeserialization\u003c\/a\u003e by \u003ca href=\u0022https:\/\/www.linkedin.com\/in\/alessio-giorgianni-b90500123\/\u0022\u003eAlessio Giorgianni\u003c\/a\u003e (Facile.it)\u003c\/li\u003e\n\u003cli\u003e\u003ca href=\u0022#kubernetes\u0022\u003eKubernetes\u003c\/a\u003e by \u003ca href=\u0022https:\/\/www.linkedin.com\/in\/dariotranchitella\/\u0022\u003eDario Tranchitella\u003c\/a\u003e (\u003ca href=\u0022https:\/\/clastix.io\/\u0022\u003eCLASTIX\u003c\/a\u003e)\u003c\/li\u003e\n\u003cli\u003e\u003ca href=\u0022#machine-learning-pipelines-at-facileit\u0022\u003eMachine learning pipelines at Facile.it\u003c\/a\u003e by \u003ca href=\u0022https:\/\/www.linkedin.com\/in\/luigi-cerone\/\u0022\u003eLuigi Cerone\u003c\/a\u003e \u0026amp; \u003ca href=\u0022https:\/\/www.linkedin.com\/in\/jacopo-maria-demichelis-b20b96196\/\u0022\u003eJacopo Demichelis\u003c\/a\u003e (Facile.it)\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003eThe overview of Venerdì Protetto is available \u003ca href=\u0022https:\/\/engineering.facile.it\/blog\/eng\/v-protetto\/\u0022\u003ehere\u003c\/a\u003e.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,10 +21,10 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2023",
-        "datePublished": "2023-07-27 13:00:00 \x2b0000 UTC",
-        "dateModified" : "2023-07-27 13:00:00 \x2b0000 UTC",
+        "datePublished": "2023-07-27 13:00:00 \u002b0000 UTC",
+        "dateModified" : "2023-07-27 13:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/blog\/eng\/v-protetto14-7-2023\/",
-        "wordCount" : "731",
+        "wordCount" : "363",
         "keywords" : [ "Blog" ]
     }
     </script>
@@ -37,14 +37,22 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.69.0" />
+        <meta name="generator" content="Hugo 0.134.2">
         
 
 
         
         
             
-                <meta name="description" content="{ &#34;@context&#34;: &#34;https://schema.org&#34;, &#34;@type&#34;: &#34;BlogPosting&#34;, &#34;headline&#34;: &#34;Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning&#34;, &#34;keywords&#34;: &#34;Deserialization, Kubernetes, Machine Learning&#34;, &#34;wordcount&#34;: &#34;368&#34;, &#34;publisher&#34;: &#34;Facile.it Engineering&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/&#34;, &#34;datePublished&#34;: &#34;2023-07-27&#34;, &#34;dateCreated&#34;: &#34;2023-07-14&#34;, &#34;dateModified&#34;: &#34;2023-07-27&#34;, &#34;description&#34;: &#34;Abstracts of the talks held during the Venerdì Protetto on July 14th, 2023&#34;, &#34;articleBody&#34;:&#34;Deserialization The attacker&#39;s point of view by Alessio Giorgianni Serialization is a known concept within software development. Nonetheless, the developer often has only a superficial knowledge of this mechanism, ignoring especially the security-related issues.">
+                <meta name="description" content="
+This page contains the abstracts of the talks held during the latest Venerdì Protetto on July 14, 2023.
+Topics:
+
+Deserialization by Alessio Giorgianni (Facile.it)
+Kubernetes by Dario Tranchitella (CLASTIX)
+Machine learning pipelines at Facile.it by Luigi Cerone &amp; Jacopo Demichelis (Facile.it)
+
+The overview of Venerdì Protetto is available here.">
             
         
 
@@ -57,7 +65,15 @@
 
 
 <meta name="og:title" content="Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning"/>
-<meta name="og:description" content="{ &#34;@context&#34;: &#34;https://schema.org&#34;, &#34;@type&#34;: &#34;BlogPosting&#34;, &#34;headline&#34;: &#34;Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning&#34;, &#34;keywords&#34;: &#34;Deserialization, Kubernetes, Machine Learning&#34;, &#34;wordcount&#34;: &#34;368&#34;, &#34;publisher&#34;: &#34;Facile.it Engineering&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/&#34;, &#34;datePublished&#34;: &#34;2023-07-27&#34;, &#34;dateCreated&#34;: &#34;2023-07-14&#34;, &#34;dateModified&#34;: &#34;2023-07-27&#34;, &#34;description&#34;: &#34;Abstracts of the talks held during the Venerdì Protetto on July 14th, 2023&#34;, &#34;articleBody&#34;:&#34;Deserialization The attacker&#39;s point of view by Alessio Giorgianni Serialization is a known concept within software development. Nonetheless, the developer often has only a superficial knowledge of this mechanism, ignoring especially the security-related issues."/>
+<meta name="og:description" content="
+This page contains the abstracts of the talks held during the latest Venerdì Protetto on July 14, 2023.
+Topics:
+
+Deserialization by Alessio Giorgianni (Facile.it)
+Kubernetes by Dario Tranchitella (CLASTIX)
+Machine learning pipelines at Facile.it by Luigi Cerone &amp; Jacopo Demichelis (Facile.it)
+
+The overview of Venerdì Protetto is available here."/>
 
 
     
@@ -70,28 +86,32 @@
 
 
 
-        <meta property="og:title" content="Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning" />
-<meta property="og:description" content="{ &#34;@context&#34;: &#34;https://schema.org&#34;, &#34;@type&#34;: &#34;BlogPosting&#34;, &#34;headline&#34;: &#34;Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning&#34;, &#34;keywords&#34;: &#34;Deserialization, Kubernetes, Machine Learning&#34;, &#34;wordcount&#34;: &#34;368&#34;, &#34;publisher&#34;: &#34;Facile.it Engineering&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/&#34;, &#34;datePublished&#34;: &#34;2023-07-27&#34;, &#34;dateCreated&#34;: &#34;2023-07-14&#34;, &#34;dateModified&#34;: &#34;2023-07-27&#34;, &#34;description&#34;: &#34;Abstracts of the talks held during the Venerdì Protetto on July 14th, 2023&#34;, &#34;articleBody&#34;:&#34;Deserialization The attacker&#39;s point of view by Alessio Giorgianni Serialization is a known concept within software development. Nonetheless, the developer often has only a superficial knowledge of this mechanism, ignoring especially the security-related issues." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.facile.it/blog/eng/v-protetto14-7-2023/" />
-<meta property="article:published_time" content="2023-07-27T13:00:00+00:00" />
-<meta property="article:modified_time" content="2023-07-27T13:00:00+00:00" />
+        <meta property="og:url" content="https://engineering.facile.it/blog/eng/v-protetto14-7-2023/">
+  <meta property="og:site_name" content="Facile.it Engineering">
+  <meta property="og:title" content="Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning">
+  <meta property="og:description" content=" This page contains the abstracts of the talks held during the latest Venerdì Protetto on July 14, 2023.
+Topics:
+Deserialization by Alessio Giorgianni (Facile.it) Kubernetes by Dario Tranchitella (CLASTIX) Machine learning pipelines at Facile.it by Luigi Cerone &amp; Jacopo Demichelis (Facile.it) The overview of Venerdì Protetto is available here.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2023-07-27T13:00:00+00:00">
+    <meta property="article:modified_time" content="2023-07-27T13:00:00+00:00">
 
 
         
             <meta property="og:image" content="https://engineering.facile.it/images/logo_engineering.png">
         
 
-        <meta itemprop="name" content="Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning">
-<meta itemprop="description" content="{ &#34;@context&#34;: &#34;https://schema.org&#34;, &#34;@type&#34;: &#34;BlogPosting&#34;, &#34;headline&#34;: &#34;Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning&#34;, &#34;keywords&#34;: &#34;Deserialization, Kubernetes, Machine Learning&#34;, &#34;wordcount&#34;: &#34;368&#34;, &#34;publisher&#34;: &#34;Facile.it Engineering&#34;, &#34;url&#34;: &#34;https://engineering.facile.it/&#34;, &#34;datePublished&#34;: &#34;2023-07-27&#34;, &#34;dateCreated&#34;: &#34;2023-07-14&#34;, &#34;dateModified&#34;: &#34;2023-07-27&#34;, &#34;description&#34;: &#34;Abstracts of the talks held during the Venerdì Protetto on July 14th, 2023&#34;, &#34;articleBody&#34;:&#34;Deserialization The attacker&#39;s point of view by Alessio Giorgianni Serialization is a known concept within software development. Nonetheless, the developer often has only a superficial knowledge of this mechanism, ignoring especially the security-related issues.">
-<meta itemprop="datePublished" content="2023-07-27T13:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2023-07-27T13:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="731">
-
-
-
-<meta itemprop="keywords" content="" />
         
+  <meta itemprop="name" content="Venerdì Protetto | July edition: Deserialization, Kubernetes, Machine Learning">
+  <meta itemprop="description" content=" This page contains the abstracts of the talks held during the latest Venerdì Protetto on July 14, 2023.
+Topics:
+Deserialization by Alessio Giorgianni (Facile.it) Kubernetes by Dario Tranchitella (CLASTIX) Machine learning pipelines at Facile.it by Luigi Cerone &amp; Jacopo Demichelis (Facile.it) The overview of Venerdì Protetto is available here.">
+  <meta itemprop="datePublished" content="2023-07-27T13:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-07-27T13:00:00+00:00">
+  <meta itemprop="wordCount" content="363">
+  <meta itemprop="keywords" content="Engineering,Protected Fridays">
 
         
             
@@ -119,19 +139,6 @@
 
 
       
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-22342495-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
     </head>
     <body>
 
@@ -185,7 +192,7 @@ if (!doNotTrack) {
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
                 </form>
             </li>
             <li class="menu">
@@ -202,7 +209,7 @@ if (!doNotTrack) {
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
             </form>
         </section>
 
@@ -260,35 +267,35 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-08-28'>
-                                    August 28, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-07-02'>
-                                    July 2, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-05-20'>
+                                    May 20, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-03-11'>
+                                    March 11, 2024</time>
                             </header>
                             
 
@@ -425,7 +432,7 @@ if (!doNotTrack) {
         
 
         
-            <p>4 minute read</p>
+            <p>2 minute read</p>
         
     </div>
 </header>
@@ -497,7 +504,6 @@ if (!doNotTrack) {
 <p>We started from an existing use case, that is, the optimization of leads. We then covered both the creation of the models and all the technical solutions, pipelines, and procedures created in the last year to keep them updated and monitored.</p>
 <br>
 <p>The archive of all Venerdì Protetto talks is available <a href="/categories/protected-fridays">here</a>.</p>
-
   </div>
 
   
@@ -528,29 +534,6 @@ if (!doNotTrack) {
   </footer>
 
 </article>
-
-    <article class="post">
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
 
 
 <ul class="actions pagination">
@@ -707,54 +690,6 @@ if (!doNotTrack) {
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-08-28'>
-                28 August 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
-                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-07-02'>
-                2 July 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
                     <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
                       <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
@@ -774,6 +709,60 @@ if (!doNotTrack) {
               
               <time class="published" datetime='2024-05-30'>
                 30 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-05-20'>
+                20 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+                  
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-03-11'>
+                11 March 2024
               </time>
             </header>
             
@@ -927,7 +916,7 @@ if (!doNotTrack) {
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional Programming</a>
                 <span style="float:right;">11</span>
               
             </header>
@@ -1038,7 +1027,7 @@ if (!doNotTrack) {
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/open-source/">Open source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">7</span>
               
             </header>
@@ -1075,7 +1064,7 @@ if (!doNotTrack) {
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">16</span>
+                <span style="float:right;">14</span>
               
             </header>
           </article>

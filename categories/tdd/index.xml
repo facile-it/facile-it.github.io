@@ -4,47 +4,30 @@
     <title>TDD on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/tdd/</link>
     <description>Recent content in TDD on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Mar 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/tdd/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/tdd/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>On Living Documentation</title>
       <link>https://engineering.facile.it/blog/eng/on-living-documentation/</link>
       <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/on-living-documentation/</guid>
-      <description>Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, Living Documentation: continuous knowledge sharing by design, published by Pearson.
-The need for documentation Documentation supplements the knowledge we might not have. Lack of knowledge manifests in:
-  Wasted time (finding the missing points or guessing them).
-  Biased decisions due to this lack.
-  Hint: when you don’t know something, you are usually not aware that you don&amp;rsquo;t know it ;)</description>
+      <description>&lt;p&gt;Today I want to talk about living documentation, having just finished the aptly-named book by Cyrille Martraire, &lt;strong&gt;&lt;a href=&#34;https://www.pearson.com/store/p/living-documentation-continuous-knowledge-sharing-by-design/P100000797747/9780134689326&#34;&gt;Living Documentation: continuous knowledge sharing by design&lt;/a&gt;&lt;/strong&gt;, published by Pearson.&lt;/p&gt;&#xA;&lt;h1 id=&#34;the-need-for-documentation&#34;&gt;The need for documentation&lt;/h1&gt;&#xA;&lt;p&gt;Documentation supplements the knowledge we might not have.&#xA;Lack of knowledge manifests in:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Wasted time (finding the missing points or guessing them).&lt;/li&gt;&#xA;&lt;li&gt;Biased decisions due to this lack.&lt;/li&gt;&#xA;&lt;li&gt;Hint: when you don’t know something, you are usually not aware that you don&amp;rsquo;t know it ;)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Therefore, the time spent harvesting knowledge should be considered as helping to build the stakeholders&amp;rsquo; application mental model. This is important because that&amp;rsquo;s the mental model that developers will use to augment the code, that product owners will use to describe the stories to implement, and that business owners will use to describe their key goals and outcomes.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>How PHP 7 &amp; TDD helped me sleep better</title>
       <link>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</link>
       <pubDate>Tue, 07 Jun 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/how-php-7-tdd-helped-me-sleep-better/</guid>
-      <description>The enemies of programming As many of you will agree with me, sleep deprivation is the enemy of programming.
-Maybe we fear only one thing more than that: being interrupted.
-[![Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)](/images/how-php-7-tdd-helped-me-sleep-better/interruption.png)](http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/) While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.</description>
+      <description>&lt;h1 id=&#34;the-enemies-of-programming&#34;&gt;The enemies of programming&lt;/h1&gt;&#xA;&lt;p&gt;As many of you will agree with me, &lt;strong&gt;sleep deprivation&lt;/strong&gt; is the enemy of programming.&lt;br&gt;&#xA;Maybe we fear only one thing more than that: &lt;strong&gt;being interrupted&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p style=&#34;text-align: center;&#34;&gt;&#xA;    [![Why you shouldn&#39;t interrupt a programmer (by Jason Heeris)](/images/how-php-7-tdd-helped-me-sleep-better/interruption.png)](http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/)&#xA;&lt;/p&gt;&#xA;&lt;p&gt;While writing code we have to think really hard, we use complex abstractions, we go through long business workflows and so on&amp;hellip; fatigue and interruptions are the main enemies of those in this line of work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Software testing: Coverage vs Efficacia</title>
       <link>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
-      <description>Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.
-Numerosi sono i fattori che hanno reso il code coverage popolare:
- è una metrica facile da comprendere; si misura senza difficoltà; è oggettiva e imparziale; è universale (applicabile a tutti i paradigmi di programmazione).  Ma al di là di questi vantaggi, possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?</description>
+      <description>&lt;p&gt;Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.&lt;/p&gt;&#xA;&lt;p&gt;Numerosi sono i fattori che hanno reso il code coverage popolare:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;è una metrica facile da comprendere;&lt;/li&gt;&#xA;&lt;li&gt;si misura senza difficoltà;&lt;/li&gt;&#xA;&lt;li&gt;è oggettiva e imparziale;&lt;/li&gt;&#xA;&lt;li&gt;è universale (applicabile a tutti i paradigmi di programmazione).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ma al di là di questi vantaggi, &lt;em&gt;&lt;strong&gt;possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;quando-un-test-è-efficace&#34;&gt;Quando un test è efficace?&lt;/h3&gt;&#xA;&lt;p&gt;Una test suite è considerata efficace se consente di rilevare una grande quantità di failure; d&amp;rsquo;altronde, ciò è proprio la finalità ultima del software testing.&#xA;La massima efficacia è realizzabile solo applicando testing esaustivo ma, siccome ciò è spesso impraticabile, ci si accontenta di test più semplici con un&amp;rsquo;efficacia inferiore.&#xA;È importante notare che, a differenza del coverage, il livello d&amp;rsquo;efficacia viene stabilito soggettivamente dallo sviluppatore.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

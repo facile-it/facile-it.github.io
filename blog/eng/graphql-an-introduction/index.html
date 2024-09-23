@@ -8,12 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/engineering.facile.it"
+             "@id": "https:\/\/engineering.facile.it\/"
         },
         "articleSection" : "blog",
         "name" : "GraphQL: an introduction",
         "headline" : "GraphQL: an introduction",
-        "description" : "The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let\x26rsquo;s see some of the consequences and benefits of choosing REST:\n Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.",
+        "description" : "\u003ch2 id=\u0022the-lesson-we-learned-with-rest\u0022\u003eThe lesson we learned with REST\u003c\/h2\u003e\n\u003cp\u003eFor many developers, nowadays, building an \u003cstrong\u003eAPI\u003c\/strong\u003e for their applications essentially means mapping the \u003cem\u003eresources\u003c\/em\u003e of the domain to \u003cem\u003eURIs\u003c\/em\u003e, with the \u003ca href=\u0022https:\/\/en.wikipedia.org\/wiki\/Representational_state_transfer\u0022\u003eREST\u003c\/a\u003e principles in mind.\nUsually creating a \u003cem\u003e\u003cstrong\u003eRESTful\u003c\/strong\u003e\u003c\/em\u003e system is not difficult, and the simplicity of the idea makes the task easier.\nLet\u0026rsquo;s see some of the consequences and benefits of choosing REST:\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eEvery HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.\u003c\/li\u003e\n\u003cli\u003eOften the same URI can be used with multiple verbs to accomplish different tasks (e.g. \u0026ldquo;example.com\/tag\/123\u0026rdquo; refers to a particular tag that you can retrieve, update or delete).\u003c\/li\u003e\n\u003cli\u003eControllers in many server-side frameworks can be created with a RESTful approach, each one of them representing one or more resources.\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003eHowever, unfortunately, it\u0026rsquo;s often easy to come across some problems:\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2016",
-        "datePublished": "2016-01-18 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2016-01-18 00:00:00 \x2b0000 UTC",
+        "datePublished": "2016-01-18 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2016-01-18 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/blog\/eng\/graphql-an-introduction\/",
         "wordCount" : "1880",
         "keywords" : [ "Blog" ]
@@ -37,15 +37,23 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.69.0" />
+        <meta name="generator" content="Hugo 0.134.2">
         
 
 
         
         
             
-                <meta name="description" content="The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let&rsquo;s see some of the consequences and benefits of choosing REST:
- Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.">
+                <meta name="description" content="The lesson we learned with REST
+For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind.
+Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier.
+Let&rsquo;s see some of the consequences and benefits of choosing REST:
+
+Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.
+Often the same URI can be used with multiple verbs to accomplish different tasks (e.g. &ldquo;example.com/tag/123&rdquo; refers to a particular tag that you can retrieve, update or delete).
+Controllers in many server-side frameworks can be created with a RESTful approach, each one of them representing one or more resources.
+
+However, unfortunately, it&rsquo;s often easy to come across some problems:">
             
         
 
@@ -60,8 +68,16 @@
 
 
 <meta name="og:title" content="GraphQL: an introduction"/>
-<meta name="og:description" content="The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let&rsquo;s see some of the consequences and benefits of choosing REST:
- Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI."/>
+<meta name="og:description" content="The lesson we learned with REST
+For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind.
+Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier.
+Let&rsquo;s see some of the consequences and benefits of choosing REST:
+
+Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.
+Often the same URI can be used with multiple verbs to accomplish different tasks (e.g. &ldquo;example.com/tag/123&rdquo; refers to a particular tag that you can retrieve, update or delete).
+Controllers in many server-side frameworks can be created with a RESTful approach, each one of them representing one or more resources.
+
+However, unfortunately, it&rsquo;s often easy to come across some problems:"/>
 
 
     
@@ -74,13 +90,16 @@
 
 
 
-        <meta property="og:title" content="GraphQL: an introduction" />
-<meta property="og:description" content="The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let&rsquo;s see some of the consequences and benefits of choosing REST:
- Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.facile.it/blog/eng/graphql-an-introduction/" />
-<meta property="article:published_time" content="2016-01-18T00:00:00+00:00" />
-<meta property="article:modified_time" content="2016-01-18T00:00:00+00:00" />
+        <meta property="og:url" content="https://engineering.facile.it/blog/eng/graphql-an-introduction/">
+  <meta property="og:site_name" content="Facile.it Engineering">
+  <meta property="og:title" content="GraphQL: an introduction">
+  <meta property="og:description" content="The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let’s see some of the consequences and benefits of choosing REST:
+Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI. Often the same URI can be used with multiple verbs to accomplish different tasks (e.g. “example.com/tag/123” refers to a particular tag that you can retrieve, update or delete). Controllers in many server-side frameworks can be created with a RESTful approach, each one of them representing one or more resources. However, unfortunately, it’s often easy to come across some problems:">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2016-01-18T00:00:00+00:00">
+    <meta property="article:modified_time" content="2016-01-18T00:00:00+00:00">
 
 
         
@@ -89,17 +108,14 @@
             
         
 
-        <meta itemprop="name" content="GraphQL: an introduction">
-<meta itemprop="description" content="The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let&rsquo;s see some of the consequences and benefits of choosing REST:
- Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.">
-<meta itemprop="datePublished" content="2016-01-18T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2016-01-18T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1880">
-
-
-
-<meta itemprop="keywords" content="" />
         
+  <meta itemprop="name" content="GraphQL: an introduction">
+  <meta itemprop="description" content="The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let’s see some of the consequences and benefits of choosing REST:
+Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI. Often the same URI can be used with multiple verbs to accomplish different tasks (e.g. “example.com/tag/123” refers to a particular tag that you can retrieve, update or delete). Controllers in many server-side frameworks can be created with a RESTful approach, each one of them representing one or more resources. However, unfortunately, it’s often easy to come across some problems:">
+  <meta itemprop="datePublished" content="2016-01-18T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2016-01-18T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1880">
+  <meta itemprop="keywords" content="Vito,English,GraphQL,REST,HTTP,Node.js">
 
         
             
@@ -127,19 +143,6 @@
 
 
       
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-22342495-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
     </head>
     <body>
 
@@ -193,7 +196,7 @@ if (!doNotTrack) {
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
                 </form>
             </li>
             <li class="menu">
@@ -210,7 +213,7 @@ if (!doNotTrack) {
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
             </form>
         </section>
 
@@ -268,35 +271,35 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-08-28'>
-                                    August 28, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-07-02'>
-                                    July 2, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-05-20'>
+                                    May 20, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-03-11'>
+                                    March 11, 2024</time>
                             </header>
                             
 
@@ -470,39 +473,38 @@ One of the main reasons why <strong>Facebook</strong> created it back in 2012 wa
 In the next section we&rsquo;ll use types and queries presented in our example project, that you can clone from <a href="https://github.com/poetcyborg/graphql-node-starter-kit">this repository</a>.</p>
 <h3 id="types-and-fields-driven-queries">Types and fields driven queries</h3>
 <p><strong>Example #1</strong></p>
-<pre><code>query {
+<pre tabindex="0"><code>query {
 	games {
         id
 	    title
 	}
 }
-
 </code></pre><p>The previous snippet describes a query issued by the client when it just needs to retrieve <em>id</em> and <em>title</em> of a <em><strong>game</strong></em>.
 Since no argument has been passed to filter the data of the specified type (<em>game</em>), all the games will be retrieved.
 The output for this query is:</p>
-<pre><code>{
-  &quot;data&quot;: {
-    &quot;games&quot;: [{
-        &quot;id&quot;: 1,
-        &quot;title&quot;: &quot;Frogger&quot;
+<pre tabindex="0"><code>{
+  &#34;data&#34;: {
+    &#34;games&#34;: [{
+        &#34;id&#34;: 1,
+        &#34;title&#34;: &#34;Frogger&#34;
       }, {
-        &quot;id&quot;: 2,
-        &quot;title&quot;: &quot;Galaxian&quot;
+        &#34;id&#34;: 2,
+        &#34;title&#34;: &#34;Galaxian&#34;
       }, {
-        &quot;id&quot;: 3,
-        &quot;title&quot;: &quot;Tiger Road&quot;
+        &#34;id&#34;: 3,
+        &#34;title&#34;: &#34;Tiger Road&#34;
       }, {
-        &quot;id&quot;: 4,
-        &quot;title&quot;: &quot;Mendel Palace&quot;
+        &#34;id&#34;: 4,
+        &#34;title&#34;: &#34;Mendel Palace&#34;
       }
     ]
   }
 }
 </code></pre><p>With REST, the same task could be accomplished with the following url:</p>
-<pre><code>GET /game?fields=id,title
+<pre tabindex="0"><code>GET /game?fields=id,title
 </code></pre><p>Unless the server applications is taking care of field filtering based on query params, all the information about every game will be returned.</p>
 <p><strong>Example #2</strong></p>
-<pre><code>query {
+<pre tabindex="0"><code>query {
 	games(id:2) {
         id
         title
@@ -510,8 +512,8 @@ The output for this query is:</p>
 	}
 }
 </code></pre><p><strong>Example #3</strong></p>
-<pre><code>query {
-	games(title:&quot;Frogger&quot;) {
+<pre tabindex="0"><code>query {
+	games(title:&#34;Frogger&#34;) {
 		id
         title
         year
@@ -520,12 +522,12 @@ The output for this query is:</p>
 </code></pre><p>Examples #2 and #3 show a way to filter games by their <em>id</em> and <em>title</em> respectively.
 As you can see, the id has no semantic meaning like in REST, so you can describe the filter criterion in the same manner (<em>fieldname: &ldquo;value&rdquo;</em>).</p>
 <p>The REST equivalent (selected fields are omitted) for Example #2:</p>
-<pre><code>GET /game/2
+<pre tabindex="0"><code>GET /game/2
 </code></pre><p>and #3:</p>
-<pre><code>GET /game?title=Frogger
+<pre tabindex="0"><code>GET /game?title=Frogger
 </code></pre><h3 id="relations-between-entities-graph-representation">Relations between entities: graph representation</h3>
 <p><strong>Example #4</strong></p>
-<pre><code>query {
+<pre tabindex="0"><code>query {
     games(id:2) {
         title
         developer {
@@ -538,8 +540,8 @@ As you can see, the id has no semantic meaning like in REST, so you can describe
 In Example #4, you can notice the complex field <em>developer</em>; we want to know the name and the nation of the company that developed the game with id = 2.</p>
 <p>The same two types can be reused to express the opposite of the relation described in the previous example:</p>
 <p><strong>Example #5:</strong></p>
-<pre><code>query {
-    companies(name:&quot;Game Freak&quot;) {
+<pre tabindex="0"><code>query {
+    companies(name:&#34;Game Freak&#34;) {
         name
         gamesAsDeveloper {
             title
@@ -548,61 +550,61 @@ In Example #4, you can notice the complex field <em>developer</em>; we want to k
 }
 </code></pre><p>Let&rsquo;s see briefly how you can describe these relations in the <strong>Javascript</strong> implementation.</p>
 <p>In the &lsquo;<em>Game</em>&rsquo; type definition:</p>
-<pre><code>developer: {
+<pre tabindex="0"><code>developer: {
 	type: Company,
-    description: 'The developer of the game',
+    description: &#39;The developer of the game&#39;,
 }
 </code></pre><p>And in the &lsquo;<em>Company</em>&rsquo; type:</p>
-<pre><code>gamesAsDeveloper: {
+<pre tabindex="0"><code>gamesAsDeveloper: {
     type: new GraphQLList(Game),
-    description: 'The games created as a developer',
+    description: &#39;The games created as a developer&#39;,
 }
 </code></pre><p>The field <em>developer</em> is defined as type <em>Company</em>, while the field <em>gamesAsDeveloper</em> is a list of <em>Game</em>.
 Please refer to the <a href="https://github.com/poetcyborg/graphql-node-starter-kit">demo project</a> for the full implementation of this example.</p>
 <h3 id="minimizing-the-number-of-requests-to-the-server">Minimizing the number of requests to the server</h3>
 <p>This time we need the list of the <em>Japanese companies</em> and some information about the games they worked on, but only for the <em>NES</em> (Nintendo Entertainment System) platform.</p>
 <p><strong>Example #6:</strong></p>
-<pre><code>query {
-    companies(nation:&quot;Japan&quot;) {
+<pre tabindex="0"><code>query {
+    companies(nation:&#34;Japan&#34;) {
 	    name
-        gamesAsDeveloper(platform:&quot;NES&quot;) {
+        gamesAsDeveloper(platform:&#34;NES&#34;) {
 		    title
 	        year
         }
-        gamesAsPublisher(platform:&quot;NES&quot;) {
+        gamesAsPublisher(platform:&#34;NES&#34;) {
             title
             year
         }
     }
 }
 </code></pre><p>This query&rsquo;s output:</p>
-<pre><code>{
-  &quot;data&quot;: {
-    &quot;companies&quot;: [{
-        &quot;name&quot;: &quot;Konami&quot;,
-        &quot;gamesAsDeveloper&quot;: [],
-        &quot;gamesAsPublisher&quot;: []
+<pre tabindex="0"><code>{
+  &#34;data&#34;: {
+    &#34;companies&#34;: [{
+        &#34;name&#34;: &#34;Konami&#34;,
+        &#34;gamesAsDeveloper&#34;: [],
+        &#34;gamesAsPublisher&#34;: []
       }, {
-        &quot;name&quot;: &quot;Namco&quot;,
-        &quot;gamesAsDeveloper&quot;: [],
-        &quot;gamesAsPublisher&quot;: [{
-            &quot;title&quot;: &quot;Mendel Palace&quot;,
-            &quot;year&quot;: &quot;1989&quot;
+        &#34;name&#34;: &#34;Namco&#34;,
+        &#34;gamesAsDeveloper&#34;: [],
+        &#34;gamesAsPublisher&#34;: [{
+            &#34;title&#34;: &#34;Mendel Palace&#34;,
+            &#34;year&#34;: &#34;1989&#34;
           }]
       }, {
-        &quot;name&quot;: &quot;Game Freak&quot;,
-        &quot;gamesAsDeveloper&quot;: [{
-            &quot;title&quot;: &quot;Mendel Palace&quot;,
-            &quot;year&quot;: &quot;1989&quot;
+        &#34;name&#34;: &#34;Game Freak&#34;,
+        &#34;gamesAsDeveloper&#34;: [{
+            &#34;title&#34;: &#34;Mendel Palace&#34;,
+            &#34;year&#34;: &#34;1989&#34;
           }],
-        &quot;gamesAsPublisher&quot;: []
+        &#34;gamesAsPublisher&#34;: []
       }, {
-        &quot;name&quot;: &quot;Capcom&quot;,
-        &quot;gamesAsDeveloper&quot;: [{
-            &quot;title&quot;: &quot;Tiger Road&quot;,
-            &quot;year&quot;: &quot;1987&quot;
+        &#34;name&#34;: &#34;Capcom&#34;,
+        &#34;gamesAsDeveloper&#34;: [{
+            &#34;title&#34;: &#34;Tiger Road&#34;,
+            &#34;year&#34;: &#34;1987&#34;
           }],
-        &quot;gamesAsPublisher&quot;: []
+        &#34;gamesAsPublisher&#34;: []
       }
     ]
   }
@@ -611,11 +613,11 @@ Please refer to the <a href="https://github.com/poetcyborg/graphql-node-starter-
 <ul>
 <li>by sending a request to an endpoint that was built exactly for the purpose of filtering companies and games by some fields, e.g.:</li>
 </ul>
-<pre><code>GET /companyWithGames?companyNation=Japan&amp;gamePlatform=NES&amp;fields=...
+<pre tabindex="0"><code>GET /companyWithGames?companyNation=Japan&amp;gamePlatform=NES&amp;fields=...
 </code></pre><ul>
 <li>by sending several requests to more generic endpoints, e.g.:</li>
 </ul>
-<pre><code>GET /company?nation=Japan&amp;fields=...
+<pre tabindex="0"><code>GET /company?nation=Japan&amp;fields=...
 GET /game?developerName=[developer 1 name]&amp;gamePlatform=NES&amp;fields=...
 GET /game?developerName=[developer 2 name]&amp;gamePlatform=NES&amp;fields=...
 GET ...
@@ -629,7 +631,7 @@ GET ...
 Unfortunately, there is no standard way to document this information and make it available to the client developers.</p>
 <p>With GraphQL, using <em><strong>introspection</strong></em> you can ask the server information about the available types and their fields.</p>
 <p><strong>Example #7</strong>:</p>
-<pre><code>query {
+<pre tabindex="0"><code>query {
     __schema {
         types {
             kind
@@ -639,28 +641,28 @@ Unfortunately, there is no standard way to document this information and make it
     }
 }
 </code></pre><p>A query with the query root <em><strong>__schema</strong></em> returns the list of types with their descriptions and fields:</p>
-<pre><code>{
-  &quot;data&quot;: {
-    &quot;__schema&quot;: {
-      &quot;types&quot;: [
+<pre tabindex="0"><code>{
+  &#34;data&#34;: {
+    &#34;__schema&#34;: {
+      &#34;types&#34;: [
 		...
         {
-          &quot;kind&quot;: &quot;OBJECT&quot;,
-          &quot;name&quot;: &quot;Company&quot;,
-          &quot;description&quot;: &quot;A company object&quot;,
-          &quot;fields&quot;: [...]
+          &#34;kind&#34;: &#34;OBJECT&#34;,
+          &#34;name&#34;: &#34;Company&#34;,
+          &#34;description&#34;: &#34;A company object&#34;,
+          &#34;fields&#34;: [...]
         }, {
-          &quot;kind&quot;: &quot;OBJECT&quot;,
-          &quot;name&quot;: &quot;Game&quot;,
-          &quot;description&quot;: &quot;A game object&quot;
-          &quot;fields&quot;: [...]
+          &#34;kind&#34;: &#34;OBJECT&#34;,
+          &#34;name&#34;: &#34;Game&#34;,
+          &#34;description&#34;: &#34;A game object&#34;
+          &#34;fields&#34;: [...]
         },
         ...
 }
 </code></pre><p>Another way to get the information about the types is using the query root <em><strong>__type</strong></em>, passing a specific type name:</p>
 <p><strong>Example #8</strong></p>
-<pre><code>query {
-    __type(name:&quot;Game&quot;) {
+<pre tabindex="0"><code>query {
+    __type(name:&#34;Game&#34;) {
         fields {
             name
             description
@@ -671,20 +673,20 @@ Unfortunately, there is no standard way to document this information and make it
     }
 }
 </code></pre><p>Output:</p>
-<pre><code>{
-    &quot;data&quot;: {
-        &quot;__type&quot;: {
-            &quot;fields&quot;: [{
-                &quot;name&quot;: &quot;id&quot;,
-                &quot;description&quot;: &quot;The id of a game&quot;,
-                &quot;type&quot;: {
-                    &quot;name&quot;: &quot;Int&quot;
+<pre tabindex="0"><code>{
+    &#34;data&#34;: {
+        &#34;__type&#34;: {
+            &#34;fields&#34;: [{
+                &#34;name&#34;: &#34;id&#34;,
+                &#34;description&#34;: &#34;The id of a game&#34;,
+                &#34;type&#34;: {
+                    &#34;name&#34;: &#34;Int&#34;
                 }
             }, {
-	            &quot;name&quot;: &quot;title&quot;,
-                &quot;description&quot;: &quot;The title of a game&quot;,
-                &quot;type&quot;: {
-                    &quot;name&quot;: &quot;String&quot;
+	            &#34;name&#34;: &#34;title&#34;,
+                &#34;description&#34;: &#34;The title of a game&#34;,
+                &#34;type&#34;: {
+                    &#34;name&#34;: &#34;String&#34;
                 }
             },
             ...
@@ -692,7 +694,7 @@ Unfortunately, there is no standard way to document this information and make it
 </code></pre><h2 id="mutations">Mutations</h2>
 <p>We&rsquo;ve already talked about queries, but a few words need to be spent about the other important operation that you can perform on a GraphQL server: <strong>mutations</strong>.</p>
 <p><strong>Example #9</strong></p>
-<pre><code>mutation {
+<pre tabindex="0"><code>mutation {
 	updateGameRating(id:2, rating:7) {
 		id
 		title
@@ -702,8 +704,8 @@ Unfortunately, there is no standard way to document this information and make it
 </code></pre><p>The syntax is no different from the previous ones, except for the <em><strong>mutation</strong></em> root.
 It is the equivalent of a POST or a PATCH in REST, and lets us change the value of some fields in a resource.
 In this example we are assigning a value (7) to the <em>rating</em> field of the <em>Game</em> types; this mutation could be defined in the following way:</p>
-<pre><code>{
-	name: 'UpdateGameRating',
+<pre tabindex="0"><code>{
+	name: &#39;UpdateGameRating&#39;,
 	type: Game,
 	args: {
 	    rating: { type: new GraphQLNonNull(GraphQLInt) },
@@ -767,29 +769,6 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
   </footer>
 
 </article>
-
-    <article class="post">
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
 
 
 <ul class="actions pagination">
@@ -946,54 +925,6 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-08-28'>
-                28 August 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
-                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-07-02'>
-                2 July 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
                     <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
                       <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
@@ -1013,6 +944,60 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
               
               <time class="published" datetime='2024-05-30'>
                 30 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-05-20'>
+                20 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+                  
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-03-11'>
+                11 March 2024
               </time>
             </header>
             
@@ -1166,7 +1151,7 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional Programming</a>
                 <span style="float:right;">11</span>
               
             </header>
@@ -1277,7 +1262,7 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/open-source/">Open source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">7</span>
               
             </header>
@@ -1314,7 +1299,7 @@ In fact, in my opinion, another good point of interest regarding GraphQL is the 
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">16</span>
+                <span style="float:right;">14</span>
               
             </header>
           </article>

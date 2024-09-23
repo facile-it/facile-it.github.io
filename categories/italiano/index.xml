@@ -4,362 +4,247 @@
     <title>Italiano on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/italiano/</link>
     <description>Recent content in Italiano on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 04 Apr 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/italiano/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/italiano/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>#FacileHack 2017, 10 giorni dopo</title>
       <link>https://engineering.facile.it/blog/ita/facilehack-2017-10-giorni-dopo/</link>
       <pubDate>Tue, 04 Apr 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/facilehack-2017-10-giorni-dopo/</guid>
-      <description>Dieci giorni fa è terminato #FacileHack 2017, la seconda edizione dell&amp;rsquo;hackathon organizzato da Facile.it. Tenere un evento di questo genere ci ha permesso di vedere all&amp;rsquo;opera e di confrontarci con tanti team molto eterogenei, composti da programmatori, designer e specialisti del marketing.
-Il tema dell&amp;rsquo;hackathon di quest&amp;rsquo;anno è stata la connettività: il nostro portale propone la comparazione dei servizi di connessione ad internet, e ha deciso di porre questo al centro della competizione.</description>
+      <description>&lt;p&gt;Dieci giorni fa è terminato &lt;a href=&#34;http://hackathon.facile.it/2017.html&#34;&gt;&lt;strong&gt;#FacileHack 2017&lt;/strong&gt;&lt;/a&gt;, la seconda edizione dell&amp;rsquo;hackathon organizzato da Facile.it. Tenere un evento di questo genere ci ha permesso di vedere all&amp;rsquo;opera e di confrontarci con tanti team molto eterogenei, composti da programmatori, designer e specialisti del marketing.&lt;/p&gt;&#xA;&lt;p&gt;Il tema dell&amp;rsquo;hackathon di quest&amp;rsquo;anno è stata la &lt;strong&gt;connettività&lt;/strong&gt;: il nostro portale propone la comparazione dei servizi di connessione ad internet, e ha deciso di porre questo al centro della competizione. I diversi team si sono quindi affrontati su questo tema, per trovare modi per migliorare il business di Facile.it e l&amp;rsquo;esperienza utente degli utilizzatori del servizio.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>#FacileHack 2017 ci siamo quasi</title>
       <link>https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/</link>
       <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/facilehack-2017-ci-siamo-quasi/</guid>
-      <description>Mancano meno di 4 giorni alla seconda edizione di #FacileHack, la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana.
-Attesa grande partecipazione all&amp;rsquo;evento anche da fuori Italia, le registrazioni sono state chiuse per sold-out all&amp;rsquo;inizio di questo mese.
-In meno di 24 ore gli hackers partecipanti dovranno confrontarsi, mettendo a dura prova le proprie capacità fisiche e creative, per presentare un&amp;rsquo;idea o un prototipo in grado di ottenere il punteggio massimo della giuria di qualità.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/facilehack-2017-ci-siamo-quasi/share.png&#34; alt=&#34;FacileHack&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Mancano meno di 4 giorni alla seconda edizione di &lt;a href=&#34;http://hackathon.facile.it/2017.html&#34;&gt;&lt;strong&gt;#FacileHack&lt;/strong&gt;&lt;/a&gt;, la maratona dedicata a coders, creativi e marketing specialist organizzata dalla nostra azienda che si svolgerà a Milano presso il Talent Garden di via Arcivescovo Calabiana.&lt;/p&gt;&#xA;&lt;p&gt;Attesa grande partecipazione all&amp;rsquo;evento anche da fuori Italia, le registrazioni sono state chiuse per sold-out all&amp;rsquo;inizio di questo mese.&lt;/p&gt;&#xA;&lt;p&gt;In meno di 24 ore gli &lt;em&gt;hackers&lt;/em&gt; partecipanti dovranno confrontarsi, mettendo a dura prova le proprie capacità fisiche e creative, per presentare un&amp;rsquo;idea o un prototipo in grado di ottenere il punteggio massimo della &lt;a href=&#34;http://hackathon.facile.it/2017.html#giuria&#34;&gt;giuria&lt;/a&gt; di qualità.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Puli: Universal Packages for PHP</title>
       <link>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</link>
       <pubDate>Tue, 15 Dec 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/puli-universal-packages-for-php/</guid>
-      <description>Composer e l&amp;rsquo;ecosistema PHP L&amp;rsquo;ecosistema PHP è notevolmente cambiato negli ultimi anni grazie all&amp;rsquo;introduzione di Composer. Esso ha definito degli standard per risolvere problemi comuni come l&amp;rsquo;autoloading e la gestione di pacchetti e dipendenze. In questi ultimi anni si è assistito ad un proliferare di numerose componenti software riusabili che hanno significativamente modificato le strategie di sviluppo.
-Nonostante Composer si sia evoluto molto, in alcuni contesti le sue funzionalità risultano essere limitanti e incomplete.</description>
+      <description>&lt;h2 id=&#34;composer-e-lecosistema-php&#34;&gt;Composer e l&amp;rsquo;ecosistema PHP&lt;/h2&gt;&#xA;&lt;p&gt;L&amp;rsquo;ecosistema PHP è notevolmente cambiato negli ultimi anni grazie all&amp;rsquo;introduzione di &lt;em&gt;Composer&lt;/em&gt;.&#xA;Esso ha definito degli standard per risolvere problemi comuni come l&amp;rsquo;autoloading e la gestione di pacchetti e dipendenze.&#xA;In questi ultimi anni si è assistito ad un proliferare di numerose componenti software riusabili che hanno significativamente modificato le strategie di sviluppo.&lt;/p&gt;&#xA;&lt;p&gt;Nonostante Composer si sia evoluto molto, in alcuni contesti le sue funzionalità risultano essere limitanti e incomplete.&#xA;I framework e i pacchetti più complessi hanno bisogno di una gestione personalizzata delle dipendenze. Generalmente sono necessarie operazioni di configurazione e registrazione. Ciò è specialmente vero per pacchetti core dei framework come i &lt;em&gt;template engines&lt;/em&gt;.&#xA;Composer, inoltre, possiede una cattiva gestione delle risorse non PHP. I file di configurazione devono essere gestiti manualmente oppure è necessario adottare standard strettamente legati a ciascun framework.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Codice riusabile: un primer</title>
       <link>https://engineering.facile.it/blog/ita/codice-riusabile-un-primer/</link>
       <pubDate>Wed, 09 Dec 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/codice-riusabile-un-primer/</guid>
-      <description>L&amp;rsquo;ultima volta abbiamo visto una possibile implementazione del tipo Optional in Objective-C; l&amp;rsquo;obiettivo primario dell&amp;rsquo;articolo era quello di importare in Objective-C uno strumento frequentemente utilizzato in Swift, ma usare una classe come Optional può essere considerato un&amp;rsquo;applicazione di un concetto molto più generale: il riutilizzo del codice. In effetti, Optional non è legato a un particolare dominio, e può essere riutilizzato più e più volte in molti progetti: questo è esattamente ciò che accade in Swift.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://engineering.facile.it/optionals-in-objective-c-ita/&#34;&gt;L&amp;rsquo;ultima volta&lt;/a&gt; abbiamo visto una possibile implementazione del tipo &lt;a href=&#34;https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330&#34;&gt;Optional&lt;/a&gt; in Objective-C; l&amp;rsquo;obiettivo primario dell&amp;rsquo;articolo era quello di importare in Objective-C uno strumento frequentemente utilizzato in Swift, ma usare una classe come &lt;code&gt;Optional&lt;/code&gt; può essere considerato un&amp;rsquo;applicazione di un concetto molto più generale: il &lt;strong&gt;riutilizzo del codice&lt;/strong&gt;. In effetti, &lt;code&gt;Optional&lt;/code&gt; non è legato a un particolare dominio, e può essere riutilizzato più e più volte in molti progetti: questo è esattamente ciò che accade in Swift. Ma a pensarci bene, questo è ciò che accade per una grande varietà di &lt;em&gt;classi&lt;/em&gt; in Objective-C (e di &lt;em&gt;tipi&lt;/em&gt; in Swift): ad esempio, &lt;code&gt;NSArray&lt;/code&gt; e &lt;code&gt;Array&lt;/code&gt; sono entrambi costrutti che espongono una specifica interfaccia, possiedono una certa implementazione, e vengono riutilizzati continuamente in metodi e funzioni. &lt;code&gt;NSArray&lt;/code&gt; e &lt;code&gt;Array&lt;/code&gt; non sono legati a un particolare dominio, e possiedono due importanti caratteristiche:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facile.it devs @ Codemotion Milan 2015</title>
       <link>https://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</link>
       <pubDate>Thu, 26 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</guid>
-      <description>L&amp;rsquo;appuntamento con il Codemotion di quest&amp;rsquo;anno a Milano è stato particolarmente ricco: tante tracce, moltissimi contenuti suddivisi tra talk tecnici, workshop e keynote, e alcuni ospiti illustri, tra cui il celebre Rasmus Lerdorf, creatore del linguaggio PHP. Come già fatto per il PHP Day 2015, proponiamo le nostre impressioni sulla conferenza, citando i talk che ci hanno colpito maggiormente: la scelta dei talk è basata sul gusto personale dei vari membri della redazione di Facile.</description>
+      <description>&lt;p&gt;L&amp;rsquo;appuntamento con il &lt;a href=&#34;http://milan2015.codemotionworld.com&#34;&gt;Codemotion&lt;/a&gt; di quest&amp;rsquo;anno a Milano è stato particolarmente &lt;strong&gt;ricco&lt;/strong&gt;: tante tracce, moltissimi contenuti suddivisi tra talk tecnici, workshop e keynote, e alcuni ospiti illustri, tra cui il celebre &lt;a href=&#34;https://twitter.com/rasmus&#34;&gt;Rasmus Lerdorf&lt;/a&gt;, creatore del linguaggio &lt;strong&gt;PHP&lt;/strong&gt;. Come già fatto per il &lt;a href=&#34;http://engineering.facile.it/php-day-2015/&#34;&gt;PHP Day 2015&lt;/a&gt;, proponiamo le nostre impressioni sulla conferenza, citando i talk che ci hanno colpito maggiormente: la scelta dei talk è basata sul gusto personale dei vari membri della redazione di Facile.it Engineering, e le considerazioni esposte non vanno lette come recensioni, ma come riflessioni di vario genere sulle tematiche trattate, volte a stimolare nei lettori l&amp;rsquo;interesse a &lt;strong&gt;partecipare&lt;/strong&gt; a conferenze come il Codemotion.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>#FacileHack 2015</title>
       <link>https://engineering.facile.it/blog/ita/facilehack-2015/</link>
       <pubDate>Wed, 25 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/facilehack-2015/</guid>
-      <description>Sono stati due giorni ricchi di emozioni quelli trascorsi con i partecipanti di #FacileHack, il primo hackathon organizzato da Facile.it. Abbiamo visto impegno nella competizione, talenti diversi e complementari tra loro, passione per la tecnologia, serietà e molto caffè&amp;hellip; momenti che vogliamo rivivere insieme a voi con questo video.
-  Grazie a tutti!</description>
+      <description>&lt;p&gt;Sono stati due giorni ricchi di emozioni quelli trascorsi con i partecipanti di #FacileHack, il primo hackathon organizzato da Facile.it.&#xA;Abbiamo visto impegno nella competizione, talenti diversi e complementari tra loro, passione per la tecnologia, serietà e molto caffè&amp;hellip; momenti che vogliamo rivivere insieme a voi con questo video.&lt;/p&gt;&#xA;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/7B8NtkvNXlQ&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&#xA;&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/oWWJX5WUZ8A&#34; frameborder=&#34;0&#34; allowfullscreen&gt;&lt;/iframe&gt;&#xA;&lt;p&gt;Grazie a tutti!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Optionals in Objective-C</title>
       <link>https://engineering.facile.it/blog/ita/optionals-in-objective-c/</link>
       <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/optionals-in-objective-c/</guid>
-      <description>Objective-C vivrà ancora per molto. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&amp;rsquo;:
- progetti esistenti basati su Objective-C richiedono ancora mantenimento e probabile aggiunta di nuove funzionalità, e anche se è tecnicamente possibile mescolare i linguaggi, la cosa può risultare poco conveniente per via della natura molto dinamica di Objective-C; Swift sta cambiando rapidamente, presenta ancora alcuni bug e problemi di performance, e il suo workflow manca ancora di alcune feature fondamentali per i professionisti, mentre Objective-C è un linguaggio maturo, con una community molto vivace; alcuni possono preferire un linguaggio più dinamico, e il supporto di Apple su Objective-C è ancora forte;  Personalmente ho la tendenza a preferire linguaggi più statici, e un approccio type-first alla programmazione, ma di tanto in tanto mi piace lavorare in un ambiente più dinamico, quindi, sia per preferenza personale che per esigenze di business, non ho ancora messo Objective-C da parte.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Objective-C vivrà ancora per molto&lt;/strong&gt;. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&#39;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;progetti esistenti basati su Objective-C richiedono ancora mantenimento e probabile aggiunta di nuove funzionalità, e anche se è tecnicamente possibile mescolare i linguaggi, la cosa può risultare &lt;strong&gt;poco conveniente&lt;/strong&gt; per via della natura molto dinamica di Objective-C;&lt;/li&gt;&#xA;&lt;li&gt;Swift sta cambiando rapidamente, presenta ancora alcuni bug e &lt;strong&gt;problemi di performance&lt;/strong&gt;, e il suo workflow manca ancora di alcune feature fondamentali per i professionisti, mentre Objective-C è un linguaggio maturo, con una community molto vivace;&lt;/li&gt;&#xA;&lt;li&gt;alcuni possono &lt;strong&gt;preferire un linguaggio più dinamico&lt;/strong&gt;, e il supporto di Apple su Objective-C è &lt;a href=&#34;https://netguru.co/blog/objective-c-generics&#34;&gt;ancora forte&lt;/a&gt;;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Personalmente ho la tendenza a preferire linguaggi più statici, e un approccio &lt;a href=&#34;http://engineering.facile.it/type-first-development-in-swift/&#34;&gt;type-first&lt;/a&gt; alla programmazione, ma di tanto in tanto mi piace lavorare in un ambiente più &lt;em&gt;dinamico&lt;/em&gt;, quindi, sia per preferenza personale che per esigenze di business, non ho ancora messo Objective-C da parte. Ma dopo poche settimane di Swift, mi è mancata subito una delle sue funzionalità più potenti: gli &lt;a href=&#34;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330&#34;&gt;Optionals&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Da sviluppo a produzione con Docker e AWS Elastic Beanstalk</title>
       <link>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</link>
       <pubDate>Mon, 19 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/da-sviluppo-a-produzione-con-docker-e-aws-elastic-beanstalk/</guid>
-      <description>In locale funzionava Questo articolo si rivolge a chi ha già una conoscenza base di docker e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.
-Avere un ambiente di sviluppo/test il più simile possibile a quello di produzione aiuta molto nel garantire un corretto funzionamento dopo il deploy.
-In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:</description>
+      <description>&lt;h2 id=&#34;in-locale-funzionava&#34;&gt;In locale funzionava&lt;/h2&gt;&#xA;&lt;p&gt;Questo articolo si rivolge a chi ha già una &lt;a href=&#34;https://docs.docker.com/articles/basics&#34;&gt;conoscenza base di docker&lt;/a&gt; e del suo funzionamento e sta cercando come avanzare al passo successivo, usandolo quotidianamente in sviluppo e in produzione.&lt;/p&gt;&#xA;&lt;p&gt;Avere un ambiente di sviluppo/test &lt;strong&gt;il più simile possibile&lt;/strong&gt; a quello di produzione aiuta molto nel garantire un &lt;strong&gt;corretto funzionamento dopo il deploy&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;In uno scenario tipico, lo sviluppatore ha installati sulla propria macchina locale tutti i servizi da cui dipende la sua applicazione, il che comporta quanto segue:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Paraunit: test paralleli, Doctrine e le fixture</title>
       <link>https://engineering.facile.it/blog/ita/paraunit/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
-      <description>Questo articolo è la sintesi di un talk presentato al SymfonyDay 2015; potete trovare le slide qui.
-I test e la loro durata Sviluppare applicazioni scrivendo test e facendo Test Driven Development è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa crescere la suite di test del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.</description>
+      <description>&lt;p&gt;&lt;em&gt;Questo articolo è la sintesi di un talk presentato al &lt;a href=&#34;http://2015.symfonyday.it/&#34;&gt;SymfonyDay 2015&lt;/a&gt;; potete trovare le slide &lt;a href=&#34;http://jean85.github.io/slides/2015-10-paraunit-symfonyday/index.html&#34;&gt;qui&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h4 id=&#34;i-test-e-la-loro-durata&#34;&gt;I test e la loro durata&lt;/h4&gt;&#xA;&lt;p&gt;Sviluppare applicazioni scrivendo &lt;strong&gt;test&lt;/strong&gt; e facendo &lt;a href=&#34;https://it.wikipedia.org/wiki/Test_driven_development&#34;&gt;Test Driven Development&lt;/a&gt; è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa &lt;strong&gt;crescere la suite di test&lt;/strong&gt; del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Protezione di dati sensibili usando la crittografia</title>
       <link>https://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</link>
       <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</guid>
-      <description>La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&amp;rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.
-Come proteggere questi dati da eventuali malintenzionati che vorrebbero - e potrebbero(!!) - riuscire a entrarne in possesso ?
-Prima di arrivare alla soluzione di questo problema però, è doveroso suddividere la casistica in almeno due rami.</description>
+      <description>&lt;p&gt;La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&amp;rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Come proteggere questi dati da eventuali malintenzionati che vorrebbero -  e potrebbero(!!) -  riuscire a entrarne in possesso ?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Prima di arrivare alla soluzione di questo problema però, è doveroso suddividere la casistica in almeno due rami. Nel mondo del web i dati possono essere &amp;ldquo;ottenuti&amp;rdquo; in due momenti differenti: 1) mentre transitano sulla rete sotto forma di pacchetti, oppure 2) successivamente al loro immagazzinamento (es. database o file) all&amp;rsquo;interno di uno o più server.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>WAMP, Web Application Messaging Protocol.. e PHP!</title>
       <link>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
-      <description>Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno scambio dati in due direzioni, efficiente e a bassa latenza, ha determinato l’ascesa negli ultimi anni di soluzioni basate su WebSocket .
-Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.</description>
+      <description>&lt;p&gt;Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno &lt;strong&gt;scambio dati&lt;/strong&gt; in &lt;strong&gt;due direzioni&lt;/strong&gt;, &lt;strong&gt;efficiente&lt;/strong&gt; e a &lt;strong&gt;bassa latenza&lt;/strong&gt;, ha determinato l’ascesa negli ultimi anni di &lt;strong&gt;soluzioni basate su &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;https://www.websocket.org/&#34; target=&#39;_blank&#39;&gt;WebSocket&lt;/a&gt;&#xA;&#xA;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Internet delle cose e web 2.0 trovano oramai sempre &lt;strong&gt;meno spazio&lt;/strong&gt; all’interno del protocollo &lt;strong&gt;HTTP/1&lt;/strong&gt;. Le tecniche di &lt;strong&gt;polling e long polling&lt;/strong&gt;, in voga fino a pochi anni fa, non permettevano di trasmettere in &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;https://it.wikipedia.org/wiki/Duplex&#34; target=&#39;_blank&#39;&gt;full duplex&lt;/a&gt;&#xA;&#xA; (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano &lt;strong&gt;diversi sforzi&lt;/strong&gt; per simulare notifiche push server side.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>No Country For If Else</title>
       <link>https://engineering.facile.it/blog/ita/no-country-for-if-else/</link>
       <pubDate>Tue, 15 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/no-country-for-if-else/</guid>
-      <description>C&#39;è un ospite indesiderato che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del codice già esistente, e dobbiamo tener conto della sua complessità man mano che la code base aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:
- comprendere il significato di codice vecchio, scritto da altri o da se stessi; tracciare le cause di bug, cioè errori, nel codice; eseguire modifiche a una certa procedura; aggiungere funzionalità a strutture già esistenti;  Anche approcciando lo sviluppo di nuovo software con metodologie agili, dobbiamo comunque fare i conti con il codice esistente, e per farlo dobbiamo almeno essere in grado di comprenderlo senza sforzi eccessivi.</description>
+      <description>&lt;p&gt;C&amp;rsquo;è un &lt;strong&gt;ospite indesiderato&lt;/strong&gt; che ci accompagna sempre mentre scriviamo codice e realizziamo progetti software: si tratta del &lt;strong&gt;codice già esistente&lt;/strong&gt;, e dobbiamo tener conto della sua complessità man mano che la &lt;em&gt;code base&lt;/em&gt; aumenta di dimensioni. Un&amp;rsquo;elevata complessità del codice può rendere le seguenti attività particolarmente difficili:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;comprendere il significato di codice vecchio, scritto da altri o da se stessi;&lt;/li&gt;&#xA;&lt;li&gt;tracciare le cause di bug, cioè errori, nel codice;&lt;/li&gt;&#xA;&lt;li&gt;eseguire modifiche a una certa procedura;&lt;/li&gt;&#xA;&lt;li&gt;aggiungere funzionalità a strutture già esistenti;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Anche approcciando lo sviluppo di nuovo software con &lt;a href=&#34;https://en.wikipedia.org/wiki/Agile_software_development&#34;&gt;metodologie agili&lt;/a&gt;, dobbiamo comunque fare i conti con il codice esistente, e per farlo dobbiamo almeno essere in grado di &lt;strong&gt;comprenderlo senza sforzi eccessivi&lt;/strong&gt;. Dunque quando parlo di &lt;em&gt;complessità&lt;/em&gt; mi riferisco in particolare alla difficoltà con la quale una programmatore è in grado di &lt;em&gt;ragionare&lt;/em&gt; sul codice. La prefazione del noto testo accademico &lt;a href=&#34;http://deptinfo.unice.fr/~roy/sicp.pdf&#34;&gt;Structure and interpretation of computer programs&lt;/a&gt; contiene la seguente frase:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Php Summer Camp 2015</title>
       <link>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</link>
       <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</guid>
-      <description>Introduzione Dal 26 al 29 agosto 2015 ho avuto l&amp;rsquo;occasione di partecipare al PhpSummerCamp in Rovigno (Croazia). Negli stessi giorni e nello stesso luogo si è svolto anche il SummerCamp EzPublish. Ciò ha consentito di accrescere ulteriormente la platea di partecipanti con cui è stato possibile condividere idee e soluzioni.
-L&amp;rsquo;evento è costituito da numerosi workshop orientati allo sviluppo di applicazioni con il framework PHP Symfony. Le mattine e le prime metà del pomeriggio erano interamente dedicati ai workshop.</description>
+      <description>&lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;&#xA;&lt;p&gt;Dal 26 al 29 agosto 2015 ho avuto l&amp;rsquo;occasione di partecipare al &lt;a href=&#34;http://2015.phpsummercamp.com/&#34;&gt;&lt;strong&gt;PhpSummerCamp&lt;/strong&gt;&lt;/a&gt; in Rovigno (Croazia).&#xA;Negli stessi giorni e nello stesso luogo si è svolto anche il &lt;a href=&#34;http://2015.ezsummercamp.com/&#34;&gt;&lt;strong&gt;SummerCamp EzPublish&lt;/strong&gt;&lt;/a&gt;.&#xA;Ciò ha consentito di accrescere ulteriormente la platea di partecipanti con cui è stato possibile condividere idee e soluzioni.&lt;/p&gt;&#xA;&lt;p&gt;L&amp;rsquo;evento è costituito da numerosi &lt;strong&gt;workshop&lt;/strong&gt; orientati allo sviluppo di applicazioni con il &lt;a href=&#34;http://symfony.com&#34;&gt;framework PHP Symfony&lt;/a&gt;.&#xA;Le mattine e le prime metà del pomeriggio erano interamente dedicati ai workshop.&#xA;Nel tempo rimanente venivano condotte varie attività dedicate alla community e al confronto tra i partecipanti.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Si fa presto a dire Docker (e OS X)</title>
       <link>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</link>
       <pubDate>Wed, 22 Jul 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/si-fa-presto-a-dire-docker-e-os-x/</guid>
-      <description>Di guide per l&amp;rsquo;installazione di Docker su OS X è pieno il web, ma le soluzioni sono molte e spesso scegliere non è facile. In questo articolo vi mostrerò quello che è stato il mio personale percorso, nella speranza che possa essere utile a chiarirvi le idee e magari evitare qualche buco nell&amp;rsquo;acqua.
-Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco.</description>
+      <description>&lt;p&gt;Di guide per l&amp;rsquo;installazione di Docker su OS X è pieno il web, ma &lt;strong&gt;le soluzioni sono molte&lt;/strong&gt; e spesso scegliere non è facile.&#xA;In questo articolo vi mostrerò quello che è stato il mio personale percorso, nella speranza che possa essere utile a chiarirvi le idee e magari evitare qualche buco nell&amp;rsquo;acqua.&lt;/p&gt;&#xA;&lt;p&gt;Da sviluppatore web, la mia esigenza è di conservare i sorgenti sulla macchina host e condividerli con la VM; per la natura di PHP, la condivisione deve anche essere molto veloce, poiché ad ogni richiesta i files verranno letti nuovamente dal disco. Nulla di complicato, quindi sono partito dalla cosa più semplice.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MiniIAD Vimercate 2015: reportage</title>
       <link>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</link>
       <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</guid>
-      <description>Lo scorso 23 Maggio 2015, si è tenuto a Vimercate, presso la sede di Alcatel-Lucent all&amp;rsquo;Energy Park, il Mini Italian Agile Day.
-Anche in occasione di questo evento Facile.it si è presentata con una piccola delegazione. Sono andato all&amp;rsquo;incontro cercando di polarizzare bene le mie aspettative della giornata. Da un evento della comunità Agile mi aspetto un confronto, una crescita, nonché l&amp;rsquo;occasione di incontrare qualche volto amico, qualche ex collega o qualche guru a cui chiedere consiglio!</description>
+      <description>&lt;p&gt;Lo scorso 23 Maggio 2015, si è tenuto a Vimercate, presso la sede di Alcatel-Lucent all&amp;rsquo;Energy Park, il &lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/&#34;&gt;Mini Italian Agile Day&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Anche in occasione di questo evento Facile.it si è presentata con una piccola delegazione. Sono andato all&amp;rsquo;incontro cercando di polarizzare bene le mie aspettative della giornata. Da un evento della &lt;strong&gt;comunità Agile&lt;/strong&gt; mi aspetto un &lt;strong&gt;confronto&lt;/strong&gt;, una &lt;strong&gt;crescita&lt;/strong&gt;, nonché l&amp;rsquo;occasione di incontrare qualche volto amico, qualche ex collega o qualche guru a cui chiedere consiglio!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Programmazione Funzionale: perché preoccuparsi?</title>
       <link>https://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</link>
       <pubDate>Mon, 13 Jul 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/programmazione-funzionale-perche-preoccuparsi/</guid>
-      <description>Nel suo discorso di accettazione del Premio Turing 1972, dal titolo &amp;ldquo;The humble programmer&amp;quot;, Edsger Wybe Dijkstra, uno dei più celebri computing scientists del 20° secolo (morto nel 2002), affrontò le cause della nota Software Crisis, cioè la crisi che colpì l&amp;rsquo;industria del software nella seconda metà degli anni sessanta: la potenza e la capacità di elaborazione dei computer stavano crescendo esponenzialmente, molto più rapidamente dell&amp;rsquo;abilità dei programmatori di gestire la complessità e scrivere software funzionante.</description>
+      <description>&lt;p&gt;Nel suo discorso di accettazione del &lt;a href=&#34;http://amturing.acm.org/award_winners/dijkstra_1053701.cfm&#34;&gt;Premio Turing 1972&lt;/a&gt;, dal titolo &amp;ldquo;&lt;a href=&#34;https://www.cs.utexas.edu/~EWD/transcriptions/EWD03xx/EWD340.html&#34;&gt;The humble programmer&lt;/a&gt;&amp;rdquo;, &lt;strong&gt;Edsger Wybe Dijkstra&lt;/strong&gt;, uno dei più celebri &lt;em&gt;computing scientists&lt;/em&gt; del 20° secolo (morto nel 2002), affrontò le cause della nota &lt;a href=&#34;https://it.wikipedia.org/wiki/Software_crisis&#34;&gt;Software Crisis&lt;/a&gt;, cioè la crisi che colpì l&amp;rsquo;industria del software nella seconda metà degli anni sessanta: la potenza e la capacità di elaborazione dei computer stavano &lt;strong&gt;crescendo esponenzialmente&lt;/strong&gt;, molto più rapidamente dell&amp;rsquo;abilità dei programmatori di &lt;strong&gt;gestire la complessità&lt;/strong&gt; e scrivere software funzionante. Nello stesso discorso, Dijkstra propose anche delle possibili strade da intraprendere che a suo avviso avrebbero portato aziende e università a migliorare la qualità del loro software. Riporto qui una frase che a mio parere riassume abbastanza bene l&amp;rsquo;intero discorso:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PHP 7 Overview</title>
       <link>https://engineering.facile.it/blog/ita/php-7-overview/</link>
       <pubDate>Mon, 06 Jul 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/php-7-overview/</guid>
-      <description>Il linguaggio che ha contribuito alla nascita e alla crescita di più del 80% dei siti web oggi online, tra i quali alcuni dei più famosi al mondo, è prossimo a una svolta.
-Secondo la timeline ufficiale PHP 7 sarà rilasciato intorno al 15 Ottobre 2015: chi volesse provarlo in anteprima, tuttavia, può trovare binari, rpm, deb, dockerfiles e quant&amp;rsquo;altro su php7.zend.com.
-La release 7 costituisce una delle più importanti per PHP, sia in termini di funzionalità che di performance.</description>
+      <description>&lt;p&gt;Il linguaggio che ha contribuito alla nascita e alla crescita di più del 80% dei siti web oggi online, tra i quali alcuni dei più famosi al mondo, è prossimo a una svolta.&lt;/p&gt;&#xA;&lt;p&gt;Secondo la &lt;a href=&#34;https://wiki.php.net/rfc/php7timeline&#34;&gt;timeline ufficiale&lt;/a&gt; PHP 7 sarà rilasciato intorno al &lt;strong&gt;15 Ottobre 2015&lt;/strong&gt;: chi volesse provarlo in anteprima, tuttavia, può trovare binari, rpm, deb, dockerfiles e quant&amp;rsquo;altro su &lt;a href=&#34;http://php7.zend.com/&#34;&gt;php7.zend.com&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;La release 7 costituisce una delle più importanti per PHP, sia in termini di funzionalità che di performance.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GIT flow e versionamento semantico</title>
       <link>https://engineering.facile.it/blog/ita/git-flow-semantic-versioning/</link>
       <pubDate>Tue, 16 Jun 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/git-flow-semantic-versioning/</guid>
-      <description>GIT flow è un flusso di sviluppo, ideato da Vincent Driessen, che descrive un modello di diramazione, (branching), ben preciso costruito intorno al concetto di release software.
-Questo flusso è concepito per sfruttare al meglio le potenzialità del software di versionamento GIT, ma affinità concettuali possono essere utili anche per la gestione del lavoro con altri software dediti alla medesima funzionalità.
-Il flusso descritto in GIT flow è finalizzato a mantenere una storia implementativa pulita, dove un rilascio comunica a tutti gli utilizzatori la presenza di una nuova versione del prodotto, definita da un determinato changelog composto da nuove caratteristiche e correzioni.</description>
+      <description>&lt;p&gt;GIT flow è un &lt;strong&gt;flusso di sviluppo&lt;/strong&gt;, ideato da &lt;a href=&#34;http://nvie.com/about/&#34;&gt;Vincent Driessen&lt;/a&gt;, che descrive un modello di diramazione, (&lt;a href=&#34;http://git-scm.com/docs/git-branch&#34;&gt;branching&lt;/a&gt;), ben preciso costruito intorno al concetto di release software.&lt;/p&gt;&#xA;&lt;p&gt;Questo flusso è concepito per sfruttare al meglio le potenzialità del software di versionamento &lt;a href=&#34;https://git-scm.com/&#34;&gt;GIT&lt;/a&gt;, ma affinità concettuali possono essere utili anche per la gestione del lavoro con altri software dediti alla medesima funzionalità.&lt;/p&gt;&#xA;&lt;p&gt;Il flusso descritto in GIT flow è finalizzato a mantenere una storia implementativa pulita, dove un rilascio comunica a tutti gli utilizzatori la presenza di una &lt;strong&gt;nuova versione&lt;/strong&gt; del prodotto, definita da un determinato &lt;em&gt;changelog&lt;/em&gt; composto da nuove caratteristiche e correzioni.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Continuous Integration con Docker e Drone</title>
       <link>https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</link>
       <pubDate>Fri, 12 Jun 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</guid>
-      <description>La continuous integration è una pratica che consiste nel frequente allineamento, su di una base comune definita mainline, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto.
-Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione Object Oriented Design: With Applications, la pratica è stata estesa e sviluppata all&amp;rsquo;interno dell&amp;rsquo;extreme programming, fino a sostenere la necessità di allineare le copie di lavoro diverse volte al giorno.</description>
+      <description>&lt;p&gt;La &lt;strong&gt;continuous integration&lt;/strong&gt; è una pratica che consiste nel &lt;strong&gt;frequente allineamento&lt;/strong&gt;, su di una base comune definita &lt;em&gt;mainline&lt;/em&gt;, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto.&lt;/p&gt;&#xA;&lt;p&gt;Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione &lt;a href=&#34;http://books.google.com/books?id=w5VQAAAAMAAJ&amp;amp;q=continuous+integration+inauthor:grady+inauthor:booch&amp;amp;dq=continuous+integration+inauthor:grady+inauthor:booch&amp;amp;hl=en&amp;amp;sa=X&amp;amp;ei=0_TxU6TqIMOZyASJ3ICYCQ&amp;amp;ved=0CEQQ6AEwAg&#34;&gt;Object Oriented Design: With Applications&lt;/a&gt;, la pratica è stata estesa e sviluppata all&amp;rsquo;interno dell&amp;rsquo;&lt;strong&gt;extreme programming&lt;/strong&gt;, fino a sostenere la necessità di &lt;strong&gt;allineare&lt;/strong&gt; le copie di lavoro &lt;strong&gt;diverse volte al giorno&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Il vantaggio principale nell&amp;rsquo;adottare la pratica è quello di &lt;strong&gt;evitare l&amp;rsquo;integration hell&lt;/strong&gt; (o merge hell) &lt;strong&gt;minimizzando il rischio&lt;/strong&gt; legato a copie di lavoro divergenti di difficile integrazione.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Swift testing avanzato: stubbing e test asincroni</title>
       <link>https://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/</link>
       <pubDate>Fri, 05 Jun 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/</guid>
-      <description>In un precedente articolo abbiamo visto le impostazioni di base in Xcode per la scrittura dei test unitari: abbiamo evidenziato inoltre l&amp;rsquo;importanza e l&amp;rsquo;utilità intrinseca dei test, attraverso un semplice esempio riguardante un caso d&amp;rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&amp;rsquo; più avanzate:
- implementeremo uno Stub Object in Swift; analizzeremo un altro caso di test asincrono;  Lo Stub Object Uno Stub Object (per il resto dell&amp;rsquo;articolo, stub) rappresenta un&amp;rsquo;istanza di una certa classe, la quale mima una vera classe presente nella nostra code base: l&amp;rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio alcuni metodi possono essere sovrascritti per poter fornire un determinato output utile per i test.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://engineering.facile.it/xcode-testing-in-pratica/&#34;&gt;In un precedente articolo&lt;/a&gt; abbiamo visto le impostazioni di base in Xcode per la scrittura dei &lt;strong&gt;test unitari&lt;/strong&gt;: abbiamo evidenziato inoltre &lt;strong&gt;l&amp;rsquo;importanza e l&amp;rsquo;utilità intrinseca dei test&lt;/strong&gt;, attraverso un semplice esempio riguardante un caso d&amp;rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&amp;rsquo; più avanzate:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;implementeremo uno &lt;strong&gt;Stub Object&lt;/strong&gt; in Swift;&lt;/li&gt;&#xA;&lt;li&gt;analizzeremo un altro caso di test &lt;em&gt;asincrono&lt;/em&gt;;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;lo-stub-object&#34;&gt;Lo &lt;em&gt;Stub Object&lt;/em&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Uno &lt;em&gt;Stub Object&lt;/em&gt; (per il resto dell&amp;rsquo;articolo, &lt;em&gt;stub&lt;/em&gt;) rappresenta un&amp;rsquo;istanza di una certa classe, la quale &lt;em&gt;mima&lt;/em&gt; una vera classe presente nella nostra &lt;em&gt;code base&lt;/em&gt;:  l&amp;rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio &lt;strong&gt;alcuni metodi possono essere sovrascritti&lt;/strong&gt; per poter fornire &lt;strong&gt;un determinato output&lt;/strong&gt; utile per i test. Nell&amp;rsquo;implementare uno &lt;em&gt;stub&lt;/em&gt; non è generalmente consentito modificare dettagli di logica interni relativi alla classe che stiamo mimando, ma &lt;strong&gt;è possibile sovrascrivere metodi pubblici&lt;/strong&gt;, in modo che essi ritornino i valori che vogliamo, oppure che svolgano una particolare procedura necessaria per i test. Tanto per fare un esempio pratico potremmo &lt;em&gt;stubbare&lt;/em&gt; una classe che ci fornisce la data precisa in un certo istante, in modo da ottenere una data diversa da usare nei test, oppure un client che chiede a un server delle informazioni su un utente, in modo da far ritonare al client &lt;em&gt;stub&lt;/em&gt; delle informazioni arbitrarie.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facile.it devs @ PHP Day 2015</title>
       <link>https://engineering.facile.it/blog/ita/php-day-2015/</link>
       <pubDate>Tue, 19 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/php-day-2015/</guid>
-      <description>Anche quest&amp;rsquo;anno si è svolto il PHP Day a Verona, il 15 e 16 maggio. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.
-In questo breve articolo vorremmo citare quelli che in qualche maniera ci hanno colpito, per motivi tecnici e non, per dare l&amp;rsquo;opportunità a chi non ha potuto partecipare di sapere qualcosa di più, o per dare un assaggio della conferenza a chi non ha mai partecipato a qualcosa del genere e, speriamo, invogliarlo a far parte della community!</description>
+      <description>&lt;p&gt;Anche quest&amp;rsquo;anno si è svolto il &lt;strong&gt;&lt;a href=&#34;http://2015.phpday.it/&#34;&gt;PHP Day&lt;/a&gt; a Verona, il 15 e 16 maggio&lt;/strong&gt;. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.&lt;/p&gt;&#xA;&lt;p&gt;In questo breve articolo vorremmo citare quelli che in qualche maniera &lt;strong&gt;ci hanno colpito&lt;/strong&gt;, per motivi tecnici e non, per dare l&amp;rsquo;opportunità a chi non ha potuto partecipare di sapere qualcosa di più, o per dare &lt;strong&gt;un assaggio della conferenza&lt;/strong&gt; a chi non ha mai partecipato a qualcosa del genere e, speriamo, invogliarlo a far parte della community!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Intelligenza artificiale: algoritmo A*</title>
       <link>https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</link>
       <pubDate>Tue, 12 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/intelligenza-artificiale-algoritmo-a-star/</guid>
-      <description>Introduzione A* è un algoritmo di ricerca e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&amp;rsquo;intelligenza artificiale perché in grado di gestire grafi ampi e indeterminati.
-L&amp;rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: gioco del 15, percorso minimo, Sudoku, cubo di Rubik, ecc.
-In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:
- La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi; Il nodo iniziale e il nodo finale devono essere noti.</description>
+      <description>&lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;&#xA;&lt;p&gt;A* è un &lt;a href=&#34;https://it.wikipedia.org/wiki/Algoritmo_di_ricerca&#34;&gt;algoritmo di ricerca&lt;/a&gt; e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&amp;rsquo;&lt;a href=&#34;https://it.wikipedia.org/wiki/Intelligenza_artificiale&#34;&gt;intelligenza artificiale&lt;/a&gt; perché in grado di gestire grafi ampi e&#xA;indeterminati.&lt;/p&gt;&#xA;&lt;p&gt;L&amp;rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: &lt;a href=&#34;https://it.wikipedia.org/wiki/Gioco_del_quindici&#34;&gt;gioco del 15&lt;/a&gt;, percorso minimo, &lt;a href=&#34;https://it.wikipedia.org/wiki/Sudoku&#34;&gt;Sudoku&lt;/a&gt;, &lt;a href=&#34;https://it.wikipedia.org/wiki/Cubo_di_Rubik&#34;&gt;cubo di Rubik&lt;/a&gt;, ecc.&lt;/p&gt;&#xA;&lt;p&gt;In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi;&lt;/li&gt;&#xA;&lt;li&gt;Il nodo iniziale e il nodo finale devono essere noti. Talvolta è sufficiente conoscere solo le regole che compongono la soluzione (vedi Sudoku);&lt;/li&gt;&#xA;&lt;li&gt;Deve essere noto un &lt;strong&gt;algoritmo euristico&lt;/strong&gt; che &lt;strong&gt;stima&lt;/strong&gt; il costo del percorso tra un nodo qualsiasi e la soluzione.&lt;/li&gt;&#xA;&lt;li&gt;Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;leuristica&#34;&gt;L&amp;rsquo;euristica&lt;/h1&gt;&#xA;&lt;p&gt;L&amp;rsquo;&lt;a href=&#34;https://it.wikipedia.org/wiki/Algoritmo_euristico&#34;&gt;algoritmo euristico&lt;/a&gt; ha il compito di stimare la distanza tra qualsiasi nodo e la soluzione.&#xA;L&amp;rsquo;euristica influenza fortemente i risultati conseguiti da A*. Esso, in particolare, ne determina il tempo complessivo di esecuzione.&#xA;Un algoritmo euristico molto efficace consente ad A* di trovare velocemente la soluzione.&#xA;Nel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ricerca molto simile a &lt;a href=&#34;https://it.wikipedia.org/wiki/Algoritmo_di_Dijkstra&#34;&gt;Dijkstra&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Type First Development in Swift</title>
       <link>https://engineering.facile.it/blog/ita/type-first-development-in-swift/</link>
       <pubDate>Tue, 05 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/type-first-development-in-swift/</guid>
-      <description>Con Type First Development può intendersi un approccio allo sviluppo di nuove funzionalità o moduli di un software partendo dai tipi di dati coinvolti: non si tratta quindi di un pattern o una pratica codificata, ma solo di un possibile punto di partenza per iniziare il ragionamento. Ragionando esclusivamente sui tipi, prima ancora di pensare alle singole specifiche implementazioni dei vari blocchi di codice, è possibile costruire più facilmente una mappa dei vari di flussi di dati che attraversano il nostro software, e verificare immediatamente se stiamo scrivendo qualcosa di sensato, solido ed adeguatamente estendibile.</description>
+      <description>&lt;p&gt;Con &lt;em&gt;Type First Development&lt;/em&gt; può intendersi un approccio allo sviluppo di nuove funzionalità o moduli di un software partendo dai &lt;strong&gt;tipi&lt;/strong&gt; di dati coinvolti: non si tratta quindi di un pattern o una pratica codificata, ma solo di &lt;strong&gt;un possibile punto di partenza&lt;/strong&gt; per iniziare il ragionamento. Ragionando esclusivamente sui tipi, prima ancora di pensare alle singole specifiche implementazioni dei vari blocchi di codice, è possibile costruire più facilmente una mappa dei vari di flussi di dati che attraversano il nostro software, e verificare immediatamente se stiamo scrivendo qualcosa di sensato, solido ed adeguatamente estendibile.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Un flusso di lavoro agile</title>
       <link>https://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</link>
       <pubDate>Thu, 30 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/un-flusso-di-lavoro-agile/</guid>
-      <description>Parlare di metodologie di lavoro in azienda è una cosa piuttosto complessa, soprattutto perché non è possibile generalizzare un modo di lavoro che sia universalmente valido. Sento sempre più persone dire &amp;ldquo;con SCRUM avrai risultati assicurati&amp;rdquo;. Lo trovo piuttosto riduttivo.
-In sostanza, sempre più persone hanno tradotto i valori ed i princìpi promossi dal manifesto agile in una serie di &amp;ldquo;ricette&amp;rdquo; pronte da seguire fedelmente per ottenere buoni risultati. Cosa c’è di &amp;ldquo;agile&amp;rdquo; in tutto ciò?</description>
+      <description>&lt;p&gt;Parlare di &lt;strong&gt;metodologie di lavoro&lt;/strong&gt; in azienda è una cosa piuttosto complessa, soprattutto perché non è possibile generalizzare un modo di lavoro che sia universalmente valido. Sento sempre più persone dire &amp;ldquo;con &lt;a href=&#34;http://it.wikipedia.org/wiki/Scrum_%28informatica%29&#34;&gt;SCRUM&lt;/a&gt; avrai risultati assicurati&amp;rdquo;. Lo trovo piuttosto riduttivo.&lt;/p&gt;&#xA;&lt;p&gt;In sostanza, sempre più persone hanno tradotto i &lt;a href=&#34;http://agilemanifesto.org/iso/it/&#34;&gt;valori&lt;/a&gt; ed i &lt;a href=&#34;http://agilemanifesto.org/iso/it/principles.html&#34;&gt;princìpi&lt;/a&gt; promossi dal manifesto agile in una serie di &amp;ldquo;ricette&amp;rdquo; pronte da seguire fedelmente per ottenere buoni risultati. Cosa c’è di &amp;ldquo;&lt;a href=&#34;http://it.wikipedia.org/wiki/Metodologia_agile&#34;&gt;agile&lt;/a&gt;&amp;rdquo; in tutto ciò? E’ come cucinare con un robot da cucina&amp;hellip;&#xA;Ecco perché sono sempre più convinto che la vera ricetta del successo nei progetti sia qualcosa che si scopre &amp;ldquo;assaggiando&amp;rdquo; gli ingredienti che mettiamo nella ricetta (andrò avanti con la metafora della cucina, siete avvisati!).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Introduzione al tracciamento di eventi lato server</title>
       <link>https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</link>
       <pubDate>Tue, 21 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/tracciamento-di-eventi-lato-server/</guid>
-      <description>L’adozione di strategie DevOps ha portato negli ultimi anni ad incrementare le aree coperte da tool di monitoring in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei server o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le applicazioni stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc.</description>
+      <description>&lt;p&gt;L’adozione di strategie &lt;em&gt;DevOps&lt;/em&gt; ha portato negli ultimi anni ad incrementare le aree coperte da &lt;strong&gt;tool di monitoring&lt;/strong&gt; in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei &lt;strong&gt;server&lt;/strong&gt; o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le &lt;strong&gt;applicazioni&lt;/strong&gt; stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc. ecc.).&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Il principio OPEN/CLOSE le sue origini e i casi d&#39;uso</title>
       <link>https://engineering.facile.it/blog/ita/principio-open-close-le-sue-origini-e-i-casi-d-uso/</link>
       <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/principio-open-close-le-sue-origini-e-i-casi-d-uso/</guid>
-      <description>Definizione: Il principio OPEN/CLOSE fa riferimento all&amp;rsquo;acronimo SOLID. introdotto da Michael Feathers che riporta alcune buone pratiche di programmazione ad oggetti ancora di forte attualità.
-OPEN/CLOSE (la O dell&amp;rsquo;acronimo), nella sua definizione più generale indica che: un modulo (un oggetto, una classe o un gruppo di funzioni) debba essere aperto alle estensioni ma chiuso alle modifiche.
-Questo principio tuttavia non è altro che la formalizzazione e il raggruppamento di concetti e linee guida già presenti da tempo nella programmazione ad oggetti.</description>
+      <description>&lt;h2 id=&#34;definizione&#34;&gt;Definizione:&lt;/h2&gt;&#xA;&lt;p&gt;Il principio &lt;em&gt;OPEN/CLOSE&lt;/em&gt; fa riferimento all&amp;rsquo;acronimo &lt;a href=&#34;http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)&#34;&gt;SOLID&lt;/a&gt;.  introdotto da  Michael Feathers che riporta alcune &lt;em&gt;buone pratiche&lt;/em&gt; di programmazione ad oggetti ancora di forte attualità.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;OPEN/CLOSE&lt;/em&gt; (la &lt;strong&gt;O&lt;/strong&gt; dell&amp;rsquo;acronimo), nella sua definizione più generale indica che:  un modulo (un oggetto, una classe o un gruppo di funzioni) debba essere &lt;strong&gt;aperto alle estensioni&lt;/strong&gt; ma &lt;strong&gt;chiuso alle modifiche&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Questo principio tuttavia non è altro che la formalizzazione e il raggruppamento di concetti e linee guida già presenti da tempo nella programmazione ad oggetti.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Xcode Testing in pratica</title>
       <link>https://engineering.facile.it/blog/ita/xcode-testing-in-pratica/</link>
       <pubDate>Thu, 09 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/xcode-testing-in-pratica/</guid>
-      <description>Tra i molti strumenti utili presenti in Xcode, il testing framework XCTest è certamente uno dei più rilevanti, non solo per l&amp;rsquo;importanza intrinseca dello Unit Testing in generale, ma soprattutto per la facilità con la quale è possibile scrivere ed eseguire test direttamente dall&amp;rsquo;IDE out-of-the-box, senza la necessità di installare componenti di terze parti o impostare una particolare configurazione per i progetti.
-In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a creare un target per il binario principale crea automaticamente anche un target di test, cioè un bundle aggiuntivo che può essere caricato nel bundle principale per poter fisicamente eseguire i test una volta avviata l&amp;rsquo;app.</description>
+      <description>&lt;p&gt;Tra i molti strumenti utili presenti in Xcode, il testing framework &lt;strong&gt;XCTest&lt;/strong&gt; è certamente uno dei più rilevanti, non solo per l&amp;rsquo;importanza intrinseca dello Unit Testing in generale, ma soprattutto per la facilità con la quale è possibile scrivere ed eseguire test direttamente dall&amp;rsquo;IDE &lt;em&gt;out-of-the-box&lt;/em&gt;, &lt;strong&gt;senza la necessità di installare componenti di terze parti&lt;/strong&gt; o impostare una particolare configurazione per i progetti.&lt;/p&gt;&#xA;&lt;p&gt;In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a creare un target per il binario principale crea automaticamente anche un &lt;strong&gt;target di test&lt;/strong&gt;, cioè un bundle aggiuntivo che può essere caricato nel bundle principale per poter fisicamente eseguire i test una volta avviata l&amp;rsquo;app. Nell&amp;rsquo;immagine seguente è possibile vedere come, in un progetto appena creato, sia già presente il test bundle, in questo caso chiamato &lt;em&gt;AwesomeAppTests.xctest&lt;/em&gt;:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Gestione di ACL su insiemi di records</title>
       <link>https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</link>
       <pubDate>Wed, 01 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/gestione-di-acl-su-insiemi-di-records/</guid>
-      <description>Le ACL (Access Control List) sono un strumento molto potente per poter definire l&amp;rsquo;accesso a risorse con una granularità molto fine. Nel quotidiano abbiamo già modo di utilizzarle per definire i permessi per accedere a file su Unix o quali pacchetti far passare attraverso un firewall o ancora l&amp;rsquo;accesso a database.
-In Symfony le ACL sono disponibili out-of-the-box nel caso di installazione completa e permettono la definizione delle regole di accesso a risorse tramite ruoli e maschere.</description>
+      <description>&lt;p&gt;Le &lt;strong&gt;ACL&lt;/strong&gt; (&lt;em&gt;Access Control List&lt;/em&gt;) sono un strumento molto potente per poter definire l&amp;rsquo;accesso a risorse con una granularità molto fine. Nel quotidiano abbiamo già modo di utilizzarle per definire i permessi per accedere a file su Unix o quali pacchetti far passare attraverso un firewall o ancora l&amp;rsquo;accesso a database.&lt;/p&gt;&#xA;&lt;p&gt;In &lt;strong&gt;Symfony&lt;/strong&gt; le &lt;em&gt;ACL&lt;/em&gt; sono disponibili &lt;em&gt;out-of-the-box&lt;/em&gt; nel caso di installazione completa e permettono la definizione delle regole di accesso a risorse tramite &lt;strong&gt;ruoli&lt;/strong&gt; e &lt;strong&gt;maschere&lt;/strong&gt;. Mentre i &lt;strong&gt;ruoli&lt;/strong&gt; rappresentano dei sottoinsiemi degli utenti di una data applicazione (&lt;em&gt;amministratori&lt;/em&gt;, &lt;em&gt;backoffice&lt;/em&gt;, &lt;em&gt;business analyst&lt;/em&gt;) e possono essere visti come delle etichette da assegnare ad un utente, le &lt;strong&gt;maschere&lt;/strong&gt; sono la rappresentazione numerica delle azioni che possono essere effettuate dagli utenti aventi determinati ruoli. Per tornare all&amp;rsquo;esempio del filesystem Unix, i ruoli possono essere &lt;em&gt;Owner&lt;/em&gt;, &lt;em&gt;Group&lt;/em&gt; o &lt;em&gt;Others&lt;/em&gt; mentre le maschere sono ad esempio 7 (lettura, scrittura e esecuzione) indicato per ciascun ruolo.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>PHP coding standard: PSR-7  HTTP message interfaces</title>
       <link>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/php-fig-standard-psr-7-http-message-interfaces/</guid>
-      <description>Le specifiche PSR-7 descrivono una proposta di standardizzazione delle interfacce per i messaggi HTTP.
-Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, definisce una serie di regole di comunicazione che vengono implementate dalle applicazioni client e server che lo adottano.
-A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&amp;rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP.</description>
+      <description>&lt;p&gt;Le specifiche PSR-7 descrivono una &lt;a href=&#34;https://github.com/php-fig/fig-standards/blob/master/proposed/http-message.md&#34;&gt;proposta di standardizzazione&lt;/a&gt; delle &lt;strong&gt;interfacce per i messaggi HTTP&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Come sappiamo, il protocollo HTTP, attraverso le specifiche redatte dal W3C, definisce una serie di regole di comunicazione che vengono implementate dalle applicazioni client e server che lo adottano.&lt;/p&gt;&#xA;&lt;p&gt;A prima vista niente di nuovo sotto il Sole dunque, ma cerchiamo insieme di comprendere l&amp;rsquo;insieme di problematiche che sono al centro di questo nuovo dibattito che riguarda gli standard di codifica del linguaggio PHP.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Software testing: Coverage vs Efficacia</title>
       <link>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</link>
       <pubDate>Mon, 16 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/software-testing-coverage-vs-efficacia/</guid>
-      <description>Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.
-Numerosi sono i fattori che hanno reso il code coverage popolare:
- è una metrica facile da comprendere; si misura senza difficoltà; è oggettiva e imparziale; è universale (applicabile a tutti i paradigmi di programmazione).  Ma al di là di questi vantaggi, possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?</description>
+      <description>&lt;p&gt;Controllare il tasso di coverage dei test è un&amp;rsquo;attività frequente tra gli sviluppatori.&lt;/p&gt;&#xA;&lt;p&gt;Numerosi sono i fattori che hanno reso il code coverage popolare:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;è una metrica facile da comprendere;&lt;/li&gt;&#xA;&lt;li&gt;si misura senza difficoltà;&lt;/li&gt;&#xA;&lt;li&gt;è oggettiva e imparziale;&lt;/li&gt;&#xA;&lt;li&gt;è universale (applicabile a tutti i paradigmi di programmazione).&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Ma al di là di questi vantaggi, &lt;em&gt;&lt;strong&gt;possiamo affermare che una test suite con un&amp;rsquo;alta percentuale di coverage sia realmente efficace?&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;quando-un-test-è-efficace&#34;&gt;Quando un test è efficace?&lt;/h3&gt;&#xA;&lt;p&gt;Una test suite è considerata efficace se consente di rilevare una grande quantità di failure; d&amp;rsquo;altronde, ciò è proprio la finalità ultima del software testing.&#xA;La massima efficacia è realizzabile solo applicando testing esaustivo ma, siccome ciò è spesso impraticabile, ci si accontenta di test più semplici con un&amp;rsquo;efficacia inferiore.&#xA;È importante notare che, a differenza del coverage, il livello d&amp;rsquo;efficacia viene stabilito soggettivamente dallo sviluppatore.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MySQL has gone away? Come back!</title>
       <link>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</link>
       <pubDate>Mon, 09 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</guid>
-      <description>A ben più di uno sviluppatore sarà capitato di incappare nel comune errore MySQL server has gone away!, magari seguito da un eccezione lanciata da una delle classi PDO, come ad esempio PDOStatement::execute(): Error reading result set&amp;rsquo;s header.
-Nella maggior parte dei casi, quando questo avviene in ambiente PHP, siamo connessi in maniera persistente (per fortuna!) ed a causa di una esecuzione troppo lunga, la connessione col server MySQL va in timeout.</description>
+      <description>&lt;p&gt;A ben più di uno sviluppatore sarà capitato di incappare nel comune errore &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.5/en/gone-away.html&#34;&gt;&lt;em&gt;MySQL server has gone away!&lt;/em&gt;&lt;/a&gt;, magari seguito da un eccezione lanciata da una delle &lt;a href=&#34;http://php.net/manual/en/book.pdo.php&#34;&gt;&lt;strong&gt;classi PDO&lt;/strong&gt;&lt;/a&gt;, come ad esempio &lt;em&gt;PDOStatement::execute(): Error reading result set&amp;rsquo;s header&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Nella maggior parte dei casi, quando questo avviene in ambiente PHP, siamo connessi in maniera &lt;strong&gt;persistente&lt;/strong&gt; (per fortuna!) ed a causa di una esecuzione &lt;strong&gt;troppo lunga&lt;/strong&gt;, la connessione col server MySQL va in &lt;strong&gt;timeout&lt;/strong&gt;. Lunghi tasks in batch, chiamate a ws non particolarmente rapidi, carichi elevati del server, sono alcuni degli scenari possibili.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>L&#39;operatore ternario è associativo a sinistra!</title>
       <link>https://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/operatore-ternario-e-associativo-a-sinistra/</guid>
-      <description>Gli operatori ternari sono diffusi in molti linguaggi di programmazione e permettono di esprimire con una sintassi breve logiche condizionali. Per utilizzarli propriamente in PHP è però necessario conoscerne il comportamento.
-Vediamo un esempio
-var_dump(true ? &amp;#39;a&amp;#39; : &amp;#39;b&amp;#39; ? &amp;#39;c&amp;#39; : &amp;#39;d&amp;#39;); // OUTPUT: string(1) &amp;#34;c&amp;#34; Se state pensando che il risultato di questa espressione sia ovvio, vediamo cosa succede ad esempio in javascript
-console.log(true ? &amp;#39;a&amp;#39; : &amp;#39;b&amp;#39; ?</description>
+      <description>&lt;p&gt;Gli &lt;a href=&#34;http://it.wikipedia.org/wiki/Operatore_ternario&#34;&gt;&lt;em&gt;operatori ternari&lt;/em&gt;&lt;/a&gt; sono diffusi in molti linguaggi di programmazione e permettono di esprimire con una &lt;strong&gt;sintassi breve&lt;/strong&gt; logiche condizionali. Per utilizzarli propriamente in PHP è però necessario conoscerne il comportamento.&lt;/p&gt;&#xA;&lt;p&gt;Vediamo un esempio&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-php&#34; data-lang=&#34;php&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;var_dump&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;d&amp;#39;&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// OUTPUT: string(1) &amp;#34;c&amp;#34;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Se state pensando che il risultato di questa espressione sia ovvio, vediamo cosa succede ad esempio in javascript&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;console&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;log&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;a&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;b&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;c&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;d&amp;#39;&lt;/span&gt;); &lt;span style=&#34;color:#75715e&#34;&gt;// OUTPUT: a&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Bene, mentre in PHP il risultato è dato da:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;true è vero, ritorna a&lt;/li&gt;&#xA;&lt;li&gt;a castato a bool è vero, &lt;strong&gt;stampa c&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;In javascript invece il ragionamento è diverso:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>var_dump() aggiunge proprietà pubbliche a DateTime</title>
       <link>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/</guid>
-      <description>PHP, fin dalla versione 5.2.0, introduce gli oggetti \DateTime per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali.
-Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate var_dump, print_r, var_export o debug_zval_dump su un istanza di \DateTime.
-Considerando il seguente codice e il suo output:
-$date = new \DateTime(); var_dump(isset($date-&amp;gt;date)); // OUTPUT: bool(false) ci rendiamo conto del fatto che non esiste alcuna proprietà $date all&amp;rsquo;interno dell&amp;rsquo;istanza di \DateTime.</description>
+      <description>&lt;p&gt;PHP, fin dalla versione 5.2.0, introduce gli oggetti &lt;code&gt;\DateTime&lt;/code&gt; per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali.&lt;/p&gt;&#xA;&lt;p&gt;Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate &lt;code&gt;var_dump&lt;/code&gt;, &lt;code&gt;print_r&lt;/code&gt;, &lt;code&gt;var_export&lt;/code&gt; o &lt;code&gt;debug_zval_dump&lt;/code&gt; su un istanza di &lt;code&gt;\DateTime&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Considerando il seguente codice e il suo output:&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$date = new \DateTime();&#xA;var_dump(isset($date-&amp;gt;date)); // OUTPUT: bool(false)&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ci rendiamo conto del fatto che non esiste alcuna proprietà &lt;code&gt;$date&lt;/code&gt; all&amp;rsquo;interno dell&amp;rsquo;istanza di &lt;code&gt;\DateTime&lt;/code&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>ZVALs refcount AKA come vengono memorizzate le nostre variabili</title>
       <link>https://engineering.facile.it/blog/ita/zvals-refcount/</link>
       <pubDate>Mon, 02 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/zvals-refcount/</guid>
-      <description>Assegnare valori alle variabili è sicuramente l&amp;rsquo;operazione più comune all&amp;rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&amp;rsquo;interprete? Vediamolo assieme!
-L&amp;rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla linea 334 di zend.h, la riporto qui di seguito per commentarne le proprietà.
-struct _zval_struct { zvalue_value value;	/* Il valore assegnato alla variabile */ zend_uint refcount__gc; /* Il conto delle referenze legato alla variabile */ zend_uchar type;	/* L&#39;identificativo del tipo di dato */ zend_uchar is_ref__gc; /* Flag che indica se la variabile è o meno una referenza */ }; Il tipo di dato zvalue_value non è altro che una union contenente tutti i tipi di dato gestiti da php, per questo ogni variabile che instanziamo in PHP, sia essa un intero o una stringa occuperà comunque lo stesso spazio in memoria richiesto per il tipo di dato più grande.</description>
+      <description>&lt;p&gt;Assegnare valori alle variabili è sicuramente l&amp;rsquo;operazione più comune all&amp;rsquo;interno di uno script PHP. Ma come vengono conservate queste informazioni dall&amp;rsquo;interprete? Vediamolo assieme!&lt;/p&gt;&#xA;&lt;p&gt;L&amp;rsquo;unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla &lt;a href=&#34;https://github.com/php/php-src/blob/ae15e636e2b213bf748fa0b94ca95ac96d6eae3a/Zend/zend.h#L334-L340&#34;&gt;linea 334 di &lt;code&gt;zend.h&lt;/code&gt;&lt;/a&gt;, la riporto qui di seguito per commentarne le proprietà.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

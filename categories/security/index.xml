@@ -1,56 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>security on Facile.it Engineering</title>
+    <title>Security on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/security/</link>
-    <description>Recent content in security on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Security on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 30 May 2024 17:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/security/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hack the Box Experience</title>
       <link>https://engineering.facile.it/blog/eng/hack-the-box-experience/</link>
       <pubDate>Thu, 30 May 2024 17:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/hack-the-box-experience/</guid>
-      <description>After the successful experience of having a code challenge in March 2024, we decided to go further in delivering experiences to our colleagues.
-Scouting around, I turned to Alessio Giorgianni, a developer with a passion for white hat hacking competition. We agree to try an experience using a platform called Hack the Box. Hack the Box Academy offers lots of information and training about IT Security and, in our case, some exercises we can use for hacking dummy applications, with a whitebox example (i.</description>
+      <description>&lt;p&gt;After the successful experience of &lt;a href=&#34;https://engineering.facile.it/blog/eng/v-protetto8-3-2024/&#34; title=&#34;Previously, on Venerdì Protetto... a code challenge!&#34;&gt;having a code challenge in March 2024&lt;/a&gt;, we decided to go further in delivering experiences to our colleagues.&lt;/p&gt;&#xA;&lt;p&gt;Scouting around, I turned to Alessio Giorgianni, a developer with a passion for white hat hacking competition. We agree to try an experience using a platform called &lt;a href=&#34;https://academy.hackthebox.com/&#34;&gt;Hack the Box&lt;/a&gt;. Hack the Box Academy offers lots of information and training about IT Security and, in our case, some exercises we can use for hacking dummy applications, with a whitebox example (i.e., an example where all the code is undisclosed to us. &lt;a href=&#34;https://www.eccouncil.org/cybersecurity-exchange/penetration-testing/black-box-gray-box-and-white-box-penetration-testing-importance-and-uses/#:~:text=Objectives%3A%20Black%2Dbox%20testers%20seek,somewhere%20between%20these%20two%20extremes&#34;&gt;There are also different kind of pentest&lt;/a&gt;). We agreed upon using a non-trivial quest, called &lt;a href=&#34;https://www.hackthebox.com/achievement/challenge/48545/638&#34;&gt;Jerrytok&lt;/a&gt;. Jerrytok is a WAPT (Web App Penetration Testing) whitebox challenge. We got a simple web-application, written in PHP, which disclose the harm of using template engines in a not-proper way. It&amp;rsquo;s a good introduction to SSTI, &lt;a href=&#34;https://portswigger.net/web-security/server-side-template-injection&#34;&gt;Server Side Template Injection&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Json Web Token</title>
       <link>https://engineering.facile.it/blog/eng/json-web-tokens/</link>
       <pubDate>Fri, 08 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/json-web-tokens/</guid>
-      <description>When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability. I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy. Imagine for example a web application where a user can login and obtain a &amp;ldquo;pass&amp;rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/json-web-tokens/logo.svg&#34; alt=&#34;JWT&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;When I started my study about JWT, I was searching for a smart method to authenticate a request, without querying the database each time to check the applicant reliability.&#xA;I needed a token or something similar with the ability to validate itself and flexible enough to customize the validation strategy.&#xA;Imagine for example a web application where a user can login and obtain a &amp;ldquo;pass&amp;rdquo; with his name and an expiration time, and this pass will let him ask for resources until the pass expires, and only if the issuer is trusted.&#xA;Thanks to JWT&amp;rsquo;s self verification capabilities, I could discard every request where the token is invalid (a fake token not signed by my application) or expired.&#xA;Beyond this specific use case, JWT can be also useful to securely transmit data to other applications.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Protection of sensitive data using encryption</title>
       <link>https://engineering.facile.it/blog/eng/protection-of-sensitive-data-using-encryption/</link>
       <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/protection-of-sensitive-data-using-encryption/</guid>
-      <description>Data protection is one of the major and recurrent problems in recent years: whether it is private information of users, or the company for which we work, the problem is always the same.
-How to protect such data from any attackers who would - and could (!!) - be able to gain possession?
-Before arriving at the solution of this problem, however, is right to split the series in at least two branches.</description>
+      <description>&lt;p&gt;Data protection is one of the major and recurrent problems in recent years: whether it is private information of users, or the company for which we work, the problem is always the same.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;How to protect such data from any attackers who would - and could (!!) - be able to gain possession?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Before arriving at the solution of this problem, however, is right to split the series in at least two branches. In the wwww data can be &amp;ldquo;obtained&amp;rdquo; in two different moments: 1) as they pass over the network in packets, or 2) after their storing (eg. database or file) in one or more servers.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Protezione di dati sensibili usando la crittografia</title>
       <link>https://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</link>
       <pubDate>Mon, 05 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/protezione-di-dati-sensibili-usando-la-crittografia/</guid>
-      <description>La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&amp;rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.
-Come proteggere questi dati da eventuali malintenzionati che vorrebbero - e potrebbero(!!) - riuscire a entrarne in possesso ?
-Prima di arrivare alla soluzione di questo problema però, è doveroso suddividere la casistica in almeno due rami.</description>
+      <description>&lt;p&gt;La protezione dei dati è uno dei problemi più sentiti e ricorrenti degli ultimi anni: che si tratti di informazioni private di utenti, o dell&amp;rsquo;azienda per cui lavoriamo, il problema è sempre lo stesso.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Come proteggere questi dati da eventuali malintenzionati che vorrebbero -  e potrebbero(!!) -  riuscire a entrarne in possesso ?&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Prima di arrivare alla soluzione di questo problema però, è doveroso suddividere la casistica in almeno due rami. Nel mondo del web i dati possono essere &amp;ldquo;ottenuti&amp;rdquo; in due momenti differenti: 1) mentre transitano sulla rete sotto forma di pacchetti, oppure 2) successivamente al loro immagazzinamento (es. database o file) all&amp;rsquo;interno di uno o più server.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

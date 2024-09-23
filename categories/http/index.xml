@@ -4,32 +4,23 @@
     <title>HTTP on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/http/</link>
     <description>Recent content in HTTP on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 May 2016 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/http/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Faster Web with HTTP/2</title>
       <link>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</link>
       <pubDate>Wed, 11 May 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/faster-web-with-http-2/</guid>
-      <description>HTTP is the protocol that powers the Web. It was originally designed in 1996 for transferring and manipulating simple text-based documents (mainly hypertext resources). Nowadays it&amp;rsquo;s been adopted for many different purposes. It&amp;rsquo;s used for: multimedia content transfer, rich real-time session-based web applications, API messages dispatch, Internet of Things and much more. For this reason, the HTTP specifications are continuously updated, by adding new features and improving performance.
-In May 2015, the latest version 2.</description>
+      <description>&lt;p&gt;HTTP is the protocol that powers the Web. It was originally designed in 1996 for transferring and manipulating simple text-based documents (mainly hypertext resources).&#xA;Nowadays it&amp;rsquo;s been adopted for many different purposes. It&amp;rsquo;s used for: multimedia content transfer, rich real-time session-based web applications, API messages dispatch, Internet of Things and much more.&#xA;For this reason, the HTTP specifications are continuously updated, by adding new features and improving performance.&lt;/p&gt;&#xA;&lt;p&gt;In May 2015, the latest version 2.0 was standardized with &lt;em&gt;&lt;a href=&#34;https://tools.ietf.org/html/rfc7540&#34;&gt;RFC 7540&lt;/a&gt;&lt;/em&gt;.&#xA;This introduced major differences on how the low-level protocol works.&#xA;From the application perspective, very little has changed: requests, responses, resources, headers and HTTP methods are still there.&#xA;New features have been added such as the possibility to &lt;strong&gt;push resources to the client&lt;/strong&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>GraphQL: an introduction</title>
       <link>https://engineering.facile.it/blog/eng/graphql-an-introduction/</link>
       <pubDate>Mon, 18 Jan 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/graphql-an-introduction/</guid>
-      <description>The lesson we learned with REST For many developers, nowadays, building an API for their applications essentially means mapping the resources of the domain to URIs, with the REST principles in mind. Usually creating a RESTful system is not difficult, and the simplicity of the idea makes the task easier. Let&amp;rsquo;s see some of the consequences and benefits of choosing REST:
- Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.</description>
+      <description>&lt;h2 id=&#34;the-lesson-we-learned-with-rest&#34;&gt;The lesson we learned with REST&lt;/h2&gt;&#xA;&lt;p&gt;For many developers, nowadays, building an &lt;strong&gt;API&lt;/strong&gt; for their applications essentially means mapping the &lt;em&gt;resources&lt;/em&gt; of the domain to &lt;em&gt;URIs&lt;/em&gt;, with the &lt;a href=&#34;https://en.wikipedia.org/wiki/Representational_state_transfer&#34;&gt;REST&lt;/a&gt; principles in mind.&#xA;Usually creating a &lt;em&gt;&lt;strong&gt;RESTful&lt;/strong&gt;&lt;/em&gt; system is not difficult, and the simplicity of the idea makes the task easier.&#xA;Let&amp;rsquo;s see some of the consequences and benefits of choosing REST:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Every HTTP verb has its own meaning, allowing the developer to understand immediately what kind of operation (typically among the CRUD ones) is going to be performed on the resource identified by the URI.&lt;/li&gt;&#xA;&lt;li&gt;Often the same URI can be used with multiple verbs to accomplish different tasks (e.g. &amp;ldquo;example.com/tag/123&amp;rdquo; refers to a particular tag that you can retrieve, update or delete).&lt;/li&gt;&#xA;&lt;li&gt;Controllers in many server-side frameworks can be created with a RESTful approach, each one of them representing one or more resources.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;However, unfortunately, it&amp;rsquo;s often easy to come across some problems:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

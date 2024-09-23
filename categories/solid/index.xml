@@ -4,23 +4,16 @@
     <title>SOLID on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/solid/</link>
     <description>Recent content in SOLID on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 15 Apr 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/solid/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/solid/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Il principio OPEN/CLOSE le sue origini e i casi d&#39;uso</title>
       <link>https://engineering.facile.it/blog/ita/principio-open-close-le-sue-origini-e-i-casi-d-uso/</link>
       <pubDate>Wed, 15 Apr 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/principio-open-close-le-sue-origini-e-i-casi-d-uso/</guid>
-      <description>Definizione: Il principio OPEN/CLOSE fa riferimento all&amp;rsquo;acronimo SOLID. introdotto da Michael Feathers che riporta alcune buone pratiche di programmazione ad oggetti ancora di forte attualità.
-OPEN/CLOSE (la O dell&amp;rsquo;acronimo), nella sua definizione più generale indica che: un modulo (un oggetto, una classe o un gruppo di funzioni) debba essere aperto alle estensioni ma chiuso alle modifiche.
-Questo principio tuttavia non è altro che la formalizzazione e il raggruppamento di concetti e linee guida già presenti da tempo nella programmazione ad oggetti.</description>
+      <description>&lt;h2 id=&#34;definizione&#34;&gt;Definizione:&lt;/h2&gt;&#xA;&lt;p&gt;Il principio &lt;em&gt;OPEN/CLOSE&lt;/em&gt; fa riferimento all&amp;rsquo;acronimo &lt;a href=&#34;http://en.wikipedia.org/wiki/SOLID_(object-oriented_design)&#34;&gt;SOLID&lt;/a&gt;.  introdotto da  Michael Feathers che riporta alcune &lt;em&gt;buone pratiche&lt;/em&gt; di programmazione ad oggetti ancora di forte attualità.&lt;/p&gt;&#xA;&lt;p&gt;&lt;em&gt;OPEN/CLOSE&lt;/em&gt; (la &lt;strong&gt;O&lt;/strong&gt; dell&amp;rsquo;acronimo), nella sua definizione più generale indica che:  un modulo (un oggetto, una classe o un gruppo di funzioni) debba essere &lt;strong&gt;aperto alle estensioni&lt;/strong&gt; ma &lt;strong&gt;chiuso alle modifiche&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Questo principio tuttavia non è altro che la formalizzazione e il raggruppamento di concetti e linee guida già presenti da tempo nella programmazione ad oggetti.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

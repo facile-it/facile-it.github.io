@@ -1,45 +1,33 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>luca on Facile.it Engineering</title>
+    <title>Luca on Facile.it Engineering</title>
     <link>https://engineering.facile.it/authors/luca/</link>
-    <description>Recent content in luca on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Luca on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Sep 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/authors/luca/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/authors/luca/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>WAMP, Web Application Messaging Protocol.. e PHP!</title>
       <link>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</link>
       <pubDate>Mon, 28 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/wamp-web-application-messaging-protocol-e-php/</guid>
-      <description>Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno scambio dati in due direzioni, efficiente e a bassa latenza, ha determinato l’ascesa negli ultimi anni di soluzioni basate su WebSocket .
-Internet delle cose e web 2.0 trovano oramai sempre meno spazio all’interno del protocollo HTTP/1. Le tecniche di polling e long polling, in voga fino a pochi anni fa, non permettevano di trasmettere in full duplex (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano diversi sforzi per simulare notifiche push server side.</description>
+      <description>&lt;p&gt;Dalle notifiche di Facebook ad un tweet stream, da Google Docs ai giochi multiplayer in HTML5, la necessità di uno &lt;strong&gt;scambio dati&lt;/strong&gt; in &lt;strong&gt;due direzioni&lt;/strong&gt;, &lt;strong&gt;efficiente&lt;/strong&gt; e a &lt;strong&gt;bassa latenza&lt;/strong&gt;, ha determinato l’ascesa negli ultimi anni di &lt;strong&gt;soluzioni basate su &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;https://www.websocket.org/&#34; target=&#39;_blank&#39;&gt;WebSocket&lt;/a&gt;&#xA;&#xA;&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Internet delle cose e web 2.0 trovano oramai sempre &lt;strong&gt;meno spazio&lt;/strong&gt; all’interno del protocollo &lt;strong&gt;HTTP/1&lt;/strong&gt;. Le tecniche di &lt;strong&gt;polling e long polling&lt;/strong&gt;, in voga fino a pochi anni fa, non permettevano di trasmettere in &#xA;&#xA;    &#xA;        &#xA;    &#xA;&#xA;    &lt;a href=&#34;https://it.wikipedia.org/wiki/Duplex&#34; target=&#39;_blank&#39;&gt;full duplex&lt;/a&gt;&#xA;&#xA; (tra server e client) contemporaneamente, erano costrette ad un alto overhead HTTP e richiedevano &lt;strong&gt;diversi sforzi&lt;/strong&gt; per simulare notifiche push server side.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Continuous Integration con Docker e Drone</title>
       <link>https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</link>
       <pubDate>Fri, 12 Jun 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/continuos-integration-docker-drone/</guid>
-      <description>La continuous integration è una pratica che consiste nel frequente allineamento, su di una base comune definita mainline, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto.
-Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione Object Oriented Design: With Applications, la pratica è stata estesa e sviluppata all&amp;rsquo;interno dell&amp;rsquo;extreme programming, fino a sostenere la necessità di allineare le copie di lavoro diverse volte al giorno.</description>
+      <description>&lt;p&gt;La &lt;strong&gt;continuous integration&lt;/strong&gt; è una pratica che consiste nel &lt;strong&gt;frequente allineamento&lt;/strong&gt;, su di una base comune definita &lt;em&gt;mainline&lt;/em&gt;, delle copie di lavoro degli sviluppatori che collaborano al codice di un progetto.&lt;/p&gt;&#xA;&lt;p&gt;Introdotta inizialmente da Grady Booch nel 1991, nella pubblicazione &lt;a href=&#34;http://books.google.com/books?id=w5VQAAAAMAAJ&amp;amp;q=continuous+integration+inauthor:grady+inauthor:booch&amp;amp;dq=continuous+integration+inauthor:grady+inauthor:booch&amp;amp;hl=en&amp;amp;sa=X&amp;amp;ei=0_TxU6TqIMOZyASJ3ICYCQ&amp;amp;ved=0CEQQ6AEwAg&#34;&gt;Object Oriented Design: With Applications&lt;/a&gt;, la pratica è stata estesa e sviluppata all&amp;rsquo;interno dell&amp;rsquo;&lt;strong&gt;extreme programming&lt;/strong&gt;, fino a sostenere la necessità di &lt;strong&gt;allineare&lt;/strong&gt; le copie di lavoro &lt;strong&gt;diverse volte al giorno&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Il vantaggio principale nell&amp;rsquo;adottare la pratica è quello di &lt;strong&gt;evitare l&amp;rsquo;integration hell&lt;/strong&gt; (o merge hell) &lt;strong&gt;minimizzando il rischio&lt;/strong&gt; legato a copie di lavoro divergenti di difficile integrazione.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MySQL has gone away? Come back!</title>
       <link>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</link>
       <pubDate>Mon, 09 Mar 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/mysql-has-gone-away-come-back/</guid>
-      <description>A ben più di uno sviluppatore sarà capitato di incappare nel comune errore MySQL server has gone away!, magari seguito da un eccezione lanciata da una delle classi PDO, come ad esempio PDOStatement::execute(): Error reading result set&amp;rsquo;s header.
-Nella maggior parte dei casi, quando questo avviene in ambiente PHP, siamo connessi in maniera persistente (per fortuna!) ed a causa di una esecuzione troppo lunga, la connessione col server MySQL va in timeout.</description>
+      <description>&lt;p&gt;A ben più di uno sviluppatore sarà capitato di incappare nel comune errore &lt;a href=&#34;http://dev.mysql.com/doc/refman/5.5/en/gone-away.html&#34;&gt;&lt;em&gt;MySQL server has gone away!&lt;/em&gt;&lt;/a&gt;, magari seguito da un eccezione lanciata da una delle &lt;a href=&#34;http://php.net/manual/en/book.pdo.php&#34;&gt;&lt;strong&gt;classi PDO&lt;/strong&gt;&lt;/a&gt;, come ad esempio &lt;em&gt;PDOStatement::execute(): Error reading result set&amp;rsquo;s header&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Nella maggior parte dei casi, quando questo avviene in ambiente PHP, siamo connessi in maniera &lt;strong&gt;persistente&lt;/strong&gt; (per fortuna!) ed a causa di una esecuzione &lt;strong&gt;troppo lunga&lt;/strong&gt;, la connessione col server MySQL va in &lt;strong&gt;timeout&lt;/strong&gt;. Lunghi tasks in batch, chiamate a ws non particolarmente rapidi, carichi elevati del server, sono alcuni degli scenari possibili.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,31 +4,23 @@
     <title>RabbitMQ on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/rabbitmq/</link>
     <description>Recent content in RabbitMQ on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 14 Oct 2023 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/rabbitmq/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NestJS graceful shutdown for RabbitMQ Microservices</title>
       <link>https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/</link>
       <pubDate>Sat, 14 Oct 2023 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/</guid>
       <description>Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.</description>
     </item>
-    
     <item>
       <title>Common problems faced by PHP developers in consuming an AMQP message</title>
       <link>https://engineering.facile.it/blog/eng/common-problems-faced-by-php-developers-in-consuming-an-ampq-message/</link>
       <pubDate>Wed, 29 May 2019 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/common-problems-faced-by-php-developers-in-consuming-an-ampq-message/</guid>
-      <description>When we use RabbitMQ and our project is in PHP, we have to run a Consumer and we could encounter some common and still unresolved problems.
-In order to implement RabbitMQ in the project, there are different ready to use packages, especially when we use a framework like Symfony or Laravel. Usually these packages provide the full integration needed for the AMQP protocol, so we can easily configure it and create a Producer and a Consumer; then, we have to create a little script that will supervise the PHP process in order to make sure that all our consumers are running.</description>
+      <description>&lt;p&gt;When we use RabbitMQ and our project is in PHP, we have to run a Consumer and we could encounter some common and still unresolved problems.&lt;/p&gt;&#xA;&lt;p&gt;In order to implement RabbitMQ in the project, there are different ready to use packages, especially when we use a framework like Symfony or Laravel. Usually these packages provide the full integration needed for the AMQP protocol, so we can easily configure it and create a Producer and a Consumer; then, we have to create a little script that will supervise the PHP process in order to make sure that all our consumers are running.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

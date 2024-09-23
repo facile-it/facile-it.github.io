@@ -8,7 +8,7 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/engineering.facile.it"
+             "@id": "https:\/\/engineering.facile.it\/"
         },
         "articleSection" : "blog",
         "name" : "NestJS graceful shutdown for RabbitMQ Microservices",
@@ -21,10 +21,10 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2023",
-        "datePublished": "2023-10-14 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2023-10-14 00:00:00 \x2b0000 UTC",
+        "datePublished": "2023-10-14 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2023-10-14 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/blog\/eng\/nest-js-graceful-shutdown\/",
-        "wordCount" : "1512",
+        "wordCount" : "1405",
         "keywords" : [ "Blog" ]
     }
     </script>
@@ -37,7 +37,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.69.0" />
+        <meta name="generator" content="Hugo 0.134.2">
         
 
 
@@ -70,28 +70,28 @@
 
 
 
-        <meta property="og:title" content="NestJS graceful shutdown for RabbitMQ Microservices" />
-<meta property="og:description" content="Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/" />
-<meta property="article:published_time" content="2023-10-14T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-10-14T00:00:00+00:00" />
+        <meta property="og:url" content="https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/">
+  <meta property="og:site_name" content="Facile.it Engineering">
+  <meta property="og:title" content="NestJS graceful shutdown for RabbitMQ Microservices">
+  <meta property="og:description" content="Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2023-10-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-10-14T00:00:00+00:00">
 
 
         
             <meta property="og:image" content="https://engineering.facile.it/images/nest-js-graceful-shutdown/nestjs-rabbitmq.webp">
         
 
-        <meta itemprop="name" content="NestJS graceful shutdown for RabbitMQ Microservices">
-<meta itemprop="description" content="Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.">
-<meta itemprop="datePublished" content="2023-10-14T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2023-10-14T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1512">
-
-
-
-<meta itemprop="keywords" content="" />
         
+  <meta itemprop="name" content="NestJS graceful shutdown for RabbitMQ Microservices">
+  <meta itemprop="description" content="Dealing with a graceful shutdown is essential for a resilient and proficient application. In this article, I am going to explain how you can deal with this technique in NestJS using RabbitMQ as a Message Broker through the Microservices feature.">
+  <meta itemprop="datePublished" content="2023-10-14T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-10-14T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1405">
+  <meta itemprop="keywords" content="Pasqualino-Desimone,Node.js,NestJS,RabbitMQ,Typescript">
 
         
             
@@ -119,19 +119,6 @@
 
 
       
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-22342495-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
     </head>
     <body>
 
@@ -185,7 +172,7 @@ if (!doNotTrack) {
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
                 </form>
             </li>
             <li class="menu">
@@ -202,7 +189,7 @@ if (!doNotTrack) {
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
             </form>
         </section>
 
@@ -260,35 +247,35 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-08-28'>
-                                    August 28, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-07-02'>
-                                    July 2, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-05-20'>
+                                    May 20, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-03-11'>
+                                    March 11, 2024</time>
                             </header>
                             
 
@@ -425,7 +412,7 @@ if (!doNotTrack) {
         
 
         
-            <p>8 minute read</p>
+            <p>7 minute read</p>
         
     </div>
 </header>
@@ -541,14 +528,14 @@ if (!doNotTrack) {
 <p>The whole implementation is encapsulated in this file: <a href="https://github.com/pasalino/nestjs-rabbitmq-transporter-graceful-shutdown/blob/main/src/graceful-server-rmq.ts">https://github.com/pasalino/nestjs-rabbitmq-transporter-graceful-shutdown/blob/main/src/graceful-server-rmq.ts</a></p>
 <p>You can paste it into your application.</p>
 <p>To use it, at the moment of Microservice instantiation (on Bootstrap), utilize it as a strategy:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">NestFactory</span>.<span style="color:#a6e22e">createMicroservice</span>(<span style="color:#a6e22e">AppModule</span>, {
-  <span style="color:#a6e22e">strategy</span>: <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">GracefulServerRMQ</span>({
-    <span style="color:#a6e22e">urls</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;amqp://localhost&#34;</span>],
-    <span style="color:#a6e22e">queue</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;messages&#34;</span>,
-    <span style="color:#75715e">// Here you can put all options of ServerRMQ
-</span><span style="color:#75715e"></span>  }),
-});
-</code></pre></div><p>You must enable the <code>enableShutdownHooks</code> or close the app directly in the <code>SIGTERM</code> handler.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">NestFactory</span>.<span style="color:#a6e22e">createMicroservice</span>(<span style="color:#a6e22e">AppModule</span>, {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">strategy</span>: <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">GracefulServerRMQ</span>({
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">urls</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;amqp://localhost&#34;</span>],
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">queue</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;messages&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Here you can put all options of ServerRMQ
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  }),
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>You must enable the <code>enableShutdownHooks</code> or close the app directly in the <code>SIGTERM</code> handler.</p>
 <p><strong><em>That’s all folks!</em></strong></p>
 <h1 id="tldr">TL;DR</h1>
 <p>If you like long explanations, follow me down the rabbit hole.</p>
@@ -561,45 +548,45 @@ if (!doNotTrack) {
 <blockquote>
 <p><em>As you can see in the amqp-connection-manager documentation:</em> “The setup functions will be run every time amqp-connection-manager reconnects, to make sure your channel and broker are in a sane state.”</p>
 </blockquote>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">setupChannel</span>(<span style="color:#a6e22e">channel</span>: <span style="color:#66d9ef">Channel</span>, <span style="color:#a6e22e">callback</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span>) {
-    <span style="color:#75715e">// If the server is closing, the setup channel doesn&#39;t re-open the consumer
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">closing</span>) {
-      <span style="color:#66d9ef">return</span>;
-    }
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queueOptions</span>.<span style="color:#a6e22e">noAssert</span>) {
-      <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">assertQueue</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queue</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queueOptions</span>);
-    }
-    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">prefetch</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prefetchCount</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">isGlobalPrefetchCount</span>);
-
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">consumerTag</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">consume</span>(
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queue</span>,
-      (<span style="color:#a6e22e">msg</span>: <span style="color:#66d9ef">Record</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">any</span><span style="color:#f92672">&gt;</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleMessage</span>(<span style="color:#a6e22e">msg</span>, <span style="color:#a6e22e">channel</span>),
-      {
-        <span style="color:#a6e22e">noAck</span>: <span style="color:#66d9ef">this.noAck</span>,
-      },
-    );
-
-    <span style="color:#75715e">// The consumerTag is stored in the instance of the server
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumerTag</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">consumerTag</span>
-
-    <span style="color:#a6e22e">callback</span>();
-  }
-</code></pre></div><p>After the connection, the handleMessage method, used by Microservices to handle a message from other microservices or external services, determines the message pattern and executes the correct handler (you can see it in the parent class).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">setupChannel</span>(<span style="color:#a6e22e">channel</span>: <span style="color:#66d9ef">Channel</span>, <span style="color:#a6e22e">callback</span><span style="color:#f92672">:</span> () <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">void</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If the server is closing, the setup channel doesn&#39;t re-open the consumer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">closing</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queueOptions</span>.<span style="color:#a6e22e">noAssert</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">assertQueue</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queue</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queueOptions</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">prefetch</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">prefetchCount</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">isGlobalPrefetchCount</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">consumerTag</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">consume</span>(
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">queue</span>,
+</span></span><span style="display:flex;"><span>      (<span style="color:#a6e22e">msg</span>: <span style="color:#66d9ef">Record</span>&lt;<span style="color:#f92672">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt;) <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">handleMessage</span>(<span style="color:#a6e22e">msg</span>, <span style="color:#a6e22e">channel</span>),
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">noAck</span>: <span style="color:#66d9ef">this.noAck</span>,
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>    );
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// The consumerTag is stored in the instance of the server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumerTag</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">consumerTag</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">callback</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>After the connection, the handleMessage method, used by Microservices to handle a message from other microservices or external services, determines the message pattern and executes the correct handler (you can see it in the parent class).</p>
 <p>To achieve the graceful shutdown without losing any execution, the custom implementation overrides the <code>handleMessage</code> method by adding a counter of the current executions.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">handleMessage</span>(
-    <span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">Record</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">string</span>, <span style="color:#a6e22e">any</span><span style="color:#f92672">&gt;</span>,
-    <span style="color:#a6e22e">channel</span>: <span style="color:#66d9ef">Channel</span>,
-  )<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span><span style="color:#f92672">&gt;</span> {
-     <span style="color:#75715e">// Adding 1 if a new execution running
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">runningMessages</span><span style="color:#f92672">++</span>;
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">handleMessage</span>(<span style="color:#a6e22e">message</span>, <span style="color:#a6e22e">channel</span>)
-      .<span style="color:#66d9ef">finally</span>(() <span style="color:#f92672">=&gt;</span> {
-    <span style="color:#75715e">// With finally method on the promise, we ensure that the counter remains consistent
-</span><span style="color:#75715e"></span>	  <span style="color:#75715e">// Removing 1 at the end of execution
-</span><span style="color:#75715e"></span>	  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">runningMessages</span><span style="color:#f92672">--</span>;
-       });
-  }
-</code></pre></div><p>This counter allows the Custom Transporter to wait for all handlers before closing the RabbitMQ Channel and Connection.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">handleMessage</span>(
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">message</span>: <span style="color:#66d9ef">Record</span>&lt;<span style="color:#f92672">string</span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#a6e22e">any</span>&gt;,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">channel</span>: <span style="color:#66d9ef">Channel</span>,
+</span></span><span style="display:flex;"><span>  )<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">void</span>&gt; {
+</span></span><span style="display:flex;"><span>     <span style="color:#75715e">// Adding 1 if a new execution running
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">runningMessages</span><span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">handleMessage</span>(<span style="color:#a6e22e">message</span>, <span style="color:#a6e22e">channel</span>)
+</span></span><span style="display:flex;"><span>      .<span style="color:#66d9ef">finally</span>(() <span style="color:#f92672">=&gt;</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// With finally method on the promise, we ensure that the counter remains consistent
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	  <span style="color:#75715e">// Removing 1 at the end of execution
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">runningMessages</span><span style="color:#f92672">--</span>;
+</span></span><span style="display:flex;"><span>       });
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p>This counter allows the Custom Transporter to wait for all handlers before closing the RabbitMQ Channel and Connection.</p>
 <p>When the server is closing (when the <code>close</code> method is invoked):</p>
 <ol>
 <li>At first, the Server cancels the RabbitMQ consumer associated with Channel. In this way, the server will not receive any new messages present in the queue.</li>
@@ -607,32 +594,32 @@ if (!doNotTrack) {
 <li>At this point, the method closes the RabbitMQ channel and connection using the base implementation.</li>
 <li>In the end, the application can exit gracefully.</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#a6e22e">async</span> <span style="color:#a6e22e">close</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">void</span><span style="color:#f92672">&gt;</span> {
-    <span style="color:#75715e">// Notifies the instance that the server is being shut down
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">closing</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-    <span style="color:#75715e">// If the channel is open yet
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">channel</span>) {
-      <span style="color:#75715e">// Trying to remove the setup according to amqplib-connection-manager documentation
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">await</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">removeSetup</span>(<span style="color:#66d9ef">undefined</span>, (<span style="color:#a6e22e">channel</span>: <span style="color:#66d9ef">Channel</span>) <span style="color:#f92672">=&gt;</span>
-          <span style="color:#75715e">// Cancel the consumption of messages. At this stage, the server will not consume more messages from the queue
-</span><span style="color:#75715e"></span>          <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">cancel</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumerTag</span>),
-      );
-    }
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumerTag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-
-    <span style="color:#75715e">// Now the server will wait for the ending of pending handlers or exit for timeout
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// In this period, all handlers will end and the underlying channel is open yet. In this way, the consumer will be able to send ack message to RabbitMQ
-</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">Promise</span>.<span style="color:#a6e22e">race</span>([
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">waitingHandlers</span>(),
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">waitingEndingHandlersTimeoutMs</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span>
-        <span style="color:#a6e22e">sleep</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">waitingEndingHandlersTimeoutMs</span>),
-    ]);
-
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">runningMessages</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-    <span style="color:#75715e">// In the end the RabbitMQ channel and connection by base implementation
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">close</span>();
-  }
-</code></pre></div><h1 id="summary">Summary</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-typescript" data-lang="typescript"><span style="display:flex;"><span><span style="color:#66d9ef">async</span> <span style="color:#a6e22e">close</span>()<span style="color:#f92672">:</span> <span style="color:#a6e22e">Promise</span>&lt;<span style="color:#f92672">void</span>&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Notifies the instance that the server is being shut down
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">closing</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// If the channel is open yet
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">channel</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">// Trying to remove the setup according to amqplib-connection-manager documentation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>      <span style="color:#66d9ef">await</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">removeSetup</span>(<span style="color:#66d9ef">undefined</span>, (<span style="color:#a6e22e">channel</span>: <span style="color:#66d9ef">Channel</span>) <span style="color:#f92672">=&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">// Cancel the consumption of messages. At this stage, the server will not consume more messages from the queue
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>          <span style="color:#a6e22e">channel</span>.<span style="color:#a6e22e">cancel</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumerTag</span>),
+</span></span><span style="display:flex;"><span>      );
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">consumerTag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Now the server will wait for the ending of pending handlers or exit for timeout
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#75715e">// In this period, all handlers will end and the underlying channel is open yet. In this way, the consumer will be able to send ack message to RabbitMQ
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">Promise</span>.<span style="color:#a6e22e">race</span>([
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">waitingHandlers</span>(),
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">waitingEndingHandlersTimeoutMs</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">&amp;&amp;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">sleep</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">waitingEndingHandlersTimeoutMs</span>),
+</span></span><span style="display:flex;"><span>    ]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">runningMessages</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// In the end the RabbitMQ channel and connection by base implementation
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">super</span>.<span style="color:#a6e22e">close</span>();
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><h1 id="summary">Summary</h1>
 <p>This implementation is one of the possible ways to obtain a grace shutdown of RabbitMQ for NestJS, which is surely a goal for any resilient application that deals with asynchronous messages with RabbitMQ. If you use an orchestrator, such as K8s, you face this problem daily. The GracefulServerRMQ allows you to avoid losing any execution and prevent data corruption with NestJS Microservices.</p>
 
   </div>
@@ -674,29 +661,6 @@ if (!doNotTrack) {
   </footer>
 
 </article>
-
-    <article class="post">
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
 
 
 <ul class="actions pagination">
@@ -853,54 +817,6 @@ if (!doNotTrack) {
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-08-28'>
-                28 August 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
-                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-07-02'>
-                2 July 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
                     <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
                       <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
@@ -920,6 +836,60 @@ if (!doNotTrack) {
               
               <time class="published" datetime='2024-05-30'>
                 30 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-05-20'>
+                20 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+                  
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-03-11'>
+                11 March 2024
               </time>
             </header>
             
@@ -1073,7 +1043,7 @@ if (!doNotTrack) {
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional Programming</a>
                 <span style="float:right;">11</span>
               
             </header>
@@ -1184,7 +1154,7 @@ if (!doNotTrack) {
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/open-source/">Open source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">7</span>
               
             </header>
@@ -1221,7 +1191,7 @@ if (!doNotTrack) {
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">16</span>
+                <span style="float:right;">14</span>
               
             </header>
           </article>

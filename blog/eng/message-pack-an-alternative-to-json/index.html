@@ -8,12 +8,12 @@
         "@type" : "BlogPosting",
         "mainEntityOfPage": {
              "@type": "WebPage",
-             "@id": "https:\/\/engineering.facile.it"
+             "@id": "https:\/\/engineering.facile.it\/"
         },
         "articleSection" : "blog",
         "name" : "MessagePack: an alternative to JSON?",
         "headline" : "MessagePack: an alternative to JSON?",
-        "description" : "When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn\x26rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called \x26ldquo;JSONC\x26quot;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.",
+        "description" : "\u003cp\u003eWhen we talk about data interchange in web applications, \u003cstrong\u003e\u003ca href=\u0022http:\/\/www.json.org\/\u0022\u003eJSON\u003c\/a\u003e\u003c\/strong\u003e is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist \u003ca href=\u0022https:\/\/www.w3.org\/XML\/\u0022\u003eXML\u003c\/a\u003e (SOAP) without a battle, but it didn\u0026rsquo;t prevent the development of alternatives like \u003ca href=\u0022https:\/\/developers.google.com\/protocol-buffers\/\u0022\u003eGoogle’s \u003cstrong\u003eProtocol Buffers\u003c\/strong\u003e\u003c\/a\u003e, \u003ca href=\u0022https:\/\/avro.apache.org\/\u0022\u003eApache \u003cstrong\u003eAvro\u003c\/strong\u003e\u003c\/a\u003e or \u003cstrong\u003e\u003ca href=\u0022http:\/\/msgpack.org\/\u0022\u003eMessagePack\u003c\/a\u003e\u003c\/strong\u003e. In being thorough, we should also mention \u003ca href=\u0022http:\/\/www.gzip.org\/\u0022\u003egzip\u003c\/a\u003e JSON compression (sometimes called \u0026ldquo;\u003cem\u003eJSONC\u003c\/em\u003e\u0026rdquo;), and \u003ca href=\u0022http:\/\/bsonspec.org\/\u0022\u003eBSON\u003c\/a\u003e, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we\u0026rsquo;ll discuss MessagePack in depth.\u003c\/p\u003e",
         "inLanguage" : "en",
         "author" : "",
         "creator" : "",
@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2016",
-        "datePublished": "2016-10-25 00:00:00 \x2b0000 UTC",
-        "dateModified" : "2016-10-25 00:00:00 \x2b0000 UTC",
+        "datePublished": "2016-10-25 00:00:00 \u002b0000 UTC",
+        "dateModified" : "2016-10-25 00:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/blog\/eng\/message-pack-an-alternative-to-json\/",
         "wordCount" : "936",
         "keywords" : [ "Blog" ]
@@ -37,14 +37,14 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="referrer" content="always">
-        <meta name="generator" content="Hugo 0.69.0" />
+        <meta name="generator" content="Hugo 0.134.2">
         
 
 
         
         
             
-                <meta name="description" content="When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &ldquo;JSONC&quot;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.">
+                <meta name="description" content="When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &ldquo;JSONC&rdquo;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we&rsquo;ll discuss MessagePack in depth.">
             
         
 
@@ -57,7 +57,7 @@
 
 
 <meta name="og:title" content="MessagePack: an alternative to JSON?"/>
-<meta name="og:description" content="When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &ldquo;JSONC&quot;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON."/>
+<meta name="og:description" content="When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &ldquo;JSONC&rdquo;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we&rsquo;ll discuss MessagePack in depth."/>
 
 
     
@@ -70,28 +70,28 @@
 
 
 
-        <meta property="og:title" content="MessagePack: an alternative to JSON?" />
-<meta property="og:description" content="When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &ldquo;JSONC&quot;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/" />
-<meta property="article:published_time" content="2016-10-25T00:00:00+00:00" />
-<meta property="article:modified_time" content="2016-10-25T00:00:00+00:00" />
+        <meta property="og:url" content="https://engineering.facile.it/blog/eng/message-pack-an-alternative-to-json/">
+  <meta property="og:site_name" content="Facile.it Engineering">
+  <meta property="og:title" content="MessagePack: an alternative to JSON?">
+  <meta property="og:description" content="When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn’t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called “JSONC”), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we’ll discuss MessagePack in depth.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="blog">
+    <meta property="article:published_time" content="2016-10-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2016-10-25T00:00:00+00:00">
 
 
         
             <meta property="og:image" content="https://engineering.facile.it/images/message-pack-an-alternative-to-json/share.png">
         
 
-        <meta itemprop="name" content="MessagePack: an alternative to JSON?">
-<meta itemprop="description" content="When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn&rsquo;t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called &ldquo;JSONC&quot;), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON.">
-<meta itemprop="datePublished" content="2016-10-25T00:00:00&#43;00:00" />
-<meta itemprop="dateModified" content="2016-10-25T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="936">
-
-
-
-<meta itemprop="keywords" content="" />
         
+  <meta itemprop="name" content="MessagePack: an alternative to JSON?">
+  <meta itemprop="description" content="When we talk about data interchange in web applications, JSON is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist XML (SOAP) without a battle, but it didn’t prevent the development of alternatives like Google’s Protocol Buffers, Apache Avro or MessagePack. In being thorough, we should also mention gzip JSON compression (sometimes called “JSONC”), and BSON, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we’ll discuss MessagePack in depth.">
+  <meta itemprop="datePublished" content="2016-10-25T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2016-10-25T00:00:00+00:00">
+  <meta itemprop="wordCount" content="936">
+  <meta itemprop="keywords" content="Salvatore-Cordiano,English,MessagePack,JSON">
 
         
             
@@ -119,19 +119,6 @@
 
 
       
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-	ga('create', 'UA-22342495-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-
     </head>
     <body>
 
@@ -185,7 +172,7 @@ if (!doNotTrack) {
                 <a class="fa-search" href="#search">Search</a>
                 <form id="search" method="get" action="//google.com/search">
                     <input type="text" name="q" placeholder="Search" />
-                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                    <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
                 </form>
             </li>
             <li class="menu">
@@ -202,7 +189,7 @@ if (!doNotTrack) {
         <section>
             <form class="search" method="get" action="//google.com/search">
                 <input type="text" name="q" placeholder="Search" />
-                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it">
+                <input type="hidden" name="as_sitesearch" value="https://engineering.facile.it/">
             </form>
         </section>
 
@@ -260,35 +247,35 @@ if (!doNotTrack) {
                 
                         <article class="mini-post">
                             <header>
-                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-08-28'>
-                                    August 28, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-07-02'>
-                                    July 2, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-05-20'>
+                                    May 20, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-03-11'>
+                                    March 11, 2024</time>
                             </header>
                             
 
@@ -437,28 +424,28 @@ if (!doNotTrack) {
   
 
   <div id="content">
-    <p>When we talk about data interchange in web applications, <strong><a href="http://www.json.org/">JSON</a></strong> is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist <a href="https://www.w3.org/XML/">XML</a> (SOAP) without a battle, but it didn&rsquo;t prevent the development of alternatives like <a href="https://developers.google.com/protocol-buffers/">Google’s <strong>Protocol Buffers</strong></a>, <a href="https://avro.apache.org/">Apache <strong>Avro</strong></a> or <strong><a href="http://msgpack.org/">MessagePack</a></strong>. In being thorough, we should also mention <a href="http://www.gzip.org/">gzip</a> JSON compression (sometimes called &ldquo;<em>JSONC</em>&quot;), and <a href="http://bsonspec.org/">BSON</a>, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we&rsquo;ll discuss MessagePack in depth.</p>
+    <p>When we talk about data interchange in web applications, <strong><a href="http://www.json.org/">JSON</a></strong> is the de-facto standard, especially in developing RESTful web services. JSON won against its antagonist <a href="https://www.w3.org/XML/">XML</a> (SOAP) without a battle, but it didn&rsquo;t prevent the development of alternatives like <a href="https://developers.google.com/protocol-buffers/">Google’s <strong>Protocol Buffers</strong></a>, <a href="https://avro.apache.org/">Apache <strong>Avro</strong></a> or <strong><a href="http://msgpack.org/">MessagePack</a></strong>. In being thorough, we should also mention <a href="http://www.gzip.org/">gzip</a> JSON compression (sometimes called &ldquo;<em>JSONC</em>&rdquo;), and <a href="http://bsonspec.org/">BSON</a>, a bin­ary-en­coded seri­al­iz­a­tion of JSON-like doc­u­ments, both derived directly from JSON. In this article we&rsquo;ll discuss MessagePack in depth.</p>
 <p><img src="/images/message-pack-an-alternative-to-json/msgpack.png" alt="MessagePack">
 <em>JSON Vs MessagePack (source: <a href="http://msgpack.org/">msgpack.org</a>)</em></p>
 <h1 id="what-is-messagepack">What is MessagePack?</h1>
 <p>« <em>MessagePack is an efficient binary serialization format. It lets you exchange data among multiple languages like JSON. But it&rsquo;s faster and smaller</em> ». To start using MessagePack we need to convert our application objects into MessagePack format: this process is called <em>serialization</em>, while the reverse process is called <em>deserialization</em>. The following example can help us better understand what we&rsquo;re talking about. Consider this simple JSON:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">4</span>,                    <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">integer</span>
-	<span style="color:#f92672">&#34;isActive&#34;</span>: <span style="color:#66d9ef">true</span>,           <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">boolean</span>
-	<span style="color:#f92672">&#34;fullname&#34;</span>: <span style="color:#e6db74">&#34;Homer Simpson&#34;</span> <span style="color:#960050;background-color:#1e0010">//</span> <span style="color:#960050;background-color:#1e0010">string</span>
-}
-</code></pre></div><p>JSON requires 56 bytes to represent a very simple user object, while MessagePack only needs 38 bytes (compression ratio 1.47, yielding a 32% saving in size). See below the output of the serialization process for the above JSON:</p>
-<pre><code>83 a2 69 64 04 a8 69 73 41 63 74 69 76 65 c3 a8 66 75 6c 6c 6e 61 6d 65 ad 48 6f 6d 65 72 20 53 69 6d 70 73 6f 6e
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">&#34;id&#34;</span>: <span style="color:#ae81ff">4</span>,                    <span style="color:#75715e">// integer
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">&#34;isActive&#34;</span>: <span style="color:#66d9ef">true</span>,           <span style="color:#75715e">// boolean
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#f92672">&#34;fullname&#34;</span>: <span style="color:#e6db74">&#34;Homer Simpson&#34;</span> <span style="color:#75715e">// string
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>JSON requires 56 bytes to represent a very simple user object, while MessagePack only needs 38 bytes (compression ratio 1.47, yielding a 32% saving in size). See below the output of the serialization process for the above JSON:</p>
+<pre tabindex="0"><code>83 a2 69 64 04 a8 69 73 41 63 74 69 76 65 c3 a8 66 75 6c 6c 6e 61 6d 65 ad 48 6f 6d 65 72 20 53 69 6d 70 73 6f 6e
 </code></pre><p>We can see how MessagePack serialization works by reading the <a href="https://github.com/msgpack/msgpack/blob/master/spec.md">official specification</a>. Also, we can split the previous hexadecimal representation to emphasize and explain data types as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ae81ff">83</span>                                          <span style="color:#f92672">//</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">-</span>element <span style="color:#66d9ef">map</span>
-a2 <span style="color:#ae81ff">69</span> <span style="color:#ae81ff">64</span>                                    <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">-</span>byte string <span style="color:#e6db74">&#34;id&#34;</span>
-<span style="color:#ae81ff">04</span>                                          <span style="color:#f92672">//</span> integer <span style="color:#ae81ff">4</span>
-a8 <span style="color:#ae81ff">69</span> <span style="color:#ae81ff">73</span> <span style="color:#ae81ff">41</span> <span style="color:#ae81ff">63</span> <span style="color:#ae81ff">74</span> <span style="color:#ae81ff">69</span> <span style="color:#ae81ff">76</span> <span style="color:#ae81ff">65</span>                  <span style="color:#f92672">//</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">-</span>byte string <span style="color:#e6db74">&#34;isActive&#34;</span> 
-c3                                          <span style="color:#f92672">//</span> boolean <span style="color:#66d9ef">true</span>
-a8 <span style="color:#ae81ff">66</span> <span style="color:#ae81ff">75</span> <span style="color:#ae81ff">6</span><span style="color:#66d9ef">c</span> <span style="color:#ae81ff">6</span><span style="color:#66d9ef">c</span> <span style="color:#ae81ff">6</span>e <span style="color:#ae81ff">61</span> <span style="color:#ae81ff">6</span>d <span style="color:#ae81ff">65</span>                  <span style="color:#f92672">//</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">-</span>byte string <span style="color:#e6db74">&#34;fullname&#34;</span>
-ad <span style="color:#ae81ff">48</span> <span style="color:#ae81ff">6</span>f <span style="color:#ae81ff">6</span>d <span style="color:#ae81ff">65</span> <span style="color:#ae81ff">72</span> <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">53</span> <span style="color:#ae81ff">69</span> <span style="color:#ae81ff">6</span>d <span style="color:#ae81ff">70</span> <span style="color:#ae81ff">73</span> <span style="color:#ae81ff">6</span>f <span style="color:#ae81ff">6</span>e   <span style="color:#f92672">//</span> <span style="color:#ae81ff">13</span><span style="color:#f92672">-</span>byte string <span style="color:#e6db74">&#34;Homer Simpson&#34;</span>
-                                            <span style="color:#f92672">//</span> total <span style="color:#ae81ff">38</span> bytes
-</code></pre></div><p>Now it&rsquo;s very simple to figure out the meaning of the sentence « <em>Small integers are encoded into a single byte, and typical short strings require only one extra byte in addition to the strings themselves</em> » reported in the headline of MessagePack website.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ae81ff">83</span>                                          <span style="color:#f92672">//</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">-</span>element <span style="color:#66d9ef">map</span>
+</span></span><span style="display:flex;"><span>a2 <span style="color:#ae81ff">69</span> <span style="color:#ae81ff">64</span>                                    <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">-</span>byte string <span style="color:#e6db74">&#34;id&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">04</span>                                          <span style="color:#f92672">//</span> integer <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span>a8 <span style="color:#ae81ff">69</span> <span style="color:#ae81ff">73</span> <span style="color:#ae81ff">41</span> <span style="color:#ae81ff">63</span> <span style="color:#ae81ff">74</span> <span style="color:#ae81ff">69</span> <span style="color:#ae81ff">76</span> <span style="color:#ae81ff">65</span>                  <span style="color:#f92672">//</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">-</span>byte string <span style="color:#e6db74">&#34;isActive&#34;</span> 
+</span></span><span style="display:flex;"><span>c3                                          <span style="color:#f92672">//</span> boolean <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>a8 <span style="color:#ae81ff">66</span> <span style="color:#ae81ff">75</span> <span style="color:#ae81ff">6</span><span style="color:#66d9ef">c</span> <span style="color:#ae81ff">6</span><span style="color:#66d9ef">c</span> <span style="color:#ae81ff">6</span>e <span style="color:#ae81ff">61</span> <span style="color:#ae81ff">6</span>d <span style="color:#ae81ff">65</span>                  <span style="color:#f92672">//</span> <span style="color:#ae81ff">8</span><span style="color:#f92672">-</span>byte string <span style="color:#e6db74">&#34;fullname&#34;</span>
+</span></span><span style="display:flex;"><span>ad <span style="color:#ae81ff">48</span> <span style="color:#ae81ff">6</span>f <span style="color:#ae81ff">6</span>d <span style="color:#ae81ff">65</span> <span style="color:#ae81ff">72</span> <span style="color:#ae81ff">20</span> <span style="color:#ae81ff">53</span> <span style="color:#ae81ff">69</span> <span style="color:#ae81ff">6</span>d <span style="color:#ae81ff">70</span> <span style="color:#ae81ff">73</span> <span style="color:#ae81ff">6</span>f <span style="color:#ae81ff">6</span>e   <span style="color:#f92672">//</span> <span style="color:#ae81ff">13</span><span style="color:#f92672">-</span>byte string <span style="color:#e6db74">&#34;Homer Simpson&#34;</span>
+</span></span><span style="display:flex;"><span>                                            <span style="color:#f92672">//</span> total <span style="color:#ae81ff">38</span> bytes
+</span></span></code></pre></div><p>Now it&rsquo;s very simple to figure out the meaning of the sentence « <em>Small integers are encoded into a single byte, and typical short strings require only one extra byte in addition to the strings themselves</em> » reported in the headline of MessagePack website.</p>
 <p>The main features of MessagePack are:</p>
 <ul>
 <li>it&rsquo;s designed for network communication and to be transparently converted from and to JSON;</li>
@@ -483,53 +470,53 @@ ad <span style="color:#ae81ff">48</span> <span style="color:#ae81ff">6</span>f <
 <p>Up to this point our reasoning was focused on <strong>space efficiency</strong>, but a good theoretical computing scientist would have criticized us since we didn&rsquo;t mention <strong>time complexity</strong>. In fact, the process of data <em>compression</em> and <em>decompression</em> is not negligible. We can analyze and compare, for example, the time required to parse a JSON document and to unpack a MessagePack document: that&rsquo;s not completely scientific, but it&rsquo;s a start.</p>
 <p>We wrote two <strong><a href="https://nodejs.org/en/">Node.js</a></strong> scripts to execute 1 million JSON parsing and 1 million MessagePack unpacking operations of a <a href="https://github.com/salvatorecordiano/facile-it-message-pack-benchmark/blob/master/document.json">sample document</a> containing the same data in the two formats.</p>
 <p>A simplified version of the code could be something like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// inside script &#34;test_parse_json.js&#34;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1000000</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-    <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">jsonDocument</span>); <span style="color:#75715e">// JSON document parsing
-</span><span style="color:#75715e"></span>}
-
-<span style="color:#75715e">// inside script &#34;test_unpack_msgpack.js&#34;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1000000</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-    <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">unpack</span>(<span style="color:#a6e22e">msgPackDocument</span>); <span style="color:#75715e">// MessagePack document unpacking
-</span><span style="color:#75715e"></span>}
-</code></pre></div><p>To easily profile our scripts we can run them as below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">aiace:msgpack parallel$ time node test_parse_json.js
-
-real	<span style="color:#ae81ff">0</span>m47.<span style="color:#ae81ff">296</span>s
-<span style="color:#66d9ef">user</span>	<span style="color:#ae81ff">0</span>m47.<span style="color:#ae81ff">202</span>s
-sys	<span style="color:#ae81ff">0</span>m0.<span style="color:#ae81ff">059</span>s
-
-aiace:msgpack parallel$ time node test_unpack_msgpack.js
-
-real	<span style="color:#ae81ff">1</span>m47.<span style="color:#ae81ff">244</span>s
-<span style="color:#66d9ef">user</span>	<span style="color:#ae81ff">1</span>m47.<span style="color:#ae81ff">050</span>s
-sys	<span style="color:#ae81ff">0</span>m0.<span style="color:#ae81ff">120</span>s
-</code></pre></div><p>Numbers are self-explanatory: the MessagePack binary is <em>smaller</em> than the minified JSON, but MessagePack deserialization is clearly <em>slower</em> than JSON parsing process.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// inside script &#34;test_parse_json.js&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1000000</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">jsonDocument</span>); <span style="color:#75715e">// JSON document parsing
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// inside script &#34;test_unpack_msgpack.js&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1000000</span>;<span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">msgpack</span>.<span style="color:#a6e22e">unpack</span>(<span style="color:#a6e22e">msgPackDocument</span>); <span style="color:#75715e">// MessagePack document unpacking
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><p>To easily profile our scripts we can run them as below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>aiace:msgpack parallel$ time node test_parse_json.js
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>real	<span style="color:#ae81ff">0</span>m47.<span style="color:#ae81ff">296</span>s
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">user</span>	<span style="color:#ae81ff">0</span>m47.<span style="color:#ae81ff">202</span>s
+</span></span><span style="display:flex;"><span>sys	<span style="color:#ae81ff">0</span>m0.<span style="color:#ae81ff">059</span>s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>aiace:msgpack parallel$ time node test_unpack_msgpack.js
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>real	<span style="color:#ae81ff">1</span>m47.<span style="color:#ae81ff">244</span>s
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">user</span>	<span style="color:#ae81ff">1</span>m47.<span style="color:#ae81ff">050</span>s
+</span></span><span style="display:flex;"><span>sys	<span style="color:#ae81ff">0</span>m0.<span style="color:#ae81ff">120</span>s
+</span></span></code></pre></div><p>Numbers are self-explanatory: the MessagePack binary is <em>smaller</em> than the minified JSON, but MessagePack deserialization is clearly <em>slower</em> than JSON parsing process.</p>
 <p>Before going on, we also need to say that all tests are executed in the following described environment and the full code of this benchmark is free available <a href="https://github.com/salvatorecordiano/facile-it-message-pack-benchmark/">here</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">// Machine
-OS : Darwin 15.6 <span style="color:#f92672">(</span>x64<span style="color:#f92672">)</span>
-RAM: 16.384 MB
-CPU: 2.200 MHz Intel<span style="color:#f92672">(</span>R<span style="color:#f92672">)</span> Core<span style="color:#f92672">(</span>TM<span style="color:#f92672">)</span> i7-4770HQ CPU @ 2.20GHz
-
-// Runtime versions
-aiace:msgpack parallel$ node -v
-v6.8.1
-aiace:msgpack parallel$ npm -v
-3.10.9
-
-// Module versions
-aiace:msgpack parallel$ npm list msgpack
-benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
-└── msgpack@1.0.2
-
-aiace:msgpack parallel$ npm list fs
-benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
-└── fs@0.0.1-security
-
-aiace:msgpack parallel$ npm list assert
-benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
-└── assert@1.4.1
-</code></pre></div><h1 id="conclusions">Conclusions</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>// Machine
+</span></span><span style="display:flex;"><span>OS : Darwin 15.6 <span style="color:#f92672">(</span>x64<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>RAM: 16.384 MB
+</span></span><span style="display:flex;"><span>CPU: 2.200 MHz Intel<span style="color:#f92672">(</span>R<span style="color:#f92672">)</span> Core<span style="color:#f92672">(</span>TM<span style="color:#f92672">)</span> i7-4770HQ CPU @ 2.20GHz
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// Runtime versions
+</span></span><span style="display:flex;"><span>aiace:msgpack parallel$ node -v
+</span></span><span style="display:flex;"><span>v6.8.1
+</span></span><span style="display:flex;"><span>aiace:msgpack parallel$ npm -v
+</span></span><span style="display:flex;"><span>3.10.9
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// Module versions
+</span></span><span style="display:flex;"><span>aiace:msgpack parallel$ npm list msgpack
+</span></span><span style="display:flex;"><span>benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
+</span></span><span style="display:flex;"><span>└── msgpack@1.0.2
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>aiace:msgpack parallel$ npm list fs
+</span></span><span style="display:flex;"><span>benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
+</span></span><span style="display:flex;"><span>└── fs@0.0.1-security
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>aiace:msgpack parallel$ npm list assert
+</span></span><span style="display:flex;"><span>benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
+</span></span><span style="display:flex;"><span>└── assert@1.4.1
+</span></span></code></pre></div><h1 id="conclusions">Conclusions</h1>
 <p>MessagePack allows to save more than 40% of network bandwidth consumption with little more than one line of code. A smaller payload means that less data are transmitted, and that&rsquo;s very useful in <strong>mobile</strong> and <a href="https://en.wikipedia.org/wiki/Internet_of_things"><strong>Internet of Things (IoT)</strong></a> applications, where there&rsquo;s special care in power efficiency; but we should also pay attention to the overall size of each request, to avoid the absurd situation in which the <em>header</em> is larger than the <em>payload</em> (<a href="https://en.wikipedia.org/wiki/Overhead_(computing)">overhead</a>).</p>
 <p>It&rsquo;s important to underline that, while MessagePack is supported by over <a href="http://msgpack.org/#languages">50 programming languages</a>, it doesn&rsquo;t seem to be particularly efficient from a computational perspective, and can be hard to debug due to being non human-readable.</p>
 
@@ -569,29 +556,6 @@ benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
   </footer>
 
 </article>
-
-    <article class="post">
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "facile-it" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-    </article>
 
 
 <ul class="actions pagination">
@@ -748,54 +712,6 @@ benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-08-28'>
-                28 August 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
-                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-07-02'>
-                2 July 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
                     <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
                       <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
@@ -815,6 +731,60 @@ benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
               
               <time class="published" datetime='2024-05-30'>
                 30 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-05-20'>
+                20 May 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+                  
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+              </h3>
+              
+              <time class="published" datetime='2024-03-11'>
+                11 March 2024
               </time>
             </header>
             
@@ -968,7 +938,7 @@ benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/functional-programming/">Functional programming</a>
+                <a href="https://engineering.facile.it/categories/functional-programming/">Functional Programming</a>
                 <span style="float:right;">11</span>
               
             </header>
@@ -1079,7 +1049,7 @@ benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
           <article>
             <header>
               
-                <a href="https://engineering.facile.it/categories/open-source/">Open source</a>
+                <a href="https://engineering.facile.it/categories/open-source/">Open Source</a>
                 <span style="float:right;">7</span>
               
             </header>
@@ -1116,7 +1086,7 @@ benchmark-msgpack@1.0.0 /Users/parallel/Facile/msgpack
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">16</span>
+                <span style="float:right;">14</span>
               
             </header>
           </article>

@@ -4,110 +4,79 @@
     <title>Conferences on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/conferences/</link>
     <description>Recent content in Conferences on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 16 May 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/conferences/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/conferences/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Facile.it devs @ phpDay 2017</title>
       <link>https://engineering.facile.it/blog/eng/php-day-2017/</link>
       <pubDate>Tue, 16 May 2017 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/php-day-2017/</guid>
-      <description>Like clockwork, on May we head up to Verona to attend the phpDay conference; this time it was on May 12th and 13th.
-We met a lot of new people and known fellow PHP developers, and like previous years, we wanted to write down a light summary; like the previous ones, this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.</description>
+      <description>&lt;p&gt;Like clockwork, on May we head up to Verona to attend the &lt;strong&gt;&lt;a href=&#34;https://2017.phpday.it/&#34;&gt;phpDay conference&lt;/a&gt;&lt;/strong&gt;; this time it was on &lt;strong&gt;May 12th and 13th&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;We met a lot of new people and known fellow PHP developers, and like &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;previous&lt;/a&gt; &lt;a href=&#34;https://engineering.facile.it/blog/eng/php-day-2016/&#34;&gt;years&lt;/a&gt;, we wanted to write down a light summary; like the previous ones, this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo; of the conference, but an highlight of the talks that captured most of our attention, or what we found more valuable for our everyday work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Codemotion Milan 2016 in review</title>
       <link>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</link>
       <pubDate>Fri, 02 Dec 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/codemotion-milan-2016-in-review/</guid>
-      <description>«Learn or die». These are the words with which Codemotion Milan 2016 started on the 25th of November. Most of our development team attended this tech conference like the previous year. Moreover Facile.it was present at the event as a sponsor with his stand looking for new talent.
-During the event we also officially announced the second #FacileHack hackathon, which is planned for march 2017.
-This post would be a short recap of some talks in chronological order.</description>
+      <description>&lt;p&gt;&lt;em&gt;«Learn or die»&lt;/em&gt;. These are the words with which &lt;a href=&#34;http://milan2016.codemotionworld.com/&#34;&gt;&lt;strong&gt;Codemotion Milan 2016&lt;/strong&gt;&lt;/a&gt; started on the 25th of November. Most of our development team attended this tech conference like the &lt;a href=&#34;http://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/&#34;&gt;previous year&lt;/a&gt;. Moreover &lt;a href=&#34;http://www.facile.it&#34;&gt;Facile.it&lt;/a&gt; was present at the event as a sponsor with his stand looking for new talent.&lt;/p&gt;&#xA;&lt;p&gt;During the event we also officially &lt;strong&gt;announced the second &lt;a href=&#34;http://hackathon.facile.it/&#34;&gt;#FacileHack&lt;/a&gt; hackathon&lt;/strong&gt;, which is planned for &lt;strong&gt;march 2017&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;This post would be a short recap of some talks in chronological order. The choice of the talks is based on the personal taste of the various members of the editorial staff of Facile.it Engineering blog. Enjoy!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Looking back at Symfony Day Rome 2016</title>
       <link>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</link>
       <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/looking-back-at-symfony-day-rome-2016/</guid>
-      <description>Every year the GrUSP, in cooperation with one of the italian PHP user groups, organizes the italian Symfony conference. This year the event was organized in the Capital on 28th October with the help of PHP User Group Roma, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.</description>
+      <description>&lt;p&gt;Every year the &lt;a href=&#34;http://www.grusp.org/&#34;&gt;GrUSP&lt;/a&gt;, in cooperation with one of the italian PHP user groups, organizes the italian &lt;strong&gt;&lt;a href=&#34;http://symfony.com/&#34;&gt;Symfony&lt;/a&gt;&lt;/strong&gt; conference. This year the &lt;a href=&#34;http://2016.symfonyday.it/&#34;&gt;event&lt;/a&gt; was organized in the Capital on 28th October with the help of &lt;a href=&#34;http://roma.grusp.org/&#34;&gt;PHP User Group Roma&lt;/a&gt;, and a part of Facile Dev Team was there for the occasion. In Facile we believe attending to events like this is a good way to learn new things, share practical experiences and improve our network.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facile.it devs @ PhpDay 2016</title>
       <link>https://engineering.facile.it/blog/eng/php-day-2016/</link>
       <pubDate>Tue, 31 May 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/php-day-2016/</guid>
-      <description>Almost like a nice tradition, we went to the PHP Day conference this year as well; this time too it was held in Verona, on May 13th and 14th.
-We participated and attended numerous talks and, as last year, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.</description>
+      <description>&lt;p&gt;Almost like a nice tradition, we went to the &lt;strong&gt;&lt;a href=&#34;http://2016.phpday.it/&#34;&gt;PHP Day conference&lt;/a&gt;&lt;/strong&gt; this year as well; this time too it was held in Verona, on &lt;strong&gt;May 13th and 14th&lt;/strong&gt;.&lt;/p&gt;&#xA;&lt;p&gt;We participated and attended numerous talks and, &lt;a href=&#34;https://engineering.facile.it/blog/ita/php-day-2015/&#34;&gt;as last year&lt;/a&gt;, we wanted to write a light summary; this won&amp;rsquo;t be a full &amp;ldquo;review&amp;rdquo;, but our intent instead is to highlight what captured our interest most, or what we found more valuable for our everyday work.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Droidcon It 2016</title>
       <link>https://engineering.facile.it/blog/eng/droidcon-it-2016/</link>
       <pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/droidcon-it-2016/</guid>
-      <description>The third edition of Droidcon IT was, as expected, a great conference, full of interesting talks and people coming from all over the world. We saw a lot of GDEs (Google Developer Expert) and also some Developer Advocates from Google, although it was not organized directly by the company. Back in March the Android team surprisingly released the brand new N Developer Preview earlier than expected, so this year we were already able to talk about the new features in Android N and analyze them.</description>
+      <description>&lt;p&gt;&lt;img src=&#34;https://engineering.facile.it/images/droidconit-recap/logo_droidcon_it.png&#34; alt=&#34;Droidcon It&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;The third edition of &lt;a href=&#34;http://it.droidcon.com/2016/&#34;&gt;Droidcon IT&lt;/a&gt; was, as expected, a great conference, full of interesting talks and people coming from all over the world. We saw a lot of GDEs (&lt;a href=&#34;https://developers.google.com/experts/all/technology/android&#34;&gt;Google Developer Expert&lt;/a&gt;) and also some Developer Advocates from Google, although it was not organized directly by the company. Back in March the Android team surprisingly released the brand new &lt;strong&gt;N Developer Preview&lt;/strong&gt; earlier than expected, so this year we were already able to talk about the new features in Android N and analyze them. Furthermore, there was talk of &lt;strong&gt;Kotlin&lt;/strong&gt;, &lt;strong&gt;RxJava&lt;/strong&gt; and a lot of other useful and interesting topics.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facile.it devs @ Codemotion Milan 2015</title>
       <link>https://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</link>
       <pubDate>Thu, 26 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/facile-it-devs-codemotion-milan-2015/</guid>
-      <description>L&amp;rsquo;appuntamento con il Codemotion di quest&amp;rsquo;anno a Milano è stato particolarmente ricco: tante tracce, moltissimi contenuti suddivisi tra talk tecnici, workshop e keynote, e alcuni ospiti illustri, tra cui il celebre Rasmus Lerdorf, creatore del linguaggio PHP. Come già fatto per il PHP Day 2015, proponiamo le nostre impressioni sulla conferenza, citando i talk che ci hanno colpito maggiormente: la scelta dei talk è basata sul gusto personale dei vari membri della redazione di Facile.</description>
+      <description>&lt;p&gt;L&amp;rsquo;appuntamento con il &lt;a href=&#34;http://milan2015.codemotionworld.com&#34;&gt;Codemotion&lt;/a&gt; di quest&amp;rsquo;anno a Milano è stato particolarmente &lt;strong&gt;ricco&lt;/strong&gt;: tante tracce, moltissimi contenuti suddivisi tra talk tecnici, workshop e keynote, e alcuni ospiti illustri, tra cui il celebre &lt;a href=&#34;https://twitter.com/rasmus&#34;&gt;Rasmus Lerdorf&lt;/a&gt;, creatore del linguaggio &lt;strong&gt;PHP&lt;/strong&gt;. Come già fatto per il &lt;a href=&#34;http://engineering.facile.it/php-day-2015/&#34;&gt;PHP Day 2015&lt;/a&gt;, proponiamo le nostre impressioni sulla conferenza, citando i talk che ci hanno colpito maggiormente: la scelta dei talk è basata sul gusto personale dei vari membri della redazione di Facile.it Engineering, e le considerazioni esposte non vanno lette come recensioni, ma come riflessioni di vario genere sulle tematiche trattate, volte a stimolare nei lettori l&amp;rsquo;interesse a &lt;strong&gt;partecipare&lt;/strong&gt; a conferenze come il Codemotion.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Paraunit: test paralleli, Doctrine e le fixture</title>
       <link>https://engineering.facile.it/blog/ita/paraunit/</link>
       <pubDate>Fri, 09 Oct 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/paraunit/</guid>
-      <description>Questo articolo è la sintesi di un talk presentato al SymfonyDay 2015; potete trovare le slide qui.
-I test e la loro durata Sviluppare applicazioni scrivendo test e facendo Test Driven Development è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa crescere la suite di test del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.</description>
+      <description>&lt;p&gt;&lt;em&gt;Questo articolo è la sintesi di un talk presentato al &lt;a href=&#34;http://2015.symfonyday.it/&#34;&gt;SymfonyDay 2015&lt;/a&gt;; potete trovare le slide &lt;a href=&#34;http://jean85.github.io/slides/2015-10-paraunit-symfonyday/index.html&#34;&gt;qui&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h4 id=&#34;i-test-e-la-loro-durata&#34;&gt;I test e la loro durata&lt;/h4&gt;&#xA;&lt;p&gt;Sviluppare applicazioni scrivendo &lt;strong&gt;test&lt;/strong&gt; e facendo &lt;a href=&#34;https://it.wikipedia.org/wiki/Test_driven_development&#34;&gt;Test Driven Development&lt;/a&gt; è un&amp;rsquo;ottima pratica, e dà parecchie soddisfazioni. Con l&amp;rsquo;andare del tempo, si fa &lt;strong&gt;crescere la suite di test&lt;/strong&gt; del proprio progetto, cercando di aumentarne la copertura e l&amp;rsquo;efficacia e si scrivono nuovi test corrispondenti alle nuove funzionalità che vengono man mano sviluppate.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Php Summer Camp 2015</title>
       <link>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</link>
       <pubDate>Tue, 08 Sep 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/php-summer-camp-2015/</guid>
-      <description>Introduzione Dal 26 al 29 agosto 2015 ho avuto l&amp;rsquo;occasione di partecipare al PhpSummerCamp in Rovigno (Croazia). Negli stessi giorni e nello stesso luogo si è svolto anche il SummerCamp EzPublish. Ciò ha consentito di accrescere ulteriormente la platea di partecipanti con cui è stato possibile condividere idee e soluzioni.
-L&amp;rsquo;evento è costituito da numerosi workshop orientati allo sviluppo di applicazioni con il framework PHP Symfony. Le mattine e le prime metà del pomeriggio erano interamente dedicati ai workshop.</description>
+      <description>&lt;h1 id=&#34;introduzione&#34;&gt;Introduzione&lt;/h1&gt;&#xA;&lt;p&gt;Dal 26 al 29 agosto 2015 ho avuto l&amp;rsquo;occasione di partecipare al &lt;a href=&#34;http://2015.phpsummercamp.com/&#34;&gt;&lt;strong&gt;PhpSummerCamp&lt;/strong&gt;&lt;/a&gt; in Rovigno (Croazia).&#xA;Negli stessi giorni e nello stesso luogo si è svolto anche il &lt;a href=&#34;http://2015.ezsummercamp.com/&#34;&gt;&lt;strong&gt;SummerCamp EzPublish&lt;/strong&gt;&lt;/a&gt;.&#xA;Ciò ha consentito di accrescere ulteriormente la platea di partecipanti con cui è stato possibile condividere idee e soluzioni.&lt;/p&gt;&#xA;&lt;p&gt;L&amp;rsquo;evento è costituito da numerosi &lt;strong&gt;workshop&lt;/strong&gt; orientati allo sviluppo di applicazioni con il &lt;a href=&#34;http://symfony.com&#34;&gt;framework PHP Symfony&lt;/a&gt;.&#xA;Le mattine e le prime metà del pomeriggio erano interamente dedicati ai workshop.&#xA;Nel tempo rimanente venivano condotte varie attività dedicate alla community e al confronto tra i partecipanti.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>MiniIAD Vimercate 2015: reportage</title>
       <link>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</link>
       <pubDate>Wed, 15 Jul 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/miniiad-vimercate-2015-reportage/</guid>
-      <description>Lo scorso 23 Maggio 2015, si è tenuto a Vimercate, presso la sede di Alcatel-Lucent all&amp;rsquo;Energy Park, il Mini Italian Agile Day.
-Anche in occasione di questo evento Facile.it si è presentata con una piccola delegazione. Sono andato all&amp;rsquo;incontro cercando di polarizzare bene le mie aspettative della giornata. Da un evento della comunità Agile mi aspetto un confronto, una crescita, nonché l&amp;rsquo;occasione di incontrare qualche volto amico, qualche ex collega o qualche guru a cui chiedere consiglio!</description>
+      <description>&lt;p&gt;Lo scorso 23 Maggio 2015, si è tenuto a Vimercate, presso la sede di Alcatel-Lucent all&amp;rsquo;Energy Park, il &lt;a href=&#34;http://www.agileday.it/mini/2015/vimercate/&#34;&gt;Mini Italian Agile Day&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;Anche in occasione di questo evento Facile.it si è presentata con una piccola delegazione. Sono andato all&amp;rsquo;incontro cercando di polarizzare bene le mie aspettative della giornata. Da un evento della &lt;strong&gt;comunità Agile&lt;/strong&gt; mi aspetto un &lt;strong&gt;confronto&lt;/strong&gt;, una &lt;strong&gt;crescita&lt;/strong&gt;, nonché l&amp;rsquo;occasione di incontrare qualche volto amico, qualche ex collega o qualche guru a cui chiedere consiglio!&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Facile.it devs @ PHP Day 2015</title>
       <link>https://engineering.facile.it/blog/ita/php-day-2015/</link>
       <pubDate>Tue, 19 May 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/php-day-2015/</guid>
-      <description>Anche quest&amp;rsquo;anno si è svolto il PHP Day a Verona, il 15 e 16 maggio. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.
-In questo breve articolo vorremmo citare quelli che in qualche maniera ci hanno colpito, per motivi tecnici e non, per dare l&amp;rsquo;opportunità a chi non ha potuto partecipare di sapere qualcosa di più, o per dare un assaggio della conferenza a chi non ha mai partecipato a qualcosa del genere e, speriamo, invogliarlo a far parte della community!</description>
+      <description>&lt;p&gt;Anche quest&amp;rsquo;anno si è svolto il &lt;strong&gt;&lt;a href=&#34;http://2015.phpday.it/&#34;&gt;PHP Day&lt;/a&gt; a Verona, il 15 e 16 maggio&lt;/strong&gt;. Noi sviluppatori di Facile.it abbiamo partecipato con un folto gruppo e seguito i vari talks.&lt;/p&gt;&#xA;&lt;p&gt;In questo breve articolo vorremmo citare quelli che in qualche maniera &lt;strong&gt;ci hanno colpito&lt;/strong&gt;, per motivi tecnici e non, per dare l&amp;rsquo;opportunità a chi non ha potuto partecipare di sapere qualcosa di più, o per dare &lt;strong&gt;un assaggio della conferenza&lt;/strong&gt; a chi non ha mai partecipato a qualcosa del genere e, speriamo, invogliarlo a far parte della community!&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

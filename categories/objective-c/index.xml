@@ -4,32 +4,23 @@
     <title>Objective-C on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/objective-c/</link>
     <description>Recent content in Objective-C on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Nov 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/objective-c/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/objective-c/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Optionals in Objective-C</title>
       <link>https://engineering.facile.it/blog/eng/optionals-in-objective-c/</link>
       <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/optionals-in-objective-c/</guid>
-      <description>Objective-C is not going anywhere. While Swift is most certainly the new hotness for iOS and OS X programming, there are some concrete reasons to stick with Objective-C for a while:
- Objective-C based projects still need maintenance and new features to be added, and mixing Swift and Objective-C, while possible, can be tricky and possibly unconvenient, due to the dynamic nature of the latter; Swift is changing rapidly, has still some bugs and performance problems, and still lacks some features that professionals need, while Objective-C is mature and has a strong community; some may prefer a more dynamic language, and Objective-C support from Apple is still strong;  Personally, while I naturally lean towards a more static, type-first approach to programming, from time to time I like to work in a more dynamic environment, so both for preference and for business needs, I still didn&amp;rsquo;t put Objective-C completely away.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Objective-C is not going anywhere&lt;/strong&gt;. While Swift is most certainly the new hotness for iOS and OS X programming, there are some concrete reasons to stick with Objective-C for a while:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Objective-C based projects still need maintenance and new features to be added, and mixing Swift and Objective-C, while possible, &lt;strong&gt;can be tricky&lt;/strong&gt; and possibly unconvenient, due to the dynamic nature of the latter;&lt;/li&gt;&#xA;&lt;li&gt;Swift is changing rapidly, has still some bugs and &lt;strong&gt;performance problems&lt;/strong&gt;, and still lacks some features that professionals need, while Objective-C is mature and has a strong community;&lt;/li&gt;&#xA;&lt;li&gt;some may &lt;strong&gt;prefer a more dynamic language&lt;/strong&gt;, and Objective-C support from Apple &lt;a href=&#34;https://netguru.co/blog/objective-c-generics&#34;&gt;is still strong&lt;/a&gt;;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Personally, while I naturally lean towards a more static, &lt;a href=&#34;http://engineering.facile.it/type-first-development-in-swift/&#34;&gt;type-first&lt;/a&gt; approach to programming, from time to time I like to work in a more dynamic environment, so both for preference and for business needs, I still didn&amp;rsquo;t put Objective-C completely away. But just after a few weeks of Swift I found myself missing one of the most powerful features of the language: &lt;a href=&#34;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330&#34;&gt;Optionals&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Optionals in Objective-C</title>
       <link>https://engineering.facile.it/blog/ita/optionals-in-objective-c/</link>
       <pubDate>Mon, 09 Nov 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/optionals-in-objective-c/</guid>
-      <description>Objective-C vivrà ancora per molto. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&amp;rsquo;:
- progetti esistenti basati su Objective-C richiedono ancora mantenimento e probabile aggiunta di nuove funzionalità, e anche se è tecnicamente possibile mescolare i linguaggi, la cosa può risultare poco conveniente per via della natura molto dinamica di Objective-C; Swift sta cambiando rapidamente, presenta ancora alcuni bug e problemi di performance, e il suo workflow manca ancora di alcune feature fondamentali per i professionisti, mentre Objective-C è un linguaggio maturo, con una community molto vivace; alcuni possono preferire un linguaggio più dinamico, e il supporto di Apple su Objective-C è ancora forte;  Personalmente ho la tendenza a preferire linguaggi più statici, e un approccio type-first alla programmazione, ma di tanto in tanto mi piace lavorare in un ambiente più dinamico, quindi, sia per preferenza personale che per esigenze di business, non ho ancora messo Objective-C da parte.</description>
+      <description>&lt;p&gt;&lt;strong&gt;Objective-C vivrà ancora per molto&lt;/strong&gt;. Nonostante Swift sia il nuovo punto di riferimento per lo sviluppo iOS e OS X, ci sono ragioni concrete per scegliere di continuare a sviluppare in Objective-C, almeno per un po&#39;:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;progetti esistenti basati su Objective-C richiedono ancora mantenimento e probabile aggiunta di nuove funzionalità, e anche se è tecnicamente possibile mescolare i linguaggi, la cosa può risultare &lt;strong&gt;poco conveniente&lt;/strong&gt; per via della natura molto dinamica di Objective-C;&lt;/li&gt;&#xA;&lt;li&gt;Swift sta cambiando rapidamente, presenta ancora alcuni bug e &lt;strong&gt;problemi di performance&lt;/strong&gt;, e il suo workflow manca ancora di alcune feature fondamentali per i professionisti, mentre Objective-C è un linguaggio maturo, con una community molto vivace;&lt;/li&gt;&#xA;&lt;li&gt;alcuni possono &lt;strong&gt;preferire un linguaggio più dinamico&lt;/strong&gt;, e il supporto di Apple su Objective-C è &lt;a href=&#34;https://netguru.co/blog/objective-c-generics&#34;&gt;ancora forte&lt;/a&gt;;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Personalmente ho la tendenza a preferire linguaggi più statici, e un approccio &lt;a href=&#34;http://engineering.facile.it/type-first-development-in-swift/&#34;&gt;type-first&lt;/a&gt; alla programmazione, ma di tanto in tanto mi piace lavorare in un ambiente più &lt;em&gt;dinamico&lt;/em&gt;, quindi, sia per preferenza personale che per esigenze di business, non ho ancora messo Objective-C da parte. Ma dopo poche settimane di Swift, mi è mancata subito una delle sue funzionalità più potenti: gli &lt;a href=&#34;https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330&#34;&gt;Optionals&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

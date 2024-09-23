@@ -1,33 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Code reuse on Facile.it Engineering</title>
+    <title>Code Reuse on Facile.it Engineering</title>
     <link>https://engineering.facile.it/categories/code-reuse/</link>
-    <description>Recent content in Code reuse on Facile.it Engineering</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Code Reuse on Facile.it Engineering</description>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 09 Dec 2015 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://engineering.facile.it/categories/code-reuse/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <atom:link href="https://engineering.facile.it/categories/code-reuse/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code reuse: a primer</title>
       <link>https://engineering.facile.it/blog/eng/code-reuse-a-primer/</link>
       <pubDate>Wed, 09 Dec 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/eng/code-reuse-a-primer/</guid>
-      <description>Last time we looked at a possible implementation for the Optional type in Objective-C; while the main point was to port to Objective-C a tool that&amp;rsquo;s frequently used in Swift, making use of the Optional class can be considered an application of a much more general concept: code reuse. In fact, Optional is not tied to a particular domain, and can be reused over and over again in multiple projects: that&amp;rsquo;s what actually happens in Swift.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://engineering.facile.it/optionals-in-objective-c/&#34;&gt;Last time&lt;/a&gt; we looked at a possible implementation for the &lt;a href=&#34;https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330&#34;&gt;Optional&lt;/a&gt; type in Objective-C; while the main point was to port to Objective-C a tool that&amp;rsquo;s frequently used in Swift, making use of the &lt;code&gt;Optional&lt;/code&gt; class can be considered an application of a much more general concept: &lt;strong&gt;code reuse&lt;/strong&gt;. In fact, &lt;code&gt;Optional&lt;/code&gt; is not tied to a particular domain, and can be reused over and over again in multiple projects: that&amp;rsquo;s what actually happens in Swift. But, to think about it, that&amp;rsquo;s what happens for a wide range of &lt;em&gt;classes&lt;/em&gt; in Objective-C, or &lt;em&gt;types&lt;/em&gt; in Swift: for example, &lt;code&gt;NSArray&lt;/code&gt; and &lt;code&gt;Array&lt;/code&gt; are both constructs that expose a certain interface, have a certain implementation, and are reused multiple times within methods and functions. And again, &lt;code&gt;NSArray&lt;/code&gt; and &lt;code&gt;Array&lt;/code&gt; are not tied to a particular domain, and have two important properties:&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Codice riusabile: un primer</title>
       <link>https://engineering.facile.it/blog/ita/codice-riusabile-un-primer/</link>
       <pubDate>Wed, 09 Dec 2015 00:00:00 +0000</pubDate>
-      
       <guid>https://engineering.facile.it/blog/ita/codice-riusabile-un-primer/</guid>
-      <description>L&amp;rsquo;ultima volta abbiamo visto una possibile implementazione del tipo Optional in Objective-C; l&amp;rsquo;obiettivo primario dell&amp;rsquo;articolo era quello di importare in Objective-C uno strumento frequentemente utilizzato in Swift, ma usare una classe come Optional può essere considerato un&amp;rsquo;applicazione di un concetto molto più generale: il riutilizzo del codice. In effetti, Optional non è legato a un particolare dominio, e può essere riutilizzato più e più volte in molti progetti: questo è esattamente ciò che accade in Swift.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;http://engineering.facile.it/optionals-in-objective-c-ita/&#34;&gt;L&amp;rsquo;ultima volta&lt;/a&gt; abbiamo visto una possibile implementazione del tipo &lt;a href=&#34;https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330&#34;&gt;Optional&lt;/a&gt; in Objective-C; l&amp;rsquo;obiettivo primario dell&amp;rsquo;articolo era quello di importare in Objective-C uno strumento frequentemente utilizzato in Swift, ma usare una classe come &lt;code&gt;Optional&lt;/code&gt; può essere considerato un&amp;rsquo;applicazione di un concetto molto più generale: il &lt;strong&gt;riutilizzo del codice&lt;/strong&gt;. In effetti, &lt;code&gt;Optional&lt;/code&gt; non è legato a un particolare dominio, e può essere riutilizzato più e più volte in molti progetti: questo è esattamente ciò che accade in Swift. Ma a pensarci bene, questo è ciò che accade per una grande varietà di &lt;em&gt;classi&lt;/em&gt; in Objective-C (e di &lt;em&gt;tipi&lt;/em&gt; in Swift): ad esempio, &lt;code&gt;NSArray&lt;/code&gt; e &lt;code&gt;Array&lt;/code&gt; sono entrambi costrutti che espongono una specifica interfaccia, possiedono una certa implementazione, e vengono riutilizzati continuamente in metodi e funzioni. &lt;code&gt;NSArray&lt;/code&gt; e &lt;code&gt;Array&lt;/code&gt; non sono legati a un particolare dominio, e possiedono due importanti caratteristiche:&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

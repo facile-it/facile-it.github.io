@@ -6,8 +6,22 @@
     <description>Recent content in Blogs on Facile.it Engineering</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 May 2024 17:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Aug 2024 17:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Venerdì Protetto | July edition</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto12-7-2024/</link>
+      <pubDate>Wed, 28 Aug 2024 17:00:00 +0000</pubDate>
+      <guid>https://engineering.facile.it/blog/eng/v-protetto12-7-2024/</guid>
+      <description>&lt;h1 id=&#34;innovating-for-a-cleaner-tomorrow-our-company-hackathon-experience&#34;&gt;Innovating for a cleaner tomorrow: our company hackathon experience&lt;/h1&gt;&#xA;&lt;p&gt;In today’s fast-paced tech landscape, &lt;em&gt;innovation often thrives in unconventional environments&lt;/em&gt;. One such event that has gained popularity in recent years is the &lt;em&gt;hackathon&lt;/em&gt;. A hackathon is a collaborative event that brings together people from different backgrounds to brainstorm and create innovative solutions to specific challenges, all within a limited timeframe. These events foster a culture of creativity, teamwork, and rapid problem-solving, making them invaluable for companies looking to harness the collective intelligence of their employees.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Venerdì Protetto | June edition</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto14-6-2024/</link>
+      <pubDate>Tue, 02 Jul 2024 09:00:00 +0000</pubDate>
+      <guid>https://engineering.facile.it/blog/eng/v-protetto14-6-2024/</guid>
+      <description>&lt;p&gt;This page contains the abstracts of the talks held during the latest Venerdì Protetto on June 14, 2024.&lt;/p&gt;&#xA;&lt;p&gt;Topics:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#big-project-management&#34;&gt;Big project management&lt;/a&gt; by &lt;a href=&#34;https://www.linkedin.com/in/stefano-bosio-16679b26/?originalSubdomain=it&#34;&gt;Stefano Bosio&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#contribution-ladder&#34;&gt;Contribution ladder&lt;/a&gt; by &lt;a href=&#34;https://www.linkedin.com/in/leonardo-podda/&#34;&gt;Leonardo Podda&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://www.linkedin.com/in/alessandro-lai-09440922/&#34;&gt;Alessandro Lai&lt;/a&gt;&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;a href=&#34;#solid-foundations-for-solid-growth&#34;&gt;Solid foundations for solid growth&lt;/a&gt; by &lt;a href=&#34;https://www.linkedin.com/in/dometec/?originalSubdomain=it&#34;&gt;Domenico Briganti&lt;/a&gt; (&lt;a href=&#34;https://www.kalpa.it/about-us/&#34;&gt;Kalpa.it&lt;/a&gt;)&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;br /&gt;&#xA;&lt;h2 id=&#34;big-project-management&#34;&gt;Big project management&lt;/h2&gt;&#xA;&lt;h3 id=&#34;what-really-matters&#34;&gt;What really matters?&lt;/h3&gt;&#xA;&lt;p&gt;&lt;sup&gt;by &lt;a href=&#34;https://www.linkedin.com/in/stefano-bosio-16679b26/?originalSubdomain=it&#34;&gt;Stefano Bosio&lt;/a&gt;&lt;sup&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href= &#34;/images/venerd%C3%AC_protetto/vp_managingbigprojects.png?raw=true&#34; target=&#34;_blank&#34;&gt;&lt;img align=&#34;right&#34; style=&#34;width:35%; margin-left: 0.5em&#34; src=&#34;https://engineering.facile.it/images/venerd%C3%AC_protetto/vp_managingbigprojects.png?raw=true&#34; alt=&#34;Alt text for Image_a&#34; title=&#34;Title of Image_a&#34; /&gt;&#xA;&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;This presentation explored the primary technical hurdles of managing large IT projects, including technical challenges, planning, time management, technical debt, documenting, testing, and rollout strategy.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Hack the Box Experience</title>
       <link>https://engineering.facile.it/blog/eng/hack-the-box-experience/</link>

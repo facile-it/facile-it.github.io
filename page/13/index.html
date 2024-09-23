@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2024",
-        "datePublished": "2024-05-30 17:00:00 \u002b0000 UTC",
-        "dateModified" : "2024-05-30 17:00:00 \u002b0000 UTC",
+        "datePublished": "2024-08-28 17:00:00 \u002b0000 UTC",
+        "dateModified" : "2024-08-28 17:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -87,8 +87,8 @@
         
   <meta itemprop="name" content="Facile.it Engineering">
   <meta itemprop="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
-  <meta itemprop="datePublished" content="2024-05-30T17:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-05-30T17:00:00+00:00">
+  <meta itemprop="datePublished" content="2024-08-28T17:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-08-28T17:00:00+00:00">
 
         
             
@@ -244,35 +244,35 @@
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-08-28'>
+                                    August 28, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-07-02'>
+                                    July 2, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-05-20'>
-                                    May 20, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-03-11'>
-                                    March 11, 2024</time>
                             </header>
                             
 
@@ -296,6 +296,333 @@
     
     <div id="main">
         
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/eng/write-filesystem-fuse/">Write a filesystem with FUSE</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2016-01-11'>
+            11 January 2016
+        </time>
+
+        
+            <a href="/authors/lorenzo/" class="author">
+            
+                <span class="name">Lorenzo Fontana</span>
+                <img src="https://www.gravatar.com/avatar/3460c18dc12b30037f8937bce6641c4b" alt="Lorenzo Fontana avatar" />
+            
+            </a>
+        
+
+        
+            <p>8 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  <p><p>During the past year I experimented a lot with file systems in Userspace using FUSE, I wrote this post to share my thoughts about what I did and to give you a starting point to do something by yourself.</p>
+<h1 id="introduction">Introduction</h1>
+<p>A filesystem is that piece of software that is in charge of storing, organizing and generally taking care of data represented as files and directories.
+If you are using a device to read this post you are probably using at least one filesystem at the moment.</p></p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/eng/write-filesystem-fuse/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa-solid fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/fuse">Fuse</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/filesystem">Filesystem</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/c">C</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/cmake">CMake</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fwrite-filesystem-fuse%2f&amp;text=Write%20a%20filesystem%20with%20FUSE&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa-brands fa-square-x-twitter"></i>
+    <p>X</p>
+    </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fwrite-filesystem-fuse%2f" target="_blank" class="share-btn facebook">
+    <i class="fa-brands fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fwrite-filesystem-fuse%2f&amp;title=Write%20a%20filesystem%20with%20FUSE" target="_blank" class="share-btn reddit">
+    <i class="fa-brand fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fwrite-filesystem-fuse%2f&amp;title=Write%20a%20filesystem%20with%20FUSE" target="_blank" class="share-btn linkedin">
+      <i class="fa-brand fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fwrite-filesystem-fuse%2f&amp;title=Write%20a%20filesystem%20with%20FUSE" target="_blank" class="share-btn stumbleupon">
+    <i class="fa-brand fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fwrite-filesystem-fuse%2f&amp;description=Write%20a%20filesystem%20with%20FUSE" target="_blank" class="share-btn pinterest">
+    <i class="fa-brand fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fwrite-filesystem-fuse%2f" target="_blank" class="share-btn email">
+    <i class="fa-solid fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/ita/puli-universal-packages-for-php/">Puli: Universal Packages for PHP</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-12-15'>
+            15 December 2015
+        </time>
+
+        
+            <a href="/authors/sergio/" class="author">
+            
+                <span class="name">Sergio Santoro</span>
+                <img src="https://www.gravatar.com/avatar/b2700e7cbb3c4180f2053ed342bcc9c9?s=250&amp;d=mm&amp;r=x" alt="Sergio Santoro avatar" />
+            
+            </a>
+        
+
+        
+            <p>6 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  <p><h2 id="composer-e-lecosistema-php">Composer e l&rsquo;ecosistema PHP</h2>
+<p>L&rsquo;ecosistema PHP è notevolmente cambiato negli ultimi anni grazie all&rsquo;introduzione di <em>Composer</em>.
+Esso ha definito degli standard per risolvere problemi comuni come l&rsquo;autoloading e la gestione di pacchetti e dipendenze.
+In questi ultimi anni si è assistito ad un proliferare di numerose componenti software riusabili che hanno significativamente modificato le strategie di sviluppo.</p>
+<p>Nonostante Composer si sia evoluto molto, in alcuni contesti le sue funzionalità risultano essere limitanti e incomplete.
+I framework e i pacchetti più complessi hanno bisogno di una gestione personalizzata delle dipendenze. Generalmente sono necessarie operazioni di configurazione e registrazione. Ciò è specialmente vero per pacchetti core dei framework come i <em>template engines</em>.
+Composer, inoltre, possiede una cattiva gestione delle risorse non PHP. I file di configurazione devono essere gestiti manualmente oppure è necessario adottare standard strettamente legati a ciascun framework.</p></p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/ita/puli-universal-packages-for-php/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa-solid fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/php">PHP</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/open-source">Open Source</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fpuli-universal-packages-for-php%2f&amp;text=Puli%3a%20Universal%20Packages%20for%20PHP&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa-brands fa-square-x-twitter"></i>
+    <p>X</p>
+    </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fpuli-universal-packages-for-php%2f" target="_blank" class="share-btn facebook">
+    <i class="fa-brands fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fpuli-universal-packages-for-php%2f&amp;title=Puli%3a%20Universal%20Packages%20for%20PHP" target="_blank" class="share-btn reddit">
+    <i class="fa-brand fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fpuli-universal-packages-for-php%2f&amp;title=Puli%3a%20Universal%20Packages%20for%20PHP" target="_blank" class="share-btn linkedin">
+      <i class="fa-brand fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fpuli-universal-packages-for-php%2f&amp;title=Puli%3a%20Universal%20Packages%20for%20PHP" target="_blank" class="share-btn stumbleupon">
+    <i class="fa-brand fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fpuli-universal-packages-for-php%2f&amp;description=Puli%3a%20Universal%20Packages%20for%20PHP" target="_blank" class="share-btn pinterest">
+    <i class="fa-brand fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fpuli-universal-packages-for-php%2f" target="_blank" class="share-btn email">
+    <i class="fa-solid fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
         
             <article class="post">
   <header>
@@ -781,336 +1108,6 @@
 </section>
 
         
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/ita/facilehack-2015/">#FacileHack 2015</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2015-11-25'>
-            25 November 2015
-        </time>
-
-        
-            <a href="/authors/daniele/" class="author">
-            
-                <span class="name">Daniele Contini</span>
-                <img src="/images/avatar-daniele.jpg" alt="Daniele Contini avatar" />
-            
-            </a>
-        
-
-        
-            <p>1 minute read</p>
-        
-    </div>
-</header>
-
-  
-
-  <p><p>Sono stati due giorni ricchi di emozioni quelli trascorsi con i partecipanti di #FacileHack, il primo hackathon organizzato da Facile.it.
-Abbiamo visto impegno nella competizione, talenti diversi e complementari tra loro, passione per la tecnologia, serietà e molto caffè&hellip; momenti che vogliamo rivivere insieme a voi con questo video.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7B8NtkvNXlQ" frameborder="0" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oWWJX5WUZ8A" frameborder="0" allowfullscreen></iframe>
-<p>Grazie a tutti!</p></p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/blog/ita/facilehack-2015/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa-solid fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/hackathon">Hackathon</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
-            </header>
-            
-
-
-
-<li>
-  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2015%2f&amp;text=%23FacileHack%202015&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa-brands fa-square-x-twitter"></i>
-    <p>X</p>
-    </a>
-</li>
-
-
-
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2015%2f" target="_blank" class="share-btn facebook">
-    <i class="fa-brands fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2015%2f&amp;title=%23FacileHack%202015" target="_blank" class="share-btn reddit">
-    <i class="fa-brand fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2015%2f&amp;title=%23FacileHack%202015" target="_blank" class="share-btn linkedin">
-      <i class="fa-brand fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2015%2f&amp;title=%23FacileHack%202015" target="_blank" class="share-btn stumbleupon">
-    <i class="fa-brand fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2015%2f&amp;description=%23FacileHack%202015" target="_blank" class="share-btn pinterest">
-    <i class="fa-brand fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ffacilehack-2015%2f" target="_blank" class="share-btn email">
-    <i class="fa-solid fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-
-        </ul>
-    </section>
-</section>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/eng/optionals-in-objective-c/">Optionals in Objective-C</a></h2>
-        
-        
-        
-            <p class="translated-article">
-                Questo articolo è disponibile anche
-                <a href="/blog/ita/optionals-in-objective-c/">in italiano</a>
-            </p>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2015-11-09'>
-            9 November 2015
-        </time>
-
-        
-            <a href="/authors/elviro/" class="author">
-            
-                <span class="name">Elviro Rocca</span>
-                <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" />
-            
-            </a>
-        
-
-        
-            <p>14 minute read</p>
-        
-    </div>
-</header>
-
-  
-
-  <p><p><strong>Objective-C is not going anywhere</strong>. While Swift is most certainly the new hotness for iOS and OS X programming, there are some concrete reasons to stick with Objective-C for a while:</p>
-<ul>
-<li>Objective-C based projects still need maintenance and new features to be added, and mixing Swift and Objective-C, while possible, <strong>can be tricky</strong> and possibly unconvenient, due to the dynamic nature of the latter;</li>
-<li>Swift is changing rapidly, has still some bugs and <strong>performance problems</strong>, and still lacks some features that professionals need, while Objective-C is mature and has a strong community;</li>
-<li>some may <strong>prefer a more dynamic language</strong>, and Objective-C support from Apple <a href="https://netguru.co/blog/objective-c-generics">is still strong</a>;</li>
-</ul>
-<p>Personally, while I naturally lean towards a more static, <a href="http://engineering.facile.it/type-first-development-in-swift/">type-first</a> approach to programming, from time to time I like to work in a more dynamic environment, so both for preference and for business needs, I still didn&rsquo;t put Objective-C completely away. But just after a few weeks of Swift I found myself missing one of the most powerful features of the language: <a href="https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/TheBasics.html#//apple_ref/doc/uid/TP40014097-CH5-ID330">Optionals</a>.</p></p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/blog/eng/optionals-in-objective-c/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa-solid fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/swift">Swift</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/objective-c">Objective-C</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/functional-programming">Functional programming</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/monad">Monad</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
-            </header>
-            
-
-
-
-<li>
-  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f&amp;text=Optionals%20in%20Objective-C&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa-brands fa-square-x-twitter"></i>
-    <p>X</p>
-    </a>
-</li>
-
-
-
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f" target="_blank" class="share-btn facebook">
-    <i class="fa-brands fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn reddit">
-    <i class="fa-brand fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn linkedin">
-      <i class="fa-brand fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f&amp;title=Optionals%20in%20Objective-C" target="_blank" class="share-btn stumbleupon">
-    <i class="fa-brand fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f&amp;description=Optionals%20in%20Objective-C" target="_blank" class="share-btn pinterest">
-    <i class="fa-brand fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2foptionals-in-objective-c%2f" target="_blank" class="share-btn email">
-    <i class="fa-solid fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-
-        </ul>
-    </section>
-</section>
-
-        
 		
         
 <ul class="actions pagination">
@@ -1267,25 +1264,19 @@ Abbiamo visto impegno nella competizione, talenti diversi e complementari tra lo
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
-                      <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-                  
-                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
-                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
                     </a>
                   
                 
               </div>
 
               <h3>
-                <a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a>
+                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
               </h3>
               
-              <time class="published" datetime='2024-05-30'>
-                30 May 2024
+              <time class="published" datetime='2024-08-28'>
+                28 August 2024
               </time>
             </header>
             
@@ -1305,11 +1296,11 @@ Abbiamo visto impegno nella competizione, talenti diversi e complementari tra lo
               </div>
 
               <h3>
-                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
               </h3>
               
-              <time class="published" datetime='2024-05-20'>
-                20 May 2024
+              <time class="published" datetime='2024-07-02'>
+                2 July 2024
               </time>
             </header>
             
@@ -1321,25 +1312,25 @@ Abbiamo visto impegno nella competizione, talenti diversi e complementari tra lo
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
-                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
+                      <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
                   
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
                     </a>
                   
                 
               </div>
 
               <h3>
-                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+                <a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a>
               </h3>
               
-              <time class="published" datetime='2024-03-11'>
-                11 March 2024
+              <time class="published" datetime='2024-05-30'>
+                30 May 2024
               </time>
             </header>
             
@@ -1641,7 +1632,7 @@ Abbiamo visto impegno nella competizione, talenti diversi e complementari tra lo
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">14</span>
+                <span style="float:right;">16</span>
               
             </header>
           </article>

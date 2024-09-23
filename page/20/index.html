@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2024",
-        "datePublished": "2024-05-30 17:00:00 \u002b0000 UTC",
-        "dateModified" : "2024-05-30 17:00:00 \u002b0000 UTC",
+        "datePublished": "2024-08-28 17:00:00 \u002b0000 UTC",
+        "dateModified" : "2024-08-28 17:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -87,8 +87,8 @@
         
   <meta itemprop="name" content="Facile.it Engineering">
   <meta itemprop="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
-  <meta itemprop="datePublished" content="2024-05-30T17:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-05-30T17:00:00+00:00">
+  <meta itemprop="datePublished" content="2024-08-28T17:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-08-28T17:00:00+00:00">
 
         
             
@@ -244,35 +244,35 @@
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-08-28'>
+                                    August 28, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-07-02'>
+                                    July 2, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-05-20'>
-                                    May 20, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-03-11'>
-                                    March 11, 2024</time>
                             </header>
                             
 
@@ -296,6 +296,330 @@
     
     <div id="main">
         
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/ita/operatore-ternario-e-associativo-a-sinistra/">L&#39;operatore ternario è associativo a sinistra!</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-03-02'>
+            2 March 2015
+        </time>
+
+        
+            <a href="/authors/lorenzo/" class="author">
+            
+                <span class="name">Lorenzo Fontana</span>
+                <img src="https://www.gravatar.com/avatar/3460c18dc12b30037f8937bce6641c4b" alt="Lorenzo Fontana avatar" />
+            
+            </a>
+        
+
+        
+            <p>1 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  <p><p>Gli <a href="http://it.wikipedia.org/wiki/Operatore_ternario"><em>operatori ternari</em></a> sono diffusi in molti linguaggi di programmazione e permettono di esprimire con una <strong>sintassi breve</strong> logiche condizionali. Per utilizzarli propriamente in PHP è però necessario conoscerne il comportamento.</p>
+<p>Vediamo un esempio</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#a6e22e">var_dump</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;b&#39;</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;c&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;d&#39;</span>); <span style="color:#75715e">// OUTPUT: string(1) &#34;c&#34;
+</span></span></span></code></pre></div><p>Se state pensando che il risultato di questa espressione sia ovvio, vediamo cosa succede ad esempio in javascript</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">true</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;b&#39;</span> <span style="color:#f92672">?</span> <span style="color:#e6db74">&#39;c&#39;</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;d&#39;</span>); <span style="color:#75715e">// OUTPUT: a
+</span></span></span></code></pre></div><p>Bene, mentre in PHP il risultato è dato da:</p>
+<ul>
+<li>true è vero, ritorna a</li>
+<li>a castato a bool è vero, <strong>stampa c</strong></li>
+</ul>
+<p>In javascript invece il ragionamento è diverso:</p></p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/ita/operatore-ternario-e-associativo-a-sinistra/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa-solid fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/php">PHP</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foperatore-ternario-e-associativo-a-sinistra%2f&amp;text=L%27operatore%20ternario%20%c3%a8%20associativo%20a%20sinistra%21&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa-brands fa-square-x-twitter"></i>
+    <p>X</p>
+    </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foperatore-ternario-e-associativo-a-sinistra%2f" target="_blank" class="share-btn facebook">
+    <i class="fa-brands fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foperatore-ternario-e-associativo-a-sinistra%2f&amp;title=L%27operatore%20ternario%20%c3%a8%20associativo%20a%20sinistra%21" target="_blank" class="share-btn reddit">
+    <i class="fa-brand fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foperatore-ternario-e-associativo-a-sinistra%2f&amp;title=L%27operatore%20ternario%20%c3%a8%20associativo%20a%20sinistra%21" target="_blank" class="share-btn linkedin">
+      <i class="fa-brand fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foperatore-ternario-e-associativo-a-sinistra%2f&amp;title=L%27operatore%20ternario%20%c3%a8%20associativo%20a%20sinistra%21" target="_blank" class="share-btn stumbleupon">
+    <i class="fa-brand fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foperatore-ternario-e-associativo-a-sinistra%2f&amp;description=L%27operatore%20ternario%20%c3%a8%20associativo%20a%20sinistra%21" target="_blank" class="share-btn pinterest">
+    <i class="fa-brand fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2foperatore-ternario-e-associativo-a-sinistra%2f" target="_blank" class="share-btn email">
+    <i class="fa-solid fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/">var_dump() aggiunge proprietà pubbliche a DateTime</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-03-02'>
+            2 March 2015
+        </time>
+
+        
+            <a href="/authors/lorenzo/" class="author">
+            
+                <span class="name">Lorenzo Fontana</span>
+                <img src="https://www.gravatar.com/avatar/3460c18dc12b30037f8937bce6641c4b" alt="Lorenzo Fontana avatar" />
+            
+            </a>
+        
+
+        
+            <p>2 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  <p><p>PHP, fin dalla versione 5.2.0, introduce gli oggetti <code>\DateTime</code> per operare con date ed intervalli, fornendo finalmente un alternativa alle vecchie funzioni procedurali.</p>
+<p>Recentemente mi sono reso conto di uno strano comportamento che si verifica quando vengono chiamate <code>var_dump</code>, <code>print_r</code>, <code>var_export</code> o <code>debug_zval_dump</code> su un istanza di <code>\DateTime</code>.</p>
+<p>Considerando il seguente codice e il suo output:</p>
+<pre tabindex="0"><code>$date = new \DateTime();
+var_dump(isset($date-&gt;date)); // OUTPUT: bool(false)
+</code></pre><p>ci rendiamo conto del fatto che non esiste alcuna proprietà <code>$date</code> all&rsquo;interno dell&rsquo;istanza di <code>\DateTime</code>.</p></p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/ita/var_dump-aggiunge-proprieta-pubbliche-a-datetime/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa-solid fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/php">PHP</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/php-internals">PHP internals</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fvar_dump-aggiunge-proprieta-pubbliche-a-datetime%2f&amp;text=var_dump%28%29%20aggiunge%20propriet%c3%a0%20pubbliche%20a%20DateTime&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa-brands fa-square-x-twitter"></i>
+    <p>X</p>
+    </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fvar_dump-aggiunge-proprieta-pubbliche-a-datetime%2f" target="_blank" class="share-btn facebook">
+    <i class="fa-brands fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fvar_dump-aggiunge-proprieta-pubbliche-a-datetime%2f&amp;title=var_dump%28%29%20aggiunge%20propriet%c3%a0%20pubbliche%20a%20DateTime" target="_blank" class="share-btn reddit">
+    <i class="fa-brand fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fvar_dump-aggiunge-proprieta-pubbliche-a-datetime%2f&amp;title=var_dump%28%29%20aggiunge%20propriet%c3%a0%20pubbliche%20a%20DateTime" target="_blank" class="share-btn linkedin">
+      <i class="fa-brand fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fvar_dump-aggiunge-proprieta-pubbliche-a-datetime%2f&amp;title=var_dump%28%29%20aggiunge%20propriet%c3%a0%20pubbliche%20a%20DateTime" target="_blank" class="share-btn stumbleupon">
+    <i class="fa-brand fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fvar_dump-aggiunge-proprieta-pubbliche-a-datetime%2f&amp;description=var_dump%28%29%20aggiunge%20propriet%c3%a0%20pubbliche%20a%20DateTime" target="_blank" class="share-btn pinterest">
+    <i class="fa-brand fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fvar_dump-aggiunge-proprieta-pubbliche-a-datetime%2f" target="_blank" class="share-btn email">
+    <i class="fa-solid fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
         
             <article class="post">
   <header>
@@ -609,25 +933,19 @@
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
-                      <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-                  
-                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
-                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
                     </a>
                   
                 
               </div>
 
               <h3>
-                <a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a>
+                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
               </h3>
               
-              <time class="published" datetime='2024-05-30'>
-                30 May 2024
+              <time class="published" datetime='2024-08-28'>
+                28 August 2024
               </time>
             </header>
             
@@ -647,11 +965,11 @@
               </div>
 
               <h3>
-                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
               </h3>
               
-              <time class="published" datetime='2024-05-20'>
-                20 May 2024
+              <time class="published" datetime='2024-07-02'>
+                2 July 2024
               </time>
             </header>
             
@@ -663,25 +981,25 @@
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
-                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
+                      <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
                   
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
                     </a>
                   
                 
               </div>
 
               <h3>
-                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+                <a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a>
               </h3>
               
-              <time class="published" datetime='2024-03-11'>
-                11 March 2024
+              <time class="published" datetime='2024-05-30'>
+                30 May 2024
               </time>
             </header>
             
@@ -983,7 +1301,7 @@
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">14</span>
+                <span style="float:right;">16</span>
               
             </header>
           </article>

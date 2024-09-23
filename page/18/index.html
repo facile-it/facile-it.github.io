@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2024",
-        "datePublished": "2024-05-30 17:00:00 \u002b0000 UTC",
-        "dateModified" : "2024-05-30 17:00:00 \u002b0000 UTC",
+        "datePublished": "2024-08-28 17:00:00 \u002b0000 UTC",
+        "dateModified" : "2024-08-28 17:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -87,8 +87,8 @@
         
   <meta itemprop="name" content="Facile.it Engineering">
   <meta itemprop="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
-  <meta itemprop="datePublished" content="2024-05-30T17:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-05-30T17:00:00+00:00">
+  <meta itemprop="datePublished" content="2024-08-28T17:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-08-28T17:00:00+00:00">
 
         
             
@@ -244,35 +244,35 @@
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-08-28'>
+                                    August 28, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-07-02'>
+                                    July 2, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
                                 
                                 <time class="published" datetime=
                                     '2024-05-30'>
                                     May 30, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-05-20'>
-                                    May 20, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-03-11'>
-                                    March 11, 2024</time>
                             </header>
                             
 
@@ -296,6 +296,339 @@
     
     <div id="main">
         
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/ita/intelligenza-artificiale-algoritmo-a-star/">Intelligenza artificiale: algoritmo A*</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-05-12'>
+            12 May 2015
+        </time>
+
+        
+            <a href="/authors/sergio/" class="author">
+            
+                <span class="name">Sergio Santoro</span>
+                <img src="https://www.gravatar.com/avatar/b2700e7cbb3c4180f2053ed342bcc9c9?s=250&amp;d=mm&amp;r=x" alt="Sergio Santoro avatar" />
+            
+            </a>
+        
+
+        
+            <p>5 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  <p><h1 id="introduzione">Introduzione</h1>
+<p>A* è un <a href="https://it.wikipedia.org/wiki/Algoritmo_di_ricerca">algoritmo di ricerca</a> e ottimizzazione basato su grafi. Viene frequentemente impiegato nell&rsquo;<a href="https://it.wikipedia.org/wiki/Intelligenza_artificiale">intelligenza artificiale</a> perché in grado di gestire grafi ampi e
+indeterminati.</p>
+<p>L&rsquo;algoritmo A* può essere utilizzato per risolvere problemi come: <a href="https://it.wikipedia.org/wiki/Gioco_del_quindici">gioco del 15</a>, percorso minimo, <a href="https://it.wikipedia.org/wiki/Sudoku">Sudoku</a>, <a href="https://it.wikipedia.org/wiki/Cubo_di_Rubik">cubo di Rubik</a>, ecc.</p>
+<p>In generale, A* può risolvere efficacemente i problemi che soddisfano i requisiti:</p>
+<ul>
+<li>La soluzione è determinata da cambamenti sequenziali di stato rappresentabili con grafi;</li>
+<li>Il nodo iniziale e il nodo finale devono essere noti. Talvolta è sufficiente conoscere solo le regole che compongono la soluzione (vedi Sudoku);</li>
+<li>Deve essere noto un <strong>algoritmo euristico</strong> che <strong>stima</strong> il costo del percorso tra un nodo qualsiasi e la soluzione.</li>
+<li>Deve essere sempre noto il costo che separa due nodi adiacenti. (Nella maggioranza dei problemi tale valore è sempre unitario).</li>
+</ul>
+<h1 id="leuristica">L&rsquo;euristica</h1>
+<p>L&rsquo;<a href="https://it.wikipedia.org/wiki/Algoritmo_euristico">algoritmo euristico</a> ha il compito di stimare la distanza tra qualsiasi nodo e la soluzione.
+L&rsquo;euristica influenza fortemente i risultati conseguiti da A*. Esso, in particolare, ne determina il tempo complessivo di esecuzione.
+Un algoritmo euristico molto efficace consente ad A* di trovare velocemente la soluzione.
+Nel caso pessimo, una funzione euristica costante, A* diviene un algoritmo di ricerca molto simile a <a href="https://it.wikipedia.org/wiki/Algoritmo_di_Dijkstra">Dijkstra</a>.</p></p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/ita/intelligenza-artificiale-algoritmo-a-star/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa-solid fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/python">Python</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/algorithms">Algorithms</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/artificial-intelligence">Artificial intelligence</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fintelligenza-artificiale-algoritmo-a-star%2f&amp;text=Intelligenza%20artificiale%3a%20algoritmo%20A%2a&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa-brands fa-square-x-twitter"></i>
+    <p>X</p>
+    </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fintelligenza-artificiale-algoritmo-a-star%2f" target="_blank" class="share-btn facebook">
+    <i class="fa-brands fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fintelligenza-artificiale-algoritmo-a-star%2f&amp;title=Intelligenza%20artificiale%3a%20algoritmo%20A%2a" target="_blank" class="share-btn reddit">
+    <i class="fa-brand fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fintelligenza-artificiale-algoritmo-a-star%2f&amp;title=Intelligenza%20artificiale%3a%20algoritmo%20A%2a" target="_blank" class="share-btn linkedin">
+      <i class="fa-brand fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fintelligenza-artificiale-algoritmo-a-star%2f&amp;title=Intelligenza%20artificiale%3a%20algoritmo%20A%2a" target="_blank" class="share-btn stumbleupon">
+    <i class="fa-brand fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fintelligenza-artificiale-algoritmo-a-star%2f&amp;description=Intelligenza%20artificiale%3a%20algoritmo%20A%2a" target="_blank" class="share-btn pinterest">
+    <i class="fa-brand fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fintelligenza-artificiale-algoritmo-a-star%2f" target="_blank" class="share-btn email">
+    <i class="fa-solid fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/ita/type-first-development-in-swift/">Type First Development in Swift</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-05-05'>
+            5 May 2015
+        </time>
+
+        
+            <a href="/authors/elviro/" class="author">
+            
+                <span class="name">Elviro Rocca</span>
+                <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" />
+            
+            </a>
+        
+
+        
+            <p>17 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  <p><p>Con <em>Type First Development</em> può intendersi un approccio allo sviluppo di nuove funzionalità o moduli di un software partendo dai <strong>tipi</strong> di dati coinvolti: non si tratta quindi di un pattern o una pratica codificata, ma solo di <strong>un possibile punto di partenza</strong> per iniziare il ragionamento. Ragionando esclusivamente sui tipi, prima ancora di pensare alle singole specifiche implementazioni dei vari blocchi di codice, è possibile costruire più facilmente una mappa dei vari di flussi di dati che attraversano il nostro software, e verificare immediatamente se stiamo scrivendo qualcosa di sensato, solido ed adeguatamente estendibile.</p></p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/ita/type-first-development-in-swift/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa-solid fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/swift">Swift</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/functional-programming">Functional programming</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/type-first-development">Type First Development</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ftype-first-development-in-swift%2f&amp;text=Type%20First%20Development%20in%20Swift&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa-brands fa-square-x-twitter"></i>
+    <p>X</p>
+    </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ftype-first-development-in-swift%2f" target="_blank" class="share-btn facebook">
+    <i class="fa-brands fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ftype-first-development-in-swift%2f&amp;title=Type%20First%20Development%20in%20Swift" target="_blank" class="share-btn reddit">
+    <i class="fa-brand fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ftype-first-development-in-swift%2f&amp;title=Type%20First%20Development%20in%20Swift" target="_blank" class="share-btn linkedin">
+      <i class="fa-brand fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ftype-first-development-in-swift%2f&amp;title=Type%20First%20Development%20in%20Swift" target="_blank" class="share-btn stumbleupon">
+    <i class="fa-brand fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ftype-first-development-in-swift%2f&amp;description=Type%20First%20Development%20in%20Swift" target="_blank" class="share-btn pinterest">
+    <i class="fa-brand fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2ftype-first-development-in-swift%2f" target="_blank" class="share-btn email">
+    <i class="fa-solid fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
         
             <article class="post">
   <header>
@@ -776,326 +1109,6 @@ Ecco perché sono sempre più convinto che la vera ricetta del successo nei prog
 </section>
 
         
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/ita/xcode-testing-in-pratica/">Xcode Testing in pratica</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2015-04-09'>
-            9 April 2015
-        </time>
-
-        
-            <a href="/authors/elviro/" class="author">
-            
-                <span class="name">Elviro Rocca</span>
-                <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" />
-            
-            </a>
-        
-
-        
-            <p>8 minute read</p>
-        
-    </div>
-</header>
-
-  
-
-  <p><p>Tra i molti strumenti utili presenti in Xcode, il testing framework <strong>XCTest</strong> è certamente uno dei più rilevanti, non solo per l&rsquo;importanza intrinseca dello Unit Testing in generale, ma soprattutto per la facilità con la quale è possibile scrivere ed eseguire test direttamente dall&rsquo;IDE <em>out-of-the-box</em>, <strong>senza la necessità di installare componenti di terze parti</strong> o impostare una particolare configurazione per i progetti.</p>
-<p>In effetti Xcode, al momento della creazione di un nuovo progetto, oltre a creare un target per il binario principale crea automaticamente anche un <strong>target di test</strong>, cioè un bundle aggiuntivo che può essere caricato nel bundle principale per poter fisicamente eseguire i test una volta avviata l&rsquo;app. Nell&rsquo;immagine seguente è possibile vedere come, in un progetto appena creato, sia già presente il test bundle, in questo caso chiamato <em>AwesomeAppTests.xctest</em>:</p></p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/blog/ita/xcode-testing-in-pratica/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa-solid fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/swift">Swift</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/software-testing">Software testing</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/xcode">Xcode</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
-            </header>
-            
-
-
-
-<li>
-  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fxcode-testing-in-pratica%2f&amp;text=Xcode%20Testing%20in%20pratica&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa-brands fa-square-x-twitter"></i>
-    <p>X</p>
-    </a>
-</li>
-
-
-
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fxcode-testing-in-pratica%2f" target="_blank" class="share-btn facebook">
-    <i class="fa-brands fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fxcode-testing-in-pratica%2f&amp;title=Xcode%20Testing%20in%20pratica" target="_blank" class="share-btn reddit">
-    <i class="fa-brand fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fxcode-testing-in-pratica%2f&amp;title=Xcode%20Testing%20in%20pratica" target="_blank" class="share-btn linkedin">
-      <i class="fa-brand fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fxcode-testing-in-pratica%2f&amp;title=Xcode%20Testing%20in%20pratica" target="_blank" class="share-btn stumbleupon">
-    <i class="fa-brand fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fxcode-testing-in-pratica%2f&amp;description=Xcode%20Testing%20in%20pratica" target="_blank" class="share-btn pinterest">
-    <i class="fa-brand fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fxcode-testing-in-pratica%2f" target="_blank" class="share-btn email">
-    <i class="fa-solid fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-
-        </ul>
-    </section>
-</section>
-
-        
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/ita/gestione-di-acl-su-insiemi-di-records/">Gestione di ACL su insiemi di records</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2015-04-01'>
-            1 April 2015
-        </time>
-
-        
-            <a href="/authors/matteo/" class="author">
-            
-                <span class="name">Matteo Galli</span>
-                <img src="/images/avatar-matteo.jpg" alt="Matteo Galli avatar" />
-            
-            </a>
-        
-
-        
-            <p>4 minute read</p>
-        
-    </div>
-</header>
-
-  
-
-  <p><p>Le <strong>ACL</strong> (<em>Access Control List</em>) sono un strumento molto potente per poter definire l&rsquo;accesso a risorse con una granularità molto fine. Nel quotidiano abbiamo già modo di utilizzarle per definire i permessi per accedere a file su Unix o quali pacchetti far passare attraverso un firewall o ancora l&rsquo;accesso a database.</p>
-<p>In <strong>Symfony</strong> le <em>ACL</em> sono disponibili <em>out-of-the-box</em> nel caso di installazione completa e permettono la definizione delle regole di accesso a risorse tramite <strong>ruoli</strong> e <strong>maschere</strong>. Mentre i <strong>ruoli</strong> rappresentano dei sottoinsiemi degli utenti di una data applicazione (<em>amministratori</em>, <em>backoffice</em>, <em>business analyst</em>) e possono essere visti come delle etichette da assegnare ad un utente, le <strong>maschere</strong> sono la rappresentazione numerica delle azioni che possono essere effettuate dagli utenti aventi determinati ruoli. Per tornare all&rsquo;esempio del filesystem Unix, i ruoli possono essere <em>Owner</em>, <em>Group</em> o <em>Others</em> mentre le maschere sono ad esempio 7 (lettura, scrittura e esecuzione) indicato per ciascun ruolo.</p></p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/blog/ita/gestione-di-acl-su-insiemi-di-records/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa-solid fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/php">PHP</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/symfony">Symfony</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/database">Database</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
-            </header>
-            
-
-
-
-<li>
-  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fgestione-di-acl-su-insiemi-di-records%2f&amp;text=Gestione%20di%20ACL%20su%20insiemi%20di%20records&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa-brands fa-square-x-twitter"></i>
-    <p>X</p>
-    </a>
-</li>
-
-
-
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fgestione-di-acl-su-insiemi-di-records%2f" target="_blank" class="share-btn facebook">
-    <i class="fa-brands fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fgestione-di-acl-su-insiemi-di-records%2f&amp;title=Gestione%20di%20ACL%20su%20insiemi%20di%20records" target="_blank" class="share-btn reddit">
-    <i class="fa-brand fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fgestione-di-acl-su-insiemi-di-records%2f&amp;title=Gestione%20di%20ACL%20su%20insiemi%20di%20records" target="_blank" class="share-btn linkedin">
-      <i class="fa-brand fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fgestione-di-acl-su-insiemi-di-records%2f&amp;title=Gestione%20di%20ACL%20su%20insiemi%20di%20records" target="_blank" class="share-btn stumbleupon">
-    <i class="fa-brand fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fgestione-di-acl-su-insiemi-di-records%2f&amp;description=Gestione%20di%20ACL%20su%20insiemi%20di%20records" target="_blank" class="share-btn pinterest">
-    <i class="fa-brand fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2fita%2fgestione-di-acl-su-insiemi-di-records%2f" target="_blank" class="share-btn email">
-    <i class="fa-solid fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-
-        </ul>
-    </section>
-</section>
-
-        
 		
         
 <ul class="actions pagination">
@@ -1252,25 +1265,19 @@ Ecco perché sono sempre più convinto che la vera ricetta del successo nei prog
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
-                      <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-                  
-                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
-                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
+                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
                     </a>
                   
                 
               </div>
 
               <h3>
-                <a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a>
+                <a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a>
               </h3>
               
-              <time class="published" datetime='2024-05-30'>
-                30 May 2024
+              <time class="published" datetime='2024-08-28'>
+                28 August 2024
               </time>
             </header>
             
@@ -1290,11 +1297,11 @@ Ecco perché sono sempre più convinto che la vera ricetta del successo nei prog
               </div>
 
               <h3>
-                <a href="/blog/eng/v-protetto17-5-2024/">Venerdì Protetto | May 2024 edition</a>
+                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
               </h3>
               
-              <time class="published" datetime='2024-05-20'>
-                20 May 2024
+              <time class="published" datetime='2024-07-02'>
+                2 July 2024
               </time>
             </header>
             
@@ -1306,25 +1313,25 @@ Ecco perché sono sempre più convinto che la vera ricetta del successo nei prog
               <div class="author-avatars">
                 
                   
-                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
-                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
+                    <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
+                      <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
                     </a>
                   
                 
                   
-                    <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
-                      <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
+                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
+                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
                     </a>
                   
                 
               </div>
 
               <h3>
-                <a href="/blog/eng/v-protetto8-3-2024/">Venerdì Protetto | March edition</a>
+                <a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a>
               </h3>
               
-              <time class="published" datetime='2024-03-11'>
-                11 March 2024
+              <time class="published" datetime='2024-05-30'>
+                30 May 2024
               </time>
             </header>
             
@@ -1626,7 +1633,7 @@ Ecco perché sono sempre più convinto che la vera ricetta del successo nei prog
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">14</span>
+                <span style="float:right;">16</span>
               
             </header>
           </article>

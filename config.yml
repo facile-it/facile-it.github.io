@@ -4,8 +4,12 @@ title: "Facile.it Engineering"
 theme: "hugo-future-imperfect"
 preserveTaxonomyNames: true
 paginate: 5
-disqusShortname: "facile-it"
-googleAnalytics: "UA-22342495-1"
+config:
+  services:
+    disqus:
+      shortname: "facile-it"
+    googleAnalytics:
+      id: "G-1V6DNT10GR"
 
 taxonomies:
   category: "categories"

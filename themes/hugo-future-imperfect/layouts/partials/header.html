@@ -54,7 +54,6 @@
         {{ end }}
 
         {{ template "_internal/schema.html" . }}
-        {{ template "_internal/google_news.html" . }}
 
         {{ if isset .Site.Params "customcss" }}
             {{ $.Scratch.Set "cssFiles" .Site.Params.customCSS }}

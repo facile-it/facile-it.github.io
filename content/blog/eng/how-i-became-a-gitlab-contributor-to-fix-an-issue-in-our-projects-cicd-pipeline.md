@@ -20,6 +20,8 @@ During these months at Facile.it I had to face many challenges regarding the imp
 > 
 > -- <cite>[How to keep up with CI/CD best practices - GitLab Blog](https://about.gitlab.com/blog/2022/02/03/how-to-keep-up-with-ci-cd-best-practices/#what-are-the-best-practices-for-cicd)</cite>
 
+<!--more-->
+
 Following [this post](../continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker) from 2018, my team ended up having a **CI/CD** pipeline that fully relied on **Docker Compose** for every job besides the deployment ones.
 
 Using **Docker Compose** has many advantages, mainly because it allows developers to use the very same configuration for both their local setups and the **CI/CD** jobs (e.g. `environment variables` and `services`). However, this comes with something that I believe to be a major drawback: the job execution time using **Docker Compose** is less than ideal, this makes our pipelines a few times slower than an equivalent solution that does not use it!

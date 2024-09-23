@@ -16,6 +16,8 @@ Assegnare valori alle variabili è sicuramente l'operazione più comune all'inte
 
 L'unità fondamentale di storage dei dati in PHP è la Zend Value (zval). Si tratta di una struct definita alla [linea 334 di `zend.h`](https://github.com/php/php-src/blob/ae15e636e2b213bf748fa0b94ca95ac96d6eae3a/Zend/zend.h#L334-L340), la riporto qui di seguito per commentarne le proprietà.
 
+<!--more-->
+
 ```
 struct _zval_struct {
 	zvalue_value value;	 /* Il valore assegnato alla variabile */

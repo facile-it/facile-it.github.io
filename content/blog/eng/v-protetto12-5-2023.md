@@ -47,6 +47,8 @@ Topics:
 - [ChatGPT and React](#chatgpt-and-react) by Alessio Monesi (Facile.it) 
 - [Mental health at work](#mental-health-at-work) by Francesco Di Muro ([Lobby Frontali](https://lobbyfrontali.it/))
 
+<!--more-->
+
 <br>
 
 ## API testing 

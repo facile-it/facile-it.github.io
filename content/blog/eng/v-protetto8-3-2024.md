@@ -23,6 +23,8 @@ But how did we do it?
 
 We searched for something already done on the internet, and most suitable for our needs. So we tried the most obvious solution and went for... Advent of Code!
 
+<!--more-->
+
 ![Advent of Code Christmas Tree]( /images/code-challenge-march-2024/Advent-of-code-tree.png "Such a nice ASCII Art Christmas Tree for a challenge... in March!") 
 *Such a nice ASCII Art Christmas Tree for a challenge... in March!*
 

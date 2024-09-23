@@ -13,6 +13,7 @@ fi
 
 if ! [[ -f "./bin/hugo" ]]; then
     echo "Hugo binary missing, downloading..."
+    mkdir -p bin
     cd bin && wget -c $URL -O - | tar -xz
     cd -
 fi

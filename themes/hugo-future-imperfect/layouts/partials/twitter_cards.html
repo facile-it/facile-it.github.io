@@ -23,9 +23,9 @@
     {{ end }}
 {{ end }}
 
-{{ with .Site.Social.twitter }}
+{{ with .Site.Params.Social.twitter }}
     <meta name="twitter:site" content="@{{ . }}"/>
 {{ else }}
     <meta name="twitter:site" content="@{{ .Site.Params.twitterSite }}"/>
 {{ end }}
-{{ with .Site.Social.twitter_domain }}<meta name="twitter:domain" content="{{ . }}"/>{{ end }}
+{{ with .Site.Params.Social.twitter_domain }}<meta name="twitter:domain" content="{{ . }}"/>{{ end }}

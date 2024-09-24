@@ -3,7 +3,7 @@
 <!-- Twitter -->
 {{ if .Site.Params.socialShareTwitter | default true}}
 <li>
-  <a href="//x.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via={{ .Site.Social.twitter }}" target="_blank" class="share-btn twitter">
+  <a href="//x.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via={{ .Site.Params.Social.twitter }}" target="_blank" class="share-btn twitter">
     <i class="fa-brands fa-square-x-twitter"></i>
     <p>X</p>
     </a>

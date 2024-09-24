@@ -149,7 +149,7 @@
       {{ with .Site.Copyright | safeHTML }}
         {{ . }}
       {{ else }}
-        &copy; {{ .Site.LastChange.Year }}
+        &copy; {{ .Site.Lastmod.Year }}
         {{if isset .Site.Params "author" }}
           {{ .Site.Params.author}}
         {{ else }}

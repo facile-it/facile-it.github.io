@@ -31,8 +31,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2024",
-        "datePublished": "2024-08-28 17:00:00 \u002b0000 UTC",
-        "dateModified" : "2024-08-28 17:00:00 \u002b0000 UTC",
+        "datePublished": "2024-10-01 10:00:00 \u002b0000 UTC",
+        "dateModified" : "2024-10-01 10:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/blog\/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -95,8 +95,8 @@
         
   <meta itemprop="name" content="Blogs">
   <meta itemprop="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
-  <meta itemprop="datePublished" content="2024-08-28T17:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-08-28T17:00:00+00:00">
+  <meta itemprop="datePublished" content="2024-10-01T10:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-01T10:00:00+00:00">
 
         
             
@@ -261,6 +261,18 @@
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/v-protetto13-9-2024/">Venerdì Protetto | September 2024</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-10-01'>
+                                    October 1, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/v-protetto12-7-2024/">Venerdì Protetto | July edition</a></h3>
                                 
                                 <time class="published" datetime=
@@ -278,18 +290,6 @@
                                 <time class="published" datetime=
                                     '2024-07-02'>
                                     July 2, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-05-30'>
-                                    May 30, 2024</time>
                             </header>
                             
 
@@ -313,6 +313,87 @@
     
     <div id="main">
         
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/">Swift testing avanzato: stubbing e test asincroni</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2015-06-05'>
+            5 June 2015
+        </time>
+
+        
+            <a href="/authors/elviro/" class="author">
+            
+                <span class="name">Elviro Rocca</span>
+                <img src="https://www.gravatar.com/avatar/fb2983ff4983323312496f2b67e26186?d=404&amp;s=250" alt="Elviro Rocca avatar" />
+            
+            </a>
+        
+
+        
+            <p>9 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  <p><p><a href="http://engineering.facile.it/xcode-testing-in-pratica/">In un precedente articolo</a> abbiamo visto le impostazioni di base in Xcode per la scrittura dei <strong>test unitari</strong>: abbiamo evidenziato inoltre <strong>l&rsquo;importanza e l&rsquo;utilità intrinseca dei test</strong>, attraverso un semplice esempio riguardante un caso d&rsquo;uso tipico. Nel presente articolo vedremo alcune tecniche un po&rsquo; più avanzate:</p>
+<ul>
+<li>implementeremo uno <strong>Stub Object</strong> in Swift;</li>
+<li>analizzeremo un altro caso di test <em>asincrono</em>;</li>
+</ul>
+<h2 id="lo-stub-object">Lo <em>Stub Object</em></h2>
+<p>Uno <em>Stub Object</em> (per il resto dell&rsquo;articolo, <em>stub</em>) rappresenta un&rsquo;istanza di una certa classe, la quale <em>mima</em> una vera classe presente nella nostra <em>code base</em>:  l&rsquo;istanza si comporta esattamente come una equivalente istanza della classe mimata, tranne alcune differenze, ad esempio <strong>alcuni metodi possono essere sovrascritti</strong> per poter fornire <strong>un determinato output</strong> utile per i test. Nell&rsquo;implementare uno <em>stub</em> non è generalmente consentito modificare dettagli di logica interni relativi alla classe che stiamo mimando, ma <strong>è possibile sovrascrivere metodi pubblici</strong>, in modo che essi ritornino i valori che vogliamo, oppure che svolgano una particolare procedura necessaria per i test. Tanto per fare un esempio pratico potremmo <em>stubbare</em> una classe che ci fornisce la data precisa in un certo istante, in modo da ottenere una data diversa da usare nei test, oppure un client che chiede a un server delle informazioni su un utente, in modo da far ritonare al client <em>stub</em> delle informazioni arbitrarie.</p></p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/ita/swift-testing-avanzato-stubbing-e-test-asincroni/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa-solid fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/swift">Swift</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/software-testing">Software testing</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/xcode">Xcode</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
         
             <article class="post">
   <header>
@@ -629,78 +710,6 @@ Ecco perché sono sempre più convinto che la vera ricetta del successo nei prog
 </article>
 
         
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/ita/tracciamento-di-eventi-lato-server/">Introduzione al tracciamento di eventi lato server</a></h2>
-        
-        
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2015-04-21'>
-            21 April 2015
-        </time>
-
-        
-            <a href="/authors/matteo/" class="author">
-            
-                <span class="name">Matteo Galli</span>
-                <img src="/images/avatar-matteo.jpg" alt="Matteo Galli avatar" />
-            
-            </a>
-        
-
-        
-            <p>4 minute read</p>
-        
-    </div>
-</header>
-
-  
-
-  <p><p>L’adozione di strategie <em>DevOps</em> ha portato negli ultimi anni ad incrementare le aree coperte da <strong>tool di monitoring</strong> in maniera tale da avere un feedback in tempo reale dello stato dell’infrastruttura su cui si basa la propria applicazione, così da poter rispondere pro-attivamente a situazioni critiche. Su tale fronte infatti si sono visti comparire i tool più disparati che permettono la raccolta di informazioni, sia dei <strong>server</strong> o delle istanze su cui vengono eseguite le applicazioni (ad esempio CPU, memoria o disco), che le <strong>applicazioni</strong> stesse (ad esempio tempi medi di risposta, numero di query eseguite, tempo di esecuzione delle query, ecc. ecc.).</p></p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/blog/ita/tracciamento-di-eventi-lato-server/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa-solid fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/italiano">Italiano</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/newrelic">NewRelic</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/rest">REST</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-        
 
         
 <ul class="actions pagination">
@@ -856,6 +865,30 @@ Ecco perché sono sempre più convinto che la vera ricetta del successo nei prog
               <div class="author-avatars">
                 
                   
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
+                <a href="/blog/eng/v-protetto13-9-2024/">Venerdì Protetto | September 2024</a>
+              </h3>
+              
+              <time class="published" datetime='2024-10-01'>
+                1 October 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
                     <a href="/authors/ana-radujko/" class="author" title="See other posts from Ana Radujko">
                       <img src="https://s.gravatar.com/avatar/13c2d19c1d59562ca74b71f5444943c5?s=80" alt="Ana Radujko avatar" class="author-avatar"/>
                     </a>
@@ -893,36 +926,6 @@ Ecco perché sono sempre più convinto che la vera ricetta del successo nei prog
               
               <time class="published" datetime='2024-07-02'>
                 2 July 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/agiorgianni/" class="author" title="See other posts from Alessio Giorgianni">
-                      <img src="https://www.gravatar.com/avatar" alt="Alessio Giorgianni avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-                  
-                    <a href="/authors/mgarza/" class="author" title="See other posts from Matteo Garza">
-                      <img src="/images/avatar-mgarza.jpeg" alt="Matteo Garza avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/hack-the-box-experience/">Hack the Box Experience</a>
-              </h3>
-              
-              <time class="published" datetime='2024-05-30'>
-                30 May 2024
               </time>
             </header>
             
@@ -1224,7 +1227,7 @@ Ecco perché sono sempre più convinto che la vera ricetta del successo nei prog
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">16</span>
+                <span style="float:right;">17</span>
               
             </header>
           </article>

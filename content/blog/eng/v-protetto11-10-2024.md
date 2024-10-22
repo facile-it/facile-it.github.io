@@ -57,6 +57,16 @@ In this talk, we discussed the concept of digital twin in the context of an incr
 The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).
 
 
+## Data Backbone, CDP & Marketing Automation
+
+by Alessandro Lai, Nicola Bonicelli, Marco Saletta
+
+This internal talk was prepared to show to the whole dev polutation the advancement on the internal project of Data Backbone, CDP & Marketing Automation. The union of these three platforms is a powerful driver for the growth of the company in the coming years.
+
+The "Data Backbone" is an internal project that, leveraging Google Cloud Pubsub and BigQuery, aims to create a single platform to share data and democratize the access to it, across teams and projects. Each team will publish the core events that build their business logic using PubSub and AVRO schemas, and the data will be readily available in near-real-time via PubSub, and archived under BigQuery. To make the implementation easier, the Platform team has produced an SDK in the two main languages used in the company (PHP & Typescript), and the DXCP team has adopted [Crossplane](https://www.crossplane.io/) to allow each team to deploy the needed cloud resources and orchestrate them without having to worry about them or increase the team's cognitive load.
+
+The CDP (Customer Data Platform) is a SaaS tool that we adopted to centralize and collect the information from the Data Backbone and many other sources, and in turn pass all the needed data to the third element of the chain, the Marketing Automation. The Marketing Automation is another SaaS tool that, once loaded with all the data, will allow our colleagues from the Marketing team do be autonomous in driving the comunications toward our customers, creating personalized customer journeys and email templates without dev intervention.
+
 <script type="application/ld+json">
 { 
     "@context": "https://schema.org",

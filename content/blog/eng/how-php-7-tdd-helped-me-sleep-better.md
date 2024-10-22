@@ -61,7 +61,8 @@ I then wrote some functional tests to assure that the **collaboration between my
 ## PHP 7: scalar and return types declarations
 The second good choice was **PHP 7**: among the reasons behind it as the language version of choice for this project were the [two main new features](http://php.net/manual/en/migration70.new-features.php) introduced: **scalar types** and **return type declarations**. 
 <p style="text-align: center;">
-    ![Return types, return types everywhere!](/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg)
+
+![Return types, return types everywhere!](/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg)
 </p>
 
 Before Facile.it, I worked as C++ developer, and oh boy! did I miss scalars and return types!

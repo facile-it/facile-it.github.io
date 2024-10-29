@@ -73,7 +73,7 @@ This talk showed the advancement of the internal projects of Data Backbone, Cust
 
 Data Backbone is an internal project that leverages Google Cloud Pub/Sub and BigQuery to create a unified platform for sharing data across teams and projects and to democratize data access. Each team will publish core business logic events using Pub/Sub and AVRO schemas, making data available in near-real-time via Pub/Sub and archived in BigQuery. To simplify the implementation, we have produced an SDK in PHP and TypeScript—the two main languages used in the company—and adopted [Crossplane](https://www.crossplane.io/), allowing development teams to deploy and orchestrate cloud resources without increasing their cognitive load.
 
-The CDP project is a SaaS tool that we adopted to centralize and collect information from Data Backbone and other sources and, in turn, pass all the needed data to the third element of the chain, Marketing Automation. Marketing Automation is another SaaS tool that, once loaded with data, will allow Marketing team to autonomously drive the communications toward our customers, creating personalized customer journeys and email templates without dev intervention.
+The CDP project is a SaaS tool that we adopted to centralize and collect information from Data Backbone and other sources and, in turn, pass all the needed data to the third element of the chain, Marketing Automation. Marketing Automation is another SaaS tool that, once loaded with data, will allow the Marketing team to autonomously drive the communications toward our customers, creating personalized customer journeys and email templates without dev intervention.
 
 <br>
 

@@ -22,6 +22,7 @@ Topics:
 
 - [Growing teams](#growing-teams) by [Ferdinando Santacroce](https://jesuswasrasta.com/) ([Agile Reloaded](https://www.linkedin.com/company/agile-reloaded/))
 - [Digital twins](#digital-twins) by [Stefano Fago](https://www.linkedin.com/in/stefanofago/) ([Gewiss](https://www.linkedin.com/company/gewissgroup/))
+- [Data strategy](#data-strategy) by [Alessandro Lai](https://www.linkedin.com/in/alessandro-lai-09440922/?originalSubdomain=it), [Nicola Bonicelli](https://www.linkedin.com/in/nicola-bonicelli-2b7a1777/?originalSubdomain=it), [Marco Saletta](https://www.linkedin.com/in/marco-saletta-225199111/?originalSubdomain=it)
 
 
 <br>
@@ -36,7 +37,9 @@ Topics:
 <img align="left" style="max-width:40%; margin-right: 0.5em; margin-top: 0.5em" src=/images/venerd%C3%AC_protetto/growing_teams.png?raw=true" alt="" title="" /> 
 </a>
 
-The speaker is an experienced professional who transitioned from working as a developer to his current role as a trainer, coach, and consultant. Drawing on his extensive experience in software development, Ferdinando has mastered techniques to build software that can grow harmoniously on a solid foundation. During the talk, we explored how similar practices can be applied to evolve development teams effectively. The speaker shared thoughts and insights on how to grow teams and the people in them.
+The speaker is an experienced professional who transitioned from working as a developer to his current role as a trainer, coach, and consultant. 
+
+Drawing on his extensive experience in software development, Ferdinando has mastered techniques to build software that can grow harmoniously on a solid foundation. During the talk, we explored how similar practices can be applied to evolve development teams effectively. The speaker shared thoughts and insights on how to grow teams and the people in them.
 
 <br>
 
@@ -50,22 +53,32 @@ The speaker is an experienced professional who transitioned from working as a de
 <img align="left" style="max-width:40%; margin-right: 0.5em; margin-top: 0.5em" src=/images/venerd%C3%AC_protetto/digital_twins.png?raw=true" alt="" title="" /> 
 </a>
 
-In this talk, we discussed the concept of digital twin in the context of an increasingly smart product landscape that is becoming more prominent in our lives. The discussion was enriched with an overview of the architecture of digital twin platforms, focusing on the real-time integration of physical entities with their digital counterparts. We explored key concepts such as digital twin aggregates, lifecycle management, and digital product passport (DPP), as well as the role of distributed systems in terms of scalability, resilience, fault tolerance, and security to ensure stability in complex and data-intensive environments.
+In this talk, we discussed the concept of digital twin in the context of an increasingly smart product landscape that is becoming more prominent in our lives. 
+
+The discussion was enriched with an overview of the architecture of digital twin platforms, focusing on the real-time integration of physical entities with their digital counterparts. We explored key concepts such as digital twin aggregates, lifecycle management, and digital product passport (DPP), as well as the role of distributed systems in terms of scalability, resilience, fault tolerance, and security to ensure stability in complex and data-intensive environments.
+
+<br>
+
+## Data strategy
+
+### Data Backbone, CDP & Marketing Automation
+
+<sup>by [Alessandro Lai](https://www.linkedin.com/in/alessandro-lai-09440922/?originalSubdomain=it), [Nicola Bonicelli](https://www.linkedin.com/in/nicola-bonicelli-2b7a1777/?originalSubdomain=it), [Marco Saletta](https://www.linkedin.com/in/marco-saletta-225199111/?originalSubdomain=it)<sup>
+
+<a href= "/images/venerd%C3%AC_protetto/data_backbone.png?raw=true" target="_blank"> 
+<img align="left" style="max-width:40%; margin-right: 0.5em; margin-top: 0.5em" src=/images/venerd%C3%AC_protetto/data_backbone.png?raw=true" alt="" title="" /> 
+</a>
+
+This talk showed the advancement of the internal projects of Data Backbone, Customer Data Platform (CDP), and Marketing Automation. The union of these three platforms will drive significant growth for the company in the coming years.
+
+Data Backbone is an internal project that leverages Google Cloud Pub/Sub and BigQuery to create a unified platform for sharing data across teams and projects and to democratize data access. Each team will publish core business logic events using Pub/Sub and AVRO schemas, making data available in near-real-time via Pub/Sub and archived in BigQuery. To simplify the implementation, we have produced an SDK in PHP and TypeScript—the two main languages used in the company—and adopted [Crossplane](https://www.crossplane.io/), allowing development teams to deploy and orchestrate cloud resources without increasing their cognitive load.
+
+The CDP project is a SaaS tool that we adopted to centralize and collect information from Data Backbone and other sources and, in turn, pass all the needed data to the third element of the chain, Marketing Automation. Marketing Automation is another SaaS tool that, once loaded with data, will allow Marketing team to autonomously drive the communications toward our customers, creating personalized customer journeys and email templates without dev intervention.
 
 <br>
 
 The overview of Venerdì Protetto is available [here](https://engineering.facile.it/blog/eng/v-protetto/).
 
-
-## Data Backbone, CDP & Marketing Automation
-
-by Alessandro Lai, Nicola Bonicelli, Marco Saletta
-
-This internal talk was prepared to show to the whole dev polutation the advancement on the internal project of Data Backbone, CDP & Marketing Automation. The union of these three platforms is a powerful driver for the growth of the company in the coming years.
-
-The "Data Backbone" is an internal project that, leveraging Google Cloud Pubsub and BigQuery, aims to create a single platform to share data and democratize the access to it, across teams and projects. Each team will publish the core events that build their business logic using PubSub and AVRO schemas, and the data will be readily available in near-real-time via PubSub, and archived under BigQuery. To make the implementation easier, the Platform team has produced an SDK in the two main languages used in the company (PHP & Typescript), and the DXCP team has adopted [Crossplane](https://www.crossplane.io/) to allow each team to deploy the needed cloud resources and orchestrate them without having to worry about them or increase the team's cognitive load.
-
-The CDP (Customer Data Platform) is a SaaS tool that we adopted to centralize and collect the information from the Data Backbone and many other sources, and in turn pass all the needed data to the third element of the chain, the Marketing Automation. The Marketing Automation is another SaaS tool that, once loaded with all the data, will allow our colleagues from the Marketing team do be autonomous in driving the comunications toward our customers, creating personalized customer journeys and email templates without dev intervention.
 
 <script type="application/ld+json">
 { 

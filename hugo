@@ -5,9 +5,9 @@ set -e
 os_type=$(uname -s);
 
 if [[ $os_type == 'Linux' ]]; then
-    URL=https://github.com/gohugoio/hugo/releases/download/v0.134.2/hugo_0.134.2_linux-amd64.tar.gz
+    URL=https://github.com/gohugoio/hugo/releases/download/v0.137.1/hugo_0.137.1_linux-amd64.tar.gz
 elif [[ $os_type == 'Darwin' ]]; then
-    URL=https://github.com/gohugoio/hugo/releases/download/v0.134.2/hugo_0.134.2_darwin-universal.tar.gz
+    URL=https://github.com/gohugoio/hugo/releases/download/v0.137.1/hugo_0.137.1_darwin-universal.tar.gz
 else echo 'ARCHITETTURA NON RICONOSCIUTA';
 fi
 

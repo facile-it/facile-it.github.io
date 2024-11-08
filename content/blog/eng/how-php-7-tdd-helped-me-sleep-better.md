@@ -15,7 +15,8 @@ twitterImage: '/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg'
 As many of you will agree with me, **sleep deprivation** is the enemy of programming.   
 Maybe we fear only one thing more than that: **being interrupted**.
 <p style="text-align: center;">
-    [![Why you shouldn't interrupt a programmer (by Jason Heeris)](/images/how-php-7-tdd-helped-me-sleep-better/interruption.png)](http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/)
+
+[![Why you shouldn't interrupt a programmer (by Jason Heeris)](/images/how-php-7-tdd-helped-me-sleep-better/interruption.png)](http://heeris.id.au/2013/this-is-why-you-shouldnt-interrupt-a-programmer/)
 </p>
 
 
@@ -26,7 +27,8 @@ On my day job, I do all this mental juggling on a pretty big project, which is b
 
 Almost half a year ago **I became a dad**. It has been great, and you also get some unexpected perks! For example, my colleagues got me this gift for my son:
 <p style="text-align: center;">
-    ![A blue elePHPant!](/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg)
+
+![A blue elePHPant!](/images/how-php-7-tdd-helped-me-sleep-better/blue-elephpant.jpg)
 </p>
 
 So, we can say that his future is pretty clear... But don't say this to my wife! 
@@ -59,7 +61,8 @@ I then wrote some functional tests to assure that the **collaboration between my
 ## PHP 7: scalar and return types declarations
 The second good choice was **PHP 7**: among the reasons behind it as the language version of choice for this project were the [two main new features](http://php.net/manual/en/migration70.new-features.php) introduced: **scalar types** and **return type declarations**. 
 <p style="text-align: center;">
-    ![Return types, return types everywhere!](/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg)
+
+![Return types, return types everywhere!](/images/how-php-7-tdd-helped-me-sleep-better/return-types-everywhere-meme.jpg)
 </p>
 
 Before Facile.it, I worked as C++ developer, and oh boy! did I miss scalars and return types!

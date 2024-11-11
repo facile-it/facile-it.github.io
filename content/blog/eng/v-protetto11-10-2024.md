@@ -10,8 +10,8 @@ title: "Venerdì Protetto | October 2024"
 description: "What happened in the latest Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/social/suggested/9_stock.jpg'
-twitterLargeImage: '/images/social/suggested/9_stock.jpg'
+twitterImage: '/images/social/suggested/8_stock.jpg'
+twitterLargeImage: '/images/social/suggested/8_stock.jpg'
 toc: false
 
 ---
@@ -86,7 +86,7 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
     "genre":["SEO","JSON-LD"],
     "@type": "BlogPosting",
     "headline": "Venerdì Protetto | October 2024",
-    "keywords": ["Growing teams", "Digital twins"],
+    "keywords": ["Growing teams", "Digital twins", "Data Backbone"],
     "wordcount": "172",
     "publisher": {
         "@type": "Organization",
@@ -99,8 +99,8 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
             "height":"244"
         }
     },
-    "url": "https://engineering.facile.it/blog/eng/v-protetto9-6-2023/",
-    "image": "https://engineering.facile.it/images/social/social-preview.png",
+    "url": "https://engineering.facile.it/blog/eng/v-protetto11-10-2024/",
+    "image": "https://engineering.facile.it/images/social/suggested/8_stock.jpg",
     "datePublished": "2024-10-11",
     "dateCreated": "2024-10-18",
     "dateModified": "2024-10-18",

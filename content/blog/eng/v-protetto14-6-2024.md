@@ -10,8 +10,8 @@ title: "Venerdì Protetto | June edition"
 description: "What happened in the last Facile.it Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/social/suggested/6_stock.jpg'
-twitterLargeImage: '/images/social/suggested/6_stock.jpg'
+twitterImage: '/images/social/suggested/9_stock.jpg'
+twitterLargeImage: '/images/social/suggested/9_stock.jpg'
 toc: false
 
 ---
@@ -97,7 +97,7 @@ In this short presentation, we saw an overview of the protocols and technologies
             "height":"244"
         }
     },
-    "url": "https://engineering.facile.it/blog/eng/v-protettoDD-MM-YYYY/",
+    "url": "https://engineering.facile.it/blog/eng/v-protetto14-06-2024/",
     "image": "https://engineering.facile.it/images/social/social-preview.png",
     "datePublished": "2004-07-03",
     "dateCreated": "2004-07-03",

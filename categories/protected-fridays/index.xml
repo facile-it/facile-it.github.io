@@ -6,8 +6,15 @@
     <description>Recent content in Protected Fridays on Facile.it Engineering</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Oct 2024 10:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 11 Oct 2024 10:00:00 +0000</lastBuildDate>
     <atom:link href="https://engineering.facile.it/categories/protected-fridays/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Venerdì Protetto | October 2024</title>
+      <link>https://engineering.facile.it/blog/eng/v-protetto11-10-2024/</link>
+      <pubDate>Fri, 11 Oct 2024 10:00:00 +0000</pubDate>
+      <guid>https://engineering.facile.it/blog/eng/v-protetto11-10-2024/</guid>
+      <description>&lt;p&gt;This page contains the abstracts of the talks held during the latest Venerdì Protetto on October 11, 2024.&lt;/p&gt;&#xA;&lt;p&gt;Topics:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#growing-teams&#34;&gt;Growing teams&lt;/a&gt; by &lt;a href=&#34;https://jesuswasrasta.com/&#34;&gt;Ferdinando Santacroce&lt;/a&gt; (&lt;a href=&#34;https://www.linkedin.com/company/agile-reloaded/&#34;&gt;Agile Reloaded&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#digital-twins&#34;&gt;Digital twins&lt;/a&gt; by &lt;a href=&#34;https://www.linkedin.com/in/stefanofago/&#34;&gt;Stefano Fago&lt;/a&gt; (&lt;a href=&#34;https://www.linkedin.com/company/gewissgroup/&#34;&gt;Gewiss&lt;/a&gt;)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#data-strategy&#34;&gt;Data strategy&lt;/a&gt; by &lt;a href=&#34;https://www.linkedin.com/in/alessandro-lai-09440922/?originalSubdomain=it&#34;&gt;Alessandro Lai&lt;/a&gt;, &lt;a href=&#34;https://www.linkedin.com/in/nicola-bonicelli-2b7a1777/?originalSubdomain=it&#34;&gt;Nicola Bonicelli&lt;/a&gt;, &lt;a href=&#34;https://www.linkedin.com/in/marco-saletta-225199111/?originalSubdomain=it&#34;&gt;Marco Saletta&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;br&gt;&#xA;&lt;h2 id=&#34;growing-teams&#34;&gt;Growing teams&lt;/h2&gt;&#xA;&lt;h3 id=&#34;managing-teams-by-mimicking-the-agile-model&#34;&gt;Managing teams by mimicking the Agile model&lt;/h3&gt;&#xA;&lt;p&gt;&lt;sup&gt;by &lt;a href=&#34;https://jesuswasrasta.com/&#34;&gt;Ferdinando Santacroce&lt;/a&gt;, (&lt;a href=&#34;https://www.linkedin.com/company/agile-reloaded/&#34;&gt;Agile Reloaded&lt;/a&gt;)&lt;sup&gt;&lt;/p&gt;&#xA;&lt;a href= &#34;/images/venerd%C3%AC_protetto/growing_teams.png?raw=true&#34; target=&#34;_blank&#34;&gt; &#xA;&lt;img align=&#34;left&#34; style=&#34;max-width:40%; margin-right: 0.5em; margin-top: 0.5em&#34; src=https://engineering.facile.it/images/venerd%C3%AC_protetto/growing_teams.png?raw=true&#34; alt=&#34;&#34; title=&#34;&#34; /&gt; &#xA;&lt;/a&gt;&#xA;&lt;p&gt;The speaker is an experienced professional who transitioned from working as a developer to his current role as a trainer, coach, and consultant.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Venerdì Protetto | September 2024</title>
       <link>https://engineering.facile.it/blog/eng/v-protetto13-9-2024/</link>

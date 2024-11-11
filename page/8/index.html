@@ -21,8 +21,8 @@
         "accountablePerson" : "",
         "copyrightHolder" : "",
         "copyrightYear" : "2024",
-        "datePublished": "2024-10-01 10:00:00 \u002b0000 UTC",
-        "dateModified" : "2024-10-01 10:00:00 \u002b0000 UTC",
+        "datePublished": "2024-10-11 10:00:00 \u002b0000 UTC",
+        "dateModified" : "2024-10-11 10:00:00 \u002b0000 UTC",
         "url" : "https:\/\/engineering.facile.it\/",
         "wordCount" : "0",
         "keywords" : [ "Blog" ]
@@ -87,8 +87,8 @@
         
   <meta itemprop="name" content="Facile.it Engineering">
   <meta itemprop="description" content="News, repos, tips &amp; trends from the Facile.it Engineering team!">
-  <meta itemprop="datePublished" content="2024-10-01T10:00:00+00:00">
-  <meta itemprop="dateModified" content="2024-10-01T10:00:00+00:00">
+  <meta itemprop="datePublished" content="2024-10-11T10:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-10-11T10:00:00+00:00">
 
         
             
@@ -258,6 +258,18 @@
                 
                         <article class="mini-post">
                             <header>
+                                <h3><a href="/blog/eng/v-protetto11-10-2024/">Venerdì Protetto | October 2024</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2024-10-11'>
+                                    October 11, 2024</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
                                 <h3><a href="/blog/eng/v-protetto13-9-2024/">Venerdì Protetto | September 2024</a></h3>
                                 
                                 <time class="published" datetime=
@@ -275,18 +287,6 @@
                                 <time class="published" datetime=
                                     '2024-08-28'>
                                     August 28, 2024</time>
-                            </header>
-                            
-
-                        </article>
-                
-                        <article class="mini-post">
-                            <header>
-                                <h3><a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a></h3>
-                                
-                                <time class="published" datetime=
-                                    '2024-07-02'>
-                                    July 2, 2024</time>
                             </header>
                             
 
@@ -310,6 +310,172 @@
     
     <div id="main">
         
+        
+            <article class="post">
+  <header>
+    <div class="title">
+        
+            <h2><a href="/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/">Continuous deployment from GitLab CI to Kubernetes using Docker-in-Docker</a></h2>
+        
+        
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2018-02-06'>
+            6 February 2018
+        </time>
+
+        
+            <a href="/authors/jean/" class="author">
+            
+                <span class="name">Alessandro Lai</span>
+                <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" />
+            
+            </a>
+        
+
+        
+            <p>19 minute read</p>
+        
+    </div>
+</header>
+
+  
+
+  <p><p>In the last month, I&rsquo;m working on two different PHP projects here at Facile.it: in the first one, which is new and still in development, I decided to adopt <strong>GitLab CI</strong> for the build, since we use GitLab CE for our Git repositories; I then created a <strong>continuous deployment pipeline</strong> for the staging environment, directly to a <strong>Kubernetes cluster</strong>, leveraging <strong>Docker Compose</strong> to make the configuration easier.</p>
+<p>After, I decided to start migrating a previous, internal project of mine to the same approach, since it&rsquo;s currently in production with a dumb approach that provokes some downtime during deployments; on the contrary, <strong>doing a rolling deployment with Kubernetes is surprisingly easy</strong>!</p></p>
+  <footer>
+    <ul class="actions">
+      <li><a href="/blog/eng/continuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker/" class="button big">Continue Reading</a></li>
+    </ul>
+  <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa-solid fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/continuous-integration">Continuous integration</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/continuous-deployment">Continuous deployment</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/docker">Docker</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/gitlab">GitLab</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://engineering.facile.it/categories/kubernetes">Kubernetes</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+</article>
+
+
+            <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&amp;text=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
+    <i class="fa-brands fa-square-x-twitter"></i>
+    <p>X</p>
+    </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f" target="_blank" class="share-btn facebook">
+    <i class="fa-brands fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&amp;title=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker" target="_blank" class="share-btn reddit">
+    <i class="fa-brand fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&amp;title=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker" target="_blank" class="share-btn linkedin">
+      <i class="fa-brand fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&amp;title=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker" target="_blank" class="share-btn stumbleupon">
+    <i class="fa-brand fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f&amp;description=Continuous%20deployment%20from%20GitLab%20CI%20to%20Kubernetes%20using%20Docker-in-Docker" target="_blank" class="share-btn pinterest">
+    <i class="fa-brand fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2fcontinuous-deployment-from-gitlab-ci-to-k8s-using-docker-in-docker%2f" target="_blank" class="share-btn email">
+    <i class="fa-solid fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
         
             <article class="post">
   <header>
@@ -949,168 +1115,6 @@
 </section>
 
         
-            <article class="post">
-  <header>
-    <div class="title">
-        
-            <h2><a href="/blog/eng/facilehack-2017-10-days-later/">#FacileHack 2017, 10 days later</a></h2>
-        
-        
-        
-            <p class="translated-article">
-                Questo articolo è disponibile anche
-                <a href="/blog/ita/facilehack-2017-10-giorni-dopo/">in italiano</a>
-            </p>
-        
-        
-    </div>
-    <div class="meta">
-        
-
-        <time class="published"
-            datetime='2017-04-04'>
-            4 April 2017
-        </time>
-
-        
-            <a href="/authors/jean/" class="author">
-            
-                <span class="name">Alessandro Lai</span>
-                <img src="https://www.gravatar.com/avatar/5e9c1c380aa22f2df2f70be07ba35e90?d=404&amp;s=250" alt="Alessandro Lai avatar" />
-            
-            </a>
-        
-
-        
-            <p>2 minute read</p>
-        
-    </div>
-</header>
-
-  
-
-  <p><p>Ten days ago <a href="http://hackathon.facile.it/2017.html"><strong>#FacileHack 2017</strong></a> came to its conclusion; this was the second edition of the hackathon organized by Facile.it. Holding an event of this kind has allowed us to see, work and discuss with many very diverse teams, made up of programmers, designers and marketers.</p>
-<p>The hackathon&rsquo;s theme for this year was <strong>connectivity</strong>: our site offers the comparation between internet access services, and we have decided to put this at the center of the competition. The teams have then faced each other on this theme, searching new ways to improve Facile.it&rsquo;s business and the customers&rsquo; user experience.</p></p>
-  <footer>
-    <ul class="actions">
-      <li><a href="/blog/eng/facilehack-2017-10-days-later/" class="button big">Continue Reading</a></li>
-    </ul>
-  <ul class="stats">
-  <li class="categories">
-    <ul>
-        
-            
-            
-                <i class="fa-solid fa-folder"></i>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/english">English</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/facilehack">FacileHack</a></li>
-                
-                
-                <li><a class="article-category-link" href="https://engineering.facile.it/categories/hackathon">Hackathon</a></li>
-                
-            
-        
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
-        
-    </ul>
-  </li>
-</ul>
-
-  </footer>
-</article>
-
-
-            <section id="share-menu">
-    <section id="social-share-nav">
-        <ul class="links">
-            <header>
-                <h3>Share this post <i class="fa-solid fa-smile-o"></i></h3>
-            </header>
-            
-
-
-
-<li>
-  <a href="//x.com/share?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&amp;text=%23FacileHack%202017%2c%2010%20days%20later&amp;via=FacileIt_Engr" target="_blank" class="share-btn twitter">
-    <i class="fa-brands fa-square-x-twitter"></i>
-    <p>X</p>
-    </a>
-</li>
-
-
-
-
-
-<li>
-  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f" target="_blank" class="share-btn facebook">
-    <i class="fa-brands fa-facebook"></i>
-    <p>Facebook</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//reddit.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&amp;title=%23FacileHack%202017%2c%2010%20days%20later" target="_blank" class="share-btn reddit">
-    <i class="fa-brand fa-reddit-alien"></i>
-    <p>Reddit</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&amp;title=%23FacileHack%202017%2c%2010%20days%20later" target="_blank" class="share-btn linkedin">
-      <i class="fa-brand fa-linkedin"></i>
-      <p>LinkedIn</p>
-    </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&amp;title=%23FacileHack%202017%2c%2010%20days%20later" target="_blank" class="share-btn stumbleupon">
-    <i class="fa-brand fa-stumbleupon"></i>
-    <p>StumbleUpon</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f&amp;description=%23FacileHack%202017%2c%2010%20days%20later" target="_blank" class="share-btn pinterest">
-    <i class="fa-brand fa-pinterest-p"></i>
-    <p>Pinterest</p>
-  </a>
-</li>
-
-
-
-
-<li>
-  <a href="mailto:?subject=Check out this post by &amp;body=https%3a%2f%2fengineering.facile.it%2fblog%2feng%2ffacilehack-2017-10-days-later%2f" target="_blank" class="share-btn email">
-    <i class="fa-solid fa-envelope"></i>
-    <p>Email</p>
-  </a>
-</li>
-
-
-        </ul>
-    </section>
-</section>
-
-        
 		
         
 <ul class="actions pagination">
@@ -1275,6 +1279,30 @@
               </div>
 
               <h3>
+                <a href="/blog/eng/v-protetto11-10-2024/">Venerdì Protetto | October 2024</a>
+              </h3>
+              
+              <time class="published" datetime='2024-10-11'>
+                11 October 2024
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <div class="author-avatars">
+                
+                  
+                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
+                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
+                    </a>
+                  
+                
+              </div>
+
+              <h3>
                 <a href="/blog/eng/v-protetto13-9-2024/">Venerdì Protetto | September 2024</a>
               </h3>
               
@@ -1304,30 +1332,6 @@
               
               <time class="published" datetime='2024-08-28'>
                 28 August 2024
-              </time>
-            </header>
-            
-
-          </article>
-        
-          <article class="mini-post">
-            <header>
-              <div class="author-avatars">
-                
-                  
-                    <a href="/authors/engineering/" class="author" title="See other posts from Facile.it engineers">
-                      <img src="https://avatars1.githubusercontent.com/u/8501934?v=3&amp;s=200" alt="Facile.it engineers avatar" class="author-avatar"/>
-                    </a>
-                  
-                
-              </div>
-
-              <h3>
-                <a href="/blog/eng/v-protetto14-6-2024/">Venerdì Protetto | June edition</a>
-              </h3>
-              
-              <time class="published" datetime='2024-07-02'>
-                2 July 2024
               </time>
             </header>
             
@@ -1629,7 +1633,7 @@
             <header>
               
                 <a href="https://engineering.facile.it/categories/protected-fridays/">Protected Fridays</a>
-                <span style="float:right;">17</span>
+                <span style="float:right;">18</span>
               
             </header>
           </article>

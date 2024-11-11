@@ -17,7 +17,7 @@ This page contains the abstracts of the talks held during the latest Venerdì Pr
 Topics:
 
 - [Machine learning](#machine-learning) by [Marica Castaldo](https://it.linkedin.com/in/marica-castaldo-2505b588) & [Santolo Tubelli](https://it.linkedin.com/in/santolo-tubelli)
-- [OpenTelemetry](#open-telemetry) by [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/?originalSubdomain=it)
+- [OpenTelemetry](#open-telemetry) by [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/)
 - [Second Brain](#second-brain) by [Antonello Calamea](https://www.linkedin.com/in/antonello-calamea/) (freelance)
 
 
@@ -49,7 +49,7 @@ Besides, we deep-dived into the key features of the internal framework that we a
 
 ### Observability with a library and standard open-source
 
-<sup>by [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/?originalSubdomain=it)<sup>
+<sup>by [Stefano Giurgiano](https://www.linkedin.com/in/stefano-giurgiano-023545150/)<sup>
 
 <a href= "/images/venerd%C3%AC_protetto/open_telemetry.png?raw=true" target="_blank"> 
 <img align="left" style="width:45%; margin-right: 0.5em" src=/images/venerd%C3%AC_protetto/open_telemetry.png?raw=true" alt="OpenTelemetry" title="Observability with a library and standard open-source" /> 

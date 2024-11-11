@@ -10,8 +10,8 @@ title: "Venerdì Protetto | October 2024"
 description: "What happened in the latest Venerdì Protetto?"
 languageCode: "en-US"
 type: "post"
-twitterImage: '/images/social/suggested/9_stock.jpg'
-twitterLargeImage: '/images/social/suggested/9_stock.jpg'
+twitterImage: '/images/social/suggested/8_stock.jpg'
+twitterLargeImage: '/images/social/suggested/8_stock.jpg'
 toc: false
 
 ---
@@ -22,7 +22,7 @@ Topics:
 
 - [Growing teams](#growing-teams) by [Ferdinando Santacroce](https://jesuswasrasta.com/) ([Agile Reloaded](https://www.linkedin.com/company/agile-reloaded/))
 - [Digital twins](#digital-twins) by [Stefano Fago](https://www.linkedin.com/in/stefanofago/) ([Gewiss](https://www.linkedin.com/company/gewissgroup/))
-- [Data strategy](#data-strategy) by [Alessandro Lai](https://www.linkedin.com/in/alessandro-lai-09440922/?originalSubdomain=it), [Nicola Bonicelli](https://www.linkedin.com/in/nicola-bonicelli-2b7a1777/?originalSubdomain=it), [Marco Saletta](https://www.linkedin.com/in/marco-saletta-225199111/?originalSubdomain=it)
+- [Data strategy](#data-strategy) by [Alessandro Lai](https://www.linkedin.com/in/alessandro-lai-09440922/), [Nicola Bonicelli](https://www.linkedin.com/in/nicola-bonicelli-2b7a1777/), [Marco Saletta](https://www.linkedin.com/in/marco-saletta-225199111/)
 
 
 <br>
@@ -63,7 +63,7 @@ The discussion was enriched with an overview of the architecture of digital twin
 
 ### Data Backbone, CDP & Marketing Automation
 
-<sup>by [Alessandro Lai](https://www.linkedin.com/in/alessandro-lai-09440922/?originalSubdomain=it), [Nicola Bonicelli](https://www.linkedin.com/in/nicola-bonicelli-2b7a1777/?originalSubdomain=it), [Marco Saletta](https://www.linkedin.com/in/marco-saletta-225199111/?originalSubdomain=it)<sup>
+<sup>by [Alessandro Lai](https://www.linkedin.com/in/alessandro-lai-09440922/), [Nicola Bonicelli](https://www.linkedin.com/in/nicola-bonicelli-2b7a1777/), [Marco Saletta](https://www.linkedin.com/in/marco-saletta-225199111/)<sup>
 
 <a href= "/images/venerd%C3%AC_protetto/data_backbone.png?raw=true" target="_blank"> 
 <img align="left" style="max-width:40%; margin-right: 0.5em; margin-top: 0.5em" src=/images/venerd%C3%AC_protetto/data_backbone.png?raw=true" alt="" title="" /> 

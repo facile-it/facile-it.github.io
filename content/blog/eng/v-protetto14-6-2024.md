@@ -20,11 +20,11 @@ This page contains the abstracts of the talks held during the latest Venerdì Pr
 
 Topics:
 
-- [Big project management](#big-project-management) by [Stefano Bosio](https://www.linkedin.com/in/stefano-bosio-16679b26/?originalSubdomain=it)
+- [Big project management](#big-project-management) by [Stefano Bosio](https://www.linkedin.com/in/stefano-bosio-16679b26/)
 
 - [Contribution ladder](#contribution-ladder) by [Leonardo Podda](https://www.linkedin.com/in/leonardo-podda/) & [Alessandro Lai](https://www.linkedin.com/in/alessandro-lai-09440922/)
 
-- [Solid foundations for solid growth](#solid-foundations-for-solid-growth) by [Domenico Briganti](https://www.linkedin.com/in/dometec/?originalSubdomain=it) ([Kalpa.it](https://www.kalpa.it/about-us/))
+- [Solid foundations for solid growth](#solid-foundations-for-solid-growth) by [Domenico Briganti](https://www.linkedin.com/in/dometec/) ([Kalpa.it](https://www.kalpa.it/about-us/))
 
 <br />
 
@@ -32,7 +32,7 @@ Topics:
 
 ### What really matters?
 
-<sup>by [Stefano Bosio](https://www.linkedin.com/in/stefano-bosio-16679b26/?originalSubdomain=it)<sup> 
+<sup>by [Stefano Bosio](https://www.linkedin.com/in/stefano-bosio-16679b26/)<sup> 
 
 <a href= "/images/venerd%C3%AC_protetto/vp_managingbigprojects.png?raw=true" target="_blank"><img align="right" style="width:35%; margin-left: 0.5em" src="/images/venerd%C3%AC_protetto/vp_managingbigprojects.png?raw=true" alt="Alt text for Image_a" title="Title of Image_a" />
 </a>
@@ -64,7 +64,7 @@ The contribution ladder defines roles, responsibilities, and expectations to hel
 
 ### Core IT competences
 
-<sup>by [Domenico Briganti](https://www.linkedin.com/in/dometec/?originalSubdomain=it) ([Kalpa.it](https://www.kalpa.it/about-us/))<sup>
+<sup>by [Domenico Briganti](https://www.linkedin.com/in/dometec/) ([Kalpa.it](https://www.kalpa.it/about-us/))<sup>
 
 <a href= "/images/venerd%C3%AC_protetto/basi-solide-per-solida-crescita.png?raw=true" target="_blank"><img align="right" style="width:35%; margin-left: 0.5em" src="/images/venerd%C3%AC_protetto/basi-solide-per-solida-crescita.png?raw=true" alt="Alt text for image_c" title="Title of image_c" />
 </a>

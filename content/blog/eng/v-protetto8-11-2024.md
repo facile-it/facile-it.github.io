@@ -39,7 +39,7 @@ Topics:
 
 This talk continued the discussion from the [June edition](https://engineering.facile.it/blog/eng/v-protetto14-6-2024/) of Venerdì Protetto.
 
-During this talk, we explored examples of protocols and technologies—such as OAuth2 and OpenID, SQL constructs, and ACID properties—that can be important for developers and other IT professionals looking to advance in the tech industry. We also delved into IT job interviews, examining common knowledge gaps among candidates, even those with extensive experience.
+During this talk, we explored examples of protocols and technologies — such as *OAuth2* and *OpenID*, *SQL* constructs, and *ACID* properties — that can be important for developers and other IT professionals looking to advance in the tech industry. We also delved into IT *job interviews*, examining common knowledge gaps among candidates, even those with extensive experience.
 
 The final part of the talk was dedicated to an interactive Q&A session, which sparked significant engagement and interest among attendees.
 
@@ -55,11 +55,16 @@ The final part of the talk was dedicated to an interactive Q&A session, which sp
 <img align="left" style="max-width:55%; margin-right: 0.5em; margin-top: 0.5em" src=/images/venerd%C3%AC_protetto/gitlab_and_kubernetes.png?raw=true" alt="" title="" /> 
 </a>
 
-In this talk, we embarked on a journey through the core facets of GitLab and Kubernetes integration and dived deep into the pivotal role of GitLab's Agent, uncovering its seamless orchestration between GitLab and Kubernetes. We explored the intricacies of Cluster Access, understanding how GitLab ensures secure and controlled connections to Kubernetes clusters. 
+In this talk, we embarked on a journey through the core facets of *GitLab* and *Kubernetes* integration and dived deep into the pivotal role of GitLab's Agent, uncovering its seamless *orchestration* between GitLab and Kubernetes. We explored the intricacies of Cluster Access, understanding how GitLab ensures secure and controlled connections to Kubernetes clusters. 
 
-Security took center stage as we unveiled the robust features ingrained in the integration. From access controls to vulnerability scanning, we discovered how GitLab and Kubernetes collaboratively fortify DevOps workflows, ensuring airtight security throughout the development lifecycle. 
+*Security* took center stage as we unveiled the robust features ingrained in the integration. From access controls to vulnerability scanning, we discovered how GitLab and Kubernetes collaboratively fortify *DevOps* workflows, ensuring airtight security throughout the development lifecycle. 
 
 Perfect for both DevOps veterans and beginners, this talk delivered practical insights, empowering us to optimize development and deployment processes while upholding the highest standards of security. It elevated our understanding of GitLab and Kubernetes synergy for enhanced efficiency and reliability in our projects.
+
+<br>
+
+
+>Please note that from November 2024 on, Venerdì Protetto is *suspended*. We will let you know further changes.
 
 <br>
 
@@ -71,8 +76,8 @@ The overview of Venerdì Protetto is available [here](https://engineering.facile
     "@context": "https://schema.org",
     "genre":["SEO","JSON-LD"],
     "@type": "BlogPosting",
-    "headline": "Venerdì Protetto | Novemner 2024",
-    "keywords": ["Core IT competences", "GitLab and Kubernetes"],
+    "headline": "Venerdì Protetto | November 2024",
+    "keywords": ["Core IT competences", "SQL", "interview", "Oauth", "openid", "devops", "GitLab", "Kubernetes"],
     "wordcount": "244",
     "publisher": {
         "@type": "Organization",
